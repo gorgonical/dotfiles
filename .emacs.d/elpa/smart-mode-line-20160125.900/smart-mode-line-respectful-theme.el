@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/smart-mode-line-20160125.900/smart-mode-line-respectful-theme.el

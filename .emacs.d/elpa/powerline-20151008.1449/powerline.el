@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/powerline-20151008.1449/powerline.el

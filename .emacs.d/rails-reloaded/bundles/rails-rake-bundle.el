@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/rails-reloaded/bundles/rails-rake-bundle.el

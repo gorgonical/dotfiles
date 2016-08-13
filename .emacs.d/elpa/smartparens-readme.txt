@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/smartparens-readme.txt

@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/projectile-rails-readme.txt

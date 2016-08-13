@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/faceup-20150215.1348/faceup.el

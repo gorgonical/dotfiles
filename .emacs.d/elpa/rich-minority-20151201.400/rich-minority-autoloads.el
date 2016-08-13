@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/rich-minority-20151201.400/rich-minority-autoloads.el

@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/s-20150924.406/s-pkg.el

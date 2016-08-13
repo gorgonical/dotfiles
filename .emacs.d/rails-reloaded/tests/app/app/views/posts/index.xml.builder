@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/rails-reloaded/tests/app/app/views/posts/index.xml.builder

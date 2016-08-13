@@ -1,0 +1,1 @@
+/home/nmg/.emacs.d/elpa/inf-ruby-20151104.1237/inf-ruby-pkg.el

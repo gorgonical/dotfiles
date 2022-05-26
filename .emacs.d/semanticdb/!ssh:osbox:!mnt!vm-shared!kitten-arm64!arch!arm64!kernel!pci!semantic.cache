@@ -1,0 +1,64 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/spinlock.h" include (:system-flag t) nil [25 50])
+            ("arch/io.h" include (:system-flag t) nil [51 71])
+            ("arch/pci/pcicfg.h" include (:system-flag t) nil [72 100])
+            ("PCICFG_ADDR_PORT" variable (:constant-flag t) nil [111 127])
+            ("PCICFG_DATA_PORT" variable (:constant-flag t) nil [142 158])
+            ("PCICFG_ADDR_ENABLE_BIT" variable (:constant-flag t) nil [173 195])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pcicfg_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [231 243]))                  
+                :type "int")
+                nil [208 244])
+            ("calc_addr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bus" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [275 292])
+                    ("slot" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [294 312])
+                    ("func" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [314 332])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [334 352]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [247 494])
+            ("arch_pcicfg_read" function
+               (:arguments 
+                  ( ("bus" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [525 542])
+                    ("slot" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [544 562])
+                    ("func" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [564 582])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [584 601])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [603 623]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [497 1238])
+            ("arch_pcicfg_write" function
+               (:arguments 
+                  ( ("bus" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1266 1283])
+                    ("slot" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1285 1303])
+                    ("func" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1305 1323])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1325 1342])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1344 1363])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1365 1381]))                  
+                :type "void")
+                nil [1241 1982]))          
+      :file "pcicfg.c"
+      :pointmax 1983
+      :fsize 1982
+      :lastmodtime '(24853 26768)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PCICFG_DATA_PORT" . ((number "0xCFC" 159 . 164)))
+          ("PCICFG_ADDR_ENABLE_BIT" . ((semantic-list "(1 << 31)" 196 . 205)))
+          ("PCICFG_ADDR_PORT" . ((number "0xCF8" 128 . 133)))
+          )
+))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!arch!arm64!kernel!pci!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

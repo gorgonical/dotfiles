@@ -1,0 +1,514 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [61 84])
+            ("lwk/task.h" include (:system-flag t) nil [85 106])
+            ("lwk/spinlock.h" include (:system-flag t) nil [107 132])
+            ("lwk/string.h" include (:system-flag t) nil [133 156])
+            ("lwk/aspace.h" include (:system-flag t) nil [157 180])
+            ("lwk/htable.h" include (:system-flag t) nil [181 204])
+            ("lwk/log2.h" include (:system-flag t) nil [205 226])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [227 251])
+            ("lwk/pmem.h" include (:system-flag t) nil [252 273])
+            ("lwk/tlbflush.h" include (:system-flag t) nil [274 299])
+            ("lwk/waitq.h" include (:system-flag t) nil [300 322])
+            ("lwk/sched.h" include (:system-flag t) nil [323 345])
+            ("htable" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("htable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [416 445])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("htable_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [469 481]))                  
+                :type "int")
+                nil [446 482])
+            ("aspace_next_id" variable
+               (:typemodifiers ("static")
+                :default-value "UASPACE_MIN_ID"
+                :type ("id_t" type (:type "class") nil nil))
+                nil [560 604])
+            ("region" type
+               (:members 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [875 899])
+                    ("link" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [948 970])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1020 1043])
+                    ("end" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1087 1108])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1156 1179])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1219 1243])
+                    ("smartmap" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1283 1309])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1418 1444]))                  
+                :type "struct")
+                nil [858 1489])
+            ("calc_end" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1762 1776])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1777 1791]))                  
+                :type ("vaddr_t" type (:type "class") nil nil))
+                nil [1738 1873])
+            ("find_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1972 1994])
+                    ("addr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1995 2008]))                  
+                :type ("region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1937 2172])
+            ("find_overlapping_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2285 2307])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2308 2322])
+                    ("end" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2323 2335]))                  
+                :type ("region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2238 2497])
+            ("find_smartmap_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2621 2643])
+                    ("src_aspace" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2644 2660]))                  
+                :type ("region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2577 2842])
+            ("lookup_and_lock" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2967 2975]))                  
+                :type ("aspace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2928 3346])
+            ("lookup_and_lock_two" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3462 3469])
+                    ("b" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3470 3477])
+                    ("aspace_a" variable
+                       (:pointer 2
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3498 3523])
+                    ("aspace_b" variable
+                       (:pointer 2
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3524 3549]))                  
+                :type "int")
+                nil [3431 4228])
+            ("aspace_subsys_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4434 4439]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4408 5176])
+            ("aspace_get_myid" function
+               (:arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5198 5207]))                  
+                :type "int")
+                nil [5178 5250])
+            ("id_inc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5271 5279]))                  
+                :type ("id_t" type (:type "class") nil nil))
+                nil [5252 5346])
+            ("id_alloc_any" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5373 5378]))                  
+                :type ("id_t" type (:type "class") nil nil))
+                nil [5348 5660])
+            ("id_alloc_specific" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5692 5700]))                  
+                :type ("id_t" type (:type "class") nil nil))
+                nil [5662 5777])
+            ("aspace_create" function
+               (:arguments 
+                  ( ("id_request" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5797 5813])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5814 5831])
+                    ("id" variable
+                       (:pointer 1
+                        :type ("id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5832 5841]))                  
+                :type "int")
+                nil [5779 8120])
+            ("aspace_destroy" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8141 8149]))                  
+                :type "int")
+                nil [8122 9807])
+            ("aspace_acquire" function
+               (:pointer 1
+                :arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9974 9982]))                  
+                :type ("aspace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9943 10209])
+            ("aspace_update_cpumask" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10239 10247])
+                    ("cpu_mask" variable
+                       (:pointer 1
+                        :type ("cpumask_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10248 10269]))                  
+                :type "int")
+                nil [10212 10599])
+            ("aspace_release" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10759 10781]))                  
+                :type "void")
+                nil [10739 10924])
+            ("__aspace_find_hole" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10949 10971])
+                    ("start_hint" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10991 11010])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11011 11025])
+                    ("alignment" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11026 11043])
+                    ("start" variable
+                       (:pointer 1
+                        :type ("vaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11063 11078]))                  
+                :type "int")
+                nil [10926 11479])
+            ("aspace_find_hole" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11502 11510])
+                    ("start_hint" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11528 11547])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11548 11562])
+                    ("alignment" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11563 11580])
+                    ("start" variable
+                       (:pointer 1
+                        :type ("vaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11598 11613]))                  
+                :type "int")
+                nil [11481 11930])
+            ("__aspace_add_region" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11957 11979])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12000 12014])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12015 12029])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12050 12066])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12067 12087])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12108 12125]))                  
+                :type "int")
+                nil [11933 14443])
+            ("aspace_add_region" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14467 14475])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14494 14508])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14509 14523])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14542 14558])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14559 14579])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14598 14615]))                  
+                :type "int")
+                nil [14445 15000])
+            ("__aspace_del_region" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15026 15048])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15049 15063])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15064 15078]))                  
+                :type "int")
+                nil [15002 15658])
+            ("aspace_del_region" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15682 15690])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15691 15705])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15706 15720]))                  
+                :type "int")
+                nil [15660 16000])
+            ("__aspace_map_pmem" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16024 16046])
+                    ("pmem" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16065 16078])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16079 16093])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16094 16108]))                  
+                :type "int")
+                nil [16002 17421])
+            ("aspace_map_pmem" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17443 17451])
+                    ("pmem" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17452 17465])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17466 17480])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17481 17495]))                  
+                :type "int")
+                nil [17423 17765])
+            ("__aspace_unmap_pmem" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17791 17813])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17814 17828])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17829 17843]))                  
+                :type "int")
+                nil [17767 19095])
+            ("aspace_unmap_pmem" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19119 19127])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19128 19142])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19143 19157]))                  
+                :type "int")
+                nil [19097 19437])
+            ("__aspace_smartmap" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19461 19480])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19481 19500])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19519 19533])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19534 19548]))                  
+                :type "int")
+                nil [19439 20513])
+            ("aspace_smartmap" function
+               (:arguments 
+                  ( ("src" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20535 20544])
+                    ("dst" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20545 20554])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20555 20569])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20570 20584]))                  
+                :type "int")
+                nil [20515 20999])
+            ("__aspace_unsmartmap" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21025 21044])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21045 21064]))                  
+                :type "int")
+                nil [21001 21487])
+            ("aspace_unsmartmap" function
+               (:arguments 
+                  ( ("src" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21511 21520])
+                    ("dst" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21521 21530]))                  
+                :type "int")
+                nil [21489 21946])
+            ("__aspace_virt_to_phys" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21974 21996])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21997 22011])
+                    ("paddr" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22012 22027]))                  
+                :type "int")
+                nil [21948 22119])
+            ("aspace_virt_to_phys" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22145 22153])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22154 22168])
+                    ("paddr" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22169 22184]))                  
+                :type "int")
+                nil [22121 22499])
+            ("__aspace_lookup_mapping" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22531 22553])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22554 22568])
+                    ("mapping" variable
+                       (:pointer 1
+                        :type ("aspace_mapping_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22569 22595]))                  
+                :type "int")
+                nil [22502 22990])
+            ("aspace_lookup_mapping" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23019 23027])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23028 23042])
+                    ("mapping" variable
+                       (:pointer 1
+                        :type ("aspace_mapping_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23043 23069]))                  
+                :type "int")
+                nil [22992 23394])
+            ("aspace_wait4_child_exit" function
+               (:arguments 
+                  ( ("child_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23425 23439])
+                    ("block" variable (:type "bool") (reparse-symbol arg-sub-list) [23440 23451])
+                    ("exit_id" variable
+                       (:pointer 1
+                        :type ("id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23452 23466])
+                    ("exit_status" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [23467 23484]))                  
+                :type "int")
+                nil [23397 25519])
+            ("aspace_dump2console" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25545 25553]))                  
+                :type "int")
+                nil [25521 26236])
+            ("aspace_set_rank" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26259 26267])
+                    ("rank" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26284 26294]))                  
+                :type "int")
+                nil [26239 26569])
+            ("aspace_get_rank" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26591 26601])
+                    ("rank" variable
+                       (:pointer 1
+                        :type ("id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26604 26616]))                  
+                :type "int")
+                nil [26571 26893])
+            ("aspace_update_hio_syscall_mask" function
+               (:arguments 
+                  ( ("id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26931 26940])
+                    ("syscall_mask" variable
+                       (:pointer 1
+                        :type ("syscall_mask_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26952 26982]))                  
+                :type "int")
+                nil [26895 27278]))          
+      :file "aspace.c"
+      :pointmax 27279
+      :fsize 27278
+      :lastmodtime '(24852 6564)
+      :unmatched-syntax nil))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!kernel!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

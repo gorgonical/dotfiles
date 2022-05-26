@@ -1,0 +1,393 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [223 241])
+            ("stdlib.h" include (:system-flag t) nil [242 261])
+            ("sys/types.h" include (:system-flag t) nil [262 284])
+            ("sys/stat.h" include (:system-flag t) nil [285 306])
+            ("sys/reboot.h" include (:system-flag t) nil [307 330])
+            ("fcntl.h" include (:system-flag t) nil [331 349])
+            ("unistd.h" include (:system-flag t) nil [350 369])
+            ("ctype.h" include (:system-flag t) nil [370 388])
+            ("arch/types.h" include (:system-flag t) nil [389 412])
+            ("sys/ioctl.h" include (:system-flag t) nil [413 435])
+            ("pthread.h" include (:system-flag t) nil [436 456])
+            ("poll.h" include (:system-flag t) nil [457 474])
+            ("assert.h" include (:system-flag t) nil [475 494])
+            ("stdint.h" include (:system-flag t) nil [495 514])
+            ("signal.h" include (:system-flag t) nil [515 534])
+            ("errno.h" include (:system-flag t) nil [535 553])
+            ("lwk/liblwk.h" include (:system-flag t) nil [555 578])
+            ("lwk/pmem.h" include (:system-flag t) nil [579 600])
+            ("lwk/smp.h" include (:system-flag t) nil [601 621])
+            ("pet_log.h" include (:system-flag t) nil [624 644])
+            ("pet_hashtable.h" include (:system-flag t) nil [645 671])
+            ("v3vee.h" include (:system-flag t) nil [673 691])
+            ("hobbes.h" include (:system-flag t) nil [692 711])
+            ("xemem.h" include (:system-flag t) nil [712 730])
+            ("hobbes_enclave.h" include (:system-flag t) nil [731 758])
+            ("hobbes_cmd_queue.h" include (:system-flag t) nil [759 788])
+            ("hobbes_util.h" include (:system-flag t) nil [789 813])
+            ("init.h" include nil nil [815 832])
+            ("pisces.h" include nil nil [833 852])
+            ("pisces_ctrl.h" include nil nil [853 877])
+            ("hobbes_ctrl.h" include nil nil [878 902])
+            ("palacios.h" include nil nil [903 924])
+            ("hio.h" include nil nil [925 941])
+            ("enclave_cpus" variable (:type ("cpu_set_t" type (:type "class") nil nil)) nil [944 969])
+            ("enclave_name" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type "char")
+                nil [970 1003])
+            ("exit_leviathan" variable
+               (:default-value "0"
+                :type "int")
+                nil [1006 1029])
+            ("handler_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1032 1079])
+            ("handler_fds" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("pollfd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1080 1127])
+            ("handler_cnt" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1128 1172])
+            ("update_poll_fds" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1204 1210]))                  
+                :type "int")
+                nil [1176 1211])
+            ("fd_handler" type
+               (:members 
+                  ( ("fd" variable (:type "int") (reparse-symbol classsubparts) [1238 1257])
+                    ("fn" variable (:type ("fd_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1262 1281])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1286 1312]))                  
+                :type "struct")
+                nil [1214 1315])
+            ("handler_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1351 1365]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1318 1399])
+            ("handler_equal_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1430 1445])
+                    ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1446 1461]))                  
+                :type "int")
+                nil [1402 1492])
+            ("got_sigchld" variable
+               (:default-value "0"
+                :type ("sig_atomic_t" type (:type "class") nil nil))
+                nil [1494 1523])
+            ("handle_sigchld" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [1552 1560])
+                    ("siginfo" variable
+                       (:pointer 1
+                        :type ("siginfo_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1561 1580])
+                    ("ucontext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1581 1596]))                  
+                :type "void")
+                nil [1525 1694])
+            ("register_for_sigchld" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1730 1735]))                  
+                :type "void")
+                nil [1697 1965])
+            ("pisces_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [1968 1998])
+            ("hobbes_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [1999 2029])
+            ("palacios_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [2030 2060])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2072 2081])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2082 2095])
+                    ("envp" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2096 2110]))                  
+                :type "int")
+                nil [2063 6576])
+            ("update_poll_fds" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6608 6613]))                  
+                :type "int")
+                nil [6581 7741])
+            ("add_fd_handler" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [7762 7781])
+                    ("fn" variable (:type ("fd_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7790 7809])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7818 7844]))                  
+                :type "int")
+                nil [7743 8618])
+            ("remove_fd_handler" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [8643 8650]))                  
+                :type "int")
+                nil [8621 9184])
+            ("load_remote_file" function
+               (:arguments 
+                  ( ("remote_file" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9210 9229])
+                    ("local_file" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9233 9251]))                  
+                :type "int")
+                nil [9188 9723])
+            ("hobbes_panic" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9804 9820])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [9821 9825]))                  
+                :type "void")
+                nil [9786 10095]))          
+      :file "init.c"
+      :pointmax 10096
+      :fsize 10095
+      :lastmodtime '(24277 18337)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "init.h"
+      :fsize 961
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces.h"
+      :fsize 440
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces_ctrl.h"
+      :fsize 3716
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__LWK_HOBBES_CMDS_H__" variable (:constant-flag t) nil [300 321])
+            ("hobbes_cmd_queue.h" include (:system-flag t) nil [323 352])
+            ("hobbes_cmds.h" include (:system-flag t) nil [353 377])
+            ("hobbes_enabled" variable
+               (:typemodifiers ("extern")
+                :type "bool")
+                nil [380 407])
+            ("hobbes_cmd_fn" type
+               (:typedef ("hcq_cmd_fn" type (:type "class") nil nil)
+                :type "typedef")
+                nil [409 442])
+            ("hobbes_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [462 468]))                  
+                :type "int")
+                nil [444 469])
+            ("hobbes_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [488 494]))                  
+                :type "void")
+                nil [470 495])
+            ("hobbes_register_cmd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [521 534])
+                    ("handler" variable (:type ("hobbes_cmd_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [535 557]))                  
+                :type "int")
+                nil [497 558]))          
+      :file "hobbes_ctrl.h"
+      :pointmax 573
+      :fsize 572
+      :lastmodtime '(24277 18338)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__LWK_HOBBES_CMDS_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 427
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :file "hio.h"
+      :fsize 689
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [254 272])
+            ("stdlib.h" include (:system-flag t) nil [273 292])
+            ("sys/types.h" include (:system-flag t) nil [293 315])
+            ("pet_log.h" include (:system-flag t) nil [317 337])
+            ("pet_xml.h" include (:system-flag t) nil [338 358])
+            ("v3vee.h" include (:system-flag t) nil [360 378])
+            ("hobbes_enclave.h" include (:system-flag t) nil [380 407])
+            ("init.h" include nil nil [409 426])
+            ("hobbes_util.h" include nil nil [427 451])
+            ("hobbes_ctrl.h" include nil nil [452 476])
+            ("app_launch.h" include nil nil [477 500])
+            ("file_io.h" include nil nil [501 521])
+            ("palacios.h" include nil nil [522 543])
+            ("hcq" variable
+               (:typemodifiers ("static")
+                :default-value "HCQ_INVALID_HANDLE"
+                :type ("hcq_handle_t" type (:type "class") nil nil))
+                nil [546 591])
+            ("exit_leviathan" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [593 619])
+            ("__handle_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [646 656])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [664 681]))                  
+                :type "int")
+                nil [621 1167])
+            ("hobbes_register_cmd" function
+               (:arguments 
+                  ( ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1195 1215])
+                    ("handler_fn" variable (:type ("hobbes_cmd_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1223 1250]))                  
+                :type "int")
+                nil [1170 1305])
+            ("__shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1330 1347])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1352 1369]))                  
+                :type "int")
+                nil [1308 1599])
+            ("__launch_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1625 1642])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1650 1667]))                  
+                :type "int")
+                nil [1601 2010])
+            ("__kill_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2034 2051])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2056 2073]))                  
+                :type "int")
+                nil [2012 2455])
+            ("__load_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2482 2499])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2505 2522]))                  
+                :type "int")
+                nil [2459 3404])
+            ("__ping" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3425 3442])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3450 3467]))                  
+                :type "int")
+                nil [3406 3727])
+            ("__add_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3751 3768])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3772 3789]))                  
+                :type "int")
+                nil [3730 5504])
+            ("__add_memory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5530 5547])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5554 5571]))                  
+                :type "int")
+                nil [5506 7371])
+            ("__remove_memory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7400 7417])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7427 7444]))                  
+                :type "int")
+                nil [7373 9107])
+            ("__hcq_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9144 9150]))                  
+                :type ("hcq_handle_t" type (:type "class") nil nil))
+                nil [9111 9754])
+            ("hobbes_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9776 9782]))                  
+                :type "void")
+                nil [9757 9949])
+            ("hobbes_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9967 9972]))                  
+                :type "int")
+                nil [9951 11679]))          
+      :file "hobbes_ctrl.c"
+      :pointmax 11685
+      :fsize 11684
+      :lastmodtime '(24277 18337)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "app_launch.h"
+      :fsize 1332
+      :lastmodtime '(24277 18337))
+    (semanticdb-table "semanticdb-table"
+      :file "file_io.h"
+      :fsize 603
+      :lastmodtime '(24277 18337)))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-vmware!lwk_inittask!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

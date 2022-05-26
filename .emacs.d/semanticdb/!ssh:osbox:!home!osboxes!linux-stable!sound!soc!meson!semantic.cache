@@ -1,0 +1,279 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_MESON_AIU_H" variable (:constant-flag t) nil [171 183])
+            ("clk" type
+               (:prototype t
+                :type "struct")
+                nil [185 196])
+            ("clk_bulk_data" type
+               (:prototype t
+                :type "struct")
+                nil [197 218])
+            ("device" type
+               (:prototype t
+                :type "struct")
+                nil [219 233])
+            ("of_phandle_args" type
+               (:prototype t
+                :type "struct")
+                nil [234 257])
+            ("snd_soc_dai" type
+               (:prototype t
+                :type "struct")
+                nil [258 277])
+            ("snd_soc_dai_ops" type
+               (:prototype t
+                :type "struct")
+                nil [278 301])
+            ("aiu_clk_ids" type
+               (:members 
+                  ( ("PCLK" variable
+                       (:constant-flag t
+                        :default-value (330 331)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [323 331])
+                    ("AOCLK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [334 340])
+                    ("MCLK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [342 347])
+                    ("MIXER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [349 356]))                  
+                :type "enum")
+                nil [303 357])
+            ("aiu_interface" type
+               (:members 
+                  ( ("clks" variable
+                       (:pointer 1
+                        :type ("clk_bulk_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [383 410])
+                    ("clk_num" variable (:type "unsigned int") (reparse-symbol classsubparts) [412 433])
+                    ("irq" variable (:type "int") (reparse-symbol classsubparts) [435 443]))                  
+                :type "struct")
+                nil [359 446])
+            ("aiu_platform_data" type
+               (:members 
+                  ( ("has_acodec" variable (:type "bool") (reparse-symbol classsubparts) [476 492])
+                    ("has_clk_ctrl_more_i2s_div" variable (:type "bool") (reparse-symbol classsubparts) [494 525]))                  
+                :type "struct")
+                nil [448 528])
+            ("aiu" type
+               (:members 
+                  ( ("pclk" variable
+                       (:pointer 1
+                        :type ("clk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [544 561])
+                    ("spdif_mclk" variable
+                       (:pointer 1
+                        :type ("clk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [563 586])
+                    ("i2s" variable (:type ("aiu_interface" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [588 613])
+                    ("spdif" variable (:type ("aiu_interface" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [615 642])
+                    ("platform" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("aiu_platform_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [644 685]))                  
+                :type "struct")
+                nil [530 688])
+            ("AIU_FORMATS" variable (:constant-flag t) nil [698 709])
+            ("aiu_of_xlate_dai_name" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("component" variable
+                       (:pointer 1
+                        :type ("snd_soc_component" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [833 869])
+                    ("args" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("of_phandle_args" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [875 910])
+                    ("dai_name" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [916 938])
+                    ("component_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [944 970]))                  
+                :type "int")
+                nil [807 971])
+            ("aiu_hdmi_ctrl_register_component" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1010 1029]))                  
+                :type "int")
+                nil [973 1030])
+            ("aiu_acodec_ctrl_register_component" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1070 1089]))                  
+                :type "int")
+                nil [1031 1090])
+            ("aiu_fifo_i2s_dai_probe" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dai" variable
+                       (:pointer 1
+                        :type ("snd_soc_dai" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1119 1143]))                  
+                :type "int")
+                nil [1092 1144])
+            ("aiu_fifo_spdif_dai_probe" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dai" variable
+                       (:pointer 1
+                        :type ("snd_soc_dai" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1174 1198]))                  
+                :type "int")
+                nil [1145 1199])
+            ("aiu_fifo_i2s_dai_ops" variable
+               (:typemodifiers ("extern")
+                :constant-flag t
+                :type ("snd_soc_dai_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1201 1258])
+            ("aiu_fifo_spdif_dai_ops" variable
+               (:typemodifiers ("extern")
+                :constant-flag t
+                :type ("snd_soc_dai_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1259 1318])
+            ("aiu_encoder_i2s_dai_ops" variable
+               (:typemodifiers ("extern")
+                :constant-flag t
+                :type ("snd_soc_dai_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1319 1379])
+            ("aiu_encoder_spdif_dai_ops" variable
+               (:typemodifiers ("extern")
+                :constant-flag t
+                :type ("snd_soc_dai_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1380 1442])
+            ("AIU_IEC958_BPF" variable (:constant-flag t) nil [1452 1466])
+            ("AIU_958_MISC" variable (:constant-flag t) nil [1483 1495])
+            ("AIU_IEC958_DCU_FF_CTRL" variable (:constant-flag t) nil [1512 1534])
+            ("AIU_958_CHSTAT_L0" variable (:constant-flag t) nil [1550 1567])
+            ("AIU_958_CHSTAT_L1" variable (:constant-flag t) nil [1583 1600])
+            ("AIU_958_CTRL" variable (:constant-flag t) nil [1616 1628])
+            ("AIU_I2S_SOURCE_DESC" variable (:constant-flag t) nil [1645 1664])
+            ("AIU_I2S_DAC_CFG" variable (:constant-flag t) nil [1680 1695])
+            ("AIU_I2S_SYNC" variable (:constant-flag t) nil [1712 1724])
+            ("AIU_I2S_MISC" variable (:constant-flag t) nil [1741 1753])
+            ("AIU_RST_SOFT" variable (:constant-flag t) nil [1770 1782])
+            ("AIU_CLK_CTRL" variable (:constant-flag t) nil [1799 1811])
+            ("AIU_CLK_CTRL_MORE" variable (:constant-flag t) nil [1828 1845])
+            ("AIU_CODEC_DAC_LRCLK_CTRL" variable (:constant-flag t) nil [1861 1885])
+            ("AIU_HDMI_CLK_DATA_CTRL" variable (:constant-flag t) nil [1900 1922])
+            ("AIU_ACODEC_CTRL" variable (:constant-flag t) nil [1938 1953])
+            ("AIU_958_CHSTAT_R0" variable (:constant-flag t) nil [1970 1987])
+            ("AIU_958_CHSTAT_R1" variable (:constant-flag t) nil [2003 2020])
+            ("AIU_MEM_I2S_START" variable (:constant-flag t) nil [2036 2053])
+            ("AIU_MEM_I2S_MASKS" variable (:constant-flag t) nil [2069 2086])
+            ("AIU_MEM_I2S_CONTROL" variable (:constant-flag t) nil [2102 2121])
+            ("AIU_MEM_IEC958_START" variable (:constant-flag t) nil [2137 2157])
+            ("AIU_MEM_IEC958_CONTROL" variable (:constant-flag t) nil [2173 2195])
+            ("AIU_MEM_I2S_BUF_CNTL" variable (:constant-flag t) nil [2211 2231])
+            ("AIU_MEM_IEC958_BUF_CNTL" variable (:constant-flag t) nil [2247 2270]))          
+      :file "aiu.h"
+      :pointmax 2305
+      :fsize 2304
+      :lastmodtime '(24843 18869)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("AIU_I2S_MISC" . ((number "0x048" 1756 . 1761)))
+          ("AIU_FORMATS" . ((semantic-list "(SNDRV_PCM_FMTBIT_S16_LE |	\\
+		     SNDRV_PCM_FMTBIT_S20_LE |	\\
+		     SNDRV_PCM_FMTBIT_S24_LE)" 710 . 805)))
+          ("AIU_IEC958_BPF" . ((number "0x000" 1469 . 1474)))
+          ("AIU_IEC958_DCU_FF_CTRL" . ((number "0x01c" 1536 . 1541)))
+          ("AIU_958_CHSTAT_L0" . ((number "0x020" 1569 . 1574)))
+          ("AIU_958_CHSTAT_L1" . ((number "0x024" 1602 . 1607)))
+          ("AIU_958_CTRL" . ((number "0x028" 1631 . 1636)))
+          ("AIU_I2S_SOURCE_DESC" . ((number "0x034" 1666 . 1671)))
+          ("_MESON_AIU_H")
+          ("AIU_I2S_DAC_CFG" . ((number "0x040" 1698 . 1703)))
+          ("AIU_RST_SOFT" . ((number "0x054" 1785 . 1790)))
+          ("AIU_MEM_I2S_BUF_CNTL" . ((number "0x1d8" 2233 . 2238)))
+          ("AIU_I2S_SYNC" . ((number "0x044" 1727 . 1732)))
+          ("AIU_CLK_CTRL" . ((number "0x058" 1814 . 1819)))
+          ("AIU_CODEC_DAC_LRCLK_CTRL" . ((number "0x0a0" 1886 . 1891)))
+          ("AIU_ACODEC_CTRL" . ((number "0x0b0" 1956 . 1961)))
+          ("AIU_958_CHSTAT_R0" . ((number "0x0c0" 1989 . 1994)))
+          ("AIU_HDMI_CLK_DATA_CTRL" . ((number "0x0a8" 1924 . 1929)))
+          ("AIU_958_CHSTAT_R1" . ((number "0x0c4" 2022 . 2027)))
+          ("AIU_CLK_CTRL_MORE" . ((number "0x064" 1847 . 1852)))
+          ("AIU_MEM_I2S_MASKS" . ((number "0x18c" 2088 . 2093)))
+          ("AIU_MEM_I2S_START" . ((number "0x180" 2055 . 2060)))
+          ("AIU_MEM_IEC958_CONTROL" . ((number "0x1a4" 2197 . 2202)))
+          ("AIU_958_MISC" . ((number "0x010" 1498 . 1503)))
+          ("AIU_MEM_IEC958_START" . ((number "0x194" 2159 . 2164)))
+          ("AIU_MEM_I2S_CONTROL" . ((number "0x190" 2123 . 2128)))
+          ("AIU_MEM_IEC958_BUF_CNTL" . ((number "0x1fc" 2272 . 2277)))
+          )
+))
+  :file "!ssh:osbox:!home!osboxes!linux-stable!sound!soc!meson!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

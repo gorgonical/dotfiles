@@ -1,0 +1,310 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_GNU_SOURCE" variable (:constant-flag t) nil [277 288])
+            ("stdio.h" include (:system-flag t) nil [289 307])
+            ("errno.h" include (:system-flag t) nil [308 326])
+            ("assert.h" include (:system-flag t) nil [327 346])
+            ("unistd.h" include (:system-flag t) nil [347 366])
+            ("poll.h" include (:system-flag t) nil [367 384])
+            ("assert.h" include (:system-flag t) nil [385 404])
+            ("pthread.h" include (:system-flag t) nil [405 425])
+            ("syscall.h" include (:system-flag t) nil [426 446])
+            ("sys/mman.h" include (:system-flag t) nil [447 468])
+            ("sys/types.h" include (:system-flag t) nil [469 491])
+            ("lwk/aspace.h" include (:system-flag t) nil [493 516])
+            ("lwk/pmem.h" include (:system-flag t) nil [517 538])
+            ("lwk/hio.h" include (:system-flag t) nil [539 559])
+            ("hobbes_cmd_queue.h" include (:system-flag t) nil [561 590])
+            ("hobbes_util.h" include (:system-flag t) nil [591 615])
+            ("xemem.h" include (:system-flag t) nil [616 634])
+            ("pet_xml.h" include (:system-flag t) nil [635 655])
+            ("pet_log.h" include (:system-flag t) nil [656 676])
+            ("pet_hashtable.h" include (:system-flag t) nil [677 703])
+            ("libhio.h" include (:system-flag t) nil [705 724])
+            ("libhio_types.h" include (:system-flag t) nil [725 750])
+            ("hio_client_mode_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("HIO_INVALID" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [771 783])
+                          ("HIO_RANK" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [788 797])
+                          ("HIO_APP" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [802 810]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [752 831])
+            ("hio_abort_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [854 876])
+                          ("apid" variable (:type ("xemem_apid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [881 902])
+                          ("fd" variable (:type "int") (reparse-symbol classsubparts) [907 926])
+                          ("mutex" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [932 954])
+                          ("aborted_tid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [959 987]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [833 1002])
+            ("hio_app_state_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("num_ranks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1025 1050])
+                          ("aspace_ids" variable
+                             (:pointer 1
+                              :type ("id_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1055 1081])
+                          ("hcqs" variable
+                             (:pointer 1
+                              :type ("hcq_handle_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1086 1106])
+                          ("abort" variable (:type ("hio_abort_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1111 1132]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1004 1151])
+            ("hio_client_instance_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("mode" variable (:type ("hio_client_mode_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1174 1197])
+                          ("instance" variable (:type ("" type
+                               (:members 
+                                  ( ("client" variable (:type ("" type
+                                         (:members 
+                                            ( ("rank" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1239 1257])
+                                              ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1270 1287]))                                            
+                                          :type "struct")
+                                          nil nil)) (reparse-symbol classsubparts) [1218 1305])
+                                    ("clients" variable
+                                       (:pointer 1
+                                        :type ("hashtable" type
+                                             (:prototype t
+                                              :type "struct")
+                                              nil nil))
+                                        (reparse-symbol classsubparts) [1314 1341]))                                  
+                                :type "union")
+                                nil nil)) (reparse-symbol classsubparts) [1202 1357]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1153 1382])
+            ("state" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .mode             = HIO_INVALID,
+    .instance.clients = NULL,
+}"
+                :type ("hio_client_instance_t" type (:type "class") nil nil))
+                nil [1385 1495])
+            ("hio_status" variable (:type "int") nil [1498 1513])
+            ("client_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1586 1601])
+                    ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1615 1630]))                  
+                :type "int")
+                nil [1562 1661])
+            ("client_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1694 1708]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1663 1742])
+            ("__hcq_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1776 1792]))                  
+                :type ("hcq_handle_t" type (:type "class") nil nil))
+                nil [1745 2426])
+            ("__hcq_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hio_hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2454 2475]))                  
+                :type "void")
+                nil [2428 2551])
+            ("__abort_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("abort" variable
+                       (:pointer 1
+                        :type ("hio_abort_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2577 2597]))                  
+                :type "int")
+                nil [2553 2988])
+            ("__abort_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("abort" variable
+                       (:pointer 1
+                        :type ("hio_abort_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3017 3037]))                  
+                :type "void")
+                nil [2990 3149])
+            ("libhio_client_init" function
+               (:arguments 
+                  ( ("hcq_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3174 3192])
+                    ("rank" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3212 3226]))                  
+                :type "int")
+                nil [3151 3712])
+            ("libhio_client_deinit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3740 3745]))                  
+                :type "void")
+                nil [3714 3926])
+            ("__libhio_client_hcq_cmd_issue" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hio_hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3975 3997])
+                    ("hio_abort" variable
+                       (:pointer 1
+                        :type ("hio_abort_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4028 4052])
+                    ("xml_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4074 4096])
+                    ("aborted" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4127 4149]))                  
+                :type ("hcq_cmd_t" type (:type "class") nil nil))
+                nil [3928 6222])
+            ("__libhio_client_call_rank_stub_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd_code" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6270 6293])
+                    ("rank" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6328 6347])
+                    ("hio_hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6382 6404])
+                    ("hio_abort" variable
+                       (:pointer 1
+                        :type ("hio_abort_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6439 6463])
+                    ("aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6500 6524])
+                    ("hio_xml" variable (:type ("pet_xml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6559 6581])
+                    ("ret_xml" variable
+                       (:pointer 1
+                        :type ("pet_xml_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6616 6638]))                  
+                :type "int")
+                nil [6225 8043])
+            ("__libhio_client_try_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8082 8087]))                  
+                :type "void")
+                nil [8045 8318])
+            ("__libhio_client_map_segment" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8360 8380]))                  
+                :type "int")
+                nil [8321 9081])
+            ("__libhio_client_parse_segments" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ret_xml" variable (:type ("pet_xml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9125 9150])
+                    ("segc" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9182 9204])
+                    ("segs" variable
+                       (:pointer 2
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9236 9258]))                  
+                :type "int")
+                nil [9083 10768])
+            ("__libhio_client_map_segments" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ret_xml" variable (:type ("pet_xml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10810 10828]))                  
+                :type "int")
+                nil [10770 11343])
+            ("libhio_client_call_stub_fn" function
+               (:arguments 
+                  ( ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11377 11393])
+                    ("hio_xml" variable (:type ("pet_xml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11421 11441])
+                    ("hio_ret" variable
+                       (:pointer 1
+                        :type ("hio_ret_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11469 11489]))                  
+                :type "int")
+                nil [11346 12385])
+            ("libhio_client_init_app" function
+               (:arguments 
+                  ( ("hcq_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12414 12435])
+                    ("app_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12459 12478])
+                    ("num_ranks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12502 12524])
+                    ("aspace_ids" variable
+                       (:pointer 1
+                        :type ("id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12548 12571]))                  
+                :type "int")
+                nil [12387 14669])
+            ("libhio_client_deinit_app" function
+               (:arguments 
+                  ( ("app_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14701 14720]))                  
+                :type "void")
+                nil [14671 15478])
+            ("libhio_client_call_app_stub_fn" function
+               (:arguments 
+                  ( ("app_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15515 15539])
+                    ("rank" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15571 15593])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15625 15646])
+                    ("hio_xml" variable (:type ("pet_xml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15678 15703])
+                    ("hio_ret" variable
+                       (:pointer 1
+                        :type ("hio_ret_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15735 15760])
+                    ("segc" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15792 15814])
+                    ("segs" variable
+                       (:pointer 2
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15846 15868]))                  
+                :type "int")
+                nil [15480 16895])
+            ("libhio_client_abort_app_stub_fn" function
+               (:arguments 
+                  ( ("app_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16933 16952])
+                    ("abort_tid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16985 17007]))                  
+                :type "int")
+                nil [16897 17490]))          
+      :file "libhio_client.c"
+      :pointmax 17491
+      :fsize 17490
+      :lastmodtime '(24485 43579)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_GNU_SOURCE")
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!hio!lib!client!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

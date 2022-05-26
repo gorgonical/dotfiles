@@ -1,0 +1,538 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_GNU_SOURCE" variable (:constant-flag t) nil [1795 1806])
+            ("alloca.h" include (:system-flag t) nil [1808 1827])
+            ("assert.h" include (:system-flag t) nil [1828 1847])
+            ("errno.h" include (:system-flag t) nil [1848 1866])
+            ("getopt.h" include (:system-flag t) nil [1867 1886])
+            ("libgen.h" include (:system-flag t) nil [1887 1906])
+            ("inttypes.h" include (:system-flag t) nil [1907 1928])
+            ("stdarg.h" include (:system-flag t) nil [1929 1948])
+            ("stdbool.h" include (:system-flag t) nil [1949 1969])
+            ("string.h" include (:system-flag t) nil [1970 1989])
+            ("sys/stat.h" include (:system-flag t) nil [1990 2011])
+            ("sys/types.h" include (:system-flag t) nil [2012 2034])
+            ("unistd.h" include (:system-flag t) nil [2035 2054])
+            ("rte_config.h" include (:system-flag t) nil [2056 2079])
+            ("rte_cycles.h" include (:system-flag t) nil [2080 2103])
+            ("infiniband/verbs.h" include (:system-flag t) nil [2105 2134])
+            ("rdma/rdma_cma.h" include (:system-flag t) nil [2135 2161])
+            ("verbs.h" include nil nil [2162 2180])
+            ("PACKET_MIN_LEN" variable (:constant-flag t) nil [2190 2204])
+            ("PACKET_MAX_LEN" variable (:constant-flag t) nil [2227 2241])
+            ("MAX_BURST_SIZE" variable (:constant-flag t) nil [2262 2276])
+            ("BASE_UDP_PORT" variable (:constant-flag t) nil [2290 2303])
+            ("options" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.packet_count = 1000000,
+	.packet_size = ETHER_MIN_LEN,
+	.burst_size = 8,
+	.thread_count = 2,
+	.output_file = NULL,
+}"
+                :type ("app_options" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2311 2609])
+            ("app_options" type
+               (:members 
+                  ( ("packet_count" variable (:type "unsigned long long") (reparse-symbol classsubparts) [2340 2372])
+                    ("packet_size" variable (:type "unsigned long") (reparse-symbol classsubparts) [2374 2400])
+                    ("burst_size" variable (:type "unsigned long") (reparse-symbol classsubparts) [2402 2427])
+                    ("thread_count" variable (:type "unsigned int") (reparse-symbol classsubparts) [2429 2455])
+                    ("output_file" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2457 2475]))                  
+                :type "struct")
+                nil [2311 2609])
+            ("stats" type
+               (:members 
+                  ( ("latency" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2627 2644])
+                    ("start_time" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3052 3072])
+                    ("end_time" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3169 3187])
+                    ("elapsed_cycles" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3281 3305])
+                    ("poll_cycles" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3410 3431])
+                    ("max_poll_cycles" variable (:type ("uintmax_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3533 3559])
+                    ("message_count" variable (:type "unsigned long long") (reparse-symbol classsubparts) [3681 3714])
+                    ("recv_count_histo" variable
+                       (:pointer 1
+                        :type ("uintmax_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3802 3830])
+                    ("first_burst_size" variable (:type "unsigned long") (reparse-symbol classsubparts) [3986 4017]))                  
+                :type "struct")
+                nil [2611 4296])
+            ("pending_transfer" type
+               (:members 
+                  ( ("count" variable (:type "int") (reparse-symbol classsubparts) [4325 4335])
+                    ("send_wr" variable (:type ("ibv_send_wr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4448 4475])
+                    ("send_sge" variable (:type ("ibv_sge" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4524 4548])
+                    ("recv_wr" variable (:type ("ibv_recv_wr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4633 4660])
+                    ("recv_sge" variable (:type ("ibv_sge" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4709 4733]))                  
+                :type "struct")
+                nil [4298 4819])
+            ("thread_param" type
+               (:members 
+                  ( ("id" variable (:type "int") (reparse-symbol classsubparts) [4844 4851])
+                    ("cm_id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4907 4932])
+                    ("qp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4999 5017])
+                    ("final_stats" variable
+                       (:pointer 1
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5065 5091])
+                    ("is_client" variable (:type "bool") (reparse-symbol classsubparts) [5213 5228])
+                    ("cq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5266 5284])
+                    ("lock" variable
+                       (:pointer 1
+                        :type ("pthread_mutex_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5341 5363])
+                    ("pending" variable
+                       (:pointer 1
+                        :type ("pending_transfer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5462 5495]))                  
+                :type "struct")
+                nil [4821 5571])
+            ("done_mutex" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_MUTEX_INITIALIZER"
+                :type ("pthread_mutex_t" type (:type "class") nil nil))
+                nil [5573 5635])
+            ("done_cond" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_COND_INITIALIZER"
+                :type ("pthread_cond_t" type (:type "class") nil nil))
+                nil [5636 5695])
+            ("remaining_count" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [5696 5723])
+            ("pr_exit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("code" variable (:type "int") (reparse-symbol arg-sub-list) [5755 5764])
+                    ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5765 5784])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [5785 5789]))                  
+                :type "void")
+                nil [5725 5894])
+            ("qp_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5955 5981])
+                    ("qp_init_attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5982 6020]))                  
+                :type "void")
+                nil [5935 6670])
+            ("print_stats" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fptr" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6710 6721])
+                    ("stats" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6722 6748]))                  
+                :type "int")
+                nil [6687 9255])
+            ("do_master_thread_work" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stats" variable
+                       (:pointer 1
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9308 9328]))                  
+                :type "int")
+                nil [9275 9973])
+            ("wait_cq_bulk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stats" variable
+                       (:pointer 1
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9999 10019])
+                    ("cq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10020 10038])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10039 10057])
+                    ("wc_count" variable (:type "int") (reparse-symbol arg-sub-list) [10060 10073])
+                    ("poll_cycles" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10074 10096]))                  
+                :type "int")
+                nil [9975 10394])
+            ("post_recv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("thread_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10438 10463])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10464 10487]))                  
+                :type "int")
+                nil [10417 10801])
+            ("post_send" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("thread_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10840 10865])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10866 10889]))                  
+                :type "int")
+                nil [10819 11200])
+            ("handle_burst" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("thread_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11242 11267])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11268 11286])
+                    ("wc_count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11289 11311])
+                    ("timestamp_offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11314 11344])
+                    ("stats" variable
+                       (:pointer 1
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11347 11367])
+                    ("roundtrip_count" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11370 11396])
+                    ("remaining_send" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11399 11419])
+                    ("remaining_recv" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11422 11442])
+                    ("pending_active" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11445 11465]))                  
+                :type "int")
+                nil [11218 12700])
+            ("handle_last_server_burst" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type ("thread_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12757 12782])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12783 12801])
+                    ("wc_count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12804 12826])
+                    ("remaining_send" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12829 12849])
+                    ("pending_active" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12852 12872]))                  
+                :type "int")
+                nil [12721 13342])
+            ("handle_last_client_burst" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13412 13430])
+                    ("wc_count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13433 13455])
+                    ("timestamp_offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13458 13488])
+                    ("stats" variable
+                       (:pointer 1
+                        :type ("stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13491 13511])
+                    ("roundtrip_count" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13514 13540])
+                    ("pending_active" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [13543 13563]))                  
+                :type "void")
+                nil [13375 14192])
+            ("pending_transfer_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pending" variable
+                       (:pointer 1
+                        :type ("pending_transfer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14527 14560])
+                    ("sendbuf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14561 14575])
+                    ("recvbuf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14578 14592])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14593 14607])
+                    ("next_recv" variable
+                       (:pointer 1
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14608 14638]))                  
+                :type "void")
+                nil [14493 15324])
+            ("pending_transfer_array_new" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15415 15420]))                  
+                :type ("pending_transfer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15355 16122])
+            ("pending_transfer_array_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pending" variable
+                       (:pointer 1
+                        :type ("pending_transfer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16197 16230]))                  
+                :type "void")
+                nil [16157 16354])
+            ("do_thread_work" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("rawarg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [16419 16432]))                  
+                :type "void")
+                nil [16390 20995])
+            ("longopts" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{ .name = \"packet-count\", .has_arg = required_argument,
+		.flag = NULL, .val = 'c' },
+	{ .name = \"packet-size\", .has_arg = required_argument,
+		.flag = NULL, .val = 's' },
+	{ .name = \"burst-size\", .has_arg = required_argument,
+		.flag = NULL, .val = 'b' },
+	{ .name = \"output\", .has_arg = required_argument,
+		.flag = NULL, .val = 'o' },
+	{ .name = \"thread-count\", .has_arg = required_argument,
+		.flag = NULL, .val = 't' },
+	{ .name = \"help\", .has_arg = no_argument, .flag = NULL, .val = 'h' },
+	{ 0 },
+}"
+                :type ("option" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20997 21540])
+            ("usage" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("status" variable (:type "int") (reparse-symbol arg-sub-list) [21560 21571]))                  
+                :type "void")
+                nil [21542 22084])
+            ("make_parent_dir" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22213 22230]))                  
+                :type "int")
+                nil [22186 22901])
+            ("parse_options" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [22959 22968])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22969 22982]))                  
+                :type "unsigned int")
+                nil [22925 24968])
+            ("init_ep" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ibpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25025 25045])
+                    ("node" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25046 25057])
+                    ("udp_port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25058 25076]))                  
+                :type ("rdma_cm_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [24990 26922])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [27041 27050])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27051 27064]))                  
+                :type "int")
+                nil [27032 29976]))          
+      :file "main.c"
+      :pointmax 29977
+      :fsize 29976
+      :lastmodtime '(24019 40965 514254 87000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_GNU_SOURCE")
+          ("PACKET_MAX_LEN" . ((number "1073741824" 2242 . 2252)))
+          ("BASE_UDP_PORT" . ((number "10000" 2304 . 2309)))
+          ("PACKET_MIN_LEN" . ((symbol "ETHER_MIN_LEN" 2205 . 2218)))
+          ("MAX_BURST_SIZE" . ((number "512" 2277 . 2280)))
+          )
+))
+  :file "!home!nmg!Code!C!urdma!src!verbs_pingpong!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

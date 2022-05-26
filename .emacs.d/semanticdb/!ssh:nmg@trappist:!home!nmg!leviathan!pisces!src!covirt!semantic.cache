@@ -1,0 +1,156 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/kallsyms.h" include (:system-flag t) nil [222 249])
+            ("linux/delay.h" include (:system-flag t) nil [250 274])
+            ("../pisces.h" include nil nil [276 298])
+            ("covirt.h" include nil nil [299 318])
+            ("vmm_paging.h" include nil nil [319 342])
+            ("vmx_ept.h" include nil nil [343 363])
+            ("vmx_hw_info.h" include nil nil [364 388])
+            ("petos.h" include (:system-flag t) nil [389 407])
+            ("ept_mapping" type
+               (:members 
+                  ( ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [431 451])
+                    ("pfn_range" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [453 482])
+                    ("pfn_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [484 501])
+                    ("pfn_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [503 516])
+                    ("node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [518 540]))                  
+                :type "struct")
+                nil [409 543])
+            ("ept_mapping_t" type
+               (:typedef ("ept_mapping" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [545 586])
+            ("create_ept_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [623 629]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [588 826])
+            ("free_ept_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [854 869]))                  
+                :type "void")
+                nil [828 905])
+            ("vmx_ept_map_region" function
+               (:arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [930 964])
+                    ("start_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [984 1020])
+                    ("end_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1040 1074]))                  
+                :type "int")
+                nil [907 1159])
+            ("vmx_ept_map_region_rdonly" function
+               (:arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1191 1225])
+                    ("start_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1252 1288])
+                    ("end_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1315 1349])
+                    ("read_only" variable (:type ("ept_ro_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1376 1411]))                  
+                :type "int")
+                nil [1161 7742])
+            ("vmx_ept_unmap_region" function
+               (:arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7770 7804])
+                    ("start_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7826 7847])
+                    ("end_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7869 7888]))                  
+                :type "void")
+                nil [7744 11168])
+            ("pisces_map_ept" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11189 11221])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11230 11250])
+                    ("pfn" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11259 11282])
+                    ("pfn_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11291 11308])
+                    ("pfn_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11317 11330]))                  
+                :type "int")
+                nil [11170 12826])
+            ("send_shootdown" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12847 12878])
+                    ("msg" variable (:type ("covirt_pisces_msg_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12879 12903]))                  
+                :type "int")
+                nil [12828 13357])
+            ("pisces_unmap_ept" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13380 13412])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13422 13442]))                  
+                :type "int")
+                nil [13359 14747]))          
+      :file "vmx_ept.c"
+      :pointmax 14748
+      :fsize 14747
+      :lastmodtime '(24272 4170)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "covirt.h"
+      :fsize 2554
+      :lastmodtime '(24260 17486))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_paging.h"
+      :fsize 21462
+      :lastmodtime '(24260 9285))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_ept.h"
+      :fsize 4973
+      :lastmodtime '(24260 9285))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_hw_info.h"
+      :fsize 4774
+      :lastmodtime '(24260 9285)))
+  :file "!ssh:nmg@trappist:!home!nmg!leviathan!pisces!src!covirt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

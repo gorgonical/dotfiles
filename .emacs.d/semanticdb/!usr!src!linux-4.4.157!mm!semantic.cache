@@ -1,0 +1,317 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [2069 2075])
+            ("linux/atomic.h" include (:system-flag t) nil [2106 2131])
+            ("linux/list.h" include (:system-flag t) nil [2132 2155])
+            ("linux/mm.h" include (:system-flag t) nil [2156 2177])
+            ("linux/module.h" include (:system-flag t) nil [2178 2203])
+            ("linux/preempt.h" include (:system-flag t) nil [2204 2230])
+            ("linux/slab.h" include (:system-flag t) nil [2231 2254])
+            ("linux/spinlock.h" include (:system-flag t) nil [2255 2282])
+            ("linux/zbud.h" include (:system-flag t) nil [2283 2306])
+            ("linux/zpool.h" include (:system-flag t) nil [2307 2331])
+            ("NCHUNKS_ORDER" variable (:constant-flag t) nil [2885 2898])
+            ("CHUNK_SHIFT" variable (:constant-flag t) nil [2910 2921])
+            ("CHUNK_SIZE" variable (:constant-flag t) nil [2959 2969])
+            ("ZHDR_SIZE_ALIGNED" variable (:constant-flag t) nil [2997 3014])
+            ("NCHUNKS" variable (:constant-flag t) nil [3034 3041])
+            ("zbud_pool" type
+               (:members 
+                  ( ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3885 3901])
+                    ("unbuddied" variable
+                       (:dereference 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3903 3939])
+                    ("buddied" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3941 3966])
+                    ("lru" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3968 3989])
+                    ("pages_nr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3991 4004])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("zbud_ops" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4006 4033]))                  
+                :type "struct")
+                nil [3865 4121])
+            ("zbud_header" type
+               (:members 
+                  ( ("buddy" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4512 4535])
+                    ("lru" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4537 4558])
+                    ("first_chunks" variable (:type "unsigned int") (reparse-symbol classsubparts) [4560 4586])
+                    ("last_chunks" variable (:type "unsigned int") (reparse-symbol classsubparts) [4588 4613])
+                    ("under_reclaim" variable (:type "bool") (reparse-symbol classsubparts) [4615 4634]))                  
+                :type "struct")
+                nil [4490 4637])
+            ("buddy" type
+               (:members 
+                  ( ("FIRST" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [6735 6741])
+                    ("LAST" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [6743 6749]))                  
+                :type "enum")
+                nil [6721 6750])
+            ("size_to_chunks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6844 6856]))                  
+                :type "int")
+                nil [6818 6908])
+            ("for_each_unbuddied_list" variable (:constant-flag t) nil [6918 6941])
+            ("init_zbud_page" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7123 7141]))                  
+                :type ("zbud_header" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7081 7342])
+            ("free_zbud_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("zhdr" variable
+                       (:pointer 1
+                        :type ("zbud_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7426 7451]))                  
+                :type "void")
+                nil [7399 7489])
+            ("encode_handle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("zhdr" variable
+                       (:pointer 1
+                        :type ("zbud_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7668 7693])
+                    ("bud" variable (:type ("buddy" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [7694 7709]))                  
+                :type "unsigned long")
+                nil [7633 8220])
+            ("handle_to_zbud_header" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("handle" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8330 8351]))                  
+                :type ("zbud_header" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8281 8407])
+            ("num_free_chunks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("zhdr" variable
+                       (:pointer 1
+                        :type ("zbud_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8491 8516]))                  
+                :type "int")
+                nil [8464 8722])
+            ("zbud_create_pool" function
+               (:pointer 1
+                :arguments 
+                  ( ("gfp" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9068 9078])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("zbud_ops" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9079 9106]))                  
+                :type ("zbud_pool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9033 9434])
+            ("zbud_destroy_pool" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9628 9651]))                  
+                :type "void")
+                nil [9605 9669])
+            ("zbud_alloc" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10483 10506])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10507 10519])
+                    ("gfp" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10520 10530])
+                    ("handle" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [10534 10556]))                  
+                :type "int")
+                nil [10468 11995])
+            ("zbud_free" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12499 12522])
+                    ("handle" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12523 12544]))                  
+                :type "void")
+                nil [12484 13328])
+            ("list_tail_entry" variable (:constant-flag t) nil [13338 13353])
+            ("zbud_reclaim_page" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15154 15177])
+                    ("retries" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15178 15199]))                  
+                :type "int")
+                nil [15132 16960])
+            ("zbud_map" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17465 17488])
+                    ("handle" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [17489 17510]))                  
+                :type "void")
+                nil [17450 17540])
+            ("zbud_unmap" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17749 17772])
+                    ("handle" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [17773 17794]))                  
+                :type "void")
+                nil [17733 17798])
+            ("zbud_get_pool_size" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("zbud_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18037 18060]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [18014 18088])
+            ("init_zbud" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18118 18123]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [18101 18351])
+            ("exit_zbud" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18382 18387]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [18365 18489])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_zbud" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18503 18513]))                  
+                :type "int")
+                nil [18491 18514])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("exit_zbud" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18527 18537]))                  
+                :type "int")
+                nil [18515 18538])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [18540 18562])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [18563 18621])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [18622 18681]))          
+      :file "zbud.c"
+      :pointmax 18682
+      :fsize 18681
+      :lastmodtime '(23458 46652 0 0)
+      :unmatched-syntax '((string 18641 . 18679) (string 18577 . 18619) (string 18555 . 18560) (VOID 18360 . 18364) (STATIC 18353 . 18359) (INT 18097 . 18100) (STATIC 18090 . 18096))
+      :lexical-table 
+        '(("ZHDR_SIZE_ALIGNED" . ((symbol "CHUNK_SIZE" 3015 . 3025)))
+          ("list_tail_entry" (spp-arg-list ("ptr" "type" "member") 13353 . 13372) . ((symbol "list_entry" 13376 . 13386) (semantic-list "((ptr)->prev, type, member)" 13386 . 13413)))
+          ("CHUNK_SHIFT" . ((semantic-list "(PAGE_SHIFT - NCHUNKS_ORDER)" 2922 . 2950)))
+          ("NCHUNKS" . ((semantic-list "((PAGE_SIZE - ZHDR_SIZE_ALIGNED) >> CHUNK_SHIFT)" 3043 . 3091)))
+          ("CHUNK_SIZE" . ((semantic-list "(1 << CHUNK_SHIFT)" 2970 . 2988)))
+          ("pr_fmt" (spp-arg-list ("fmt") 2075 . 2080) . 
+              ((symbol "KBUILD_MODNAME" 2081 . 2095) (string "\": \"" 2096 . 2100) (symbol "fmt" 2101 . 2104)))
+          ("NCHUNKS_ORDER" . ((number "6" 2899 . 2900)))
+          ("for_each_unbuddied_list" (spp-arg-list ("_iter" "_begin") 6941 . 6956) . ((FOR "for" 6960 . 6963) (semantic-list "((_iter) = (_begin); (_iter) < NCHUNKS; (_iter)++)" 6964 . 7014)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags nil
+      :file "highmem.c"
+      :pointmax 12075
+      :fsize 12074
+      :lastmodtime '(23458 46652 0 0)
+      :unmatched-syntax nil))
+  :file "!usr!src!linux-4.4.157!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

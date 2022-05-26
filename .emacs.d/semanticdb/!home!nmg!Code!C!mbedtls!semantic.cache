@@ -1,0 +1,262 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("inttypes.h" include (:system-flag t) nil [1370 1391])
+            ("secure_storage_ta.h" include (:system-flag t) nil [1392 1422])
+            ("tee_internal_api.h" include (:system-flag t) nil [1423 1452])
+            ("tee_internal_api_extensions.h" include (:system-flag t) nil [1453 1493])
+            ("mbed.h" include nil nil [1495 1512])
+            ("types.h" include nil nil [1514 1532])
+            ("unchunk_cart" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("chunked_cart" variable
+                       (:pointer 1
+                        :type ("chunked_cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1562 1591]))                  
+                :type ("cart_t" type (:type "class") nil nil))
+                nil [1534 1626])
+            ("__decrypt_cart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("out" variable
+                       (:pointer 1
+                        :type ("chunked_cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1663 1683])
+                    ("cart" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [1684 1704]))                  
+                :type "unsigned int")
+                nil [1628 2190])
+            ("information_removal" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("REMOVE_BRAND" variable
+                             (:constant-flag t
+                              :default-value (2726 2727)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2711 2727])
+                          ("REMOVE_TYPE" variable
+                             (:constant-flag t
+                              :default-value (2745 2746)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2730 2746])
+                          ("REMOVE_COST" variable
+                             (:constant-flag t
+                              :default-value (2764 2765)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [2749 2765]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [2695 2788])
+            ("item_details" type
+               (:members 
+                  ( ("barcode" variable (:type "unsigned int") (reparse-symbol classsubparts) [2821 2842])
+                    ("brand_id" variable (:type "unsigned int") (reparse-symbol classsubparts) [2844 2866])
+                    ("type_id" variable (:type "unsigned int") (reparse-symbol classsubparts) [2868 2889])
+                    ("cost_cents" variable (:type "unsigned int") (reparse-symbol classsubparts) [2891 2915]))                  
+                :type "struct")
+                nil [2790 2933])
+            ("item_details_t" type
+               (:typedef ("item_details" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2790 2933])
+            ("detailed_cart" type
+               (:members 
+                  ( ("user_id" variable (:type "unsigned int") (reparse-symbol classsubparts) [2967 2988])
+                    ("total_cost_cents" variable (:type "unsigned int") (reparse-symbol classsubparts) [2990 3020])
+                    ("items" variable
+                       (:dereference 1
+                        :type ("item_details_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3022 3054]))                  
+                :type "struct")
+                nil [2935 3073])
+            ("detailed_cart_t" type
+               (:typedef ("detailed_cart" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2935 3073])
+            ("__anonmyize_cart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cart" variable
+                       (:pointer 1
+                        :type ("detailed_cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3112 3134])
+                    ("security_policy" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3135 3164]))                  
+                :type "unsigned int")
+                nil [3075 3921])
+            ("__translate_one_barcode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("barcode" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3967 3988])
+                    ("details" variable
+                       (:pointer 1
+                        :type ("item_details_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3989 4013]))                  
+                :type "unsigned int")
+                nil [3923 4294])
+            ("__translate_barcodes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("out" variable
+                       (:pointer 1
+                        :type ("detailed_cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4337 4358])
+                    ("cart" variable
+                       (:pointer 1
+                        :type ("cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4359 4372]))                  
+                :type "unsigned int")
+                nil [4296 4637])
+            ("decrypt_cart" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4670 4691])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4692 4712]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [4639 6050])
+            ("delete_object" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6084 6105])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6106 6126]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [6052 7130])
+            ("create_raw_object" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7168 7189])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7190 7210]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [7132 8946])
+            ("load_item_database" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8985 9006])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9007 9027]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [8948 9754])
+            ("read_raw_object" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9790 9811])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9812 9832]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [9756 11901])
+            ("pk" variable (:type ("mbedtls_pk_context" type (:type "class") nil nil)) nil [11903 11925])
+            ("TA_CreateEntryPoint" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11958 11963]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [11927 12203])
+            ("TA_DestroyEntryPoint" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12231 12236]))                  
+                :type "void")
+                nil [12205 12261])
+            ("TA_OpenSessionEntryPoint" function
+               (:arguments 
+                  ( ("__unused" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12299 12328])
+                    ("" variable (:type ("param_types" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12317 12329])
+                    ("__unused" variable (:type ("TEE_Param" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12338 12363])
+                    ("" variable (:type ("params" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12357 12366])
+                    ("__unused" variable (:type "void") (reparse-symbol arg-sub-list) [12376 12391])
+                    ("" variable (:type ("session" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12392 12400]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [12263 12446])
+            ("TA_CloseSessionEntryPoint" function
+               (:arguments 
+                  ( ("__unused" variable (:type "void") (reparse-symbol arg-sub-list) [12479 12494])
+                    ("" variable (:type ("session" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12494 12502]))                  
+                :type "void")
+                nil [12448 12527])
+            ("TA_InvokeCommandEntryPoint" function
+               (:arguments 
+                  ( ("__unused" variable (:type "void") (reparse-symbol arg-sub-list) [12569 12584])
+                    ("" variable (:type ("session" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12584 12592])
+                    ("command" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12603 12620])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12631 12652])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12663 12683]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [12531 13128]))          
+      :file "mbed.c"
+      :pointmax 13129
+      :fsize 13128
+      :lastmodtime '(25175 41311 110243 366000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_MBED_H" variable (:constant-flag t) nil [25 32])
+            ("mbedtls/pk.h" include nil nil [34 57])
+            ("pkey" variable
+               (:pointer 1
+                :default-value "\"-----BEGIN RSA PRIVATE KEY-----\\nMIICXQIBAAKBgQDPz4L1C4elYSwZpT3PrHzIP4x+luvNSCbnDKs/Q6rnfkq1mp97W8GFGLx8ORYPld+Q909Ub8sDyVXBw6cTkriY8OWfov8coGs8jS2RuF+jmW+tEPOvJtdcc5yuRjthJTi+JRS69a+vXAoqO74+nJxJ8HCe+ZGLyzfI6cDbgTkGBwIDAQABAoGBAM2gN6ThU8eA73Iw34iu1IoQ16QrEgh+bIATOR/QhTuq66Hm7gfSMxrP7zG8CuhBFIcNL6INPITyo7inMJtdgumJUNVcx5pKWXN6g1LNILVl0rkMLwDzQ+UADmq9paZx4DuMy/fYB8ehNb2PONXirNJz7xbPF0Xoc1LgPQ0MFSoBAkEA99whshwy6bjvZCqxMWRcJWseIVtJuYwRQR9NPvxHwHqUPlIJu/hCz/QPRNXamMzdKXYTGWVEbkrpqd8/XpxJMQJBANaiquwpP6vBJz8nld3hTyIgWsR8fUsqu2wk6HcrgKKt8OB6SgBNgDf2p6wY8WQ/5evL8+mXgoxC2wDocTYe9LcCQFh6waCWRmp+tR55ywVJwUcuRPQ9ZUUSRjqMFQQuBOMmHvNcT9NFHXyksCqveLhhMXYSi2DecJ46qc0VP8bjXZECQDtXF9hZAyByM26TfCyu6RjvRwkBvgY1F0Ir5hVkcpkHbAwz4xe4VZWjXPIIp1xnCiMp7RKM7+vlY/UZTot+/XsCQQCH0xoIB6+5QdNdicm8GjspueM4ecfG1N1OAFW4sUiQGu5dvGeQHEtxf6o89DsCtE7xe3fthd3oALOdgtROH3vZ\\n-----END RSA PRIVATE KEY-----\""
+                :type "char")
+                nil [59 952])
+            ("item_db_entry" type
+               (:members 
+                  ( ("brand_id" variable (:type "unsigned int") (reparse-symbol classsubparts) [989 1011])
+                    ("type_id" variable (:type "unsigned int") (reparse-symbol classsubparts) [1016 1037])
+                    ("cost_cents" variable (:type "unsigned int") (reparse-symbol classsubparts) [1042 1066]))                  
+                :type "struct")
+                nil [954 1085])
+            ("item_db_entry_t" type
+               (:typedef ("item_db_entry" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [954 1085])
+            ("DATABASE_SIZE" variable (:constant-flag t) nil [1148 1161])
+            ("DATABASE_NUM_ENTRIES" variable (:constant-flag t) nil [1197 1217])
+            ("item_db" type
+               (:members 
+                  ( ("database" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [1384 1415]))                  
+                :type "struct")
+                nil [1355 1428])
+            ("item_db_t" type
+               (:typedef ("item_db" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1355 1428])
+            ("NULL" variable (:type "int") nil [1452 1457]))          
+      :file "mbed.h"
+      :pointmax 1480
+      :fsize 1479
+      :lastmodtime '(25175 41338 38244 944000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DATABASE_SIZE" . ((semantic-list "( 2 * 1024 * 1024 )" 1169 . 1188)))
+          ("_MBED_H")
+          ("DATABASE_NUM_ENTRIES" . ((semantic-list "( DATABASE_SIZE / sizeof(item_db_entry_t) )" 1218 . 1261)))
+          )
+))
+  :file "!home!nmg!Code!C!mbedtls!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

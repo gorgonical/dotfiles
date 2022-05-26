@@ -1,0 +1,1690 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [67 85])
+            ("stdlib.h" include (:system-flag t) nil [86 105])
+            ("fcntl.h" include (:system-flag t) nil [106 124])
+            ("sys/stat.h" include (:system-flag t) nil [125 146])
+            ("sys/types.h" include (:system-flag t) nil [147 169])
+            ("unistd.h" include (:system-flag t) nil [170 189])
+            ("string.h" include (:system-flag t) nil [190 209])
+            ("dirent.h" include (:system-flag t) nil [210 229])
+            ("errno.h" include (:system-flag t) nil [230 248])
+            ("ctype.h" include (:system-flag t) nil [249 267])
+            ("pet_cpu.h" include nil nil [269 289])
+            ("SYS_PATH" variable (:constant-flag t) nil [299 307])
+            ("NUMA_PATH" variable (:constant-flag t) nil [344 353])
+            ("CPUINFO_PATH" variable (:constant-flag t) nil [390 402])
+            ("BUF_SIZE" variable (:constant-flag t) nil [428 436])
+            ("dbg_printf" variable (:constant-flag t) nil [458 468])
+            ("dbg_printf" variable (:constant-flag t) nil [517 527])
+            ("cpu_bitmap" type
+               (:members 
+                  ( ("starting_offset" variable (:type "unsigned int") (reparse-symbol classsubparts) [576 606])
+                    ("num_entries" variable (:type "unsigned int") (reparse-symbol classsubparts) [611 637])
+                    ("bitmap" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [642 666]))                  
+                :type "struct")
+                nil [552 669])
+            ("cpu_filter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [696 722]))                  
+                :type "int")
+                nil [673 849])
+            ("numa_filter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [875 901]))                  
+                :type "int")
+                nil [851 986])
+            ("dir_cmp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir1" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1009 1037])
+                    ("dir2" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1040 1068]))                  
+                :type "int")
+                nil [989 1182])
+            ("pet_cpu_state_to_str" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("cpu_state" variable (:type ("pet_cpu_state_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1222 1248]))                  
+                :type "char")
+                nil [1187 1480])
+            ("pet_is_cpu_removable" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1508 1523]))                  
+                :type "int")
+                nil [1482 1769])
+            ("pet_lock_cpu" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1789 1804]))                  
+                :type "int")
+                nil [1771 2280])
+            ("pet_unlock_cpu" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2302 2317]))                  
+                :type "int")
+                nil [2282 2805])
+            ("pet_is_cpu_locked" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2829 2844]))                  
+                :type "int")
+                nil [2807 3182])
+            ("pet_cpu_status" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3217 3232]))                  
+                :type ("pet_cpu_state_t" type (:type "class") nil nil))
+                nil [3185 4097])
+            ("pet_cpu_to_numa_node" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4134 4149]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [4103 4539])
+            ("set_cpu_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4568 4585])
+                    ("state" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4594 4611]))                  
+                :type "int")
+                nil [4542 5058])
+            ("pet_offline_cpu" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5082 5097]))                  
+                :type "int")
+                nil [5061 5619])
+            ("pet_online_cpu" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5642 5657]))                  
+                :type "int")
+                nil [5622 6057])
+            ("get_cpu_bitmap" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6104 6123]))                  
+                :type ("cpu_bitmap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6061 7891])
+            ("pet_num_cpus" function
+               (:arguments 
+                  ( ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7916 7935]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [7893 8098])
+            ("pet_probe_cpus" function
+               (:arguments 
+                  ( ("num_cpus" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8122 8149])
+                    ("cpu_arr" variable
+                       (:pointer 2
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8159 8185]))                  
+                :type "int")
+                nil [8102 8681])
+            ("pet_offline_cpus" function
+               (:arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8708 8734])
+                    ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8739 8766])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8771 8796]))                  
+                :type "int")
+                nil [8686 9601])
+            ("pet_lock_cpus_on" function
+               (:arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9632 9658])
+                    ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9663 9690])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9695 9720]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [9605 10513])
+            ("pet_online_cpus" function
+               (:arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10537 10563])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10567 10592]))                  
+                :type "int")
+                nil [10516 10766])
+            ("pet_unlock_cpus" function
+               (:arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10791 10817])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10820 10845]))                  
+                :type "int")
+                nil [10770 10986])
+            ("pet_apicid_of_cpu" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11016 11031]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [10989 12126]))          
+      :file "pet_cpu.c"
+      :pointmax 12127
+      :fsize 12126
+      :lastmodtime '(25010 49180)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CPUINFO_PATH" . ((string "\"/proc/cpuinfo\"" 403 . 418)))
+          ("BUF_SIZE" . ((number "128" 438 . 441)))
+          ("dbg_printf" (spp-arg-list ("fmt" "args...") 468 . 482) . ((symbol "printf" 483 . 489) (semantic-list "(fmt, ##args)" 489 . 502)))
+          ("SYS_PATH" . ((string "\"/sys/devices/system/cpu/\"" 309 . 335)))
+          ("NUMA_PATH" . ((string "\"/sys/devices/system/node/\"" 354 . 381)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__PET_CPU_H__" variable (:constant-flag t) nil [99 112])
+            ("pet_apicid_of_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("uint32_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1455 1470]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1428 1471])
+            ("pet_is_cpu_removable" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1411 1426]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1386 1427])
+            ("pet_cpu_status" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("pet_cpu_state_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1369 1384]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1338 1385])
+            ("pet_online_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1321 1336]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1302 1337])
+            ("pet_offline_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1285 1300]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1265 1301])
+            ("pet_cpu_to_numa_node" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("uint32_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1248 1263]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1217 1264])
+            ("pet_is_cpu_locked" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1199 1214]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1177 1215])
+            ("pet_unlock_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1160 1175]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1141 1176])
+            ("pet_lock_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1124 1139]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1107 1140])
+            ("pet_unlock_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1015 1041])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1049 1074]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [995 1075])
+            ("pet_lock_cpus_on" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("uint32_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [896 922])
+                    ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [931 958])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [967 992]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [870 993])
+            ("pet_online_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [809 835])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [842 867]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [789 868])
+            ("pet_offline_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [690 716])
+                    ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [725 752])
+                    ("cpu_arr" variable
+                       (:pointer 1
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [761 786]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [669 787])
+            ("pet_probe_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_cpus" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [605 632])
+                    ("cpu_arr" variable
+                       (:pointer 2
+                        :type ("pet_cpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [639 665]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [586 666])
+            ("pet_num_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("uint32_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [564 583]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [542 584])
+            ("pet_cpu_state_to_str" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "char"
+                :arguments 
+                  ( ("cpu_state" variable (:type ("pet_cpu_state_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [511 537]))                  
+                :constant-flag t
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [477 538])
+            ("pet_cpu" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [361 387])
+                    ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [392 415])
+                    ("apic_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [420 444])
+                    ("state" variable (:type ("pet_cpu_state_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [449 471]))                  )
+                (reparse-symbol extern-c-contents) [340 474])
+            ("pet_cpu_state_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("PET_CPU_INVALID" variable
+                             (:constant-flag t
+                              :default-value (237 239)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [219 239])
+                          ("PET_CPU_OFFLINE" variable
+                             (:constant-flag t
+                              :default-value (265 266)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [246 266])
+                          ("PET_CPU_ONLINE" variable
+                             (:constant-flag t
+                              :default-value (292 293)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [273 293])
+                          ("PET_CPU_RSVD" variable
+                             (:constant-flag t
+                              :default-value (318 319)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [299 319]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [200 338])
+            ("pet_numa.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [177 198])
+            ("stdint.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [156 175]))          
+      :file "pet_cpu.h"
+      :pointmax 1511
+      :fsize 1510
+      :lastmodtime '(24485 43639)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__PET_CPU_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "pet_numa.h"
+      :fsize 337
+      :lastmodtime '(24485 43639))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_PET_LIST_H" variable (:constant-flag t) nil [29 40])
+            ("hlist_for_each_entry_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [16600 16625])
+            ("hlist_for_each_entry_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [16039 16064])
+            ("hlist_for_each_entry_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [15556 15585])
+            ("hlist_for_each_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [15069 15089])
+            ("hlist_for_each_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14685 14704])
+            ("hlist_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14558 14572])
+            ("hlist_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14488 14499])
+            ("hlist_add_after" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14305 14326])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14332 14356]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [14270 14478])
+            ("hlist_add_before" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14128 14149])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14155 14179]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [14092 14268])
+            ("hlist_add_head" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13883 13904])
+                    ("h" variable
+                       (:pointer 1
+                        :type ("hlist_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13905 13926]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13849 14063])
+            ("hlist_del_init" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13752 13773]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13718 13847])
+            ("hlist_del" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13623 13644]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13594 13716])
+            ("__hlist_del" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13442 13463]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13411 13592])
+            ("hlist_empty" function
+               (:type "int"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hlist_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13359 13386]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13329 13409])
+            ("hlist_unhashed" function
+               (:type "int"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13277 13304]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13244 13327])
+            ("hlist_node_init" function
+               (:type "void"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13196 13217]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13161 13242])
+            ("INIT_HLIST_NODE" function
+               (:type "void"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13099 13120]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13064 13159])
+            ("INIT_HLIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [13021 13036])
+            ("HLIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12952 12962])
+            ("HLIST_HEAD_INIT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12910 12925])
+            ("hlist_node" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12864 12897])
+                    ("pprev" variable
+                       (:pointer 2
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12864 12897]))                  )
+                (reparse-symbol extern-c-contents) [12843 12900])
+            ("hlist_head" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("first" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12813 12838]))                  )
+                (reparse-symbol extern-c-contents) [12792 12841])
+            ("list_for_each_entry_safe_reverse" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12306 12338])
+            ("list_for_each_entry_safe_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [11746 11775])
+            ("list_for_each_entry_safe_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [11119 11152])
+            ("list_for_each_entry_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10492 10516])
+            ("list_for_each_entry_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10013 10037])
+            ("list_for_each_entry_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9517 9545])
+            ("list_prepare_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9166 9184])
+            ("list_for_each_entry_reverse" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8671 8698])
+            ("list_for_each_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8208 8227])
+            ("list_for_each_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7876 7894])
+            ("list_for_each_prev" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7505 7523])
+            ("__list_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7256 7271])
+            ("list_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6761 6774])
+            ("list_first_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6529 6545])
+            ("list_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6161 6171])
+            ("list_splice_init" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5803 5826])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5835 5858]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5767 5944])
+            ("list_splice" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5460 5483])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5484 5507]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5429 5564])
+            ("__list_splice" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5058 5081])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5087 5110]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5025 5307])
+            ("list_empty_careful" function
+               (:type "int"
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4904 4933]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4867 5023])
+            ("list_empty" function
+               (:type "int"
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4392 4421]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4363 4453])
+            ("list_move_tail" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4143 4166])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4173 4196]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4109 4279])
+            ("list_move" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3833 3856])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3857 3880]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3804 3958])
+            ("list_del_init" function
+               (:type "void"
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3566 3590]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3533 3657])
+            ("list_del" function
+               (:type "void"
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3286 3310]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3258 3411])
+            ("__list_del" function
+               (:type "void"
+                :arguments 
+                  ( ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2967 2991])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2992 3016]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2937 3060])
+            ("list_add_tail" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2665 2686])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2688 2711]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2632 2751])
+            ("list_add" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2338 2359])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2361 2384]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2310 2424])
+            ("__list_add" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1943 1964])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1975 1998])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2008 2031]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1913 2111])
+            ("list_head_init" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1681 1704]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1647 1731])
+            ("INIT_LIST_HEAD" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1578 1601]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1544 1645])
+            ("LIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1479 1488])
+            ("LIST_HEAD_INIT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1428 1442])
+            ("list_head" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1385 1415])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1385 1415]))                  )
+                (reparse-symbol extern-c-contents) [1365 1418])
+            ("LIST_POISON2" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1323 1335])
+            ("LIST_POISON1" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1279 1291])
+            ("container_of" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [926 938])
+            ("stddef.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [650 669])
+            ("prefetch" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [633 641])
+            ("_GNU_SOURCE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [609 620])
+            ("hlist_for_each_entry_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [16600 16625])
+            ("hlist_for_each_entry_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [16039 16064])
+            ("hlist_for_each_entry_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [15556 15585])
+            ("hlist_for_each_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [15069 15089])
+            ("hlist_for_each_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14685 14704])
+            ("hlist_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14558 14572])
+            ("hlist_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14488 14499])
+            ("hlist_add_after" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14305 14326])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14332 14356]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [14270 14478])
+            ("hlist_add_before" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14128 14149])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14155 14179]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [14092 14268])
+            ("hlist_add_head" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13883 13904])
+                    ("h" variable
+                       (:pointer 1
+                        :type ("hlist_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13905 13926]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13849 14063])
+            ("hlist_del_init" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13752 13773]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13718 13847])
+            ("hlist_del" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13623 13644]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13594 13716])
+            ("__hlist_del" function
+               (:type "void"
+                :arguments 
+                  ( ("n" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13442 13463]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13411 13592])
+            ("hlist_empty" function
+               (:type "int"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hlist_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13359 13386]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13329 13409])
+            ("hlist_unhashed" function
+               (:type "int"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13277 13304]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13244 13327])
+            ("hlist_node_init" function
+               (:type "void"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13196 13217]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13161 13242])
+            ("INIT_HLIST_NODE" function
+               (:type "void"
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13099 13120]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [13064 13159])
+            ("INIT_HLIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [13021 13036])
+            ("HLIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12952 12962])
+            ("HLIST_HEAD_INIT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12910 12925])
+            ("hlist_node" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12864 12897])
+                    ("pprev" variable
+                       (:pointer 2
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12864 12897]))                  )
+                (reparse-symbol extern-c-contents) [12843 12900])
+            ("hlist_head" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("first" variable
+                       (:pointer 1
+                        :type ("hlist_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12813 12838]))                  )
+                (reparse-symbol extern-c-contents) [12792 12841])
+            ("list_for_each_entry_safe_reverse" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [12306 12338])
+            ("list_for_each_entry_safe_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [11746 11775])
+            ("list_for_each_entry_safe_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [11119 11152])
+            ("list_for_each_entry_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10492 10516])
+            ("list_for_each_entry_from" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10013 10037])
+            ("list_for_each_entry_continue" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9517 9545])
+            ("list_prepare_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9166 9184])
+            ("list_for_each_entry_reverse" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8671 8698])
+            ("list_for_each_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8208 8227])
+            ("list_for_each_safe" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7876 7894])
+            ("list_for_each_prev" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7505 7523])
+            ("__list_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7256 7271])
+            ("list_for_each" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6761 6774])
+            ("list_first_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6529 6545])
+            ("list_entry" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6161 6171])
+            ("list_splice_init" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5803 5826])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5835 5858]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5767 5944])
+            ("list_splice" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5460 5483])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5484 5507]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5429 5564])
+            ("__list_splice" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5058 5081])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5087 5110]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [5025 5307])
+            ("list_empty_careful" function
+               (:type "int"
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4904 4933]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4867 5023])
+            ("list_empty" function
+               (:type "int"
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4392 4421]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4363 4453])
+            ("list_move_tail" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4143 4166])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4173 4196]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4109 4279])
+            ("list_move" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3833 3856])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3857 3880]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3804 3958])
+            ("list_del_init" function
+               (:type "void"
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3566 3590]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3533 3657])
+            ("list_del" function
+               (:type "void"
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3286 3310]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [3258 3411])
+            ("__list_del" function
+               (:type "void"
+                :arguments 
+                  ( ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2967 2991])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2992 3016]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2937 3060])
+            ("list_add_tail" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2665 2686])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2688 2711]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2632 2751])
+            ("list_add" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2338 2359])
+                    ("head" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2361 2384]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [2310 2424])
+            ("__list_add" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1943 1964])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1975 1998])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2008 2031]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1913 2111])
+            ("list_head_init" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1681 1704]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1647 1731])
+            ("INIT_LIST_HEAD" function
+               (:type "void"
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1578 1601]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [1544 1645])
+            ("LIST_HEAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1479 1488])
+            ("LIST_HEAD_INIT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1428 1442])
+            ("list_head" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1385 1415])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1385 1415]))                  )
+                (reparse-symbol extern-c-contents) [1365 1418])
+            ("LIST_POISON2" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1323 1335])
+            ("LIST_POISON1" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1279 1291])
+            ("container_of" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [926 938])
+            ("stddef.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [650 669])
+            ("prefetch" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [633 641])
+            ("_GNU_SOURCE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [609 620]))          
+      :file "pet_list.h"
+      :pointmax 16855
+      :fsize 16854
+      :lastmodtime '(24485 43639)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_PET_LIST_H")
+          ("prefetch" (spp-arg-list ("x") 641 . 644) . ((semantic-list "(x)" 645 . 648)))
+          ("LIST_HEAD_INIT" (spp-arg-list ("name") 1442 . 1448) . ((semantic-list "{ &(name), &(name) }" 1449 . 1469)))
+          ("list_for_each_entry_safe_reverse" (spp-arg-list ("pos" "n" "head" "member") 12338 . 12360) . ((FOR "for" 12365 . 12368) (semantic-list "(pos = list_entry((head)->prev, typeof(*pos), member),	\\
+		n = list_entry(pos->member.prev, typeof(*pos), member);	\\
+	     &pos->member != (head); 					\\
+	     pos = n, n = list_entry(n->member.prev, typeof(*n), member))" 12369 . 12589)))
+          ("HLIST_HEAD" (spp-arg-list ("name") 12962 . 12968) . 
+              ((STRUCT "struct" 12969 . 12975) (symbol "hlist_head" 12976 . 12986) (symbol "name" 12987 . 12991) (punctuation "=" 12992 . 12993) (semantic-list "{  .first = NULL }" 12994 . 13012)))
+          ("_GNU_SOURCE")
+          ("list_for_each_prev" (spp-arg-list ("pos" "head") 7523 . 7534) . ((FOR "for" 7538 . 7541) (semantic-list "(pos = (head)->prev; prefetch(pos->prev), pos != (head); \\
+        	pos = pos->prev)" 7542 . 7626)))
+          ("list_prepare_entry" (spp-arg-list ("pos" "head" "member") 9184 . 9203) . ((semantic-list "((pos) ? : list_entry(head, typeof(*pos), member))" 9207 . 9257)))
+          ("list_for_each_entry_safe_from" (spp-arg-list ("pos" "n" "head" "member") 11775 . 11797) . ((FOR "for" 11804 . 11807) (semantic-list "(n = list_entry(pos->member.next, typeof(*pos), member);		\\
+	     &pos->member != (head);						\\
+	     pos = n, n = list_entry(n->member.next, typeof(*n), member))" 11808 . 11971)))
+          ("INIT_HLIST_HEAD" (spp-arg-list ("ptr") 13036 . 13041) . ((semantic-list "((ptr)->first = NULL)" 13042 . 13063)))
+          ("list_for_each_entry_safe" (spp-arg-list ("pos" "n" "head" "member") 10516 . 10538) . ((FOR "for" 10544 . 10547) (semantic-list "(pos = list_entry((head)->next, typeof(*pos), member),	\\
+		n = list_entry(pos->member.next, typeof(*pos), member);	\\
+	     &pos->member != (head); 					\\
+	     pos = n, n = list_entry(n->member.next, typeof(*n), member))" 10548 . 10768)))
+          ("list_for_each_entry_safe_continue" (spp-arg-list ("pos" "n" "head" "member") 11152 . 11174) . ((FOR "for" 11180 . 11183) (semantic-list "(pos = list_entry(pos->member.next, typeof(*pos), member), 		\\
+		n = list_entry(pos->member.next, typeof(*pos), member);		\\
+	     &pos->member != (head);						\\
+	     pos = n, n = list_entry(n->member.next, typeof(*n), member))" 11184 . 11411)))
+          ("hlist_for_each_entry_safe" (spp-arg-list ("tpos" "pos" "n" "head" "member") 16625 . 16653) . ((FOR "for" 16660 . 16663) (semantic-list "(pos = (head)->first;					 \\
+	     pos && ({ n = pos->next; 1; }) && 				 \\
+		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \\
+	     pos = n)" 16664 . 16815)))
+          ("LIST_POISON1" . ((semantic-list "((void *) 0x00100100)" 1293 . 1314)))
+          ("LIST_HEAD" (spp-arg-list ("name") 1488 . 1494) . 
+              ((STRUCT "struct" 1498 . 1504) (symbol "list_head" 1505 . 1514) (symbol "name" 1515 . 1519) (punctuation "=" 1520 . 1521) (symbol "LIST_HEAD_INIT" 1522 . 1536) (semantic-list "(name)" 1536 . 1542)))
+          ("list_for_each_safe" (spp-arg-list ("pos" "n" "head") 7894 . 7908) . ((FOR "for" 7912 . 7915) (semantic-list "(pos = (head)->next, n = pos->next; pos != (head); \\
+		pos = n, n = pos->next)" 7916 . 7994)))
+          ("hlist_for_each_safe" (spp-arg-list ("pos" "n" "head") 14704 . 14718) . ((FOR "for" 14722 . 14725) (semantic-list "(pos = (head)->first; pos && ({ n = pos->next; 1; }); \\
+	     pos = n)" 14726 . 14796)))
+          ("LIST_POISON2" . ((semantic-list "((void *) 0x00200200)" 1337 . 1358)))
+          ("list_first_entry" (spp-arg-list ("ptr" "type" "member") 6545 . 6564) . ((symbol "list_entry" 6575 . 6585) (semantic-list "((ptr)->next, type, member)" 6585 . 6612)))
+          ("__list_for_each" (spp-arg-list ("pos" "head") 7271 . 7282) . ((FOR "for" 7286 . 7289) (semantic-list "(pos = (head)->next; pos != (head); pos = pos->next)" 7290 . 7342)))
+          ("list_for_each_entry" (spp-arg-list ("pos" "head" "member") 8227 . 8246) . ((FOR "for" 8253 . 8256) (semantic-list "(pos = list_entry((head)->next, typeof(*pos), member);	\\
+	     prefetch(pos->member.next), &pos->member != (head); 	\\
+	     pos = list_entry(pos->member.next, typeof(*pos), member))" 8257 . 8438)))
+          ("hlist_for_each_entry" (spp-arg-list ("tpos" "pos" "head" "member") 15089 . 15114) . ((FOR "for" 15121 . 15124) (semantic-list "(pos = (head)->first;					 \\
+	     pos && ({ prefetch(pos->next); 1;}) &&			 \\
+		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \\
+	     pos = pos->next)" 15125 . 15287)))
+          ("container_of" (spp-arg-list ("ptr" "type" "member") 938 . 957) . ((semantic-list "({			\\
+	const typeof( ((type *)0)->member ) *__mptr = (ptr);	\\
+	(type *)( (char *)__mptr - offsetof(type,member) );})" 958 . 1075)))
+          ("list_for_each_entry_from" (spp-arg-list ("pos" "head" "member") 10037 . 10056) . ((FOR "for" 10063 . 10066) (semantic-list "(; prefetch(pos->member.next), &pos->member != (head);	\\
+	     pos = list_entry(pos->member.next, typeof(*pos), member))" 10067 . 10187)))
+          ("HLIST_HEAD_INIT" . ((semantic-list "{ .first = NULL }" 12926 . 12943)))
+          ("hlist_for_each_entry_from" (spp-arg-list ("tpos" "pos" "member") 16064 . 16083) . ((FOR "for" 16090 . 16093) (semantic-list "(; pos && ({ prefetch(pos->next); 1;}) &&			 \\
+		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \\
+	     pos = pos->next)" 16094 . 16224)))
+          ("list_entry" (spp-arg-list ("ptr" "type" "member") 6171 . 6190) . ((symbol "container_of" 6194 . 6206) (semantic-list "(ptr, type, member)" 6206 . 6225)))
+          ("list_for_each" (spp-arg-list ("pos" "head") 6774 . 6785) . ((FOR "for" 6789 . 6792) (semantic-list "(pos = (head)->next; prefetch(pos->next), pos != (head); \\
+        	pos = pos->next)" 6793 . 6877)))
+          ("list_for_each_entry_reverse" (spp-arg-list ("pos" "head" "member") 8698 . 8717) . ((FOR "for" 8723 . 8726) (semantic-list "(pos = list_entry((head)->prev, typeof(*pos), member);	\\
+	     prefetch(pos->member.prev), &pos->member != (head); 	\\
+	     pos = list_entry(pos->member.prev, typeof(*pos), member))" 8727 . 8908)))
+          ("list_for_each_entry_continue" (spp-arg-list ("pos" "head" "member") 9545 . 9564) . ((FOR "for" 9570 . 9573) (semantic-list "(pos = list_entry(pos->member.next, typeof(*pos), member);	\\
+	     prefetch(pos->member.next), &pos->member != (head);	\\
+	     pos = list_entry(pos->member.next, typeof(*pos), member))" 9574 . 9758)))
+          ("hlist_entry" (spp-arg-list ("ptr" "type" "member") 14499 . 14518) . ((symbol "container_of" 14519 . 14531) (semantic-list "(ptr,type,member)" 14531 . 14548)))
+          ("hlist_for_each" (spp-arg-list ("pos" "head") 14572 . 14583) . ((FOR "for" 14587 . 14590) (semantic-list "(pos = (head)->first; pos && ({ prefetch(pos->next); 1; }); \\
+	     pos = pos->next)" 14591 . 14675)))
+          ("hlist_for_each_entry_continue" (spp-arg-list ("tpos" "pos" "member") 15585 . 15604) . ((FOR "for" 15610 . 15613) (semantic-list "(pos = (pos)->next;						 \\
+	     pos && ({ prefetch(pos->next); 1;}) &&			 \\
+		({ tpos = hlist_entry(pos, typeof(*tpos), member); 1;}); \\
+	     pos = pos->next)" 15614 . 15775)))
+          )
+))
+  :file "!ssh:trappist:!home!nmg!lev-native!petlib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

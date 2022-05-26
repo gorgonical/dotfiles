@@ -1,0 +1,1122 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [222 240])
+            ("stdlib.h" include (:system-flag t) nil [241 260])
+            ("stdint.h" include (:system-flag t) nil [261 280])
+            ("pthread.h" include (:system-flag t) nil [281 301])
+            ("signal.h" include (:system-flag t) nil [302 321])
+            ("sys/types.h" include (:system-flag t) nil [322 344])
+            ("unistd.h" include (:system-flag t) nil [345 364])
+            ("readline/readline.h" include (:system-flag t) nil [366 396])
+            ("readline/history.h" include (:system-flag t) nil [397 426])
+            ("sbk_util.h" include (:system-flag t) nil [428 449])
+            ("sbk_log.h" include (:system-flag t) nil [450 470])
+            ("sbk_file.h" include (:system-flag t) nil [471 492])
+            ("sbk_sgx.h" include (:system-flag t) nil [493 513])
+            ("sbk_pk_key.h" include (:system-flag t) nil [514 537])
+            ("user_data.h" include nil nil [539 561])
+            ("enclave_api.h" include nil nil [562 586])
+            ("sbk_sockets.h" include nil nil [587 611])
+            ("config.h" include nil nil [612 631])
+            ("sgx_urts.h" include (:system-flag t) nil [633 654])
+            ("sgx_quote.h" include (:system-flag t) nil [655 677])
+            ("ENCLAVE_FILENAME" variable (:constant-flag t) nil [688 704])
+            ("ENCLAVE_STATE_FILE" variable (:constant-flag t) nil [747 765])
+            ("enclave_thread" variable (:type ("pthread_t" type (:type "class") nil nil)) nil [785 817])
+            ("enclave_is_running" variable
+               (:default-value "0"
+                :type "int")
+                nil [818 859])
+            ("enclave_id" variable
+               (:default-value "0"
+                :type ("sgx_enclave_id_t" type (:type "class") nil nil))
+                nil [861 896])
+            ("seabrook_spid" variable
+               (:default-value "{0x31, 0xC1, 0xBA, 0xF1, 0x1F, 0x76, 0xEB, 0xA2, 0x43, 0x5E, 0x6A, 0x72, 0xCE, 0x30, 0xB2, 0x2F}"
+                :type ("sgx_spid_t" type (:type "class") nil nil))
+                nil [897 1027])
+            ("__enclave_thread_fn" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1065 1076]))                  
+                :type "void")
+                nil [1031 1417])
+            ("start_enclave" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1420 1654])
+            ("stop_enclave" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1657 2022])
+            ("help_cmd_fn" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2048 2063]))                  
+                :type "int")
+                nil [2025 2064])
+            ("get_key_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2095 2110]))                  
+                :type "int")
+                nil [2069 2854])
+            ("authorize_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2884 2899]))                  
+                :type "int")
+                nil [2856 3636])
+            ("register_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3665 3680]))                  
+                :type "int")
+                nil [3638 4428])
+            ("quit_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4453 4468]))                  
+                :type "int")
+                nil [4430 4516])
+            ("share_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4542 4557]))                  
+                :type "int")
+                nil [4518 5550])
+            ("test_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5575 5590]))                  
+                :type "int")
+                nil [5552 5637])
+            ("seabrook_cmd" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [5666 5684])
+                    ("handler" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("arg_str" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [5704 5719]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [5689 5720])
+                    ("desc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [5725 5743]))                  
+                :type "struct")
+                nil [5639 5746])
+            ("cmds" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    {\"help\"      , help_cmd_fn      , \"help                   - List commands\"                     },
+    {\"get_key\"   , get_key_cmd_fn   , \"get_key                - Get User's Public Key\"             },
+    {\"register\"  , register_cmd_fn  , \"register <token>       - Register Enclave\"                  },
+    {\"authorize\" , authorize_cmd_fn , \"authorize <uuid>       - Authorize a secondary enclave\"     },
+    {\"quit\"      , quit_cmd_fn      , \"quit                   - Quit Seabrook\"                     },
+    {\"test\"      , test_cmd_fn      , \"test                   - Test handler\"                      },
+    {\"share\"     , share_cmd_fn     , \"share <user> <gallery> - Share gallery UUID with user UUID\" },
+    {0, 0, 0}
+}"
+                :type ("seabrook_cmd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5748 6516])
+            ("help_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6546 6561]))                  
+                :type "int")
+                nil [6523 6745])
+            ("handle_commands" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [6747 7214])
+            ("abort_handler_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [7246 7257]))                  
+                :type "void")
+                nil [7217 7358])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7370 7379])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7380 7393]))                  
+                :type "int")
+                nil [7361 11079]))          
+      :file "seabrook.c"
+      :pointmax 11081
+      :fsize 11099
+      :lastmodtime '(23726 24469)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ENCLAVE_FILENAME" . ((string "\"./enclave/seabrook_enclave.so\"" 707 . 738)))
+          ("ENCLAVE_STATE_FILE" . ((string "\"enclave.state\"" 766 . 781)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "user_data.h"
+      :fsize 1016
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "enclave_api.h"
+      :fsize 1331
+      :lastmodtime '(23718 56718))
+    (semanticdb-table "semanticdb-table"
+      :file "sbk_sockets.h"
+      :fsize 1486
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "config.h"
+      :fsize 353
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("seabrook_u.h" include nil nil [1 24])
+            ("errno.h" include (:system-flag t) nil [25 43])
+            ("ms_enclave_first_run_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [92 106])
+                    ("ms_user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [108 134])
+                    ("ms_user_pub_key_pem_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [136 167]))                  
+                :type "struct")
+                nil [45 199])
+            ("ms_enclave_first_run_ecall_t" type
+               (:typedef ("ms_enclave_first_run_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [45 199])
+            ("ms_enclave_get_report_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [249 263])
+                    ("ms_qe_tgt_info" variable
+                       (:pointer 1
+                        :type ("sgx_target_info_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [265 299])
+                    ("ms_report" variable
+                       (:pointer 1
+                        :type ("sgx_report_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [301 325]))                  
+                :type "struct")
+                nil [201 358])
+            ("ms_enclave_get_report_ecall_t" type
+               (:typedef ("ms_enclave_get_report_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [201 358])
+            ("ms_enclave_init_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [402 416])
+                    ("ms_user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [418 444])
+                    ("ms_user_pub_key_pem_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [446 477])
+                    ("ms_port_num" variable (:type "short int") (reparse-symbol classsubparts) [479 501]))                  
+                :type "struct")
+                nil [360 528])
+            ("ms_enclave_init_ecall_t" type
+               (:typedef ("ms_enclave_init_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [360 528])
+            ("ms_enclave_run_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [571 585]))                  
+                :type "struct")
+                nil [530 611])
+            ("ms_enclave_run_ecall_t" type
+               (:typedef ("ms_enclave_run_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [530 611])
+            ("ms_enclave_deinit_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [657 671]))                  
+                :type "struct")
+                nil [613 700])
+            ("ms_enclave_deinit_ecall_t" type
+               (:typedef ("ms_enclave_deinit_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [613 700])
+            ("ms_enclave_register_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [748 762])
+                    ("ms_token" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [764 790]))                  
+                :type "struct")
+                nil [702 821])
+            ("ms_enclave_register_ecall_t" type
+               (:typedef ("ms_enclave_register_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [702 821])
+            ("ms_enclave_authorize_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [870 884])
+                    ("ms_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [886 911]))                  
+                :type "struct")
+                nil [823 943])
+            ("ms_enclave_authorize_ecall_t" type
+               (:typedef ("ms_enclave_authorize_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [823 943])
+            ("ms_enclave_share_gallery_ecall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [996 1010])
+                    ("ms_user_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1012 1042])
+                    ("ms_gallery_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1044 1077]))                  
+                :type "struct")
+                nil [945 1113])
+            ("ms_enclave_share_gallery_ecall_t" type
+               (:typedef ("ms_enclave_share_gallery_ecall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [945 1113])
+            ("ms_ecall_tcp_accept_connection_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [1166 1180])
+                    ("ms_serv_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1182 1212])
+                    ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1214 1244])
+                    ("ms_address" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1246 1263])
+                    ("ms_address_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1265 1287]))                  
+                :type "struct")
+                nil [1115 1323])
+            ("ms_ecall_tcp_accept_connection_t" type
+               (:typedef ("ms_ecall_tcp_accept_connection_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1115 1323])
+            ("ms_ecall_close_connection_t" type
+               (:members 
+                  ( ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1371 1401]))                  
+                :type "struct")
+                nil [1325 1432])
+            ("ms_ecall_close_connection_t" type
+               (:typedef ("ms_ecall_close_connection_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1325 1432])
+            ("ms_ecall_handle_connection_data_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [1486 1500])
+                    ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1502 1532])
+                    ("ms_buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1534 1550])
+                    ("ms_buf_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1552 1570]))                  
+                :type "struct")
+                nil [1434 1607])
+            ("ms_ecall_handle_connection_data_t" type
+               (:typedef ("ms_ecall_handle_connection_data_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1434 1607])
+            ("ms_ocall_log_str_t" type
+               (:members 
+                  ( ("ms_str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1646 1665]))                  
+                :type "struct")
+                nil [1609 1687])
+            ("ms_ocall_log_str_t" type
+               (:typedef ("ms_ocall_log_str_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1609 1687])
+            ("ms_ocall_print_str_t" type
+               (:members 
+                  ( ("ms_str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1728 1747]))                  
+                :type "struct")
+                nil [1689 1771])
+            ("ms_ocall_print_str_t" type
+               (:typedef ("ms_ocall_print_str_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1689 1771])
+            ("ms_ocall_poll_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "double") (reparse-symbol classsubparts) [1807 1824])
+                    ("ms_timeout_ms" variable (:type "int") (reparse-symbol classsubparts) [1826 1844]))                  
+                :type "struct")
+                nil [1773 1863])
+            ("ms_ocall_poll_t" type
+               (:typedef ("ms_ocall_poll_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1773 1863])
+            ("ms_ocall_listen_tcp_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [1905 1919])
+                    ("ms_address" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1921 1938])
+                    ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1940 1970]))                  
+                :type "struct")
+                nil [1865 1995])
+            ("ms_ocall_listen_tcp_t" type
+               (:typedef ("ms_ocall_listen_tcp_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1865 1995])
+            ("ms_ocall_connect_tcp_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2038 2052])
+                    ("ms_address" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2054 2071])
+                    ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2073 2103]))                  
+                :type "struct")
+                nil [1997 2129])
+            ("ms_ocall_connect_tcp_t" type
+               (:typedef ("ms_ocall_connect_tcp_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1997 2129])
+            ("ms_ocall_send_data_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2170 2184])
+                    ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2186 2216])
+                    ("ms_buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2218 2234])
+                    ("ms_buf_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2236 2254]))                  
+                :type "struct")
+                nil [2131 2278])
+            ("ms_ocall_send_data_t" type
+               (:typedef ("ms_ocall_send_data_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2131 2278])
+            ("ms_ocall_close_conn_t" type
+               (:members 
+                  ( ("ms_conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2320 2350]))                  
+                :type "struct")
+                nil [2280 2375])
+            ("ms_ocall_close_conn_t" type
+               (:typedef ("ms_ocall_close_conn_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2280 2375])
+            ("ms_ocall_update_quote_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2419 2433]))                  
+                :type "struct")
+                nil [2377 2460])
+            ("ms_ocall_update_quote_t" type
+               (:typedef ("ms_ocall_update_quote_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2377 2460])
+            ("ms_ocall_store_user_data_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2507 2521])
+                    ("ms_filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2523 2541])
+                    ("ms_buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2543 2559])
+                    ("ms_buf_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2561 2579]))                  
+                :type "struct")
+                nil [2462 2609])
+            ("ms_ocall_store_user_data_t" type
+               (:typedef ("ms_ocall_store_user_data_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2462 2609])
+            ("ms_ocall_load_user_data_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2655 2669])
+                    ("ms_filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2671 2689])
+                    ("ms_buf" variable
+                       (:pointer 2
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2691 2708])
+                    ("ms_buf_len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2710 2729]))                  
+                :type "struct")
+                nil [2611 2758])
+            ("ms_ocall_load_user_data_t" type
+               (:typedef ("ms_ocall_load_user_data_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2611 2758])
+            ("ms_ocall_release_user_data_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [2807 2821])
+                    ("ms_buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2823 2839]))                  
+                :type "struct")
+                nil [2760 2871])
+            ("ms_ocall_release_user_data_t" type
+               (:typedef ("ms_ocall_release_user_data_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2760 2871])
+            ("ms_create_session_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type ("sgx_status_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2917 2940])
+                    ("ms_sid" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2942 2959])
+                    ("ms_dh_msg1" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2961 2981])
+                    ("ms_dh_msg1_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2983 3008])
+                    ("ms_timeout" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3010 3030]))                  
+                :type "struct")
+                nil [2873 3059])
+            ("ms_create_session_ocall_t" type
+               (:typedef ("ms_create_session_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2873 3059])
+            ("ms_exchange_report_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type ("sgx_status_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3106 3129])
+                    ("ms_sid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3131 3147])
+                    ("ms_dh_msg2" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3149 3169])
+                    ("ms_dh_msg2_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3171 3196])
+                    ("ms_dh_msg3" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3198 3218])
+                    ("ms_dh_msg3_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3220 3245])
+                    ("ms_timeout" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3247 3267]))                  
+                :type "struct")
+                nil [3061 3297])
+            ("ms_exchange_report_ocall_t" type
+               (:typedef ("ms_exchange_report_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3061 3297])
+            ("ms_close_session_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type ("sgx_status_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3342 3365])
+                    ("ms_sid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3367 3383])
+                    ("ms_timeout" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3385 3405]))                  
+                :type "struct")
+                nil [3299 3433])
+            ("ms_close_session_ocall_t" type
+               (:typedef ("ms_close_session_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3299 3433])
+            ("ms_invoke_service_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type ("sgx_status_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3479 3502])
+                    ("ms_pse_message_req" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3504 3532])
+                    ("ms_pse_message_req_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3534 3567])
+                    ("ms_pse_message_resp" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3569 3598])
+                    ("ms_pse_message_resp_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3600 3634])
+                    ("ms_timeout" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3636 3656]))                  
+                :type "struct")
+                nil [3435 3685])
+            ("ms_invoke_service_ocall_t" type
+               (:typedef ("ms_invoke_service_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3435 3685])
+            ("ms_sgx_oc_cpuidex_t" type
+               (:members 
+                  ( ("ms_cpuinfo" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [3725 3741])
+                    ("ms_leaf" variable (:type "int") (reparse-symbol classsubparts) [3743 3755])
+                    ("ms_subleaf" variable (:type "int") (reparse-symbol classsubparts) [3757 3772]))                  
+                :type "struct")
+                nil [3687 3795])
+            ("ms_sgx_oc_cpuidex_t" type
+               (:typedef ("ms_sgx_oc_cpuidex_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3687 3795])
+            ("ms_sgx_thread_wait_untrusted_event_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [3858 3872])
+                    ("ms_self" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3874 3894]))                  
+                :type "struct")
+                nil [3797 3940])
+            ("ms_sgx_thread_wait_untrusted_event_ocall_t" type
+               (:typedef ("ms_sgx_thread_wait_untrusted_event_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3797 3940])
+            ("ms_sgx_thread_set_untrusted_event_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [4002 4016])
+                    ("ms_waiter" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4018 4040]))                  
+                :type "struct")
+                nil [3942 4085])
+            ("ms_sgx_thread_set_untrusted_event_ocall_t" type
+               (:typedef ("ms_sgx_thread_set_untrusted_event_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3942 4085])
+            ("ms_sgx_thread_setwait_untrusted_events_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [4152 4166])
+                    ("ms_waiter" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4168 4190])
+                    ("ms_self" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4192 4212]))                  
+                :type "struct")
+                nil [4087 4262])
+            ("ms_sgx_thread_setwait_untrusted_events_ocall_t" type
+               (:typedef ("ms_sgx_thread_setwait_untrusted_events_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [4087 4262])
+            ("ms_sgx_thread_set_multiple_untrusted_events_ocall_t" type
+               (:members 
+                  ( ("ms_retval" variable (:type "int") (reparse-symbol classsubparts) [4334 4348])
+                    ("ms_waiters" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4350 4374])
+                    ("ms_total" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4376 4392]))                  
+                :type "struct")
+                nil [4264 4447])
+            ("ms_sgx_thread_set_multiple_untrusted_events_ocall_t" type
+               (:typedef ("ms_sgx_thread_set_multiple_untrusted_events_ocall_t" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [4264 4447])
+            ("seabrook_ocall_log_str" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4502 4512]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [4469 4628])
+            ("seabrook_ocall_print_str" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4685 4695]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [4650 4817])
+            ("seabrook_ocall_poll" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4869 4879]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [4839 5009])
+            ("seabrook_ocall_listen_tcp" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5067 5077]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [5031 5240])
+            ("seabrook_ocall_connect_tcp" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5299 5309]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [5262 5475])
+            ("seabrook_ocall_send_data" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5532 5542]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [5497 5714])
+            ("seabrook_ocall_close_conn" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5772 5782]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [5736 5913])
+            ("seabrook_ocall_update_quote" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5973 5983]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [5935 6120])
+            ("seabrook_ocall_store_user_data" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6183 6193]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [6142 6382])
+            ("seabrook_ocall_load_user_data" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6444 6454]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [6404 6640])
+            ("seabrook_ocall_release_user_data" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6705 6715]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [6662 6877])
+            ("seabrook_create_session_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6939 6949]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [6899 7155])
+            ("seabrook_exchange_report_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7218 7228]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [7177 7474])
+            ("seabrook_close_session_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7535 7545]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [7496 7711])
+            ("seabrook_invoke_service_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7773 7783]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [7733 8048])
+            ("seabrook_sgx_oc_cpuidex" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8104 8114]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [8070 8266])
+            ("seabrook_sgx_thread_wait_untrusted_event_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8345 8355]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [8288 8560])
+            ("seabrook_sgx_thread_set_untrusted_event_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8638 8648]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [8582 8852])
+            ("seabrook_sgx_thread_setwait_untrusted_events_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8935 8945]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [8874 9177])
+            ("seabrook_sgx_thread_set_multiple_untrusted_events_ocall" function
+               (:arguments 
+                  ( ("pms" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9265 9275]))                  
+                :type ("SGX_CDECL" type (:type "class") nil nil))
+                nil [9199 9524])
+            ("ocall_table_seabrook" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	20,
+	{
+		(void*)seabrook_ocall_log_str,
+		(void*)seabrook_ocall_print_str,
+		(void*)seabrook_ocall_poll,
+		(void*)seabrook_ocall_listen_tcp,
+		(void*)seabrook_ocall_connect_tcp,
+		(void*)seabrook_ocall_send_data,
+		(void*)seabrook_ocall_close_conn,
+		(void*)seabrook_ocall_update_quote,
+		(void*)seabrook_ocall_store_user_data,
+		(void*)seabrook_ocall_load_user_data,
+		(void*)seabrook_ocall_release_user_data,
+		(void*)seabrook_create_session_ocall,
+		(void*)seabrook_exchange_report_ocall,
+		(void*)seabrook_close_session_ocall,
+		(void*)seabrook_invoke_service_ocall,
+		(void*)seabrook_sgx_oc_cpuidex,
+		(void*)seabrook_sgx_thread_wait_untrusted_event_ocall,
+		(void*)seabrook_sgx_thread_set_untrusted_event_ocall,
+		(void*)seabrook_sgx_thread_setwait_untrusted_events_ocall,
+		(void*)seabrook_sgx_thread_set_multiple_untrusted_events_ocall,
+	}
+}"
+                :type ("" type
+                     (:members 
+                        ( ("nr_ocall" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9549 9565])
+                          ("table" variable
+                             (:pointer 1
+                              :dereference 1
+                              :type "void")
+                              (reparse-symbol classsubparts) [9567 9584]))                        
+                      :type "struct")
+                      nil nil))
+                nil [9526 10463])
+            ("enclave_first_run_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10501 10522])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [10523 10535])
+                    ("user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10536 10559]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [10464 10881])
+            ("enclave_get_report_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10921 10942])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [10943 10955])
+                    ("qe_tgt_info" variable
+                       (:pointer 1
+                        :type ("sgx_target_info_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10956 10987])
+                    ("report" variable
+                       (:pointer 1
+                        :type ("sgx_report_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10988 11009]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [10883 11263])
+            ("enclave_init_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11297 11318])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11319 11331])
+                    ("user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11332 11355])
+                    ("port_num" variable (:type "short int") (reparse-symbol arg-sub-list) [11356 11375]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [11265 11720])
+            ("enclave_run_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11753 11774])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [11775 11787]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [11722 11976])
+            ("enclave_deinit_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12012 12033])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12034 12046]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [11978 12238])
+            ("enclave_register_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12276 12297])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12298 12310])
+                    ("token" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12311 12334]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [12240 12550])
+            ("enclave_authorize_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12589 12610])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12611 12623])
+                    ("uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12624 12646]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [12552 12861])
+            ("enclave_share_gallery_ecall" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12904 12925])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12926 12938])
+                    ("user_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12939 12966])
+                    ("gallery_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12967 12997]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [12863 13262])
+            ("ecall_tcp_accept_connection" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13305 13326])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [13327 13339])
+                    ("serv_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13340 13367])
+                    ("conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13368 13395])
+                    ("address" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13396 13410]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [13264 13751])
+            ("ecall_close_connection" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13789 13810])
+                    ("conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13811 13838]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [13753 14000])
+            ("ecall_handle_connection_data" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14044 14065])
+                    ("retval" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [14066 14078])
+                    ("conn_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14079 14106])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14107 14120])
+                    ("buf_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14121 14136]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [14002 14411])
+            ("ecall_stop_enclave" function
+               (:arguments 
+                  ( ("eid" variable (:type ("sgx_enclave_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14445 14466]))                  
+                :type ("sgx_status_t" type (:type "class") nil nil))
+                nil [14413 14567]))          
+      :file "seabrook_u.c"
+      :pointmax 14569
+      :fsize 14568
+      :lastmodtime '(23727 29113)
+      :unmatched-syntax '((symbol 9186 . 9198) (STATIC 9179 . 9185) (symbol 8861 . 8873) (STATIC 8854 . 8860) (symbol 8569 . 8581) (STATIC 8562 . 8568) (symbol 8275 . 8287) (STATIC 8268 . 8274) (symbol 8057 . 8069) (STATIC 8050 . 8056) (symbol 7720 . 7732) (STATIC 7713 . 7719) (symbol 7483 . 7495) (STATIC 7476 . 7482) (symbol 7164 . 7176) (STATIC 7157 . 7163) (symbol 6886 . 6898) (STATIC 6879 . 6885) (symbol 6649 . 6661) (STATIC 6642 . 6648) (symbol 6391 . 6403) (STATIC 6384 . 6390) (symbol 6129 . 6141) (STATIC 6122 . 6128) (symbol 5922 . 5934) (STATIC 5915 . 5921) (symbol 5723 . 5735) (STATIC 5716 . 5722) (symbol 5484 . 5496) (STATIC 5477 . 5483) (symbol 5249 . 5261) (STATIC 5242 . 5248) (symbol 5018 . 5030) (STATIC 5011 . 5017) (symbol 4826 . 4838) (STATIC 4819 . 4825) (symbol 4637 . 4649) (STATIC 4630 . 4636) (symbol 4456 . 4468) (STATIC 4449 . 4455)))
+    (semanticdb-table "semanticdb-table"
+      :file "seabrook_u.h"
+      :fsize 5552
+      :lastmodtime '(23727 29113)))
+  :file "!ssh:nmg@sgx:!home!nmg!seabrook!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

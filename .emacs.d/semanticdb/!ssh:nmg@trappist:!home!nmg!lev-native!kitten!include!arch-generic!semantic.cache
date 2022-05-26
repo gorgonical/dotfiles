@@ -1,0 +1,197 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_ASM_GENERIC_PGTABLE_H" variable (:constant-flag t) nil [40 62])
+            ("ptep_establish" variable (:constant-flag t) nil [448 462])
+            ("ptep_set_access_flags" variable (:constant-flag t) nil [1165 1186])
+            ("ptep_test_and_clear_young" variable (:constant-flag t) nil [1431 1456])
+            ("ptep_clear_flush_young" variable (:constant-flag t) nil [1774 1796])
+            ("ptep_test_and_clear_dirty" variable (:constant-flag t) nil [2072 2097])
+            ("ptep_clear_flush_dirty" variable (:constant-flag t) nil [2415 2437])
+            ("ptep_get_and_clear" variable (:constant-flag t) nil [2706 2724])
+            ("ptep_get_and_clear_full" variable (:constant-flag t) nil [2926 2949])
+            ("pte_clear_full" variable (:constant-flag t) nil [3153 3167])
+            ("ptep_clear_flush" variable (:constant-flag t) nil [3332 3348])
+            ("mm_struct" type
+               (:prototype t
+                :type "struct")
+                nil [3587 3604])
+            ("ptep_set_wrprotect" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("mm" variable
+                       (:pointer 1
+                        :type ("mm_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3643 3664])
+                    ("address" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3665 3687])
+                    ("ptep" variable
+                       (:pointer 1
+                        :type ("pte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3688 3700]))                  
+                :type "void")
+                nil [3605 3784])
+            ("pte_same" variable (:constant-flag t) nil [3830 3838])
+            ("page_test_and_clear_dirty" variable (:constant-flag t) nil [3933 3958])
+            ("pte_maybe_dirty" variable (:constant-flag t) nil [3977 3992])
+            ("page_test_and_clear_young" variable (:constant-flag t) nil [4116 4141])
+            ("pgd_offset_gate" variable (:constant-flag t) nil [4204 4219])
+            ("lazy_mmu_prot_update" variable (:constant-flag t) nil [4308 4328])
+            ("move_pte" variable (:constant-flag t) nil [4396 4404])
+            ("pgd_addr_end" variable (:constant-flag t) nil [4675 4687])
+            ("pud_addr_end" variable (:constant-flag t) nil [4860 4872])
+            ("pmd_addr_end" variable (:constant-flag t) nil [5048 5060])
+            ("pgd_clear_bad" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("pgd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5479 5487]))                  
+                :type "void")
+                nil [5460 5488])
+            ("pud_clear_bad" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("pud_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5508 5516]))                  
+                :type "void")
+                nil [5489 5517])
+            ("pmd_clear_bad" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5537 5545]))                  
+                :type "void")
+                nil [5518 5546])
+            ("pgd_none_or_clear_bad" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pgd" variable
+                       (:pointer 1
+                        :type ("pgd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5588 5599]))                  
+                :type "int")
+                nil [5548 5716])
+            ("pud_none_or_clear_bad" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pud" variable
+                       (:pointer 1
+                        :type ("pud_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5758 5769]))                  
+                :type "int")
+                nil [5718 5886])
+            ("pmd_none_or_clear_bad" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pmd" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5928 5939]))                  
+                :type "int")
+                nil [5888 6056]))          
+      :file "pgtable.h"
+      :pointmax 6121
+      :fsize 6120
+      :lastmodtime '(24280 275)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ptep_test_and_clear_young" (spp-arg-list ("__vma" "__address" "__ptep") 1456 . 1482) . ((semantic-list "({									\\
+	pte_t __pte = *(__ptep);					\\
+	int r = 1;							\\
+	if (!pte_young(__pte))						\\
+		r = 0;							\\
+	else								\\
+		set_pte_at((__vma)->vm_mm, (__address),			\\
+			   (__ptep), pte_mkold(__pte));			\\
+	r;								\\
+})" 1486 . 1714)))
+          ("pgd_offset_gate" (spp-arg-list ("mm" "addr") 4219 . 4229) . ((symbol "pgd_offset" 4230 . 4240) (semantic-list "(mm, addr)" 4240 . 4250)))
+          ("move_pte" (spp-arg-list ("pte" "prot" "old_addr" "new_addr") 4404 . 4435) . ((semantic-list "(pte)" 4436 . 4441)))
+          ("pmd_addr_end" (spp-arg-list ("addr" "end") 5060 . 5071) . ((semantic-list "({	unsigned long __boundary = ((addr) + PMD_SIZE) & PMD_MASK;	\\
+	(__boundary - 1 < (end) - 1)? __boundary: (end);		\\
+})" 5079 . 5198)))
+          ("ptep_clear_flush_young" (spp-arg-list ("__vma" "__address" "__ptep") 1796 . 1822) . ((semantic-list "({									\\
+	int __young;							\\
+	__young = ptep_test_and_clear_young(__vma, __address, __ptep);	\\
+	if (__young)							\\
+		flush_tlb_page(__vma, __address);			\\
+	__young;							\\
+})" 1826 . 2009)))
+          ("page_test_and_clear_young" (spp-arg-list ("page") 4141 . 4147) . ((semantic-list "(0)" 4148 . 4151)))
+          ("ptep_get_and_clear" (spp-arg-list ("__mm" "__address" "__ptep") 2724 . 2749) . ((semantic-list "({									\\
+	pte_t __pte = *(__ptep);					\\
+	pte_clear((__mm), (__address), (__ptep));			\\
+	__pte;								\\
+})" 2754 . 2865)))
+          ("ptep_test_and_clear_dirty" (spp-arg-list ("__vma" "__address" "__ptep") 2097 . 2123) . ((semantic-list "({									\\
+	pte_t __pte = *__ptep;						\\
+	int r = 1;							\\
+	if (!pte_dirty(__pte))						\\
+		r = 0;							\\
+	else								\\
+		set_pte_at((__vma)->vm_mm, (__address), (__ptep),	\\
+			   pte_mkclean(__pte));				\\
+	r;								\\
+})" 2127 . 2355)))
+          ("lazy_mmu_prot_update" (spp-arg-list ("pte") 4328 . 4333) . 
+              ((DO "do" 4334 . 4336) (semantic-list "{ }" 4337 . 4340) (WHILE "while" 4341 . 4346) (semantic-list "(0)" 4347 . 4350)))
+          ("ptep_establish" (spp-arg-list ("__vma" "__address" "__ptep" "__entry") 462 . 497) . 
+              ((DO "do" 501 . 503) (semantic-list "{				  					\\
+	set_pte_at((__vma)->vm_mm, (__address), __ptep, __entry);	\\
+	flush_tlb_page(__vma, __address);				\\
+}" 504 . 620) (WHILE "while" 621 . 626) (semantic-list "(0)" 627 . 630)))
+          ("ptep_clear_flush_dirty" (spp-arg-list ("__vma" "__address" "__ptep") 2437 . 2463) . ((semantic-list "({									\\
+	int __dirty;							\\
+	__dirty = ptep_test_and_clear_dirty(__vma, __address, __ptep);	\\
+	if (__dirty)							\\
+		flush_tlb_page(__vma, __address);			\\
+	__dirty;							\\
+})" 2467 . 2650)))
+          ("pte_same" (spp-arg-list ("A" "B") 3838 . 3843) . ((semantic-list "(pte_val(A) == pte_val(B))" 3844 . 3870)))
+          ("page_test_and_clear_dirty" (spp-arg-list ("page") 3958 . 3964) . ((semantic-list "(0)" 3965 . 3968)))
+          ("pte_maybe_dirty" (spp-arg-list ("pte") 3992 . 3997) . ((symbol "pte_dirty" 3999 . 4008) (semantic-list "(pte)" 4008 . 4013)))
+          ("_ASM_GENERIC_PGTABLE_H")
+          ("pte_clear_full" (spp-arg-list ("__mm" "__address" "__ptep" "__full") 3167 . 3200) . 
+              ((DO "do" 3205 . 3207) (semantic-list "{									\\
+	pte_clear((__mm), (__address), (__ptep));			\\
+}" 3208 . 3268) (WHILE "while" 3269 . 3274) (semantic-list "(0)" 3275 . 3278)))
+          ("pgd_addr_end" (spp-arg-list ("addr" "end") 4687 . 4698) . ((semantic-list "({	unsigned long __boundary = ((addr) + PGDIR_SIZE) & PGDIR_MASK;	\\
+	(__boundary - 1 < (end) - 1)? __boundary: (end);		\\
+})" 4706 . 4829)))
+          ("ptep_get_and_clear_full" (spp-arg-list ("__mm" "__address" "__ptep" "__full") 2949 . 2982) . ((semantic-list "({									\\
+	pte_t __pte;							\\
+	__pte = ptep_get_and_clear((__mm), (__address), (__ptep));	\\
+	__pte;								\\
+})" 2985 . 3101)))
+          ("ptep_set_access_flags" (spp-arg-list ("__vma" "__address" "__ptep" "__entry" "__dirty") 1186 . 1230) . 
+              ((DO "do" 1233 . 1235) (semantic-list "{				  					  \\
+	set_pte_at((__vma)->vm_mm, (__address), __ptep, __entry);	  \\
+	flush_tlb_page(__vma, __address);				  \\
+}" 1236 . 1358) (WHILE "while" 1359 . 1364) (semantic-list "(0)" 1365 . 1368)))
+          ("ptep_clear_flush" (spp-arg-list ("__vma" "__address" "__ptep") 3348 . 3374) . ((semantic-list "({									\\
+	pte_t __pte;							\\
+	__pte = ptep_get_and_clear((__vma)->vm_mm, __address, __ptep);	\\
+	flush_tlb_page(__vma, __address);				\\
+	__pte;								\\
+})" 3379 . 3539)))
+          ("pud_addr_end" (spp-arg-list ("addr" "end") 4872 . 4883) . ((semantic-list "({	unsigned long __boundary = ((addr) + PUD_SIZE) & PUD_MASK;	\\
+	(__boundary - 1 < (end) - 1)? __boundary: (end);		\\
+})" 4891 . 5010)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!include!arch-generic!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

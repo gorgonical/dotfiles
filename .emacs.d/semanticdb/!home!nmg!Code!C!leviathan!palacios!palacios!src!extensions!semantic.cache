@@ -1,0 +1,1161 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [746 771])
+            ("palacios/vm.h" include (:system-flag t) nil [772 796])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [797 830])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [831 867])
+            ("palacios/vmm_multitree.h" include (:system-flag t) nil [869 904])
+            ("interfaces/inspector.h" include (:system-flag t) nil [905 938])
+            ("v3_inspector_state" type
+               (:members 
+                  ( ("state_tree" variable (:type ("v3_mtree" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1075 1102]))                  
+                :type "struct")
+                nil [1043 1106])
+            ("init_inspector" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1135 1158])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1159 1179])
+                    ("priv_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1180 1198]))                  
+                :type "int")
+                nil [1109 1565])
+            ("init_inspector_core" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1599 1626])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1627 1644])
+                    ("core_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1645 1663]))                  
+                :type "int")
+                nil [1568 3389])
+            ("inspector_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name = \"inspector\",
+    .init = init_inspector,
+    .deinit = NULL,
+    .core_init = init_inspector_core,
+    .core_deinit = NULL,
+    .on_entry = NULL,
+    .on_exit = NULL
+}"
+                :type ("v3_extension_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3395 3626])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("inspector_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3649 3664]))                  
+                :type "int")
+                nil [3629 3665])
+            ("v3_inspect_add_subtree" function
+               (:pointer 1
+                :arguments 
+                  ( ("root" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3711 3736])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3737 3749]))                  
+                :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                nil [3668 3801])
+            ("v3_inspect_8" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3820 3845])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3846 3858])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3859 3873]))                  
+                :type "int")
+                nil [3803 3938])
+            ("v3_inspect_16" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3959 3984])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3985 3997])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3998 4013]))                  
+                :type "int")
+                nil [3941 4079])
+            ("v3_inspect_32" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4099 4124])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4125 4137])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4138 4153]))                  
+                :type "int")
+                nil [4081 4219])
+            ("v3_inspect_64" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4239 4264])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4265 4277])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4278 4293]))                  
+                :type "int")
+                nil [4221 4358])
+            ("v3_inspect_addr" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4380 4405])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4406 4418])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("addr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4419 4432]))                  
+                :type "int")
+                nil [4360 4510])
+            ("v3_inspect_buf" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4531 4556])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4557 4569])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4576 4590])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4591 4605]))                  
+                :type "int")
+                nil [4512 4674])
+            ("v3_find_inspection_value" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4707 4732])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4733 4745])
+                    ("value" variable
+                       (:pointer 1
+                        :type ("v3_inspection_value" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4753 4788]))                  
+                :type "int")
+                nil [4678 4962])
+            ("v3_inspection_value" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5011 5036]))                  
+                :type ("v3_inspection_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4964 5273])
+            ("v3_get_inspection_root" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5320 5343]))                  
+                :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                nil [5277 5528])
+            ("v3_get_inspection_subtree" function
+               (:pointer 1
+                :arguments 
+                  ( ("root" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5576 5601])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5602 5614]))                  
+                :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                nil [5530 5664])
+            ("v3_inspection_node_next" function
+               (:pointer 1
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5711 5736]))                  
+                :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                nil [5667 5777])
+            ("v3_inspection_first_child" function
+               (:pointer 1
+                :arguments 
+                  ( ("root" variable
+                       (:pointer 1
+                        :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5825 5850]))                  
+                :type ("v3_inspect_node_t" type (:type "class") nil nil))
+                nil [5779 5893]))          
+      :file "ext_inspector.c"
+      :pointmax 5898
+      :fsize 5897
+      :lastmodtime '(23987 30350 522933 466000)
+      :unmatched-syntax '((punctuation 3648 . 3649)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vm.h" include (:system-flag t) nil [1048 1072])
+            ("palacios/vmm.h" include (:system-flag t) nil [1073 1098])
+            ("palacios/vmm_cpuid.h" include (:system-flag t) nil [1099 1130])
+            ("palacios/vmm_excp.h" include (:system-flag t) nil [1131 1161])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [1162 1198])
+            ("palacios/vmm_lowlevel.h" include (:system-flag t) nil [1199 1233])
+            ("palacios/vmm_msr.h" include (:system-flag t) nil [1234 1263])
+            ("palacios/vmm_string.h" include (:system-flag t) nil [1264 1296])
+            ("PrintDebug" variable (:constant-flag t) nil [1363 1373])
+            ("MCHECK" variable (:constant-flag t) nil [1404 1410])
+            ("CPUID_0000_0001" variable (:constant-flag t) nil [1429 1444])
+            ("CPUID_8000_0001" variable (:constant-flag t) nil [1464 1479])
+            ("CPUID_FIELDS" variable (:constant-flag t) nil [1557 1569])
+            ("MC_REG_BANKS" variable (:constant-flag t) nil [1658 1670])
+            ("MCE_INTERRUPT" variable (:constant-flag t) nil [1681 1694])
+            ("MSG_PRE" variable (:constant-flag t) nil [1707 1714])
+            ("MCG_CAP" variable (:constant-flag t) nil [1735 1742])
+            ("MCG_STAT" variable (:constant-flag t) nil [1759 1767])
+            ("MCG_CTRL" variable (:constant-flag t) nil [1783 1791])
+            ("amd_mci_bases" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{0x0400, 0x0404, 0x0408, 0x040c, 0x0410, 0x0414}"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2472 2561])
+            ("pentium_6_mci_bases" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{0x0400, 0x0404, 0x0408, 0x040c, 0x0410, 0x0414}"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2562 2657])
+            ("pentium_m_mci_bases" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{0x0400, 0x0404, 0x0408, 0x0410, 0x040c, 0x0414}"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2658 2753])
+            ("ia32_mci_bases" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{ 0x0400, 0x0404, 0x0408, 0x040c,
+                       0x0410, 0x0414, 0x0418, 0x041c,
+                       0x0420, 0x0424, 0x0428, 0x042c,
+                       0x0430, 0x0434, 0x0438, 0x043c,
+                       0x0440, 0x0444, 0x0448, 0x044c,
+                       0x0450, 0x0454 }"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2754 3089])
+            ("MCi_MASK" variable (:constant-flag t) nil [3098 3106])
+            ("MCi_CTRL" variable (:constant-flag t) nil [3127 3135])
+            ("MCi_STAT" variable (:constant-flag t) nil [3150 3158])
+            ("MCi_ADDR" variable (:constant-flag t) nil [3173 3181])
+            ("MCi_MISC" variable (:constant-flag t) nil [3196 3204])
+            ("mc4_stat_msr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3328 3343])
+                            ("" type
+                               (:members 
+                                  ( ("syndrome" variable
+                                       (:suffix ":8"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3369 3400])
+                                    ("reserved" variable
+                                       (:suffix ":3"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3409 3440])
+                                    ("error_code_ext" variable
+                                       (:suffix ":5"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3449 3480])
+                                    ("error_code" variable
+                                       (:suffix ":16"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3489 3521])
+                                    ("err_cpu" variable
+                                       (:suffix ":4"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3530 3561])
+                                    ("ltd_link" variable
+                                       (:suffix ":4"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3570 3601])
+                                    ("scrub" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3610 3641])
+                                    ("sublink" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3650 3681])
+                                    ("mca_stat_sub_cache" variable
+                                       (:suffix ":2"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3690 3721])
+                                    ("reserved_01" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3730 3761])
+                                    ("uecc" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3770 3801])
+                                    ("cecc" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3810 3841])
+                                    ("syndrome2" variable
+                                       (:suffix ":8"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3850 3881])
+                                    ("reserved_02" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3890 3921])
+                                    ("err_cpu_val" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3930 3961])
+                                    ("pcc" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3970 4001])
+                                    ("addr_v" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4010 4041])
+                                    ("misc_v" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4050 4081])
+                                    ("en" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4090 4121])
+                                    ("uc" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4130 4161])
+                                    ("over" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4170 4201])
+                                    ("val" variable
+                                       (:suffix ":1"
+                                        :type ("uint_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4210 4241]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3352 4275]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3312 4306]))                  
+                :type "struct")
+                nil [3285 4333])
+            ("mc4_addr_msr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4448 4463])
+                            ("" type
+                               (:members 
+                                  ( ("addr32" variable
+                                       (:suffix ":36"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4490 4514])
+                                    ("reserved" variable
+                                       (:suffix ":28"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4523 4547]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [4473 4582])
+                            ("addr64" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4588 4604]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [4432 4635]))                  
+                :type "struct")
+                nil [4406 4662])
+            ("mcg_cap_msr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4769 4784])
+                            ("" type
+                               (:members 
+                                  ( ("count" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4814 4844])
+                                    ("mcg_ctl_p" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4857 4887])
+                                    ("reserved" variable
+                                       (:suffix ":55"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4917 4948]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [4793 4983]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [4753 5014]))                  
+                :type "struct")
+                nil [4728 5041])
+            ("mcg_stat_msr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5144 5159])
+                            ("" type
+                               (:members 
+                                  ( ("ripv" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5189 5219])
+                                    ("eipv" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5232 5262])
+                                    ("mcip" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5275 5305])
+                                    ("reserved" variable
+                                       (:suffix ":61"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5348 5379]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [5168 5414]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [5128 5445]))                  
+                :type "struct")
+                nil [5102 5472])
+            ("mcg_ctl_msr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5575 5590])
+                            ("" type
+                               (:members 
+                                  ( ("dce" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5620 5646])
+                                    ("ice" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5694 5720])
+                                    ("bue" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5775 5801])
+                                    ("lse" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5847 5873])
+                                    ("nbe" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5921 5947])
+                                    ("fre" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5996 6022])
+                                    ("unused" variable
+                                       (:suffix ":58"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [6086 6113]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [5599 6148]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [5559 6179]))                  
+                :type "struct")
+                nil [5534 6206])
+            ("mci_bank" type
+               (:members 
+                  ( ("base" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6318 6332])
+                    ("ctl" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6337 6355])
+                    ("stat" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6360 6379])
+                    ("addr" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6384 6403])
+                    ("misc" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6408 6427]))                  
+                :type "struct")
+                nil [6296 6430])
+            ("mcheck_state" type
+               (:members 
+                  ( ("mcg_cap" variable (:type ("mcg_cap_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6458 6485])
+                    ("mcg_stat" variable (:type ("mcg_stat_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6490 6519])
+                    ("mcg_ctl" variable (:type ("mcg_ctl_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [6524 6551])
+                    ("mci_regs" variable
+                       (:dereference 1
+                        :type ("mci_bank" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [6692 6731]))                  
+                :type "struct")
+                nil [6432 6734])
+            ("init_state" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("mcheck_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6767 6801]))                  
+                :type "void")
+                nil [6737 7039])
+            ("mcg_write_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7115 7142])
+                    ("msr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7143 7156])
+                    ("src" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7157 7175])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7176 7193]))                  
+                :type "int")
+                nil [7086 7926])
+            ("mcg_read_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8001 8028])
+                    ("msr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8029 8042])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("v3_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8043 8063])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8064 8081]))                  
+                :type "int")
+                nil [7973 8702])
+            ("get_mci_reg" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("mcheck_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8741 8769])
+                    ("msr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8770 8783]))                  
+                :type ("mci_bank" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8704 8967])
+            ("mci_read_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9042 9075])
+                    ("msr" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9097 9116])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("v3_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9138 9164])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9186 9209]))                  
+                :type "int")
+                nil [9014 10178])
+            ("mci_write_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10254 10287])
+                    ("msr" variable
+                       (:constant-flag t
+                        :type ("uint_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10302 10319])
+                    ("src" variable
+                       (:constant-flag t
+                        :type ("v3_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10334 10358])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10373 10396]))                  
+                :type "int")
+                nil [10225 11461])
+            ("add_cpuid_fields" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11641 11670])
+                    ("state" variable
+                       (:pointer 1
+                        :type ("mcheck_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11679 11713]))                  
+                :type "int")
+                nil [11606 12499])
+            ("deinit_mcheck" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12527 12550])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12551 12568]))                  
+                :type "int")
+                nil [12502 12844])
+            ("init_mcheck" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12869 12892])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12893 12913])
+                    ("priv_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12914 12932]))                  
+                :type "int")
+                nil [12846 14321])
+            ("v3_mcheck_inject_nb_mce" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14351 14380])
+                    ("cpu" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14381 14400])
+                    ("stat" variable
+                       (:constant-flag t
+                        :type ("mc4_stat_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14417 14448])
+                    ("addr" variable
+                       (:constant-flag t
+                        :type ("mc4_addr_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14465 14496]))                  
+                :type "int")
+                nil [14323 15541])
+            ("v3_mcheck_inject_scrubber_mce" function
+               (:arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15577 15601])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [15602 15610])
+                    ("dst" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15611 15624]))                  
+                :type "int")
+                nil [15543 15945])
+            ("mcheck_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name = MCHECK,
+    .init = init_mcheck,
+    .deinit = deinit_mcheck,
+    .core_init = NULL,
+    .core_deinit = NULL,
+    .on_entry = NULL,
+    .on_exit = NULL
+}"
+                :type ("v3_extension_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15947 16161])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mcheck_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16183 16195]))                  
+                :type "int")
+                nil [16163 16196]))          
+      :file "ext_mcheck.c"
+      :pointmax 16197
+      :fsize 16196
+      :lastmodtime '(23987 30350 523933 466000)
+      :unmatched-syntax '((punctuation 16182 . 16183))
+      :lexical-table 
+        '(("MCG_STAT" . ((number "0x017A" 1768 . 1774)))
+          ("MCG_CTRL" . ((number "0x017B" 1793 . 1799)))
+          ("CPUID_FIELDS" . ((number "0x00004080" 1570 . 1580)))
+          ("PrintDebug" (spp-arg-list ("fmt" "args...") 1373 . 1387))
+          ("MCHECK" . ((string "\"MCHECK\"" 1411 . 1419)))
+          ("MCE_INTERRUPT" . ((number "18" 1695 . 1697)))
+          ("MCi_MISC" . ((number "0x03" 3206 . 3210)))
+          ("CPUID_8000_0001" . ((number "0x80000001" 1480 . 1490)))
+          ("MCi_MASK" . ((number "0xfffffffc" 3108 . 3118)))
+          ("MCG_CAP" . ((number "0x0179" 1744 . 1750)))
+          ("MCi_STAT" . ((number "0x01" 3160 . 3164)))
+          ("MCi_CTRL" . ((number "0x00" 3137 . 3141)))
+          ("MCi_ADDR" . ((number "0x02" 3183 . 3187)))
+          ("MSG_PRE" . ((symbol "MCHECK" 1715 . 1721) (string "\": \"" 1721 . 1725)))
+          ("CPUID_0000_0001" . ((number "0x00000001" 1445 . 1455)))
+          ("MC_REG_BANKS" . ((number "6" 1671 . 1672)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [758 783])
+            ("palacios/vmm_time.h" include (:system-flag t) nil [784 814])
+            ("palacios/vm.h" include (:system-flag t) nil [815 839])
+            ("TSC_MSR" variable (:constant-flag t) nil [944 951])
+            ("TSC_AUX_MSR" variable (:constant-flag t) nil [969 980])
+            ("v3_handle_rdtscp" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1014 1040]))                  
+                :type "int")
+                nil [993 1041])
+            ("v3_handle_rdtsc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1062 1088]))                  
+                :type "int")
+                nil [1042 1089])
+            ("vtsc_state" type
+               (:members 
+                  ( ("tsc_aux" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1117 1139]))                  
+                :type "struct")
+                nil [1092 1176])
+            ("rdtsc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1515 1542]))                  
+                :type "int")
+                nil [1498 1706])
+            ("v3_handle_rdtsc" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1728 1755]))                  
+                :type "int")
+                nil [1708 1915])
+            ("v3_rdtscp" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1931 1958]))                  
+                :type "int")
+                nil [1917 2406])
+            ("v3_handle_rdtscp" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2430 2457]))                  
+                :type "int")
+                nil [2409 2714])
+            ("tsc_aux_msr_read_hook" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2752 2778])
+                    ("msr_num" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2779 2794])
+                    ("msr_val" variable
+                       (:pointer 1
+                        :type ("v3_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2801 2824])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2825 2836]))                  
+                :type "int")
+                nil [2719 3035])
+            ("tsc_aux_msr_write_hook" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3072 3098])
+                    ("msr_num" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3099 3114])
+                    ("msr_val" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3125 3147])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3148 3159]))                  
+                :type "int")
+                nil [3038 3356])
+            ("tsc_msr_read_hook" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3388 3414])
+                    ("msr_num" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3415 3430])
+                    ("msr_val" variable
+                       (:pointer 1
+                        :type ("v3_msr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3439 3462])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3463 3474]))                  
+                :type "int")
+                nil [3359 3660])
+            ("tsc_msr_write_hook" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3693 3719])
+                    ("msr_num" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3720 3735])
+                    ("msr_val" variable (:type ("v3_msr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3744 3766])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3767 3778]))                  
+                :type "int")
+                nil [3663 4118])
+            ("deinit" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [4121 4212])
+            ("init" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [4215 4673]))          
+      :file "ext_vtsc.c"
+      :pointmax 4674
+      :fsize 4673
+      :lastmodtime '(23987 30350 530933 466000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TSC_AUX_MSR" . ((number "0xC0000103" 981 . 991)))
+          ("TSC_MSR" . ((number "0x10" 956 . 960)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [274 299])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [300 331])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [332 368])
+            ("palacios/vmm_cpuid.h" include (:system-flag t) nil [369 400])
+            ("palacios/vm.h" include (:system-flag t) nil [401 425])
+            ("palacios/vmm_util.h" include (:system-flag t) nil [426 456])
+            ("HOBBES_CPUID_LEAF" variable (:constant-flag t) nil [467 484])
+            ("HOBBES_MAGIC" variable (:constant-flag t) nil [505 517])
+            ("HOBBES_VERSION" variable (:constant-flag t) nil [541 555])
+            ("INVALID_ENCLAVE" variable (:constant-flag t) nil [571 586])
+            ("hobbes_cpuid_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [638 665])
+                    ("cpuid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [674 702])
+                    ("eax" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [711 737])
+                    ("ebx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [746 772])
+                    ("ecx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [781 807])
+                    ("edx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [816 842])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [851 883]))                  
+                :type "int")
+                nil [605 1082])
+            ("hobbes_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1110 1133])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1140 1164])
+                    ("priv_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1171 1201]))                  
+                :type "int")
+                nil [1086 1782])
+            ("hobbes_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name        = \"HOBBES_ENV\",
+    .init        = hobbes_init,
+    .deinit      = NULL,
+    .core_init   = NULL,
+    .core_deinit = NULL,
+    .on_entry    = NULL,
+    .on_exit     = NULL
+}"
+                :type ("v3_extension_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1787 2026])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hobbes_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2050 2062]))                  
+                :type "int")
+                nil [2030 2063]))          
+      :file "ext_hobbes.c"
+      :pointmax 2064
+      :fsize 2063
+      :lastmodtime '(23987 30350 520933 466000)
+      :unmatched-syntax '((punctuation 2049 . 2050))
+      :lexical-table 
+        '(("INVALID_ENCLAVE" . ((semantic-list "((uint32_t)-1)" 589 . 603)))
+          ("HOBBES_CPUID_LEAF" . ((number "0x41000000" 486 . 496)))
+          ("HOBBES_VERSION" . ((number "1" 560 . 561)))
+          ("HOBBES_MAGIC" . ((number "0x40bbe5" 524 . 532)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!palacios!palacios!src!extensions!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

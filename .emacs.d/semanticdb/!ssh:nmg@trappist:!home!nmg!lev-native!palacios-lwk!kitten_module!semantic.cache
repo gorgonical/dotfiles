@@ -1,0 +1,1012 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kfs.h" include (:system-flag t) nil [221 241])
+            ("lwk/proc_fs.h" include (:system-flag t) nil [242 266])
+            ("lwk/print.h" include (:system-flag t) nil [267 289])
+            ("lwk/aspace.h" include (:system-flag t) nil [290 313])
+            ("lwk/task.h" include (:system-flag t) nil [314 335])
+            ("lwk/htable.h" include (:system-flag t) nil [336 359])
+            ("lwk/pmem.h" include (:system-flag t) nil [360 381])
+            ("arch/uaccess.h" include (:system-flag t) nil [383 408])
+            ("arch/apic.h" include (:system-flag t) nil [409 431])
+            ("palacios.h" include nil nil [433 454])
+            ("checkpoint.h" include nil nil [455 478])
+            ("kitten-exts.h" include nil nil [479 503])
+            ("vm.h" include nil nil [504 519])
+            ("palacios/vmm.h" include (:system-flag t) nil [521 546])
+            ("__ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [568 592])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [594 616])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [618 640]))                  
+                :type "long")
+                nil [548 3752])
+            ("vm_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3775 3796])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3799 3819])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3822 3842]))                  
+                :type "long")
+                nil [3754 4031])
+            ("vm_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4053 4074])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4076 4096]))                  
+                :type "int")
+                nil [4034 4444])
+            ("vm_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4466 4485]))                  
+                :type "int")
+                nil [4446 4565])
+            ("vm_ctrl_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.open           = vm_open, 
+	.close          = vm_close,
+	.unlocked_ioctl = vm_ioctl,
+	//	.write  = palacios_write,
+	//	.read   = palacios_read,
+ 	//	.poll   = palacios_poll, 
+}"
+                :type ("kfs_fops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4567 4786])
+            ("get_cpu_proc_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4819 4838])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4839 4853]))                  
+                :type "int")
+                nil [4789 5773])
+            ("get_mem_proc_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5805 5824])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5825 5839]))                  
+                :type "int")
+                nil [5775 6698])
+            ("palacios_create_vm" function
+               (:arguments 
+                  ( ("guest_image" variable
+                       (:pointer 1
+                        :type ("v3_guest_img" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6723 6757]))                  
+                :type "int")
+                nil [6700 9544])
+            ("vm_last_put" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kref" variable
+                       (:pointer 1
+                        :type ("kref" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9573 9592]))                  
+                :type "void")
+                nil [9549 11034])
+            ("vm_get" function
+               (:arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11048 11072]))                  
+                :type "void")
+                nil [11036 11108])
+            ("vm_put" function
+               (:arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11123 11147]))                  
+                :type "void")
+                nil [11111 11195]))          
+      :file "vm.c"
+      :pointmax 11196
+      :fsize 11195
+      :lastmodtime '(24280 266)
+      :unmatched-syntax '((PRIVATE 5832 . 5839) (PRIVATE 4846 . 4853)))
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 7179
+      :lastmodtime '(24280 266))
+    (semanticdb-table "semanticdb-table"
+      :file "checkpoint.h"
+      :fsize 198
+      :lastmodtime '(24280 266))
+    (semanticdb-table "semanticdb-table"
+      :file "kitten-exts.h"
+      :fsize 1430
+      :lastmodtime '(24280 266))
+    (semanticdb-table "semanticdb-table"
+      :file "vm.h"
+      :fsize 290
+      :lastmodtime '(24280 266))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/interrupt.h" include (:system-flag t) nil [72 98])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [99 123])
+            ("lwk/spinlock_types.h" include (:system-flag t) nil [124 155])
+            ("xpmem_iface.h" include (:system-flag t) nil [157 181])
+            ("xpmem_extended.h" include (:system-flag t) nil [182 209])
+            ("palacios.h" include nil nil [211 232])
+            ("vm.h" include nil nil [233 248])
+            ("kitten-exts.h" include nil nil [249 273])
+            ("sint64_t" variable (:constant-flag t) nil [283 291])
+            ("interfaces/vmm_xpmem.h" include (:system-flag t) nil [300 333])
+            ("cpu_info" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("cpuinfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [336 376])
+            ("xpmem_idt_info" type
+               (:members 
+                  ( ("host_irq" variable (:type "int") (reparse-symbol classsubparts) [407 425])
+                    ("guest_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [430 452])
+                    ("in_use" variable (:type "int") (reparse-symbol classsubparts) [457 473]))                  
+                :type "struct")
+                nil [379 476])
+            ("host_xpmem_state" type
+               (:members 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [532 558])
+                    ("v3_xpmem" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [609 642])
+                    ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [681 710])
+                    ("idt_lock" variable (:type ("rwlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [767 800])
+                    ("idt_map" variable
+                       (:dereference 1
+                        :type ("xpmem_idt_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [805 847]))                  
+                :type "struct")
+                nil [478 850])
+            ("xpmem_set_idt_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("host_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [885 917])
+                    ("host_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [937 975])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("xpmem_idt_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [981 1012]))                  
+                :type "void")
+                nil [854 1274])
+            ("xpmem_get_idt_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("host_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1306 1338])
+                    ("host_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1358 1396])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("xpmem_idt_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1402 1433]))                  
+                :type "int")
+                nil [1276 1759])
+            ("xpmem_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1785 1811])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1825 1857]))                  
+                :type "int")
+                nil [1761 2172])
+            ("xpmem_segid_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2202 2222])
+                    ("sigid" variable (:type ("xpmem_sigid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2238 2258])
+                    ("domid" variable (:type ("xpmem_domid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2274 2294])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2310 2334]))                  
+                :type "int")
+                nil [2175 2962])
+            ("xpmem_irq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [2997 3008])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3022 3039]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [2965 3321])
+            ("xpmem_kill_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3349 3366]))                  
+                :type "void")
+                nil [3323 3469])
+            ("palacios_xpmem_host_connect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3520 3557])
+                    ("v3_xpmem" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3580 3613]))                  
+                :type ("xpmem_link_t" type (:type "class") nil nil))
+                nil [3471 4151])
+            ("palacios_xpmem_host_disconnect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4195 4213]))                  
+                :type "int")
+                nil [4153 4699])
+            ("palacios_xpmem_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4736 4759])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4784 4810]))                  
+                :type "int")
+                nil [4702 5127])
+            ("palacios_xpmem_read_apicid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5168 5186])
+                    ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5214 5231]))                  
+                :type "int")
+                nil [5130 5274])
+            ("palacios_xpmem_request_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5315 5333])
+                    ("guest_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5361 5387]))                  
+                :type "int")
+                nil [5277 6353])
+            ("palacios_xpmem_release_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6394 6412])
+                    ("host_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6440 6465]))                  
+                :type "int")
+                nil [6355 7312])
+            ("palacios_xpmem_deliver_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7353 7372])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7400 7420])
+                    ("sigid" variable (:type ("xpmem_sigid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7448 7468])
+                    ("domid" variable (:type ("xpmem_domid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7496 7516]))                  
+                :type "void")
+                nil [7314 7564])
+            ("palacios_xpmem_hooks" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .xpmem_host_connect    = palacios_xpmem_host_connect,
+    .xpmem_host_disconnect = palacios_xpmem_host_disconnect,
+    .xpmem_command         = palacios_xpmem_command,
+    .xpmem_read_apicid     = palacios_xpmem_read_apicid,
+    .xpmem_request_irq     = palacios_xpmem_request_irq,
+    .xpmem_release_irq     = palacios_xpmem_release_irq,
+    .xpmem_deliver_irq     = palacios_xpmem_deliver_irq,
+}"
+                :type ("v3_xpmem_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7566 8024])
+            ("init_xpmem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8051 8056]))                  
+                :type "int")
+                nil [8028 8126])
+            ("init_xpmem_guest" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8158 8182])
+                    ("vm_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8201 8227]))                  
+                :type "int")
+                nil [8129 8841])
+            ("xpmem_ext" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name         = \"XPMEM_INTERFACE\",
+    .init         = init_xpmem,
+    .deinit       = NULL,
+    .guest_init   = init_xpmem_guest,
+    .guest_deinit = NULL,
+}"
+                :type ("kitten_ext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8843 9045])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("xpmem_ext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9067 9077]))                  
+                :type "int")
+                nil [9047 9078]))          
+      :file "iface-xpmem.c"
+      :pointmax 9079
+      :fsize 9078
+      :lastmodtime '(24663 56636)
+      :unmatched-syntax '((punctuation 9066 . 9067))
+      :lexical-table 
+        '(("sint64_t" . ((symbol "int64_t" 292 . 299)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kfs.h" include (:system-flag t) nil [543 563])
+            ("lwk/pmem.h" include (:system-flag t) nil [564 585])
+            ("lwk/xpmem/xpmem.h" include (:system-flag t) nil [586 614])
+            ("palacios.h" include nil nil [616 637])
+            ("util-xrbuf.h" include nil nil [638 661])
+            ("meta_var_t" type
+               (:typedef ("uint32_t" type (:type "class") nil nil)
+                :type "typedef")
+                nil [663 691])
+            ("ringbuf_meta" type
+               (:members 
+                  ( ("item_size" variable (:type ("meta_var_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [719 740])
+                    ("max_items" variable (:type ("meta_var_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [745 766])
+                    ("read_idx" variable (:type ("meta_var_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [771 791])
+                    ("write_idx" variable (:type ("meta_var_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [796 817])
+                    ("" type
+                       (:members 
+                          ( ("kick" variable (:type ("" type
+                                 (:members 
+                                    ( ("ipi_vec" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [846 863])
+                                      ("apic" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [869 883])
+                                      ("rsvd" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [889 903]))                                    
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [832 912])
+                            ("kick_segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [914 939]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [823 946]))                  
+                :type "struct")
+                nil [693 973])
+            ("ringbuf" type
+               (:members 
+                  ( ("meta" variable (:type ("ringbuf_meta" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1051 1076])
+                    ("msgs" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1081 1094]))                  
+                :type "struct")
+                nil [1030 1121])
+            ("xrbuf" type
+               (:members 
+                  ( ("ringbuf" variable
+                       (:pointer 1
+                        :type ("ringbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1150 1175])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1180 1200])
+                    ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1205 1223])
+                    ("mode" variable (:type ("xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1257 1275])
+                    ("poll_fd" variable (:type "int") (reparse-symbol classsubparts) [1340 1352])
+                    ("kick_apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1419 1442])
+                    ("pmem" variable (:type ("pmem_region" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1490 1514])
+                    ("v3_mode" variable (:type ("v3_xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1520 1544]))                  
+                :type "struct")
+                nil [1123 1555])
+            ("xrbuf_t" type
+               (:typedef ("xrbuf" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1123 1555])
+            ("__enqueue" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1579 1589])
+                    ("" variable
+                       (:pointer 1
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1590 1605]))                  
+                :type "int")
+                nil [1558 1606])
+            ("__get_item_ptr" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1633 1643])
+                    ("" variable
+                       (:pointer 2
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1644 1660]))                  
+                :type "int")
+                nil [1607 1661])
+            ("__advance" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1683 1693]))                  
+                :type "int")
+                nil [1662 1694])
+            ("__mem_size_of_ringbuf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("item_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1740 1763])
+                    ("max_items" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1772 1795]))                  
+                :type "unsigned long")
+                nil [1697 2155])
+            ("__ringbuf_alloc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2223 2242])
+                    ("item_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2245 2268])
+                    ("max_items" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2278 2301]))                  
+                :type "int")
+                nil [2196 2955])
+            ("__ringbuf_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2984 3000]))                  
+                :type "void")
+                nil [2957 3040])
+            ("__xrbuf_export" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3068 3084]))                  
+                :type "int")
+                nil [3042 3556])
+            ("__xrbuf_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3585 3601]))                  
+                :type "void")
+                nil [3558 3724])
+            ("__xrbuf_attach" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("item_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3752 3776])
+                    ("max_items" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3785 3809])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3818 3838])
+                    ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3847 3867]))                  
+                :type "int")
+                nil [3726 4541])
+            ("__xrbuf_detach" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4569 4585]))                  
+                :type "int")
+                nil [4543 4951])
+            ("__xrbuf_remove_wait_segid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5420 5436]))                  
+                :type "void")
+                nil [5382 5681])
+            ("__xrbuf_attach_wait_segid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5720 5736]))                  
+                :type "int")
+                nil [5683 6157])
+            ("__xrbuf_detach_wait_segid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6197 6213]))                  
+                :type "void")
+                nil [6159 6391])
+            ("xrbuf_create" function
+               (:arguments 
+                  ( ("v3_mode" variable (:type ("v3_xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6410 6434])
+                    ("item_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6441 6467])
+                    ("max_items" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6474 6500])
+                    ("mode" variable (:type ("xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6507 6528])
+                    ("new_xrbuf" variable
+                       (:pointer 2
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6535 6561]))                  
+                :type "int")
+                nil [6393 7434])
+            ("xrbuf_destroy" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7454 7470]))                  
+                :type "int")
+                nil [7436 7745])
+            ("xrbuf_attach" function
+               (:arguments 
+                  ( ("v3_mode" variable (:type ("v3_xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7764 7788])
+                    ("item_size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7795 7821])
+                    ("max_items" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7828 7854])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7861 7883])
+                    ("mode" variable (:type ("xrbuf_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7890 7911])
+                    ("new_xrbuf" variable
+                       (:pointer 2
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7918 7944]))                  
+                :type "int")
+                nil [7747 8680])
+            ("xrbuf_detach" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8699 8715]))                  
+                :type "int")
+                nil [8682 9022])
+            ("xrbuf_get_segid" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9073 9095])
+                    ("segid" variable
+                       (:pointer 1
+                        :type ("xpmem_segid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9098 9120]))                  
+                :type "int")
+                nil [9053 9282])
+            ("xrbuf_get_physaddr" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9307 9323])
+                    ("paddr" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9329 9345]))                  
+                :type "int")
+                nil [9284 9452])
+            ("__xrbuf_check_attach_signallable_segid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9504 9520]))                  
+                :type "int")
+                nil [9454 10143])
+            ("xrbuf_enqueue" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10163 10184])
+                    ("item" variable
+                       (:pointer 1
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10192 10212]))                  
+                :type "int")
+                nil [10145 10379])
+            ("xrbuf_kick" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10396 10412]))                  
+                :type "int")
+                nil [10381 10863])
+            ("xrbuf_dequeue" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11244 11265])
+                    ("item" variable
+                       (:pointer 1
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11280 11300]))                  
+                :type "int")
+                nil [11226 11602])
+            ("xrbuf_dequeue_to_user" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11630 11649])
+                    ("__user" variable (:type ("xrbuf_item_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11658 11679])
+                    ("" variable (:type ("item" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11680 11685]))                  
+                :type "int")
+                nil [11604 12014])
+            ("xrbuf_get_item_ptr" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12074 12096])
+                    ("item" variable
+                       (:pointer 2
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12102 12123]))                  
+                :type "int")
+                nil [12051 12167])
+            ("xrbuf_advance" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12187 12203]))                  
+                :type "int")
+                nil [12169 12236])
+            ("xrbuf_nr_items" function
+               (:arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12266 12282]))                  
+                :type "unsigned int")
+                nil [12238 12577])
+            ("__enqueue" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12601 12622])
+                    ("item" variable
+                       (:pointer 1
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12634 12654]))                  
+                :type "int")
+                nil [12579 13165])
+            ("__get_item_ptr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13194 13216])
+                    ("item_ptr" variable
+                       (:pointer 2
+                        :type ("xrbuf_item_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13226 13251]))                  
+                :type "int")
+                nil [13167 13868])
+            ("__advance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xrbuf" variable
+                       (:pointer 1
+                        :type ("xrbuf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13892 13908]))                  
+                :type "int")
+                nil [13870 14464]))          
+      :file "util-xrbuf.c"
+      :pointmax 14465
+      :fsize 14464
+      :lastmodtime '(24280 266)
+      :unmatched-syntax '((punctuation 11678 . 11679)))
+    (semanticdb-table "semanticdb-table"
+      :file "util-xrbuf.h"
+      :fsize 2087
+      :lastmodtime '(24280 266))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/types.h" include (:system-flag t) nil [224 246])
+            ("lwk/pmem.h" include (:system-flag t) nil [247 268])
+            ("lwk/kfs.h" include (:system-flag t) nil [269 289])
+            ("lwk/linux_compat.h" include (:system-flag t) nil [290 319])
+            ("lwk/aspace.h" include (:system-flag t) nil [320 343])
+            ("palacios/vmm.h" include (:system-flag t) nil [345 370])
+            ("palacios/vmm_checkpoint.h" include (:system-flag t) nil [371 407])
+            ("palacios.h" include nil nil [409 430])
+            ("vm.h" include nil nil [431 446])
+            ("lwk_chkpt" type
+               (:members 
+                  ( ("v3_chkpt" variable (:type ("v3_chkpt_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [471 491])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [501 512])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [517 533])
+                    ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [539 563]))                  
+                :type "struct")
+                nil [448 566])
+            ("chkpt_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [600 619])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [624 637])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [638 642])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [647 666])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [672 693]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [573 771])
+            ("chkpt_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [801 826])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [833 852])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [853 857])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [864 889])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [895 922]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [774 1001])
+            ("chkpt_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1032 1053])
+                    ("ioctl" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1059 1081])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1088 1108]))                  
+                :type "long")
+                nil [1007 1487])
+            ("chkpt_mmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1511 1540])
+                    ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1545 1573]))                  
+                :type "int")
+                nil [1489 2375])
+            ("chkpt_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("i" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2403 2420])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2429 2449]))                  
+                :type "int")
+                nil [2378 2610])
+            ("chkpt_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .read           = chkpt_read,
+    .write          = chkpt_write,
+    .release        = chkpt_release,
+    .unlocked_ioctl = chkpt_ioctl,
+    .mmap           = chkpt_mmap,
+}"
+                :type ("kfs_fops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2612 2827])
+            ("v3_create_checkpoint" function
+               (:arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2855 2879])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2888 2910]))                  
+                :type "int")
+                nil [2830 3856]))          
+      :file "checkpoint.c"
+      :pointmax 3858
+      :fsize 3857
+      :lastmodtime '(24280 266)
+      :unmatched-syntax '((punctuation 851 . 852) (punctuation 636 . 637))))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios-lwk!kitten_module!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

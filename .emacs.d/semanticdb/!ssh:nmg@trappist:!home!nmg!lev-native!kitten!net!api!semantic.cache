@@ -1,0 +1,231 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/types.h" include (:system-flag t) nil [68 90])
+            ("lwk/spinlock.h" include (:system-flag t) nil [91 116])
+            ("lwk/task.h" include (:system-flag t) nil [117 138])
+            ("lwk/aspace.h" include (:system-flag t) nil [139 162])
+            ("lwk/sched.h" include (:system-flag t) nil [163 185])
+            ("lwk/string.h" include (:system-flag t) nil [186 209])
+            ("lwk/kthread.h" include (:system-flag t) nil [210 234])
+            ("lwip/sys.h" include (:system-flag t) nil [235 256])
+            ("sem_lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) nil [312 332])
+            ("mbox_lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) nil [333 354])
+            ("sys_lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) nil [356 376])
+            ("sem_debug" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "0"
+                :type "int")
+                nil [504 535])
+            ("cpu_hz" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "2400000"
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [579 618])
+            ("sys_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [635 641]))                  
+                :type "void")
+                nil [620 736])
+            ("sys_sem_new" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [757 774])
+                    ("count" variable (:type ("u8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [776 790]))                  
+                :type ("err_t" type (:type "class") nil nil))
+                nil [739 950])
+            ("sys_sem_free" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [973 991]))                  
+                :type "void")
+                nil [953 1025])
+            ("sys_sem_signal" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1050 1068]))                  
+                :type "void")
+                nil [1028 1282])
+            ("sys_arch_sem_trywait" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1404 1422]))                  
+                :type ("u32_t" type (:type "class") nil nil))
+                nil [1375 1610])
+            ("sys_arch_sem_wait" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1640 1657])
+                    ("timeout" variable (:type ("u32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1659 1676]))                  
+                :type ("u32_t" type (:type "class") nil nil))
+                nil [1614 2226])
+            ("sys_sem_valid" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2247 2262]))                  
+                :type "int")
+                nil [2229 2280])
+            ("sys_sem_set_invalid" function
+               (:arguments 
+                  ( ("sem" variable
+                       (:pointer 1
+                        :type ("sys_sem_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2308 2323]))                  
+                :type "void")
+                nil [2283 2327])
+            ("sys_arch_protect" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2360 2366]))                  
+                :type ("sys_prot_t" type (:type "class") nil nil))
+                nil [2330 2461])
+            ("sys_arch_unprotect" function
+               (:arguments 
+                  ( ("pval" variable (:type ("sys_prot_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2491 2509]))                  
+                :type "void")
+                nil [2464 2558])
+            ("sys_mbox_new" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2589 2608])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [2610 2622]))                  
+                :type ("err_t" type (:type "class") nil nil))
+                nil [2561 2866])
+            ("sys_mbox_free" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2890 2910]))                  
+                :type "void")
+                nil [2869 3082])
+            ("_sys_mbox_post" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3109 3128])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3130 3143])
+                    ("try_once" variable (:type "int") (reparse-symbol arg-sub-list) [3145 3161]))                  
+                :type ("err_t" type (:type "class") nil nil))
+                nil [3086 3768])
+            ("sys_mbox_post" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3792 3811])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3813 3827]))                  
+                :type "void")
+                nil [3771 3864])
+            ("sys_mbox_trypost" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3892 3911])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3913 3927]))                  
+                :type ("err_t" type (:type "class") nil nil))
+                nil [3867 3971])
+            ("sys_arch_mbox_tryfetch" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4005 4024])
+                    ("msg" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4026 4041]))                  
+                :type ("u32_t" type (:type "class") nil nil))
+                nil [3974 4499])
+            ("sys_arch_mbox_fetch" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4530 4549])
+                    ("msg" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4551 4565])
+                    ("timeout" variable (:type ("u32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4567 4584]))                  
+                :type ("u32_t" type (:type "class") nil nil))
+                nil [4502 5097])
+            ("sys_thread_new" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5144 5163])
+                    ("entry_point" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [5189 5201]))                          
+                        :type "void")
+                        nil nil)
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5204 5217])
+                    ("stacksize" variable (:type "int") (reparse-symbol arg-sub-list) [5219 5235])
+                    ("prio" variable (:type "int") (reparse-symbol arg-sub-list) [5237 5249]))                  
+                :type ("sys_thread_t" type (:type "class") nil nil))
+                nil [5114 5393])
+            ("sys_mbox_valid" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5414 5431]))                  
+                :type "int")
+                nil [5395 5461])
+            ("sys_mbox_set_invalid" function
+               (:arguments 
+                  ( ("mbox" variable
+                       (:pointer 1
+                        :type ("sys_mbox_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5489 5506]))                  
+                :type "void")
+                nil [5463 5510]))          
+      :file "arch.c"
+      :pointmax 5511
+      :fsize 5510
+      :lastmodtime '(24280 275)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!net!api!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

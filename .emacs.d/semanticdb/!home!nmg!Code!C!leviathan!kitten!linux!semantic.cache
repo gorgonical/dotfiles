@@ -1,0 +1,520 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [81 104])
+            ("linux/fs.h" include (:system-flag t) nil [105 126])
+            ("linux/kdev_t.h" include (:system-flag t) nil [127 152])
+            ("linux/slab.h" include (:system-flag t) nil [153 176])
+            ("linux/string.h" include (:system-flag t) nil [177 202])
+            ("linux/err.h" include (:system-flag t) nil [204 226])
+            ("linux/module.h" include (:system-flag t) nil [227 252])
+            ("linux/kobject.h" include (:system-flag t) nil [254 280])
+            ("linux/kobj_map.h" include (:system-flag t) nil [281 308])
+            ("linux/cdev.h" include (:system-flag t) nil [309 332])
+            ("linux/mutex.h" include (:system-flag t) nil [333 357])
+            ("cdev_map" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kobj_map" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [360 393])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("chrdevs_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [415 428]))                  
+                :type "int")
+                nil [395 429])
+            ("chrdevs" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :type ("char_device_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [431 647])
+            ("char_device_struct" type
+               (:members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("char_device_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [467 499])
+                    ("major" variable (:type "unsigned int") (reparse-symbol classsubparts) [501 520])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol classsubparts) [522 545])
+                    ("minorct" variable (:type "int") (reparse-symbol classsubparts) [547 559])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [561 575])
+                    ("cdev" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [577 595]))                  
+                :type "struct")
+                nil [431 647])
+            ("major_to_index" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("major" variable (:type "int") (reparse-symbol arg-sub-list) [707 717]))                  
+                :type "int")
+                nil [674 761])
+            ("__register_chrdev_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1483 1502])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1503 1526])
+                    ("minorct" variable (:type "int") (reparse-symbol arg-sub-list) [1533 1545])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1546 1563]))                  
+                :type ("char_device_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1423 2982])
+            ("__unregister_chrdev_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3046 3061])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3062 3081])
+                    ("minorct" variable (:type "int") (reparse-symbol arg-sub-list) [3082 3094]))                  
+                :type ("char_device_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2984 3452])
+            ("register_chrdev_region" function
+               (:arguments 
+                  ( ("from" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3833 3844])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3845 3860])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3861 3878]))                  
+                :type "int")
+                nil [3806 4353])
+            ("alloc_chrdev_region" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4867 4878])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4879 4898])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4899 4914])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4918 4935]))                  
+                :type "int")
+                nil [4843 5121])
+            ("register_chrdev" function
+               (:arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5988 6007])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6008 6025])
+                    ("fops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("file_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6038 6073]))                  
+                :type "int")
+                nil [5968 6786])
+            ("__register_chrdev" function
+               (:arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7683 7702])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7703 7726])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7735 7754])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7755 7772])
+                    ("fops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("file_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7781 7816]))                  
+                :type "int")
+                nil [7661 8384])
+            ("unregister_chrdev_region" function
+               (:arguments 
+                  ( ("from" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8787 8798])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8799 8814]))                  
+                :type "void")
+                nil [8757 9029])
+            ("unregister_chrdev" function
+               (:arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9054 9073])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9074 9091]))                  
+                :type "void")
+                nil [9031 9249])
+            ("__unregister_chrdev" function
+               (:arguments 
+                  ( ("major" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9684 9703])
+                    ("baseminor" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9704 9727])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9732 9751])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9752 9769]))                  
+                :type "void")
+                nil [9659 9920])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("cdev_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9945 9955]))                  
+                :type "int")
+                nil [9922 9956])
+            ("cdev_get" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9990 10005]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9958 10198])
+            ("cdev_put" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10214 10229]))                  
+                :type "void")
+                nil [10200 10327])
+            ("chrdev_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10415 10435])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10436 10454]))                  
+                :type "int")
+                nil [10392 11391])
+            ("cdev_index" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11408 11428]))                  
+                :type "int")
+                nil [11393 11576])
+            ("cd_forget" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11593 11613]))                  
+                :type "void")
+                nil [11578 11725])
+            ("cdev_purge" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cdev" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11750 11768]))                  
+                :type "void")
+                nil [11727 12010])
+            ("def_chr_fops" variable
+               (:constant-flag t
+                :default-value "{
+	.open = chrdev_open,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12179 12249])
+            ("exact_match" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12286 12296])
+                    ("part" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12297 12307])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12308 12319]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12251 12365])
+            ("exact_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12389 12399])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12400 12411]))                  
+                :type "int")
+                nil [12367 12469])
+            ("cdev_add" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12886 12901])
+                    ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12902 12912])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12913 12928]))                  
+                :type "int")
+                nil [12873 13043])
+            ("cdev_unmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13068 13078])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13079 13094]))                  
+                :type "void")
+                nil [13045 13133])
+            ("cdev_del" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13330 13345]))                  
+                :type "void")
+                nil [13316 13404])
+            ("cdev_default_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13440 13461]))                  
+                :type "void")
+                nil [13407 13538])
+            ("cdev_dynamic_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kobj" variable
+                       (:pointer 1
+                        :type ("kobject" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13573 13594]))                  
+                :type "void")
+                nil [13540 13682])
+            ("ktype_cdev_default" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.release	= cdev_default_release,
+}"
+                :type ("kobj_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13684 13767])
+            ("ktype_cdev_dynamic" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.release	= cdev_dynamic_release,
+}"
+                :type ("kobj_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13769 13852])
+            ("cdev_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13996 14001]))                  
+                :type ("cdev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13972 14164])
+            ("cdev_init" function
+               (:arguments 
+                  ( ("cdev" variable
+                       (:pointer 1
+                        :type ("cdev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14419 14437])
+                    ("fops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("file_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14438 14473]))                  
+                :type "void")
+                nil [14404 14607])
+            ("base_probe" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14643 14653])
+                    ("part" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [14654 14664])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14665 14676]))                  
+                :type ("kobject" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [14609 14901])
+            ("chrdev_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14927 14932]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14908 15079])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_chrdev_region" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15132 15155]))                  
+                :type "int")
+                nil [15118 15156])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_chrdev_region" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15171 15196]))                  
+                :type "int")
+                nil [15157 15197])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("alloc_chrdev_region" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15212 15232]))                  
+                :type "int")
+                nil [15198 15233])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cdev_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15248 15258]))                  
+                :type "int")
+                nil [15234 15259])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cdev_alloc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15274 15285]))                  
+                :type "int")
+                nil [15260 15286])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cdev_del" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15301 15310]))                  
+                :type "int")
+                nil [15287 15311])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cdev_add" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15326 15335]))                  
+                :type "int")
+                nil [15312 15336])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cdev_index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15351 15362]))                  
+                :type "int")
+                nil [15337 15363])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__register_chrdev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15378 15396]))                  
+                :type "int")
+                nil [15364 15397])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__unregister_chrdev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15412 15432]))                  
+                :type "int")
+                nil [15398 15433])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("directly_mappable_cdev_bdi" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15448 15475]))                  
+                :type "int")
+                nil [15434 15476]))          
+      :file "char_dev.c"
+      :pointmax 15477
+      :fsize 15476
+      :lastmodtime '(23974 44851 271844 319000)
+      :unmatched-syntax '((VOID 14903 . 14907))))
+  :file "!home!nmg!Code!C!leviathan!kitten!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

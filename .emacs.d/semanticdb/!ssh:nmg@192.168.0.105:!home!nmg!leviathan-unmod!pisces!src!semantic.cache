@@ -1,0 +1,452 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/delay.h" include (:system-flag t) nil [223 247])
+            ("linux/mutex.h" include (:system-flag t) nil [248 272])
+            ("enclave.h" include nil nil [274 294])
+            ("pisces_boot_params.h" include nil nil [295 326])
+            ("pgtables.h" include nil nil [327 348])
+            ("boot.h" include nil nil [349 366])
+            ("trampoline.h" include nil nil [368 391])
+            ("MAX_BOOTMEM_SHIFT" variable (:constant-flag t) nil [439 456])
+            ("MAX_BOOTMEM_SIZE" variable (:constant-flag t) nil [468 484])
+            ("KERN_VA_BASE" variable (:constant-flag t) nil [521 533])
+            ("MAX_PGT_PAGES" variable (:constant-flag t) nil [1218 1231])
+            ("trampoline_state" variable (:type ("trampoline_data" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1238 1280])
+            ("trampoline_lock" variable
+               (:typemodifiers ("static")
+                :type ("mutex" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1281 1322])
+            ("DECLARE_BITMAP" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pgt_bitmap" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1543 1554]))                  
+                :type "int")
+                nil [1521 1570])
+            ("pgts_avail" variable
+               (:typemodifiers ("static")
+                :default-value "MAX_PGT_PAGES"
+                :type "int")
+                nil [1571 1615])
+            ("pgt_pages" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1616 1656])
+            ("paddr_to_page" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("paddr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1700 1716]))                  
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1658 1765])
+            ("vaddr_to_page" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vaddr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1809 1825]))                  
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1767 1868])
+            ("page_to_paddr" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1908 1927]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [1870 1975])
+            ("page_to_vaddr" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2015 2034]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [1977 2087])
+            ("alloc_pt_page" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2124 2129]))                  
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2089 2513])
+            ("free_pt_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2540 2559]))                  
+                :type "void")
+                nil [2515 2834])
+            ("map_bootmem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base_vaddr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2860 2881])
+                    ("base_paddr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2894 2915])
+                    ("length" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2928 2945]))                  
+                :type "void")
+                nil [2836 4467])
+            ("unmap_bootmem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base_vaddr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4495 4516])
+                    ("length" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4524 4535]))                  
+                :type "void")
+                nil [4469 6075])
+            ("init_trampoline_pgts" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6112 6117]))                  
+                :type "void")
+                nil [6079 6296])
+            ("pisces_init_trampoline" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6327 6332]))                  
+                :type "int")
+                nil [6299 7047])
+            ("pisces_deinit_trampoline" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7080 7085]))                  
+                :type "int")
+                nil [7050 7525])
+            ("pisces_setup_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7558 7590]))                  
+                :type "int")
+                nil [7529 8591])
+            ("pisces_restore_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8624 8656]))                  
+                :type "int")
+                nil [8594 8933])
+            ("set_enclave_launch_args" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9012 9044])
+                    ("target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9049 9085])
+                    ("esi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9090 9118]))                  
+                :type "void")
+                nil [8976 9706])
+            ("__lapic_get_maxlvt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9742 9747]))                  
+                :type "int")
+                nil [9711 9876])
+            ("__wakeup_secondary_cpu_via_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("phys_apicid" variable (:type "int") (reparse-symbol arg-sub-list) [9924 9940]))                  
+                :type "int")
+                nil [9880 13507])
+            ("boot_enclave" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13530 13562]))                  
+                :type "int")
+                nil [13512 14945])
+            ("stop_enclave" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14967 14999]))                  
+                :type "int")
+                nil [14949 16012]))          
+      :file "boot.c"
+      :pointmax 16013
+      :fsize 16012
+      :lastmodtime '(24269 38454)
+      :unmatched-syntax '((number "256" 1555 . 1568))
+      :lexical-table 
+        '(("KERN_VA_BASE" . ((symbol "0xffffffff80000000ULL" 535 . 556)))
+          ("MAX_BOOTMEM_SIZE" . ((semantic-list "(1ULL << MAX_BOOTMEM_SHIFT)" 485 . 512)))
+          ("MAX_BOOTMEM_SHIFT" . ((number "35" 457 . 459)))
+          ("MAX_PGT_PAGES" . ((number "256" 1232 . 1235)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "enclave.h"
+      :fsize 2129
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_PISCES_BOOT_PARAMS_H_" variable (:constant-flag t) nil [335 357])
+            ("linux/types.h" include (:system-flag t) nil [359 383])
+            ("PISCES_MAGIC" variable (:constant-flag t) nil [396 408])
+            ("pisces_enclave" type
+               (:prototype t
+                :type "struct")
+                nil [421 443])
+            ("pisces_boot_params" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("launch_code" variable
+                               (:dereference 1
+                                :type ("u64" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [969 988])
+                            ("" type
+                               (:members 
+                                  ( ("launch_code_asm" variable
+                                       (:dereference 1
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1004 1030])
+                                    ("launch_code_esi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1036 1058])
+                                    ("launch_code_target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1064 1094]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [990 1122]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [960 1153])
+                    ("init_dbg_buf" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1159 1179])
+                    ("magic" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1190 1200])
+                    ("" type
+                       (:members 
+                          ( ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1219 1229])
+                            ("" type
+                               (:members 
+                                  ( ("initialized" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1245 1266])
+                                    ("flags__rsvd" variable
+                                       (:suffix ":63"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1272 1294]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1231 1322]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1210 1353])
+                    ("boot_params_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1364 1385])
+                    ("cpu_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1391 1402])
+                    ("apic_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1407 1419])
+                    ("cpu_khz" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1424 1436])
+                    ("trampoline_code_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1442 1465])
+                    ("domain_xcall_master_apicid" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1509 1540])
+                    ("domain_xcall_vector" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1581 1605])
+                    ("cmd_line" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1627 1647])
+                    ("kernel_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1667 1683])
+                    ("kernel_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1688 1704])
+                    ("initrd_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1724 1740])
+                    ("initrd_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1745 1761])
+                    ("console_ring_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1833 1855])
+                    ("console_ring_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1860 1882])
+                    ("control_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1958 1979])
+                    ("control_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1984 2005])
+                    ("longcall_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2081 2103])
+                    ("longcall_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2108 2130])
+                    ("xpmem_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2196 2215])
+                    ("xpmem_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2220 2239])
+                    ("base_mem_paddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2245 2264])
+                    ("base_mem_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2269 2287]))                  
+                :type "struct")
+                nil [876 2316])
+            ("setup_boot_params" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2341 2373]))                  
+                :type "int")
+                nil [2319 2374]))          
+      :file "pisces_boot_params.h"
+      :pointmax 2383
+      :fsize 2382
+      :lastmodtime '(24264 16829)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PISCES_MAGIC" . ((number "0x000FE110" 409 . 419)))
+          ("_PISCES_BOOT_PARAMS_H_")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "pgtables.h"
+      :fsize 9914
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :file "boot.h"
+      :fsize 784
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :file "trampoline.h"
+      :fsize 559
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/fs.h" include (:system-flag t) nil [223 244])
+            ("linux/mutex.h" include (:system-flag t) nil [245 269])
+            ("linux/percpu.h" include (:system-flag t) nil [270 295])
+            ("linux/delay.h" include (:system-flag t) nil [296 320])
+            ("asm/delay.h" include (:system-flag t) nil [322 344])
+            ("asm/desc.h" include (:system-flag t) nil [345 366])
+            ("asm/segment.h" include (:system-flag t) nil [367 391])
+            ("pisces_boot_params.h" include nil nil [393 424])
+            ("enclave.h" include nil nil [425 445])
+            ("file_io.h" include nil nil [446 466])
+            ("pisces_ringbuf.h" include nil nil [467 494])
+            ("enclave_ctrl.h" include nil nil [495 520])
+            ("pisces_xpmem.h" include nil nil [521 546])
+            ("boot.h" include nil nil [548 565])
+            ("pgtables.h" include nil nil [566 587])
+            ("sizeof_boot_params" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [630 662]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [592 713])
+            ("load_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [741 777])
+                    ("boot_params" variable
+                       (:pointer 1
+                        :type ("pisces_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [784 824])
+                    ("target_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [831 871]))                  
+                :type "int")
+                nil [717 1576])
+            ("load_initrd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1603 1639])
+                    ("boot_params" variable
+                       (:pointer 1
+                        :type ("pisces_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1646 1686])
+                    ("target_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1692 1732]))                  
+                :type "int")
+                nil [1579 2610])
+            ("setup_boot_params" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2636 2668]))                  
+                :type "int")
+                nil [2613 9498]))          
+      :file "pisces_boot_params.c"
+      :pointmax 9499
+      :fsize 9498
+      :lastmodtime '(24269 39556)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "file_io.h"
+      :fsize 778
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces_ringbuf.h"
+      :fsize 1159
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :file "enclave_ctrl.h"
+      :fsize 978
+      :lastmodtime '(24264 16829))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces_xpmem.h"
+      :fsize 1024
+      :lastmodtime '(24264 16829)))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan-unmod!pisces!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

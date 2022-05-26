@@ -1,0 +1,866 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [223 242])
+            ("arch/vsyscall.h" include (:system-flag t) nil [243 269])
+            ("getcpu_p" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("cpu" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [296 310])
+                    ("unused1" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [311 325])
+                    ("unused2" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [326 340]))                  
+                :type "long")
+                nil [279 341])
+            ("sched_getcpu" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [420 425]))                  
+                :type "int")
+                nil [402 616]))          
+      :file "sched_getcpu.c"
+      :pointmax 617
+      :fsize 616
+      :lastmodtime '(24260 9264)
+      :unmatched-syntax '((TYPEDEF 271 . 278)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [223 241])
+            ("stdlib.h" include (:system-flag t) nil [242 261])
+            ("sys/types.h" include (:system-flag t) nil [262 284])
+            ("sys/stat.h" include (:system-flag t) nil [285 306])
+            ("sys/reboot.h" include (:system-flag t) nil [307 330])
+            ("fcntl.h" include (:system-flag t) nil [331 349])
+            ("unistd.h" include (:system-flag t) nil [350 369])
+            ("ctype.h" include (:system-flag t) nil [370 388])
+            ("arch/types.h" include (:system-flag t) nil [389 412])
+            ("sys/ioctl.h" include (:system-flag t) nil [413 435])
+            ("pthread.h" include (:system-flag t) nil [436 456])
+            ("poll.h" include (:system-flag t) nil [457 474])
+            ("assert.h" include (:system-flag t) nil [475 494])
+            ("stdint.h" include (:system-flag t) nil [495 514])
+            ("signal.h" include (:system-flag t) nil [515 534])
+            ("errno.h" include (:system-flag t) nil [535 553])
+            ("lwk/liblwk.h" include (:system-flag t) nil [555 578])
+            ("lwk/pmem.h" include (:system-flag t) nil [579 600])
+            ("lwk/smp.h" include (:system-flag t) nil [601 621])
+            ("pet_log.h" include (:system-flag t) nil [624 644])
+            ("pet_hashtable.h" include (:system-flag t) nil [645 671])
+            ("v3vee.h" include (:system-flag t) nil [673 691])
+            ("hobbes.h" include (:system-flag t) nil [692 711])
+            ("xemem.h" include (:system-flag t) nil [712 730])
+            ("hobbes_enclave.h" include (:system-flag t) nil [731 758])
+            ("hobbes_cmd_queue.h" include (:system-flag t) nil [759 788])
+            ("hobbes_util.h" include (:system-flag t) nil [789 813])
+            ("init.h" include nil nil [815 832])
+            ("pisces.h" include nil nil [833 852])
+            ("pisces_ctrl.h" include nil nil [853 877])
+            ("hobbes_ctrl.h" include nil nil [878 902])
+            ("palacios.h" include nil nil [903 924])
+            ("hio.h" include nil nil [925 941])
+            ("enclave_cpus" variable (:type ("cpu_set_t" type (:type "class") nil nil)) nil [944 969])
+            ("enclave_name" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type "char")
+                nil [970 1003])
+            ("exit_leviathan" variable
+               (:default-value "0"
+                :type "int")
+                nil [1006 1029])
+            ("handler_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1032 1079])
+            ("handler_fds" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("pollfd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1080 1127])
+            ("handler_cnt" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1128 1172])
+            ("update_poll_fds" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1204 1210]))                  
+                :type "int")
+                nil [1176 1211])
+            ("fd_handler" type
+               (:members 
+                  ( ("fd" variable (:type "int") (reparse-symbol classsubparts) [1238 1257])
+                    ("fn" variable (:type ("fd_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1262 1281])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1286 1312]))                  
+                :type "struct")
+                nil [1214 1315])
+            ("handler_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1351 1365]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1318 1399])
+            ("handler_equal_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1430 1445])
+                    ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1446 1461]))                  
+                :type "int")
+                nil [1402 1492])
+            ("got_sigchld" variable
+               (:default-value "0"
+                :type ("sig_atomic_t" type (:type "class") nil nil))
+                nil [1494 1523])
+            ("handle_sigchld" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [1552 1560])
+                    ("siginfo" variable
+                       (:pointer 1
+                        :type ("siginfo_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1561 1580])
+                    ("ucontext" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1581 1596]))                  
+                :type "void")
+                nil [1525 1694])
+            ("register_for_sigchld" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1730 1735]))                  
+                :type "void")
+                nil [1697 1965])
+            ("pisces_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [1968 1998])
+            ("hobbes_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [1999 2029])
+            ("palacios_enabled" variable
+               (:default-value "false"
+                :type "bool")
+                nil [2030 2060])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2072 2081])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2082 2095])
+                    ("envp" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2096 2110]))                  
+                :type "int")
+                nil [2063 6576])
+            ("update_poll_fds" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6608 6613]))                  
+                :type "int")
+                nil [6581 7741])
+            ("add_fd_handler" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [7762 7781])
+                    ("fn" variable (:type ("fd_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7790 7809])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7818 7844]))                  
+                :type "int")
+                nil [7743 8618])
+            ("remove_fd_handler" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [8643 8650]))                  
+                :type "int")
+                nil [8621 9184])
+            ("load_remote_file" function
+               (:arguments 
+                  ( ("remote_file" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9210 9229])
+                    ("local_file" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9233 9251]))                  
+                :type "int")
+                nil [9188 9723])
+            ("hobbes_panic" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9804 9820])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [9821 9825]))                  
+                :type "void")
+                nil [9786 10095]))          
+      :file "init.c"
+      :pointmax 10096
+      :fsize 10095
+      :lastmodtime '(24262 15245)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "init.h"
+      :fsize 961
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces.h"
+      :fsize 440
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces_ctrl.h"
+      :fsize 3716
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "hobbes_ctrl.h"
+      :fsize 572
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 427
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "hio.h"
+      :fsize 689
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [254 272])
+            ("stdlib.h" include (:system-flag t) nil [273 292])
+            ("sys/types.h" include (:system-flag t) nil [293 315])
+            ("pet_log.h" include (:system-flag t) nil [317 337])
+            ("pet_xml.h" include (:system-flag t) nil [338 358])
+            ("v3vee.h" include (:system-flag t) nil [360 378])
+            ("hobbes_enclave.h" include (:system-flag t) nil [380 407])
+            ("init.h" include nil nil [409 426])
+            ("hobbes_util.h" include nil nil [427 451])
+            ("hobbes_ctrl.h" include nil nil [452 476])
+            ("app_launch.h" include nil nil [477 500])
+            ("file_io.h" include nil nil [501 521])
+            ("palacios.h" include nil nil [522 543])
+            ("hcq" variable
+               (:typemodifiers ("static")
+                :default-value "HCQ_INVALID_HANDLE"
+                :type ("hcq_handle_t" type (:type "class") nil nil))
+                nil [546 591])
+            ("exit_leviathan" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [593 619])
+            ("__handle_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [646 656])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [664 681]))                  
+                :type "int")
+                nil [621 1167])
+            ("hobbes_register_cmd" function
+               (:arguments 
+                  ( ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1195 1215])
+                    ("handler_fn" variable (:type ("hobbes_cmd_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1223 1250]))                  
+                :type "int")
+                nil [1170 1305])
+            ("__shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1330 1347])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1352 1369]))                  
+                :type "int")
+                nil [1308 1599])
+            ("__launch_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1625 1642])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1650 1667]))                  
+                :type "int")
+                nil [1601 2010])
+            ("__kill_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2034 2051])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2056 2073]))                  
+                :type "int")
+                nil [2012 2455])
+            ("__load_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2482 2499])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2505 2522]))                  
+                :type "int")
+                nil [2459 3404])
+            ("__ping" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3425 3442])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3450 3467]))                  
+                :type "int")
+                nil [3406 3727])
+            ("__add_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3751 3768])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3772 3789]))                  
+                :type "int")
+                nil [3730 5504])
+            ("__add_memory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5530 5547])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5554 5571]))                  
+                :type "int")
+                nil [5506 7371])
+            ("__remove_memory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hcq" variable (:type ("hcq_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7400 7417])
+                    ("cmd" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7427 7444]))                  
+                :type "int")
+                nil [7373 9107])
+            ("__hcq_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9144 9150]))                  
+                :type ("hcq_handle_t" type (:type "class") nil nil))
+                nil [9111 9754])
+            ("hobbes_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9776 9782]))                  
+                :type "void")
+                nil [9757 9949])
+            ("hobbes_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9967 9972]))                  
+                :type "int")
+                nil [9951 11679]))          
+      :file "hobbes_ctrl.c"
+      :pointmax 11685
+      :fsize 11684
+      :lastmodtime '(24260 9264)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "app_launch.h"
+      :fsize 1332
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :file "file_io.h"
+      :fsize 603
+      :lastmodtime '(24260 9264))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [248 266])
+            ("stdlib.h" include (:system-flag t) nil [267 286])
+            ("sys/types.h" include (:system-flag t) nil [287 309])
+            ("sys/stat.h" include (:system-flag t) nil [310 331])
+            ("fcntl.h" include (:system-flag t) nil [332 350])
+            ("unistd.h" include (:system-flag t) nil [351 370])
+            ("ctype.h" include (:system-flag t) nil [371 389])
+            ("arch/types.h" include (:system-flag t) nil [390 413])
+            ("sys/ioctl.h" include (:system-flag t) nil [414 436])
+            ("pthread.h" include (:system-flag t) nil [437 457])
+            ("poll.h" include (:system-flag t) nil [458 475])
+            ("signal.h" include (:system-flag t) nil [476 495])
+            ("sys/wait.h" include (:system-flag t) nil [496 517])
+            ("errno.h" include (:system-flag t) nil [518 536])
+            ("stdbool.h" include (:system-flag t) nil [537 557])
+            ("sys/mman.h" include (:system-flag t) nil [558 579])
+            ("lwk/liblwk.h" include (:system-flag t) nil [582 605])
+            ("lwk/pmem.h" include (:system-flag t) nil [606 627])
+            ("lwk/smp.h" include (:system-flag t) nil [628 648])
+            ("stdint.h" include (:system-flag t) nil [650 669])
+            ("pet_log.h" include (:system-flag t) nil [671 691])
+            ("pet_xml.h" include (:system-flag t) nil [692 712])
+            ("pet_hashtable.h" include (:system-flag t) nil [713 739])
+            ("hobbes.h" include (:system-flag t) nil [741 760])
+            ("hobbes_app.h" include (:system-flag t) nil [761 784])
+            ("hobbes_db.h" include (:system-flag t) nil [785 807])
+            ("hobbes_util.h" include (:system-flag t) nil [808 832])
+            ("hobbes_notifier.h" include (:system-flag t) nil [833 861])
+            ("xemem.h" include (:system-flag t) nil [863 881])
+            ("hobbes_master_db" variable
+               (:typemodifiers ("extern")
+                :type ("hdb_db_t" type (:type "class") nil nil))
+                nil [883 916])
+            ("enclave_cpus" variable
+               (:typemodifiers ("extern")
+                :type ("cpu_set_t" type (:type "class") nil nil))
+                nil [918 948])
+            ("pisces.h" include nil nil [950 969])
+            ("app_launch.h" include nil nil [970 993])
+            ("init.h" include nil nil [994 1011])
+            ("hio.h" include nil nil [1012 1028])
+            ("DEFAULT_NUM_RANKS" variable (:constant-flag t) nil [1038 1055])
+            ("DEFAULT_CPU_MASK" variable (:constant-flag t) nil [1074 1090])
+            ("DEFAULT_USE_LARGE_PAGES" variable (:constant-flag t) nil [1116 1139])
+            ("DEFAULT_USE_SMARTMAP" variable (:constant-flag t) nil [1152 1172])
+            ("DEFAULT_HEAP_SIZE" variable (:constant-flag t) nil [1188 1205])
+            ("DEFAULT_STACK_SIZE" variable (:constant-flag t) nil [1239 1257])
+            ("DEFAULT_ENVP" variable (:constant-flag t) nil [1284 1296])
+            ("DEFAULT_ARGV" variable (:constant-flag t) nil [1319 1331])
+            ("MAX_ARGC" variable (:constant-flag t) nil [1357 1365])
+            ("MAX_ENVC" variable (:constant-flag t) nil [1377 1385])
+            ("LWK_PROCESS_ALIVE" variable (:constant-flag t) nil [1399 1416])
+            ("LWK_PROCESS_EXITED" variable (:constant-flag t) nil [1428 1446])
+            ("app_htable" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1961 2006])
+            ("proc_htable" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2007 2052])
+            ("pmem_state" type
+               (:members 
+                  ( ("data" variable (:type ("pmem_region" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2356 2380])
+                    ("heap" variable (:type ("pmem_region" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2385 2409])
+                    ("stack" variable (:type ("pmem_region" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2414 2439]))                  
+                :type "struct")
+                nil [2324 2455])
+            ("pmem_state_t" type
+               (:typedef ("pmem_state" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2324 2455])
+            ("base_region" type
+               (:members 
+                  ( ("segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2718 2743])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2789 2813])
+                    ("apid" variable (:type ("xemem_apid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2849 2873])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2896 2921])
+                    ("paddr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2973 2998])
+                    ("is_pmem" variable (:type "bool") (reparse-symbol classsubparts) [3044 3071]))                  
+                :type "struct")
+                nil [2685 3088])
+            ("base_region_t" type
+               (:typedef ("base_region" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2685 3088])
+            ("shell_mem_state" type
+               (:members 
+                  ( ("data" variable (:type ("base_region_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3127 3146])
+                    ("heap" variable (:type ("base_region_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3151 3170])
+                    ("stack" variable (:type ("base_region_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3175 3195]))                  
+                :type "struct")
+                nil [3090 3216])
+            ("shell_mem_state_t" type
+               (:typedef ("shell_mem_state" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3090 3216])
+            ("lwk_mem_state" type
+               (:members 
+                  ( ("num_ranks" variable (:type "unsigned int") (reparse-symbol classsubparts) [3253 3277])
+                    ("local" variable (:type "bool") (reparse-symbol classsubparts) [3282 3302])
+                    ("elf_state" variable (:type ("base_region_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3307 3331])
+                    ("" type
+                       (:members 
+                          ( ("pmem_state" variable
+                               (:pointer 1
+                                :type ("pmem_state_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3346 3375])
+                            ("shell_state" variable (:type ("shell_mem_state_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3411 3441]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3337 3469]))                  
+                :type "struct")
+                nil [3218 3488])
+            ("lwk_mem_state_t" type
+               (:typedef ("lwk_mem_state" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3218 3488])
+            ("lwk_app_state" type
+               (:members 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3681 3708])
+                    ("job_flags" variable (:type ("job_flags_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3713 3745])
+                    ("hio_enabled" variable (:type "bool") (reparse-symbol classsubparts) [3750 3784])
+                    ("num_ranks" variable (:type "unsigned int") (reparse-symbol classsubparts) [3789 3821])
+                    ("num_exited" variable (:type "unsigned int") (reparse-symbol classsubparts) [3826 3859])
+                    ("start_state" variable
+                       (:pointer 1
+                        :type ("start_state_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3864 3898])
+                    ("mem_state" variable
+                       (:pointer 1
+                        :type ("lwk_mem_state_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3936 3968]))                  
+                :type "struct")
+                nil [3646 3990])
+            ("lwk_app_state_t" type
+               (:typedef ("lwk_app_state" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3646 3990])
+            ("htable_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4024 4038]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3993 4072])
+            ("htable_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4099 4114])
+                    ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4115 4130]))                  
+                :type "int")
+                nil [4075 4161])
+            ("lookup_app_by_hpid" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4208 4225]))                  
+                :type ("lwk_app_state_t" type (:type "class") nil nil))
+                nil [4164 4457])
+            ("lookup_hpid_by_pid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4497 4507]))                  
+                :type ("hobbes_id_t" type (:type "class") nil nil))
+                nil [4459 4771])
+            ("lookup_app_by_pid" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4817 4827]))                  
+                :type ("lwk_app_state_t" type (:type "class") nil nil))
+                nil [4774 4966])
+            ("alloc_mem_state" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("num_ranks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5009 5032])
+                    ("local_mem" variable (:type "bool") (reparse-symbol arg-sub-list) [5035 5058]))                  
+                :type ("lwk_mem_state_t" type (:type "class") nil nil))
+                nil [4968 5895])
+            ("free_mem_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("lwk_mem_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5924 5948]))                  
+                :type "void")
+                nil [5897 6026])
+            ("add_pmem_to_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6058 6072])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6078 6092]))                  
+                :type "int")
+                nil [6028 6481])
+            ("remove_pmem_from_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6518 6532])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6536 6550]))                  
+                :type "int")
+                nil [6483 7081])
+            ("map_base_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7110 7132])
+                    ("size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7135 7156])
+                    ("base_reg" variable
+                       (:pointer 1
+                        :type ("base_region_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7159 7184])
+                    ("add_to_kernel" variable (:type "bool") (reparse-symbol arg-sub-list) [7187 7217]))                  
+                :type "int")
+                nil [7083 8640])
+            ("unmap_base_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base_reg" variable
+                       (:pointer 1
+                        :type ("base_region_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8702 8727]))                  
+                :type "void")
+                nil [8672 8896])
+            ("map_base_regions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8926 8957])
+                    ("data_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8968 8998])
+                    ("heap_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9002 9033])
+                    ("heap_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9037 9067])
+                    ("stack_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9071 9103])
+                    ("stack_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9107 9138])
+                    ("shell_state" variable
+                       (:pointer 1
+                        :type ("shell_mem_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9142 9174]))                  
+                :type "int")
+                nil [8898 9870])
+            ("unmap_base_regions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("shell_state" variable
+                       (:pointer 1
+                        :type ("shell_mem_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9903 9935]))                  
+                :type "void")
+                nil [9872 10075])
+            ("remember_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10221 10244])
+                    ("job_flags" variable (:type ("job_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10258 10286])
+                    ("num_ranks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10300 10328])
+                    ("start_state" variable
+                       (:pointer 1
+                        :type ("start_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10342 10372])
+                    ("mem_state" variable
+                       (:pointer 1
+                        :type ("lwk_mem_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10386 10414])
+                    ("hio_enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [10421 10451]))                  
+                :type "int")
+                nil [10197 11865])
+            ("forget_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("app" variable
+                       (:pointer 1
+                        :type ("lwk_app_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11960 11981]))                  
+                :type "int")
+                nil [11938 12808])
+            ("clean_up_app" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("app" variable
+                       (:pointer 1
+                        :type ("lwk_app_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12912 12933]))                  
+                :type "int")
+                nil [12888 14470])
+            ("init_lwk_app" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14490 14495]))                  
+                :type "int")
+                nil [14473 14940])
+            ("deinit_lwk_app" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14962 14967]))                  
+                :type "int")
+                nil [14943 15064])
+            ("load_segment_hobbes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("elf_image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15097 15125])
+                    ("phdr" variable
+                       (:pointer 1
+                        :type ("elf_phdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15132 15155])
+                    ("aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15162 15190])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15197 15221])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15228 15253])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15260 15285])
+                    ("pmem" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15292 15311]))                  
+                :type "int")
+                nil [15066 16549])
+            ("make_region_hobbes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16581 16597])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16603 16617])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16623 16637])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16643 16659])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16665 16685])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16691 16709])
+                    ("base_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16715 16733]))                  
+                :type "int")
+                nil [16551 16998])
+            ("elf_load_executable_hobbes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("elf_image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17038 17061])
+                    ("aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17068 17084])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17091 17111])
+                    ("load_base_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17118 17141]))                  
+                :type "int")
+                nil [17000 18649])
+            ("elf_load_hobbes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("elf_image" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [18678 18704])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18707 18728])
+                    ("desired_aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18731 18755])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18758 18778])
+                    ("heap_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18781 18799])
+                    ("stack_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18802 18821])
+                    ("argv_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18824 18849])
+                    ("envp_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18852 18877])
+                    ("start_state" variable
+                       (:pointer 1
+                        :type ("start_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18880 18908])
+                    ("load_base_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18911 18935])
+                    ("heap_base_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18938 18962])
+                    ("stack_base_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18965 18990]))                  
+                :type "int")
+                nil [18651 23284])
+            ("launch_lwk_app" function
+               (:arguments 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23305 23324])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23333 23352])
+                    ("exe_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23361 23385])
+                    ("exe_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23394 23417])
+                    ("argv" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23426 23445])
+                    ("envp" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [23454 23473])
+                    ("flags" variable (:type ("job_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23482 23502])
+                    ("num_ranks" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [23511 23535])
+                    ("cpu_mask" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23544 23567])
+                    ("data_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23576 23600])
+                    ("heap_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23609 23633])
+                    ("stack_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23642 23667])
+                    ("data_base_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23676 23706])
+                    ("heap_base_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23715 23745])
+                    ("stack_base_segid" variable (:type ("xemem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23754 23785]))                  
+                :type "int")
+                nil [23286 32989])
+            ("launch_hobbes_lwk_app" function
+               (:arguments 
+                  ( ("spec_str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [33018 33034]))                  
+                :type "int")
+                nil [32992 38623])
+            ("kill_lwk_app" function
+               (:arguments 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38643 38660]))                  
+                :type "int")
+                nil [38626 40383])
+            ("kill_hobbes_lwk_app" function
+               (:arguments 
+                  ( ("hpid" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40410 40427]))                  
+                :type "int")
+                nil [40386 40627])
+            ("mark_pid_exited" function
+               (:arguments 
+                  ( ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40650 40660])
+                    ("status" variable (:type "int") (reparse-symbol arg-sub-list) [40661 40672]))                  
+                :type "int")
+                nil [40630 41986])
+            ("reap_exited_children" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42052 42057]))                  
+                :type "int")
+                nil [42027 42451])
+            ("get_hpid_by_pid" function
+               (:arguments 
+                  ( ("pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42482 42492]))                  
+                :type ("hobbes_id_t" type (:type "class") nil nil))
+                nil [42454 42532]))          
+      :file "app_launch.c"
+      :pointmax 42533
+      :fsize 42532
+      :lastmodtime '(24260 9264)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DEFAULT_NUM_RANKS" . ((semantic-list "(1)" 1062 . 1065)))
+          ("DEFAULT_USE_LARGE_PAGES" . ((semantic-list "(0)" 1140 . 1143)))
+          ("LWK_PROCESS_EXITED" . ((number "1" 1447 . 1448)))
+          ("DEFAULT_USE_SMARTMAP" . ((semantic-list "(0)" 1176 . 1179)))
+          ("DEFAULT_ENVP" . ((string "\"\"" 1308 . 1310)))
+          ("DEFAULT_HEAP_SIZE" . ((semantic-list "(16 * 1024 * 1024)" 1212 . 1230)))
+          ("DEFAULT_CPU_MASK" . ((semantic-list "(~0x0ULL)" 1098 . 1107)))
+          ("LWK_PROCESS_ALIVE" . ((number "0" 1418 . 1419)))
+          ("DEFAULT_ARGV" . ((string "\"\"" 1343 . 1345)))
+          ("DEFAULT_STACK_SIZE" . ((semantic-list "(256 * 1024)" 1263 . 1275)))
+          ("MAX_ARGC" . ((number "32" 1366 . 1368)))
+          ("MAX_ENVC" . ((number "64" 1386 . 1388)))
+          )
+))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan!lwk_inittask!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

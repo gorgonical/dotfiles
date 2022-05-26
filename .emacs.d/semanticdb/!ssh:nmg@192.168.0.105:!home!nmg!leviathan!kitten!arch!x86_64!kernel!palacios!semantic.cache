@@ -1,0 +1,437 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [753 776])
+            ("lwk/smp.h" include (:system-flag t) nil [777 797])
+            ("lwk/pmem.h" include (:system-flag t) nil [798 819])
+            ("lwk/string.h" include (:system-flag t) nil [820 843])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [844 868])
+            ("lwk/driver.h" include (:system-flag t) nil [869 892])
+            ("lwk/kthread.h" include (:system-flag t) nil [893 917])
+            ("arch/page.h" include (:system-flag t) nil [918 940])
+            ("arch/ptrace.h" include (:system-flag t) nil [941 965])
+            ("arch/apic.h" include (:system-flag t) nil [966 988])
+            ("arch/idt_vectors.h" include (:system-flag t) nil [989 1018])
+            ("arch/proto.h" include (:system-flag t) nil [1019 1042])
+            ("palacios.h" include nil nil [1043 1064])
+            ("lwk/signal.h" include (:system-flag t) nil [1065 1088])
+            ("lwk/xcall.h" include (:system-flag t) nil [1089 1111])
+            ("lwk/interrupt.h" include (:system-flag t) nil [1112 1138])
+            ("lwk/sched.h" include (:system-flag t) nil [1139 1161])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [1162 1186])
+            ("arch/io.h" include (:system-flag t) nil [1187 1207])
+            ("arch/unistd.h" include (:system-flag t) nil [1208 1232])
+            ("arch/vsyscall.h" include (:system-flag t) nil [1233 1259])
+            ("arch/io_apic.h" include (:system-flag t) nil [1260 1285])
+            ("g_vm_guest" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1361 1406])
+            ("irq_to_guest_map" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1407 1468])
+            ("guest_iso_start" variable
+               (:typemodifiers ("static")
+                :type ("paddr_t" type (:type "class") nil nil))
+                nil [1469 1500])
+            ("guest_iso_size" variable
+               (:typemodifiers ("static")
+                :type ("size_t" type (:type "class") nil nil))
+                nil [1501 1530])
+            ("send_key_to_palacios" function
+               (:arguments 
+                  ( ("status" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [1630 1652])
+                    ("scan_code" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [1654 1680]))                  
+                :type "void")
+                nil [1602 1851])
+            ("send_tick_to_palacios" function
+               (:arguments 
+                  ( ("period_us" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1944 1969]))                  
+                :type "void")
+                nil [1915 2111])
+            ("palacios_print" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2241 2253])
+                    ("vcore" variable (:type "int") (reparse-symbol arg-sub-list) [2255 2267])
+                    ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2269 2290])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [2292 2297]))                  
+                :type "void")
+                nil [2212 2372])
+            ("palacios_allocate_pages" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("num_pages" variable (:type "int") (reparse-symbol arg-sub-list) [2610 2626])
+                    ("alignment" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2628 2652])
+                    ("node_id" variable (:type "int") (reparse-symbol arg-sub-list) [2678 2692])
+                    ("constraint" variable (:type "int") (reparse-symbol arg-sub-list) [2694 2712]))                  
+                :type "void")
+                nil [2570 3108])
+            ("palacios_free_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("page_paddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3226 3246])
+                    ("num_pages" variable (:type "int") (reparse-symbol arg-sub-list) [3248 3283]))                  
+                :type "void")
+                nil [3185 3835])
+            ("palacios_alloc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3983 4003]))                  
+                :type "void")
+                nil [3952 4033])
+            ("palacios_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4138 4153]))                  
+                :type "void")
+                nil [4110 4182])
+            ("palacios_vaddr_to_paddr" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4308 4324]))                  
+                :type "void")
+                nil [4268 4358])
+            ("palacios_paddr_to_vaddr" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("paddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4484 4500]))                  
+                :type "void")
+                nil [4444 4534])
+            ("palacios_xcall" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [4615 4628])
+                    ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [4644 4654]))                          
+                        :type "void")
+                        nil nil)
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4657 4671]))                  
+                :type "void")
+                nil [4585 4888])
+            ("palacios_create_thread_on_cpu" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [4992 5005])
+                    ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [5020 5031]))                          
+                        :type "int")
+                        nil nil)
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5035 5048])
+                    ("thread_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5051 5073]))                  
+                :type "void")
+                nil [4946 5138])
+            ("palacios_get_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5239 5244]))                  
+                :type "unsigned int")
+                nil [5201 5267])
+            ("palacios_interrupt_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5952 5974])
+                    ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [5977 5990])
+                    ("vector" variable (:type "int") (reparse-symbol arg-sub-list) [5992 6024]))                  
+                :type "void")
+                nil [5915 6157])
+            ("palacios_dispatch_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6262 6284])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6286 6308]))                  
+                :type "void")
+                nil [6220 6463])
+            ("palacios_hook_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6576 6599])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6601 6623]))                  
+                :type "int")
+                nil [6539 7315])
+            ("palacios_ack_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "int") (reparse-symbol arg-sub-list) [7391 7405]))                  
+                :type "int")
+                nil [7355 7445])
+            ("palacios_get_cpu_khz" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7541 7546]))                  
+                :type "unsigned int")
+                nil [7500 7589])
+            ("palacios_yield_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7679 7684]))                  
+                :type "void")
+                nil [7648 7701])
+            ("palacios_sleep_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("usec" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7793 7813]))                  
+                :type "void")
+                nil [7760 7849])
+            ("palacios_start_kernel_thread" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [7944 7954]))                          
+                        :type "int")
+                        nil nil)
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7957 7970])
+                    ("thread_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7972 7993]))                  
+                :type "void")
+                nil [7887 8043])
+            ("palacios_mutex_alloc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8138 8143]))                  
+                :type "void")
+                nil [8103 8248])
+            ("palacios_mutex_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mutex" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8310 8326]))                  
+                :type "void")
+                nil [8276 8350])
+            ("palacios_mutex_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mutex" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8413 8428])
+                    ("must_spin" variable (:type "int") (reparse-symbol arg-sub-list) [8431 8448]))                  
+                :type "void")
+                nil [8378 8485])
+            ("palacios_mutex_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mutex" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8552 8568]))                  
+                :type "void")
+                nil [8515 8608])
+            ("palacios_mutex_lock_irqsave" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mutex" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8819 8834])
+                    ("must_spin" variable (:type "int") (reparse-symbol arg-sub-list) [8836 8853]))                  
+                :type "void")
+                nil [8775 8951])
+            ("palacios_mutex_unlock_irqrestore" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mutex" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9085 9100])
+                    ("flags" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9102 9118]))                  
+                :type "void")
+                nil [9038 9190])
+            ("palacios_start_thread" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9226 9237]))                  
+                :type "void")
+                nil [9192 9400])
+            ("palacios_os_hooks" variable
+               (:default-value "{
+	.print			= palacios_print,
+	.allocate_pages		= palacios_allocate_pages,
+	.free_pages		= palacios_free_pages,
+	.malloc			= palacios_alloc,
+	.free			= palacios_free,
+	.vaddr_to_paddr		= palacios_vaddr_to_paddr,
+	.paddr_to_vaddr		= palacios_paddr_to_vaddr,
+	.hook_interrupt		= palacios_hook_interrupt,
+	.ack_irq		= palacios_ack_interrupt,
+	.get_cpu_khz		= palacios_get_cpu_khz,
+	.start_kernel_thread    = palacios_start_kernel_thread,
+	.yield_cpu		= palacios_yield_cpu,
+	.sleep_cpu		= palacios_sleep_cpu,
+	.mutex_alloc		= palacios_mutex_alloc,
+	.mutex_free		= palacios_mutex_free,
+	.mutex_lock		= palacios_mutex_lock, 
+	.mutex_unlock		= palacios_mutex_unlock,
+	.mutex_lock_irqsave	= palacios_mutex_lock_irqsave,
+	.mutex_unlock_irqrestore = palacios_mutex_unlock_irqrestore,
+	.get_cpu		= palacios_get_cpu,
+	.interrupt_cpu		= palacios_interrupt_cpu,
+	.call_on_cpu		= palacios_xcall,
+	.create_thread_on_cpu	= palacios_create_thread_on_cpu,
+	.start_thread		= palacios_start_thread,
+}"
+                :type ("v3_os_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9490 10509])
+            ("palacios_run_guest" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10585 10595]))                  
+                :type "int")
+                nil [10555 11109])
+            ("sys_v3_start_guest" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("iso_start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11226 11246])
+                    ("iso_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11248 11267]))                  
+                :type "int")
+                nil [11194 11404])
+            ("palacios_keyboard_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "int") (reparse-symbol arg-sub-list) [11521 11534])
+                    ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11536 11553]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [11472 11861])
+            ("options" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [11863 11884])
+            ("palacios_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11958 11963]))                  
+                :type "int")
+                nil [11933 12379])
+            ("DRIVER_INIT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("palacios_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12404 12419]))                  
+                :type "int")
+                nil [12381 12420])
+            ("DRIVER_PARAM" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("options" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12435 12443])
+                    ("" variable (:type ("charp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12444 12450]))                  
+                :type "int")
+                nil [12421 12451]))          
+      :file "palacios.c"
+      :pointmax 12452
+      :fsize 12451
+      :lastmodtime '(24261 51456)
+      :unmatched-syntax '((string 12394 . 12402)))
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 325
+      :lastmodtime '(24261 51456)))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan!kitten!arch!x86_64!kernel!palacios!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

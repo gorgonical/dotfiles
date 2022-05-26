@@ -1,0 +1,787 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("sbk_hashtable.h" include (:system-flag t) nil [223 249])
+            ("sbk_uuid.h" include (:system-flag t) nil [250 271])
+            ("sbk_log.h" include (:system-flag t) nil [272 292])
+            ("sbk_util.h" include (:system-flag t) nil [293 314])
+            ("galleries.h" include nil nil [316 338])
+            ("gallery_utils.h" include nil nil [339 365])
+            ("posts.h" include nil nil [366 384])
+            ("post_utils.h" include nil nil [385 408])
+            ("__gallery_cache" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("sbk_hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [835 892])
+            ("__gallery_key_cache" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("sbk_hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [893 950])
+            ("__post_cache" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("sbk_hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [951 1008])
+            ("__uuid_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1042 1056]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1011 1146])
+            ("__uuid_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1172 1187])
+                    ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1188 1203]))                  
+                :type "int")
+                nil [1148 1372])
+            ("__free_gallery_key" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gallery_key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1405 1427]))                  
+                :type "void")
+                nil [1374 1496])
+            ("__free_post" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("post" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1522 1537]))                  
+                :type "void")
+                nil [1498 1585])
+            ("sbk_cache_store_gallery_key" function
+               (:arguments 
+                  ( ("gallery_key" variable
+                       (:pointer 1
+                        :type ("sbk_gallery_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1628 1665]))                  
+                :type "int")
+                nil [1596 2217])
+            ("sbk_cache_find_gallery_key" function
+               (:pointer 1
+                :arguments 
+                  ( ("gallery_uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2271 2302]))                  
+                :type ("sbk_gallery_key" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2219 2643])
+            ("sbk_cache_store_post" function
+               (:arguments 
+                  ( ("post" variable
+                       (:pointer 1
+                        :type ("sbk_post" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2675 2698]))                  
+                :type "int")
+                nil [2650 3177])
+            ("sbk_cache_find_post" function
+               (:pointer 1
+                :arguments 
+                  ( ("uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3217 3240]))                  
+                :type ("sbk_post" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3179 3516])
+            ("cache_init" function (:type "int") nil [3524 4237])
+            ("cache_deinit" function (:type "int") nil [4239 4425]))          
+      :file "cache.c"
+      :pointmax 4426
+      :fsize 4425
+      :lastmodtime '(23658 22991)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("mongoose.h" include nil nil [222 243])
+            ("enclave_state.h" include nil nil [245 271])
+            ("user_data.h" include nil nil [272 294])
+            ("sbk_log.h" include (:system-flag t) nil [296 316])
+            ("sbk_util.h" include (:system-flag t) nil [317 338])
+            ("sbk_key.h" include (:system-flag t) nil [339 359])
+            ("sbk_json.h" include (:system-flag t) nil [360 381])
+            ("sbk_encode.h" include (:system-flag t) nil [382 405])
+            ("sbk_uuid.h" include (:system-flag t) nil [406 427])
+            ("sgx_trts.h" include (:system-flag t) nil [429 450])
+            ("sgx_tae_service.h" include (:system-flag t) nil [451 479])
+            ("sgx_quote.h" include (:system-flag t) nil [480 502])
+            ("sgx_tseal.h" include (:system-flag t) nil [503 525])
+            ("sgx_utils.h" include (:system-flag t) nil [526 548])
+            ("attestation.h" include nil nil [551 575])
+            ("http_server.h" include nil nil [576 600])
+            ("http_client.h" include nil nil [601 625])
+            ("cache.h" include nil nil [626 644])
+            ("galleries.h" include nil nil [645 667])
+            ("posts.h" include nil nil [668 686])
+            ("photos.h" include nil nil [687 706])
+            ("enclave_backend_ops.h" include nil nil [707 739])
+            ("enclave_utils.h" include nil nil [740 766])
+            ("srv_con" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("mg_connection" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [768 806])
+            ("mgr" variable
+               (:typemodifiers ("extern")
+                :type ("mg_mgr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [807 841])
+            ("MAX_URL_LEN" variable (:constant-flag t) nil [854 865])
+            ("ORIGIN_SERVER" variable (:constant-flag t) nil [935 948])
+            ("DEFAULT_ENCLAVE_ADDR" variable (:constant-flag t) nil [1127 1147])
+            ("DEFAULT_BACKEND_ADDR" variable (:constant-flag t) nil [1217 1237])
+            ("enclave_addr" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type "char")
+                nil [1267 1294])
+            ("backend_addr" variable
+               (:pointer 1
+                :default-value "DEFAULT_BACKEND_ADDR"
+                :type "char")
+                nil [1295 1338])
+            ("enclave_state" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("sbk_enclave_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1340 1388])
+            ("should_stop" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [1390 1417])
+            ("status_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1448 1477])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("http_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1486 1515])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1524 1554]))                  
+                :type "void")
+                nil [1421 5362])
+            ("error_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5395 5424])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("http_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5432 5461])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5469 5499]))                  
+                :type "void")
+                nil [5369 5692])
+            ("test_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5719 5748])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("http_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5755 5784])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5791 5821]))                  
+                :type "void")
+                nil [5694 5968])
+            ("srv_evt_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("mg_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6001 6028])
+                    ("evt" variable (:type "int") (reparse-symbol arg-sub-list) [6031 6058])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6061 6089])
+                    ("user_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6092 6125]))                  
+                :type "void")
+                nil [5973 6146])
+            ("enclave_get_report_ecall" function
+               (:arguments 
+                  ( ("qe_tgt_info" variable
+                       (:pointer 1
+                        :type ("sgx_target_info_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6180 6212])
+                    ("report" variable
+                       (:pointer 1
+                        :type ("sgx_report_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6217 6244]))                  
+                :type "int")
+                nil [6151 6309])
+            ("enclave_first_run_ecall" function
+               (:arguments 
+                  ( ("user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6348 6372]))                  
+                :type "int")
+                nil [6320 6928])
+            ("__register_endpoints" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [6930 7130])
+            ("init_session_cb" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ret_code" variable (:type "int") (reparse-symbol arg-sub-list) [7238 7254])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7257 7268]))                  
+                :type "void")
+                nil [7210 7408])
+            ("enclave_init_ecall" function
+               (:arguments 
+                  ( ("user_pub_key_pem" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7434 7459])
+                    ("port_num" variable (:type "short") (reparse-symbol arg-sub-list) [7465 7482]))                  
+                :type "int")
+                nil [7411 9411])
+            ("enclave_register_ecall" function
+               (:arguments 
+                  ( ("token" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9445 9469]))                  
+                :type "int")
+                nil [9418 9513])
+            ("__authorize_cb_2" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("backend_con" variable
+                       (:pointer 1
+                        :type ("mg_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9545 9580])
+                    ("evt" variable (:type "int") (reparse-symbol arg-sub-list) [9584 9611])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9615 9643])
+                    ("user_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9647 9680]))                  
+                :type "void")
+                nil [9516 10136])
+            ("__authorize_cb_1" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pub_info" variable
+                       (:pointer 1
+                        :type ("sbk_public_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10172 10206])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10210 10239]))                  
+                :type "void")
+                nil [10143 12041])
+            ("enclave_authorize_ecall" function
+               (:arguments 
+                  ( ("uuid" variable
+                       (:pointer 1
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12072 12095]))                  
+                :type "int")
+                nil [12044 12444])
+            ("enclave_run_ecall" function (:type "int") nil [12448 12592])
+            ("ecall_stop_enclave" function (:type "void") nil [12594 12681])
+            ("enclave_deinit_ecall" function (:type "int") nil [12684 12790]))          
+      :file "enclave.c"
+      :pointmax 12791
+      :fsize 12790
+      :lastmodtime '(23672 18696)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DEFAULT_BACKEND_ADDR" . ((string "\"http://169.55.41.34:9038\"" 1238 . 1264)))
+          ("DEFAULT_ENCLAVE_ADDR" . ((string "\"localhost\"" 1148 . 1159)))
+          ("MAX_URL_LEN" . ((number "4096" 866 . 870)))
+          ("ORIGIN_SERVER" . ((string "\"*\"" 949 . 952)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "mongoose.h"
+      :fsize 122132
+      :lastmodtime '(23671 22528))
+    (semanticdb-table "semanticdb-table"
+      :file "enclave_state.h"
+      :fsize 2079
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "user_data.h"
+      :fsize 575
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "attestation.h"
+      :fsize 1700
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "http_server.h"
+      :fsize 4106
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "http_client.h"
+      :fsize 1380
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "cache.h"
+      :fsize 657
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "galleries.h"
+      :fsize 779
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "posts.h"
+      :fsize 843
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "photos.h"
+      :fsize 651
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "enclave_backend_ops.h"
+      :fsize 588
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "enclave_utils.h"
+      :fsize 748
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "gallery_utils.h"
+      :fsize 1599
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "post_utils.h"
+      :fsize 1006
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("sbk_log.h" include (:system-flag t) nil [223 243])
+            ("sbk_json.h" include (:system-flag t) nil [244 265])
+            ("sbk_uuid.h" include (:system-flag t) nil [266 287])
+            ("sbk_encode.h" include (:system-flag t) nil [288 311])
+            ("sbk_util.h" include (:system-flag t) nil [312 333])
+            ("enclave_state.h" include nil nil [335 361])
+            ("http.h" include nil nil [362 379])
+            ("http_server.h" include nil nil [380 404])
+            ("mongoose.h" include nil nil [405 426])
+            ("mg_net_if_sgx.h" include nil nil [427 453])
+            ("http_endpoint" type
+               (:members 
+                  ( ("uri" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [484 511])
+                    ("get_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [517 547])
+                    ("post_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [552 583])
+                    ("dele_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [588 619])
+                    ("put_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [624 654])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [664 697]))                  
+                :type "struct")
+                nil [457 700])
+            ("srv_con" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("mg_connection" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [705 743])
+            ("mgr" variable (:type ("mg_mgr" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [744 771])
+            ("enclave_state" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("sbk_enclave_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [774 822])
+            ("enclave_addr" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [824 851])
+            ("backend_addr" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [852 879])
+            ("__default_recall_error" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("recall" variable
+                       (:pointer 1
+                        :type ("http_recall" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [917 945])
+                    ("err_code" variable (:type "int") (reparse-symbol arg-sub-list) [955 985])
+                    ("message" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [995 1024]))                  
+                :type "void")
+                nil [882 1092])
+            ("http_create_recall" function
+               (:pointer 1
+                :arguments 
+                  ( ("recall_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1136 1171])
+                    ("error_fn" variable (:type ("http_recall_error_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1177 1211])
+                    ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1218 1247])
+                    ("http_msg" variable
+                       (:pointer 1
+                        :type ("http_message" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1253 1287])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1293 1323]))                  
+                :type ("http_recall" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1096 1949])
+            ("http_free_recall" function
+               (:arguments 
+                  ( ("recall" variable
+                       (:pointer 1
+                        :type ("http_recall" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1973 2001]))                  
+                :type "void")
+                nil [1951 2118])
+            ("http_parse_sbk_uri" function
+               (:arguments 
+                  ( ("uri" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2146 2169])
+                    ("gallery_uuid" variable
+                       (:pointer 2
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2175 2207])
+                    ("post_uuid" variable
+                       (:pointer 2
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2213 2242])
+                    ("photo_uuid" variable
+                       (:pointer 2
+                        :type ("sbk_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2248 2278]))                  
+                :type "int")
+                nil [2123 3550])
+            ("http_srv_send_response_code" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3586 3615])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [3623 3660]))                  
+                :type "int")
+                nil [3554 4304])
+            ("http_srv_send_response_data" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4338 4367])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [4375 4412])
+                    ("content_type" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4420 4458])
+                    ("response" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4466 4500])
+                    ("response_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4508 4546]))                  
+                :type "int")
+                nil [4306 5666])
+            ("http_srv_send_response_str" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5700 5729])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [5736 5773])
+                    ("content_type" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5780 5818])
+                    ("response" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5825 5859]))                  
+                :type "int")
+                nil [5669 6024])
+            ("http_srv_send_response_vfmt" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6060 6089])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [6097 6134])
+                    ("content_type" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6142 6180])
+                    ("response_fmt" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6188 6226])
+                    ("args" variable (:type ("va_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6234 6264]))                  
+                :type "int")
+                nil [6028 6612])
+            ("http_srv_send_response_fmt" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6646 6675])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [6682 6719])
+                    ("content_type" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6726 6764])
+                    ("response_fmt" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6771 6809])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [6816 6820]))                  
+                :type "int")
+                nil [6615 7037])
+            ("http_srv_send_response_err" function
+               (:arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("http_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7073 7102])
+                    ("status_code" variable (:type "int") (reparse-symbol arg-sub-list) [7109 7146])
+                    ("fmt" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7153 7182])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [7189 7193]))                  
+                :type "int")
+                nil [7042 7611])
+            ("__options_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("mg_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7646 7673])
+                    ("endpoint" variable
+                       (:pointer 1
+                        :type ("http_endpoint" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7678 7710]))                  
+                :type "void")
+                nil [7616 8926])
+            ("__endpoint_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("mg_connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8962 8989])
+                    ("evt" variable (:type "int") (reparse-symbol arg-sub-list) [8995 9022])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9028 9056])
+                    ("user_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9062 9095]))                  
+                :type "void")
+                nil [8931 10700])
+            ("http_srv_register_endpoint" function
+               (:arguments 
+                  ( ("uri" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10733 10759])
+                    ("get_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10766 10795])
+                    ("post_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10802 10832])
+                    ("dele_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10839 10869])
+                    ("put_fn" variable (:type ("http_req_handler_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10876 10905])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10912 10944]))                  
+                :type "int")
+                nil [10702 11820])
+            ("http_srv_init" function (:type "int") nil [11823 11866]))          
+      :file "http_server.c"
+      :pointmax 11867
+      :fsize 11866
+      :lastmodtime '(23672 18780)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "http.h"
+      :fsize 906
+      :lastmodtime '(23658 22991))
+    (semanticdb-table "semanticdb-table"
+      :file "mg_net_if_sgx.h"
+      :fsize 1090
+      :lastmodtime '(23658 22991)))
+  :file "!ssh:nmg@sgx:!home!nmg!seabrook!enclave!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

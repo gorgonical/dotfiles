@@ -1,0 +1,3906 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [221 246])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [247 280])
+            ("palacios/vm.h" include (:system-flag t) nil [281 305])
+            ("palacios/svm.h" include (:system-flag t) nil [306 331])
+            ("palacios/vmx.h" include (:system-flag t) nil [332 357])
+            ("palacios/vmm_checkpoint.h" include (:system-flag t) nil [358 394])
+            ("palacios/vmm_hashtable.h" include (:system-flag t) nil [395 430])
+            ("palacios/vmm_direct_paging.h" include (:system-flag t) nil [431 470])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [471 502])
+            ("palacios/vmm_mem.h" include (:system-flag t) nil [503 532])
+            ("palacios/vmm_dev_mgr.h" include (:system-flag t) nil [534 567])
+            ("PrintDebug" variable (:constant-flag t) nil [776 786])
+            ("CHKPT_KEY_LEN" variable (:constant-flag t) nil [817 830])
+            ("v3_chkpt" type
+               (:prototype t
+                :type "struct")
+                nil [838 854])
+            ("chkpt_block" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [883 908])
+                    ("save" variable (:type ("v3_chkpt_save_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [914 936])
+                    ("load" variable (:type ("v3_chkpt_load_fn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [941 963])
+                    ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [969 981])
+                    ("" type
+                       (:members 
+                          ( ("flags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [996 1011])
+                            ("" type
+                               (:members 
+                                  ( ("rsvd" variable
+                                       (:suffix ":32"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1027 1053]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1013 1081]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [987 1112])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1118 1133])
+                    ("block_ptr" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1138 1158])
+                    ("node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1164 1186]))                  
+                :type "struct")
+                nil [858 1189])
+            ("v3_chkpt_magic" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"V3CP\""
+                :type "char")
+                nil [1194 1241])
+            ("v3_chkpt_arch_svm" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"SVM\""
+                :type "char")
+                nil [1242 1288])
+            ("v3_chkpt_arch_vmx" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX\""
+                :type "char")
+                nil [1289 1335])
+            ("block_header" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1363 1392])
+                    ("offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1397 1413])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1418 1432]))                  
+                :type "struct")
+                nil [1337 1459])
+            ("chkpt_header" type
+               (:members 
+                  ( ("magic" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1487 1505])
+                    ("version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1510 1527])
+                    ("arch" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1533 1550])
+                    ("num_blks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1556 1574])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1579 1593])
+                    ("blocks" variable
+                       (:dereference 1
+                        :type ("block_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1599 1629]))                  
+                :type "struct")
+                nil [1461 1656])
+            ("v3_chkpt" type
+               (:members 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1682 1705])
+                    ("page_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1710 1740])
+                    ("num_pages" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1745 1775])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1780 1804])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1809 1834]))                  
+                :type "struct")
+                nil [1660 1837])
+            ("key_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1868 1879]))                  
+                :type ("uint_t" type (:type "class") nil nil))
+                nil [1842 2067])
+            ("key_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2090 2102])
+                    ("key2" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2103 2115]))                  
+                :type "int")
+                nil [2069 2246])
+            ("v3_init_chkpt" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2271 2294]))                  
+                :type "int")
+                nil [2252 2601])
+            ("v3_deinit_chkpt" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2623 2646]))                  
+                :type "int")
+                nil [2603 2987])
+            ("v3_checkpoint_register" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3018 3041])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3052 3077])
+                    ("save" variable (:type ("v3_chkpt_save_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3088 3113])
+                    ("load" variable (:type ("v3_chkpt_load_fn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3124 3149])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3160 3185])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3196 3226]))                  
+                :type "int")
+                nil [2990 4279])
+            ("__init_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4311 4334])
+                    ("chkpt" variable
+                       (:pointer 1
+                        :type ("v3_chkpt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4342 4368]))                  
+                :type "int")
+                nil [4285 5042])
+            ("__check_header" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5071 5094])
+                    ("chkpt" variable
+                       (:pointer 1
+                        :type ("v3_chkpt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5103 5129]))                  
+                :type "int")
+                nil [5044 6011])
+            ("v3_chkpt_create" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6043 6066]))                  
+                :type ("v3_chkpt_t" type (:type "class") nil nil))
+                nil [6015 7230])
+            ("v3_chkpt_free" function
+               (:arguments 
+                  ( ("checkpoint" variable (:type ("v3_chkpt_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7251 7273]))                  
+                :type "int")
+                nil [7233 7476])
+            ("v3_chkpt_get_data" function
+               (:pointer 1
+                :arguments 
+                  ( ("checkpoint" variable (:type ("v3_chkpt_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7505 7527])
+                    ("data_size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7528 7547]))                  
+                :type "void")
+                nil [7479 7686])
+            ("v3_chkpt_save" function
+               (:arguments 
+                  ( ("checkpoint" variable (:type ("v3_chkpt_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7710 7732]))                  
+                :type "int")
+                nil [7692 9301])
+            ("__get_block_data" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("chkpt" variable
+                       (:pointer 1
+                        :type ("v3_chkpt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9337 9361])
+                    ("block_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9366 9395])
+                    ("block_size" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9399 9428]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [9303 9766])
+            ("v3_chkpt_load" function
+               (:arguments 
+                  ( ("checkpoint" variable (:type ("v3_chkpt_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9788 9810]))                  
+                :type "int")
+                nil [9770 11157]))          
+      :file "vmm_checkpoint.c"
+      :pointmax 22350
+      :fsize 22349
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PrintDebug" (spp-arg-list ("fmt" "args...") 786 . 800))
+          ("CHKPT_KEY_LEN" . ((number "32" 833 . 835)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmx_handler.h" include (:system-flag t) nil [707 740])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [741 772])
+            ("palacios/vmm.h" include (:system-flag t) nil [773 798])
+            ("palacios/vmcs.h" include (:system-flag t) nil [799 825])
+            ("palacios/vmx_lowlevel.h" include (:system-flag t) nil [826 860])
+            ("palacios/vmx_io.h" include (:system-flag t) nil [861 889])
+            ("palacios/vmm_cpuid.h" include (:system-flag t) nil [890 921])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [922 953])
+            ("palacios/vmx.h" include (:system-flag t) nil [955 980])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [981 1016])
+            ("palacios/vmm_lowlevel.h" include (:system-flag t) nil [1017 1051])
+            ("palacios/vmx_ctrl_regs.h" include (:system-flag t) nil [1052 1087])
+            ("palacios/vmx_assist.h" include (:system-flag t) nil [1088 1120])
+            ("palacios/vmm_halt.h" include (:system-flag t) nil [1121 1151])
+            ("palacios/vmm_mwait.h" include (:system-flag t) nil [1152 1183])
+            ("palacios/vmx_ept.h" include (:system-flag t) nil [1184 1213])
+            ("palacios/vmm_decoder.h" include (:system-flag t) nil [1215 1248])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [1249 1283])
+            ("PrintDebug" variable (:constant-flag t) nil [1340 1350])
+            ("v3_handle_vmx_exit" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1544 1572])
+                    ("exit_info" variable
+                       (:pointer 1
+                        :type ("vmx_exit_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1578 1611]))                  
+                :type "int")
+                nil [1520 10512])
+            ("VMX_EXIT_INFO_EXCEPTION_OR_NMI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INFO_EXCEPTION_OR_NMI\""
+                :type "char")
+                nil [10514 10604])
+            ("VMX_EXIT_EXTERNAL_INTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_EXTERNAL_INTR\""
+                :type "char")
+                nil [10605 10687])
+            ("VMX_EXIT_TRIPLE_FAULT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_TRIPLE_FAULT\""
+                :type "char")
+                nil [10688 10769])
+            ("VMX_EXIT_INIT_SIGNAL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INIT_SIGNAL\""
+                :type "char")
+                nil [10770 10850])
+            ("VMX_EXIT_STARTUP_IPI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_STARTUP_IPI\""
+                :type "char")
+                nil [10851 10931])
+            ("VMX_EXIT_IO_SMI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_IO_SMI\""
+                :type "char")
+                nil [10932 11007])
+            ("VMX_EXIT_OTHER_SMI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_OTHER_SMI\""
+                :type "char")
+                nil [11008 11086])
+            ("VMX_EXIT_INTR_WINDOW_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INTR_WINDOW\""
+                :type "char")
+                nil [11087 11167])
+            ("VMX_EXIT_NMI_WINDOW_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_NMI_WINDOW\""
+                :type "char")
+                nil [11168 11247])
+            ("VMX_EXIT_TASK_SWITCH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_TASK_SWITCH\""
+                :type "char")
+                nil [11248 11328])
+            ("VMX_EXIT_CPUID_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_CPUID\""
+                :type "char")
+                nil [11329 11403])
+            ("VMX_EXIT_HLT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_HLT\""
+                :type "char")
+                nil [11404 11476])
+            ("VMX_EXIT_INVD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVD\""
+                :type "char")
+                nil [11477 11550])
+            ("VMX_EXIT_INVLPG_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVLPG\""
+                :type "char")
+                nil [11551 11626])
+            ("VMX_EXIT_RDPMC_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_RDPMC\""
+                :type "char")
+                nil [11627 11701])
+            ("VMX_EXIT_RDTSC_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_RDTSC\""
+                :type "char")
+                nil [11702 11776])
+            ("VMX_EXIT_RSM_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_RSM\""
+                :type "char")
+                nil [11777 11849])
+            ("VMX_EXIT_VMCALL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMCALL\""
+                :type "char")
+                nil [11850 11925])
+            ("VMX_EXIT_VMCLEAR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMCLEAR\""
+                :type "char")
+                nil [11926 12002])
+            ("VMX_EXIT_VMLAUNCH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMLAUNCH\""
+                :type "char")
+                nil [12003 12080])
+            ("VMX_EXIT_VMPTRLD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMPTRLD\""
+                :type "char")
+                nil [12081 12157])
+            ("VMX_EXIT_VMPTRST_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMPTRST\""
+                :type "char")
+                nil [12158 12234])
+            ("VMX_EXIT_VMREAD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMREAD\""
+                :type "char")
+                nil [12235 12310])
+            ("VMX_EXIT_VMRESUME_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMRESUME\""
+                :type "char")
+                nil [12311 12388])
+            ("VMX_EXIT_VMWRITE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMWRITE\""
+                :type "char")
+                nil [12389 12465])
+            ("VMX_EXIT_VMXOFF_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMXOFF\""
+                :type "char")
+                nil [12466 12541])
+            ("VMX_EXIT_VMXON_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_VMXON\""
+                :type "char")
+                nil [12542 12616])
+            ("VMX_EXIT_CR_REG_ACCESSES_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_CR_REG_ACCESSES\""
+                :type "char")
+                nil [12617 12701])
+            ("VMX_EXIT_MOV_DR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_MOV_DR\""
+                :type "char")
+                nil [12702 12777])
+            ("VMX_EXIT_IO_INSTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_IO_INSTR\""
+                :type "char")
+                nil [12778 12855])
+            ("VMX_EXIT_RDMSR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_RDMSR\""
+                :type "char")
+                nil [12856 12930])
+            ("VMX_EXIT_WRMSR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_WRMSR\""
+                :type "char")
+                nil [12931 13005])
+            ("VMX_EXIT_INVALID_GUEST_STATE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVALID_GUEST_STATE\""
+                :type "char")
+                nil [13006 13094])
+            ("VMX_EXIT_INVALID_MSR_LOAD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVALID_MSR_LOAD\""
+                :type "char")
+                nil [13095 13180])
+            ("VMX_EXIT_MWAIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_MWAIT\""
+                :type "char")
+                nil [13181 13255])
+            ("VMX_EXIT_MONITOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_MONITOR\""
+                :type "char")
+                nil [13256 13332])
+            ("VMX_EXIT_PAUSE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_PAUSE\""
+                :type "char")
+                nil [13333 13407])
+            ("VMX_EXIT_INVALID_MACHINE_CHECK_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVALIDE_MACHINE_CHECK\""
+                :type "char")
+                nil [13408 13499])
+            ("VMX_EXIT_TPR_BELOW_THRESHOLD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_TPR_BELOW_THRESHOLD\""
+                :type "char")
+                nil [13500 13588])
+            ("VMX_EXIT_APIC_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_APIC\""
+                :type "char")
+                nil [13589 13662])
+            ("VMX_EXIT_GDTR_IDTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_GDTR_IDTR\""
+                :type "char")
+                nil [13663 13741])
+            ("VMX_EXIT_LDTR_TR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_LDTR_TR\""
+                :type "char")
+                nil [13742 13818])
+            ("VMX_EXIT_EPT_VIOLATION_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_EPT_VIOLATION\""
+                :type "char")
+                nil [13819 13901])
+            ("VMX_EXIT_EPT_CONFIG_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_EPT_CONFIG\""
+                :type "char")
+                nil [13902 13981])
+            ("VMX_EXIT_INVEPT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVEPT\""
+                :type "char")
+                nil [13982 14057])
+            ("VMX_EXIT_RDTSCP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_RDTSCP\""
+                :type "char")
+                nil [14058 14133])
+            ("VMX_EXIT_EXPIRED_PREEMPT_TIMER_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_EXPIRED_PREEMPT_TIMER\""
+                :type "char")
+                nil [14134 14224])
+            ("VMX_EXIT_INVVPID_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_INVVPID\""
+                :type "char")
+                nil [14225 14301])
+            ("VMX_EXIT_WBINVD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_WBINVD\""
+                :type "char")
+                nil [14302 14377])
+            ("VMX_EXIT_XSETBV_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_EXIT_XSETBV\""
+                :type "char")
+                nil [14378 14453])
+            ("v3_vmx_exit_code_to_str" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("exit" variable (:type ("vmx_exit_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14492 14508]))                  
+                :type "char")
+                nil [14455 18444]))          
+      :file "vmx_handler.c"
+      :pointmax 18446
+      :fsize 18445
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PrintDebug" (spp-arg-list ("fmt" "args...") 1350 . 1364))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_mem.h" include (:system-flag t) nil [707 736])
+            ("palacios/vmm.h" include (:system-flag t) nil [737 762])
+            ("palacios/vmm_util.h" include (:system-flag t) nil [763 793])
+            ("palacios/vmm_emulator.h" include (:system-flag t) nil [794 828])
+            ("palacios/vm.h" include (:system-flag t) nil [829 853])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [854 885])
+            ("palacios/vmm_config.h" include (:system-flag t) nil [886 918])
+            ("palacios/vmm_shadow_paging.h" include (:system-flag t) nil [920 959])
+            ("palacios/vmm_direct_paging.h" include (:system-flag t) nil [960 999])
+            ("interfaces/vmm_numa.h" include (:system-flag t) nil [1001 1033])
+            ("interfaces/vmm_iommu.h" include (:system-flag t) nil [1034 1067])
+            ("MEM_BLOCK_SIZE_BYTES" variable (:constant-flag t) nil [1077 1097])
+            ("v3_get_base_region" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1202 1225])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1232 1256]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1159 1794])
+            ("v3_get_guest_memory_regions" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1856 1879])
+                    ("num_regions" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1888 1920]))                  
+                :type ("v3_guest_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1798 2583])
+            ("mem_offset_hypercall" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2618 2645])
+                    ("hcall_id" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2654 2685])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2694 2729]))                  
+                :type "int")
+                nil [2585 2966])
+            ("unhandled_err" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2994 3022])
+                    ("guest_va" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3031 3063])
+                    ("guest_pa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3072 3104])
+                    ("reg" variable
+                       (:pointer 1
+                        :type ("v3_mem_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3113 3140])
+                    ("access_info" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3149 3184]))                  
+                :type "int")
+                nil [2968 3417])
+            ("gpa_to_node_from_cfg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3645 3668])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3677 3701]))                  
+                :type "int")
+                nil [3612 4685])
+            ("gpa_to_prealloc_hpa" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4722 4745])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4753 4777]))                  
+                :type ("addr_t" type (:type "class") nil nil))
+                nil [4688 5907])
+            ("v3_init_mem_map" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5934 5957]))                  
+                :type "int")
+                nil [5913 8646])
+            ("v3_delete_mem_map" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8673 8696]))                  
+                :type "void")
+                nil [8649 9654])
+            ("v3_create_mem_region" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9702 9725])
+                    ("core_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9734 9762])
+                    ("flags" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9770 9796])
+                    ("gpa_start" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9805 9835])
+                    ("gpa_end" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9844 9872]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9657 10592])
+            ("v3_add_shadow_mem" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10620 10643])
+                    ("core_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10649 10677])
+                    ("mem_flags" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10682 10712])
+                    ("gpa_start" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10718 10748])
+                    ("gpa_end" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10753 10781])
+                    ("hpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10786 10810]))                  
+                :type "int")
+                nil [10597 11226])
+            ("__insert_mem_region" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11288 11314])
+                    ("region" variable
+                       (:pointer 1
+                        :type ("v3_mem_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11322 11352]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11230 12313])
+            ("v3_insert_mem_region" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12343 12369])
+                    ("region" variable
+                       (:pointer 1
+                        :type ("v3_mem_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12377 12407]))                  
+                :type "int")
+                nil [12317 13453])
+            ("v3_get_mem_region" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13507 13530])
+                    ("core_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13535 13563])
+                    ("guest_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13569 13600]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13465 14570])
+            ("get_next_mem_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14903 14926])
+                    ("core_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14934 14962])
+                    ("guest_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14970 15001]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [14852 16567])
+            ("get_overlapping_region" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16936 16959])
+                    ("core_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16970 16998])
+                    ("start_gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17009 17039])
+                    ("end_gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17050 17078]))                  
+                :type ("v3_mem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16882 17947])
+            ("v3_delete_mem_region" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17980 18006])
+                    ("reg" variable
+                       (:pointer 1
+                        :type ("v3_mem_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18015 18042]))                  
+                :type "void")
+                nil [17953 19400])
+            ("get_region_page_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19440 19468])
+                    ("page_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19476 19509])
+                    ("reg" variable
+                       (:pointer 1
+                        :type ("v3_mem_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19531 19558])
+                    ("max_page_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19566 19603]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [19403 20014])
+            ("v3_get_max_page_size" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20132 20159])
+                    ("page_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20168 20200])
+                    ("mode" variable (:type ("v3_cpu_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20209 20236]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [20101 22018])
+            ("v3_print_mem_map" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22045 22068]))                  
+                :type "void")
+                nil [22022 23057]))          
+      :file "vmm_mem.c"
+      :pointmax 23061
+      :fsize 23060
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MEM_BLOCK_SIZE_BYTES" . ((semantic-list "((uint64_t)(V3_CONFIG_MEM_BLOCK_SIZE_MB * (1024 * 1024)))" 1098 . 1155)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_fw_cfg.h" include (:system-flag t) nil [758 790])
+            ("palacios/vmm_mem.h" include (:system-flag t) nil [791 820])
+            ("palacios/vmm.h" include (:system-flag t) nil [821 846])
+            ("palacios/vm.h" include (:system-flag t) nil [847 871])
+            ("interfaces/vmm_numa.h" include (:system-flag t) nil [873 905])
+            ("FW_CFG_CTL_PORT" variable (:constant-flag t) nil [916 931])
+            ("FW_CFG_DATA_PORT" variable (:constant-flag t) nil [954 970])
+            ("FW_CFG_SIGNATURE" variable (:constant-flag t) nil [993 1009])
+            ("FW_CFG_ID" variable (:constant-flag t) nil [1030 1039])
+            ("FW_CFG_UUID" variable (:constant-flag t) nil [1067 1078])
+            ("FW_CFG_RAM_SIZE" variable (:constant-flag t) nil [1104 1119])
+            ("FW_CFG_NOGRAPHIC" variable (:constant-flag t) nil [1141 1157])
+            ("FW_CFG_NB_CPUS" variable (:constant-flag t) nil [1178 1192])
+            ("FW_CFG_MACHINE_ID" variable (:constant-flag t) nil [1215 1232])
+            ("FW_CFG_KERNEL_ADDR" variable (:constant-flag t) nil [1252 1270])
+            ("FW_CFG_KERNEL_SIZE" variable (:constant-flag t) nil [1289 1307])
+            ("FW_CFG_KERNEL_CMDLINE" variable (:constant-flag t) nil [1326 1347])
+            ("FW_CFG_INITRD_ADDR" variable (:constant-flag t) nil [1363 1381])
+            ("FW_CFG_INITRD_SIZE" variable (:constant-flag t) nil [1400 1418])
+            ("FW_CFG_BOOT_DEVICE" variable (:constant-flag t) nil [1437 1455])
+            ("FW_CFG_NUMA" variable (:constant-flag t) nil [1474 1485])
+            ("FW_CFG_BOOT_MENU" variable (:constant-flag t) nil [1511 1527])
+            ("FW_CFG_MAX_CPUS" variable (:constant-flag t) nil [1548 1563])
+            ("FW_CFG_KERNEL_ENTRY" variable (:constant-flag t) nil [1585 1604])
+            ("FW_CFG_KERNEL_DATA" variable (:constant-flag t) nil [1622 1640])
+            ("FW_CFG_INITRD_DATA" variable (:constant-flag t) nil [1659 1677])
+            ("FW_CFG_CMDLINE_ADDR" variable (:constant-flag t) nil [1696 1715])
+            ("FW_CFG_CMDLINE_SIZE" variable (:constant-flag t) nil [1733 1752])
+            ("FW_CFG_CMDLINE_DATA" variable (:constant-flag t) nil [1770 1789])
+            ("FW_CFG_SETUP_ADDR" variable (:constant-flag t) nil [1807 1824])
+            ("FW_CFG_SETUP_SIZE" variable (:constant-flag t) nil [1844 1861])
+            ("FW_CFG_SETUP_DATA" variable (:constant-flag t) nil [1881 1898])
+            ("FW_CFG_FILE_DIR" variable (:constant-flag t) nil [1918 1933])
+            ("FW_CFG_WRITE_CHANNEL" variable (:constant-flag t) nil [1956 1976])
+            ("FW_CFG_ARCH_LOCAL" variable (:constant-flag t) nil [1995 2012])
+            ("FW_CFG_ENTRY_MASK" variable (:constant-flag t) nil [2034 2051])
+            ("FW_CFG_ACPI_TABLES" variable (:constant-flag t) nil [2111 2129])
+            ("FW_CFG_SMBIOS_ENTRIES" variable (:constant-flag t) nil [2166 2187])
+            ("FW_CFG_IRQ0_OVERRIDE" variable (:constant-flag t) nil [2221 2241])
+            ("FW_CFG_E820_TABLE" variable (:constant-flag t) nil [2276 2293])
+            ("FW_CFG_HPET" variable (:constant-flag t) nil [2331 2342])
+            ("FW_CFG_INVALID" variable (:constant-flag t) nil [2387 2401])
+            ("__add_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_state" variable
+                       (:pointer 1
+                        :type ("v3_fw_cfg_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2910 2945])
+                    ("key" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2950 2979])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2984 3014])
+                    ("len" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3019 3048]))                  
+                :type "int")
+                nil [2886 3507])
+            ("fw_cfg_add_buf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_state" variable
+                       (:pointer 1
+                        :type ("v3_fw_cfg_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3536 3571])
+                    ("key" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3581 3610])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3620 3649])
+                    ("len" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3659 3688]))                  
+                :type "int")
+                nil [3509 3832])
+            ("fw_cfg_add_i16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_state" variable
+                       (:pointer 1
+                        :type ("v3_fw_cfg_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3861 3896])
+                    ("key" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3906 3935])
+                    ("value" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3945 3976]))                  
+                :type "int")
+                nil [3834 4144])
+            ("fw_cfg_add_i32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_state" variable
+                       (:pointer 1
+                        :type ("v3_fw_cfg_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4173 4208])
+                    ("key" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4218 4247])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4257 4288]))                  
+                :type "int")
+                nil [4146 4456])
+            ("fw_cfg_add_i64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_state" variable
+                       (:pointer 1
+                        :type ("v3_fw_cfg_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4485 4520])
+                    ("key" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4530 4559])
+                    ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4569 4600]))                  
+                :type "int")
+                nil [4458 4768])
+            ("fw_cfg_ctl_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4798 4825])
+                    ("port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4829 4856])
+                    ("src" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4860 4886])
+                    ("length" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4890 4919])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4923 4955]))                  
+                :type "int")
+                nil [4770 4979])
+            ("fw_cfg_ctl_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5010 5037])
+                    ("port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5042 5069])
+                    ("src" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5074 5100])
+                    ("length" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5105 5134])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5139 5171]))                  
+                :type "int")
+                nil [4981 5605])
+            ("fw_cfg_data_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5637 5664])
+                    ("port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5669 5696])
+                    ("src" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5701 5727])
+                    ("length" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5732 5761])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5766 5798]))                  
+                :type "int")
+                nil [5608 6406])
+            ("fw_cfg_data_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6438 6465])
+                    ("port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6471 6498])
+                    ("src" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6504 6530])
+                    ("length" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6536 6565])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6571 6603]))                  
+                :type "int")
+                nil [6408 7336])
+            ("v3_fw_cfg_init" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8097 8120]))                  
+                :type "int")
+                nil [8077 13973])
+            ("v3_fw_cfg_deinit" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13998 14021]))                  
+                :type "void")
+                nil [13975 14334]))          
+      :file "vmm_fw_cfg.c"
+      :pointmax 14961
+      :fsize 14960
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FW_CFG_UUID" . ((number "0x02" 1091 . 1095)))
+          ("FW_CFG_SETUP_DATA" . ((number "0x18" 1905 . 1909)))
+          ("FW_CFG_SMBIOS_ENTRIES" . ((semantic-list "(FW_CFG_ARCH_LOCAL + 1)" 2189 . 2212)))
+          ("FW_CFG_E820_TABLE" . ((semantic-list "(FW_CFG_ARCH_LOCAL + 3)" 2299 . 2322)))
+          ("FW_CFG_INITRD_SIZE" . ((number "0x0b" 1424 . 1428)))
+          ("FW_CFG_KERNEL_ENTRY" . ((number "0x10" 1609 . 1613)))
+          ("FW_CFG_CMDLINE_SIZE" . ((number "0x14" 1757 . 1761)))
+          ("FW_CFG_KERNEL_CMDLINE" . ((number "0x09" 1350 . 1354)))
+          ("FW_CFG_INITRD_ADDR" . ((number "0x0a" 1387 . 1391)))
+          ("FW_CFG_NUMA" . ((number "0x0d" 1498 . 1502)))
+          ("FW_CFG_CMDLINE_ADDR" . ((number "0x13" 1720 . 1724)))
+          ("FW_CFG_KERNEL_SIZE" . ((number "0x08" 1313 . 1317)))
+          ("FW_CFG_CTL_PORT" . ((number "0x510" 940 . 945)))
+          ("FW_CFG_KERNEL_ADDR" . ((number "0x07" 1276 . 1280)))
+          ("FW_CFG_SETUP_SIZE" . ((number "0x17" 1868 . 1872)))
+          ("FW_CFG_ARCH_LOCAL" . ((number "0x8000" 2019 . 2025)))
+          ("FW_CFG_ENTRY_MASK" . ((punctuation "~" 2058 . 2059) (semantic-list "(FW_CFG_WRITE_CHANNEL | FW_CFG_ARCH_LOCAL)" 2059 . 2101)))
+          ("FW_CFG_SETUP_ADDR" . ((number "0x16" 1831 . 1835)))
+          ("FW_CFG_FILE_DIR" . ((number "0x19" 1942 . 1946)))
+          ("FW_CFG_IRQ0_OVERRIDE" . ((semantic-list "(FW_CFG_ARCH_LOCAL + 2)" 2244 . 2267)))
+          ("FW_CFG_SIGNATURE" . ((number "0x00" 1017 . 1021)))
+          ("FW_CFG_BOOT_MENU" . ((number "0x0e" 1535 . 1539)))
+          ("FW_CFG_MACHINE_ID" . ((number "0x06" 1239 . 1243)))
+          ("FW_CFG_BOOT_DEVICE" . ((number "0x0c" 1461 . 1465)))
+          ("FW_CFG_ID" . ((number "0x01" 1054 . 1058)))
+          ("FW_CFG_NOGRAPHIC" . ((number "0x04" 1165 . 1169)))
+          ("FW_CFG_NB_CPUS" . ((number "0x05" 1202 . 1206)))
+          ("FW_CFG_INITRD_DATA" . ((number "0x12" 1683 . 1687)))
+          ("FW_CFG_CMDLINE_DATA" . ((number "0x15" 1794 . 1798)))
+          ("FW_CFG_INVALID" . ((number "0xffff" 2410 . 2416)))
+          ("FW_CFG_RAM_SIZE" . ((number "0x03" 1128 . 1132)))
+          ("FW_CFG_MAX_CPUS" . ((number "0x0f" 1572 . 1576)))
+          ("FW_CFG_WRITE_CHANNEL" . ((number "0x4000" 1980 . 1986)))
+          ("FW_CFG_KERNEL_DATA" . ((number "0x11" 1646 . 1650)))
+          ("FW_CFG_ACPI_TABLES" . ((semantic-list "(FW_CFG_ARCH_LOCAL + 0)" 2134 . 2157)))
+          ("FW_CFG_HPET" . ((semantic-list "(FW_CFG_ARCH_LOCAL + 4)" 2354 . 2377)))
+          ("FW_CFG_DATA_PORT" . ((number "0x511" 978 . 983)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [696 721])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [722 757])
+            ("palacios/vmm_telemetry.h" include (:system-flag t) nil [759 794])
+            ("palacios/vmm_fpu.h" include (:system-flag t) nil [796 825])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [826 859])
+            ("v3_cpu_types" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [1057 1093])
+            ("get_cr0" function
+               (:typemodifiers ("static" "inline")
+                :type ("addr_t" type (:type "class") nil nil))
+                nil [1095 1292])
+            ("get_cr4" function
+               (:typemodifiers ("static" "inline")
+                :type ("addr_t" type (:type "class") nil nil))
+                nil [1296 1493])
+            ("fpu_chkpt" type
+               (:members 
+                  ( ("fpu_arch_state" variable (:type ("v3_fpu_arch" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4382 4416])
+                    ("flags" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4421 4436])
+                    ("guest_xcr0" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4441 4461]))                  
+                :type "struct")
+                nil [4359 4489])
+            ("save_fpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4513 4540])
+                    ("chkpt" variable
+                       (:pointer 1
+                        :type ("fpu_chkpt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4544 4572])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4576 4603])
+                    ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4606 4633]))                  
+                :type "int")
+                nil [4492 4939])
+            ("load_fpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4963 4990])
+                    ("chkpt" variable
+                       (:pointer 1
+                        :type ("fpu_chkpt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4994 5022])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5026 5053])
+                    ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5056 5083]))                  
+                :type "int")
+                nil [4942 5316])
+            ("XSETBV" variable (:constant-flag t) nil [5330 5336])
+            ("XGETBV" variable (:constant-flag t) nil [5371 5377])
+            ("xgetbv" function
+               (:typemodifiers ("static" "inline")
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [5403 5642])
+            ("xsetbv" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5671 5686]))                  
+                :type "void")
+                nil [5645 5863])
+            ("v3_fpu_free" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5999 6026]))                  
+                :type "void")
+                nil [5982 6130])
+            ("v3_fpu_init" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6149 6176]))                  
+                :type "int")
+                nil [6132 8774])
+            ("v3_fpu_on_entry" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8860 8887]))                  
+                :type "int")
+                nil [8839 10166])
+            ("v3_fpu_deactivate" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10194 10221]))                  
+                :type "int")
+                nil [10171 11121])
+            ("v3_fpu_activate" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11146 11173]))                  
+                :type "int")
+                nil [11125 12007])
+            ("v3_fpu_handle_xsetbv" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12037 12064]))                  
+                :type "int")
+                nil [12011 12821]))          
+      :file "vmm_fpu.c"
+      :pointmax 13227
+      :fsize 13226
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("XSETBV" . ((string "\".byte 0x0f,0x01,0xd1;\"" 5337 . 5360)))
+          ("XGETBV" . ((string "\".byte 0x0f,0x01,0xd0;\"" 5378 . 5401)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [707 732])
+            ("palacios/vmm_intr.h" include (:system-flag t) nil [733 763])
+            ("palacios/vmm_config.h" include (:system-flag t) nil [764 796])
+            ("palacios/vm.h" include (:system-flag t) nil [797 821])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [822 857])
+            ("palacios/vmm_lowlevel.h" include (:system-flag t) nil [858 892])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [893 926])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [927 963])
+            ("palacios/vmm_timeout.h" include (:system-flag t) nil [964 997])
+            ("palacios/vmm_options.h" include (:system-flag t) nil [998 1031])
+            ("palacios/vmm_checkpoint.h" include (:system-flag t) nil [1032 1068])
+            ("interfaces/vmm_numa.h" include (:system-flag t) nil [1070 1102])
+            ("v3_mach_type" variable
+               (:default-value "V3_INVALID_CPU"
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [1261 1305])
+            ("v3_cpu_types" variable
+               (:dereference 1
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [1351 1398])
+            ("v3_cores_current" variable
+               (:pointer 1
+                :dereference 1
+                :type ("v3_core_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1525 1584])
+            ("v3_cores_assigned" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1653 1715])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("v3_vm_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1775 1786]))                  
+                :type "int")
+                nil [1758 1787])
+            ("gbl_op_lock" variable
+               (:typemodifiers ("static")
+                :type ("" type
+                     (:members 
+                        ( ("lock" variable (:type ("v3_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1951 1970])
+                          ("acquired" variable (:type "int") (reparse-symbol classsubparts) [1975 1998]))                        
+                      :type "struct")
+                      nil nil))
+                nil [1931 2013])
+            ("os_hooks" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("v3_os_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2102 2142])
+            ("v3_dbg_enable" variable
+               (:default-value "0"
+                :type "int")
+                nil [2145 2180])
+            ("v3_arch_is_vmx" function (:type "bool") nil [2275 2446])
+            ("v3_arch_is_svm" function (:type "bool") nil [2448 2595])
+            ("op_lock_init" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2597 2700])
+            ("op_lock_deinit" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2703 2811])
+            ("op_lock_acquire" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2813 3170])
+            ("op_lock_release" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [3172 3383])
+            ("init_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3408 3419]))                  
+                :type "void")
+                nil [3386 3893])
+            ("deinit_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3919 3930]))                  
+                :type "void")
+                nil [3896 4489])
+            ("v3_add_cpu" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4507 4523]))                  
+                :type "int")
+                nil [4491 5280])
+            ("v3_remove_cpu" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5301 5317]))                  
+                :type "int")
+                nil [5282 6226])
+            ("Init_V3" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_os_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6241 6268])
+                    ("cpu_mask" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6271 6301])
+                    ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6304 6334])
+                    ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6336 6365]))                  
+                :type "int")
+                nil [6228 7785])
+            ("Shutdown_V3" function (:type "int") nil [7789 8631])
+            ("v3_get_cpu_type" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8665 8681]))                  
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [8634 9013])
+            ("start_core" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10068 10077]))                  
+                :type "int")
+                nil [10045 11259])
+            ("v3_create_vm" function
+               (:pointer 1
+                :arguments 
+                  ( ("cfg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11296 11307])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11315 11332])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11340 11352]))                  
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11262 14810])
+            ("v3_free_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14919 14942]))                  
+                :type "int")
+                nil [14903 15511])
+            ("v3_start_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15532 15555])
+                    ("cpu_mask" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15561 15590]))                  
+                :type "int")
+                nil [15515 16293])
+            ("v3_reset_vm_core" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16318 16345])
+                    ("rip" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16350 16376]))                  
+                :type "int")
+                nil [16296 16995])
+            ("v3_get_vm_thread_info" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17043 17066])
+                    ("num_threads" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17076 17108]))                  
+                :type ("v3_thread_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16997 17618])
+            ("v3_move_vm_core" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17696 17719])
+                    ("vcore_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17722 17751])
+                    ("target_cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17755 17786]))                  
+                :type "int")
+                nil [17675 19512])
+            ("v3_stop_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19532 19555]))                  
+                :type "int")
+                nil [19516 20427])
+            ("v3_pause_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20447 20470]))                  
+                :type "int")
+                nil [20430 20685])
+            ("v3_continue_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20708 20731]))                  
+                :type "int")
+                nil [20688 20932])
+            ("sim_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20961 20988])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20996 21031]))                  
+                :type "int")
+                nil [20936 21329])
+            ("v3_simulate_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21354 21377])
+                    ("msecs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21387 21413]))                  
+                :type "int")
+                nil [21334 23116])
+            ("v3_yield_to_pid" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23838 23865])
+                    ("pid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23869 23895])
+                    ("tid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23898 23924]))                  
+                :type "void")
+                nil [23817 24081])
+            ("v3_yield_to_thread" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24109 24136])
+                    ("thread" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24143 24172]))                  
+                :type "void")
+                nil [24084 24328])
+            ("v3_yield_cond" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24351 24378])
+                    ("usec" variable (:type "int") (reparse-symbol arg-sub-list) [24386 24413]))                  
+                :type "void")
+                nil [24331 25083])
+            ("v3_yield" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25429 25456])
+                    ("usec" variable (:type "int") (reparse-symbol arg-sub-list) [25459 25486]))                  
+                :type "void")
+                nil [25414 25652])
+            ("v3_print_cond" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25677 25694])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [25695 25699]))                  
+                :type "void")
+                nil [25657 25866])
+            ("v3_interrupt_cpu" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25893 25916])
+                    ("logical_cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25920 25952])
+                    ("vector" variable (:type "int") (reparse-symbol arg-sub-list) [25957 25984]))                  
+                :type "void")
+                nil [25870 26142])
+            ("v3_vm_enter" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26163 26190]))                  
+                :type "int")
+                nil [26146 26569])
+            ("v3_get_current_core" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26616 26622]))                  
+                :type ("v3_core_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [26572 26669])
+            ("v3_get_cpu_usage" function
+               (:pointer 1
+                :arguments 
+                  ( ("cpu_cnt" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26701 26720]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [26672 27528])
+            ("v3_get_vm_run_state" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27575 27598]))                  
+                :type ("v3_vm_operating_mode_t" type (:type "class") nil nil))
+                nil [27531 27748]))          
+      :file "vmm.c"
+      :pointmax 27749
+      :fsize 27748
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [703 728])
+            ("palacios/vmm_apic.h" include (:system-flag t) nil [730 760])
+            ("v3_apic_register" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [788 812])
+                    ("ops" variable
+                       (:pointer 1
+                        :type ("v3_apic_ops" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [817 842])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [846 877]))                  
+                :type "int")
+                nil [766 1119])
+            ("v3_apic_send_ipi" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1147 1170])
+                    ("ipi" variable
+                       (:pointer 1
+                        :type ("v3_gen_ipi" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1174 1198]))                  
+                :type "int")
+                nil [1125 1379]))          
+      :file "vmm_apic.c"
+      :pointmax 1380
+      :fsize 1379
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [632 657])
+            ("palacios/vmx_ept.h" include (:system-flag t) nil [658 687])
+            ("palacios/vmx_lowlevel.h" include (:system-flag t) nil [688 722])
+            ("palacios/vmx_hw_info.h" include (:system-flag t) nil [723 756])
+            ("palacios/vmm_paging.h" include (:system-flag t) nil [757 789])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [790 824])
+            ("palacios/vmx_hw_info.h" include (:system-flag t) nil [825 858])
+            ("ept_info" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("vmx_ept_msr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [861 905])
+            ("create_ept_page" function
+               (:typemodifiers ("static")
+                :type ("addr_t" type (:type "class") nil nil))
+                nil [908 1193])
+            ("v3_init_ept" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1215 1242]))                  
+                :type "int")
+                nil [1198 1714])
+            ("v3_handle_ept_fault" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1834 1862])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1870 1904])
+                    ("ept_qual" variable
+                       (:pointer 1
+                        :type ("ept_exit_qual" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1912 1944]))                  
+                :type "int")
+                nil [1809 6714]))          
+      :file "vmx_ept.c"
+      :pointmax 6715
+      :fsize 6714
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [706 731])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [733 769])
+            ("palacios/vm.h" include (:system-flag t) nil [770 794])
+            ("palacios/vmm_hashtable.h" include (:system-flag t) nil [795 830])
+            ("ext_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [833 876])
+            ("null_ext" variable
+               (:typemodifiers ("static")
+                :type ("" type (:type "struct") nil nil))
+                nil [973 1151])
+            ("ext_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1182 1193]))                  
+                :type ("uint_t" type (:type "class") nil nil))
+                nil [1155 1287])
+            ("ext_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1311 1323])
+                    ("key2" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1324 1336]))                  
+                :type "int")
+                nil [1289 1452])
+            ("V3_init_extensions" function (:type "int") nil [1456 2280])
+            ("V3_deinit_extensions" function (:type "int") nil [2285 2369])
+            ("v3_init_ext_manager" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2397 2420]))                  
+                :type "int")
+                nil [2372 2639])
+            ("v3_deinit_core_extensions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2681 2706])
+                    ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2713 2740]))                  
+                :type "int")
+                nil [2642 3370])
+            ("v3_deinit_ext_manager" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3400 3423]))                  
+                :type "int")
+                nil [3373 4367])
+            ("v3_add_extension" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4393 4416])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4421 4446])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4451 4475]))                  
+                :type "int")
+                nil [4371 6203])
+            ("v3_get_extension_state" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6241 6264])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6275 6300]))                  
+                :type "void")
+                nil [6210 6535])
+            ("v3_get_ext_core_state" function
+               (:pointer 1
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6569 6596])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6606 6633]))                  
+                :type "void")
+                nil [6538 6984]))          
+      :file "vmm_extensions.c"
+      :pointmax 6986
+      :fsize 6985
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmcs.h" include (:system-flag t) nil [707 733])
+            ("palacios/vmx_lowlevel.h" include (:system-flag t) nil [734 768])
+            ("palacios/vmm.h" include (:system-flag t) nil [769 794])
+            ("palacios/vmx.h" include (:system-flag t) nil [795 820])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [821 855])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [856 891])
+            ("palacios/vmm_lowlevel.h" include (:system-flag t) nil [892 926])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [927 958])
+            ("palacios/vmx_hw_info.h" include (:system-flag t) nil [959 992])
+            ("vmcs_seg_offsets_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("ES" variable
+                             (:constant-flag t
+                              :default-value (1019 1020)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1012 1020])
+                          ("CS" variable
+                             (:constant-flag t
+                              :default-value (1038 1039)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1031 1039])
+                          ("SS" variable
+                             (:constant-flag t
+                              :default-value (1057 1058)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1050 1058])
+                          ("DS" variable
+                             (:constant-flag t
+                              :default-value (1075 1076)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1068 1076])
+                          ("FS" variable
+                             (:constant-flag t
+                              :default-value (1094 1095)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1087 1095])
+                          ("GS" variable
+                             (:constant-flag t
+                              :default-value (1113 1115)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1106 1115])
+                          ("LDTR" variable
+                             (:constant-flag t
+                              :default-value (1133 1135)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1126 1135])
+                          ("TR" variable
+                             (:constant-flag t
+                              :default-value (1153 1155)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1146 1155])
+                          ("GDTR" variable
+                             (:constant-flag t
+                              :default-value (1173 1175)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1166 1175])
+                          ("IDTR" variable
+                             (:constant-flag t
+                              :default-value (1193 1195)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1186 1195]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [997 1216])
+            ("vmcs_seg_bases_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("BASE" variable
+                             (:constant-flag t
+                              :default-value (1244 1262)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1233 1262])
+                          ("LIMIT" variable
+                             (:constant-flag t
+                              :default-value (1283 1302)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1272 1302])
+                          ("ACCESS" variable
+                             (:constant-flag t
+                              :default-value (1324 1344)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1313 1344])
+                          ("SELECTOR" variable
+                             (:constant-flag t
+                              :default-value (1366 1388)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1355 1388]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [1218 1408])
+            ("v3_read_vmcs_segment" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("v3_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1446 1471])
+                    ("seg_type" variable (:type ("vmcs_seg_offsets_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1480 1510]))                  
+                :type "int")
+                nil [1413 2167])
+            ("v3_write_vmcs_segment" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("v3_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2203 2228])
+                    ("seg_type" variable (:type ("vmcs_seg_offsets_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2237 2267]))                  
+                :type "int")
+                nil [2169 2860])
+            ("v3_read_vmcs_segments" function
+               (:arguments 
+                  ( ("segs" variable
+                       (:pointer 1
+                        :type ("v3_segments" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2889 2915]))                  
+                :type "int")
+                nil [2862 3391])
+            ("v3_write_vmcs_segments" function
+               (:arguments 
+                  ( ("segs" variable
+                       (:pointer 1
+                        :type ("v3_segments" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3421 3447]))                  
+                :type "int")
+                nil [3393 3933])
+            ("v3_vmxseg_to_seg" function
+               (:arguments 
+                  ( ("vmcs_seg" variable
+                       (:pointer 1
+                        :type ("vmcs_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3959 3990])
+                    ("seg" variable
+                       (:pointer 1
+                        :type ("v3_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3994 4020]))                  
+                :type "void")
+                nil [3936 4633])
+            ("v3_seg_to_vmxseg" function
+               (:arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("v3_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4658 4684])
+                    ("vmcs_seg" variable
+                       (:pointer 1
+                        :type ("vmcs_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4688 4719]))                  
+                :type "void")
+                nil [4635 5356])
+            ("v3_update_vmcs_ctrl_fields" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5392 5419]))                  
+                :type "int")
+                nil [5361 6207])
+            ("v3_vmx_save_vmcs" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6236 6263]))                  
+                :type "int")
+                nil [6214 8235])
+            ("v3_vmx_restore_vmcs" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8263 8290]))                  
+                :type "int")
+                nil [8238 10253])
+            ("v3_update_vmcs_host_state" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10288 10315]))                  
+                :type "int")
+                nil [10257 15671])
+            ("print_vmcs_field" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vmcs_index" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15715 15739]))                  
+                :type "void")
+                nil [15678 16293])
+            ("print_vmcs_segments" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [16296 18345])
+            ("print_guest_state" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [18350 19776])
+            ("print_host_state" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [19785 21216])
+            ("print_exec_ctrls" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [21219 23047])
+            ("print_ept_state" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [23049 23864])
+            ("print_exit_ctrls" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [23867 24437])
+            ("print_entry_ctrls" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [24440 24869])
+            ("print_exit_info" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [24872 25510])
+            ("v3_print_vmcs" function (:type "void") nil [25512 25816])
+            ("v3_vmcs_get_field_len" function
+               (:arguments 
+                  ( ("field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25948 25967]))                  
+                :type "int")
+                nil [25921 26389])
+            ("VMCS_VPID_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VPID\""
+                :type "char")
+                nil [26401 26467])
+            ("VMCS_GUEST_ES_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_ES_SELECTOR\""
+                :type "char")
+                nil [26468 26547])
+            ("VMCS_GUEST_CS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CS_SELECTOR\""
+                :type "char")
+                nil [26548 26627])
+            ("VMCS_GUEST_SS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SS_SELECTOR\""
+                :type "char")
+                nil [26628 26707])
+            ("VMCS_GUEST_DS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DS_SELECTOR\""
+                :type "char")
+                nil [26708 26787])
+            ("VMCS_GUEST_FS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_FS_SELECTOR\""
+                :type "char")
+                nil [26788 26867])
+            ("VMCS_GUEST_GS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GS_SELECTOR\""
+                :type "char")
+                nil [26868 26947])
+            ("VMCS_GUEST_LDTR_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_LDTR_SELECTOR\""
+                :type "char")
+                nil [26948 27029])
+            ("VMCS_GUEST_TR_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_TR_SELECTOR\""
+                :type "char")
+                nil [27030 27109])
+            ("VMCS_HOST_ES_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_ES_SELECTOR\""
+                :type "char")
+                nil [27110 27188])
+            ("VMCS_HOST_CS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_CS_SELECTOR\""
+                :type "char")
+                nil [27189 27267])
+            ("VMCS_HOST_SS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_SS_SELECTOR\""
+                :type "char")
+                nil [27268 27346])
+            ("VMCS_HOST_DS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_DS_SELECTOR\""
+                :type "char")
+                nil [27347 27425])
+            ("VMCS_HOST_FS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_FS_SELECTOR\""
+                :type "char")
+                nil [27426 27504])
+            ("VMCS_HOST_GS_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_GS_SELECTOR\""
+                :type "char")
+                nil [27505 27583])
+            ("VMCS_HOST_TR_SELECTOR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_TR_SELECTOR\""
+                :type "char")
+                nil [27584 27662])
+            ("VMCS_IO_BITMAP_A_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_BITMAP_A_ADDR\""
+                :type "char")
+                nil [27663 27741])
+            ("VMCS_IO_BITMAP_A_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_BITMAP_A_ADDR_HIGH\""
+                :type "char")
+                nil [27742 27825])
+            ("VMCS_IO_BITMAP_B_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_BITMAP_B_ADDR\""
+                :type "char")
+                nil [27826 27904])
+            ("VMCS_IO_BITMAP_B_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_BITMAP_B_ADDR_HIGH\""
+                :type "char")
+                nil [27905 27988])
+            ("VMCS_MSR_BITMAP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"MSR_BITMAPS\""
+                :type "char")
+                nil [27989 28062])
+            ("VMCS_MSR_BITMAP_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"MSR_BITMAPS_HIGH\""
+                :type "char")
+                nil [28063 28141])
+            ("VMCS_EXIT_MSR_STORE_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_MSR_STORE_ADDR\""
+                :type "char")
+                nil [28142 28223])
+            ("VMCS_EXIT_MSR_STORE_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_MSR_STORE_ADDR_HIGH\""
+                :type "char")
+                nil [28224 28310])
+            ("VMCS_EXIT_MSR_LOAD_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_MSR_LOAD_ADDR\""
+                :type "char")
+                nil [28311 28391])
+            ("VMCS_EXIT_MSR_LOAD_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_MSR_LOAD_ADDR_HIGH\""
+                :type "char")
+                nil [28392 28477])
+            ("VMCS_ENTRY_MSR_LOAD_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"ENTRY_MSR_LOAD_ADDR\""
+                :type "char")
+                nil [28478 28559])
+            ("VMCS_ENTRY_MSR_LOAD_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"ENTRY_MSR_LOAD_ADDR_HIGH\""
+                :type "char")
+                nil [28560 28646])
+            ("VMCS_EXEC_PTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_EXEC_PTR\""
+                :type "char")
+                nil [28647 28722])
+            ("VMCS_EXEC_PTR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_EXEC_PTR_HIGH\""
+                :type "char")
+                nil [28723 28803])
+            ("VMCS_TSC_OFFSET_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"TSC_OFFSET\""
+                :type "char")
+                nil [28804 28876])
+            ("VMCS_TSC_OFFSET_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"TSC_OFFSET_HIGH\""
+                :type "char")
+                nil [28877 28954])
+            ("VMCS_VAPIC_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VAPIC_PAGE_ADDR\""
+                :type "char")
+                nil [28955 29032])
+            ("VMCS_VAPIC_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VAPIC_PAGE_ADDR_HIGH\""
+                :type "char")
+                nil [29033 29115])
+            ("VMCS_APIC_ACCESS_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"APIC_ACCESS_ADDR\""
+                :type "char")
+                nil [29116 29194])
+            ("VMCS_APIC_ACCESS_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"APIC_ACCESS_ADDR_HIGH\""
+                :type "char")
+                nil [29195 29278])
+            ("VMCS_EPT_PTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_EPT_PTR\""
+                :type "char")
+                nil [29279 29353])
+            ("VMCS_EPT_PTR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_EPT_PTR_HIGH\""
+                :type "char")
+                nil [29354 29433])
+            ("VMCS_GUEST_PHYS_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_GUEST_PHYS_ADDR\""
+                :type "char")
+                nil [29434 29516])
+            ("VMCS_GUEST_PHYS_ADDR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_GUEST_PHYS_ADDR_HIGH\""
+                :type "char")
+                nil [29517 29604])
+            ("VMCS_LINK_PTR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_LINK_PTR\""
+                :type "char")
+                nil [29605 29680])
+            ("VMCS_LINK_PTR_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_LINK_PTR_HIGH\""
+                :type "char")
+                nil [29681 29761])
+            ("VMCS_GUEST_DBG_CTL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DEBUG_CTL\""
+                :type "char")
+                nil [29762 29839])
+            ("VMCS_GUEST_DBG_CTL_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DEBUG_CTL_HIGH\""
+                :type "char")
+                nil [29840 29922])
+            ("VMCS_GUEST_PAT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PAT\""
+                :type "char")
+                nil [29923 29994])
+            ("VMCS_GUEST_PAT_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PAT_HIGH\""
+                :type "char")
+                nil [29995 30071])
+            ("VMCS_GUEST_EFER_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_EFER\""
+                :type "char")
+                nil [30072 30144])
+            ("VMCS_GUEST_EFER_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_EFER_HIGH\""
+                :type "char")
+                nil [30145 30222])
+            ("VMCS_GUEST_PERF_GLOBAL_CTRL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PERF_GLOBAL_CTRL\""
+                :type "char")
+                nil [30223 30307])
+            ("VMCS_GUEST_PERF_GLOBAL_CTRL_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PERF_GLOBAL_CTRL_HIGH\""
+                :type "char")
+                nil [30308 30397])
+            ("VMCS_GUEST_PDPTE0_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE0\""
+                :type "char")
+                nil [30398 30472])
+            ("VMCS_GUEST_PDPTE0_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE0_HIGH\""
+                :type "char")
+                nil [30473 30552])
+            ("VMCS_GUEST_PDPTE1_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE1\""
+                :type "char")
+                nil [30553 30627])
+            ("VMCS_GUEST_PDPTE1_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE1_HIGH\""
+                :type "char")
+                nil [30628 30707])
+            ("VMCS_GUEST_PDPTE2_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE2\""
+                :type "char")
+                nil [30708 30782])
+            ("VMCS_GUEST_PDPTE2_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE2_HIGH\""
+                :type "char")
+                nil [30783 30862])
+            ("VMCS_GUEST_PDPTE3_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE3\""
+                :type "char")
+                nil [30863 30937])
+            ("VMCS_GUEST_PDPTE3_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PDPTE3_HIGH\""
+                :type "char")
+                nil [30938 31017])
+            ("VMCS_HOST_PAT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_PAT\""
+                :type "char")
+                nil [31018 31088])
+            ("VMCS_HOST_PAT_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_PAT_HIGH\""
+                :type "char")
+                nil [31089 31164])
+            ("VMCS_HOST_EFER_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_HOST_EFER\""
+                :type "char")
+                nil [31165 31241])
+            ("VMCS_HOST_EFER_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_HOST_EFER_HIGH\""
+                :type "char")
+                nil [31242 31323])
+            ("VMCS_HOST_PERF_GLOBAL_CTRL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_PERF_GLOBAL_CTRL\""
+                :type "char")
+                nil [31324 31407])
+            ("VMCS_HOST_PERF_GLOBAL_CTRL_HIGH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_PERF_GLOBAL_CTRL_HIGH\""
+                :type "char")
+                nil [31408 31496])
+            ("VMCS_PIN_CTRLS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PIN_VM_EXEC_CTRLS\""
+                :type "char")
+                nil [31497 31576])
+            ("VMCS_PROC_CTRLS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PROC_VM_EXEC_CTRLS\""
+                :type "char")
+                nil [31577 31657])
+            ("VMCS_EXCP_BITMAP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXCEPTION_BITMAP\""
+                :type "char")
+                nil [31658 31736])
+            ("VMCS_PG_FAULT_ERR_MASK_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PAGE_FAULT_ERROR_MASK\""
+                :type "char")
+                nil [31737 31820])
+            ("VMCS_PG_FAULT_ERR_MATCH_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PAGE_FAULT_ERROR_MATCH\""
+                :type "char")
+                nil [31821 31905])
+            ("VMCS_CR3_TGT_CNT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR3_TARGET_COUNT\""
+                :type "char")
+                nil [31906 31984])
+            ("VMCS_EXIT_CTRLS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_CTRLS\""
+                :type "char")
+                nil [31985 32060])
+            ("VMCS_EXIT_MSR_STORE_CNT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_MSR_STORE_COUNT\""
+                :type "char")
+                nil [32061 32146])
+            ("VMCS_EXIT_MSR_LOAD_CNT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_MSR_LOAD_COUNT\""
+                :type "char")
+                nil [32147 32231])
+            ("VMCS_ENTRY_CTRLS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_ENTRY_CTRLS\""
+                :type "char")
+                nil [32232 32308])
+            ("VMCS_ENTRY_MSR_LOAD_CNT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_ENTRY_MSR_LOAD_COUNT\""
+                :type "char")
+                nil [32309 32394])
+            ("VMCS_ENTRY_INT_INFO_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_ENTRY_INT_INFO_FIELD\""
+                :type "char")
+                nil [32395 32480])
+            ("VMCS_ENTRY_EXCP_ERR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_ENTRY_EXCEPTION_ERROR\""
+                :type "char")
+                nil [32481 32567])
+            ("VMCS_ENTRY_INSTR_LEN_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_ENTRY_INSTR_LENGTH\""
+                :type "char")
+                nil [32568 32651])
+            ("VMCS_TPR_THRESHOLD_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"TPR_THRESHOLD\""
+                :type "char")
+                nil [32652 32727])
+            ("VMCS_SEC_PROC_CTRLS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMCS_SEC_PROC_CTRLS\""
+                :type "char")
+                nil [32728 32809])
+            ("VMCS_PLE_GAP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PLE_GAP\""
+                :type "char")
+                nil [32810 32879])
+            ("VMCS_PLE_WINDOW_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PLE_WINDOW\""
+                :type "char")
+                nil [32880 32952])
+            ("VMCS_INSTR_ERR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_INSTR_ERROR\""
+                :type "char")
+                nil [32953 33029])
+            ("VMCS_EXIT_REASON_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_REASON\""
+                :type "char")
+                nil [33030 33103])
+            ("VMCS_EXIT_INT_INFO_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_INT_INFO\""
+                :type "char")
+                nil [33104 33182])
+            ("VMCS_EXIT_INT_ERR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_INT_ERROR\""
+                :type "char")
+                nil [33183 33262])
+            ("VMCS_IDT_VECTOR_INFO_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IDT_VECTOR_INFO\""
+                :type "char")
+                nil [33263 33340])
+            ("VMCS_IDT_VECTOR_ERR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IDT_VECTOR_ERROR\""
+                :type "char")
+                nil [33341 33419])
+            ("VMCS_EXIT_INSTR_LEN_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VM_EXIT_INSTR_LENGTH\""
+                :type "char")
+                nil [33420 33502])
+            ("VMCS_EXIT_INSTR_INFO_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"VMX_INSTR_INFO\""
+                :type "char")
+                nil [33503 33579])
+            ("VMCS_GUEST_ES_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_ES_LIMIT\""
+                :type "char")
+                nil [33580 33656])
+            ("VMCS_GUEST_CS_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CS_LIMIT\""
+                :type "char")
+                nil [33657 33733])
+            ("VMCS_GUEST_SS_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SS_LIMIT\""
+                :type "char")
+                nil [33734 33810])
+            ("VMCS_GUEST_DS_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DS_LIMIT\""
+                :type "char")
+                nil [33811 33887])
+            ("VMCS_GUEST_FS_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_FS_LIMIT\""
+                :type "char")
+                nil [33888 33964])
+            ("VMCS_GUEST_GS_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GS_LIMIT\""
+                :type "char")
+                nil [33965 34041])
+            ("VMCS_GUEST_LDTR_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_LDTR_LIMIT\""
+                :type "char")
+                nil [34042 34120])
+            ("VMCS_GUEST_TR_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_TR_LIMIT\""
+                :type "char")
+                nil [34121 34197])
+            ("VMCS_GUEST_GDTR_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GDTR_LIMIT\""
+                :type "char")
+                nil [34198 34276])
+            ("VMCS_GUEST_IDTR_LIMIT_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_IDTR_LIMIT\""
+                :type "char")
+                nil [34277 34355])
+            ("VMCS_GUEST_ES_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_ES_ACCESS\""
+                :type "char")
+                nil [34356 34433])
+            ("VMCS_GUEST_CS_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CS_ACCESS\""
+                :type "char")
+                nil [34434 34511])
+            ("VMCS_GUEST_SS_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SS_ACCESS\""
+                :type "char")
+                nil [34512 34589])
+            ("VMCS_GUEST_DS_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DS_ACCESS\""
+                :type "char")
+                nil [34590 34667])
+            ("VMCS_GUEST_FS_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_FS_ACCESS\""
+                :type "char")
+                nil [34668 34745])
+            ("VMCS_GUEST_GS_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GS_ACCESS\""
+                :type "char")
+                nil [34746 34823])
+            ("VMCS_GUEST_LDTR_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_LDTR_ACCESS\""
+                :type "char")
+                nil [34824 34903])
+            ("VMCS_GUEST_TR_ACCESS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_TR_ACCESS\""
+                :type "char")
+                nil [34904 34981])
+            ("VMCS_GUEST_INT_STATE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_INT_STATE\""
+                :type "char")
+                nil [34982 35059])
+            ("VMCS_GUEST_ACTIVITY_STATE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_ACTIVITY_STATE\""
+                :type "char")
+                nil [35060 35142])
+            ("VMCS_GUEST_SMBASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SMBASE\""
+                :type "char")
+                nil [35143 35217])
+            ("VMCS_GUEST_SYSENTER_CS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SYSENTER_CS\""
+                :type "char")
+                nil [35218 35297])
+            ("VMCS_PREEMPT_TIMER_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"PREEMPT_TIMER\""
+                :type "char")
+                nil [35298 35373])
+            ("VMCS_HOST_SYSENTER_CS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_SYSENTER_CS\""
+                :type "char")
+                nil [35374 35452])
+            ("VMCS_CR0_MASK_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR0_GUEST_HOST_MASK\""
+                :type "char")
+                nil [35453 35534])
+            ("VMCS_CR4_MASK_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR4_GUEST_HOST_MASK\""
+                :type "char")
+                nil [35535 35616])
+            ("VMCS_CR0_READ_SHDW_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR0_READ_SHADOW\""
+                :type "char")
+                nil [35617 35694])
+            ("VMCS_CR4_READ_SHDW_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR4_READ_SHADOW\""
+                :type "char")
+                nil [35695 35772])
+            ("VMCS_CR3_TGT_VAL_0_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR3_TARGET_VALUE_0\""
+                :type "char")
+                nil [35773 35853])
+            ("VMCS_CR3_TGT_VAL_1_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR3_TARGET_VALUE_1\""
+                :type "char")
+                nil [35854 35934])
+            ("VMCS_CR3_TGT_VAL_2_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR3_TARGET_VALUE_2\""
+                :type "char")
+                nil [35935 36015])
+            ("VMCS_CR3_TGT_VAL_3_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"CR3_TARGET_VALUE_3\""
+                :type "char")
+                nil [36016 36096])
+            ("VMCS_EXIT_QUAL_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"EXIT_QUALIFICATION\""
+                :type "char")
+                nil [36097 36177])
+            ("VMCS_IO_RCX_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_RCX\""
+                :type "char")
+                nil [36178 36246])
+            ("VMCS_IO_RSI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_RSI\""
+                :type "char")
+                nil [36247 36315])
+            ("VMCS_IO_RDI_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_RDI\""
+                :type "char")
+                nil [36316 36384])
+            ("VMCS_IO_RIP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"IO_RIP\""
+                :type "char")
+                nil [36385 36453])
+            ("VMCS_GUEST_LINEAR_ADDR_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_LINEAR_ADDR\""
+                :type "char")
+                nil [36454 36533])
+            ("VMCS_GUEST_CR0_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CR0\""
+                :type "char")
+                nil [36534 36605])
+            ("VMCS_GUEST_CR3_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CR3\""
+                :type "char")
+                nil [36606 36677])
+            ("VMCS_GUEST_CR4_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CR4\""
+                :type "char")
+                nil [36678 36749])
+            ("VMCS_GUEST_ES_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_ES_BASE\""
+                :type "char")
+                nil [36750 36825])
+            ("VMCS_GUEST_CS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_CS_BASE\""
+                :type "char")
+                nil [36826 36901])
+            ("VMCS_GUEST_SS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SS_BASE\""
+                :type "char")
+                nil [36902 36977])
+            ("VMCS_GUEST_DS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DS_BASE\""
+                :type "char")
+                nil [36978 37053])
+            ("VMCS_GUEST_FS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_FS_BASE\""
+                :type "char")
+                nil [37054 37129])
+            ("VMCS_GUEST_GS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GS_BASE\""
+                :type "char")
+                nil [37130 37205])
+            ("VMCS_GUEST_LDTR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_LDTR_BASE\""
+                :type "char")
+                nil [37206 37283])
+            ("VMCS_GUEST_TR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_TR_BASE\""
+                :type "char")
+                nil [37284 37359])
+            ("VMCS_GUEST_GDTR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_GDTR_BASE\""
+                :type "char")
+                nil [37360 37437])
+            ("VMCS_GUEST_IDTR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_IDTR_BASE\""
+                :type "char")
+                nil [37438 37515])
+            ("VMCS_GUEST_DR7_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_DR7\""
+                :type "char")
+                nil [37516 37587])
+            ("VMCS_GUEST_RSP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_RSP\""
+                :type "char")
+                nil [37588 37659])
+            ("VMCS_GUEST_RIP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_RIP\""
+                :type "char")
+                nil [37660 37731])
+            ("VMCS_GUEST_RFLAGS_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_RFLAGS\""
+                :type "char")
+                nil [37732 37806])
+            ("VMCS_GUEST_PENDING_DBG_EXCP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_PENDING_DEBUG_EXCS\""
+                :type "char")
+                nil [37807 37893])
+            ("VMCS_GUEST_SYSENTER_ESP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SYSENTER_ESP\""
+                :type "char")
+                nil [37894 37974])
+            ("VMCS_GUEST_SYSENTER_EIP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"GUEST_SYSENTER_EIP\""
+                :type "char")
+                nil [37975 38055])
+            ("VMCS_HOST_CR0_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_CR0\""
+                :type "char")
+                nil [38056 38126])
+            ("VMCS_HOST_CR3_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_CR3\""
+                :type "char")
+                nil [38127 38197])
+            ("VMCS_HOST_CR4_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_CR4\""
+                :type "char")
+                nil [38198 38268])
+            ("VMCS_HOST_FS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_FS_BASE\""
+                :type "char")
+                nil [38269 38343])
+            ("VMCS_HOST_GS_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_GS_BASE\""
+                :type "char")
+                nil [38344 38418])
+            ("VMCS_HOST_TR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_TR_BASE\""
+                :type "char")
+                nil [38419 38493])
+            ("VMCS_HOST_GDTR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_GDTR_BASE\""
+                :type "char")
+                nil [38494 38570])
+            ("VMCS_HOST_IDTR_BASE_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_IDTR_BASE\""
+                :type "char")
+                nil [38571 38647])
+            ("VMCS_HOST_SYSENTER_ESP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_SYSENTER_ESP\""
+                :type "char")
+                nil [38648 38727])
+            ("VMCS_HOST_SYSENTER_EIP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_SYSENTER_EIP\""
+                :type "char")
+                nil [38728 38807])
+            ("VMCS_HOST_RSP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_RSP\""
+                :type "char")
+                nil [38808 38878])
+            ("VMCS_HOST_RIP_STR" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"HOST_RIP\""
+                :type "char")
+                nil [38879 38949])
+            ("v3_vmcs_field_to_str" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38988 39007]))                  
+                :type "char")
+                nil [38953 51687]))          
+      :file "vmcs.c"
+      :pointmax 51691
+      :fsize 51690
+      :lastmodtime '(24280 265)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_config.h" include (:system-flag t) nil [708 740])
+            ("palacios/vmm.h" include (:system-flag t) nil [741 766])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [767 798])
+            ("palacios/vmm_msr.h" include (:system-flag t) nil [799 828])
+            ("palacios/vmm_decoder.h" include (:system-flag t) nil [829 862])
+            ("palacios/vmm_telemetry.h" include (:system-flag t) nil [863 898])
+            ("palacios/vmm_mem.h" include (:system-flag t) nil [899 928])
+            ("palacios/vmm_hypercall.h" include (:system-flag t) nil [929 964])
+            ("palacios/vmm_dev_mgr.h" include (:system-flag t) nil [965 998])
+            ("palacios/vmm_cpuid.h" include (:system-flag t) nil [999 1030])
+            ("palacios/vmm_xml.h" include (:system-flag t) nil [1031 1060])
+            ("palacios/vmm_io.h" include (:system-flag t) nil [1061 1089])
+            ("palacios/vmm_msr.h" include (:system-flag t) nil [1090 1119])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [1120 1153])
+            ("palacios/vmm_host_events.h" include (:system-flag t) nil [1159 1196])
+            ("vmm_config_class.h" include nil nil [1198 1227])
+            ("file_hdr" type
+               (:members 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1312 1327])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1332 1346])
+                    ("offset" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1351 1367]))                  
+                :type "struct")
+                nil [1290 1370])
+            ("file_idx_table" type
+               (:members 
+                  ( ("num_files" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1400 1426])
+                    ("hdrs" variable
+                       (:dereference 1
+                        :type ("file_hdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1431 1455]))                  
+                :type "struct")
+                nil [1372 1458])
+            ("setup_memory_map" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1491 1514])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1515 1535]))                  
+                :type "int")
+                nil [1463 1536])
+            ("setup_extensions" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1565 1588])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1589 1609]))                  
+                :type "int")
+                nil [1537 1610])
+            ("setup_devices" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1639 1662])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1663 1683]))                  
+                :type "int")
+                nil [1611 1684])
+            ("setup_bioses" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1713 1736])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1737 1757]))                  
+                :type "int")
+                nil [1685 1758])
+            ("v3_cfg_val" function
+               (:pointer 1
+                :arguments 
+                  ( ("tree" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1780 1801])
+                    ("tag" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1807 1827]))                  
+                :type "char")
+                nil [1761 2317])
+            ("v3_cfg_subtree" function
+               (:pointer 1
+                :arguments 
+                  ( ("tree" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2351 2372])
+                    ("tag" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2381 2401]))                  
+                :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                nil [2319 2442])
+            ("v3_cfg_next_branch" function
+               (:pointer 1
+                :arguments 
+                  ( ("tree" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2480 2501]))                  
+                :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                nil [2444 2536])
+            ("v3_cfg_get_file" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2578 2601])
+                    ("tag" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2604 2628]))                  
+                :type ("v3_cfg_file" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2540 2780])
+            ("file_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2811 2822]))                  
+                :type ("uint_t" type (:type "class") nil nil))
+                nil [2783 2916])
+            ("file_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2941 2953])
+                    ("key2" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2954 2966]))                  
+                :type "int")
+                nil [2918 3078])
+            ("parse_config" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("cfg_blob" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3122 3138]))                  
+                :type ("v3_config" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3082 5673])
+            ("pre_config_vm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5704 5727])
+                    ("vm_cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5736 5763]))                  
+                :type "int")
+                nil [5678 7811])
+            ("determine_paging_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7848 7875])
+                    ("core_cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7885 7916]))                  
+                :type "int")
+                nil [7814 9431])
+            ("pre_config_core" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9461 9488])
+                    ("core_cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9492 9523]))                  
+                :type "int")
+                nil [9433 9946])
+            ("post_config_vm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10125 10148])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10158 10182]))                  
+                :type "int")
+                nil [10098 10943])
+            ("allocate_guest" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("num_cores" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10993 11012]))                  
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10950 11511])
+            ("v3_config_guest" function
+               (:pointer 1
+                :arguments 
+                  ( ("cfg_blob" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11552 11568])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11572 11589]))                  
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11515 13813])
+            ("v3_free_config" function
+               (:arguments 
+                  ( ("config" variable
+                       (:pointer 1
+                        :type ("v3_config" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13837 13863]))                  
+                :type "int")
+                nil [13817 13981])
+            ("setup_memory_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14015 14038])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14043 14067]))                  
+                :type "int")
+                nil [13986 15127])
+            ("setup_extensions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15159 15182])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15187 15211]))                  
+                :type "int")
+                nil [15130 15749])
+            ("setup_devices" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15778 15801])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15809 15833]))                  
+                :type "int")
+                nil [15752 16271])
+            ("setup_bioses" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16300 16323])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16331 16355]))                  
+                :type "int")
+                nil [16275 18020]))          
+      :file "vmm_config.c"
+      :pointmax 18022
+      :fsize 18021
+      :lastmodtime '(24657 8917)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_config_class.h"
+      :fsize 1114
+      :lastmodtime '(24280 265)))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios-lwk!palacios!src!palacios!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

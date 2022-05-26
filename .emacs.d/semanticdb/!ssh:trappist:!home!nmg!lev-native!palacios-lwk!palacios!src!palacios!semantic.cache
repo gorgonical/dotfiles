@@ -1,0 +1,424 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [707 732])
+            ("palacios/vmm_intr.h" include (:system-flag t) nil [733 763])
+            ("palacios/vmm_config.h" include (:system-flag t) nil [764 796])
+            ("palacios/vm.h" include (:system-flag t) nil [797 821])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [822 857])
+            ("palacios/vmm_lowlevel.h" include (:system-flag t) nil [858 892])
+            ("palacios/vmm_sprintf.h" include (:system-flag t) nil [893 926])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [927 963])
+            ("palacios/vmm_timeout.h" include (:system-flag t) nil [964 997])
+            ("palacios/vmm_options.h" include (:system-flag t) nil [998 1031])
+            ("palacios/vmm_checkpoint.h" include (:system-flag t) nil [1032 1068])
+            ("interfaces/vmm_numa.h" include (:system-flag t) nil [1070 1102])
+            ("v3_mach_type" variable
+               (:default-value "V3_INVALID_CPU"
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [1261 1305])
+            ("v3_cpu_types" variable
+               (:dereference 1
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [1351 1398])
+            ("v3_cores_current" variable
+               (:pointer 1
+                :dereference 1
+                :type ("v3_core_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1525 1584])
+            ("v3_cores_assigned" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1653 1715])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("v3_vm_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1775 1786]))                  
+                :type "int")
+                nil [1758 1787])
+            ("gbl_op_lock" variable
+               (:typemodifiers ("static")
+                :type ("" type
+                     (:members 
+                        ( ("lock" variable (:type ("v3_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1951 1970])
+                          ("acquired" variable (:type "int") (reparse-symbol classsubparts) [1975 1998]))                        
+                      :type "struct")
+                      nil nil))
+                nil [1931 2013])
+            ("os_hooks" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("v3_os_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2102 2142])
+            ("v3_dbg_enable" variable
+               (:default-value "0"
+                :type "int")
+                nil [2145 2180])
+            ("v3_arch_is_vmx" function (:type "bool") nil [2275 2446])
+            ("v3_arch_is_svm" function (:type "bool") nil [2448 2595])
+            ("op_lock_init" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2597 2700])
+            ("op_lock_deinit" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2703 2811])
+            ("op_lock_acquire" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [2813 3170])
+            ("op_lock_release" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [3172 3383])
+            ("init_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3408 3419]))                  
+                :type "void")
+                nil [3386 3893])
+            ("deinit_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3919 3930]))                  
+                :type "void")
+                nil [3896 4489])
+            ("v3_add_cpu" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4507 4523]))                  
+                :type "int")
+                nil [4491 5280])
+            ("v3_remove_cpu" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5301 5317]))                  
+                :type "int")
+                nil [5282 6226])
+            ("Init_V3" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_os_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6241 6268])
+                    ("cpu_mask" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6271 6301])
+                    ("num_cpus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6304 6334])
+                    ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6336 6365]))                  
+                :type "int")
+                nil [6228 7785])
+            ("Shutdown_V3" function (:type "int") nil [7789 8631])
+            ("v3_get_cpu_type" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8665 8681]))                  
+                :type ("v3_cpu_arch_t" type (:type "class") nil nil))
+                nil [8634 9013])
+            ("start_core" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10068 10077]))                  
+                :type "int")
+                nil [10045 11259])
+            ("v3_create_vm" function
+               (:pointer 1
+                :arguments 
+                  ( ("cfg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11296 11307])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11315 11332])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11340 11352]))                  
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11262 14810])
+            ("v3_free_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14919 14942]))                  
+                :type "int")
+                nil [14903 15511])
+            ("v3_start_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15532 15555])
+                    ("cpu_mask" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15561 15590]))                  
+                :type "int")
+                nil [15515 16658])
+            ("v3_reset_vm_core" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16683 16710])
+                    ("rip" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16715 16741]))                  
+                :type "int")
+                nil [16661 17360])
+            ("v3_get_vm_thread_info" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17408 17431])
+                    ("num_threads" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17441 17473]))                  
+                :type ("v3_thread_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17362 17983])
+            ("v3_move_vm_core" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18061 18084])
+                    ("vcore_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18087 18116])
+                    ("target_cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18120 18151]))                  
+                :type "int")
+                nil [18040 19877])
+            ("v3_stop_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19897 19920]))                  
+                :type "int")
+                nil [19881 20792])
+            ("v3_pause_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20812 20835]))                  
+                :type "int")
+                nil [20795 21050])
+            ("v3_continue_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21073 21096]))                  
+                :type "int")
+                nil [21053 21297])
+            ("sim_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21326 21353])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21361 21396]))                  
+                :type "int")
+                nil [21301 21694])
+            ("v3_simulate_vm" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21719 21742])
+                    ("msecs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21752 21778]))                  
+                :type "int")
+                nil [21699 23481])
+            ("v3_yield_to_pid" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24203 24230])
+                    ("pid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24234 24260])
+                    ("tid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24263 24289]))                  
+                :type "void")
+                nil [24182 24446])
+            ("v3_yield_to_thread" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24474 24501])
+                    ("thread" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24508 24537]))                  
+                :type "void")
+                nil [24449 24693])
+            ("v3_yield_cond" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24716 24743])
+                    ("usec" variable (:type "int") (reparse-symbol arg-sub-list) [24751 24778]))                  
+                :type "void")
+                nil [24696 25448])
+            ("v3_yield" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25794 25821])
+                    ("usec" variable (:type "int") (reparse-symbol arg-sub-list) [25824 25851]))                  
+                :type "void")
+                nil [25779 26017])
+            ("v3_print_cond" function
+               (:arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26042 26059])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [26060 26064]))                  
+                :type "void")
+                nil [26022 26231])
+            ("v3_interrupt_cpu" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26258 26281])
+                    ("logical_cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26285 26317])
+                    ("vector" variable (:type "int") (reparse-symbol arg-sub-list) [26322 26349]))                  
+                :type "void")
+                nil [26235 26507])
+            ("v3_vm_enter" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26528 26555]))                  
+                :type "int")
+                nil [26511 26934])
+            ("v3_get_current_core" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26981 26987]))                  
+                :type ("v3_core_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [26937 27034])
+            ("v3_get_cpu_usage" function
+               (:pointer 1
+                :arguments 
+                  ( ("cpu_cnt" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27066 27085]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [27037 27893])
+            ("v3_get_vm_run_state" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27940 27963]))                  
+                :type ("v3_vm_operating_mode_t" type (:type "class") nil nil))
+                nil [27896 28113]))          
+      :file "vmm.c"
+      :pointmax 28114
+      :fsize 28113
+      :lastmodtime '(25017 26532)
+      :unmatched-syntax nil))
+  :file "!ssh:trappist:!home!nmg!lev-native!palacios-lwk!palacios!src!palacios!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

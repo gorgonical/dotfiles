@@ -1,0 +1,284 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [222 240])
+            ("stdlib.h" include (:system-flag t) nil [241 260])
+            ("string.h" include (:system-flag t) nil [261 280])
+            ("stdint.h" include (:system-flag t) nil [281 300])
+            ("stdbool.h" include (:system-flag t) nil [301 321])
+            ("math.h" include (:system-flag t) nil [322 339])
+            ("fenv.h" include (:system-flag t) nil [340 357])
+            ("errno.h" include (:system-flag t) nil [358 376])
+            ("unistd.h" include (:system-flag t) nil [377 396])
+            ("signal.h" include (:system-flag t) nil [397 416])
+            ("pet_log.h" include (:system-flag t) nil [420 440])
+            ("ezxml.h" include (:system-flag t) nil [441 459])
+            ("hobbes.h" include (:system-flag t) nil [462 481])
+            ("hobbes_util.h" include (:system-flag t) nil [482 506])
+            ("hobbes_system.h" include (:system-flag t) nil [507 533])
+            ("hobbes_enclave.h" include (:system-flag t) nil [534 561])
+            ("hobbes_notifier.h" include (:system-flag t) nil [562 590])
+            ("xemem.h" include (:system-flag t) nil [591 609])
+            ("use_topo_file" variable
+               (:default-value "true"
+                :type "bool")
+                nil [612 638])
+            ("sys_mem_blk_info" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("hobbes_memory_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [640 692])
+            ("sys_cpu_info" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("hobbes_cpu_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [693 745])
+            ("enclaves" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("enclave_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [746 798])
+            ("sys_mem_blk_cnt" variable
+               (:default-value "0"
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [801 830])
+            ("sys_cpu_cnt" variable
+               (:default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [831 860])
+            ("enclave_cnt" variable
+               (:default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [861 890])
+            ("color" type
+               (:members 
+                  ( ("enclave_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [913 938])
+                    ("bg_color" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [943 966])
+                    ("font_color" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [971 996])
+                    ("use_flag" variable (:type "int") (reparse-symbol classsubparts) [1001 1024]))                  
+                :type "struct")
+                nil [894 1027])
+            ("BG_DEFAULT" variable (:constant-flag t) nil [1039 1049])
+            ("BG_MASTER" variable (:constant-flag t) nil [1066 1075])
+            ("BG_FREE" variable (:constant-flag t) nil [1093 1100])
+            ("BG_INVALID" variable (:constant-flag t) nil [1124 1134])
+            ("FONT_DEFAULT" variable (:constant-flag t) nil [1152 1164])
+            ("FONT_MASTER" variable (:constant-flag t) nil [1181 1192])
+            ("FONT_FREE" variable (:constant-flag t) nil [1210 1219])
+            ("FONT_INVALID" variable (:constant-flag t) nil [1239 1251])
+            ("master_color" variable
+               (:default-value "{HOBBES_MASTER_ENCLAVE_ID, BG_MASTER, FONT_MASTER, 0}"
+                :type ("color" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1261 1343])
+            ("enclave_colors" variable
+               (:dereference 1
+                :default-value "{
+    {HOBBES_INVALID_ID, \"mediumslateblue\", \"white\", 0},
+    {HOBBES_INVALID_ID, \"lightskyblue\",    \"black\", 0},
+    {HOBBES_INVALID_ID, \"darkorange\",      \"black\", 0},
+    {HOBBES_INVALID_ID, \"indigo\",          \"white\", 0},
+    {HOBBES_INVALID_ID, \"orangered\",       \"white\", 0},
+    {HOBBES_INVALID_ID, \"royalblue\",       \"white\", 0},
+    {HOBBES_INVALID_ID, \"saddlebrown\",     \"white\", 0},
+    {HOBBES_INVALID_ID, \"indianred\",       \"white\", 0},
+    {HOBBES_INVALID_ID, \"burlywood\",       \"black\", 0},
+    {HOBBES_INVALID_ID, \"turquoise\",       \"black\", 0},
+    {HOBBES_INVALID_ID, \"maroon\",          \"white\", 0},
+    {HOBBES_INVALID_ID, \"olive\",           \"white\", 0},
+    {HOBBES_INVALID_ID, \"teal\",            \"black\", 0},
+    {HOBBES_INVALID_ID, \"gold\",            \"black\", 0},
+    {HOBBES_INVALID_ID, \"yellow\",          \"black\", 0},
+    {HOBBES_INVALID_ID, \"palegreen\",       \"black\", 0},
+    {HOBBES_INVALID_ID, \"darkgreen\",       \"white\", 0},
+    {HOBBES_INVALID_ID, \"lightpink\",       \"black\", 0}
+}"
+                :type ("color" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1345 2388])
+            ("__get_numa_blk_cnt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2429 2447]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2394 2644])
+            ("__get_numa_cpu_cnt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2682 2700]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2647 2889])
+            ("__get_mem_blk_entry" function
+               (:pointer 1
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2940 2958])
+                    ("blk_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2966 2983]))                  
+                :type ("hobbes_memory_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2892 3227])
+            ("__get_cpu_entry" function
+               (:pointer 1
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3272 3290])
+                    ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3294 3307]))                  
+                :type ("hobbes_cpu_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3230 3528])
+            ("__alloc_free_color" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("enclave_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3573 3596]))                  
+                :type ("color" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3531 3888])
+            ("__get_color" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("enclave_id" variable (:type ("hobbes_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3925 3948]))                  
+                :type ("color" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3891 4185])
+            ("__assign_colors" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [4188 5591])
+            ("__get_mem_fill_str" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5633 5651])
+                    ("blk" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5652 5665]))                  
+                :type "char")
+                nil [5594 6272])
+            ("__get_cpu_fill_str" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6313 6331])
+                    ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6332 6345]))                  
+                :type "char")
+                nil [6274 6807])
+            ("__get_cpu_text_str" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6848 6866])
+                    ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6867 6880]))                  
+                :type "char")
+                nil [6809 7352])
+            ("generate_mem_svg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("numa_canvas" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7386 7407])
+                    ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7411 7429]))                  
+                :type "int")
+                nil [7358 10110])
+            ("generate_cpu_svg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("numa_canvas" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10140 10161])
+                    ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10165 10183]))                  
+                :type "int")
+                nil [10112 14732])
+            ("generate_numa_svg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("canvas" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14764 14780])
+                    ("numa_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14785 14803])
+                    ("num_cols" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14808 14826])
+                    ("num_rows" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14831 14849]))                  
+                :type "int")
+                nil [14735 16453])
+            ("generate_legend_svg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("canvas" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16487 16502]))                  
+                :type "int")
+                nil [16455 19395])
+            ("generate_svg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19427 19433]))                  
+                :type ("ezxml_t" type (:type "class") nil nil))
+                nil [19397 20771])
+            ("serialize_svg" function
+               (:arguments 
+                  ( ("svg_data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20792 20808])
+                    ("touch_filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20816 20838])
+                    ("svg_filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20846 20866]))                  
+                :type "int")
+                nil [20774 21324])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [21336 21345])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [21346 21359]))                  
+                :type "int")
+                nil [21327 22759]))          
+      :file "main.c"
+      :pointmax 22760
+      :fsize 22759
+      :lastmodtime '(24004 28572 442639 951000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FONT_MASTER" . ((string "\"white\"" 1194 . 1201)))
+          ("BG_DEFAULT" . ((string "\"white\"" 1050 . 1057)))
+          ("FONT_FREE" . ((string "\"black\"" 1223 . 1230)))
+          ("BG_INVALID" . ((string "\"black\"" 1135 . 1142)))
+          ("BG_MASTER" . ((string "\"green\"" 1077 . 1084)))
+          ("BG_FREE" . ((string "\"lightgrey\"" 1104 . 1115)))
+          ("FONT_DEFAULT" . ((string "\"black\"" 1165 . 1172)))
+          ("FONT_INVALID" . ((string "\"white\"" 1252 . 1259)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!gui_demo!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

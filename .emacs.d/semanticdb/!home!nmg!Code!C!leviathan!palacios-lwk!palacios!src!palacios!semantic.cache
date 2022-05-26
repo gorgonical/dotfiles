@@ -1,0 +1,153 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [222 247])
+            ("palacios/vmx_hw_info.h" include (:system-flag t) nil [249 282])
+            ("palacios/vmx_lowlevel.h" include (:system-flag t) nil [283 317])
+            ("VMCLEAR_OPCODE" variable (:constant-flag t) nil [381 395])
+            ("VMRESUME_OPCODE" variable (:constant-flag t) nil [441 456])
+            ("VMPTRLD_OPCODE" variable (:constant-flag t) nil [489 503])
+            ("VMPTRST_OPCODE" variable (:constant-flag t) nil [545 559])
+            ("VMREAD_OPCODE" variable (:constant-flag t) nil [601 614])
+            ("VMWRITE_OPCODE" variable (:constant-flag t) nil [644 658])
+            ("VMXOFF_OPCODE" variable (:constant-flag t) nil [687 700])
+            ("VMXON_OPCODE" variable (:constant-flag t) nil [735 747])
+            ("INVEPT_OPCODE" variable (:constant-flag t) nil [796 809])
+            ("INVVPID_OPCODE" variable (:constant-flag t) nil [854 868])
+            ("CR4_VMX_ENABLE" variable (:constant-flag t) nil [913 927])
+            ("EAX_ECX_MODRM" variable (:constant-flag t) nil [1004 1017])
+            ("EAX_06_MODRM" variable (:constant-flag t) nil [1062 1074])
+            ("EAX_07_MODRM" variable (:constant-flag t) nil [1120 1132])
+            ("CHECK_VMXFAIL" variable (:constant-flag t) nil [1176 1189])
+            ("enable_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1374 1379]))                  
+                :type "int")
+                nil [1358 1857])
+            ("vmx_on" function
+               (:arguments 
+                  ( ("vmxon_ptr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1872 1889]))                  
+                :type "int")
+                nil [1860 2302])
+            ("vmx_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2317 2322]))                  
+                :type "int")
+                nil [2304 2640])
+            ("vmcs_clear" function
+               (:arguments 
+                  ( ("vmcs_ptr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2661 2677]))                  
+                :type "int")
+                nil [2645 3160])
+            ("vmcs_load" function
+               (:arguments 
+                  ( ("vmcs_ptr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3180 3196]))                  
+                :type "int")
+                nil [3165 3656])
+            ("vmcs_store" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3680 3685]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [3659 3862])
+            ("vmcs_read" function
+               (:arguments 
+                  ( ("vmcs_field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3879 3905])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3910 3929]))                  
+                :type "int")
+                nil [3864 4701])
+            ("vmcs_write" function
+               (:arguments 
+                  ( ("vmcs_field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4720 4744])
+                    ("value" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4750 4769]))                  
+                :type "int")
+                nil [4704 5152])
+            ("vmx_invvpid" function
+               (:arguments 
+                  ( ("ext" variable (:type "int") (reparse-symbol arg-sub-list) [5172 5183])
+                    ("vpid" variable (:type "int") (reparse-symbol arg-sub-list) [5190 5202])
+                    ("gva" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5209 5220]))                  
+                :type "int")
+                nil [5155 5642])
+            ("vmx_invept" function
+               (:arguments 
+                  ( ("ext" variable (:type "int") (reparse-symbol arg-sub-list) [5661 5674])
+                    ("eptp" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5680 5694]))                  
+                :type "int")
+                nil [5645 6077])
+            ("vmx_invvpid_addr" variable (:constant-flag t) nil [6088 6104])
+            ("vmx_invvpid_single" variable (:constant-flag t) nil [6183 6201])
+            ("vmx_invvpid_all" variable (:constant-flag t) nil [6275 6290])
+            ("vmx_invept_single" variable (:constant-flag t) nil [6368 6385])
+            ("vmx_invept_all" variable (:constant-flag t) nil [6454 6468])
+            ("vmx_flush_addr" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6551 6578])
+                    ("addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6588 6615]))                  
+                :type "int")
+                nil [6531 6951])
+            ("vmx_flush_core_tlb" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6978 7005]))                  
+                :type "int")
+                nil [6954 7412])
+            ("vmx_flush_tlb" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7433 7438]))                  
+                :type "int")
+                nil [7414 7668]))          
+      :file "vmx_lowlevel.c"
+      :pointmax 7669
+      :fsize 7668
+      :lastmodtime '(23798 45552 671758 563000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VMPTRST_OPCODE" . ((string "\".byte 0x0f,0xc7;\"" 561 . 579)))
+          ("VMXON_OPCODE" . ((string "\".byte 0xf3,0x0f,0xc7;\"" 751 . 774)))
+          ("EAX_06_MODRM" . ((string "\".byte 0x30;\"" 1078 . 1091)))
+          ("VMREAD_OPCODE" . ((string "\".byte 0x0f,0x78;\"" 617 . 635)))
+          ("EAX_07_MODRM" . ((string "\".byte 0x38;\"" 1136 . 1149)))
+          ("vmx_invvpid_single" (spp-arg-list ("vpid") 6201 . 6207) . ((symbol "vmx_invvpid" 6213 . 6224) (semantic-list "(VMX_VPID_EXTENT_SINGLE_CONTEXT,  vpid, 0)" 6224 . 6266)))
+          ("VMCLEAR_OPCODE" . ((string "\".byte 0x66,0xf,0xc7;\"" 397 . 419)))
+          ("VMXOFF_OPCODE" . ((string "\".byte 0x0f,0x01,0xc4;\"" 703 . 726)))
+          ("CHECK_VMXFAIL" (spp-arg-list ("ret_valid" "ret_invalid") 1189 . 1213) . 
+              ((IF "if" 1220 . 1222) (semantic-list "(ret_valid)" 1223 . 1234) (semantic-list "{				\\
+        return VMX_FAIL_VALID;			\\
+    }" 1235 . 1282) (ELSE "else" 1283 . 1287) (IF "if" 1288 . 1290) (semantic-list "(ret_invalid)" 1291 . 1304) (semantic-list "{			\\
+        return VMX_FAIL_INVALID;		\\
+    }" 1305 . 1352)))
+          ("VMPTRLD_OPCODE" . ((string "\".byte 0x0f,0xc7;\"" 505 . 523)))
+          ("EAX_ECX_MODRM" . ((string "\".byte 0xc1;\"" 1020 . 1033)))
+          ("CR4_VMX_ENABLE" . ((symbol "0x00002000ULL" 928 . 941)))
+          ("vmx_invvpid_all" (spp-arg-list nil 6290 . 6292) . ((symbol "vmx_invvpid" 6305 . 6316) (semantic-list "(VMX_VPID_EXTENT_ALL_CONTEXT,     0,    0)" 6316 . 6358)))
+          ("vmx_invept_single" (spp-arg-list ("eptp") 6385 . 6391) . ((symbol "vmx_invept" 6398 . 6408) (semantic-list "(VMX_EPT_EXTENT_SINGLE_CONTEXT, eptp)" 6408 . 6445)))
+          ("VMRESUME_OPCODE" . ((string "\".byte 0x0f,0x01,0xc3;\"" 457 . 480)))
+          ("INVEPT_OPCODE" . ((string "\".byte 0x66,0x0f,0x38,0x80,0x08;\"" 812 . 845)))
+          ("vmx_invept_all" (spp-arg-list nil 6468 . 6470) . ((symbol "vmx_invept" 6484 . 6494) (semantic-list "(VMX_EPT_EXTENT_ALL_CONTEXT,    0)" 6494 . 6528)))
+          ("VMWRITE_OPCODE" . ((string "\".byte 0x0f,0x79;\"" 660 . 678)))
+          ("INVVPID_OPCODE" . ((string "\".byte 0x66,0x0f,0x38,0x81,0x08;\"" 870 . 903)))
+          ("vmx_invvpid_addr" (spp-arg-list ("vpid" "addr") 6104 . 6116) . ((symbol "vmx_invvpid" 6118 . 6129) (semantic-list "(VMX_VPID_EXTENT_INDIVIDUAL_ADDR, vpid, addr)" 6129 . 6174)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!palacios-lwk!palacios!src!palacios!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

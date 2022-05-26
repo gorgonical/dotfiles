@@ -1,0 +1,190 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_PISCES_H_" variable (:constant-flag t) nil [250 260])
+            ("linux/slab.h" include (:system-flag t) nil [262 285])
+            ("linux/mm.h" include (:system-flag t) nil [286 307])
+            ("MAX_ENCLAVES" variable (:constant-flag t) nil [318 330])
+            ("MAX_ENCLAVE_CPUS" variable (:constant-flag t) nil [347 363])
+            ("pisces_alloc_pages" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [397 412])
+                    ("order" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [413 423]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [368 424])
+            ("pisces_free_pages" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [453 468])
+                    ("order" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [470 480]))                  
+                :type "void")
+                nil [425 481])
+            ("pisces_kmalloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [505 517])
+                    ("flags" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [518 530]))                  
+                :type "void")
+                nil [483 531])
+            ("pisces_kfree" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [552 563]))                  
+                :type "void")
+                nil [532 564])
+            ("pisces_printk" variable (:constant-flag t) nil [636 649])
+            ("ERROR" variable (:constant-flag t) nil [736 741])
+            ("WARNING" variable (:constant-flag t) nil [864 871])
+            ("DEBUG" variable (:constant-flag t) nil [972 977]))          
+      :file "pisces.h"
+      :pointmax 1079
+      :fsize 1078
+      :lastmodtime '(24269 60038)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_ENCLAVE_CPUS" . ((number "32" 364 . 366)))
+          ("_PISCES_H_")
+          ("pisces_printk" (spp-arg-list ("fmt" "args...") 649 . 663) . 
+              ((DO "do" 669 . 671) (semantic-list "{		\\
+		printk(\"PISCES>: \" fmt, ##args);	\\
+	}" 672 . 716) (WHILE "while" 717 . 722) (semantic-list "(0)" 723 . 726)))
+          ("MAX_ENCLAVES" . ((number "128" 335 . 338)))
+          ("ERROR" (spp-arg-list ("fmt" "args...") 741 . 755) . 
+              ((DO "do" 761 . 763) (semantic-list "{		\\
+		printk(KERN_ERR \"PISCSE> %s(%d): \" fmt, __FILE__, __LINE__, ##args);	\\
+	}" 764 . 844) (WHILE "while" 845 . 850) (semantic-list "(0)" 851 . 854)))
+          ("WARNING" (spp-arg-list ("fmt" "args...") 871 . 885) . 
+              ((DO "do" 891 . 893) (semantic-list "{		\\
+		printk(KERN_WARNING \"PISCSES>: \" fmt, ##args);	\\
+	}" 894 . 952) (WHILE "while" 953 . 958) (semantic-list "(0)" 959 . 962)))
+          ("DEBUG" (spp-arg-list ("fmt" "args...") 977 . 991) . 
+              ((DO "do" 997 . 999) (semantic-list "{		\\
+		printk(KERN_DEBUG \"PISCES>: \" fmt,  ##args);	\\
+	}" 1000 . 1056) (WHILE "while" 1057 . 1062) (semantic-list "(0)" 1063 . 1066)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/delay.h" include (:system-flag t) nil [223 247])
+            ("linux/mutex.h" include (:system-flag t) nil [248 272])
+            ("enclave.h" include nil nil [274 294])
+            ("pisces_boot_params.h" include nil nil [295 326])
+            ("pgtables.h" include nil nil [327 348])
+            ("boot.h" include nil nil [349 366])
+            ("trampoline.h" include nil nil [368 391])
+            ("MAX_BOOTMEM_SHIFT" variable (:constant-flag t) nil [439 456])
+            ("MAX_BOOTMEM_SIZE" variable (:constant-flag t) nil [468 484])
+            ("pisces_setup_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [549 581]))                  
+                :type "int")
+                nil [520 1577])
+            ("pisces_restore_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1612 1644]))                  
+                :type "int")
+                nil [1582 1907])
+            ("pisces_set_launch_args" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1985 2017])
+                    ("target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2042 2078])
+                    ("rsi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2103 2131]))                  
+                :type "void")
+                nil [1950 2727])
+            ("__lapic_get_maxlvt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2761 2766]))                  
+                :type "int")
+                nil [2730 2886])
+            ("__wakeup_secondary_cpu_via_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("phys_apicid" variable (:type "int") (reparse-symbol arg-sub-list) [2934 2950]))                  
+                :type "int")
+                nil [2890 5622])
+            ("boot_enclave" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5645 5677]))                  
+                :type "int")
+                nil [5627 7736])
+            ("stop_enclave" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7758 7790]))                  
+                :type "int")
+                nil [7740 8824]))          
+      :file "boot.c"
+      :pointmax 8825
+      :fsize 8824
+      :lastmodtime '(24269 64431)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_BOOTMEM_SIZE" . ((semantic-list "(1ULL << MAX_BOOTMEM_SHIFT)" 485 . 512)))
+          ("MAX_BOOTMEM_SHIFT" . ((number "35" 457 . 459)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "enclave.h"
+      :fsize 2322
+      :lastmodtime '(24269 60038))
+    (semanticdb-table "semanticdb-table"
+      :file "pisces_boot_params.h"
+      :fsize 2688
+      :lastmodtime '(24269 60038))
+    (semanticdb-table "semanticdb-table"
+      :file "pgtables.h"
+      :fsize 10616
+      :lastmodtime '(24269 60038))
+    (semanticdb-table "semanticdb-table"
+      :file "boot.h"
+      :fsize 564
+      :lastmodtime '(24269 60038))
+    (semanticdb-table "semanticdb-table"
+      :file "trampoline.h"
+      :fsize 1277
+      :lastmodtime '(24269 60038)))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan-native!pisces!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

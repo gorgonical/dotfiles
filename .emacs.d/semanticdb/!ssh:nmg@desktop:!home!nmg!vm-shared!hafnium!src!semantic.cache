@@ -1,0 +1,1010 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/api.h" include nil nil [209 228])
+            ("hf/arch/cpu.h" include nil nil [230 254])
+            ("hf/arch/ffa.h" include nil nil [255 279])
+            ("hf/arch/ffa_memory_handle.h" include nil nil [280 318])
+            ("hf/arch/mm.h" include nil nil [319 342])
+            ("hf/arch/other_world.h" include nil nil [343 375])
+            ("hf/arch/timer.h" include nil nil [376 402])
+            ("hf/arch/vm.h" include nil nil [403 426])
+            ("hf/check.h" include nil nil [428 449])
+            ("hf/dlog.h" include nil nil [450 470])
+            ("hf/ffa_internal.h" include nil nil [471 499])
+            ("hf/ffa_memory.h" include nil nil [500 526])
+            ("hf/mm.h" include nil nil [527 545])
+            ("hf/plat/console.h" include nil nil [546 574])
+            ("hf/plat/interrupts.h" include nil nil [575 606])
+            ("hf/spinlock.h" include nil nil [607 631])
+            ("hf/static_assert.h" include nil nil [632 661])
+            ("hf/std.h" include nil nil [662 681])
+            ("hf/vm.h" include nil nil [682 700])
+            ("vmapi/hf/call.h" include nil nil [702 728])
+            ("vmapi/hf/ffa.h" include nil nil [729 754])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [756 935])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("HF_MAILBOX_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1320 1337])
+                    ("" variable (:type ("PAGE_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1339 1349]))                  
+                :type "int")
+                nil [1306 1477])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("MM_PPOOL_ENTRY_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1493 1514])
+                    ("" variable (:type ("HF_MAILBOX_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1516 1532]))                  
+                :type "int")
+                nil [1479 1718])
+            ("api_page_pool" variable
+               (:typemodifiers ("static")
+                :type ("mpool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1720 1754])
+            ("api_init" function
+               (:arguments 
+                  ( ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1874 1894]))                  
+                :type "void")
+                nil [1860 1939])
+            ("api_ffa_get_vm_vcpu" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2122 2136])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2137 2158]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2082 2423])
+            ("api_switch_to_vm" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2861 2882])
+                    ("to_ret" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2892 2916])
+                    ("vcpu_state" variable (:type ("vcpu_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2926 2953])
+                    ("to_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2963 2981]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2824 3329])
+            ("api_switch_to_primary" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3623 3644])
+                    ("primary_ret" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3652 3681])
+                    ("secondary_state" variable (:type ("vcpu_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3689 3721]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3581 4597])
+            ("api_switch_to_other_world" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5002 5023])
+                    ("other_world_ret" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5035 5068])
+                    ("vcpu_state" variable (:type ("vcpu_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [5080 5107]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4963 5198])
+            ("msg_receiver_busy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("to" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5387 5407])
+                    ("from" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5408 5424])
+                    ("notify" variable (:type "bool") (reparse-symbol arg-sub-list) [5425 5437]))                  
+                :type "bool")
+                nil [5357 5950])
+            ("is_ffa_direct_msg_request_ongoing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("locked" variable (:type ("vcpu_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6109 6135]))                  
+                :type "bool")
+                nil [6063 6209])
+            ("api_ffa_is_managed_exit_ongoing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu_locked" variable (:type ("vcpu_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6394 6425]))                  
+                :type "bool")
+                nil [6350 6531])
+            ("api_preempt" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6646 6667]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6621 6854])
+            ("api_wait_for_interrupt" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6987 7008]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6951 7229])
+            ("api_vcpu_off" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7334 7355]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7308 7681])
+            ("api_yield" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7910 7931])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7932 7951]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7883 8644])
+            ("api_wake_up" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8811 8832])
+                    ("target_vcpu" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8833 8858]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8786 9062])
+            ("api_abort" function
+               (:pointer 1
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9150 9171]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9127 9650])
+            ("api_ffa_partition_info_get" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9696 9717])
+                    ("uuid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ffa_uuid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9727 9755]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9652 11768])
+            ("api_ffa_id_get" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11839 11866]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11807 11953])
+            ("api_ffa_spm_id_get" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12030 12035]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11994 12340])
+            ("api_regs_state_saved" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12573 12591]))                  
+                :type "void")
+                nil [12547 12673])
+            ("api_fetch_waiter" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("locked_vm" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [12836 12863]))                  
+                :type ("wait_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12793 13310])
+            ("api_interrupt_inject_locked" function
+               (:arguments 
+                  ( ("target_locked" variable (:type ("vcpu_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [13823 13856])
+                    ("intid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13865 13880])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13881 13902])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13911 13930]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [13787 15346])
+            ("internal_interrupt_inject" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_vcpu" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15460 15485])
+                    ("intid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15492 15507])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15508 15529])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15536 15555]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [15419 15767])
+            ("ffa_msg_recv_return" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("receiver" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15923 15949]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15879 16397])
+            ("api_vcpu_prepare_run" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16563 16590])
+                    ("vcpu" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16591 16609])
+                    ("run_ret" variable
+                       (:pointer 1
+                        :type ("ffa_value" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16615 16641]))                  
+                :type "bool")
+                nil [16530 20621])
+            ("api_ffa_run" function
+               (:arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20652 20670])
+                    ("vcpu_idx" variable (:type ("ffa_vcpu_index_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20671 20697])
+                    ("current" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20706 20733])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20734 20753]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20623 22401])
+            ("api_mode_valid_owned_and_exclusive" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22534 22548]))                  
+                :type "bool")
+                nil [22487 22643])
+            ("api_waiter_result" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("locked_vm" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [22930 22957])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22965 22986])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22994 23013]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [22888 23626])
+            ("api_vm_configure_stage1" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mm_stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [23747 23788])
+                    ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [23797 23824])
+                    ("pa_send_begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23833 23855])
+                    ("pa_send_end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23856 23876])
+                    ("pa_recv_begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23885 23907])
+                    ("pa_recv_end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23908 23928])
+                    ("extra_attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23937 23963])
+                    ("local_page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23972 24002]))                  
+                :type "bool")
+                nil [23711 25241])
+            ("api_vm_configure_pages" function
+               (:arguments 
+                  ( ("mm_stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [25814 25855])
+                    ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [25856 25883])
+                    ("send" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25885 25899])
+                    ("recv" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25900 25914])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25915 25935])
+                    ("local_page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25937 25967]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25772 29230])
+            ("api_ffa_rxtx_map" function
+               (:arguments 
+                  ( ("send" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30227 30241])
+                    ("recv" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30242 30256])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30263 30283])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30284 30305])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30312 30331]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [30193 31175])
+            ("deliver_msg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("to" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [31334 31354])
+                    ("from_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31355 31375])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31384 31405])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31406 31425]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [31298 32800])
+            ("api_ffa_msg_send" function
+               (:arguments 
+                  ( ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33114 33139])
+                    ("receiver_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33146 33173])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33174 33188])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33195 33215])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33216 33237])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33244 33263]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [33080 35247])
+            ("api_ffa_msg_recv_block_interrupted" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35424 35445]))                  
+                :type "bool")
+                nil [35384 35777])
+            ("api_ffa_msg_recv" function
+               (:arguments 
+                  ( ("block" variable (:type "bool") (reparse-symbol arg-sub-list) [36037 36048])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36049 36070])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36077 36096]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [36003 38022])
+            ("api_mailbox_writable_get" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38493 38520]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [38460 38900])
+            ("api_mailbox_waiter_get" function
+               (:arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39188 39206])
+                    ("current" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39207 39234]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [39157 39977])
+            ("api_ffa_rx_release" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40570 40591])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40592 40611]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40534 41012])
+            ("api_interrupt_enable" function
+               (:arguments 
+                  ( ("intid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41176 41191])
+                    ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [41192 41204])
+                    ("type" variable (:type ("interrupt_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [41213 41238])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41239 41260]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [41147 42970])
+            ("api_interrupt_get" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43202 43223]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [43175 44264])
+            ("is_injection_allowed" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("target_vm_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44415 44437])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44443 44464]))                  
+                :type "bool")
+                nil [44375 44747])
+            ("api_interrupt_inject" function
+               (:arguments 
+                  ( ("target_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45359 45384])
+                    ("target_vcpu_idx" variable (:type ("ffa_vcpu_index_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45393 45426])
+                    ("intid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45427 45442])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45451 45472])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45473 45492]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [45330 46134])
+            ("api_ffa_version" function
+               (:arguments 
+                  ( ("requested_version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46235 46262]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [46202 46813])
+            ("api_debug_log" function
+               (:arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [46837 46844])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46845 46866]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [46815 47289])
+            ("api_ffa_features" function
+               (:arguments 
+                  ( ("function_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47434 47455]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [47400 48402])
+            ("api_ffa_dir_msg_is_arg2_zero" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("args" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [48549 48571]))                  
+                :type "bool")
+                nil [48501 48600])
+            ("api_ffa_value_copy32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [48717 48739]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [48672 49015])
+            ("api_ffa_dir_msg_value" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [49167 49189]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [49121 49523])
+            ("api_ffa_msg_send_direct_req" function
+               (:arguments 
+                  ( ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49618 49643])
+                    ("receiver_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49654 49681])
+                    ("args" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [49692 49714])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49725 49746])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49757 49776]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [49573 53047])
+            ("api_ffa_msg_send_direct_resp" function
+               (:arguments 
+                  ( ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53144 53169])
+                    ("receiver_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53181 53208])
+                    ("args" variable (:type ("ffa_value" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [53220 53242])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [53254 53275])
+                    ("next" variable
+                       (:pointer 2
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [53287 53306]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [53098 55419])
+            ("api_ffa_mem_send" function
+               (:arguments 
+                  ( ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55455 55475])
+                    ("length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55476 55492])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55499 55524])
+                    ("address" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55525 55542])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [55549 55569])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55570 55591]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [55421 59408])
+            ("api_ffa_mem_retrieve_req" function
+               (:arguments 
+                  ( ("length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59452 59468])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59476 59501])
+                    ("address" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59509 59526])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59527 59547])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [59555 59576]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [59410 61106])
+            ("api_ffa_mem_relinquish" function
+               (:arguments 
+                  ( ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [61148 61169]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [61108 62743])
+            ("api_ffa_mem_reclaim" function
+               (:arguments 
+                  ( ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62782 62809])
+                    ("flags" variable (:type ("ffa_memory_region_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62819 62851])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [62861 62882]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [62745 63480])
+            ("api_ffa_mem_frag_rx" function
+               (:arguments 
+                  ( ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63519 63546])
+                    ("fragment_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63556 63581])
+                    ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63591 63616])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63626 63647]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [63482 64242])
+            ("api_ffa_mem_frag_tx" function
+               (:arguments 
+                  ( ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64281 64308])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64318 64343])
+                    ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64353 64378])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64388 64409]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [64244 67500])
+            ("api_ffa_secondary_ep_register" function
+               (:arguments 
+                  ( ("entry_point" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67549 67570])
+                    ("current" variable
+                       (:pointer 1
+                        :type ("vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [67583 67604]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [67502 67793]))          
+      :file "api.c"
+      :pointmax 67794
+      :fsize 67793
+      :lastmodtime '(24804 64071)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!hafnium!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

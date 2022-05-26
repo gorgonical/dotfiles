@@ -1,0 +1,156 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LINUX_SCHED_H" variable (:constant-flag t) nil [32 46])
+            ("pid" variable (:constant-flag t) nil [56 59])
+            ("tgid" variable (:constant-flag t) nil [71 75])
+            ("cpus_allowed" variable (:constant-flag t) nil [88 100])
+            ("lwk/sched.h" include (:system-flag t) nil [112 134])
+            ("linux/capability.h" include (:system-flag t) nil [135 164])
+            ("asm/processor.h" include (:system-flag t) nil [165 191])
+            ("wake_up_process" variable (:constant-flag t) nil [200 215])
+            ("yield" variable (:constant-flag t) nil [265 270])
+            ("cond_resched" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [499 504]))                  
+                :type "int")
+                nil [468 519])
+            ("mm_struct" variable (:constant-flag t) nil [600 609])
+            ("get_task_mm" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [654 679]))                  
+                :type ("aspace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [617 680]))          
+      :file "sched.h"
+      :pointmax 689
+      :fsize 688
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("cpus_allowed" . ((symbol "cpu_mask" 101 . 109)))
+          ("tgid" . ((symbol "gid" 76 . 79)))
+          ("wake_up_process" (spp-arg-list ("p") 215 . 218) . ((symbol "sched_wakeup_task" 224 . 241) (semantic-list "((p), TASK_ALL)" 241 . 256)))
+          ("pid" . ((symbol "id" 60 . 62)))
+          ("yield" . ((symbol "schedule" 271 . 279)))
+          ("mm_struct" . ((symbol "aspace" 610 . 616)))
+          ("_LINUX_SCHED_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LINUX_KTHREAD_H" variable (:constant-flag t) nil [34 50])
+            ("linux/err.h" include (:system-flag t) nil [129 151])
+            ("linux/sched.h" include (:system-flag t) nil [152 176])
+            ("lwk/kthread.h" include (:system-flag t) nil [177 201])
+            ("kthread_create" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("threadfn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [254 265]))                          
+                        :type "int")
+                        nil nil)
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [274 285])
+                    ("namefmt" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [293 314])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [315 319]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [203 359])
+            ("kthread_run" variable (:constant-flag t) nil [701 712])
+            ("kthread_stop" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("k" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [979 1001]))                  
+                :type "int")
+                nil [948 1062]))          
+      :file "kthread.h"
+      :pointmax 1094
+      :fsize 1093
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_LINUX_KTHREAD_H")
+          ("kthread_run" (spp-arg-list ("threadfn" "data" "namefmt" "...") 712 . 742) . ((semantic-list "({									   \\
+	struct task_struct *__k						   \\
+		= kthread_create(threadfn, data, namefmt, ## __VA_ARGS__); \\
+	if (!IS_ERR(__k))						   \\
+		wake_up_process(__k);					   \\
+	__k;								   \\
+})" 750 . 946)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LINUX_SOCKET_H" variable (:constant-flag t) nil [33 48])
+            ("lwk/socket.h" include (:system-flag t) nil [50 73])
+            ("_K_SS_MAXSIZE" variable (:constant-flag t) nil [152 165])
+            ("_K_SS_ALIGNSIZE" variable (:constant-flag t) nil [219 234])
+            ("__kernel_sockaddr_storage" type
+               (:members 
+                  ( ("ss_family" variable (:type "unsigned short") (reparse-symbol classsubparts) [370 396])
+                    ("__data" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [478 537]))                  
+                :type "struct")
+                nil [334 700])
+            ("sockaddr_storage" variable (:constant-flag t) nil [742 758])
+            ("AF_INET" variable (:constant-flag t) nil [794 801])
+            ("AF_INET6" variable (:constant-flag t) nil [849 857]))          
+      :file "socket.h"
+      :pointmax 900
+      :fsize 899
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_K_SS_MAXSIZE" . ((number "128" 168 . 171)))
+          ("AF_INET6" . ((number "10" 861 . 863)))
+          ("AF_INET" . ((number "2" 806 . 807)))
+          ("_K_SS_ALIGNSIZE" . ((semantic-list "(__alignof__ (struct sockaddr *))" 235 . 268)))
+          ("sockaddr_storage" . ((symbol "__kernel_sockaddr_storage" 759 . 784)))
+          ("_LINUX_SOCKET_H")
+          )
+))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!kitten-arm64!linux!include!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

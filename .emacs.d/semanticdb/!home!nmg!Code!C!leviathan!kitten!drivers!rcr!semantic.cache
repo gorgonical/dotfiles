@@ -1,0 +1,133 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/driver.h" include (:system-flag t) nil [1 24])
+            ("lwk/kfs.h" include (:system-flag t) nil [25 45])
+            ("lwk/aspace.h" include (:system-flag t) nil [46 69])
+            ("lwk/kthread.h" include (:system-flag t) nil [70 94])
+            ("lwk/sched.h" include (:system-flag t) nil [95 117])
+            ("lwk/rcr/rcr.h" include (:system-flag t) nil [118 142])
+            ("rcr_priv.h" include nil nil [143 164])
+            ("rcr_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [187 207])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [208 226]))                  
+                :type "int")
+                nil [167 241])
+            ("rcr_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [267 288])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [289 308]))                  
+                :type "int")
+                nil [244 323])
+            ("rcr_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [348 366])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [367 384])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [385 403]))                  
+                :type "long")
+                nil [326 418])
+            ("rcr_mmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [441 459])
+                    ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [460 487]))                  
+                :type "int")
+                nil [421 873])
+            ("rcr_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.open           = rcr_open,
+	.release        = rcr_release,
+	.unlocked_ioctl = rcr_ioctl,
+	.compat_ioctl   = rcr_ioctl,
+	.mmap           = rcr_mmap,
+}"
+                :type ("kfs_fops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [876 1064])
+            ("rcr_poller" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1395 1406]))                  
+                :type "int")
+                nil [1373 4703])
+            ("rcr_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4807 4812]))                  
+                :type "int")
+                nil [4787 5459])
+            ("DRIVER_INIT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rcr_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5481 5490]))                  
+                :type "int")
+                nil [5462 5491]))          
+      :file "rcr_main.c"
+      :pointmax 5492
+      :fsize 5491
+      :lastmodtime '(23974 44850 55844 341000)
+      :unmatched-syntax '((string 5474 . 5479)))
+    (semanticdb-table "semanticdb-table"
+      :file "rcr_priv.h"
+      :fsize 1249
+      :lastmodtime '(23974 44850 57844 341000)))
+  :file "!home!nmg!Code!C!leviathan!kitten!drivers!rcr!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

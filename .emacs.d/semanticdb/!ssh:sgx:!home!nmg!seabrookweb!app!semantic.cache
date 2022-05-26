@@ -1,0 +1,198 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("werkzeug.security" include nil nil [1 74])
+            ("app" include nil nil [75 107])
+            ("app" include nil nil [108 143])
+            ("flask_login" include nil nil [144 183])
+            ("datetime" include nil nil [184 222])
+            ("sqlalchemy" include nil nil [223 258])
+            ("os" include nil nil [261 270])
+            ("uuid" include nil nil [271 282])
+            ("friend_table" variable nil nil [286 492])
+            ("User" type
+               (:superclasses ("UserMixin" "db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [597 658])
+                    ("username" variable nil (reparse-symbol indented_block_body) [663 732])
+                    ("fullname" variable nil (reparse-symbol indented_block_body) [737 822])
+                    ("email" variable nil (reparse-symbol indented_block_body) [827 896])
+                    ("uuid" variable nil (reparse-symbol indented_block_body) [901 987])
+                    ("password_hash" variable nil (reparse-symbol indented_block_body) [992 1035])
+                    ("public_key" variable nil (reparse-symbol indented_block_body) [1040 1096])
+                    ("sharing_pub_key" variable nil (reparse-symbol indented_block_body) [1101 1157])
+                    ("enclaves" variable nil (reparse-symbol indented_block_body) [1163 1243])
+                    ("galleries" variable nil (reparse-symbol indented_block_body) [1248 1328])
+                    ("gallery_keys" variable nil (reparse-symbol indented_block_body) [1333 1413])
+                    ("posts" variable nil (reparse-symbol indented_block_body) [1418 1498])
+                    ("friends" variable nil (reparse-symbol indented_block_body) [1504 1831])
+                    ("add_friend" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1857 1861])
+                            ("user" variable nil (reparse-symbol function_parameters) [1863 1867]))                          )
+                        (reparse-symbol indented_block_body) [1842 1948])
+                    ("remove_friend" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1971 1975])
+                            ("user" variable nil (reparse-symbol function_parameters) [1977 1981]))                          )
+                        (reparse-symbol indented_block_body) [1953 2058])
+                    ("has_friended" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2080 2084])
+                            ("user" variable nil (reparse-symbol function_parameters) [2086 2090]))                          )
+                        (reparse-symbol indented_block_body) [2063 2203])
+                    ("set_password" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2242 2246])
+                            ("password" variable nil (reparse-symbol function_parameters) [2248 2256]))                          )
+                        (reparse-symbol indented_block_body) [2225 2321])
+                    ("check_password" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2345 2349])
+                            ("password" variable nil (reparse-symbol function_parameters) [2351 2359]))                          )
+                        (reparse-symbol indented_block_body) [2326 2427])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2445 2449]))                          )
+                        (reparse-symbol indented_block_body) [2433 2648])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2670 2674]))                          )
+                        (reparse-symbol indented_block_body) [2657 2726]))                  
+                :type "class")
+                nil [560 2726])
+            ("Enclave" type
+               (:superclasses ("db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [2772 2833])
+                    ("user_id" variable nil (reparse-symbol indented_block_body) [2838 2907])
+                    ("name" variable nil (reparse-symbol indented_block_body) [2912 2971])
+                    ("uuid" variable nil (reparse-symbol indented_block_body) [2977 3060])
+                    ("quote" variable nil (reparse-symbol indented_block_body) [3065 3138])
+                    ("pub_key" variable nil (reparse-symbol indented_block_body) [3143 3216])
+                    ("authorized" variable nil (reparse-symbol indented_block_body) [3222 3296])
+                    ("authorized_by" variable nil (reparse-symbol indented_block_body) [3301 3343])
+                    ("token" variable nil (reparse-symbol indented_block_body) [3423 3507])
+                    ("enc_token" variable nil (reparse-symbol indented_block_body) [3587 3643])
+                    ("enc_addr" variable nil (reparse-symbol indented_block_body) [3648 3691])
+                    ("last_synced" variable nil (reparse-symbol indented_block_body) [3696 3751])
+                    ("generate_token" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3842 3846]))                          )
+                        (reparse-symbol indented_block_body) [3823 3903])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3924 3928]))                          )
+                        (reparse-symbol indented_block_body) [3912 4502])
+                    ("to_public_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4526 4530]))                          )
+                        (reparse-symbol indented_block_body) [4507 4887])
+                    ("to_sync_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4910 4914]))                          )
+                        (reparse-symbol indented_block_body) [4893 5111])
+                    ("register_from_json" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5144 5148])
+                            ("data" variable nil (reparse-symbol function_parameters) [5150 5154]))                          )
+                        (reparse-symbol indented_block_body) [5121 5294])
+                    ("sync_from_json" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5318 5322])
+                            ("data" variable nil (reparse-symbol function_parameters) [5324 5328]))                          )
+                        (reparse-symbol indented_block_body) [5299 5599]))                  
+                :type "class")
+                nil [2743 5599])
+            ("Gallery" type
+               (:superclasses ("db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [5631 5689])
+                    ("owner_id" variable nil (reparse-symbol indented_block_body) [5694 5760])
+                    ("uuid" variable nil (reparse-symbol indented_block_body) [5765 5834])
+                    ("last_updated" variable nil (reparse-symbol indented_block_body) [5839 5904])
+                    ("keys" variable nil (reparse-symbol indented_block_body) [5909 5989])
+                    ("posts" variable nil (reparse-symbol indented_block_body) [5994 6074])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6096 6100]))                          )
+                        (reparse-symbol indented_block_body) [6084 6259]))                  
+                :type "class")
+                nil [5602 6259])
+            ("GalleryKey" type
+               (:superclasses ("db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [6293 6350])
+                    ("owner_id" variable nil (reparse-symbol indented_block_body) [6355 6420])
+                    ("gallery_id" variable nil (reparse-symbol indented_block_body) [6425 6493])
+                    ("key" variable nil (reparse-symbol indented_block_body) [6498 6553])
+                    ("iv" variable nil (reparse-symbol indented_block_body) [6558 6613])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6631 6635]))                          )
+                        (reparse-symbol indented_block_body) [6619 6789]))                  
+                :type "class")
+                nil [6261 6789])
+            ("Post" type
+               (:superclasses ("db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [6829 6884])
+                    ("owner_id" variable nil (reparse-symbol indented_block_body) [6889 6952])
+                    ("gallery_id" variable nil (reparse-symbol indented_block_body) [6957 7023])
+                    ("uuid" variable nil (reparse-symbol indented_block_body) [7028 7094])
+                    ("created" variable nil (reparse-symbol indented_block_body) [7099 7174])
+                    ("photos" variable nil (reparse-symbol indented_block_body) [7179 7248])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7270 7274]))                          )
+                        (reparse-symbol indented_block_body) [7258 7487]))                  
+                :type "class")
+                nil [6803 7487])
+            ("Photo" type
+               (:superclasses ("db.Model")
+                :members 
+                  ( ("id" variable nil (reparse-symbol indented_block_body) [7524 7577])
+                    ("uuid" variable nil (reparse-symbol indented_block_body) [7582 7646])
+                    ("post_id" variable nil (reparse-symbol indented_block_body) [7651 7712])
+                    ("to_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7735 7739]))                          )
+                        (reparse-symbol indented_block_body) [7723 7820]))                  
+                :type "class")
+                nil [7497 7820])
+            ("load_user" function
+               (:decorators 
+                  ( ("login.user_loader" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("id" variable nil (reparse-symbol function_parameters) [7866 7868]))                  )
+                nil [7833 7906]))          
+      :file "models.py"
+      :pointmax 7906
+      :fsize 7905
+      :lastmodtime '(23681 31531)
+      :unmatched-syntax nil))
+  :file "!ssh:sgx:!home!nmg!seabrookweb!app!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

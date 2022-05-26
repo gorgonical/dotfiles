@@ -1,0 +1,703 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("IXY_DEVICE_H" variable (:constant-flag t) nil [30 42])
+            ("stdint.h" include (:system-flag t) nil [44 63])
+            ("unistd.h" include (:system-flag t) nil [64 83])
+            ("../log.h" include nil nil [85 104])
+            ("../memory.h" include nil nil [105 127])
+            ("../interrupts.h" include nil nil [128 154])
+            ("MAX_QUEUES" variable (:constant-flag t) nil [164 174])
+            ("device_stats" type
+               (:prototype t
+                :type "struct")
+                nil [244 264])
+            ("container_of" variable (:constant-flag t) nil [911 923])
+            ("ixy_device" type
+               (:members 
+                  ( ("pci_addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1075 1096])
+                    ("driver_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1098 1122])
+                    ("num_rx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1124 1147])
+                    ("num_tx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1149 1172])
+                    ("rx_batch" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("ixy_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1196 1219])
+                            ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1220 1238])
+                            ("bufs" variable
+                               (:pointer 1
+                                :dereference 1
+                                :type ("pkt_buf" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1239 1262])
+                            ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1263 1281]))                          
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1174 1282])
+                    ("tx_batch" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("ixy_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1306 1329])
+                            ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1330 1348])
+                            ("bufs" variable
+                               (:pointer 1
+                                :dereference 1
+                                :type ("pkt_buf" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1349 1372])
+                            ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1373 1391]))                          
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1284 1392])
+                    ("read_stats" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("ixy_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1414 1437])
+                            ("stats" variable
+                               (:pointer 1
+                                :type ("device_stats" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1438 1465]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1394 1466])
+                    ("set_promisc" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("ixy_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1489 1512])
+                            ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [1513 1526]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1468 1527])
+                    ("get_link_speed" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("ixy_device" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1557 1586]))                          
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1529 1587])
+                    ("vfio" variable (:type "bool") (reparse-symbol classsubparts) [1589 1599])
+                    ("vfio_fd" variable (:type "int") (reparse-symbol classsubparts) [1601 1613])
+                    ("interrupts" variable (:type ("interrupts" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1628 1657]))                  
+                :type "struct")
+                nil [1054 1660])
+            ("ixy_init" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("pci_addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1690 1711])
+                    ("rx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1712 1731])
+                    ("tx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1732 1751])
+                    ("interrupt_timeout" variable (:type "int") (reparse-symbol arg-sub-list) [1752 1774]))                  
+                :type ("ixy_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1662 1775])
+            ("ixy_rx_batch" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1891 1914])
+                    ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1915 1933])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1934 1957])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1958 1976]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1855 2034])
+            ("ixy_tx_batch" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2072 2095])
+                    ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2096 2114])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2115 2138])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2139 2157]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2036 2215])
+            ("ixy_read_stats" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2251 2274])
+                    ("stats" variable
+                       (:pointer 1
+                        :type ("device_stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2275 2302]))                  
+                :type "void")
+                nil [2217 2336])
+            ("ixy_set_promisc" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2373 2396])
+                    ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [2397 2410]))                  
+                :type "void")
+                nil [2338 2447])
+            ("get_link_speed" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2487 2516]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2449 2554])
+            ("ixy_tx_batch_busy_wait" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2660 2683])
+                    ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2684 2702])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2703 2726])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2727 2745]))                  
+                :type "void")
+                nil [2625 2894])
+            ("set_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3426 3440])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [3441 3449])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3450 3465]))                  
+                :type "void")
+                nil [3397 3555])
+            ("get_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3590 3610])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [3611 3619]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3557 3708])
+            ("set_flags32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3741 3755])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [3756 3764])
+                    ("flags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3765 3780]))                  
+                :type "void")
+                nil [3710 3837])
+            ("clear_flags32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3872 3886])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [3887 3895])
+                    ("flags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3896 3911]))                  
+                :type "void")
+                nil [3839 3969])
+            ("wait_clear_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4007 4027])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [4028 4036])
+                    ("mask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4037 4051]))                  
+                :type "void")
+                nil [3971 4349])
+            ("wait_set_reg32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4385 4405])
+                    ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [4406 4414])
+                    ("mask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4415 4429]))                  
+                :type "void")
+                nil [4351 4721])
+            ("write_io32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [4799 4806])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4807 4822])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4823 4837]))                  
+                :type "void")
+                nil [4769 4975])
+            ("write_io16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5007 5014])
+                    ("value" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5015 5030])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5031 5045]))                  
+                :type "void")
+                nil [4977 5183])
+            ("write_io8" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5214 5221])
+                    ("value" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5222 5236])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5237 5251]))                  
+                :type "void")
+                nil [5185 5389])
+            ("read_io32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5424 5431])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5432 5446]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5391 5609])
+            ("read_io16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5644 5651])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5652 5666]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [5611 5829])
+            ("read_io8" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5862 5869])
+                    ("offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5870 5884]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [5831 6046]))          
+      :file "device.h"
+      :pointmax 6071
+      :fsize 6070
+      :lastmodtime '(24008 37671 369742 492000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("IXY_DEVICE_H")
+          ("MAX_QUEUES" . ((number "64" 169 . 171)))
+          ("container_of" (spp-arg-list ("ptr" "type" "member") 917 . 936) . ((semantic-list "({\\
+	const typeof(((type*)0)->member)* __mptr = (ptr);\\
+	(type*)((char*)__mptr - offsetof(type, member));\\
+})" 937 . 1046)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("emmintrin.h" include (:system-flag t) nil [1 23])
+            ("stdlib.h" include (:system-flag t) nil [24 43])
+            ("string.h" include (:system-flag t) nil [44 63])
+            ("sys/file.h" include (:system-flag t) nil [64 85])
+            ("unistd.h" include (:system-flag t) nil [86 105])
+            ("driver/device.h" include nil nil [107 133])
+            ("log.h" include nil nil [134 150])
+            ("memory.h" include nil nil [151 170])
+            ("pci.h" include nil nil [171 187])
+            ("virtio.h" include nil nil [188 207])
+            ("virtio_type.h" include nil nil [208 232])
+            ("driver_name" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"ixy-virtio\""
+                :type "char")
+                nil [234 280])
+            ("virtio_legacy_notify_queue" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [328 354])
+                    ("idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [355 368]))                  
+                :type "void")
+                nil [282 424])
+            ("virtio_legacy_get_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [466 492]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [426 542])
+            ("virtio_legacy_check_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [583 609]))                  
+                :type "void")
+                nil [544 740])
+            ("virtio_legacy_vring_size" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [788 805])
+                    ("align" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [806 826]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [742 1078])
+            ("virtio_legacy_vring_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vr" variable
+                       (:pointer 1
+                        :type ("vring" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1124 1141])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1142 1159])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1160 1171])
+                    ("align" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1172 1192]))                  
+                :type "void")
+                nil [1080 1398])
+            ("virtio_legacy_setup_tx_queue" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1441 1467])
+                    ("idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1468 1481]))                  
+                :type "void")
+                nil [1400 3367])
+            ("virtio_legacy_send_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3408 3434])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3435 3445])
+                    ("cmd_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3446 3461]))                  
+                :type "void")
+                nil [3369 6283])
+            ("virtio_legacy_set_promiscuous" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6327 6353])
+                    ("on" variable (:type "bool") (reparse-symbol arg-sub-list) [6354 6362]))                  
+                :type "void")
+                nil [6285 6735])
+            ("virtio_set_promisc" function
+               (:arguments 
+                  ( ("ixy" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6761 6784])
+                    ("enabled" variable (:type "bool") (reparse-symbol arg-sub-list) [6785 6798]))                  
+                :type "void")
+                nil [6737 6897])
+            ("virtio_get_link_speed" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6930 6959]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [6899 6977])
+            ("net_hdr" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.flags = 0,
+	.gso_type = VIRTIO_NET_HDR_GSO_NONE,
+	.hdr_len = 14 + 20 + 8,
+}"
+                :type ("virtio_legacy_net_hdr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6979 7111])
+            ("virtio_legacy_setup_rx_queue" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7154 7180])
+                    ("idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7181 7194]))                  
+                :type "void")
+                nil [7113 9121])
+            ("virtio_legacy_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("virtio_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9154 9180]))                  
+                :type "void")
+                nil [9123 10740])
+            ("virtio_read_stats" function
+               (:arguments 
+                  ( ("ixy" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11080 11103])
+                    ("stats" variable
+                       (:pointer 1
+                        :type ("device_stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11104 11131]))                  
+                :type "void")
+                nil [11057 11407])
+            ("virtio_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("pci_addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11441 11462])
+                    ("rx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11463 11482])
+                    ("tx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11483 11502]))                  
+                :type ("ixy_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11410 12644])
+            ("virtio_rx_batch" function
+               (:arguments 
+                  ( ("ixy" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12671 12694])
+                    ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12695 12713])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12714 12737])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12738 12756]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [12646 15241])
+            ("virtio_tx_batch" function
+               (:arguments 
+                  ( ("ixy" variable
+                       (:pointer 1
+                        :type ("ixy_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15268 15291])
+                    ("queue_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15292 15310])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15311 15334])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15335 15353]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [15243 17151]))          
+      :file "virtio.c"
+      :pointmax 17153
+      :fsize 17152
+      :lastmodtime '(24008 37069 363707 200000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "virtio.h"
+      :fsize 925
+      :lastmodtime '(24008 37069 363707 200000))
+    (semanticdb-table "semanticdb-table"
+      :file "virtio_type.h"
+      :fsize 11019
+      :lastmodtime '(24008 37069 363707 200000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("sys/file.h" include (:system-flag t) nil [1 22])
+            ("device.h" include nil nil [24 43])
+            ("driver/ixgbe.h" include nil nil [44 69])
+            ("driver/virtio.h" include nil nil [70 96])
+            ("pci.h" include nil nil [97 113])
+            ("ixy_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("pci_addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [143 164])
+                    ("rx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [165 184])
+                    ("tx_queues" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [185 204])
+                    ("interrupt_timeout" variable (:type "int") (reparse-symbol arg-sub-list) [205 227]))                  
+                :type ("ixy_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [115 1007]))          
+      :file "device.c"
+      :pointmax 1008
+      :fsize 1007
+      :lastmodtime '(24008 37069 359707 200000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "ixgbe.h"
+      :fsize 847
+      :lastmodtime '(24008 37069 360707 200000)))
+  :file "!home!nmg!Code!C!ixyrdma!ixy!src!driver!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

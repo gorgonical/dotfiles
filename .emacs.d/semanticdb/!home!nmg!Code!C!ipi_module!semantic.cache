@@ -1,0 +1,342 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [1 24])
+            ("linux/module.h" include (:system-flag t) nil [25 50])
+            ("linux/kernel.h" include (:system-flag t) nil [51 76])
+            ("linux/fs.h" include (:system-flag t) nil [77 98])
+            ("linux/delay.h" include (:system-flag t) nil [99 123])
+            ("asm/uaccess.h" include (:system-flag t) nil [124 148])
+            ("asm/ipi.h" include (:system-flag t) nil [149 169])
+            ("asm/x2apic.h" include (:system-flag t) nil [170 193])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [195 217])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [218 247])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [248 309])
+            ("MODULE_VERSION" function
+               (:prototype-flag t
+                :type "int")
+                nil [310 333])
+            ("DEVICE_NAME" variable (:constant-flag t) nil [343 354])
+            ("BUF_LEN" variable (:constant-flag t) nil [375 382])
+            ("CDEV_EOF" variable (:constant-flag t) nil [394 402])
+            ("apic" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("apic" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [407 433])
+            ("device_open" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [496 511])
+                    ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [512 526]))                  
+                :type "int")
+                nil [473 527])
+            ("device_release" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [554 569])
+                    ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [570 584]))                  
+                :type "int")
+                nil [528 585])
+            ("device_read" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [613 627])
+                    ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [628 635])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [636 643])
+                    ("" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [644 653]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [586 654])
+            ("device_write" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [683 697])
+                    ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [698 711])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [712 719])
+                    ("" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [720 729]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [655 730])
+            ("major_num" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [732 753])
+            ("device_open_count" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [754 787])
+            ("msg_buf" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [788 817])
+            ("msg_ptr" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [818 839])
+            ("file_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .read = device_read,
+    .write = device_write,
+    .open = device_open,
+    .release = device_release
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [900 1052])
+            ("device_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("flip" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1143 1161])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1162 1175])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1176 1187])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1188 1203]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1116 1684])
+            ("device_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1714 1732])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1746 1765])
+                    ("" variable (:type ("buffer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1766 1773])
+                    ("length" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1787 1801])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1815 1831]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1686 2093])
+            ("device_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2163 2183])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2184 2202]))                  
+                :type "int")
+                nil [2140 2377])
+            ("device_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2450 2470])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2471 2489]))                  
+                :type "int")
+                nil [2424 2658])
+            ("ipi_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2686 2691]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2670 3253])
+            ("ipi_teardown" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3286 3291]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [3266 3476])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ipi_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3490 3499]))                  
+                :type "int")
+                nil [3478 3500])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ipi_teardown" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3513 3526]))                  
+                :type "int")
+                nil [3501 3527]))          
+      :file "ipi.c"
+      :pointmax 3528
+      :fsize 3533
+      :lastmodtime '(24125 52427 692068 734000)
+      :unmatched-syntax '((VOID 3261 . 3265) (STATIC 3254 . 3260) (INT 2666 . 2669) (STATIC 2659 . 2665) (punctuation 1764 . 1765) (string 325 . 331) (string 267 . 307) (string 232 . 245) (string 210 . 215))
+      :lexical-table 
+        '(("CDEV_EOF" . ((punctuation "-" 403 . 404) (number "1" 404 . 405)))
+          ("DEVICE_NAME" . ((string "\"ipi_input\"" 355 . 366)))
+          ("BUF_LEN" . ((number "15" 383 . 385)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("obj-m" variable (:default-value ("ipi.o")) nil [1 16])
+            ("%.o" function nil nil [17 43])
+            ("all" function nil nil [44 159])
+            ("clean" function nil nil [160 228]))          
+      :file "Makefile"
+      :pointmax 228
+      :fsize 227
+      :lastmodtime '(24121 54969 944664 924000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [1 26])
+            ("linux/vermagic.h" include (:system-flag t) nil [27 54])
+            ("linux/compiler.h" include (:system-flag t) nil [55 82])
+            ("MODULE_INFO" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("vermagic" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [96 105])
+                    ("" variable (:type ("VERMAGIC_STRING" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [106 122]))                  
+                :type "int")
+                nil [84 123])
+            ("__this_module" variable
+               (:default-value "{
+	.name = KBUILD_MODNAME,
+	.init = init_module,
+#ifdef CONFIG_MODULE_UNLOAD
+	.exit = cleanup_module,
+#endif
+	.arch = MODULE_ARCH_INIT,
+}"
+                :type ("module" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [135 357])
+            ("__used" variable
+               (:default-value "{
+	{ 0x5d1699c6, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x6bc3fbc0, __VMLINUX_SYMBOL_STR(__unregister_chrdev) },
+	{ 0xdb7305a1, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
+	{ 0x2ea2c95c, __VMLINUX_SYMBOL_STR(__x86_indirect_thunk_rax) },
+	{ 0x2dd13834, __VMLINUX_SYMBOL_STR(apic) },
+	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
+}"
+                :type "int")
+                nil [464 844])
+            ("__used" variable
+               (:default-value "\"depends=\""
+                :type "int")
+                nil [883 940])
+            ("MODULE_INFO" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srcversion" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [955 966]))                  
+                :type "int")
+                nil [943 994]))          
+      :file "ipi.mod.c"
+      :pointmax 995
+      :fsize 561
+      :lastmodtime '(24199 39354 469339 19000)
+      :unmatched-syntax '((string 967 . 992) (semantic-list 880 . 882) (symbol 864 . 880) (CHAR 859 . 863) (CONST 853 . 858) (STATIC 846 . 852) (semantic-list 461 . 463) (symbol 449 . 461) (symbol 433 . 448) (STRUCT 426 . 432) (CONST 420 . 425) (STATIC 413 . 419) (symbol 125 . 134))))
+  :file "!home!nmg!Code!C!ipi_module!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

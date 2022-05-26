@@ -1,0 +1,829 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/types.h" include (:system-flag t) nil [1 23])
+            ("lwk/string.h" include (:system-flag t) nil [24 47])
+            ("arch/page.h" include (:system-flag t) nil [48 70])
+            ("lwk/kernel.h" include (:system-flag t) nil [71 94])
+            ("lwk/print.h" include (:system-flag t) nil [95 117])
+            ("lwk/spinlock.h" include (:system-flag t) nil [118 143])
+            ("lwk/interrupt.h" include (:system-flag t) nil [144 170])
+            ("arch/proto.h" include (:system-flag t) nil [171 194])
+            ("arch/apic.h" include (:system-flag t) nil [195 217])
+            ("lwk/waitq.h" include (:system-flag t) nil [218 240])
+            ("arch/pisces/pisces.h" include (:system-flag t) nil [242 273])
+            ("arch/pisces/pisces_xbuf.h" include (:system-flag t) nil [274 310])
+            ("XBUF_READY" variable (:constant-flag t) nil [321 331])
+            ("XBUF_PENDING" variable (:constant-flag t) nil [352 364])
+            ("XBUF_STAGED" variable (:constant-flag t) nil [383 394])
+            ("XBUF_ACTIVE" variable (:constant-flag t) nil [414 425])
+            ("XBUF_COMPLETE" variable (:constant-flag t) nil [445 458])
+            ("pisces_xbuf" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [501 511])
+                            ("" type
+                               (:members 
+                                  ( ("ready" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [526 549])
+                                    ("pending" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [614 637])
+                                    ("staged" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [702 725])
+                                    ("active" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [790 813])
+                                    ("complete" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [878 901])
+                                    ("rsvd" variable
+                                       (:suffix ":59"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [966 990]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [514 1019]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [491 1047])
+                    ("host_apic" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1054 1068])
+                    ("host_vector" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1070 1086])
+                    ("enclave_cpu" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1088 1104])
+                    ("enclave_vector" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1106 1125])
+                    ("total_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1127 1142])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1145 1158])
+                    ("data" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1161 1172]))                  
+                :type "struct")
+                nil [469 1199])
+            ("print_flags" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1233 1258]))                  
+                :type "void")
+                nil [1202 1768])
+            ("reset_flags" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1794 1820]))                  
+                :type "void")
+                nil [1770 1965])
+            ("set_flags" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1989 2015])
+                    ("new_flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2016 2030]))                  
+                :type "void")
+                nil [1967 2159])
+            ("raise_flag" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2184 2210])
+                    ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2211 2221]))                  
+                :type "void")
+                nil [2161 2340])
+            ("lower_flag" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2365 2391])
+                    ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2392 2402]))                  
+                :type "void")
+                nil [2342 2552])
+            ("init_stage_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2582 2608])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2609 2619])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2620 2633]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [2554 2891])
+            ("send_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2915 2941])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2942 2952])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2953 2966]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [2893 3746])
+            ("recv_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xbuf" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3771 3797])
+                    ("data" variable
+                       (:pointer 2
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3798 3809])
+                    ("data_len" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3810 3825]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [3749 4963])
+            ("pisces_xbuf_sync_send" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4993 5024])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5034 5065])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5075 5110])
+                    ("resp_data" variable
+                       (:pointer 2
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5119 5155])
+                    ("resp_len" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5165 5200]))                  
+                :type "int")
+                nil [4966 7230])
+            ("pisces_xbuf_send" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7255 7286])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7287 7297])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7298 7311]))                  
+                :type "int")
+                nil [7233 7381])
+            ("pisces_xbuf_complete" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7412 7443])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7452 7483])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7492 7527]))                  
+                :type "int")
+                nil [7386 8363])
+            ("backtrace" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("depth" variable (:type "int") (reparse-symbol arg-sub-list) [8390 8400]))                  
+                :type "void")
+                nil [8368 9011])
+            ("ipi_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [9045 9056])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9063 9077]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [9014 10248])
+            ("pisces_xbuf_server_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("xbuf_va" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10303 10323])
+                    ("xbuf_total_bytes" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10328 10357])
+                    ("recv_handler" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :type ("u8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9071 9081])
+                            ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9082 9095])
+                            ("priv_data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [9096 9113]))                          
+                        :type "void")
+                        nil nil)
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10436 10461])
+                    ("ipi_vector" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10487 10510])
+                    ("target_cpu" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10514 10537]))                  
+                :type ("pisces_xbuf_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10252 11712])
+            ("pisces_xbuf_server_deinit" function
+               (:arguments 
+                  ( ("xbuf_desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11744 11780]))                  
+                :type "int")
+                nil [11714 11884])
+            ("pisces_xbuf_client_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("xbuf_va" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11938 11956])
+                    ("ipi_vector" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11960 11981])
+                    ("target_cpu" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11986 12007]))                  
+                :type ("pisces_xbuf_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11887 12627])
+            ("pisces_xbuf_disable" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12655 12686]))                  
+                :type "int")
+                nil [12630 12920])
+            ("pisces_xbuf_enable" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12947 12978]))                  
+                :type "int")
+                nil [12923 13207]))          
+      :file "pisces_xbuf.c"
+      :pointmax 13208
+      :fsize 13207
+      :lastmodtime '(24272 15941)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("XBUF_READY" . ((symbol "0x01ULL" 336 . 343)))
+          ("XBUF_PENDING" . ((symbol "0x02ULL" 367 . 374)))
+          ("XBUF_ACTIVE" . ((symbol "0x08ULL" 429 . 436)))
+          ("XBUF_STAGED" . ((symbol "0x04ULL" 398 . 405)))
+          ("XBUF_COMPLETE" . ((symbol "0x10ULL" 460 . 467)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/types.h" include (:system-flag t) nil [2 24])
+            ("arch/page.h" include (:system-flag t) nil [25 47])
+            ("arch/ptrace.h" include (:system-flag t) nil [48 72])
+            ("arch/proto.h" include (:system-flag t) nil [73 96])
+            ("arch/uaccess.h" include (:system-flag t) nil [97 122])
+            ("lwk/waitq.h" include (:system-flag t) nil [123 145])
+            ("lwk/fdTable.h" include (:system-flag t) nil [146 170])
+            ("lwk/poll.h" include (:system-flag t) nil [171 192])
+            ("lwk/kfs.h" include (:system-flag t) nil [193 213])
+            ("lwk/sched.h" include (:system-flag t) nil [214 236])
+            ("lwk/driver.h" include (:system-flag t) nil [237 260])
+            ("lwk/kthread.h" include (:system-flag t) nil [261 285])
+            ("lwk/print.h" include (:system-flag t) nil [286 308])
+            ("lwk/aspace.h" include (:system-flag t) nil [309 332])
+            ("arch/pisces/pisces.h" include (:system-flag t) nil [334 365])
+            ("arch/pisces/pisces_boot_params.h" include (:system-flag t) nil [366 409])
+            ("arch/pisces/pisces_xbuf.h" include (:system-flag t) nil [410 446])
+            ("arch/pisces/pisces_file.h" include (:system-flag t) nil [447 483])
+            ("pisces_boot_params" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("pisces_boot_params" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [485 539])
+            ("xbuf_desc" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("pisces_xbuf_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [540 592])
+            ("user_waitq" variable
+               (:typemodifiers ("static")
+                :type ("waitq_t" type (:type "class") nil nil))
+                nil [594 622])
+            ("cmd_data" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("u8" type (:type "class") nil nil))
+                nil [623 658])
+            ("cmd_len" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("u32" type (:type "class") nil nil))
+                nil [659 691])
+            ("PISCES_STAT_FILE" variable (:constant-flag t) nil [747 763])
+            ("PISCES_LOAD_FILE" variable (:constant-flag t) nil [778 794])
+            ("PISCES_WRITE_FILE" variable (:constant-flag t) nil [809 826])
+            ("pisces_user_file_info" type
+               (:members 
+                  ( ("user_addr" variable (:type "unsigned long long") (reparse-symbol classsubparts) [869 898])
+                    ("path_len" variable (:type "unsigned int") (reparse-symbol classsubparts) [903 931]))                  
+                :type "struct")
+                nil [834 958])
+            ("cmd_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1037 1062])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1066 1085])
+                    ("" variable (:type ("ubuf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1086 1091])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1096 1121])
+                    ("off" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1126 1150]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1011 1518])
+            ("cmd_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1735 1754])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [1758 1771])
+                    ("" variable (:type ("ubuf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1772 1777])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1781 1800])
+                    ("off" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1804 1822]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1710 2489])
+            ("cmd_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2521 2553])
+                    ("table" variable
+                       (:pointer 1
+                        :type ("poll_table_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2556 2589]))                  
+                :type "unsigned int")
+                nil [2491 2771])
+            ("cmd_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inodep" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2796 2818])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2822 2842]))                  
+                :type "int")
+                nil [2775 2923])
+            ("cmd_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2949 2968]))                  
+                :type "int")
+                nil [2927 3046])
+            ("cmd_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3071 3091])
+                    ("ioctl" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3095 3116])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3121 3140]))                  
+                :type "long")
+                nil [3048 5985])
+            ("pisces_ctrl_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.open           = cmd_open, 
+	.write          = cmd_write,
+	.read           = cmd_read,
+	.poll           = cmd_poll, 
+	.close          = cmd_close,
+	.unlocked_ioctl = cmd_ioctl,
+}"
+                :type ("kfs_fops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5987 6212])
+            ("cmd_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6240 6253])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6260 6277])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6284 6302]))                  
+                :type "void")
+                nil [6215 6427])
+            ("pisces_ctrl_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6458 6463]))                  
+                :type "int")
+                nil [6429 6892])
+            ("DRIVER_INIT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pisces_ctrl_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6914 6931]))                  
+                :type "int")
+                nil [6895 6932]))          
+      :file "pisces_ctrl.c"
+      :pointmax 6933
+      :fsize 6932
+      :lastmodtime '(24261 51456)
+      :unmatched-syntax '((string 6907 . 6912) (punctuation 1770 . 1771) (punctuation 1084 . 1085))
+      :lexical-table 
+        '(("PISCES_WRITE_FILE" . ((number "502" 828 . 831)))
+          ("PISCES_LOAD_FILE" . ((number "501" 797 . 800)))
+          ("PISCES_STAT_FILE" . ((number "500" 766 . 769)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/types.h" include (:system-flag t) nil [1 23])
+            ("lwk/kfs.h" include (:system-flag t) nil [24 44])
+            ("lwk/driver.h" include (:system-flag t) nil [45 68])
+            ("lwk/aspace.h" include (:system-flag t) nil [69 92])
+            ("lwk/poll.h" include (:system-flag t) nil [93 114])
+            ("lwk/kthread.h" include (:system-flag t) nil [115 139])
+            ("lwk/list.h" include (:system-flag t) nil [140 161])
+            ("arch/uaccess.h" include (:system-flag t) nil [162 187])
+            ("arch/pgtable.h" include (:system-flag t) nil [188 213])
+            ("arch/apic.h" include (:system-flag t) nil [214 236])
+            ("arch/pisces/pisces.h" include (:system-flag t) nil [238 269])
+            ("arch/pisces/pisces_boot_params.h" include (:system-flag t) nil [270 313])
+            ("arch/pisces/pisces_xbuf.h" include (:system-flag t) nil [314 350])
+            ("arch/pisces/pisces_lcall.h" include (:system-flag t) nil [351 388])
+            ("lwk/xpmem/xpmem.h" include (:system-flag t) nil [390 418])
+            ("lwk/xpmem/xpmem_iface.h" include (:system-flag t) nil [419 453])
+            ("lwk/xpmem/xpmem_extended.h" include (:system-flag t) nil [454 491])
+            ("MAX_CMDS" variable (:constant-flag t) nil [501 509])
+            ("pisces_boot_params" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("pisces_boot_params" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [515 569])
+            ("should_exit" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [571 598])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("exit_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [615 625]))                  
+                :type "int")
+                nil [599 626])
+            ("pisces_xpmem_cmd_lcall" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("lcall" variable (:type ("pisces_lcall" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [698 724])
+                            ("lcall_resp" variable (:type ("pisces_lcall_resp" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [726 762]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [689 793])
+                    ("xpmem_cmd" variable (:type ("xpmem_cmd_ex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [799 829]))                  
+                :type "struct")
+                nil [653 857])
+            ("xpmem_cmd_entry" type
+               (:members 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [889 915])
+                    ("in_use" variable (:type "int") (reparse-symbol classsubparts) [920 949]))                  
+                :type "struct")
+                nil [860 952])
+            ("xpmem_cmd_ringbuf" type
+               (:members 
+                  ( ("entries" variable
+                       (:dereference 1
+                        :type ("xpmem_cmd_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [985 1026])
+                    ("offset" variable (:type "int") (reparse-symbol classsubparts) [1031 1061])
+                    ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1066 1094])
+                    ("active_entries" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1099 1137]))                  
+                :type "struct")
+                nil [954 1140])
+            ("pisces_xpmem_state" type
+               (:members 
+                  ( ("xpmem_thread" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1217 1255])
+                    ("waitq" variable (:type ("waitq_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1293 1314])
+                    ("xpmem_buf" variable (:type ("xpmem_cmd_ringbuf" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1347 1383])
+                    ("xbuf_desc" variable
+                       (:pointer 1
+                        :type ("pisces_xbuf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1432 1468])
+                    ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1507 1531]))                  
+                :type "struct")
+                nil [1142 1534])
+            ("next_offset" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("off" variable (:type "int") (reparse-symbol arg-sub-list) [1567 1575]))                  
+                :type "int")
+                nil [1537 1612])
+            ("prev_offset" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("off" variable (:type "int") (reparse-symbol arg-sub-list) [1644 1652]))                  
+                :type "int")
+                nil [1614 1704])
+            ("push_active_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ringbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1735 1766])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1785 1816]))                  
+                :type "int")
+                nil [1706 2277])
+            ("pop_active_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ringbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2308 2339])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2357 2388]))                  
+                :type "void")
+                nil [2279 2996])
+            ("xpmem_ctrl_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3101 3111])
+                    ("data_len" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3118 3133])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3140 3157]))                  
+                :type "void")
+                nil [3070 3782])
+            ("pisces_xpmem_lcall_send" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("xpmem_lcall" variable
+                       (:pointer 1
+                        :type ("pisces_xpmem_cmd_lcall" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3855 3899])
+                    ("size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3904 3916]))                  
+                :type "int")
+                nil [3820 4398])
+            ("xpmem_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4475 4501])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4508 4527]))                  
+                :type "int")
+                nil [4451 4774])
+            ("xpmem_segid_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4802 4822])
+                    ("sigid" variable (:type ("xpmem_sigid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4838 4858])
+                    ("domid" variable (:type ("xpmem_domid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4867 4887])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4896 4920]))                  
+                :type "int")
+                nil [4776 5170])
+            ("xpmem_kill_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5198 5215]))                  
+                :type "void")
+                nil [5172 5643])
+            ("map_domain_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pfn_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5674 5685])
+                    ("size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5690 5699]))                  
+                :type "int")
+                nil [5645 6108])
+            ("xpmem_thread_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6138 6152]))                  
+                :type "int")
+                nil [6111 7283])
+            ("pisces_xpmem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7318 7323]))                  
+                :type ("xpmem_link_t" type (:type "class") nil nil))
+                nil [7287 9030])
+            ("pisces_xpmem_deinit" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9058 9076]))                  
+                :type "void")
+                nil [9033 9115]))          
+      :file "pisces_xpmem.c"
+      :pointmax 9116
+      :fsize 9115
+      :lastmodtime '(24261 51456)
+      :unmatched-syntax '((PRIVATE 6145 . 6152))
+      :lexical-table 
+        '(("MAX_CMDS" . ((number "16" 510 . 512)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!leviathan!kitten!arch!x86_64!pisces!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

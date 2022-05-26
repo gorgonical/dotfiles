@@ -1,0 +1,714 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/spinlock.h" include (:system-flag t) nil [78 105])
+            ("linux/inet.h" include (:system-flag t) nil [106 129])
+            ("linux/kthread.h" include (:system-flag t) nil [130 156])
+            ("linux/netdevice.h" include (:system-flag t) nil [157 185])
+            ("linux/ip.h" include (:system-flag t) nil [186 207])
+            ("linux/in.h" include (:system-flag t) nil [208 229])
+            ("linux/string.h" include (:system-flag t) nil [230 255])
+            ("linux/preempt.h" include (:system-flag t) nil [256 282])
+            ("linux/sched.h" include (:system-flag t) nil [283 307])
+            ("linux/list.h" include (:system-flag t) nil [308 331])
+            ("linux/uaccess.h" include (:system-flag t) nil [332 358])
+            ("interfaces/vmm_socket.h" include (:system-flag t) nil [360 394])
+            ("palacios.h" include nil nil [396 417])
+            ("linux-exts.h" include nil nil [418 441])
+            ("mm.h" include nil nil [442 457])
+            ("palacios_socket" type
+               (:members 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [488 512])
+                    ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [522 547])
+                    ("sock_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [552 581]))                  
+                :type "struct")
+                nil [459 584])
+            ("global_sockets" variable
+               (:typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [586 625])
+            ("vm_socket_state" type
+               (:members 
+                  ( ("socket_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [703 732]))                  
+                :type "struct")
+                nil [674 735])
+            ("palacios_tcp_socket" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("bufsize" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [817 837])
+                    ("nodelay" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [845 865])
+                    ("nonblocking" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [873 897])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [905 930]))                  
+                :type "void")
+                nil [782 1975])
+            ("palacios_udp_socket" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("bufsize" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2055 2075])
+                    ("nonblocking" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2082 2106])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2113 2138]))                  
+                :type "void")
+                nil [2021 3175])
+            ("palacios_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3206 3222]))                  
+                :type "void")
+                nil [3178 3424])
+            ("palacios_bind_socket" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3459 3481])
+                    ("port" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3489 3507]))                  
+                :type "int")
+                nil [3426 3848])
+            ("palacios_listen" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3878 3900])
+                    ("backlog" variable (:type "int") (reparse-symbol arg-sub-list) [3903 3924]))                  
+                :type "int")
+                nil [3850 4093])
+            ("palacios_accept" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4126 4150])
+                    ("remote_ip" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [4154 4179])
+                    ("port" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [4183 4203]))                  
+                :type "void")
+                nil [4095 5736])
+            ("palacios_select" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("rset" variable
+                       (:pointer 1
+                        :type ("v3_sock_set" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5766 5792])
+                    ("wset" variable
+                       (:pointer 1
+                        :type ("v3_sock_set" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5795 5821])
+                    ("eset" variable
+                       (:pointer 1
+                        :type ("v3_sock_set" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5824 5850])
+                    ("tv" variable (:type ("v3_timeval" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5853 5877]))                  
+                :type "int")
+                nil [5738 5904])
+            ("palacios_connect_to_ip" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5941 5963])
+                    ("hostip" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5973 5993])
+                    ("port" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6003 6021]))                  
+                :type "int")
+                nil [5906 6391])
+            ("palacios_send" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6419 6441])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6449 6466])
+                    ("len" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6474 6491]))                  
+                :type "int")
+                nil [6393 7019])
+            ("palacios_recv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7047 7069])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7077 7094])
+                    ("len" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7102 7119]))                  
+                :type "int")
+                nil [7021 7587])
+            ("palacios_sendto_ip" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7620 7642])
+                    ("ip_addr" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7648 7669])
+                    ("port" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7675 7693])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7699 7716])
+                    ("len" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7722 7739]))                  
+                :type "int")
+                nil [7589 8399])
+            ("palacios_recvfrom_ip" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8444 8466])
+                    ("ip_addr" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8474 8495])
+                    ("port" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8503 8521])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8529 8546])
+                    ("len" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8554 8571]))                  
+                :type "int")
+                nil [8411 9286])
+            ("palacios_sock_hooks" variable
+               (:typemodifiers ("static")
+                :default-value "{
+  	.tcp_socket      = palacios_tcp_socket,
+  	.udp_socket      = palacios_udp_socket,
+  	.close           = palacios_close,
+  	.bind            = palacios_bind_socket,
+  	.listen          = palacios_listen,
+  	.accept          = palacios_accept,
+  	.select          = palacios_select,
+  	.connect_to_ip   = palacios_connect_to_ip,
+  	.connect_to_host = NULL,
+  	.send            = palacios_send,
+  	.recv            = palacios_recv,
+  	.sendto_host     = NULL,
+  	.sendto_ip       = palacios_sendto_ip,
+  	.recvfrom_host   = NULL,
+  	.recvfrom_ip     = palacios_recvfrom_ip,
+}"
+                :type ("v3_socket_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9288 9919])
+            ("socket_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9946 9952]))                  
+                :type "int")
+                nil [9921 10044])
+            ("socket_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10073 10079]))                  
+                :type "int")
+                nil [10046 10200])
+            ("socket_ext" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name         = \"SOCKET_INTERFACE\",
+    .init         = socket_init,
+    .deinit       = socket_deinit,
+    .guest_init   = NULL,
+    .guest_deinit = NULL
+}"
+                :type ("linux_ext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10203 10403])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("socket_ext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10425 10436]))                  
+                :type "int")
+                nil [10405 10437]))          
+      :file "iface-socket.c"
+      :pointmax 10438
+      :fsize 10437
+      :lastmodtime '(23798 45552 525758 566000)
+      :unmatched-syntax '((punctuation 10424 . 10425)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/errno.h" include (:system-flag t) nil [58 82])
+            ("linux/percpu.h" include (:system-flag t) nil [83 108])
+            ("linux/sched.h" include (:system-flag t) nil [109 133])
+            ("linux/uaccess.h" include (:system-flag t) nil [134 160])
+            ("linux/fs.h" include (:system-flag t) nil [161 182])
+            ("linux/poll.h" include (:system-flag t) nil [183 206])
+            ("linux/anon_inodes.h" include (:system-flag t) nil [207 237])
+            ("linux/file.h" include (:system-flag t) nil [238 261])
+            ("interfaces/vmm_stream.h" include (:system-flag t) nil [264 298])
+            ("linux-exts.h" include nil nil [299 322])
+            ("util-ringbuffer.h" include nil nil [323 351])
+            ("vm.h" include nil nil [352 367])
+            ("mm.h" include nil nil [368 383])
+            ("STREAM_RING_LEN" variable (:constant-flag t) nil [423 438])
+            ("STREAM_NAME_LEN" variable (:constant-flag t) nil [452 467])
+            ("global_streams" variable
+               (:typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [475 514])
+            ("stream_state" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [544 571])
+                    ("out_ring" variable
+                       (:pointer 1
+                        :type ("ringbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [577 603])
+                    ("connected" variable (:type "int") (reparse-symbol classsubparts) [609 623])
+                    ("intr_queue" variable (:type ("wait_queue_head_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [629 658])
+                    ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [663 679])
+                    ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [685 709])
+                    ("stream_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [714 743])
+                    ("v3_stream" variable
+                       (:pointer 1
+                        :type ("v3_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [749 778]))                  
+                :type "struct")
+                nil [518 781])
+            ("vm_global_streams" type
+               (:members 
+                  ( ("open_streams" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [858 888]))                  
+                :type "struct")
+                nil [827 891])
+            ("find_stream_by_name" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [946 970])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [971 989]))                  
+                :type ("stream_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [897 1603])
+            ("TMP_BUF_LEN" variable (:constant-flag t) nil [1615 1626])
+            ("stream_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1659 1678])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [1679 1692])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1693 1697])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1698 1710])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1711 1727]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1632 2778])
+            ("stream_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2813 2832])
+                    ("poll_tb" variable
+                       (:pointer 1
+                        :type ("poll_table_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2833 2868]))                  
+                :type "unsigned int")
+                nil [2780 3291])
+            ("stream_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3321 3340])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3341 3360])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3361 3365])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3366 3378])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3379 3395]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3293 3951])
+            ("stream_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("i" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3980 3997])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3998 4017]))                  
+                :type "int")
+                nil [3954 4253])
+            ("stream_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .read = stream_read,
+    .write = stream_write,
+    .release = stream_release,
+    .poll = stream_poll,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4255 4411])
+            ("palacios_stream_open" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("v3_stream" variable
+                       (:pointer 1
+                        :type ("v3_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4450 4479])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4480 4498])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4499 4519]))                  
+                :type "void")
+                nil [4415 5679])
+            ("palacios_stream_output" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("v3_stream" variable
+                       (:pointer 1
+                        :type ("v3_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5721 5750])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5751 5762])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [5763 5771]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [5682 6399])
+            ("palacios_stream_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("v3_stream" variable
+                       (:pointer 1
+                        :type ("v3_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6436 6465]))                  
+                :type "void")
+                nil [6402 6660])
+            ("palacios_stream_hooks" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .open = palacios_stream_open,
+    .output = palacios_stream_output,
+    .close = palacios_stream_close,
+}"
+                :type ("v3_stream_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6662 6828])
+            ("stream_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6855 6861]))                  
+                :type "int")
+                nil [6831 6967])
+            ("stream_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6996 7002]))                  
+                :type "int")
+                nil [6970 7297])
+            ("stream_connect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7329 7353])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7354 7371])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7372 7390])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7391 7408]))                  
+                :type "int")
+                nil [7303 8432])
+            ("guest_stream_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8464 8488])
+                    ("vm_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8489 8505]))                  
+                :type "int")
+                nil [8435 8858])
+            ("guest_stream_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8892 8916])
+                    ("vm_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8917 8932]))                  
+                :type "int")
+                nil [8861 9312])
+            ("stream_ext" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name = \"STREAM_INTERFACE\",
+    .init = stream_init,
+    .deinit = stream_deinit,
+    .guest_init = guest_stream_init,
+    .guest_deinit = guest_stream_deinit
+}"
+                :type ("linux_ext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9316 9520])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("stream_ext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9543 9554]))                  
+                :type "int")
+                nil [9523 9555]))          
+      :file "iface-stream.c"
+      :pointmax 9556
+      :fsize 9555
+      :lastmodtime '(23798 45552 525758 566000)
+      :unmatched-syntax '((punctuation 9542 . 9543) (punctuation 3359 . 3360) (punctuation 1691 . 1692))
+      :lexical-table 
+        '(("STREAM_RING_LEN" . ((number "4096" 439 . 443)))
+          ("TMP_BUF_LEN" . ((number "128" 1627 . 1630)))
+          ("STREAM_NAME_LEN" . ((number "128" 468 . 471)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 7716
+      :lastmodtime '(23798 45552 527758 566000))
+    (semanticdb-table "semanticdb-table"
+      :file "linux-exts.h"
+      :fsize 1066
+      :lastmodtime '(23798 45552 525758 566000))
+    (semanticdb-table "semanticdb-table"
+      :file "mm.h"
+      :fsize 1483
+      :lastmodtime '(23798 45552 526758 566000))
+    (semanticdb-table "semanticdb-table"
+      :file "util-ringbuffer.h"
+      :fsize 573
+      :lastmodtime '(23798 45552 527758 566000))
+    (semanticdb-table "semanticdb-table"
+      :file "vm.h"
+      :fsize 544
+      :lastmodtime '(23798 45552 527758 566000)))
+  :file "!home!nmg!Code!C!leviathan!palacios-lwk!linux_module!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,303 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [490 496])
+            ("lwk/acpi.h" include (:system-flag t) nil [516 537])
+            ("arch/smccc.h" include (:system-flag t) nil [538 561])
+            ("lwk/errno.h" include (:system-flag t) nil [617 639])
+            ("lwk/linkage.h" include (:system-flag t) nil [640 664])
+            ("arch/of.h" include (:system-flag t) nil [665 685])
+            ("arch/psci.h" include (:system-flag t) nil [734 756])
+            ("lwk/reboot.h" include (:system-flag t) nil [757 780])
+            ("psci.h" include nil nil [841 858])
+            ("arch/cputype.h" include (:system-flag t) nil [917 942])
+            ("arch/smp_plat.h" include (:system-flag t) nil [974 1000])
+            ("PSCI_FN_NATIVE" variable (:constant-flag t) nil [1365 1379])
+            ("resident_cpu" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [1719 1748])
+            ("psci_tos_resident_on" function
+               (:arguments 
+                  ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [1776 1784]))                  
+                :type "bool")
+                nil [1750 1817])
+            ("psci_ops" variable (:type ("psci_operations" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1819 1851])
+            ("psci_fn" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1885 1899])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1900 1914])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1919 1933])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1934 1948]))                  
+                :type "unsigned long")
+                nil [1861 1949])
+            ("invoke_psci_fn" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("psci_fn" type (:type "class") nil nil))
+                nil [1950 1981])
+            ("psci_function" type
+               (:members 
+                  ( ("PSCI_FN_CPU_SUSPEND" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2005 2025])
+                    ("PSCI_FN_CPU_ON" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2027 2042])
+                    ("PSCI_FN_CPU_OFF" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2044 2060])
+                    ("PSCI_FN_MIGRATE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2062 2078])
+                    ("PSCI_FN_MAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2080 2092]))                  
+                :type "enum")
+                nil [1983 2095])
+            ("psci_function_id" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [2097 2138])
+            ("PSCI_0_2_POWER_STATE_MASK" variable (:constant-flag t) nil [2149 2174])
+            ("PSCI_1_0_EXT_POWER_STATE_MASK" variable (:constant-flag t) nil [2300 2329])
+            ("psci_cpu_suspend_feature" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [2416 2452])
+            ("psci_has_ext_power_state" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2498 2503]))                  
+                :type "bool")
+                nil [2454 2585])
+            ("psci_power_state_loses_context" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("state" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2637 2647]))                  
+                :type "bool")
+                nil [2587 2800])
+            ("psci_power_state_is_valid" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("state" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2847 2857]))                  
+                :type "bool")
+                nil [2802 3026])
+            ("__invoke_psci_fn_hvc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("function_id" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3071 3097])
+                    ("arg0" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3101 3120])
+                    ("arg1" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3121 3140])
+                    ("arg2" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3144 3163]))                  
+                :type "unsigned long")
+                nil [3029 3276])
+            ("__invoke_psci_fn_smc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("function_id" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3320 3346])
+                    ("arg0" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3350 3369])
+                    ("arg1" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3370 3389])
+                    ("arg2" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3393 3412]))                  
+                :type "unsigned long")
+                nil [3278 3525])
+            ("psci_to_linux_errno" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("errno" variable (:type "int") (reparse-symbol arg-sub-list) [3558 3568]))                  
+                :type "int")
+                nil [3527 3821])
+            ("psci_get_version" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3851 3856]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [3823 3919])
+            ("psci_cpu_suspend" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3950 3960])
+                    ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3961 3987]))                  
+                :type "int")
+                nil [3922 4207])
+            ("psci_cpu_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4233 4243]))                  
+                :type "int")
+                nil [4209 4383])
+            ("psci_cpu_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4408 4428])
+                    ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4429 4455]))                  
+                :type "int")
+                nil [4385 4664])
+            ("psci_migrate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4690 4710]))                  
+                :type "int")
+                nil [4666 4849])
+            ("psci_affinity_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_affinity" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4881 4911])
+                    ("lowest_affinity_level" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4914 4950]))                  
+                :type "int")
+                nil [4851 5066])
+            ("psci_migrate_info_type" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5102 5107]))                  
+                :type "int")
+                nil [5068 5175])
+            ("psci_migrate_info_up_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5223 5228]))                  
+                :type "unsigned long")
+                nil [5177 5316])
+            ("get_set_conduit_method" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5352 5375]))                  
+                :type "int")
+                nil [5318 5819])
+            ("psci_sys_reset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("reboot_mode" variable (:type ("reboot_mode" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [5848 5877])
+                    ("cmd" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5878 5894]))                  
+                :type "void")
+                nil [5821 5950])
+            ("psci_sys_poweroff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5982 5987]))                  
+                :type "void")
+                nil [5952 6041])
+            ("psci_features" function
+               (:arguments 
+                  ( ("psci_func_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6075 6092]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6054 6176])
+            ("psci_system_suspend" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("unused" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9993 10014]))                  
+                :type "int")
+                nil [9962 10185])
+            ("psci_init_migrate" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11070 11075]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11045 11827])
+            ("psci_0_2_set_functions" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11871 11876]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11841 12567])
+            ("psci_probe" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12657 12662]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12639 13116])
+            ("psci_initcall_t" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13149 13176]))                  
+                :type "int")
+                nil [13126 13177])
+            ("psci_0_2_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13312 13335]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13291 13767])
+            ("psci_0_1_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13853 13876]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13832 14602])
+            ("__initconst" variable
+               (:default-value "{
+	{ .compatible = \"arm,psci\",	.data = psci_0_1_init},
+	{ .compatible = \"arm,psci-0.2\",	.data = psci_0_2_init},
+	{ .compatible = \"arm,psci-1.0\",	.data = psci_0_2_init},
+	{},
+}"
+                :type "int")
+                nil [14653 14843])
+            ("psci_dt_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14869 14874]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14849 15171]))          
+      :file "psci.c"
+      :pointmax 15624
+      :fsize 15623
+      :lastmodtime '(24861 31717)
+      :unmatched-syntax '((INT 14845 . 14848) (semantic-list 14650 . 14652) (symbol 14637 . 14650) (symbol 14624 . 14636) (STRUCT 14617 . 14623) (CONST 14611 . 14616) (STATIC 14604 . 14610) (INT 13828 . 13831) (STATIC 13821 . 13827) (INT 13287 . 13290) (STATIC 13280 . 13286) (TYPEDEF 13118 . 13125) (INT 12635 . 12638) (STATIC 12628 . 12634) (VOID 11836 . 11840) (STATIC 11829 . 11835) (VOID 11040 . 11044) (STATIC 11033 . 11039) (INT 6050 . 6053) (STATIC 6043 . 6049) (TYPEDEF 1853 . 1860))
+      :lexical-table 
+        '(("PSCI_0_2_POWER_STATE_MASK" . ((semantic-list "(PSCI_0_2_POWER_STATE_ID_MASK | \\
+				PSCI_0_2_POWER_STATE_TYPE_MASK | \\
+				PSCI_0_2_POWER_STATE_AFFL_MASK)" 2182 . 2290)))
+          ("PSCI_FN_NATIVE" (spp-arg-list ("version" "name") 1379 . 1394) . ((spp-symbol-merge ((spp-symbol-merge ((spp-symbol-merge ((symbol "PSCI_" 1395 . 1400) (symbol "version" 1402 . 1409)) 1395 . 1409) (symbol "_FN_" 1411 . 1415)) 1395 . 1415) (symbol "name" 1417 . 1421)) 1395 . 1421)))
+          ("pr_fmt" (spp-arg-list ("fmt") 496 . 501) . ((string "\"psci: \"" 502 . 510) (symbol "fmt" 511 . 514)))
+          ("PSCI_1_0_EXT_POWER_STATE_MASK" . ((semantic-list "(PSCI_1_0_EXT_POWER_STATE_ID_MASK | \\
+				PSCI_1_0_EXT_POWER_STATE_TYPE_MASK)" 2337 . 2414)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "psci.h"
+      :fsize 3924
+      :lastmodtime '(24790 7103)))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!drivers!firmware!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,72 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LINUX_KTHREAD_H" variable (:constant-flag t) nil [34 50])
+            ("linux/err.h" include (:system-flag t) nil [129 151])
+            ("linux/sched.h" include (:system-flag t) nil [152 176])
+            ("lwk/kthread.h" include (:system-flag t) nil [177 201])
+            ("kthread_create" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("threadfn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [254 265]))                          
+                        :type "int")
+                        nil nil)
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [274 285])
+                    ("namefmt" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [293 314])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [315 319]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [203 359])
+            ("kthread_run" variable (:constant-flag t) nil [701 712])
+            ("kthread_stop" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("k" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [979 1001]))                  
+                :type "int")
+                nil [948 1062]))          
+      :file "kthread.h"
+      :pointmax 1094
+      :fsize 1093
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_LINUX_KTHREAD_H")
+          ("kthread_run" (spp-arg-list ("threadfn" "data" "namefmt" "...") 712 . 742) . ((semantic-list "({									   \\
+	struct task_struct *__k						   \\
+		= kthread_create(threadfn, data, namefmt, ## __VA_ARGS__); \\
+	if (!IS_ERR(__k))						   \\
+		wake_up_process(__k);					   \\
+	__k;								   \\
+})" 750 . 946)))
+          )
+))
+  :file "!ssh:desktop:!home!nmg!vm-shared!kitten-arm64!linux!include!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

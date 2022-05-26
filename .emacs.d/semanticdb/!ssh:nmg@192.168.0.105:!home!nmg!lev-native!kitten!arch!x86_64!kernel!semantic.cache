@@ -1,0 +1,58 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/linkage.h" include (:system-flag t) nil [25 49])
+            ("lwk/cache.h" include (:system-flag t) nil [50 72])
+            ("lwk/errno.h" include (:system-flag t) nil [73 95])
+            ("arch/asm-offsets.h" include (:system-flag t) nil [96 125])
+            ("arch/vsyscall.h" include (:system-flag t) nil [126 152])
+            ("__SYSCALL" variable (:constant-flag t) nil [228 237])
+            ("arch/unistd.h" include (:system-flag t) nil [299 323])
+            ("__SYSCALL" variable (:constant-flag t) nil [447 456])
+            ("syscall_not_implemented_silent" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [554 559]))                  
+                :type "long")
+                nil [511 560])
+            ("syscall_not_implemented" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [597 602]))                  
+                :type "long")
+                nil [561 603])
+            ("sys_call_table" variable
+               (:dereference 1
+                :default-value "{
+	[0 ... __NR_syscall_max] = syscall_not_implemented,
+	#include <arch/unistd.h>
+}"
+                :type ("syscall_ptr_t" type (:type "class") nil nil))
+                nil [817 951])
+            ("syscall_register" function
+               (:arguments 
+                  ( ("nr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [978 991])
+                    ("handler" variable (:type ("syscall_ptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [993 1017]))                  
+                :type "void")
+                nil [954 1252]))          
+      :file "syscall.c"
+      :pointmax 1253
+      :fsize 1252
+      :lastmodtime '(24280 276)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SYSCALL" (spp-arg-list ("nr" "sym") 456 . 465) . 
+              ((semantic-list "[ nr ]" 466 . 472) (punctuation "=" 473 . 474) (symbol "sym" 475 . 478) (punctuation "," 478 . 479)))
+          )
+))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!lev-native!kitten!arch!x86_64!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

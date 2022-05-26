@@ -1,0 +1,175 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [132 151])
+            ("libfdt.h" include (:system-flag t) nil [153 172])
+            ("platform_def.h" include (:system-flag t) nil [174 199])
+            ("arch.h" include (:system-flag t) nil [201 218])
+            ("arch_helpers.h" include (:system-flag t) nil [219 244])
+            ("common/debug.h" include (:system-flag t) nil [245 270])
+            ("drivers/arm/gicv2.h" include (:system-flag t) nil [271 301])
+            ("drivers/console.h" include (:system-flag t) nil [302 330])
+            ("drivers/generic_delay_timer.h" include (:system-flag t) nil [331 371])
+            ("drivers/ti/uart/uart_16550.h" include (:system-flag t) nil [372 411])
+            ("lib/mmio.h" include (:system-flag t) nil [412 433])
+            ("plat/common/platform.h" include (:system-flag t) nil [434 467])
+            ("sunxi_def.h" include (:system-flag t) nil [469 491])
+            ("sunxi_mmap.h" include (:system-flag t) nil [492 515])
+            ("sunxi_private.h" include (:system-flag t) nil [516 542])
+            ("bl32_image_ep_info" variable
+               (:typemodifiers ("static")
+                :type ("entry_point_info_t" type (:type "class") nil nil))
+                nil [545 590])
+            ("bl33_image_ep_info" variable
+               (:typemodifiers ("static")
+                :type ("entry_point_info_t" type (:type "class") nil nil))
+                nil [591 636])
+            ("console" variable
+               (:typemodifiers ("static")
+                :type ("console_16550_t" type (:type "class") nil nil))
+                nil [638 669])
+            ("sunxi_gic_data" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.gicd_base = SUNXI_GICD_BASE,
+	.gicc_base = SUNXI_GICC_BASE,
+}"
+                :type ("gicv2_driver_data_t" type (:type "class") nil nil))
+                nil [671 787])
+            ("sunxi_find_dtb" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1473 1478]))                  
+                :type "void")
+                nil [1445 2049])
+            ("bl31_early_platform_setup2" function
+               (:arguments 
+                  ( ("arg0" variable (:type ("u_register_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2083 2101])
+                    ("arg1" variable (:type ("u_register_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2102 2120])
+                    ("arg2" variable (:type ("u_register_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2125 2143])
+                    ("arg3" variable (:type ("u_register_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2144 2162]))                  
+                :type "void")
+                nil [2051 3065])
+            ("bl31_plat_arch_setup" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3093 3098]))                  
+                :type "void")
+                nil [3067 3131])
+            ("bl31_platform_setup" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3158 3163]))                  
+                :type "void")
+                nil [3133 4815])
+            ("bl31_plat_get_next_image_ep_info" function
+               (:pointer 1
+                :arguments 
+                  ( ("type" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4870 4884]))                  
+                :type ("entry_point_info_t" type (:type "class") nil nil))
+                nil [4817 5078]))          
+      :file "sunxi_bl31_setup.c"
+      :pointmax 5079
+      :fsize 5078
+      :lastmodtime '(24845 57406)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [132 150])
+            ("platform_def.h" include (:system-flag t) nil [152 177])
+            ("arch_helpers.h" include (:system-flag t) nil [179 204])
+            ("common/debug.h" include (:system-flag t) nil [205 230])
+            ("lib/mmio.h" include (:system-flag t) nil [231 252])
+            ("lib/xlat_tables/xlat_tables_v2.h" include (:system-flag t) nil [253 296])
+            ("plat/common/platform.h" include (:system-flag t) nil [297 330])
+            ("sunxi_def.h" include (:system-flag t) nil [332 354])
+            ("sunxi_mmap.h" include (:system-flag t) nil [355 378])
+            ("sunxi_private.h" include (:system-flag t) nil [379 405])
+            ("sunxi_mmap" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	MAP_REGION_FLAT(SUNXI_SRAM_BASE, SUNXI_SRAM_SIZE,
+			MT_MEMORY | MT_RW | MT_SECURE),
+	MAP_REGION_FLAT(SUNXI_DEV_BASE, SUNXI_DEV_SIZE,
+			MT_DEVICE | MT_RW | MT_SECURE),
+	MAP_REGION(SUNXI_DRAM_BASE, SUNXI_DRAM_VIRT_BASE, SUNXI_DRAM_SEC_SIZE,
+			MT_MEMORY | MT_RW | MT_SECURE),
+	MAP_REGION(PLAT_SUNXI_NS_IMAGE_OFFSET,
+		   SUNXI_DRAM_VIRT_BASE + SUNXI_DRAM_SEC_SIZE,
+		   SUNXI_DRAM_MAP_SIZE,
+		   MT_MEMORY | MT_RO | MT_NS),
+	{},
+}"
+                :type ("mmap_region_t" type (:type "class") nil nil))
+                nil [407 908])
+            ("plat_get_syscnt_freq2" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [945 950]))                  
+                :type "unsigned int")
+                nil [910 986])
+            ("plat_get_ns_image_entrypoint" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1027 1032]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [988 1141])
+            ("sunxi_configure_mmu_el3" function
+               (:arguments 
+                  ( ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [1172 1182]))                  
+                :type "void")
+                nil [1143 1569])
+            ("SRAM_VER_REG" variable (:constant-flag t) nil [1579 1591])
+            ("sunxi_read_soc_id" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1646 1651]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [1619 1938])
+            ("sunxi_set_gpio_out" function
+               (:arguments 
+                  ( ("port" variable (:type "char") (reparse-symbol arg-sub-list) [2201 2211])
+                    ("pin" variable (:type "int") (reparse-symbol arg-sub-list) [2212 2220])
+                    ("level_high" variable (:type "bool") (reparse-symbol arg-sub-list) [2221 2237]))                  
+                :type "void")
+                nil [2177 2764])
+            ("sunxi_init_platform_r_twi" function
+               (:arguments 
+                  ( ("socid" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2796 2811])
+                    ("use_rsb" variable (:type "bool") (reparse-symbol arg-sub-list) [2812 2825]))                  
+                :type "int")
+                nil [2766 4161])
+            ("DEFINE_BAKERY_LOCK" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("arisc_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4253 4264]))                  
+                :type "int")
+                nil [4234 4265])
+            ("sunxi_execute_arisc_code" function
+               (:arguments 
+                  ( ("code" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4603 4618])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4619 4631])
+                    ("patch_offset" variable (:type "int") (reparse-symbol arg-sub-list) [4641 4658])
+                    ("param" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4659 4674]))                  
+                :type "void")
+                nil [4573 5884]))          
+      :file "sunxi_common.c"
+      :pointmax 5885
+      :fsize 5884
+      :lastmodtime '(24845 57406)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SRAM_VER_REG" . ((semantic-list "(SUNXI_SYSCON_BASE + 0x24)" 1592 . 1618)))
+          )
+))
+  :file "!ssh:osbox:!home!osboxes!trusted-firmware-a!plat!allwinner!common!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

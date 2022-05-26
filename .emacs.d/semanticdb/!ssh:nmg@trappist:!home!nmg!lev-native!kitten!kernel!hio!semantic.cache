@@ -1,0 +1,206 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/unistd.h" include (:system-flag t) nil [1 24])
+            ("lwk/kfs.h" include (:system-flag t) nil [25 45])
+            ("lwk/hio.h" include (:system-flag t) nil [46 66])
+            ("lwk/aspace.h" include (:system-flag t) nil [67 90])
+            ("lwk/waitq.h" include (:system-flag t) nil [91 113])
+            ("lwk/spinlock.h" include (:system-flag t) nil [114 139])
+            ("lwk/spinlock.h" include (:system-flag t) nil [140 165])
+            ("lwk/xpmem/xpmem.h" include (:system-flag t) nil [166 194])
+            ("lwk/smp.h" include (:system-flag t) nil [195 215])
+            ("arch/vsyscall.h" include (:system-flag t) nil [217 243])
+            ("arch/atomic.h" include (:system-flag t) nil [244 268])
+            ("arch/bug.h" include (:system-flag t) nil [269 290])
+            ("arch-generic/fcntl.h" include (:system-flag t) nil [291 322])
+            ("MAX_OUTSTANDING_SYSCALLS" variable (:constant-flag t) nil [332 356])
+            ("hio_impl" variable
+               (:typemodifiers ("extern")
+                :type ("hio_implementation" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [362 404])
+            ("hio_calls_pending" variable
+               (:typemodifiers ("static")
+                :default-value "ATOMIC_INIT(0)"
+                :type ("atomic_t" type (:type "class") nil nil))
+                nil [406 457])
+            ("hio_syscall_state_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("HIO_IDLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [475 484])
+                          ("HIO_PENDING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [486 498])
+                          ("HIO_PROCESSING" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [500 515])
+                          ("HIO_COMPLETE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [517 530]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [459 553])
+            ("hio_syscall_request_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("state" variable (:type ("hio_syscall_state_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [573 599])
+                          ("syscall" variable
+                             (:pointer 1
+                              :type ("hio_syscall_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [601 629])
+                          ("waitq" variable (:type ("waitq_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [631 650]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [555 675])
+            ("hio_syscalls_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("entries" variable
+                             (:dereference 1
+                              :type ("hio_syscall_request_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [695 751])
+                          ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [753 780])
+                          ("offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [782 804]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [677 822])
+            ("syscall_ring" variable
+               (:typemodifiers ("static")
+                :type ("hio_syscalls_t" type (:type "class") nil nil))
+                nil [824 859])
+            ("next_offset" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("off" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [897 910]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [862 960])
+            ("prev_offset" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("off" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [997 1010]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [962 1075])
+            ("enqueue_syscall" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("syscall" variable
+                       (:pointer 1
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1104 1128]))                  
+                :type "int")
+                nil [1077 1738])
+            ("dequeue_syscall" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("syscall" variable
+                       (:pointer 2
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1767 1792]))                  
+                :type "int")
+                nil [1740 2366])
+            ("hio_cancel_syscall" function
+               (:arguments 
+                  ( ("syscall" variable
+                       (:pointer 1
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2392 2416]))                  
+                :type "void")
+                nil [2368 2741])
+            ("hio_return_syscall" function
+               (:arguments 
+                  ( ("syscall" variable
+                       (:pointer 1
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2767 2791]))                  
+                :type "void")
+                nil [2743 3569])
+            ("hio_wait_syscall" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("syscall" variable
+                       (:pointer 1
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3599 3623])
+                    ("ret_val" variable
+                       (:pointer 1
+                        :type ("uintptr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3627 3651]))                  
+                :type "int")
+                nil [3571 4088])
+            ("hio_issue_syscall" function
+               (:arguments 
+                  ( ("syscall" variable
+                       (:pointer 1
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4113 4137]))                  
+                :type "int")
+                nil [4091 4562])
+            ("hio_format_and_exec_syscall" function
+               (:arguments 
+                  ( ("syscall_nr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4602 4622])
+                    ("argc" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4639 4653])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [4668 4672]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [4564 6911])
+            ("hio_get_num_pending_syscalls" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6951 6956]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [6913 7001])
+            ("hio_get_pending_syscall" function
+               (:arguments 
+                  ( ("pending_syscall" variable
+                       (:pointer 2
+                        :type ("hio_syscall_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7031 7064]))                  
+                :type "int")
+                nil [7003 7110])
+            ("init_syscall_ring_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("hio_syscall_request_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7148 7178]))                  
+                :type "void")
+                nil [7112 7238])
+            ("syscall_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7264 7269]))                  
+                :type "int")
+                nil [7240 7563])
+            ("hio_syscall_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7594 7599]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7570 10384]))          
+      :file "hio.c"
+      :pointmax 10385
+      :fsize 10384
+      :lastmodtime '(24280 274)
+      :unmatched-syntax '((VOID 7565 . 7569))
+      :lexical-table 
+        '(("MAX_OUTSTANDING_SYSCALLS" . ((number "128" 357 . 360)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!kernel!hio!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,257 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("master.hpp" include nil nil [1 22])
+            ("lua" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("lua_State" type (:type "class") nil nil))
+                nil [24 53])
+            ("rank_script" variable
+               (:typemodifiers ("static")
+                :default-value "\"rank.lua\""
+                :type ("std::string" type (:type "class") nil nil))
+                nil [54 98])
+            ("communicator" variable (:type ("Communicator" type (:type "class") nil nil)) nil [100 126])
+            ("print_results" function
+               (:arguments 
+                  ( ("results" variable (:type ("aggregate_result_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [147 177]))                  
+                :type "void")
+                nil [128 461])
+            ("iLog2" function
+               (:arguments 
+                  ( ("v" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [482 497]))                  
+                :type "unsigned int")
+                nil [463 571])
+            ("create_document_id" function
+               (:arguments 
+                  ( ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [641 658])
+                    ("data" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [659 683])
+                    ("n_chunks" variable (:type "int") (reparse-symbol arg-sub-list) [684 697]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [610 740])
+            ("MasterPingOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [801 840])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [845 874])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [892 912])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [913 931]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [879 1027]))                  
+                :type "struct")
+                nil [742 1030])
+            ("MasterIndexOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [1092 1131])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [1136 1164])
+                    ("sendChunk" function
+                       (:arguments 
+                          ( ("machine" variable
+                               (:pointer 1
+                                :type ("Machine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1184 1201])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1202 1220])
+                            ("dmsg" variable
+                               (:reference 1
+                                :type ("DocumentMessage" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1221 1243])
+                            ("n_chunks" variable (:type "int") (reparse-symbol arg-sub-list) [1244 1257])
+                            ("chunk_index" variable (:type "int") (reparse-symbol arg-sub-list) [1277 1293])
+                            ("data" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1294 1311]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1169 1683])
+                    ("sendChunk" function
+                       (:arguments 
+                          ( ("machine" variable
+                               (:pointer 1
+                                :type ("Machine" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1703 1720])
+                            ("dmsg" variable
+                               (:reference 1
+                                :type ("DocumentMessage" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1721 1743])
+                            ("n_chunks" variable (:type "int") (reparse-symbol arg-sub-list) [1744 1757])
+                            ("chunk_index" variable (:type "int") (reparse-symbol arg-sub-list) [1758 1774])
+                            ("data" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1794 1811]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1688 2409])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2427 2447])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2448 2466]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [2414 4401]))                  
+                :type "struct")
+                nil [1032 4404])
+            ("random_access" function
+               (:template 
+                  ( ("L" type (:type "class") nil nil))                  
+                :type ("L::iterator" type (:type "class") nil nil)
+                :arguments 
+                  ( ("l" variable
+                       (:reference 1
+                        :type ("L" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4462 4467])
+                    ("distance" variable (:type "int") (reparse-symbol arg-sub-list) [4468 4481]))                  
+                :typemodifiers ("typename"))
+                nil [4406 4572])
+            ("MasterRetrieveOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [4637 4679])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [4684 4713])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4731 4751])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4752 4770]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4718 6514]))                  
+                :type "struct")
+                nil [4574 6517])
+            ("MasterQueryNaiveOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [6584 6629])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [6634 6662])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6680 6700])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6701 6719]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6667 9946]))                  
+                :type "struct")
+                nil [6519 9949])
+            ("jobId" variable
+               (:default-value "0"
+                :type "int")
+                nil [9951 9965])
+            ("MasterQueryButterflyOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [10036 10085])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [10090 10118])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10136 10156])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10157 10175]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10123 15721]))                  
+                :type "struct")
+                nil [9967 15724])
+            ("MasterQueryMapreduceOperation" type
+               (:superclasses 
+                  ( ("OperationCallback" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("getOpId" function (:type "int") (reparse-symbol classsubparts) [15795 15844])
+                    ("isAsync" function (:type "bool") (reparse-symbol classsubparts) [15849 15877])
+                    ("execute" function
+                       (:arguments 
+                          ( ("op" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Operation" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15895 15915])
+                            ("socket" variable
+                               (:pointer 1
+                                :type ("TcpSocket" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15916 15934]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15882 20212]))                  
+                :type "struct")
+                nil [15726 20215])
+            ("main" function
+               (:arguments 
+                  ( ("args" variable (:type "int") (reparse-symbol arg-sub-list) [20226 20235])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20236 20248]))                  
+                :type "int")
+                nil [20217 21508]))          
+      :file "master.cpp"
+      :pointmax 21509
+      :fsize 21508
+      :lastmodtime '(23569 61213 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "master.hpp"
+      :fsize 446
+      :lastmodtime '(23569 61213 0 0)))
+  :file "!home!nmg!Code!Cpp!nig49-evk20-aim792-part1!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

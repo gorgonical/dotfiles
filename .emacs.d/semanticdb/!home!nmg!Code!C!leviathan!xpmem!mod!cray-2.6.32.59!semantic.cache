@@ -1,0 +1,178 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("asm/uaccess.h" include (:system-flag t) nil [718 742])
+            ("linux/module.h" include (:system-flag t) nil [744 769])
+            ("linux/moduleparam.h" include (:system-flag t) nil [770 800])
+            ("linux/miscdevice.h" include (:system-flag t) nil [801 830])
+            ("linux/mm.h" include (:system-flag t) nil [831 852])
+            ("linux/file.h" include (:system-flag t) nil [853 876])
+            ("linux/proc_fs.h" include (:system-flag t) nil [877 903])
+            ("linux/kthread.h" include (:system-flag t) nil [904 930])
+            ("xpmem.h" include (:system-flag t) nil [932 950])
+            ("xpmem_private.h" include (:system-flag t) nil [951 977])
+            ("xpmem_extended.h" include (:system-flag t) nil [978 1005])
+            ("xpmem_my_part" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("xpmem_partition" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1008 1055])
+            ("xpmem_proc_dir" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("proc_dir_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1089 1136])
+            ("ns" variable
+               (:default-value "1"
+                :type "int")
+                nil [1138 1149])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1163 1166])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [1167 1171]))                  
+                :type "int")
+                nil [1150 1175])
+            ("xpmem_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1406 1426])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1427 1445]))                  
+                :type "int")
+                nil [1384 5012])
+            ("xpmem_flush_tg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5040 5071]))                  
+                :type "int")
+                nil [5014 6607])
+            ("xpmem_flush" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6742 6760])
+                    ("owner" variable (:type ("fl_owner_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6761 6778]))                  
+                :type "int")
+                nil [6719 7289])
+            ("xpmem_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7405 7423])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7424 7441])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7442 7460]))                  
+                :type "long")
+                nil [7381 11823])
+            ("xpmem_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .owner = THIS_MODULE,
+    .open = xpmem_open,
+    .flush = xpmem_flush,
+    .unlocked_ioctl = xpmem_ioctl,
+    .mmap = xpmem_mmap,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11825 12007])
+            ("xpmem_dev_handle" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .minor = MISC_DYNAMIC_MINOR,
+    .name = XPMEM_MODULE_NAME,
+    .fops = &xpmem_fops
+}"
+                :type ("miscdevice" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12009 12145])
+            ("xpmem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12209 12214]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12191 15399])
+            ("xpmem_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15477 15482]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [15459 16000])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [16054 16076])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [16077 16117])
+            ("MODULE_INFO" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("supported" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16130 16140]))                  
+                :type "int")
+                nil [16118 16153])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [16154 16190])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("xpmem_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16203 16214]))                  
+                :type "int")
+                nil [16191 16215])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("xpmem_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16228 16239]))                  
+                :type "int")
+                nil [16216 16240]))          
+      :file "xpmem_main.c"
+      :pointmax 16241
+      :fsize 16240
+      :lastmodtime '(23798 45554 496758 527000)
+      :unmatched-syntax nil))
+  :file "!home!nmg!Code!C!leviathan!xpmem!mod!cray-2.6.32.59!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

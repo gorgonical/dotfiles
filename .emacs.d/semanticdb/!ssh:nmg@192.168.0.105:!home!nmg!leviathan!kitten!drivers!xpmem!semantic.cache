@@ -1,0 +1,672 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/aspace.h" include (:system-flag t) nil [272 295])
+            ("lwk/waitq.h" include (:system-flag t) nil [296 318])
+            ("lwk/list.h" include (:system-flag t) nil [319 340])
+            ("lwk/xpmem/xpmem.h" include (:system-flag t) nil [342 370])
+            ("lwk/xpmem/xpmem_extended.h" include (:system-flag t) nil [371 408])
+            ("lwk/xpmem/xpmem_iface.h" include (:system-flag t) nil [409 443])
+            ("xpmem_private.h" include (:system-flag t) nil [445 471])
+            ("MAX_UNIQ_REQ" variable (:constant-flag t) nil [482 494])
+            ("xpmem_request_struct" type
+               (:members 
+                  ( ("allocated" variable (:type "int") (reparse-symbol classsubparts) [566 584])
+                    ("serviced" variable (:type "int") (reparse-symbol classsubparts) [627 644])
+                    ("cmd" variable (:type ("xpmem_cmd_ex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [685 711])
+                    ("waitq" variable (:type ("waitq_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [745 762]))                  
+                :type "struct")
+                nil [500 765])
+            ("xpmem_domain_state" type
+               (:members 
+                  ( ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [831 852])
+                    ("requests" variable
+                       (:dereference 1
+                        :type ("xpmem_request_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [910 964])
+                    ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1002 1024])
+                    ("uniq_apid" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1088 1129]))                  
+                :type "struct")
+                nil [767 1132])
+            ("alloc_request_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("xpmem_domain_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1167 1201]))                  
+                :type ("int32_t" type (:type "class") nil nil))
+                nil [1135 1615])
+            ("free_request_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("xpmem_domain_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1645 1679])
+                    ("reqid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1682 1702]))                  
+                :type "void")
+                nil [1617 1884])
+            ("init_request_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("xpmem_domain_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1915 1949]))                  
+                :type "void")
+                nil [1886 2125])
+            ("xpmem_get_domain" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("get_ex" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_get_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2156 2189]))                  
+                :type "int")
+                nil [2127 4496])
+            ("xpmem_release_domain" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("release_ex" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_release_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4531 4572]))                  
+                :type "int")
+                nil [4498 5283])
+            ("xpmem_init_pfn_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pfn_range" variable
+                       (:pointer 2
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5319 5350])
+                    ("pfn_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5358 5372]))                  
+                :type "void")
+                nil [5286 5475])
+            ("xpmem_add_pfn_to_pfn_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pfn_range" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5516 5546])
+                    ("pfn" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5553 5569]))                  
+                :type "void")
+                nil [5477 6311])
+            ("xpmem_get_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6340 6370])
+                    ("pfn_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6387 6420]))                  
+                :type "int")
+                nil [6313 8131])
+            ("xpmem_attach_domain" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("attach_ex" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_attach_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8165 8204]))                  
+                :type "int")
+                nil [8133 10845])
+            ("xpmem_detach_domain" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("detach_ex" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_detach_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10879 10918]))                  
+                :type "int")
+                nil [10847 10936])
+            ("xpmem_cmd_wait" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("xpmem_domain_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10982 11017])
+                    ("reqid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11026 11047]))                  
+                :type ("xpmem_cmd_ex" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10938 11252])
+            ("xpmem_cmd_wakeup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("xpmem_domain_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11283 11317])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11321 11350]))                  
+                :type "void")
+                nil [11254 11554])
+            ("xpmem_cmd_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11658 11684])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11691 11710]))                  
+                :type "int")
+                nil [11634 13085])
+            ("xpmem_kill_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("priv" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13113 13125]))                  
+                :type "void")
+                nil [13087 13278])
+            ("xpmem_make_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13444 13464])
+                    ("request" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13469 13493])
+                    ("segid" variable
+                       (:pointer 1
+                        :type ("xpmem_segid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13498 13520]))                  
+                :type "int")
+                nil [13422 14572])
+            ("xpmem_remove_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14599 14618])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14625 14645]))                  
+                :type "int")
+                nil [14575 15606])
+            ("xpmem_get_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15629 15648])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15652 15673])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [15677 15689])
+                    ("permit_type" variable (:type "int") (reparse-symbol arg-sub-list) [15693 15711])
+                    ("permit_value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15715 15736])
+                    ("apid" variable
+                       (:pointer 1
+                        :type ("xpmem_apid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15740 15761])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15765 15783])
+                    ("domid" variable
+                       (:pointer 1
+                        :type ("xpmem_domid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15787 15809])
+                    ("sigid" variable
+                       (:pointer 1
+                        :type ("xpmem_sigid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15813 15835]))                  
+                :type "int")
+                nil [15608 17046])
+            ("xpmem_release_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17073 17092])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17100 17120])
+                    ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17128 17147]))                  
+                :type "int")
+                nil [17048 18142])
+            ("xpmem_attach_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18168 18187])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18194 18215])
+                    ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18222 18241])
+                    ("offset" variable (:type ("off_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18248 18263])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18270 18284])
+                    ("pfn_range" variable
+                       (:pointer 2
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18291 18322]))                  
+                :type "int")
+                nil [18144 20590])
+            ("xpmem_detach_remote" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20616 20635])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20642 20662])
+                    ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20669 20688])
+                    ("vaddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20695 20708]))                  
+                :type "int")
+                nil [20592 21728])
+            ("xpmem_domain_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21761 21766]))                  
+                :type ("xpmem_link_t" type (:type "class") nil nil))
+                nil [21730 22360])
+            ("xpmem_domain_deinit" function
+               (:arguments 
+                  ( ("link" variable (:type ("xpmem_link_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22386 22404]))                  
+                :type "int")
+                nil [22362 22493]))          
+      :file "xpmem_domain.c"
+      :pointmax 22494
+      :fsize 22493
+      :lastmodtime '(24262 10000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_UNIQ_REQ" . ((number "64" 495 . 497)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/aspace.h" include (:system-flag t) nil [59 82])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [83 107])
+            ("lwk/smp.h" include (:system-flag t) nil [108 128])
+            ("xpmem.h" include (:system-flag t) nil [130 148])
+            ("xpmem_private.h" include (:system-flag t) nil [149 175])
+            ("xpmem_extended.h" include (:system-flag t) nil [176 203])
+            ("xpmem_shadow_vaddr_to_PFN" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [250 280])
+                    ("vaddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [307 339]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [206 702])
+            ("xpmem_map_pfn_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [736 770])
+                    ("at_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [778 815])
+                    ("page_size" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [823 861])
+                    ("rgn" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_region_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [869 901]))                  
+                :type "int")
+                nil [704 1636])
+            ("xpmem_unmap_pfn_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1674 1708])
+                    ("at_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1718 1755])
+                    ("page_size" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1765 1803])
+                    ("rgn" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_region_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1813 1845]))                  
+                :type "void")
+                nil [1638 2126])
+            ("xpmem_map_pfn_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2159 2193])
+                    ("at_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2200 2237])
+                    ("page_size" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2244 2282])
+                    ("range" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2289 2323]))                  
+                :type "int")
+                nil [2128 3133])
+            ("get_max_page_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("range" variable
+                       (:pointer 1
+                        :type ("xpmem_pfn_range_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3173 3199])
+                    ("target_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3204 3237]))                  
+                :type ("vmpagesize_t" type (:type "class") nil nil))
+                nil [3135 4208])
+            ("xpmem_map_shadow_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4852 4886])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4896 4928])
+                    ("target_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4938 4979])
+                    ("at_vaddr_p" variable
+                       (:pointer 1
+                        :type ("vaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4996 5035]))                  
+                :type "int")
+                nil [4818 6483])
+            ("xpmem_unmap_shadow_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6522 6556])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6568 6600]))                  
+                :type "int")
+                nil [6486 6684])
+            ("xpmem_attach_shadow_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("xpmem_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6723 6753])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6768 6798])
+                    ("offset" variable (:type "int") (reparse-symbol arg-sub-list) [6811 6844]))                  
+                :type "int")
+                nil [6686 7021])
+            ("xpmem_detach_shadow_pages" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("xpmem_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7060 7090])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7096 7126]))                  
+                :type "int")
+                nil [7023 7410])
+            ("xpmem_make_smartmap_addr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("source_pid" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7506 7527])
+                    ("source_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7553 7576])
+                    ("dest_vaddr" variable
+                       (:pointer 1
+                        :type ("vaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7582 7603]))                  
+                :type "int")
+                nil [7470 8061])
+            ("xpmem_attach" function
+               (:arguments 
+                  ( ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8122 8140])
+                    ("offset" variable (:type ("off_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8155 8175])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8183 8201])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8208 8227])
+                    ("att_flags" variable (:type "int") (reparse-symbol arg-sub-list) [8234 8257])
+                    ("at_vaddr_p" variable
+                       (:pointer 1
+                        :type ("vaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8265 8289]))                  
+                :type "int")
+                nil [8105 13712])
+            ("__xpmem_detach_att" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ap" variable
+                       (:pointer 1
+                        :type ("xpmem_access_permit" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14292 14324])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14331 14364]))                  
+                :type "void")
+                nil [14261 16024])
+            ("xpmem_detach_att" function
+               (:arguments 
+                  ( ("ap" variable
+                       (:pointer 1
+                        :type ("xpmem_access_permit" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16194 16226])
+                    ("att" variable
+                       (:pointer 1
+                        :type ("xpmem_attachment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16244 16277]))                  
+                :type "void")
+                nil [16172 16540])
+            ("xpmem_detach" function
+               (:arguments 
+                  ( ("at_vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16611 16628]))                  
+                :type "int")
+                nil [16594 17627]))          
+      :file "xpmem_attach.c"
+      :pointmax 17628
+      :fsize 17260
+      :lastmodtime '(24263 22813)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("xpmem.h" include (:system-flag t) nil [63 81])
+            ("xpmem_private.h" include (:system-flag t) nil [82 108])
+            ("xpmem_extended.h" include (:system-flag t) nil [109 136])
+            ("xpmem_make_apid" function
+               (:arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [207 240]))                  
+                :type ("xpmem_apid_t" type (:type "class") nil nil))
+                nil [178 682])
+            ("xpmem_try_get_remote" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [717 752])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [774 808])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [830 864])
+                    ("permit_type" variable (:type "int") (reparse-symbol arg-sub-list) [886 926])
+                    ("permit_value" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [948 989]))                  
+                :type "int")
+                nil [685 2299])
+            ("xpmem_get_segment" function
+               (:arguments 
+                  ( ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [2324 2358])
+                    ("permit_type" variable (:type "int") (reparse-symbol arg-sub-list) [2377 2417])
+                    ("permit_value" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2436 2477])
+                    ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2496 2529])
+                    ("seg" variable
+                       (:pointer 1
+                        :type ("xpmem_segment" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2548 2580])
+                    ("seg_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2599 2634])
+                    ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2653 2687]))                  
+                :type "int")
+                nil [2302 3702])
+            ("xpmem_get" function
+               (:arguments 
+                  ( ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3772 3792])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [3793 3803])
+                    ("permit_type" variable (:type "int") (reparse-symbol arg-sub-list) [3804 3820])
+                    ("permit_value" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3821 3840])
+                    ("apid_p" variable
+                       (:pointer 1
+                        :type ("xpmem_apid_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3847 3868]))                  
+                :type "int")
+                nil [3758 7377])
+            ("xpmem_release_ap" function
+               (:arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7472 7505])
+                    ("ap" variable
+                       (:pointer 1
+                        :type ("xpmem_access_permit" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7516 7547]))                  
+                :type "void")
+                nil [7450 9437])
+            ("xpmem_release_aps_of_tg" function
+               (:arguments 
+                  ( ("ap_tg" variable
+                       (:pointer 1
+                        :type ("xpmem_thread_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9571 9604]))                  
+                :type "void")
+                nil [9542 10360])
+            ("xpmem_release" function
+               (:arguments 
+                  ( ("apid" variable (:type ("xpmem_apid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10444 10462]))                  
+                :type "int")
+                nil [10426 11048]))          
+      :file "xpmem_get.c"
+      :pointmax 11049
+      :fsize 11048
+      :lastmodtime '(24261 51456)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan!kitten!drivers!xpmem!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

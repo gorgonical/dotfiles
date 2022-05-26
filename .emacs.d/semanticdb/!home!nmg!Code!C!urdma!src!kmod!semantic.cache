@@ -1,0 +1,2084 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_SIW_DEBUG_H" variable (:constant-flag t) nil [1789 1801])
+            ("DBG_OBJ" variable (:constant-flag t) nil [1811 1818])
+            ("DBG_MM" variable (:constant-flag t) nil [1839 1845])
+            ("DBG_EH" variable (:constant-flag t) nil [1865 1871])
+            ("DBG_CM" variable (:constant-flag t) nil [1891 1897])
+            ("DBG_KT" variable (:constant-flag t) nil [1917 1923])
+            ("DBG_DM" variable (:constant-flag t) nil [1943 1949])
+            ("DBG_CQ" variable (:constant-flag t) nil [1969 1975])
+            ("siw_debug_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2015 2020]))                  
+                :type "void")
+                nil [1988 2021])
+            ("siw_debugfs_add_device" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2057 2074]))                  
+                :type "void")
+                nil [2022 2075])
+            ("siw_debugfs_del_device" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2111 2128]))                  
+                :type "void")
+                nil [2076 2129])
+            ("siw_debugfs_delete" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2161 2166]))                  
+                :type "void")
+                nil [2130 2167]))          
+      :file "debug.h"
+      :pointmax 2176
+      :fsize 2175
+      :lastmodtime '(24019 40965 502254 87000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DBG_EH" . ((string "\" siw_eh\"" 1873 . 1882)))
+          ("_SIW_DEBUG_H")
+          ("DBG_DM" . ((string "\" siw_dm\"" 1951 . 1960)))
+          ("DBG_OBJ" . ((string "\" siw_obj\"" 1820 . 1830)))
+          ("DBG_MM" . ((string "\" siw_mm\"" 1847 . 1856)))
+          ("DBG_CQ" . ((string "\" siw_cq\"" 1977 . 1986)))
+          ("DBG_KT" . ((string "\" siw_kt\"" 1925 . 1934)))
+          ("DBG_CM" . ((string "\" siw_cm\"" 1899 . 1908)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/anon_inodes.h" include (:system-flag t) nil [1765 1795])
+            ("linux/errno.h" include (:system-flag t) nil [1796 1820])
+            ("linux/file.h" include (:system-flag t) nil [1821 1844])
+            ("linux/fs.h" include (:system-flag t) nil [1845 1866])
+            ("linux/types.h" include (:system-flag t) nil [1867 1891])
+            ("linux/uaccess.h" include (:system-flag t) nil [1892 1918])
+            ("linux/vmalloc.h" include (:system-flag t) nil [1919 1945])
+            ("rdma/iw_cm.h" include (:system-flag t) nil [1947 1970])
+            ("rdma/ib_verbs.h" include (:system-flag t) nil [1971 1997])
+            ("rdma/ib_smi.h" include (:system-flag t) nil [1998 2022])
+            ("rdma/ib_user_verbs.h" include (:system-flag t) nil [2023 2054])
+            ("urdma.h" include nil nil [2056 2074])
+            ("verbs.h" include nil nil [2075 2093])
+            ("obj.h" include nil nil [2094 2110])
+            ("cm.h" include nil nil [2111 2126])
+            ("ib_qp_state_to_string" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	[IB_QPS_RESET]	= \"RESET\",
+	[IB_QPS_INIT]	= \"INIT\",
+	[IB_QPS_RTR]	= \"RTR\",
+	[IB_QPS_RTS]	= \"RTS\",
+	[IB_QPS_SQD]	= \"SQD\",
+	[IB_QPS_SQE]	= \"SQE\",
+	[IB_QPS_ERR]	= \"ERR\"
+}"
+                :type "char")
+                nil [2128 2364])
+            ("ib_qp_state_to_siw_qp_state" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	[IB_QPS_RESET]	= SIW_QP_STATE_IDLE,
+	[IB_QPS_INIT]	= SIW_QP_STATE_IDLE,
+	[IB_QPS_RTR]	= SIW_QP_STATE_RTR,
+	[IB_QPS_RTS]	= SIW_QP_STATE_RTS,
+	[IB_QPS_SQD]	= SIW_QP_STATE_CLOSING,
+	[IB_QPS_SQE]	= SIW_QP_STATE_TERMINATE,
+	[IB_QPS_ERR]	= SIW_QP_STATE_ERROR
+}"
+                :type "int")
+                nil [2366 2679])
+            ("siw_pd_ofa2siw" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2725 2746]))                  
+                :type ("siw_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2681 2803])
+            ("siw_ctx_ofa2siw" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ofa_ctx" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2856 2884]))                  
+                :type ("siw_ucontext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2805 2953])
+            ("siw_qp_ofa2siw" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2999 3020]))                  
+                :type ("siw_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2955 3077])
+            ("siw_cq_ofa2siw" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ofa_cq" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3123 3144]))                  
+                :type ("siw_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3079 3201])
+            ("siw_event_file_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3239 3257])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3258 3277])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3277 3281])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3284 3297])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3298 3310]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [3203 4219])
+            ("siw_event_file_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ignored" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4255 4277])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4278 4296]))                  
+                :type "int")
+                nil [4221 4430])
+            ("siw_event_file_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.owner = THIS_MODULE,
+	.write = &siw_event_file_write,
+	.release = &siw_event_file_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4432 4580])
+            ("siw_event_file_new" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("siw_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4622 4647])
+                    ("event_fd" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4648 4662]))                  
+                :type ("file" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4583 5454])
+            ("urdma_disassociate_ucontext" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5614 5638]))                  
+                :type "void")
+                nil [5581 5642])
+            ("siw_alloc_ucontext" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5684 5710])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5722 5745]))                  
+                :type ("ib_ucontext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5645 6722])
+            ("siw_dealloc_ucontext" function
+               (:arguments 
+                  ( ("ofa_ctx" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6749 6777]))                  
+                :type "int")
+                nil [6724 7040])
+            ("siw_query_device" function
+               (:arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7098 7124])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ib_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7125 7153]))                  
+                :type "int")
+                nil [7077 7698])
+            ("siw_mtu_net2ofa" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("mtu" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [7919 7938]))                  
+                :type ("ib_mtu" type (:type "enum") nil nil))
+                nil [7877 8159])
+            ("siw_query_port" function
+               (:arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8180 8206])
+                    ("port" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8207 8215])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ib_port_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8223 8249]))                  
+                :type "int")
+                nil [8161 9128])
+            ("siw_query_pkey" function
+               (:arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9149 9175])
+                    ("port" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9176 9184])
+                    ("idx" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9185 9193])
+                    ("pkey" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9194 9204]))                  
+                :type "int")
+                nil [9130 9267])
+            ("siw_query_gid" function
+               (:arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9287 9313])
+                    ("port" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9314 9322])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [9323 9331])
+                    ("gid" variable
+                       (:pointer 1
+                        :type ("ib_gid" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [9337 9355]))                  
+                :type "int")
+                nil [9269 9636])
+            ("siw_alloc_pd" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9665 9691])
+                    ("context" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9698 9726])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9727 9750]))                  
+                :type ("ib_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9638 10469])
+            ("siw_dealloc_pd" function
+               (:arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10490 10511]))                  
+                :type "int")
+                nil [10471 10706])
+            ("siw_create_ah" function
+               (:pointer 1
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10877 10894])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ib_ah_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10895 10992]))                  
+                :type ("ib_ah" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10849 11029])
+            ("siw_destroy_ah" function
+               (:arguments 
+                  ( ("ah" variable
+                       (:pointer 1
+                        :type ("ib_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11050 11067]))                  
+                :type "int")
+                nil [11031 11088])
+            ("siw_qp_get_ref" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11111 11132]))                  
+                :type "void")
+                nil [11091 11263])
+            ("siw_qp_put_ref" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11286 11307]))                  
+                :type "void")
+                nil [11266 11438])
+            ("siw_no_mad" function
+               (:arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11489 11515])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [11516 11526])
+                    ("port" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11527 11535])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ib_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11543 11560])
+                    ("grh" variable
+                       (:pointer 1
+                        :type ("ib_grh" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11561 11580])
+                    ("in_mad" variable
+                       (:pointer 1
+                        :type ("ib_mad" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11588 11610])
+                    ("out_mad" variable
+                       (:pointer 1
+                        :type ("ib_mad" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11611 11634]))                  
+                :type "int")
+                nil [11474 11655])
+            ("siw_create_qp" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12205 12226])
+                    ("attrs" variable
+                       (:pointer 1
+                        :type ("ib_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12234 12264])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12272 12295]))                  
+                :type ("ib_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12177 14457])
+            ("siw_query_qp" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14599 14620])
+                    ("qp_attr" variable
+                       (:pointer 1
+                        :type ("ib_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14621 14648])
+                    ("qp_attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [14652 14669])
+                    ("qp_init_attr" variable
+                       (:pointer 1
+                        :type ("ib_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14670 14707]))                  
+                :type "int")
+                nil [14582 14728])
+            ("siw_ofed_modify_qp" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14753 14774])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ib_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14775 14799])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [14809 14823])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14824 14847]))                  
+                :type "int")
+                nil [14730 16055])
+            ("siw_destroy_qp" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16076 16097]))                  
+                :type "int")
+                nil [16057 16785])
+            ("siw_post_send" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17018 17039])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ib_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17040 17062])
+                    ("bad_wr" variable
+                       (:pointer 2
+                        :type ("ib_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17067 17094]))                  
+                :type "int")
+                nil [17000 17115])
+            ("siw_post_receive" function
+               (:arguments 
+                  ( ("ofa_qp" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17354 17375])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17376 17398])
+                    ("bad_wr" variable
+                       (:pointer 2
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17406 17433]))                  
+                :type "int")
+                nil [17333 17454])
+            ("siw_destroy_cq" function
+               (:arguments 
+                  ( ("ofa_cq" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17475 17496]))                  
+                :type "int")
+                nil [17456 17732])
+            ("ib_cq_init_attr" type
+               (:members 
+                  ( ("cqe" variable (:type "unsigned int") (reparse-symbol classsubparts) [17796 17813])
+                    ("comp_vector" variable (:type "int") (reparse-symbol classsubparts) [17815 17831])
+                    ("flags" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17833 17843]))                  
+                :type "struct")
+                nil [17770 17846])
+            ("do_siw_create_cq" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18141 18167])
+                    ("init_attr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ib_cq_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18178 18218])
+                    ("ib_context" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18229 18260])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18271 18294]))                  
+                :type ("ib_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18103 19383])
+            ("siw_create_cq" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19449 19475])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [19476 19485])
+                    ("vec" variable (:type "int") (reparse-symbol arg-sub-list) [19493 19501])
+                    ("ib_context" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19502 19533])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19541 19564]))                  
+                :type ("ib_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19421 19765])
+            ("siw_poll_cq" function
+               (:arguments 
+                  ( ("ofa_cq" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20348 20369])
+                    ("num_cqe" variable (:type "int") (reparse-symbol arg-sub-list) [20370 20382])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ib_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20383 20400]))                  
+                :type "int")
+                nil [20332 20421])
+            ("siw_req_notify_cq" function
+               (:arguments 
+                  ( ("ofa_cq" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20596 20617])
+                    ("flags" variable (:type ("ib_cq_notify_flags" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [20618 20648]))                  
+                :type "int")
+                nil [20574 20663])
+            ("siw_dereg_mr" function
+               (:arguments 
+                  ( ("ofa_mr" variable
+                       (:pointer 1
+                        :type ("ib_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20783 20804]))                  
+                :type "int")
+                nil [20766 20825])
+            ("siw_reg_user_mr" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21139 21160])
+                    ("start" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21161 21171])
+                    ("len" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21172 21180])
+                    ("rnic_va" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21190 21202])
+                    ("rights" variable (:type "int") (reparse-symbol arg-sub-list) [21203 21214])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21215 21238]))                  
+                :type ("ib_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [21109 21268])
+            ("siw_get_dma_mr" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21555 21576])
+                    ("rights" variable (:type "int") (reparse-symbol arg-sub-list) [21577 21588]))                  
+                :type ("ib_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [21526 21618])
+            ("siw_create_srq" function
+               (:pointer 1
+                :arguments 
+                  ( ("ofa_pd" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21892 21913])
+                    ("init_attrs" variable
+                       (:pointer 1
+                        :type ("ib_srq_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21923 21959])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21969 21992]))                  
+                :type ("ib_srq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [21862 22022])
+            ("siw_modify_srq" function
+               (:arguments 
+                  ( ("ofa_srq" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22343 22366])
+                    ("attrs" variable
+                       (:pointer 1
+                        :type ("ib_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22367 22393])
+                    ("attr_mask" variable (:type ("ib_srq_attr_mask" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [22399 22431])
+                    ("udata" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22432 22455]))                  
+                :type "int")
+                nil [22324 22476])
+            ("siw_query_srq" function
+               (:arguments 
+                  ( ("ofa_srq" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22550 22573])
+                    ("attrs" variable
+                       (:pointer 1
+                        :type ("ib_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22574 22600]))                  
+                :type "int")
+                nil [22532 22621])
+            ("siw_destroy_srq" function
+               (:arguments 
+                  ( ("ofa_srq" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22832 22855]))                  
+                :type "int")
+                nil [22812 22876])
+            ("siw_post_srq_recv" function
+               (:arguments 
+                  ( ("ofa_srq" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23258 23281])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23282 23304])
+                    ("bad_wr" variable
+                       (:pointer 2
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23313 23340]))                  
+                :type "int")
+                nil [23236 23361]))          
+      :file "verbs.c"
+      :pointmax 23971
+      :fsize 23970
+      :lastmodtime '(24019 40965 503254 87000)
+      :unmatched-syntax '((punctuation 3276 . 3277)))
+    (semanticdb-table "semanticdb-table"
+      :file "urdma.h"
+      :fsize 5862
+      :lastmodtime '(24019 40965 503254 87000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_SIW_VERBS_H" variable (:constant-flag t) nil [1794 1806])
+            ("linux/errno.h" include (:system-flag t) nil [1808 1832])
+            ("rdma/iw_cm.h" include (:system-flag t) nil [1834 1857])
+            ("rdma/ib_verbs.h" include (:system-flag t) nil [1858 1884])
+            ("rdma/ib_smi.h" include (:system-flag t) nil [1885 1909])
+            ("rdma/ib_user_verbs.h" include (:system-flag t) nil [1910 1941])
+            ("urdma.h" include nil nil [1943 1961])
+            ("cm.h" include nil nil [1962 1977])
+            ("siw_query_device" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2042 2061])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2062 2086]))                  
+                :type "int")
+                nil [2014 2087])
+            ("urdma_disassociate_ucontext" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2242 2266]))                  
+                :type "void")
+                nil [2202 2267])
+            ("siw_alloc_ucontext" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2314 2333])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2345 2363]))                  
+                :type ("ib_ucontext" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2268 2364])
+            ("siw_dealloc_ucontext" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2397 2418]))                  
+                :type "int")
+                nil [2365 2419])
+            ("siw_query_port" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2446 2465])
+                    ("" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2466 2469])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_port_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2470 2492]))                  
+                :type "int")
+                nil [2420 2493])
+            ("siw_query_pkey" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2520 2539])
+                    ("" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2540 2543])
+                    ("" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2544 2548])
+                    ("" variable
+                       (:pointer 1
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2549 2555]))                  
+                :type "int")
+                nil [2494 2556])
+            ("siw_query_gid" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2582 2601])
+                    ("" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2602 2605])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2606 2610])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_gid" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [2611 2626]))                  
+                :type "int")
+                nil [2557 2627])
+            ("siw_alloc_pd" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2663 2682])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2683 2704])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2711 2729]))                  
+                :type ("ib_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2629 2730])
+            ("siw_dealloc_pd" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2757 2772]))                  
+                :type "int")
+                nil [2731 2773])
+            ("siw_create_ah" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2952 2967])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_ah_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2968 3057]))                  
+                :type ("ib_ah" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2917 3058])
+            ("siw_destroy_ah" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3092 3107]))                  
+                :type "int")
+                nil [3066 3108])
+            ("siw_create_qp" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3144 3159])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3160 3185])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3193 3211]))                  
+                :type ("ib_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3109 3212])
+            ("siw_query_qp" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3237 3252])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3253 3273])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3274 3278])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3282 3307]))                  
+                :type "int")
+                nil [3213 3308])
+            ("siw_ofed_modify_qp" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3339 3354])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3355 3375])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3376 3380])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3390 3408]))                  
+                :type "int")
+                nil [3309 3409])
+            ("siw_destroy_qp" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3436 3451]))                  
+                :type "int")
+                nil [3410 3452])
+            ("siw_post_send" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3478 3493])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3494 3514])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ib_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3519 3540]))                  
+                :type "int")
+                nil [3453 3541])
+            ("siw_post_receive" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3570 3585])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3586 3606])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3614 3635]))                  
+                :type "int")
+                nil [3542 3636])
+            ("siw_create_cq" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3708 3727])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3728 3732])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3733 3737])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3745 3766])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3767 3785]))                  
+                :type ("ib_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3673 3786])
+            ("siw_destroy_cq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3969 3984]))                  
+                :type "int")
+                nil [3943 3985])
+            ("siw_poll_cq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4009 4024])
+                    ("num_entries" variable (:type "int") (reparse-symbol arg-sub-list) [4025 4041])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4042 4057]))                  
+                :type "int")
+                nil [3986 4058])
+            ("siw_req_notify_cq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4088 4103])
+                    ("" variable (:type ("ib_cq_notify_flags" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [4104 4128]))                  
+                :type "int")
+                nil [4059 4129])
+            ("siw_reg_user_mr" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4167 4182])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4183 4187])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4188 4192])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4193 4197])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4198 4202])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4212 4230]))                  
+                :type ("ib_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4130 4231])
+            ("siw_get_dma_mr" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4268 4283])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4284 4288]))                  
+                :type ("ib_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4232 4289])
+            ("siw_dereg_mr" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4314 4329]))                  
+                :type "int")
+                nil [4290 4330])
+            ("siw_create_srq" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4368 4383])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_srq_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4384 4410])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4420 4438]))                  
+                :type ("ib_srq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4331 4439])
+            ("siw_modify_srq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4466 4482])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4483 4504])
+                    ("" variable (:type ("ib_srq_attr_mask" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [4510 4532])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_udata" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4533 4551]))                  
+                :type "int")
+                nil [4440 4552])
+            ("siw_query_srq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4578 4594])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4595 4616]))                  
+                :type "int")
+                nil [4553 4617])
+            ("siw_destroy_srq" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4645 4661]))                  
+                :type "int")
+                nil [4618 4662])
+            ("siw_post_srq_recv" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4692 4708])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4709 4729])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ib_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4738 4759]))                  
+                :type "int")
+                nil [4663 4760])
+            ("siw_no_mad" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4818 4837])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4838 4842])
+                    ("" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4843 4846])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4847 4862])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_grh" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4863 4879])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_mad" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4888 4904])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ib_mad" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4905 4921]))                  
+                :type "int")
+                nil [4796 4922]))          
+      :file "verbs.h"
+      :pointmax 5378
+      :fsize 5377
+      :lastmodtime '(24019 40965 504254 87000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_SIW_VERBS_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "obj.h"
+      :fsize 3225
+      :lastmodtime '(24019 40965 503254 87000))
+    (semanticdb-table "semanticdb-table"
+      :file "cm.h"
+      :fsize 4939
+      :lastmodtime '(24019 40965 502254 87000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [1765 1788])
+            ("linux/errno.h" include (:system-flag t) nil [1789 1813])
+            ("linux/netdevice.h" include (:system-flag t) nil [1814 1842])
+            ("linux/inetdevice.h" include (:system-flag t) nil [1843 1872])
+            ("net/net_namespace.h" include (:system-flag t) nil [1873 1903])
+            ("net/neighbour.h" include (:system-flag t) nil [1904 1930])
+            ("net/route.h" include (:system-flag t) nil [1931 1953])
+            ("linux/rtnetlink.h" include (:system-flag t) nil [1954 1982])
+            ("linux/if_arp.h" include (:system-flag t) nil [1983 2008])
+            ("linux/list.h" include (:system-flag t) nil [2009 2032])
+            ("linux/kernel.h" include (:system-flag t) nil [2033 2058])
+            ("rdma/ib_verbs.h" include (:system-flag t) nil [2060 2086])
+            ("rdma/ib_smi.h" include (:system-flag t) nil [2087 2111])
+            ("rdma/ib_user_verbs.h" include (:system-flag t) nil [2112 2143])
+            ("urdma.h" include nil nil [2145 2163])
+            ("obj.h" include nil nil [2164 2180])
+            ("cm.h" include nil nil [2181 2196])
+            ("verbs.h" include nil nil [2197 2215])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [2217 2250])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [2251 2305])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [2306 2337])
+            ("MODULE_VERSION" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("PACKAGE_VERSION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2353 2369]))                  
+                :type "int")
+                nil [2338 2370])
+            ("urdma_devlist" variable
+               (:typemodifiers ("static")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2372 2410])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("siw_dev_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2434 2447]))                  
+                :type "int")
+                nil [2411 2448])
+            ("show_sw_version" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2481 2500])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2511 2541])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2542 2552]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [2450 2680])
+            ("DEVICE_ATTR" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("sw_version" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2701 2712])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2713 2721])
+                    ("" variable (:type ("show_sw_version" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2722 2738])
+                    ("" variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2739 2744]))                  
+                :type "int")
+                nil [2682 2745])
+            ("siw_dev_attributes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	&dev_attr_sw_version,
+}"
+                :type ("device_attribute" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2747 2829])
+            ("usiw_device_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2863 2882]))                  
+                :type "void")
+                nil [2831 2886])
+            ("usiw_generic_dma_device" variable
+               (:typemodifiers ("static")
+                :default-value "{
+#ifdef HAVE_DEVICE_ARCHDATA_DMA_OPS
+	.archdata.dma_ops	= &usiw_dma_generic_ops,
+#endif
+	.init_name		= \"urdma\",
+	.release		= usiw_device_release
+}"
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2888 3083])
+            ("usiw_bus" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name	= \"urdma\",
+}"
+                :type ("bus_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3085 3141])
+            ("urdma_chardev_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inodep" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3173 3194])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3195 3213]))                  
+                :type "int")
+                nil [3143 3351])
+            ("fetch_dest_hwaddr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("netdev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3382 3408])
+                    ("src_ipv4_addr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3411 3429])
+                    ("dst_ipv4_addr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3430 3448])
+                    ("dst_hw_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3449 3467]))                  
+                :type "int")
+                nil [3353 4048])
+            ("urdma_chardev_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4089 4107])
+                    ("poll_table" variable
+                       (:pointer 1
+                        :type ("poll_table_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4110 4147]))                  
+                :type "unsigned int")
+                nil [4050 4596])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("file" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4854 4859])
+                    ("" variable (:type ("lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4860 4865]))                  
+                :type "int")
+                nil [4843 6061])
+            ("urdma_chardev_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6129 6147])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [6148 6161])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6161 6165])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6168 6181])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6182 6197]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [6095 6961])
+            ("urdma_chardev_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6998 7016])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7017 7036])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7036 7040])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7043 7056])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7057 7072]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [6963 8266])
+            ("urdma_chardev_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inodep" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8301 8322])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8323 8341]))                  
+                :type "int")
+                nil [8268 9030])
+            ("urdma_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.open = urdma_chardev_open,
+	.poll = urdma_chardev_poll,
+	.read = urdma_chardev_read,
+	.write = urdma_chardev_write,
+	.release = urdma_chardev_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9032 9232])
+            ("siw_modify_port" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ofa_dev" variable
+                       (:pointer 1
+                        :type ("ib_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9261 9287])
+                    ("port" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9288 9296])
+                    ("mask" variable (:type "int") (reparse-symbol arg-sub-list) [9297 9306])
+                    ("props" variable
+                       (:pointer 1
+                        :type ("ib_port_modify" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9313 9342]))                  
+                :type "int")
+                nil [9234 9367])
+            ("siw_device_register" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sdev" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9400 9421]))                  
+                :type "int")
+                nil [9369 10319])
+            ("siw_device_deregister" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sdev" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10355 10376]))                  
+                :type "void")
+                nil [10321 10967])
+            ("siw_device_destroy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sdev" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11000 11021]))                  
+                :type "void")
+                nil [10969 11415])
+            ("siw_dev_qualified" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11448 11471]))                  
+                :type "bool")
+                nil [11418 11518])
+            ("siw_dev_from_netdev" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("netdev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11563 11589]))                  
+                :type ("siw_dev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11520 11800])
+            ("siw_device_assign_guid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sdev" variable
+                       (:pointer 1
+                        :type ("siw_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11837 11858])
+                    ("netdev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11866 11892]))                  
+                :type "void")
+                nil [11802 12256])
+            ("siw_device_create" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("netdev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12299 12325]))                  
+                :type ("siw_dev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12258 17393])
+            ("siw_netdev_event" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17425 17451])
+                    ("event" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [17452 17472])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17480 17490]))                  
+                :type "int")
+                nil [17397 19794])
+            ("siw_netdev_nb" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call = siw_netdev_event,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19796 19881])
+            ("siw_init_module" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [20072 20077]))                  
+                :type "int")
+                nil [20052 21639])
+            ("siw_exit_module" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21677 21682]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [21654 22363])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("siw_init_module" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22377 22393]))                  
+                :type "int")
+                nil [22365 22394])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("siw_exit_module" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22407 22423]))                  
+                :type "int")
+                nil [22395 22424]))          
+      :file "main.c"
+      :pointmax 22425
+      :fsize 22424
+      :lastmodtime '(24019 40965 502254 87000)
+      :unmatched-syntax '((VOID 21649 . 21653) (STATIC 21642 . 21648) (symbol 20045 . 20051) (STATIC 20038 . 20044) (punctuation 7035 . 7036) (punctuation 6160 . 6161) (punctuation 4859 . 4860) (punctuation 4858 . 4859) (semantic-list 4753 . 4841) (symbol 4728 . 4753) (punctuation 4822 . 4823) (symbol 4720 . 4727) (punctuation 4822 . 4823) (STATIC 4713 . 4719) (punctuation 4822 . 4823) (string 2321 . 2335) (string 2270 . 2303) (string 2231 . 2248))))
+  :file "!home!nmg!Code!C!urdma!src!kmod!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

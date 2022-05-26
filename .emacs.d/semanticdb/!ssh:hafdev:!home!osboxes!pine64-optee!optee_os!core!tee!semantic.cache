@@ -1,0 +1,166 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [93 112])
+            ("mm/mobj.h" include (:system-flag t) nil [113 133])
+            ("kernel/pseudo_ta.h" include (:system-flag t) nil [134 163])
+            ("optee_rpc_cmd.h" include (:system-flag t) nil [164 190])
+            ("pta_socket.h" include (:system-flag t) nil [191 214])
+            ("string.h" include (:system-flag t) nil [215 234])
+            ("tee/tee_fs_rpc.h" include (:system-flag t) nil [235 262])
+            ("get_instance_id" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sess" variable
+                       (:pointer 1
+                        :type ("tee_ta_session" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [296 324]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [264 380])
+            ("socket_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [412 433])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [434 455])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [465 498]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [382 1545])
+            ("socket_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1578 1599])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1600 1621])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1632 1665]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [1547 2147])
+            ("socket_send" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2179 2200])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2201 2222])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2232 2265]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [2149 3211])
+            ("socket_recv" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3243 3264])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3265 3286])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3296 3329]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [3213 4358])
+            ("socket_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4391 4412])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4413 4434])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4445 4478]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [4360 5540])
+            ("ta_func" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("instance_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5572 5593])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5594 5615])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5625 5658]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [5550 5659])
+            ("ta_funcs" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	[PTA_SOCKET_OPEN] = socket_open,
+	[PTA_SOCKET_CLOSE] = socket_close,
+	[PTA_SOCKET_SEND] = socket_send,
+	[PTA_SOCKET_RECV] = socket_recv,
+	[PTA_SOCKET_IOCTL] = socket_ioctl,
+}"
+                :type ("ta_func" type (:type "class") nil nil))
+                nil [5661 5873])
+            ("pta_socket_open_session" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5961 5990])
+                    ("" variable (:type ("__unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5982 5991])
+                    ("pParams" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5995 6037])
+                    ("" variable (:type ("__unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6029 6038])
+                    ("sess_ctx" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6042 6058]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [5919 6282])
+            ("pta_socket_close_session" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sess_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6321 6336]))                  
+                :type "void")
+                nil [6284 6647])
+            ("pta_socket_invoke_command" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sess_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6693 6708])
+                    ("cmd_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6709 6725])
+                    ("param_types" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6729 6750])
+                    ("params" variable
+                       (:dereference 1
+                        :type ("TEE_Param" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6751 6784]))                  
+                :type ("TEE_Result" type (:type "class") nil nil))
+                nil [6649 6947])
+            ("pseudo_ta_register" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("uuid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6969 6991])
+                    ("" variable (:type ("name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6994 7009])
+                    ("" variable (:type ("flags" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7017 7063])
+                    ("" variable (:type ("open_session_entry_point" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7071 7121])
+                    ("" variable (:type ("close_session_entry_point" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7129 7181])
+                    ("" variable (:type ("invoke_command_entry_point" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7189 7243]))                  
+                :type "int")
+                nil [6949 7245]))          
+      :file "socket.c"
+      :pointmax 7246
+      :fsize 7245
+      :lastmodtime '(25148 59182)
+      :unmatched-syntax '((punctuation 7188 . 7189) (punctuation 7128 . 7129) (punctuation 7070 . 7071) (punctuation 7016 . 7017) (punctuation 6993 . 6994) (punctuation 6968 . 6969) (TYPEDEF 5542 . 5549))))
+  :file "!ssh:hafdev:!home!osboxes!pine64-optee!optee_os!core!tee!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

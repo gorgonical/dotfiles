@@ -1,0 +1,885 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__V3_CHECKPOINT__" variable (:constant-flag t) nil [120 137])
+            ("v3_chkpt_load" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [784 797]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [766 798])
+            ("v3_chkpt_save" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [751 764]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [733 765])
+            ("v3_chkpt_get" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("chkpt_header" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [717 730]))                  
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [682 731])
+            ("v3_chkpt_get_size" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("ssize_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("chckpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [665 679]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [639 680])
+            ("v3_create_checkpoint" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [625 635]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [600 636])
+            ("chkpt_header" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("magic" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [357 375])
+                    ("version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [380 397])
+                    ("arch" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [403 420])
+                    ("num_blks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [426 444])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [449 463])
+                    ("blocks" variable
+                       (:dereference 1
+                        :type ("block_header" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [469 499]))                  )
+                (reparse-symbol extern-c-contents) [331 526])
+            ("block_header" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [233 262])
+                    ("offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [267 283])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [288 302]))                  )
+                (reparse-symbol extern-c-contents) [207 329])
+            ("CHKPT_KEY_LEN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [187 200]))          
+      :file "v3_checkpoint.h"
+      :pointmax 908
+      :fsize 907
+      :lastmodtime '(24280 267)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__V3_CHECKPOINT__")
+          ("CHKPT_KEY_LEN" . ((number "32" 203 . 205)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__V3VEE_H__" variable (:constant-flag t) nil [120 131])
+            ("v3_get_vm_mem" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("v3_vmem_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [2331 2341])
+                    ("num_regions" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2342 2360]))                  
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2293 2361])
+            ("v3_vmem_region" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("start_paddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2234 2250])
+                    ("end_paddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2255 2269])
+                    ("numa_zone" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2274 2288]))                  )
+                (reparse-symbol extern-c-contents) [2206 2291])
+            ("v3_get_vm_cpus" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("v3_vcpu_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [2176 2186])
+                    ("num_cores" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2187 2203]))                  
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2139 2204])
+            ("v3_vcpu_info" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("vcpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2078 2090])
+                    ("pcpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2095 2107])
+                    ("pid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2112 2120])
+                    ("tid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2125 2133]))                  )
+                (reparse-symbol extern-c-contents) [2052 2136])
+            ("v3_get_vms" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("v3_vm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :arguments 
+                  ( ("num_vms" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2034 2048]))                  
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2002 2049])
+            ("v3_vm_info" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1966 1981])
+                    ("vm_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1986 1997]))                  )
+                (reparse-symbol extern-c-contents) [1942 2000])
+            ("v3_debug_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1881 1891])
+                    ("core" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1892 1901])
+                    ("flags" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1902 1912]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1865 1913])
+            ("SINGLE_EXIT_MODE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1770 1786])
+            ("CLEAR_COUNTERS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1734 1748])
+            ("PRINT_BACKTRACE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1697 1712])
+            ("PRINT_STACK" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1661 1672])
+            ("PRINT_ARCH_STATE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1625 1641])
+            ("PRINT_CORE_STATE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1589 1605])
+            ("PRINT_TELEMETRY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1553 1568])
+            ("v3_move_vcore" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1493 1503])
+                    ("vcore" variable (:type "int") (reparse-symbol arg-sub-list) [1508 1518])
+                    ("target_pcore" variable (:type "int") (reparse-symbol arg-sub-list) [1523 1540]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1475 1541])
+            ("v3_simulate_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1451 1461])
+                    ("msecs" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1462 1472]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1432 1473])
+            ("v3_pause_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1420 1430]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1404 1431])
+            ("v3_continue_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1392 1402]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1373 1403])
+            ("v3_stop_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1360 1370]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1345 1371])
+            ("v3_launch_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1333 1343]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1316 1344])
+            ("v3_free_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [1302 1312]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1287 1313])
+            ("v3_build_vm_image" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("u8" type (:type "class") nil nil)
+                :arguments 
+                  ( ("vm_xml_cfg" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1232 1253])
+                    ("img_size" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1264 1283]))                  
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1209 1284])
+            ("v3_save_vm_cfg" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("file_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1168 1185])
+                    ("vm_xml_cfg" variable (:type ("ezxml_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1186 1205]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1145 1206])
+            ("v3_load_vm_cfg" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("ezxml_t" type (:type "class") nil nil)
+                :arguments 
+                  ( ("file_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1126 1143]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1103 1144])
+            ("v3_save_vm_image" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("file_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1033 1050])
+                    ("img_data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1059 1075])
+                    ("img_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1083 1099]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1012 1100])
+            ("v3_load_vm_image" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("file_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [941 959])
+                    ("img_data" variable
+                       (:pointer 2
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [967 984])
+                    ("img_size" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [992 1009]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [920 1010])
+            ("v3_create_vm" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("vm_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [873 888])
+                    ("img_data" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [889 903])
+                    ("img_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [904 917]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [856 918])
+            ("v3_remove_pci" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [748 760])
+                    ("bus" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [766 777])
+                    ("dev" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [782 793])
+                    ("fn" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [798 808])
+                    ("force" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [813 826])
+                    ("want_online" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [831 850]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [730 851])
+            ("v3_add_pci" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [607 619])
+                    ("bus" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [629 640])
+                    ("dev" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [649 660])
+                    ("fn" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [669 679])
+                    ("force" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [688 701])
+                    ("is_online" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [710 727]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [592 728])
+            ("v3_remove_mem_node" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("numa_zone" variable (:type "int") (reparse-symbol arg-sub-list) [575 589]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [552 590])
+            ("v3_remove_mem" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_blocks" variable (:type "int") (reparse-symbol arg-sub-list) [520 535])
+                    ("numa_zone" variable (:type "int") (reparse-symbol arg-sub-list) [536 550]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [502 551])
+            ("v3_add_mem_explicit" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("block_id" variable (:type "int") (reparse-symbol arg-sub-list) [485 498]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [461 499])
+            ("v3_add_mem" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("num_blocks" variable (:type "int") (reparse-symbol arg-sub-list) [420 435])
+                    ("numa_zone" variable (:type "int") (reparse-symbol arg-sub-list) [445 459]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [405 460])
+            ("v3_add_mem_node" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("numa_zone" variable (:type "int") (reparse-symbol arg-sub-list) [389 403]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [369 404])
+            ("v3_remove_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [354 365]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [336 366])
+            ("v3_add_cpu" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [323 334]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [308 335])
+            ("v3_shutdown" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [300 305]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [284 306])
+            ("v3_is_vmm_present" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [276 281]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [254 282])
+            ("ezxml.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [233 251])
+            ("util.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [215 232])
+            ("config.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [195 214])
+            ("v3_types.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [173 194]))          
+      :file "v3vee.h"
+      :pointmax 2401
+      :fsize 2400
+      :lastmodtime '(24280 267)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CLEAR_COUNTERS" . ((number "0x40000000" 1751 . 1761)))
+          ("__V3VEE_H__")
+          ("PRINT_CORE_STATE" . ((number "0x00000002" 1606 . 1616)))
+          ("PRINT_TELEMETRY" . ((number "0x00000001" 1570 . 1580)))
+          ("PRINT_STACK" . ((number "0x00000008" 1678 . 1688)))
+          ("PRINT_BACKTRACE" . ((number "0x00000010" 1714 . 1724)))
+          ("SINGLE_EXIT_MODE" . ((number "0x80000000" 1787 . 1797)))
+          ("PRINT_ARCH_STATE" . ((number "0x00000004" 1642 . 1652)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "util.h"
+      :fsize 760
+      :lastmodtime '(24280 267))
+    (semanticdb-table "semanticdb-table"
+      :file "config.h"
+      :fsize 1565
+      :lastmodtime '(24280 267))
+    (semanticdb-table "semanticdb-table"
+      :file "v3_types.h"
+      :fsize 382
+      :lastmodtime '(24280 267))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__V3_IOCTL_H__" variable (:constant-flag t) nil [92 106])
+            ("v3_tuntap_cfg" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("dev_name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [6151 6187])
+                    ("tap_fd" variable (:type "int") (reparse-symbol classsubparts) [6192 6203]))                  )
+                (reparse-symbol extern-c-contents) [6124 6230])
+            ("v3_hobbes_tuntap_cfg" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("dev_name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5902 5938])
+                    ("xrbuf_item_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [5943 5972])
+                    ("xrbuf_max_items" variable (:type "unsigned int") (reparse-symbol classsubparts) [5977 6006])
+                    ("xrbuf_segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6036 6062])
+                    ("tap_fd" variable (:type "int") (reparse-symbol classsubparts) [6067 6078]))                  )
+                (reparse-symbol extern-c-contents) [5845 6105])
+            ("V3_TUNTAP_IFNAME_LEN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5820 5840])
+            ("v3_hobbes_stream_info" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("stream_name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5603 5640])
+                    ("xrbuf_item_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [5645 5674])
+                    ("xrbuf_max_items" variable (:type "unsigned int") (reparse-symbol classsubparts) [5679 5708])
+                    ("xrbuf_segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5738 5764])
+                    ("stream_fd" variable (:type "int") (reparse-symbol classsubparts) [5769 5783]))                  )
+                (reparse-symbol extern-c-contents) [5545 5810])
+            ("V3_STREAM_NAME_LEN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5522 5540])
+            ("v3_hobbes_console_info" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("xrbuf_item_size" variable (:type "unsigned int") (reparse-symbol classsubparts) [5317 5346])
+                    ("xrbuf_max_items" variable (:type "unsigned int") (reparse-symbol classsubparts) [5351 5380])
+                    ("ring_buf_pa" variable (:type "unsigned long") (reparse-symbol classsubparts) [5410 5436])
+                    ("xrbuf_segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5441 5467])
+                    ("cons_fd" variable (:type "int") (reparse-symbol classsubparts) [5472 5485]))                  )
+                (reparse-symbol extern-c-contents) [5258 5512])
+            ("v3_hw_pci_dev" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("url" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5172 5186])
+                    ("bus" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5191 5200])
+                    ("dev" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5205 5214])
+                    ("func" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5219 5229]))                  )
+                (reparse-symbol extern-c-contents) [5145 5256])
+            ("v3_chkpt_info" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("store" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5007 5039])
+                    ("url" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5044 5072]))                  )
+                (reparse-symbol extern-c-contents) [4980 5141])
+            ("MAX_CHKPT_URL_LEN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4955 4972])
+            ("MAX_CHKPT_STORE_LEN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4923 4942])
+            ("v3_debug_cmd" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("core" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4862 4871])
+                    ("cmd" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4877 4885]))                  )
+                (reparse-symbol extern-c-contents) [4836 4912])
+            ("v3_core_move_cmd" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("vcore_id" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4775 4788])
+                    ("pcore_id" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4793 4806]))                  )
+                (reparse-symbol extern-c-contents) [4746 4833])
+            ("v3_mem_region" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("base_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4683 4697])
+                    ("num_pages" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4702 4716]))                  )
+                (reparse-symbol extern-c-contents) [4656 4743])
+            ("v3_guest_img" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4560 4575])
+                    ("guest_data" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4580 4601])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4606 4626]))                  )
+                (reparse-symbol extern-c-contents) [4534 4653])
+            ("get_vm_id_from_path" function
+               (:type "int"
+                :arguments 
+                  ( ("dev_path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4390 4406]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline"))
+                (reparse-symbol extern-c-contents) [4352 4532])
+            ("get_vm_dev_path" function
+               (:type "char"
+                :arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [4232 4242]))                  
+                :typemodifiers ("extern" "\"C\"" "static" "inline")
+                :pointer 1)
+                (reparse-symbol extern-c-contents) [4194 4350])
+            ("xpmem_segid_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("int64_t" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [4161 4191])
+            ("V3_VM_FILENAME" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4131 4145])
+            ("V3_DEV_FILENAME" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4094 4109])
+            ("v3_types.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [4062 4083])
+            ("stdio.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [4042 4060])
+            ("V3_VM_XPMEM_CONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4008 4027])
+            ("V3_CHKPT_READ_IN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3888 3904])
+            ("V3_CHKPT_WRITE_OUT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3782 3800])
+            ("V3_CHKPT_LOAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3676 3689])
+            ("V3_CHKPT_SAVE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3570 3583])
+            ("V3_CHKPT_SIZE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3464 3477])
+            ("V3_VM_TUNTAP_CONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3332 3352])
+            ("PISCES_VM_CONS_DISCONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3204 3229])
+            ("PISCES_VM_CONS_CONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3098 3120])
+            ("V3_VM_CREATE_CHECKPOINT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2991 3014])
+            ("V3_VM_STREAM_CONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2885 2905])
+            ("V3_VM_KEYBOARD_EVENT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2779 2799])
+            ("V3_VM_CONSOLE_DISCONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2673 2697])
+            ("V3_VM_CONSOLE_CONNECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2567 2588])
+            ("V3_VM_SHUTDOWN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2460 2474])
+            ("V3_VM_RECEIVE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2346 2359])
+            ("V3_VM_SEND" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2240 2250])
+            ("V3_VM_MOVE_CORE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2126 2141])
+            ("V3_VM_DEBUG" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2012 2023])
+            ("V3_VM_INSPECT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1906 1919])
+            ("V3_VM_SIMULATE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1792 1806])
+            ("V3_VM_SAVE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1686 1696])
+            ("V3_VM_LOAD" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1580 1590])
+            ("V3_VM_STOP" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1474 1484])
+            ("V3_VM_LAUNCH" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1368 1380])
+            ("V3_VM_CONTINUE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1254 1268])
+            ("V3_VM_PAUSE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1148 1159])
+            ("V3_SHUTDOWN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1056 1067])
+            ("V3_FREE_GUEST" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [942 955])
+            ("V3_CREATE_GUEST" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [836 851])
+            ("V3_REMOVE_PCI" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [722 735])
+            ("V3_REMOVE_MEM" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [616 629])
+            ("V3_REMOVE_CPU" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [510 523])
+            ("V3_ADD_PCI" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [396 406])
+            ("V3_ADD_MEM" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [290 300])
+            ("V3_ADD_CPU" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [184 194]))          
+      :file "v3_ioctl.h"
+      :pointmax 6269
+      :fsize 6268
+      :lastmodtime '(24280 267)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("V3_REMOVE_PCI" . ((number "107" 749 . 752)))
+          ("V3_CREATE_GUEST" . ((number "112" 863 . 866)))
+          ("V3_VM_SHUTDOWN" . ((number "136" 2487 . 2490)))
+          ("V3_ADD_MEM" . ((number "101" 317 . 320)))
+          ("V3_VM_SEND" . ((number "134" 2267 . 2270)))
+          ("V3_VM_CONSOLE_CONNECT" . ((number "140" 2594 . 2597)))
+          ("V3_VM_MOVE_CORE" . ((number "133" 2153 . 2156)))
+          ("V3_CHKPT_LOAD" . ((number "5002" 3703 . 3707)))
+          ("V3_VM_SAVE" . ((number "128" 1713 . 1716)))
+          ("V3_VM_RECEIVE" . ((number "135" 2373 . 2376)))
+          ("V3_ADD_CPU" . ((number "100" 211 . 214)))
+          ("V3_FREE_GUEST" . ((number "113" 969 . 972)))
+          ("V3_VM_SIMULATE" . ((number "129" 1819 . 1822)))
+          ("V3_VM_INSPECT" . ((number "130" 1933 . 1936)))
+          ("V3_ADD_PCI" . ((number "102" 423 . 426)))
+          ("V3_VM_LAUNCH" . ((number "125" 1395 . 1398)))
+          ("V3_CHKPT_SIZE" . ((number "5000" 3491 . 3495)))
+          ("V3_DEV_FILENAME" . ((string "\"/dev/v3vee\"" 4110 . 4122)))
+          ("MAX_CHKPT_URL_LEN" . ((number "256" 4975 . 4978)))
+          ("V3_SHUTDOWN" . ((number "900" 1083 . 1086)))
+          ("V3_VM_LOAD" . ((number "127" 1607 . 1610)))
+          ("V3_VM_STREAM_CONNECT" . ((number "145" 2912 . 2915)))
+          ("V3_VM_FILENAME" . ((string "\"/dev/v3-vm\"" 4147 . 4159)))
+          ("V3_VM_CONTINUE" . ((number "124" 1281 . 1284)))
+          ("V3_VM_CONSOLE_DISCONNECT" . ((number "141" 2700 . 2703)))
+          ("V3_VM_TUNTAP_CONNECT" . ((number "300" 3359 . 3362)))
+          ("V3_CHKPT_READ_IN" . ((number "5004" 3915 . 3919)))
+          ("V3_VM_STOP" . ((number "126" 1501 . 1504)))
+          ("V3_VM_KEYBOARD_EVENT" . ((number "142" 2806 . 2809)))
+          ("V3_REMOVE_MEM" . ((number "106" 643 . 646)))
+          ("PISCES_VM_CONS_DISCONNECT" . ((number "201" 3231 . 3234)))
+          ("V3_VM_XPMEM_CONNECT" . ((number "12000" 4035 . 4040)))
+          ("MAX_CHKPT_STORE_LEN" . ((number "128" 4943 . 4946)))
+          ("__V3_IOCTL_H__")
+          ("V3_VM_PAUSE" . ((number "123" 1175 . 1178)))
+          ("V3_VM_DEBUG" . ((number "131" 2039 . 2042)))
+          ("V3_VM_CREATE_CHECKPOINT" . ((number "146" 3018 . 3021)))
+          ("PISCES_VM_CONS_CONNECT" . ((number "200" 3125 . 3128)))
+          ("V3_STREAM_NAME_LEN" . ((number "128" 5541 . 5544)))
+          ("V3_REMOVE_CPU" . ((number "105" 537 . 540)))
+          ("V3_CHKPT_SAVE" . ((number "5001" 3597 . 3601)))
+          ("V3_CHKPT_WRITE_OUT" . ((number "5003" 3809 . 3813)))
+          ("V3_TUNTAP_IFNAME_LEN" . ((number "128" 5841 . 5844)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [220 238])
+            ("stdlib.h" include (:system-flag t) nil [239 258])
+            ("fcntl.h" include (:system-flag t) nil [259 277])
+            ("sys/ioctl.h" include (:system-flag t) nil [279 301])
+            ("sys/stat.h" include (:system-flag t) nil [303 324])
+            ("sys/types.h" include (:system-flag t) nil [326 348])
+            ("unistd.h" include (:system-flag t) nil [350 369])
+            ("string.h" include (:system-flag t) nil [370 389])
+            ("fcntl.h" include (:system-flag t) nil [390 408])
+            ("pthread.h" include (:system-flag t) nil [409 429])
+            ("errno.h" include (:system-flag t) nil [430 448])
+            ("sys/mman.h" include (:system-flag t) nil [449 470])
+            ("linux/unistd.h" include (:system-flag t) nil [471 496])
+            ("pet_ioctl.h" include (:system-flag t) nil [499 521])
+            ("v3vee.h" include nil nil [523 541])
+            ("v3_ioctl.h" include nil nil [542 563])
+            ("v3_checkpoint.h" include nil nil [564 590])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [600 609])
+            ("v3_create_checkpoint" function
+               (:arguments 
+                  ( ("vm_id" variable (:type "int") (reparse-symbol arg-sub-list) [660 670]))                  
+                :type "int")
+                nil [634 866])
+            ("v3_chkpt_get_size" function
+               (:arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [896 909]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [869 959])
+            ("v3_chkpt_get" function
+               (:pointer 1
+                :arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [997 1010]))                  
+                :type ("chkpt_header" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [961 1332])
+            ("v3_chkpt_save" function
+               (:arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [1353 1366]))                  
+                :type "int")
+                nil [1334 1416])
+            ("v3_chkpt_load" function
+               (:arguments 
+                  ( ("chkpt_fd" variable (:type "int") (reparse-symbol arg-sub-list) [1437 1450]))                  
+                :type "int")
+                nil [1418 1500]))          
+      :file "checkpoint.c"
+      :pointmax 2005
+      :fsize 2004
+      :lastmodtime '(24280 267)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PAGE_SIZE" . ((symbol "sysconf" 610 . 617) (semantic-list "(_SC_PAGESIZE)" 617 . 631)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios-lwk!linux_usr!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

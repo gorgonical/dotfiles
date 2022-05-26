@@ -1,0 +1,199 @@
+;; Object semanticdb-project-database-file-19d9394
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file-19d9394"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table-19d9354"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("OBJS" variable (:default-value ("main.o")) nil [228 242])
+            ("CFLAGS" variable (:default-value ("-Wall" "-I../ta/include" "-I./include")) nil [243 287])
+            ("CFLAGS" variable (:default-value ("-I$(TEEC_EXPORT)/include")) nil [287 322])
+            ("LDADD" variable (:default-value ("-lteec" "-L$(TEEC_EXPORT)/lib" "-lpthread")) nil [322 369])
+            ("BINARY" variable (:default-value ("optee_example_secure_storage")) nil [370 408])
+            (".PHONY" function (:arguments ("all")) nil [409 421])
+            ("all" function (:arguments ("$(BINARY)")) nil [421 436])
+            ("$(BINARY)" function (:arguments ("$(OBJS)")) nil [437 492])
+            (".PHONY" function (:arguments ("clean")) nil [493 507])
+            ("clean" function nil nil [507 539])
+            ("%.o" function (:arguments ("%.c")) nil [540 578]))          
+      :file "Makefile"
+      :pointmax 578
+      :fsize 577
+      :lastmodtime '(25183 19390 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table-19d9374"
+      :major-mode c-mode
+      :tags 
+        '( ("err.h" include (:system-flag t) nil [1370 1386])
+            ("stdio.h" include (:system-flag t) nil [1387 1405])
+            ("string.h" include (:system-flag t) nil [1406 1425])
+            ("pthread.h" include (:system-flag t) nil [1426 1446])
+            ("sys/socket.h" include (:system-flag t) nil [1447 1470])
+            ("unistd.h" include (:system-flag t) nil [1471 1490])
+            ("arpa/inet.h" include (:system-flag t) nil [1491 1513])
+            ("tee_client_api.h" include (:system-flag t) nil [1567 1594])
+            ("secure_storage_ta.h" include (:system-flag t) nil [1631 1661])
+            ("mbed.h" include (:system-flag t) nil [1662 1679])
+            ("database" variable (:type ("item_db_t" type (:type "class") nil nil)) nil [1681 1700])
+            ("test_ctx" type
+               (:members 
+                  ( ("ctx" variable (:type ("TEEC_Context" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1741 1758])
+                    ("sess" variable (:type ("TEEC_Session" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1760 1778]))                  
+                :type "struct")
+                nil [1722 1781])
+            ("ctx" variable (:type ("test_ctx" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1783 1803])
+            ("prepare_tee_session" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1830 1851]))                  
+                :type "void")
+                nil [1805 2372])
+            ("terminate_tee_session" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2401 2422]))                  
+                :type "void")
+                nil [2374 2492])
+            ("read_secure_object" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2525 2546])
+                    ("id" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2547 2556])
+                    ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2560 2571])
+                    ("data_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2572 2588]))                  
+                :type ("TEEC_Result" type (:type "class") nil nil))
+                nil [2494 3266])
+            ("load_item_database" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3299 3320])
+                    ("db" variable
+                       (:pointer 1
+                        :type ("item_db_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3321 3335]))                  
+                :type ("TEEC_Result" type (:type "class") nil nil))
+                nil [3268 3852])
+            ("write_secure_object" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3886 3907])
+                    ("id" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3908 3917])
+                    ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3921 3932])
+                    ("data_len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3933 3949]))                  
+                :type ("TEEC_Result" type (:type "class") nil nil))
+                nil [3854 4655])
+            ("delete_secure_object" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4690 4711])
+                    ("id" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4712 4721]))                  
+                :type ("TEEC_Result" type (:type "class") nil nil))
+                nil [4657 5270])
+            ("TEST_OBJECT_SIZE" variable (:constant-flag t) nil [5280 5296])
+            ("process_cart" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("test_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5328 5353])
+                    ("cart_p" variable
+                       (:pointer 1
+                        :type ("enc_cart_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5354 5373]))                  
+                :type ("TEEC_Result" type (:type "class") nil nil))
+                nil [5303 6367])
+            ("print_hex" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6384 6395])
+                    ("n" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6396 6411]))                  
+                :type "void")
+                nil [6369 6667])
+            ("handle_connection" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6692 6703]))                  
+                :type "void")
+                nil [6669 7309])
+            ("generate_linear_database" function
+               (:arguments 
+                  ( ("database" variable
+                       (:pointer 1
+                        :type ("item_db_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7340 7360]))                  
+                :type "int")
+                nil [7311 7727])
+            ("main" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7738 7743]))                  
+                :type "int")
+                nil [7729 9071]))          
+      :file "main.c"
+      :pointmax 9072
+      :fsize 9071
+      :lastmodtime '(25193 64407 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TRACE_LEVEL")
+          ("TEST_OBJECT_SIZE" . ((number "7000" 5299 . 5303)))
+          )
+))
+  :file "!ssh:hafdev:!home!osboxes!pine64-optee!cart!host!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,767 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [270 293])
+            ("linux/cache.h" include (:system-flag t) nil [294 318])
+            ("linux/sched.h" include (:system-flag t) nil [319 343])
+            ("linux/irq.h" include (:system-flag t) nil [344 366])
+            ("linux/interrupt.h" include (:system-flag t) nil [367 395])
+            ("asm/io.h" include (:system-flag t) nil [397 416])
+            ("proto.h" include nil nil [418 436])
+            ("irq_impl.h" include nil nil [437 458])
+            ("cached_irq_mask" variable
+               (:typemodifiers ("static")
+                :default-value "0xffff"
+                :type "unsigned int")
+                nil [509 554])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("i8259_irq_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [578 593]))                  
+                :type "int")
+                nil [555 594])
+            ("i8259_update_irq_hw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [635 652])
+                    ("mask" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [653 672]))                  
+                :type "void")
+                nil [596 766])
+            ("i8259a_enable_irq" function
+               (:typemodifiers ("inline")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [798 817]))                  
+                :type "void")
+                nil [768 946])
+            ("__i8259a_disable_irq" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [988 1005]))                  
+                :type "void")
+                nil [948 1065])
+            ("i8259a_disable_irq" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1091 1110]))                  
+                :type "void")
+                nil [1067 1205])
+            ("i8259a_mask_and_ack_irq" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1236 1255]))                  
+                :type "void")
+                nil [1207 1567])
+            ("i8259a_irq_type" variable
+               (:default-value "{
+	.name		= \"XT-PIC\",
+	.irq_unmask	= i8259a_enable_irq,
+	.irq_mask	= i8259a_disable_irq,
+	.irq_mask_ack	= i8259a_mask_and_ack_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1569 1736])
+            ("init_i8259a_irqs" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1767 1772]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1743 2077])
+            ("isa_no_iack_sc_device_interrupt" function
+               (:arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3252 3273]))                  
+                :type "void")
+                nil [3215 3979]))          
+      :file "irq_i8259.c"
+      :pointmax 3987
+      :fsize 3986
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax '((VOID 1738 . 1742)))
+    (semanticdb-table "semanticdb-table"
+      :file "proto.h"
+      :fsize 6789
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :file "irq_impl.h"
+      :fsize 1056
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [244 269])
+            ("linux/types.h" include (:system-flag t) nil [270 294])
+            ("linux/mm.h" include (:system-flag t) nil [295 316])
+            ("linux/sched.h" include (:system-flag t) nil [317 341])
+            ("linux/pci.h" include (:system-flag t) nil [342 364])
+            ("linux/init.h" include (:system-flag t) nil [365 388])
+            ("asm/ptrace.h" include (:system-flag t) nil [390 413])
+            ("asm/dma.h" include (:system-flag t) nil [414 434])
+            ("asm/irq.h" include (:system-flag t) nil [435 455])
+            ("asm/mmu_context.h" include (:system-flag t) nil [456 484])
+            ("asm/io.h" include (:system-flag t) nil [485 504])
+            ("asm/core_cia.h" include (:system-flag t) nil [505 530])
+            ("asm/tlbflush.h" include (:system-flag t) nil [531 556])
+            ("proto.h" include nil nil [558 576])
+            ("irq_impl.h" include nil nil [577 598])
+            ("pci_impl.h" include nil nil [599 620])
+            ("machvec_impl.h" include nil nil [621 646])
+            ("pc873xx.h" include nil nil [647 667])
+            ("cached_irq_mask" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{ -1, -1 }"
+                :type "unsigned long")
+                nil [717 770])
+            ("takara_update_irq_hw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [812 830])
+                    ("mask" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [831 850]))                  
+                :type "void")
+                nil [772 1017])
+            ("takara_enable_irq" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1056 1075]))                  
+                :type "void")
+                nil [1019 1224])
+            ("takara_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1257 1276]))                  
+                :type "void")
+                nil [1226 1422])
+            ("takara_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"TAKARA\",
+	.irq_unmask	= takara_enable_irq,
+	.irq_mask	= takara_disable_irq,
+	.irq_mask_ack	= takara_disable_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1424 1593])
+            ("takara_device_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1631 1652]))                  
+                :type "void")
+                nil [1595 2665])
+            ("takara_srm_device_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2708 2729]))                  
+                :type "void")
+                nil [2667 2785])
+            ("takara_init_irq" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2822 2827]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2799 3406])
+            ("takara_map_irq_srm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3843 3869])
+                    ("slot" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3870 3878])
+                    ("pin" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3879 3886]))                  
+                :type "int")
+                nil [3813 5182])
+            ("takara_map_irq" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5217 5243])
+                    ("slot" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5244 5252])
+                    ("pin" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5253 5260]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5195 6338])
+            ("takara_swizzle" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6365 6385])
+                    ("pinp" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6386 6395]))                  
+                :type ("u8" type (:type "class") nil nil))
+                nil [6340 7059])
+            ("takara_init_pci" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7096 7101]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7073 7424])
+            ("__initmv" variable
+               (:default-value "{
+	.vector_name		= \"Takara\",
+	DO_EV5_MMU,
+	DO_DEFAULT_RTC,
+	DO_CIA_IO,
+	.machine_check		= cia_machine_check,
+	.max_isa_dma_address	= ALPHA_MAX_ISA_DMA_ADDRESS,
+	.min_io_address		= DEFAULT_IO_BASE,
+	.min_mem_address	= CIA_DEFAULT_MEM_BASE,
+
+	.nr_irqs		= 128,
+	.device_interrupt	= takara_device_interrupt,
+
+	.init_arch		= cia_init_arch,
+	.init_irq		= takara_init_irq,
+	.init_rtc		= common_init_rtc,
+	.init_pci		= takara_init_pci,
+	.kill_arch		= cia_kill_arch,
+	.pci_map_irq		= takara_map_irq,
+	.pci_swizzle		= takara_swizzle,
+}"
+                :type ("takara_mv" type (:type "class") nil nil))
+                nil [7484 8031]))          
+      :file "sys_takara.c"
+      :pointmax 8049
+      :fsize 8048
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax '((semantic-list 8040 . 8048) (symbol 8032 . 8040) (symbol 7463 . 7483) (STRUCT 7456 . 7462) (VOID 7068 . 7072) (STATIC 7061 . 7067) (INT 5191 . 5194) (STATIC 5184 . 5190) (VOID 2794 . 2798) (STATIC 2787 . 2793)))
+    (semanticdb-table "semanticdb-table"
+      :file "pci_impl.h"
+      :fsize 6474
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :file "machvec_impl.h"
+      :fsize 5186
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :file "pc873xx.h"
+      :fsize 627
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [112 137])
+            ("linux/types.h" include (:system-flag t) nil [138 162])
+            ("linux/mm.h" include (:system-flag t) nil [163 184])
+            ("linux/sched.h" include (:system-flag t) nil [185 209])
+            ("linux/pci.h" include (:system-flag t) nil [210 232])
+            ("linux/init.h" include (:system-flag t) nil [233 256])
+            ("linux/bitops.h" include (:system-flag t) nil [257 282])
+            ("asm/ptrace.h" include (:system-flag t) nil [284 307])
+            ("asm/dma.h" include (:system-flag t) nil [308 328])
+            ("asm/irq.h" include (:system-flag t) nil [329 349])
+            ("asm/mmu_context.h" include (:system-flag t) nil [350 378])
+            ("asm/io.h" include (:system-flag t) nil [379 398])
+            ("asm/core_marvel.h" include (:system-flag t) nil [399 427])
+            ("asm/hwrpb.h" include (:system-flag t) nil [428 450])
+            ("asm/tlbflush.h" include (:system-flag t) nil [451 476])
+            ("asm/vga.h" include (:system-flag t) nil [477 497])
+            ("proto.h" include nil nil [499 517])
+            ("err_impl.h" include nil nil [518 539])
+            ("irq_impl.h" include nil nil [540 561])
+            ("pci_impl.h" include nil nil [562 583])
+            ("machvec_impl.h" include nil nil [584 609])
+            ("io7_device_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [751 772]))                  
+                :type "void")
+                nil [717 1354])
+            ("io7_get_irq_ctl" function
+               (:pointer 1
+                :typemodifiers ("static" "volatile")
+                :arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1404 1421])
+                    ("pio7" variable
+                       (:pointer 2
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1422 1440]))                  
+                :type "unsigned long")
+                nil [1356 2167])
+            ("io7_enable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2196 2215]))                  
+                :type "void")
+                nil [2169 2544])
+            ("io7_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2574 2593]))                  
+                :type "void")
+                nil [2546 2925])
+            ("marvel_irq_noop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2955 2974]))                  
+                :type "void")
+                nil [2927 2987])
+            ("marvel_legacy_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"LEGACY\",
+	.irq_mask	= marvel_irq_noop,
+	.irq_unmask	= marvel_irq_noop,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2989 3123])
+            ("io7_lsi_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"LSI\",
+	.irq_unmask	= io7_enable_irq,
+	.irq_mask	= io7_disable_irq,
+	.irq_mask_ack	= io7_disable_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3125 3283])
+            ("io7_msi_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"MSI\",
+	.irq_unmask	= io7_enable_irq,
+	.irq_mask	= io7_disable_irq,
+	.irq_ack	= marvel_irq_noop,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3285 3438])
+            ("io7_redirect_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3469 3485])
+                    ("csr" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [3490 3518])
+                    ("where" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3523 3542]))                  
+                :type "void")
+                nil [3440 3733])
+            ("io7_redirect_one_lsi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3769 3785])
+                    ("which" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3786 3805])
+                    ("where" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3806 3825]))                  
+                :type "void")
+                nil [3735 4140])
+            ("io7_redirect_one_msi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4176 4192])
+                    ("which" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4193 4212])
+                    ("where" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4213 4232]))                  
+                :type "void")
+                nil [4142 4547])
+            ("init_one_io7_lsi" function
+               (:arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4585 4601])
+                    ("which" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4602 4621])
+                    ("where" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4622 4641]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4561 4796])
+            ("init_one_io7_msi" function
+               (:arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4834 4850])
+                    ("which" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4851 4870])
+                    ("where" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4871 4890]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4810 5045])
+            ("init_io7_irqs" function
+               (:arguments 
+                  ( ("io7" variable
+                       (:pointer 1
+                        :type ("io7" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5080 5096])
+                    ("lsi_ops" variable
+                       (:pointer 1
+                        :type ("irq_chip" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5105 5130])
+                    ("msi_ops" variable
+                       (:pointer 1
+                        :type ("irq_chip" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5138 5163]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5059 6734])
+            ("marvel_init_irq" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6771 6776]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6748 7104])
+            ("marvel_map_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cdev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7133 7160])
+                    ("slot" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7161 7169])
+                    ("pin" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7170 7177]))                  
+                :type "int")
+                nil [7106 8840])
+            ("marvel_init_pci" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8877 8882]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8854 9207])
+            ("marvel_init_rtc" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9244 9249]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9221 9274])
+            ("marvel_smp_callin" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9306 9311]))                  
+                :type "void")
+                nil [9276 10193])
+            ("__initmv" variable
+               (:default-value "{
+	.vector_name		= \"MARVEL/EV7\",
+	DO_EV7_MMU,
+	.rtc_port		= 0x70,
+	.rtc_boot_cpu_only	= 1,
+	DO_MARVEL_IO,
+	.machine_check		= marvel_machine_check,
+	.max_isa_dma_address	= ALPHA_MAX_ISA_DMA_ADDRESS,
+	.min_io_address		= DEFAULT_IO_BASE,
+	.min_mem_address	= DEFAULT_MEM_BASE,
+	.pci_dac_offset		= IO7_DAC_OFFSET,
+
+	.nr_irqs		= MARVEL_NR_IRQS,
+	.device_interrupt	= io7_device_interrupt,
+
+	.agp_info		= marvel_agp_info,
+
+	.smp_callin		= marvel_smp_callin,
+	.init_arch		= marvel_init_arch,
+	.init_irq		= marvel_init_irq,
+	.init_rtc		= marvel_init_rtc,
+	.init_pci		= marvel_init_pci,
+	.kill_arch		= marvel_kill_arch,
+	.pci_map_irq		= marvel_map_irq,
+	.pci_swizzle		= common_swizzle,
+}"
+                :type ("marvel_ev7_mv" type (:type "class") nil nil))
+                nil [10249 10951]))          
+      :file "sys_marvel.c"
+      :pointmax 10973
+      :fsize 10972
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax '((semantic-list 10960 . 10972) (symbol 10952 . 10960) (symbol 10228 . 10248) (STRUCT 10221 . 10227) (VOID 9216 . 9220) (STATIC 9209 . 9215) (VOID 8849 . 8853) (STATIC 8842 . 8848) (VOID 6743 . 6747) (STATIC 6736 . 6742) (VOID 5054 . 5058) (STATIC 5047 . 5053) (VOID 4805 . 4809) (STATIC 4798 . 4804) (VOID 4556 . 4560) (STATIC 4549 . 4555)))
+    (semanticdb-table "semanticdb-table"
+      :file "err_impl.h"
+      :fsize 2656
+      :lastmodtime '(24843 18845))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [114 137])
+            ("linux/sched.h" include (:system-flag t) nil [138 162])
+            ("linux/irq.h" include (:system-flag t) nil [163 185])
+            ("proto.h" include nil nil [187 205])
+            ("irq_impl.h" include nil nil [206 227])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("srm_irq_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [465 478]))                  
+                :type "int")
+                nil [449 479])
+            ("srm_enable_irq" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [515 534]))                  
+                :type "void")
+                nil [481 620])
+            ("srm_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [650 669]))                  
+                :type "void")
+                nil [622 755])
+            ("srm_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"SRM\",
+	.irq_unmask	= srm_enable_irq,
+	.irq_mask	= srm_disable_irq,
+	.irq_mask_ack	= srm_disable_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [830 984])
+            ("init_srm_irqs" function
+               (:arguments 
+                  ( ("max" variable (:type "long") (reparse-symbol arg-sub-list) [1012 1021])
+                    ("ignore_mask" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1022 1048]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [991 1282])
+            ("srm_device_interrupt" function
+               (:arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1311 1332]))                  
+                :type "void")
+                nil [1284 1388]))          
+      :file "irq_srm.c"
+      :pointmax 1389
+      :fsize 1388
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax '((VOID 986 . 990)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/interrupt.h" include (:system-flag t) nil [204 232])
+            ("linux/kernel.h" include (:system-flag t) nil [233 258])
+            ("linux/types.h" include (:system-flag t) nil [259 283])
+            ("linux/mm.h" include (:system-flag t) nil [284 305])
+            ("linux/sched.h" include (:system-flag t) nil [306 330])
+            ("linux/pci.h" include (:system-flag t) nil [331 353])
+            ("linux/init.h" include (:system-flag t) nil [354 377])
+            ("asm/ptrace.h" include (:system-flag t) nil [379 402])
+            ("__EXTERN_INLINE" variable (:constant-flag t) nil [412 427])
+            ("asm/io.h" include (:system-flag t) nil [435 454])
+            ("asm/jensen.h" include (:system-flag t) nil [455 478])
+            ("asm/dma.h" include (:system-flag t) nil [504 524])
+            ("asm/irq.h" include (:system-flag t) nil [525 545])
+            ("asm/mmu_context.h" include (:system-flag t) nil [546 574])
+            ("asm/tlbflush.h" include (:system-flag t) nil [575 600])
+            ("proto.h" include nil nil [602 620])
+            ("irq_impl.h" include nil nil [621 642])
+            ("pci_impl.h" include nil nil [643 664])
+            ("machvec_impl.h" include nil nil [665 690])
+            ("jensen_local_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1538 1557]))                  
+                :type "void")
+                nil [1506 1657])
+            ("jensen_local_disable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1692 1711]))                  
+                :type "void")
+                nil [1659 1812])
+            ("jensen_local_mask_ack" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1848 1867]))                  
+                :type "void")
+                nil [1814 1973])
+            ("jensen_local_irq_type" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"LOCAL\",
+	.irq_unmask	= jensen_local_enable,
+	.irq_mask	= jensen_local_disable,
+	.irq_mask_ack	= jensen_local_mask_ack,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1975 2156])
+            ("jensen_device_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2195 2216]))                  
+                :type "void")
+                nil [2158 3914])
+            ("jensen_init_irq" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3951 3956]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3928 4367])
+            ("jensen_init_arch" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4405 4410]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4381 5036])
+            ("jensen_machine_check" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5071 5092])
+                    ("la" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5093 5110]))                  
+                :type "void")
+                nil [5038 5152])
+            ("__initmv" variable
+               (:default-value "{
+	.vector_name		= \"Jensen\",
+	DO_EV4_MMU,
+	IO_LITE(JENSEN,jensen),
+	.machine_check		= jensen_machine_check,
+	.max_isa_dma_address	= ALPHA_MAX_ISA_DMA_ADDRESS,
+	.rtc_port		= 0x170,
+
+	.nr_irqs		= 16,
+	.device_interrupt	= jensen_device_interrupt,
+
+	.init_arch		= jensen_init_arch,
+	.init_irq		= jensen_init_irq,
+	.init_rtc		= common_init_rtc,
+	.init_pci		= NULL,
+	.kill_arch		= NULL,
+}"
+                :type ("jensen_mv" type (:type "class") nil nil))
+                nil [5211 5615]))          
+      :file "sys_jensen.c"
+      :pointmax 5633
+      :fsize 5632
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax '((semantic-list 5624 . 5632) (symbol 5616 . 5624) (symbol 5190 . 5210) (STRUCT 5183 . 5189) (VOID 4376 . 4380) (STATIC 4369 . 4375) (VOID 3923 . 3927) (STATIC 3916 . 3922))))
+  :file "!ssh:osbox:!home!osboxes!linux-stable!arch!alpha!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,174 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/sched.h" include (:system-flag t) nil [87 111])
+            ("linux/pci.h" include (:system-flag t) nil [112 134])
+            ("linux/ioport.h" include (:system-flag t) nil [135 160])
+            ("linux/init.h" include (:system-flag t) nil [161 184])
+            ("asm/acpi.h" include (:system-flag t) nil [187 208])
+            ("asm/segment.h" include (:system-flag t) nil [209 233])
+            ("asm/io.h" include (:system-flag t) nil [234 253])
+            ("asm/smp.h" include (:system-flag t) nil [254 274])
+            ("pci.h" include nil nil [276 292])
+            ("pci_probe" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [294 321])
+            ("pci_bf_sort" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [323 346])
+            ("pci_routeirq" variable (:type "int") nil [347 364])
+            ("pcibios_last_bus" variable
+               (:default-value "-1"
+                :type "int")
+                nil [365 391])
+            ("pirq_table_addr" variable (:type "unsigned long") nil [392 422])
+            ("pci_root_bus" variable
+               (:pointer 1
+                :type ("pci_bus" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [423 452])
+            ("pci_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bus" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [475 495])
+                    ("devfn" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [496 515])
+                    ("where" variable (:type "int") (reparse-symbol arg-sub-list) [516 526])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [527 536])
+                    ("value" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [537 548]))                  
+                :type "int")
+                nil [455 641])
+            ("pci_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bus" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [664 684])
+                    ("devfn" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [685 704])
+                    ("where" variable (:type "int") (reparse-symbol arg-sub-list) [705 715])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [716 725])
+                    ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [726 736]))                  
+                :type "int")
+                nil [643 831])
+            ("pci_root_ops" variable
+               (:default-value "{
+	.read = pci_read,
+	.write = pci_write,
+}"
+                :type ("pci_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [833 907])
+            ("pcibios_scanned" variable (:type "int") nil [1027 1047])
+            ("pcibios_fixup_device_resources" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1105 1125]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [1064 1394])
+            ("pcibios_fixup_bus" function
+               (:arguments 
+                  ( ("b" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1517 1535]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [1488 1677])
+            ("pcibios_scan_root" function
+               (:arguments 
+                  ( ("busnum" variable (:type "int") (reparse-symbol arg-sub-list) [1727 1738]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [1699 2443])
+            ("pcibios_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2470 2475]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2450 2628])
+            ("pcibios_assign_all_busses" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2670 2675]))                  
+                :type "unsigned int")
+                nil [2631 2732])
+            ("pcibios_enable_device" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2760 2780])
+                    ("mask" variable (:type "int") (reparse-symbol arg-sub-list) [2781 2790]))                  
+                :type "int")
+                nil [2734 2939])
+            ("pcibios_disable_device" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2970 2990]))                  
+                :type "void")
+                nil [2941 3069])
+            ("pci_scan_bus_on_node" function
+               (:arguments 
+                  ( ("busno" variable (:type "int") (reparse-symbol arg-sub-list) [3119 3129])
+                    ("ops" variable
+                       (:pointer 1
+                        :type ("pci_ops" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3130 3150])
+                    ("node" variable (:type "int") (reparse-symbol arg-sub-list) [3151 3160]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [3088 3616])
+            ("pci_scan_bus_with_sysdata" function
+               (:arguments 
+                  ( ("busno" variable (:type "int") (reparse-symbol arg-sub-list) [3671 3681]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [3635 3741]))          
+      :file "common.c"
+      :pointmax 3742
+      :fsize 3741
+      :lastmodtime '(24280 274)
+      :unmatched-syntax '((punctuation 3633 . 3634) (symbol 3625 . 3632) (STRUCT 3618 . 3624) (punctuation 3086 . 3087) (symbol 3078 . 3085) (STRUCT 3071 . 3077) (INT 2446 . 2449) (punctuation 1697 . 1698) (symbol 1689 . 1696) (STRUCT 1682 . 1688) (VOID 1483 . 1487) (VOID 1059 . 1063) (STATIC 1052 . 1058)))
+    (semanticdb-table "semanticdb-table"
+      :file "pci.h"
+      :fsize 2130
+      :lastmodtime '(24280 274)))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!linux!arch!x86_64!pci!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

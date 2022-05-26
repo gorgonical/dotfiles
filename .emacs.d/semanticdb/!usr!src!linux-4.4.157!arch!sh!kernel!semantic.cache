@@ -1,0 +1,97 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/dma-mapping.h" include (:system-flag t) nil [274 304])
+            ("linux/io.h" include (:system-flag t) nil [305 326])
+            ("nommu_map_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [361 380])
+                    ("page" variable
+                       (:pointer 1
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [381 399])
+                    ("offset" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [405 426])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [427 439])
+                    ("dir" variable (:type ("dma_data_direction" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [445 473])
+                    ("attrs" variable
+                       (:pointer 1
+                        :type ("dma_attrs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [479 503]))                  
+                :type ("dma_addr_t" type (:type "class") nil nil))
+                nil [328 654])
+            ("nommu_map_sg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [680 699])
+                    ("sg" variable
+                       (:pointer 1
+                        :type ("scatterlist" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [700 723])
+                    ("nents" variable (:type "int") (reparse-symbol arg-sub-list) [727 737])
+                    ("dir" variable (:type ("dma_data_direction" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [738 766])
+                    ("attrs" variable
+                       (:pointer 1
+                        :type ("dma_attrs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [770 794]))                  
+                :type "int")
+                nil [656 1062])
+            ("nommu_dma_ops" variable
+               (:default-value "{
+	.alloc			= dma_generic_alloc_coherent,
+	.free			= dma_generic_free_coherent,
+	.map_page		= nommu_map_page,
+	.map_sg			= nommu_map_sg,
+#ifdef CONFIG_DMA_NONCOHERENT
+	.sync_single_for_device	= nommu_sync_single,
+	.sync_sg_for_device	= nommu_sync_sg,
+#endif
+	.is_phys		= 1,
+}"
+                :type ("dma_map_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1513 1824])
+            ("no_iommu_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1852 1857]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1831 1912]))          
+      :file "dma-nommu.c"
+      :pointmax 1913
+      :fsize 1912
+      :lastmodtime '(23458 46652 0 0)
+      :unmatched-syntax '((VOID 1826 . 1830))))
+  :file "!usr!src!linux-4.4.157!arch!sh!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

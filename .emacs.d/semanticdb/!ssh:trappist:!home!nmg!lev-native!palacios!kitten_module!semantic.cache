@@ -1,0 +1,197 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kfs.h" include (:system-flag t) nil [221 241])
+            ("lwk/proc_fs.h" include (:system-flag t) nil [242 266])
+            ("lwk/print.h" include (:system-flag t) nil [267 289])
+            ("lwk/aspace.h" include (:system-flag t) nil [290 313])
+            ("lwk/task.h" include (:system-flag t) nil [314 335])
+            ("lwk/htable.h" include (:system-flag t) nil [336 359])
+            ("lwk/pmem.h" include (:system-flag t) nil [360 381])
+            ("arch/uaccess.h" include (:system-flag t) nil [383 408])
+            ("arch/apic.h" include (:system-flag t) nil [409 431])
+            ("palacios.h" include nil nil [433 454])
+            ("checkpoint.h" include nil nil [455 478])
+            ("kitten-exts.h" include nil nil [479 503])
+            ("vm.h" include nil nil [504 519])
+            ("palacios/vmm.h" include (:system-flag t) nil [521 546])
+            ("__ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [568 592])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [601 623])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [632 654]))                  
+                :type "long")
+                nil [548 5089])
+            ("vm_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5112 5133])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5143 5163])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5173 5193]))                  
+                :type "long")
+                nil [5091 5452])
+            ("vm_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5474 5495])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5504 5524]))                  
+                :type "int")
+                nil [5455 5998])
+            ("vm_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6020 6039]))                  
+                :type "int")
+                nil [6000 6140])
+            ("vm_ctrl_fops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+        .open           = vm_open, 
+        .close          = vm_close,
+        .unlocked_ioctl = vm_ioctl,
+        //	.write  = palacios_write,
+        //	.read   = palacios_read,
+        //	.poll   = palacios_poll, 
+}"
+                :type ("kfs_fops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6142 6402])
+            ("get_cpu_proc_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6435 6454])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6455 6469]))                  
+                :type "int")
+                nil [6405 7634])
+            ("get_mem_proc_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7666 7685])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7686 7700]))                  
+                :type "int")
+                nil [7636 8909])
+            ("palacios_create_vm" function
+               (:arguments 
+                  ( ("guest_image" variable
+                       (:pointer 1
+                        :type ("v3_guest_img" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8934 8968]))                  
+                :type "int")
+                nil [8911 13169])
+            ("vm_last_put" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kref" variable
+                       (:pointer 1
+                        :type ("kref" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13198 13217]))                  
+                :type "void")
+                nil [13174 15331])
+            ("vm_get" function
+               (:arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15345 15369]))                  
+                :type "void")
+                nil [15333 15412])
+            ("vm_put" function
+               (:arguments 
+                  ( ("guest" variable
+                       (:pointer 1
+                        :type ("v3_guest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15427 15451]))                  
+                :type "void")
+                nil [15415 15506]))          
+      :file "vm.c"
+      :pointmax 15507
+      :fsize 15506
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax '((PRIVATE 7693 . 7700) (PRIVATE 6462 . 6469)))
+    (semanticdb-table "semanticdb-table"
+      :file "palacios.h"
+      :fsize 7536
+      :lastmodtime '(24620 17583))
+    (semanticdb-table "semanticdb-table"
+      :file "checkpoint.h"
+      :fsize 212
+      :lastmodtime '(24620 17583))
+    (semanticdb-table "semanticdb-table"
+      :file "kitten-exts.h"
+      :fsize 1563
+      :lastmodtime '(24620 17583))
+    (semanticdb-table "semanticdb-table"
+      :file "vm.h"
+      :fsize 290
+      :lastmodtime '(24610 12847)))
+  :file "!ssh:trappist:!home!nmg!lev-native!palacios!kitten_module!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

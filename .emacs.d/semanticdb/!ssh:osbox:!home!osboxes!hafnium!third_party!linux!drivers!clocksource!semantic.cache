@@ -1,0 +1,1013 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/clk.h" include (:system-flag t) nil [138 160])
+            ("linux/clockchips.h" include (:system-flag t) nil [161 190])
+            ("linux/init.h" include (:system-flag t) nil [191 214])
+            ("linux/interrupt.h" include (:system-flag t) nil [215 243])
+            ("linux/sched_clock.h" include (:system-flag t) nil [244 274])
+            ("linux/slab.h" include (:system-flag t) nil [275 298])
+            ("linux/of.h" include (:system-flag t) nil [299 320])
+            ("linux/of_address.h" include (:system-flag t) nil [321 350])
+            ("linux/of_irq.h" include (:system-flag t) nil [351 376])
+            ("TIMER_NAME" variable (:constant-flag t) nil [386 396])
+            ("TIMER_LOAD_COUNT0" variable (:constant-flag t) nil [417 434])
+            ("TIMER_LOAD_COUNT1" variable (:constant-flag t) nil [448 465])
+            ("TIMER_CURRENT_VALUE0" variable (:constant-flag t) nil [479 499])
+            ("TIMER_CURRENT_VALUE1" variable (:constant-flag t) nil [513 533])
+            ("TIMER_CONTROL_REG3288" variable (:constant-flag t) nil [547 568])
+            ("TIMER_CONTROL_REG3399" variable (:constant-flag t) nil [582 603])
+            ("TIMER_INT_STATUS" variable (:constant-flag t) nil [617 633])
+            ("TIMER_DISABLE" variable (:constant-flag t) nil [648 661])
+            ("TIMER_ENABLE" variable (:constant-flag t) nil [675 687])
+            ("TIMER_MODE_FREE_RUNNING" variable (:constant-flag t) nil [701 724])
+            ("TIMER_MODE_USER_DEFINED_COUNT" variable (:constant-flag t) nil [744 773])
+            ("TIMER_INT_UNMASK" variable (:constant-flag t) nil [792 808])
+            ("rk_timer" type
+               (:members 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("__iomem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [845 859])
+                    ("ctrl" variable
+                       (:pointer 1
+                        :type ("__iomem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [866 880])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [882 898])
+                    ("pclk" variable
+                       (:pointer 1
+                        :type ("clk" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [900 917])
+                    ("freq" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [919 928])
+                    ("irq" variable (:type "int") (reparse-symbol classsubparts) [930 938]))                  
+                :type "struct")
+                nil [821 941])
+            ("rk_clkevt" type
+               (:members 
+                  ( ("ce" variable (:type ("clock_event_device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [963 992])
+                    ("timer" variable (:type ("rk_timer" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [994 1016]))                  
+                :type "struct")
+                nil [943 1019])
+            ("rk_clkevt" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("rk_clkevt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1021 1056])
+            ("rk_clksrc" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("rk_timer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1057 1091])
+            ("rk_timer" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ce" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1133 1163]))                  
+                :type ("rk_timer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1093 1223])
+            ("rk_timer_disable" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1261 1284]))                  
+                :type "void")
+                nil [1225 1333])
+            ("rk_timer_enable" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1370 1393])
+                    ("flags" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1394 1404]))                  
+                :type "void")
+                nil [1335 1460])
+            ("rk_timer_update_counter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cycles" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1498 1519])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1528 1551]))                  
+                :type "void")
+                nil [1462 1666])
+            ("rk_timer_interrupt_clear" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1705 1728]))                  
+                :type "void")
+                nil [1668 1784])
+            ("rk_timer_set_next_event" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cycles" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1828 1849])
+                    ("ce" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1857 1887]))                  
+                :type "int")
+                nil [1786 2095])
+            ("rk_timer_shutdown" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ce" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2126 2156]))                  
+                :type "int")
+                nil [2097 2238])
+            ("rk_timer_set_periodic" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ce" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2273 2303]))                  
+                :type "int")
+                nil [2240 2509])
+            ("rk_timer_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [2549 2557])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2558 2571]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [2511 2801])
+            ("rk_timer_sched_read" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2842 2847]))                  
+                :type ("notrace" type (:type "class") nil nil))
+                nil [2814 2915])
+            ("rk_timer_probe" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2950 2973])
+                    ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2974 2997]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2928 4438])
+            ("rk_timer_cleanup" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("rk_timer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4476 4499]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4452 4599])
+            ("rk_clkevt_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4634 4657]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4612 5746])
+            ("rk_clksrc_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5781 5804]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5759 6568])
+            ("rk_timer_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6602 6625]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6581 6802])
+            ("TIMER_OF_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rk3288_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6821 6834])
+                    ("" variable (:type ("rk_timer_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6860 6874]))                  
+                :type "int")
+                nil [6804 6875])
+            ("TIMER_OF_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rk3399_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6893 6906])
+                    ("" variable (:type ("rk_timer_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6932 6946]))                  
+                :type "int")
+                nil [6876 6947]))          
+      :file "timer-rockchip.c"
+      :pointmax 6948
+      :fsize 6947
+      :lastmodtime '(24817 60722)
+      :unmatched-syntax '((string 6907 . 6930) (string 6835 . 6858) (INT 6577 . 6580) (STATIC 6570 . 6576) (INT 5755 . 5758) (STATIC 5748 . 5754) (INT 4608 . 4611) (STATIC 4601 . 4607) (VOID 4447 . 4451) (STATIC 4440 . 4446) (INT 2924 . 2927) (STATIC 2917 . 2923) (symbol 2810 . 2813) (STATIC 2803 . 2809) (VOID 861 . 865) (VOID 840 . 844))
+      :lexical-table 
+        '(("TIMER_CURRENT_VALUE1" . ((number "0x0C" 534 . 538)))
+          ("TIMER_INT_UNMASK" . ((semantic-list "(1 << 2)" 811 . 819)))
+          ("TIMER_MODE_USER_DEFINED_COUNT" . ((semantic-list "(1 << 1)" 775 . 783)))
+          ("TIMER_DISABLE" . ((number "0x0" 663 . 666)))
+          ("TIMER_ENABLE" . ((number "0x1" 689 . 692)))
+          ("TIMER_INT_STATUS" . ((number "0x18" 634 . 638)))
+          ("TIMER_CONTROL_REG3288" . ((number "0x10" 569 . 573)))
+          ("TIMER_CONTROL_REG3399" . ((number "0x1c" 604 . 608)))
+          ("TIMER_LOAD_COUNT0" . ((number "0x00" 435 . 439)))
+          ("TIMER_LOAD_COUNT1" . ((number "0x04" 466 . 470)))
+          ("TIMER_NAME" . ((string "\"rk_timer\"" 397 . 407)))
+          ("TIMER_MODE_FREE_RUNNING" . ((semantic-list "(0 << 1)" 727 . 735)))
+          ("TIMER_CURRENT_VALUE0" . ((number "0x08" 500 . 504)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [164 170])
+            ("linux/init.h" include (:system-flag t) nil [197 220])
+            ("linux/kernel.h" include (:system-flag t) nil [221 246])
+            ("linux/device.h" include (:system-flag t) nil [247 272])
+            ("linux/smp.h" include (:system-flag t) nil [273 295])
+            ("linux/cpu.h" include (:system-flag t) nil [296 318])
+            ("linux/cpu_pm.h" include (:system-flag t) nil [319 344])
+            ("linux/clockchips.h" include (:system-flag t) nil [345 374])
+            ("linux/clocksource.h" include (:system-flag t) nil [375 405])
+            ("linux/interrupt.h" include (:system-flag t) nil [406 434])
+            ("linux/of_irq.h" include (:system-flag t) nil [435 460])
+            ("linux/of_address.h" include (:system-flag t) nil [461 490])
+            ("linux/io.h" include (:system-flag t) nil [491 512])
+            ("linux/slab.h" include (:system-flag t) nil [513 536])
+            ("linux/sched/clock.h" include (:system-flag t) nil [537 567])
+            ("linux/sched_clock.h" include (:system-flag t) nil [568 598])
+            ("linux/acpi.h" include (:system-flag t) nil [599 622])
+            ("asm/arch_timer.h" include (:system-flag t) nil [624 651])
+            ("asm/virt.h" include (:system-flag t) nil [652 673])
+            ("clocksource/arm_arch_timer.h" include (:system-flag t) nil [675 714])
+            ("CNTTIDR" variable (:constant-flag t) nil [724 731])
+            ("CNTTIDR_VIRT" variable (:constant-flag t) nil [746 758])
+            ("CNTACR" variable (:constant-flag t) nil [793 799])
+            ("CNTACR_RPCT" variable (:constant-flag t) nil [830 841])
+            ("CNTACR_RVCT" variable (:constant-flag t) nil [857 868])
+            ("CNTACR_RFRQ" variable (:constant-flag t) nil [884 895])
+            ("CNTACR_RVOFF" variable (:constant-flag t) nil [911 923])
+            ("CNTACR_RWVT" variable (:constant-flag t) nil [939 950])
+            ("CNTACR_RWPT" variable (:constant-flag t) nil [966 977])
+            ("CNTVCT_LO" variable (:constant-flag t) nil [994 1003])
+            ("CNTVCT_HI" variable (:constant-flag t) nil [1017 1026])
+            ("CNTFRQ" variable (:constant-flag t) nil [1040 1046])
+            ("CNTP_TVAL" variable (:constant-flag t) nil [1061 1070])
+            ("CNTP_CTL" variable (:constant-flag t) nil [1084 1092])
+            ("CNTV_TVAL" variable (:constant-flag t) nil [1106 1115])
+            ("CNTV_CTL" variable (:constant-flag t) nil [1129 1137])
+            ("__initdata" variable (:type ("arch_timers_present" type (:type "class") nil nil)) nil [1160 1191])
+            ("arch_counter_base" variable
+               (:pointer 1
+                :type ("__iomem" type (:type "class") nil nil))
+                nil [1205 1232])
+            ("arch_timer" type
+               (:members 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("__iomem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1260 1274])
+                    ("evt" variable (:type ("clock_event_device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1276 1306]))                  
+                :type "struct")
+                nil [1234 1309])
+            ("to_arch_timer" variable (:constant-flag t) nil [1319 1332])
+            ("arch_timer_rate" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [1377 1404])
+            ("arch_timer_ppi" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "int")
+                nil [1405 1457])
+            ("arch_timer_evt" variable
+               (:pointer 1
+                :type ("__percpu" type (:type "class") nil nil))
+                nil [1492 1517])
+            ("arch_timer_uses_ppi" variable
+               (:typemodifiers ("static")
+                :default-value "ARCH_TIMER_VIRT_PPI"
+                :type ("arch_timer_ppi_nr" type (:type "enum") nil nil))
+                nil [1519 1591])
+            ("arch_timer_c3stop" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1592 1622])
+            ("arch_timer_mem_use_virtual" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1623 1662])
+            ("arch_counter_suspend_stop" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1663 1701])
+            ("vdso_default" variable
+               (:typemodifiers ("static")
+                :default-value "true"
+                :type "bool")
+                nil [1702 1734])
+            ("evtstrm_available" variable
+               (:typemodifiers ("static")
+                :default-value "CPU_MASK_NONE"
+                :type ("cpumask_t" type (:type "class") nil nil))
+                nil [1736 1787])
+            ("evtstrm_enable" variable
+               (:typemodifiers ("static")
+                :default-value "IS_ENABLED(CONFIG_ARM_ARCH_TIMER_EVTSTREAM)"
+                :type "bool")
+                nil [1788 1861])
+            ("early_evtstrm_cfg" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1899 1909]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1874 1954])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_evtstrm_cfg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2005 2023]))                  
+                :type "int")
+                nil [1955 2024])
+            ("arch_timer_reg_write" function
+               (:arguments 
+                  ( ("access" variable (:type "int") (reparse-symbol arg-sub-list) [2120 2131])
+                    ("reg" variable (:type ("arch_timer_reg" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2132 2156])
+                    ("val" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2157 2165])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2171 2202]))                  
+                :type "void")
+                nil [2094 2849])
+            ("arch_timer_reg_read" function
+               (:arguments 
+                  ( ("access" variable (:type "int") (reparse-symbol arg-sub-list) [2898 2909])
+                    ("reg" variable (:type ("arch_timer_reg" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2910 2934])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2938 2969]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [2874 3641])
+            ("arch_counter_get_cntpct_stable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3693 3698]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [3658 3746])
+            ("arch_counter_get_cntpct" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3791 3796]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [3763 3837])
+            ("arch_counter_get_cntvct_stable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3889 3894]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [3854 3942])
+            ("arch_counter_get_cntvct" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3987 3992]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [3959 4033])
+            ("u64" function
+               (:arguments 
+                  ( ("" variable (:type ("arch_timer_read_counter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4323 4347]))                  
+                :type "int")
+                nil [4317 4353])
+            ("arch_counter_get_cntvct" variable (:type "int") nil [4356 4380])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("arch_timer_read_counter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4399 4423]))                  
+                :type "int")
+                nil [4381 4424])
+            ("arch_counter_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :type ("clocksource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4455 4478]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [4426 4517])
+            ("arch_counter_read_cc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cyclecounter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4551 4581]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [4519 4620])
+            ("clocksource_counter" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name	= \"arch_sys_counter\",
+	.rating	= 400,
+	.read	= arch_counter_read,
+	.mask	= CLOCKSOURCE_MASK(56),
+	.flags	= CLOCK_SOURCE_IS_CONTINUOUS,
+}"
+                :type ("clocksource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4622 4816])
+            ("__ro_after_init" variable
+               (:default-value "{
+	.read	= arch_counter_read_cc,
+	.mask	= CLOCKSOURCE_MASK(56),
+}"
+                :type ("cyclecounter" type (:type "class") nil nil))
+                nil [4845 4942])
+            ("ate_acpi_oem_info" type
+               (:members 
+                  ( ("oem_id" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4972 5006])
+                    ("oem_table_id" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5008 5054])
+                    ("oem_revision" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5056 5073]))                  
+                :type "struct")
+                nil [4944 5076])
+            ("arch_timer_check_ool_workaround" variable (:constant-flag t) nil [16354 16385])
+            ("arch_timer_this_cpu_has_cntvct_wa" variable (:constant-flag t) nil [16416 16449])
+            ("arch_timer_counter_has_wa" variable (:constant-flag t) nil [16472 16497])
+            ("timer_handler" function
+               (:arguments 
+                  ( ("access" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [16613 16630])
+                    ("evt" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16636 16667]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [16587 16965])
+            ("arch_timer_handler_virt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [17010 17018])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17019 17032]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [16967 17131])
+            ("arch_timer_handler_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [17176 17184])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17185 17198]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [17133 17297])
+            ("arch_timer_handler_phys_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [17346 17354])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17355 17368]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [17299 17471])
+            ("arch_timer_handler_virt_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [17520 17528])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17529 17542]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [17473 17645])
+            ("timer_shutdown" function
+               (:arguments 
+                  ( ("access" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [17689 17706])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17714 17745]))                  
+                :type "int")
+                nil [17670 17943])
+            ("arch_timer_shutdown_virt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17981 18012]))                  
+                :type "int")
+                nil [17945 18069])
+            ("arch_timer_shutdown_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18107 18138]))                  
+                :type "int")
+                nil [18071 18195])
+            ("arch_timer_shutdown_virt_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18237 18268]))                  
+                :type "int")
+                nil [18197 18329])
+            ("arch_timer_shutdown_phys_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18371 18402]))                  
+                :type "int")
+                nil [18331 18463])
+            ("set_next_event" function
+               (:arguments 
+                  ( ("access" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [18508 18525])
+                    ("evt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18526 18544])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18553 18584]))                  
+                :type "void")
+                nil [18488 18865])
+            ("arch_timer_set_next_event_virt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("evt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18909 18927])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18935 18966]))                  
+                :type "int")
+                nil [18867 19032])
+            ("arch_timer_set_next_event_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("evt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19076 19094])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19102 19133]))                  
+                :type "int")
+                nil [19034 19199])
+            ("arch_timer_set_next_event_virt_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("evt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19247 19265])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19277 19308]))                  
+                :type "int")
+                nil [19201 19378])
+            ("arch_timer_set_next_event_phys_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("evt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19426 19444])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19456 19487]))                  
+                :type "int")
+                nil [19380 19557])
+            ("__arch_timer_setup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19590 19604])
+                    ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19615 19646]))                  
+                :type "void")
+                nil [19559 21296])
+            ("arch_timer_evtstrm_enable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("divider" variable (:type "int") (reparse-symbol arg-sub-list) [21336 21348]))                  
+                :type "void")
+                nil [21298 21701])
+            ("arch_timer_configure_evtstream" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21746 21751]))                  
+                :type "void")
+                nil [21703 22058])
+            ("arch_counter_set_user_access" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22101 22106]))                  
+                :type "void")
+                nil [22060 22773])
+            ("arch_timer_has_nonsecure_ppi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22816 22821]))                  
+                :type "bool")
+                nil [22775 22937])
+            ("check_ppi_trigger" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [22968 22976]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [22939 23258])
+            ("arch_timer_starting_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [23295 23312]))                  
+                :type "int")
+                nil [23260 23874])
+            ("arch_timer_of_configure_rate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("rate" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24154 24163])
+                    ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24164 24187]))                  
+                :type "void")
+                nil [24113 24477])
+            ("arch_timer_banner" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24509 24523]))                  
+                :type "void")
+                nil [24479 25111])
+            ("arch_timer_get_rate" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25137 25142]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [25113 25171])
+            ("arch_timer_evtstrm_available" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25207 25212]))                  
+                :type "bool")
+                nil [25173 25503])
+            ("arch_counter_get_cntvct_mem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25544 25549]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [25505 25829])
+            ("arch_timer_kvm_info" variable
+               (:typemodifiers ("static")
+                :type ("arch_timer_kvm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25831 25885])
+            ("arch_timer_get_kvm_info" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25939 25944]))                  
+                :type ("arch_timer_kvm_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25887 25978])
+            ("arch_counter_register" function
+               (:arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [26021 26035]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [25992 27209])
+            ("arch_timer_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("clk" variable
+                       (:pointer 1
+                        :type ("clock_event_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27239 27270]))                  
+                :type "void")
+                nil [27211 27539])
+            ("arch_timer_dying_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [27573 27590]))                  
+                :type "int")
+                nil [27541 27754])
+            ("arch_timer_cpu_pm_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28740 28745]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [28710 28760])
+            ("arch_timer_cpu_pm_deinit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28806 28811]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [28774 28815])
+            ("arch_timer_register" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28862 28867]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [28835 30589])
+            ("arch_timer_mem_register" function
+               (:arguments 
+                  ( ("__iomem" variable (:type "void") (reparse-symbol arg-sub-list) [30633 30647])
+                    ("" variable (:type ("base" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30647 30652])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [30653 30670]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [30602 31157])
+            ("__initconst" variable
+               (:default-value "{
+	{ .compatible   = \"arm,armv7-timer\",    },
+	{ .compatible   = \"arm,armv8-timer\",    },
+	{},
+}"
+                :type "int")
+                nil [31214 31325])
+            ("__initconst" variable
+               (:default-value "{
+	{ .compatible   = \"arm,armv7-timer-mem\", },
+	{},
+}"
+                :type "int")
+                nil [31386 31454])
+            ("arch_timer_needs_of_probing" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [31503 31508]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [31468 32149])
+            ("arch_timer_common_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [32192 32197]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [32162 32319])
+            ("arch_timer_select_ppi" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [33066 33071]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [33037 33344])
+            ("arch_timer_populate_kvm_info" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [33394 33399]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [33358 33589])
+            ("arch_timer_of_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33628 33651]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [33602 34989])
+            ("TIMER_OF_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("armv7_arch_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35007 35024])
+                    ("" variable (:type ("arch_timer_of_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35044 35063]))                  
+                :type "int")
+                nil [34990 35064])
+            ("TIMER_OF_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("armv8_arch_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35082 35099])
+                    ("" variable (:type ("arch_timer_of_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35119 35138]))                  
+                :type "int")
+                nil [35065 35139])
+            ("arch_timer_mem_frame_get_cntfrq" function
+               (:arguments 
+                  ( ("frame" variable
+                       (:pointer 1
+                        :type ("arch_timer_mem_frame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35191 35226]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [35152 35467])
+            ("arch_timer_mem_find_best_frame" function
+               (:arguments 
+                  ( ("timer_mem" variable
+                       (:pointer 1
+                        :type ("arch_timer_mem" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35544 35577]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [35506 36682])
+            ("arch_timer_mem_frame_register" function
+               (:arguments 
+                  ( ("frame" variable
+                       (:pointer 1
+                        :type ("arch_timer_mem_frame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36732 36767]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [36695 37422])
+            ("arch_timer_mem_of_init" function
+               (:arguments 
+                  ( ("np" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37465 37488]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [37435 39277])
+            ("TIMER_OF_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("armv7_arch_timer_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39295 39316])
+                    ("" variable (:type ("arch_timer_mem_of_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39349 39372]))                  
+                :type "int")
+                nil [39278 39373]))          
+      :file "arm_arch_timer.c"
+      :pointmax 42849
+      :fsize 42848
+      :lastmodtime '(24817 60722)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CNTP_TVAL" . ((number "0x28" 1071 . 1075)))
+          ("CNTP_CTL" . ((number "0x2c" 1093 . 1097)))
+          ("CNTACR_RPCT" . ((symbol "BIT" 842 . 845) (semantic-list "(0)" 845 . 848)))
+          ("to_arch_timer" (spp-arg-list ("e") 1332 . 1335) . ((symbol "container_of" 1336 . 1348) (semantic-list "(e, struct arch_timer, evt)" 1348 . 1375)))
+          ("CNTACR_RVOFF" . ((symbol "BIT" 924 . 927) (semantic-list "(3)" 927 . 930)))
+          ("CNTV_TVAL" . ((number "0x38" 1116 . 1120)))
+          ("arch_timer_counter_has_wa" (spp-arg-list nil 16497 . 16499) . ((semantic-list "({false;})" 16502 . 16512)))
+          ("CNTACR_RVCT" . ((symbol "BIT" 869 . 872) (semantic-list "(1)" 872 . 875)))
+          ("CNTTIDR_VIRT" (spp-arg-list ("n") 758 . 761) . ((semantic-list "(BIT(1) << ((n) * 4))" 762 . 783)))
+          ("CNTACR_RWVT" . ((symbol "BIT" 951 . 954) (semantic-list "(4)" 954 . 957)))
+          ("CNTVCT_HI" . ((number "0x0c" 1027 . 1031)))
+          ("arch_timer_check_ool_workaround" (spp-arg-list ("t" "a") 16385 . 16390) . 
+              ((DO "do" 16392 . 16394) (semantic-list "{ }" 16395 . 16398) (WHILE "while" 16399 . 16404) (semantic-list "(0)" 16404 . 16407)))
+          ("arch_timer_this_cpu_has_cntvct_wa" (spp-arg-list nil 16449 . 16451) . ((semantic-list "({false;})" 16453 . 16463)))
+          ("CNTACR_RFRQ" . ((symbol "BIT" 896 . 899) (semantic-list "(2)" 899 . 902)))
+          ("CNTV_CTL" . ((number "0x3c" 1138 . 1142)))
+          ("CNTFRQ" . ((number "0x10" 1048 . 1052)))
+          ("CNTTIDR" . ((number "0x08" 733 . 737)))
+          ("CNTACR" (spp-arg-list ("n") 799 . 802) . ((semantic-list "(0x40 + ((n) * 4))" 803 . 821)))
+          ("CNTVCT_LO" . ((number "0x08" 1004 . 1008)))
+          ("pr_fmt" (spp-arg-list ("fmt") 170 . 175) . ((string "\"arch_timer: \"" 177 . 191) (symbol "fmt" 192 . 195)))
+          ("CNTACR_RWPT" . ((symbol "BIT" 978 . 981) (semantic-list "(5)" 981 . 984)))
+          )
+))
+  :file "!ssh:osbox:!home!osboxes!hafnium!third_party!linux!drivers!clocksource!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

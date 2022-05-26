@@ -1,0 +1,795 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("interfaces/vmm_xpmem.h" include (:system-flag t) nil [707 740])
+            ("palacios/vmm.h" include (:system-flag t) nil [741 766])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [767 798])
+            ("palacios/vm.h" include (:system-flag t) nil [799 823])
+            ("devices/xpmem.h" include (:system-flag t) nil [824 850])
+            ("xpmem_hooks" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("v3_xpmem_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [852 908])
+            ("nr_host_vectors" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [909 962])
+            ("V3_Init_Xpmem" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [984 1014])
+                    ("nr_vectors" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1029 1064]))                  
+                :type "void")
+                nil [964 1131])
+            ("V3_xpmem_command" function
+               (:arguments 
+                  ( ("v3_xpmem" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1155 1188])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1207 1235]))                  
+                :type "int")
+                nil [1133 1283])
+            ("V3_xpmem_raise_irq" function
+               (:arguments 
+                  ( ("v3_xpmem" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1309 1342])
+                    ("guest_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1363 1400]))                  
+                :type "int")
+                nil [1285 1459])
+            ("v3_xpmem_get_nr_host_vectors" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1499 1504]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1461 1536])
+            ("v3_xpmem_host_connect" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1581 1608])
+                    ("v3_xpmem" variable
+                       (:pointer 1
+                        :type ("v3_xpmem_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1632 1665]))                  
+                :type ("xpmem_host_handle_t" type (:type "class") nil nil))
+                nil [1538 1820])
+            ("v3_xpmem_host_disconnect" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1852 1879]))                  
+                :type "int")
+                nil [1822 2018])
+            ("v3_xpmem_host_command" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2047 2076])
+                    ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2100 2126]))                  
+                :type "int")
+                nil [2020 2254])
+            ("v3_xpmem_read_apicid" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2281 2308])
+                    ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2330 2354]))                  
+                :type "int")
+                nil [2256 2490])
+            ("v3_xpmem_request_irq" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2519 2546])
+                    ("guest_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2569 2602]))                  
+                :type "int")
+                nil [2493 2747])
+            ("v3_xpmem_release_irq" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2774 2801])
+                    ("host_vector" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2823 2855]))                  
+                :type "int")
+                nil [2749 2999])
+            ("v3_xpmem_deliver_irq" function
+               (:arguments 
+                  ( ("handle" variable (:type ("xpmem_host_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3027 3054])
+                    ("segid" variable (:type ("xpmem_segid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3076 3102])
+                    ("sigid" variable (:type ("xpmem_sigid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3124 3150])
+                    ("domid" variable (:type ("xpmem_domid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3172 3198]))                  
+                :type "void")
+                nil [3001 3343]))          
+      :file "vmm_xpmem.c"
+      :pointmax 3344
+      :fsize 3343
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("interfaces/vmm_console.h" include (:system-flag t) nil [819 854])
+            ("palacios/vmm.h" include (:system-flag t) nil [855 880])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [881 912])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [913 944])
+            ("palacios/vm.h" include (:system-flag t) nil [945 969])
+            ("console_hooks" variable
+               (:pointer 1
+                :default-value "0"
+                :type ("v3_console_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [971 1015])
+            ("v3_console_open" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1046 1069])
+                    ("width" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1070 1085])
+                    ("height" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1086 1102]))                  
+                :type ("v3_console_t" type (:type "class") nil nil))
+                nil [1017 1256])
+            ("v3_console_close" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1280 1298]))                  
+                :type "void")
+                nil [1258 1402])
+            ("v3_console_set_cursor" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1430 1448])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [1449 1455])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [1456 1462]))                  
+                :type "int")
+                nil [1404 1605])
+            ("v3_console_set_char" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1631 1649])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [1650 1656])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [1657 1663])
+                    ("c" variable (:type "char") (reparse-symbol arg-sub-list) [1664 1671])
+                    ("style" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1672 1686]))                  
+                :type "int")
+                nil [1607 1849])
+            ("v3_console_scroll" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1878 1896])
+                    ("lines" variable (:type "int") (reparse-symbol arg-sub-list) [1897 1907]))                  
+                :type "int")
+                nil [1856 2047])
+            ("v3_console_set_text_resolution" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2084 2102])
+                    ("cols" variable (:type "int") (reparse-symbol arg-sub-list) [2103 2112])
+                    ("rows" variable (:type "int") (reparse-symbol arg-sub-list) [2113 2122]))                  
+                :type "int")
+                nil [2049 2293])
+            ("v3_console_update" function
+               (:arguments 
+                  ( ("cons" variable (:type ("v3_console_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2317 2335]))                  
+                :type "int")
+                nil [2295 2468])
+            ("V3_Init_Console" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_console_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2491 2523]))                  
+                :type "void")
+                nil [2470 2606]))          
+      :file "vmm_console.c"
+      :pointmax 2607
+      :fsize 2606
+      :lastmodtime '(24610 12847)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [1 26])
+            ("palacios/vmx_ept.h" include (:system-flag t) nil [27 56])
+            ("palacios/vmm_checkpoint.h" include (:system-flag t) nil [57 93])
+            ("interfaces/vmm_pisces.h" include (:system-flag t) nil [95 129])
+            ("v3_splice_ept" function
+               (:arguments 
+                  ( ("vm_info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [149 177])
+                    ("pml4_index" variable (:type "int") (reparse-symbol arg-sub-list) [178 193])
+                    ("pml4e_va_vptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [194 214]))                  
+                :type "int")
+                nil [131 824])
+            ("__send_ipi" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vm_info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [855 883])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [884 904]))                  
+                :type "int")
+                nil [826 1198])
+            ("flush_guest_pi_bitmap" function
+               (:arguments 
+                  ( ("vm_info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1226 1253])
+                    ("pi_desc" variable
+                       (:pointer 1
+                        :type ("pi_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1254 1279]))                  
+                :type "int")
+                nil [1200 1694])
+            ("send_guest_ipi" function
+               (:arguments 
+                  ( ("vm_info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1715 1742])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1743 1763]))                  
+                :type "int")
+                nil [1696 1805])
+            ("permit_external_ipi" function
+               (:arguments 
+                  ( ("vm_info" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1831 1858])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1859 1879])
+                    ("cpu_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1880 1900]))                  
+                :type "int")
+                nil [1807 1962]))          
+      :file "vmm_pisces.c"
+      :pointmax 2203
+      :fsize 2202
+      :lastmodtime '(24687 42064)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("obj-y" variable (:default-value ("vmm_numa.o")) nil [716 736])
+            ("obj-y" variable (:default-value ("null.o")) nil [736 752]))          
+      :file "Makefile"
+      :pointmax 753
+      :fsize 752
+      :lastmodtime '(24624 4225)
+      :unmatched-syntax '((symbol 702 . 714) (punctuation 700 . 701) (punctuation 699 . 700) (semantic-list 669 . 687) (punctuation 668 . 669) (symbol 664 . 668) (bol 664 . 664) (symbol 651 . 662) (punctuation 649 . 650) (punctuation 648 . 649) (semantic-list 618 . 635) (punctuation 617 . 618) (symbol 613 . 617) (bol 613 . 613) (symbol 596 . 610) (punctuation 594 . 595) (punctuation 593 . 594) (semantic-list 563 . 592) (punctuation 562 . 563) (symbol 558 . 562) (bol 558 . 558) (symbol 546 . 557) (symbol 523 . 533) (punctuation 521 . 522) (punctuation 520 . 521) (semantic-list 490 . 510) (punctuation 489 . 490) (symbol 485 . 489) (bol 485 . 485) (symbol 464 . 484) (punctuation 462 . 463) (punctuation 461 . 462) (semantic-list 431 . 457) (punctuation 430 . 431) (symbol 426 . 430) (bol 426 . 426) (symbol 411 . 425) (punctuation 409 . 410) (punctuation 408 . 409) (semantic-list 378 . 401) (punctuation 377 . 378) (symbol 373 . 377) (bol 373 . 373) (symbol 354 . 372) (punctuation 352 . 353) (punctuation 351 . 352) (semantic-list 321 . 346) (punctuation 320 . 321) (symbol 316 . 320) (bol 316 . 316) (symbol 293 . 315) (punctuation 291 . 292) (punctuation 290 . 291) (semantic-list 260 . 288) (punctuation 259 . 260) (symbol 255 . 259) (bol 255 . 255) (symbol 242 . 254) (punctuation 240 . 241) (punctuation 239 . 240) (semantic-list 209 . 227) (punctuation 208 . 209) (symbol 204 . 208) (bol 204 . 204) (symbol 190 . 203) (punctuation 188 . 189) (punctuation 187 . 188) (semantic-list 157 . 176) (punctuation 156 . 157) (symbol 152 . 156) (bol 152 . 152) (symbol 141 . 151) (punctuation 139 . 140) (punctuation 138 . 139) (semantic-list 108 . 124) (punctuation 107 . 108) (symbol 103 . 107) (bol 103 . 103) (symbol 90 . 102) (punctuation 88 . 89) (punctuation 87 . 88) (semantic-list 57 . 75) (punctuation 56 . 57) (symbol 52 . 56) (bol 52 . 52) (symbol 39 . 51) (punctuation 37 . 38) (punctuation 36 . 37) (semantic-list 6 . 24) (punctuation 5 . 6) (symbol 1 . 5) (bol 1 . 1)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [695 720])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [721 752])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [753 784])
+            ("palacios/vm.h" include (:system-flag t) nil [785 809])
+            ("interfaces/vmm_packet.h" include (:system-flag t) nil [810 844])
+            ("packet_hooks" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("v3_packet_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [846 898])
+            ("V3_Init_Packet" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_packet_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [921 952]))                  
+                :type "void")
+                nil [900 1047])
+            ("v3_packet_open" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1081 1104])
+                    ("host_if_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1114 1147])
+                    ("mac_buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1157 1185])
+                    ("is_tap" variable (:type "bool") (reparse-symbol arg-sub-list) [1194 1221])
+                    ("input_fn" variable (:type ("v3_pkt_input_fn_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1230 1259])
+                    ("guest_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1268 1299]))                  
+                :type ("v3_pkt_iface_t" type (:type "class") nil nil))
+                nil [1049 1665])
+            ("v3_packet_send" function
+               (:arguments 
+                  ( ("iface" variable (:type ("v3_pkt_iface_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1686 1709])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1719 1740])
+                    ("len" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1750 1771]))                  
+                :type "int")
+                nil [1667 1915])
+            ("v3_packet_close" function
+               (:arguments 
+                  ( ("iface" variable (:type ("v3_pkt_iface_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1939 1960]))                  
+                :type "void")
+                nil [1917 2090]))          
+      :file "vmm_packet.c"
+      :pointmax 2092
+      :fsize 2154
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("interfaces/vmm_socket.h" include (:system-flag t) nil [707 741])
+            ("palacios/vmm.h" include (:system-flag t) nil [742 767])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [768 799])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [800 831])
+            ("palacios/vm.h" include (:system-flag t) nil [832 856])
+            ("sock_hooks" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "0"
+                :type ("v3_socket_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [858 905])
+            ("v3_inet_addr" function
+               (:arguments 
+                  ( ("ip_str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [930 950]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [908 2836])
+            ("v3_inet_ntoa" function
+               (:pointer 1
+                :arguments 
+                  ( ("addr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2859 2873]))                  
+                :type "char")
+                nil [2839 3286])
+            ("v3_htons" function
+               (:arguments 
+                  ( ("n" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3310 3321]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [3292 3379])
+            ("v3_ntohs" function
+               (:arguments 
+                  ( ("n" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3400 3411]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [3382 3439])
+            ("v3_htonl" function
+               (:arguments 
+                  ( ("n" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3460 3471]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3442 3600])
+            ("v3_ntohl" function
+               (:arguments 
+                  ( ("n" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3621 3632]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3603 3658])
+            ("v3_create_udp_socket" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3692 3715]))                  
+                :type ("v3_sock_t" type (:type "class") nil nil))
+                nil [3661 3925])
+            ("v3_create_tcp_socket" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3958 3981]))                  
+                :type ("v3_sock_t" type (:type "class") nil nil))
+                nil [3927 4190])
+            ("v3_socket_close" function
+               (:arguments 
+                  ( ("sock" variable (:type ("v3_sock_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4213 4228]))                  
+                :type "void")
+                nil [4192 4323])
+            ("v3_socket_bind" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4344 4365])
+                    ("port" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4366 4380]))                  
+                :type "int")
+                nil [4325 4486])
+            ("v3_socket_listen" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4509 4530])
+                    ("backlog" variable (:type "int") (reparse-symbol arg-sub-list) [4531 4543]))                  
+                :type "int")
+                nil [4488 4656])
+            ("v3_socket_accept" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4685 4706])
+                    ("remote_ip" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4707 4728])
+                    ("port" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4729 4745]))                  
+                :type ("v3_sock_t" type (:type "class") nil nil))
+                nil [4658 4866])
+            ("v3_connect_to_ip" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4889 4910])
+                    ("hostip" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4911 4933])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4934 4954]))                  
+                :type "int")
+                nil [4868 5090])
+            ("v3_connect_to_host" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5115 5136])
+                    ("hostname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5137 5159])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5160 5180]))                  
+                :type "int")
+                nil [5092 5318])
+            ("v3_socket_send" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5339 5360])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5361 5381])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5382 5401]))                  
+                :type "int")
+                nil [5320 5511])
+            ("v3_socket_recv" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5532 5553])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5554 5568])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5569 5588]))                  
+                :type "int")
+                nil [5513 5698])
+            ("v3_socket_send_to_host" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5727 5748])
+                    ("hostname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5749 5771])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5772 5792])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5800 5820])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5821 5840]))                  
+                :type "int")
+                nil [5700 5980])
+            ("v3_socket_send_to_ip" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6007 6028])
+                    ("ip" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6029 6047])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6048 6068])
+                    ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6074 6094])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6095 6114]))                  
+                :type "int")
+                nil [5982 6244])
+            ("v3_socket_recv_from_host" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6275 6296])
+                    ("hostname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6297 6319])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6320 6340])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6350 6364])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6365 6384]))                  
+                :type "int")
+                nil [6246 6528])
+            ("v3_socket_recv_from_ip" function
+               (:arguments 
+                  ( ("sock" variable
+                       (:constant-flag t
+                        :type ("v3_sock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6557 6578])
+                    ("ip" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6579 6597])
+                    ("port" variable
+                       (:constant-flag t
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6598 6618])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6626 6640])
+                    ("len" variable
+                       (:constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6641 6660]))                  
+                :type "int")
+                nil [6530 6794])
+            ("V3_Init_Sockets" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_socket_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6820 6851]))                  
+                :type "void")
+                nil [6799 6931]))          
+      :file "vmm_socket.c"
+      :pointmax 6932
+      :fsize 7701
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("interfaces/vmm_file.h" include (:system-flag t) nil [703 735])
+            ("palacios/vmm.h" include (:system-flag t) nil [736 761])
+            ("palacios/vmm_debug.h" include (:system-flag t) nil [762 793])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [794 825])
+            ("palacios/vm.h" include (:system-flag t) nil [826 850])
+            ("file_hooks" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("v3_file_hooks" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [852 900])
+            ("V3_Init_File" function
+               (:arguments 
+                  ( ("hooks" variable
+                       (:pointer 1
+                        :type ("v3_file_hooks" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [921 950]))                  
+                :type "void")
+                nil [902 1039])
+            ("v3_mkdir" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1056 1072])
+                    ("permissions" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1076 1099])
+                    ("recursive" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1103 1124]))                  
+                :type "int")
+                nil [1042 1255])
+            ("v3_file_open" function
+               (:arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1282 1307])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [1315 1340]))                  
+                :type ("v3_file_t" type (:type "class") nil nil))
+                nil [1258 1450])
+            ("v3_file_close" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1471 1486]))                  
+                :type "int")
+                nil [1452 1593])
+            ("v3_file_size" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1615 1630]))                  
+                :type ("loff_t" type (:type "class") nil nil))
+                nil [1595 1735])
+            ("v3_file_read" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1758 1775])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1783 1799])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1807 1823])
+                    ("off" variable (:type ("loff_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1831 1847]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1737 1967])
+            ("v3_file_write" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1992 2009])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2018 2034])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2042 2058])
+                    ("off" variable (:type ("loff_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2067 2083]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [1970 2205])
+            ("v3_file_readv" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2230 2247])
+                    ("iov_arr" variable
+                       (:pointer 1
+                        :type ("v3_iov_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2256 2276])
+                    ("iov_len" variable (:type "int") (reparse-symbol arg-sub-list) [2284 2304])
+                    ("off" variable (:type ("loff_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2312 2328]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [2208 2458])
+            ("v3_file_writev" function
+               (:arguments 
+                  ( ("file" variable (:type ("v3_file_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2484 2501])
+                    ("iov_arr" variable
+                       (:pointer 1
+                        :type ("v3_iov_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2511 2531])
+                    ("iov_len" variable (:type "int") (reparse-symbol arg-sub-list) [2540 2560])
+                    ("off" variable (:type ("loff_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2569 2585]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [2461 2717]))          
+      :file "vmm_file.c"
+      :pointmax 2718
+      :fsize 2822
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios!palacios!src!interfaces!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

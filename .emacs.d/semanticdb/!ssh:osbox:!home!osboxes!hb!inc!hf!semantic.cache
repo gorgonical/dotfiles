@@ -1,0 +1,423 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/addr.h" include nil nil [223 243])
+            ("hf/ffa.h" include nil nil [244 263])
+            ("hf/memiter.h" include nil nil [264 287])
+            ("hf/string.h" include nil nil [288 310])
+            ("hf/vm.h" include nil nil [311 329])
+            ("MANIFEST_INVALID_ADDRESS" variable (:constant-flag t) nil [339 363])
+            ("MANIFEST_INVALID_ID" variable (:constant-flag t) nil [383 402])
+            ("SP_PKG_HEADER_MAGIC" variable (:constant-flag t) nil [423 442])
+            ("SP_PKG_HEADER_VERSION" variable (:constant-flag t) nil [464 485])
+            ("SP_RTX_BUF_NAME_SIZE" variable (:constant-flag t) nil [501 521])
+            ("SP_MAX_MEMORY_REGIONS" variable (:constant-flag t) nil [534 555])
+            ("SP_MAX_DEVICE_REGIONS" variable (:constant-flag t) nil [566 587])
+            ("SP_MAX_INTERRUPTS_PER_DEVICE" variable (:constant-flag t) nil [598 626])
+            ("SP_MAX_STREAMS_PER_DEVICE" variable (:constant-flag t) nil [637 662])
+            ("MM_PERM_MASK" variable (:constant-flag t) nil [728 740])
+            ("DEFAULT_BOOT_ORDER" variable (:constant-flag t) nil [754 772])
+            ("run_time_el" type
+               (:members 
+                  ( ("EL1" variable
+                       (:constant-flag t
+                        :default-value (804 805)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [798 805])
+                    ("S_EL0" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [808 814])
+                    ("S_EL1" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [816 822])
+                    ("SUPERVISOR_MODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [824 840])
+                    ("SECURE_USER_MODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [842 859])
+                    ("SECURE_SUPERVISOR_MODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [861 885]))                  
+                :type "enum")
+                nil [778 886])
+            ("execution_state" type
+               (:members 
+                  ( ("AARCH64" variable
+                       (:constant-flag t
+                        :default-value (921 922)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [911 922])
+                    ("AARCH32" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [924 933]))                  
+                :type "enum")
+                nil [888 934])
+            ("xlat_granule" type
+               (:members 
+                  ( ("PAGE_4KB" variable
+                       (:constant-flag t
+                        :default-value (967 968)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [956 968])
+                    ("PAGE_16KB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [970 980])
+                    ("PAGE_64KB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [981 992]))                  
+                :type "enum")
+                nil [936 993])
+            ("memory_region" type
+               (:members 
+                  ( ("base_address" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1192 1215])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1248 1268])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1308 1328])
+                    ("name" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1371 1390]))                  
+                :type "struct")
+                nil [1074 1393])
+            ("interrupt" type
+               (:members 
+                  ( ("id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1415 1427])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1429 1449]))                  
+                :type "struct")
+                nil [1395 1452])
+            ("device_region" type
+               (:members 
+                  ( ("base_address" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1592 1615])
+                    ("page_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1648 1668])
+                    ("attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1708 1728])
+                    ("interrupts" variable
+                       (:dereference 1
+                        :type ("interrupt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1802 1860])
+                    ("smmu_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1889 1906])
+                    ("stream_count" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1966 1987])
+                    ("stream_ids" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2046 2093])
+                    ("exclusive_access" variable (:type "bool") (reparse-symbol classsubparts) [2146 2168])
+                    ("name" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2211 2230]))                  
+                :type "struct")
+                nil [1533 2233])
+            ("rx_tx" type
+               (:members 
+                  ( ("available" variable (:type "bool") (reparse-symbol classsubparts) [2365 2380])
+                    ("rx_phandle" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2382 2402])
+                    ("tx_phandle" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2404 2424])
+                    ("rx_buffer" variable
+                       (:pointer 1
+                        :type ("memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2426 2458])
+                    ("tx_buffer" variable
+                       (:pointer 1
+                        :type ("memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2460 2492]))                  
+                :type "struct")
+                nil [2349 2495])
+            ("sp_manifest" type
+               (:members 
+                  ( ("ffa_version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2642 2663])
+                    ("uuid" variable (:type ("ffa_uuid" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2690 2711])
+                    ("id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2745 2760])
+                    ("aux_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2810 2829])
+                    ("execution_ctx_count" variable (:type ("ffa_vcpu_count_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2912 2949])
+                    ("run_time_el" variable (:type ("run_time_el" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [3001 3030])
+                    ("execution_state" variable (:type ("execution_state" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [3070 3107])
+                    ("load_addr" variable (:type ("uintpaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3126 3148])
+                    ("ep_offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3167 3184])
+                    ("xlat_granule" variable (:type ("xlat_granule" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [3216 3247])
+                    ("boot_order" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3266 3286])
+                    ("rxtx" variable (:type ("rx_tx" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3320 3338])
+                    ("messaging_method" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3389 3414])
+                    ("has_primary_scheduler" variable (:type "bool") (reparse-symbol classsubparts) [3433 3460])
+                    ("runtime_model" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3513 3535])
+                    ("stream_ep_ids" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3585 3611])
+                    ("mem_region_count" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3637 3662])
+                    ("mem_regions" variable
+                       (:dereference 1
+                        :type ("memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3664 3720])
+                    ("dev_region_count" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3745 3770])
+                    ("dev_regions" variable
+                       (:dereference 1
+                        :type ("device_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3772 3828]))                  
+                :type "struct")
+                nil [2574 3831])
+            ("sp_pkg_header" type
+               (:members 
+                  ( ("magic" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3971 3986])
+                    ("version" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4025 4042])
+                    ("pm_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4094 4113])
+                    ("pm_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4163 4180])
+                    ("img_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4250 4270])
+                    ("img_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4318 4336]))                  
+                :type "struct")
+                nil [3886 4339])
+            ("manifest_vm" type
+               (:members 
+                  ( ("debug_name" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4502 4527])
+                    ("kernel_filename" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4529 4559])
+                    ("smc_whitelist" variable (:type ("smc_whitelist" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4561 4596])
+                    ("is_ffa_partition" variable (:type "bool") (reparse-symbol classsubparts) [4598 4620])
+                    ("sp" variable (:type ("sp_manifest" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4622 4644])
+                    ("bootargs" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4646 4669])
+                    ("ramdisk_filename" variable (:type ("string" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4671 4702])
+                    ("boot_address" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4704 4726])
+                    ("secondary" variable (:type ("" type
+                         (:members 
+                            ( ("mem_size" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4785 4803])
+                              ("vcpu_count" variable (:type ("ffa_vcpu_count_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4806 4834])
+                              ("fdt_filename" variable (:type ("string" type
+                                   (:prototype t
+                                    :type "struct")
+                                    nil nil)) (reparse-symbol classsubparts) [4837 4864]))                            
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4774 4878]))                  
+                :type "struct")
+                nil [4418 4881])
+            ("manifest" type
+               (:members 
+                  ( ("ffa_tee_enabled" variable (:type "bool") (reparse-symbol classsubparts) [4947 4968])
+                    ("vm_count" variable (:type ("ffa_vm_count_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4970 4994])
+                    ("vm" variable
+                       (:dereference 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4996 5027]))                  
+                :type "struct")
+                nil [4928 5030])
+            ("manifest_return_code" type
+               (:members 
+                  ( ("MANIFEST_SUCCESS" variable
+                       (:constant-flag t
+                        :default-value (5080 5081)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5061 5081])
+                    ("MANIFEST_ERROR_FILE_SIZE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5084 5109])
+                    ("MANIFEST_ERROR_MALFORMED_DTB" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5111 5140])
+                    ("MANIFEST_ERROR_NO_ROOT_NODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5142 5170])
+                    ("MANIFEST_ERROR_NO_HYPERVISOR_FDT_NODE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5172 5210])
+                    ("MANIFEST_ERROR_NOT_COMPATIBLE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5212 5242])
+                    ("MANIFEST_ERROR_RESERVED_VM_ID" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5244 5274])
+                    ("MANIFEST_ERROR_NO_PRIMARY_VM" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5276 5305])
+                    ("MANIFEST_ERROR_TOO_MANY_VMS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5307 5335])
+                    ("MANIFEST_ERROR_PROPERTY_NOT_FOUND" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5337 5371])
+                    ("MANIFEST_ERROR_MALFORMED_STRING" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5373 5405])
+                    ("MANIFEST_ERROR_STRING_TOO_LONG" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5407 5438])
+                    ("MANIFEST_ERROR_MALFORMED_INTEGER" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5440 5473])
+                    ("MANIFEST_ERROR_INTEGER_OVERFLOW" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5475 5507])
+                    ("MANIFEST_ERROR_MALFORMED_INTEGER_LIST" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5509 5547])
+                    ("MANIFEST_ERROR_MALFORMED_BOOLEAN" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5549 5582])
+                    ("MANIFEST_ERROR_MEMORY_REGION_NODE_EMPTY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5584 5624])
+                    ("MANIFEST_ERROR_DEVICE_REGION_NODE_EMPTY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5626 5666])
+                    ("MANIFEST_ERROR_RXTX_SIZE_MISMATCH" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5668 5702]))                  
+                :type "enum")
+                nil [5032 5705])
+            ("manifest_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5747 5785])
+                    ("manifest" variable
+                       (:pointer 1
+                        :type ("manifest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5791 5817])
+                    ("manifest_fdt" variable
+                       (:pointer 1
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5823 5852])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5858 5878]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [5707 5879])
+            ("manifest_dump" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5900 5923]))                  
+                :type "void")
+                nil [5881 5924])
+            ("manifest_strerror" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("ret_code" variable (:type ("manifest_return_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [5956 5991]))                  
+                :type "char")
+                nil [5926 5992]))          
+      :file "manifest.h"
+      :pointmax 5993
+      :fsize 5992
+      :lastmodtime '(24840 27227)
+      :unmatched-syntax '((symbol 217 . 221) (symbol 210 . 216) (punctuation 209 . 210))
+      :lexical-table 
+        '(("SP_PKG_HEADER_MAGIC" . ((semantic-list "(0x474b5053)" 443 . 455)))
+          ("SP_PKG_HEADER_VERSION" . ((semantic-list "(0x1)" 486 . 491)))
+          ("SP_MAX_DEVICE_REGIONS" . ((number "8" 588 . 589)))
+          ("SP_MAX_INTERRUPTS_PER_DEVICE" . ((number "4" 627 . 628)))
+          ("MM_PERM_MASK" . ((number "0x7" 741 . 744)))
+          ("MANIFEST_INVALID_ID" . ((symbol "UINT32_MAX" 403 . 413)))
+          ("SP_MAX_MEMORY_REGIONS" . ((number "8" 556 . 557)))
+          ("SP_MAX_STREAMS_PER_DEVICE" . ((number "4" 663 . 664)))
+          ("DEFAULT_BOOT_ORDER" . ((number "0x0" 773 . 776)))
+          ("MANIFEST_INVALID_ADDRESS" . ((symbol "UINT64_MAX" 364 . 374)))
+          ("SP_RTX_BUF_NAME_SIZE" . ((number "10" 522 . 524)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "addr.h"
+      :fsize 3114
+      :lastmodtime '(24840 27227))
+    (semanticdb-table "semanticdb-table"
+      :file "memiter.h"
+      :fsize 883
+      :lastmodtime '(24840 27227))
+    (semanticdb-table "semanticdb-table"
+      :file "string.h"
+      :fsize 1388
+      :lastmodtime '(24840 27227))
+    (semanticdb-table "semanticdb-table"
+      :file "vm.h"
+      :fsize 4936
+      :lastmodtime '(24840 27498)))
+  :file "!ssh:osbox:!home!osboxes!hb!inc!hf!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

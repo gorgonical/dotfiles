@@ -1,0 +1,32 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("LATEX2E" variable (:default-value ("latex")) nil [1 17])
+            ("BIBTEX" variable (:default-value ("bibtex")) nil [17 33])
+            ("DVIPS" variable (:default-value ("dvips")) nil [33 47])
+            ("XDVI" variable (:default-value ("xdvi")) nil [47 59])
+            ("PS2PDF" variable (:default-value ("ps2pdf" "-dMaxSubsetPct=100" "-dCompatibilityLevel=1.3" "-dSubsetFonts=true" "-dEmbedAllFonts=true" "-dPDFSETTINGS=/prepress")) nil [59 183])
+            ("TEXDOCS" variable (:default-value ("Palacios_Guest_Build.tex")) nil [184 220])
+            ("DVIDOCS" variable (:default-value ("$(TEXDOCS:.tex=.dvi)")) nil [220 251])
+            ("ERASEABLEPSDOCS" variable (:default-value ("$(TEXDOCS:.tex=.ps)")) nil [251 287])
+            ("PSDOCS" variable (:default-value ("$(ERASEABLEPSDOCS)" "$(WORDDOCS:.doc=.ps)")) nil [287 338])
+            ("PDFDOCS" variable (:default-value ("$(PSDOCS:.ps=.pdf)")) nil [338 367])
+            ("all" function (:arguments ("$(PDFDOCS)" "$(PSDOCS)" "$(DVIDOCS)")) nil [368 406])
+            ("%.pdf" function (:arguments ("%.ps")) nil [407 439])
+            ("%.ps" function (:arguments ("%.dvi")) nil [440 488])
+            ("%.dvi" function (:arguments ("%.tex")) nil [489 517])
+            ("bib" function nil nil [519 695])
+            ("clean" function nil nil [697 743]))          
+      :file "Makefile"
+      :pointmax 743
+      :fsize 742
+      :lastmodtime '(24280 269)
+      :unmatched-syntax '((shell-command 705 . 742) (bol 704 . 704))))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios!manual!guest_build!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

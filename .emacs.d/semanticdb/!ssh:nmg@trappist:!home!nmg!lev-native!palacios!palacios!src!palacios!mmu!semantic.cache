@@ -1,0 +1,952 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_shadow_paging.h" include (:system-flag t) nil [706 745])
+            ("palacios/vmm_swapbypass.h" include (:system-flag t) nil [746 782])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [783 818])
+            ("palacios/vm.h" include (:system-flag t) nil [820 844])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [845 879])
+            ("palacios/vmm_paging.h" include (:system-flag t) nil [880 912])
+            ("palacios/vmm_hashtable.h" include (:system-flag t) nil [913 948])
+            ("palacios/vmm_list.h" include (:system-flag t) nil [949 979])
+            ("DEFAULT_CACHE_SIZE" variable (:constant-flag t) nil [989 1007])
+            ("V3_CACHED_PG" variable (:constant-flag t) nil [1045 1057])
+            ("PrintDebug" variable (:constant-flag t) nil [1127 1137])
+            ("shdw_back_ptr" type
+               (:members 
+                  ( ("gva" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1184 1195])
+                    ("pg_data" variable
+                       (:pointer 1
+                        :type ("shdw_pg_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1200 1230])
+                    ("back_ptr_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1235 1266]))                  
+                :type "struct")
+                nil [1157 1269])
+            ("guest_pg_tuple" type
+               (:members 
+                  ( ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1299 1310])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1315 1335]))                  
+                :type "struct")
+                nil [1271 1366])
+            ("rmap_entry" type
+               (:members 
+                  ( ("gva" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1394 1405])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1410 1421])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1426 1446])
+                    ("rmap_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1451 1478]))                  
+                :type "struct")
+                nil [1370 1481])
+            ("shdw_pg_data" type
+               (:members 
+                  ( ("tuple" variable (:type ("guest_pg_tuple" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1509 1537])
+                    ("hpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1543 1554])
+                    ("hva" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1559 1570])
+                    ("back_ptrs" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1576 1603])
+                    ("pg_queue_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1608 1639]))                  
+                :type "struct")
+                nil [1483 1643])
+            ("cache_core_state" type (:type "struct") nil [1647 1677])
+            ("cache_vm_state" type
+               (:members 
+                  ( ("cache_lock" variable (:type ("v3_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1713 1738])
+                    ("page_htable" variable
+                       (:pointer 1
+                        :type ("hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1744 1775])
+                    ("reverse_map" variable
+                       (:pointer 1
+                        :type ("hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1803 1834])
+                    ("max_cache_pgs" variable (:type "int") (reparse-symbol classsubparts) [1841 1859])
+                    ("pgs_in_cache" variable (:type "int") (reparse-symbol classsubparts) [1864 1881])
+                    ("pg_queue" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1887 1913])
+                    ("pgs_in_free_list" variable (:type "int") (reparse-symbol classsubparts) [1919 1940])
+                    ("free_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1945 1972]))                  
+                :type "struct")
+                nil [1680 1975])
+            ("evict_pt" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2007 2017])
+                    ("va" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2018 2028])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2029 2049]))                  
+                :type "int")
+                nil [1979 2879])
+            ("grab_pt" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2910 2920])
+                    ("va" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2921 2931])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2932 2952]))                  
+                :type "int")
+                nil [2883 3789])
+            ("unlink_shdw_pg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pg_data" variable
+                       (:pointer 1
+                        :type ("shdw_pg_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3818 3848]))                  
+                :type "int")
+                nil [3792 4329])
+            ("add_rmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4352 4375])
+                    ("pg_data" variable
+                       (:pointer 1
+                        :type ("shdw_pg_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4376 4406])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4407 4418])
+                    ("gva" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4419 4430]))                  
+                :type "int")
+                nil [4332 5222])
+            ("update_rmap_entries" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5257 5280])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5281 5292]))                  
+                :type "int")
+                nil [5226 6194])
+            ("link_shdw_pg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("child_pg" variable
+                       (:pointer 1
+                        :type ("shdw_pg_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6223 6254])
+                    ("parent_pg" variable
+                       (:pointer 1
+                        :type ("shdw_pg_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6255 6287])
+                    ("gva" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6288 6299]))                  
+                :type "int")
+                nil [6199 6658])
+            ("find_shdw_pt" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6704 6727])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6728 6739])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6740 6760]))                  
+                :type ("shdw_pg_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6662 7195])
+            ("evict_shdw_pg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7223 7246])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7247 7258])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7259 7279]))                  
+                :type "int")
+                nil [7198 7898])
+            ("pop_queue_pg" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7943 7966])
+                    ("cache_state" variable
+                       (:pointer 1
+                        :type ("cache_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7975 8011]))                  
+                :type ("shdw_pg_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7901 8485])
+            ("create_shdw_pt" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8531 8554])
+                    ("gpa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8555 8566])
+                    ("pt_type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8567 8587]))                  
+                :type ("shdw_pg_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8487 10031])
+            ("vmm_shdw_pg_cache_32.h" include nil nil [10034 10067])
+            ("cache_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10173 10184]))                  
+                :type ("uint_t" type (:type "class") nil nil))
+                nil [10145 10331])
+            ("cache_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10356 10368])
+                    ("key2" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10369 10381]))                  
+                :type "int")
+                nil [10333 10606])
+            ("rmap_hash_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10635 10646]))                  
+                :type ("uint_t" type (:type "class") nil nil))
+                nil [10608 10700])
+            ("rmap_eq_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key1" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10724 10736])
+                    ("key2" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10737 10749]))                  
+                :type "int")
+                nil [10702 10780])
+            ("cache_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10805 10828])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10829 10849]))                  
+                :type "int")
+                nil [10783 11811])
+            ("cache_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11838 11861]))                  
+                :type "int")
+                nil [11814 11880])
+            ("cache_local_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11911 11938]))                  
+                :type "int")
+                nil [11883 12029])
+            ("cache_activate_shdw_pt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12065 12092]))                  
+                :type "int")
+                nil [12031 12561])
+            ("cache_invalidate_shdw_pt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12599 12626]))                  
+                :type "int")
+                nil [12563 12747])
+            ("cache_handle_pf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12778 12805])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12806 12824])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12825 12847]))                  
+                :type "int")
+                nil [12751 13340])
+            ("cache_handle_invlpg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13374 13401])
+                    ("vaddr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13402 13415]))                  
+                :type "int")
+                nil [13343 13897])
+            ("cache_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name = \"SHADOW_CACHE\",
+    .init = cache_init, 
+    .deinit = cache_deinit, 
+    .local_init = cache_local_init, 
+    .handle_pagefault = cache_handle_pf, 
+    .handle_invlpg = cache_handle_invlpg,
+    .activate_shdw_pt = cache_activate_shdw_pt, 
+    .invalidate_shdw_pt = cache_invalidate_shdw_pt
+}"
+                :type ("v3_shdw_pg_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13904 14254])
+            ("register_shdw_pg_impl" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cache_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14281 14292]))                  
+                :type "int")
+                nil [14258 14293]))          
+      :file "vmm_shdw_pg_cache.c"
+      :pointmax 14294
+      :fsize 15658
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax '((punctuation 14280 . 14281))
+      :lexical-table 
+        '(("DEFAULT_CACHE_SIZE" . ((semantic-list "((32 * 1024 * 1024) / 4096)" 1008 . 1035)))
+          ("PrintDebug" (spp-arg-list ("fmt" "...") 1137 . 1147))
+          ("V3_CACHED_PG" . ((number "0x1" 1058 . 1061)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_shdw_pg_cache_32.h"
+      :fsize 23635
+      :lastmodtime '(24620 17583))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_shadow_paging.h" include (:system-flag t) nil [139 178])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [179 214])
+            ("palacios/vm.h" include (:system-flag t) nil [216 240])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [241 275])
+            ("palacios/vmm_paging.h" include (:system-flag t) nil [277 309])
+            ("PrintDebug" variable (:constant-flag t) nil [373 383]))          
+      :file "vmm_shdw_pg_kvm.c"
+      :pointmax 42305
+      :fsize 42304
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PrintDebug" (spp-arg-list ("fmt" "...") 383 . 393))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_shadow_paging.h" include (:system-flag t) nil [706 745])
+            ("palacios/vmm_ctrl_regs.h" include (:system-flag t) nil [746 781])
+            ("palacios/vm.h" include (:system-flag t) nil [783 807])
+            ("palacios/vm_guest_mem.h" include (:system-flag t) nil [808 842])
+            ("palacios/vmx_lowlevel.h" include (:system-flag t) nil [843 877])
+            ("PrintDebug" variable (:constant-flag t) nil [943 953])
+            ("shadow_page_data" type
+               (:members 
+                  ( ("cr3" variable (:type ("v3_reg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1003 1016])
+                    ("page_pa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1021 1036])
+                    ("page_list_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1044 1076]))                  
+                :type "struct")
+                nil [973 1079])
+            ("vtlb_local_state" type
+               (:members 
+                  ( ("page_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1114 1141]))                  
+                :type "struct")
+                nil [1082 1145])
+            ("create_new_shadow_pt" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1202 1229]))                  
+                :type ("shadow_page_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1148 1230])
+            ("vmm_shdw_pg_tlb_32.h" include nil nil [1233 1264])
+            ("vmm_shdw_pg_tlb_32pae.h" include nil nil [1265 1299])
+            ("vmm_shdw_pg_tlb_64.h" include nil nil [1300 1331])
+            ("create_new_shadow_pt" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1388 1415]))                  
+                :type ("shadow_page_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1334 2964])
+            ("vtlb_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2989 3012])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3013 3033]))                  
+                :type "int")
+                nil [2968 3091])
+            ("vtlb_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3116 3139]))                  
+                :type "int")
+                nil [3093 3157])
+            ("vtlb_local_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3186 3213]))                  
+                :type "int")
+                nil [3159 3643])
+            ("vtlb_local_deinit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3675 3702]))                  
+                :type "int")
+                nil [3646 4187])
+            ("vtlb_activate_shdw_pt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4223 4250]))                  
+                :type "int")
+                nil [4190 4743])
+            ("vtlb_invalidate_shdw_pt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4780 4807]))                  
+                :type "int")
+                nil [4745 4851])
+            ("vtlb_handle_pf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4880 4907])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4908 4926])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4927 4949]))                  
+                :type "int")
+                nil [4854 5445])
+            ("vtlb_handle_invlpg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5478 5505])
+                    ("vaddr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5506 5519]))                  
+                :type "int")
+                nil [5448 6029])
+            ("vtlb_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name = \"VTLB\",
+    .init = vtlb_init,
+    .deinit = vtlb_deinit,
+    .local_init = vtlb_local_init,
+    .local_deinit = vtlb_local_deinit,
+    .handle_pagefault = vtlb_handle_pf,
+    .handle_invlpg = vtlb_handle_invlpg,
+    .activate_shdw_pt = vtlb_activate_shdw_pt,
+    .invalidate_shdw_pt = vtlb_invalidate_shdw_pt
+}"
+                :type ("v3_shdw_pg_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6031 6400])
+            ("register_shdw_pg_impl" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("vtlb_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6429 6439]))                  
+                :type "int")
+                nil [6406 6440]))          
+      :file "vmm_shdw_pg_tlb.c"
+      :pointmax 6441
+      :fsize 6930
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax '((punctuation 6428 . 6429))
+      :lexical-table 
+        '(("PrintDebug" (spp-arg-list ("fmt" "...") 953 . 963))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_shdw_pg_tlb_32.h"
+      :fsize 22676
+      :lastmodtime '(24620 17583))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_shdw_pg_tlb_32pae.h"
+      :fsize 1320
+      :lastmodtime '(24610 12847))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm_paging_debug.h" include (:system-flag t) nil [707 745])
+            ("activate_shadow_pt_64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [788 815]))                  
+                :type "int")
+                nil [748 1572])
+            ("handle_2MB_shadow_pagefault_pde_64" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1693 1720])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1721 1739])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1740 1762])
+                    ("shadow_pde_access" variable (:type ("pt_access_status_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1809 1846])
+                    ("shadow_pt" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1847 1871])
+                    ("large_guest_pde" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1919 1949]))                  
+                :type "int")
+                nil [1647 1950])
+            ("handle_2MB_shadow_pagefault_pte_64" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1997 2024])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2025 2043])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2044 2066])
+                    ("shadow_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2113 2133])
+                    ("large_guest_pde" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2134 2164]))                  
+                :type "int")
+                nil [1951 2165])
+            ("handle_pte_shadow_pagefault_64" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2209 2236])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2237 2255])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2256 2278])
+                    ("shadow_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2321 2341])
+                    ("guest_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2342 2361]))                  
+                :type "int")
+                nil [2167 2362])
+            ("handle_pde_shadow_pagefault_64" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2406 2433])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2434 2452])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2453 2475])
+                    ("shadow_pd" variable
+                       (:pointer 1
+                        :type ("pde64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2518 2538])
+                    ("guest_pd" variable
+                       (:pointer 1
+                        :type ("pde64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2539 2558]))                  
+                :type "int")
+                nil [2364 2559])
+            ("handle_pdpe_shadow_pagefault_64" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2604 2631])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2632 2650])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2651 2673])
+                    ("shadow_pdp" variable
+                       (:pointer 1
+                        :type ("pdpe64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2717 2739])
+                    ("guest_pdp" variable
+                       (:pointer 1
+                        :type ("pdpe64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2740 2761]))                  
+                :type "int")
+                nil [2561 2762])
+            ("handle_shadow_pagefault_64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2810 2837])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2838 2856])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2857 2879]))                  
+                :type "int")
+                nil [2765 6939])
+            ("handle_pdpe_shadow_pagefault_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7041 7068])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7069 7087])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7088 7110])
+                    ("shadow_pdp" variable
+                       (:pointer 1
+                        :type ("pdpe64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7154 7176])
+                    ("guest_pdp" variable
+                       (:pointer 1
+                        :type ("pdpe64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7177 7198]))                  
+                :type "int")
+                nil [6998 10630])
+            ("handle_pde_shadow_pagefault_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10674 10701])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10702 10720])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10721 10743])
+                    ("shadow_pd" variable
+                       (:pointer 1
+                        :type ("pde64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10786 10806])
+                    ("guest_pd" variable
+                       (:pointer 1
+                        :type ("pde64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10807 10826]))                  
+                :type "int")
+                nil [10632 16491])
+            ("handle_pte_shadow_pagefault_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16536 16563])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16564 16582])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16583 16605])
+                    ("shadow_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16648 16668])
+                    ("guest_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16669 16688]))                  
+                :type "int")
+                nil [16494 21311])
+            ("handle_2MB_shadow_pagefault_pde_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21360 21387])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21435 21453])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21454 21476])
+                    ("shadow_pde_access" variable (:type ("pt_access_status_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21524 21561])
+                    ("large_shadow_pde" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21608 21639])
+                    ("large_guest_pde" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21640 21670]))                  
+                :type "int")
+                nil [21314 24901])
+            ("handle_2MB_shadow_pagefault_pte_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24949 24976])
+                    ("fault_addr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25024 25042])
+                    ("error_code" variable (:type ("pf_error_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25043 25065])
+                    ("shadow_pt" variable
+                       (:pointer 1
+                        :type ("pte64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25113 25133])
+                    ("large_guest_pde" variable
+                       (:pointer 1
+                        :type ("pde64_2MB_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25134 25164]))                  
+                :type "int")
+                nil [24903 28611])
+            ("invalidation_cb_64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28646 28673])
+                    ("type" variable (:type ("page_type_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28674 28691])
+                    ("vaddr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28723 28736])
+                    ("page_ptr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28737 28753])
+                    ("page_pa" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28754 28769])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [28801 28821]))                  
+                :type "int")
+                nil [28616 30424])
+            ("handle_shadow_invlpg_64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30469 30496])
+                    ("vaddr" variable (:type ("addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30497 30510]))                  
+                :type "int")
+                nil [30427 30848]))          
+      :file "vmm_shdw_pg_tlb_64.h"
+      :pointmax 30849
+      :fsize 30847
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags nil
+      :file "vmm_shdw_pg_kvm_64.h"
+      :pointmax 30221
+      :fsize 33773
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!palacios!palacios!src!palacios!mmu!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

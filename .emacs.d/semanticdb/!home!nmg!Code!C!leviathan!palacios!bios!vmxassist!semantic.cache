@@ -1,0 +1,1094 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vm86.h" include nil nil [896 913])
+            ("util.h" include nil nil [914 931])
+            ("machine.h" include nil nil [932 952])
+            ("HIGHMEM" variable (:constant-flag t) nil [962 969])
+            ("MASK16" variable (:constant-flag t) nil [1000 1006])
+            ("DATA32" variable (:constant-flag t) nil [1034 1040])
+            ("ADDR32" variable (:constant-flag t) nil [1057 1063])
+            ("SEG_CS" variable (:constant-flag t) nil [1080 1086])
+            ("SEG_DS" variable (:constant-flag t) nil [1103 1109])
+            ("SEG_ES" variable (:constant-flag t) nil [1126 1132])
+            ("SEG_SS" variable (:constant-flag t) nil [1149 1155])
+            ("SEG_FS" variable (:constant-flag t) nil [1172 1178])
+            ("SEG_GS" variable (:constant-flag t) nil [1195 1201])
+            ("REP" variable (:constant-flag t) nil [1218 1221])
+            ("prev_eip" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "unsigned int")
+                nil [1231 1260])
+            ("mode" variable
+               (:default-value "0"
+                :type ("vm86_mode" type (:type "enum") nil nil))
+                nil [1261 1285])
+            ("saved_rm_regs" variable
+               (:typemodifiers ("static")
+                :type ("regs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1287 1320])
+            ("PDE_PS" variable (:constant-flag t) nil [1575 1581])
+            ("PT_ENTRY_PRESENT" variable (:constant-flag t) nil [1602 1618])
+            ("guest_linear_to_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1733 1747]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [1696 3349])
+            ("address" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3375 3393])
+                    ("seg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3394 3407])
+                    ("off" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3408 3421]))                  
+                :type "unsigned int")
+                nil [3351 4656])
+            ("read32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5492 5506]))                  
+                :type "unsigned int")
+                nil [5462 5543])
+            ("read16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5575 5589]))                  
+                :type "unsigned int")
+                nil [5545 5627])
+            ("read8" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5658 5672]))                  
+                :type "unsigned int")
+                nil [5629 5709])
+            ("write32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5738 5752])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5753 5768]))                  
+                :type "void")
+                nil [5711 5806])
+            ("write16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5835 5849])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5850 5865]))                  
+                :type "void")
+                nil [5808 5904])
+            ("write8" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5932 5946])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5947 5962]))                  
+                :type "void")
+                nil [5906 6000])
+            ("push32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6028 6046])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6047 6062]))                  
+                :type "void")
+                nil [6002 6147])
+            ("push16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6175 6193])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6194 6209]))                  
+                :type "void")
+                nil [6149 6294])
+            ("pop32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6325 6343]))                  
+                :type "unsigned int")
+                nil [6296 6452])
+            ("pop16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6483 6501]))                  
+                :type "unsigned int")
+                nil [6454 6610])
+            ("fetch32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6643 6661]))                  
+                :type "unsigned int")
+                nil [6612 6766])
+            ("fetch16" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6799 6817]))                  
+                :type "unsigned int")
+                nil [6768 6922])
+            ("fetch8" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6954 6972]))                  
+                :type "unsigned int")
+                nil [6924 7073])
+            ("getreg32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7100 7118])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [7119 7125]))                  
+                :type "unsigned int")
+                nil [7075 7379])
+            ("getreg16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7406 7424])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [7425 7431]))                  
+                :type "unsigned int")
+                nil [7381 7470])
+            ("getreg8" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7496 7514])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [7515 7521]))                  
+                :type "unsigned int")
+                nil [7472 7930])
+            ("setreg32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7953 7971])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [7972 7978])
+                    ("v" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7979 7990]))                  
+                :type "void")
+                nil [7932 8264])
+            ("setreg16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8287 8305])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [8306 8312])
+                    ("v" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8313 8324]))                  
+                :type "void")
+                nil [8266 8391])
+            ("setreg8" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8413 8431])
+                    ("r" variable (:type "int") (reparse-symbol arg-sub-list) [8432 8438])
+                    ("v" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8439 8450]))                  
+                :type "void")
+                nil [8393 8947])
+            ("segment" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8973 8989])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8990 9008])
+                    ("seg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9009 9022]))                  
+                :type "unsigned int")
+                nil [8949 9284])
+            ("sib" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9306 9324])
+                    ("mod" variable (:type "int") (reparse-symbol arg-sub-list) [9325 9333])
+                    ("byte" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9334 9348]))                  
+                :type "unsigned int")
+                nil [9286 9789])
+            ("operand" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9848 9864])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9865 9883])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9884 9899]))                  
+                :type "unsigned int")
+                nil [9824 12745])
+            ("lidt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12786 12804])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12805 12821])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12822 12837]))                  
+                :type "int")
+                nil [12770 13230])
+            ("lgdt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13271 13289])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13290 13306])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13307 13322]))                  
+                :type "int")
+                nil [13255 13715])
+            ("lmsw" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13790 13808])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13809 13825])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [13826 13841]))                  
+                :type "int")
+                nil [13774 14136])
+            ("movr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14268 14286])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14287 14303])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14304 14317]))                  
+                :type "int")
+                nil [14252 16144])
+            ("movs" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16290 16308])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [16309 16325])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [16326 16339]))                  
+                :type "int")
+                nil [16267 17524])
+            ("lods" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17549 17567])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [17568 17584])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [17585 17598]))                  
+                :type "int")
+                nil [17526 18381])
+            ("movcr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18446 18464])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [18465 18481])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [18482 18495]))                  
+                :type "int")
+                nil [18429 19505])
+            ("set_eflags_ZF" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("mask" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19540 19554])
+                    ("v1" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19555 19567])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19568 19586]))                  
+                :type "void")
+                nil [19507 19678])
+            ("set_eflags_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hi_bit_mask" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19707 19728])
+                    ("v1" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19729 19741])
+                    ("v2" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19742 19754])
+                    ("result" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19759 19775])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19776 19794]))                  
+                :type "void")
+                nil [19680 20784])
+            ("cmp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20921 20939])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20940 20956])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20957 20970]))                  
+                :type "int")
+                nil [20906 21684])
+            ("test" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21823 21841])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21842 21858])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21859 21872]))                  
+                :type "int")
+                nil [21807 22385])
+            ("add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22522 22540])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [22541 22557])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [22558 22571]))                  
+                :type "int")
+                nil [22507 24170])
+            ("pop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24307 24325])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24326 24342])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24343 24356]))                  
+                :type "int")
+                nil [24292 24812])
+            ("mov_to_seg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24836 24854])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24855 24871])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24872 24885]))                  
+                :type "int")
+                nil [24814 26200])
+            ("load_seg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sel" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26273 26291])
+                    ("base" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26292 26307])
+                    ("limit" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26308 26324])
+                    ("arbytes" variable
+                       (:pointer 1
+                        :type ("vmcs_arbytes" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [26325 26353]))                  
+                :type "int")
+                nil [26253 27711])
+            ("load_or_clear_seg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sel" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [27854 27872])
+                    ("base" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27873 27888])
+                    ("limit" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27889 27905])
+                    ("arbytes" variable
+                       (:pointer 1
+                        :type ("vmcs_arbytes" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [27906 27934]))                  
+                :type "void")
+                nil [27824 28018])
+            ("rm_irqbase" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "unsigned char")
+                nil [28020 28055])
+            ("protected_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28123 28141]))                  
+                :type "void")
+                nil [28096 29321])
+            ("real_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29381 29399]))                  
+                :type "void")
+                nil [29359 30369])
+            ("set_mode" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31118 31136])
+                    ("newmode" variable (:type ("vm86_mode" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [31137 31160]))                  
+                :type "void")
+                nil [31104 32254])
+            ("jmpl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32273 32291])
+                    ("prefix" variable (:type "int") (reparse-symbol arg-sub-list) [32292 32303]))                  
+                :type "void")
+                nil [32256 32751])
+            ("jmpl_indirect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32779 32797])
+                    ("prefix" variable (:type "int") (reparse-symbol arg-sub-list) [32798 32809])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [32810 32825]))                  
+                :type "void")
+                nil [32753 33361])
+            ("retl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33380 33398])
+                    ("prefix" variable (:type "int") (reparse-symbol arg-sub-list) [33399 33410]))                  
+                :type "void")
+                nil [33363 33868])
+            ("interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33892 33910])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [33911 33917]))                  
+                :type "void")
+                nil [33870 34172])
+            ("outbyte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34436 34454])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [34455 34471])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [34472 34485]))                  
+                :type "int")
+                nil [34417 35403])
+            ("inbyte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35423 35441])
+                    ("prefix" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35442 35458])
+                    ("opc" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35459 35472]))                  
+                :type "int")
+                nil [35405 35719])
+            ("pushrm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35740 35758])
+                    ("prefix" variable (:type "int") (reparse-symbol arg-sub-list) [35759 35770])
+                    ("modrm" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35771 35786]))                  
+                :type "void")
+                nil [35721 36072])
+            ("" type
+               (:members 
+                  ( ("OPC_INVALID" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [36081 36093])
+                    ("OPC_EMULATED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [36094 36108]))                  
+                :type "enum")
+                nil [36074 36109])
+            ("rdmsr" variable (:constant-flag t) nil [36119 36124])
+            ("wrmsr" variable (:constant-flag t) nil [36245 36250])
+            ("opcode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36603 36621]))                  
+                :type "int")
+                nil [36585 45695])
+            ("emulate" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45710 45728]))                  
+                :type "void")
+                nil [45697 46277])
+            ("trap" function
+               (:arguments 
+                  ( ("trapno" variable (:type "int") (reparse-symbol arg-sub-list) [46289 46300])
+                    ("errno" variable (:type "int") (reparse-symbol arg-sub-list) [46301 46311])
+                    ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46312 46330]))                  
+                :type "void")
+                nil [46279 47280]))          
+      :file "vm86.c"
+      :pointmax 47281
+      :fsize 47280
+      :lastmodtime '(23987 30349 821933 478000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PDE_PS" . ((semantic-list "(1 << 7)" 1585 . 1593)))
+          ("wrmsr" (spp-arg-list ("msr" "val1" "val2") 36250 . 36265) . 
+              ((symbol "__asm__" 36272 . 36279) (symbol "__volatile__" 36280 . 36292) (semantic-list "(				\\
+		\"wrmsr\"					\\
+		: /* no outputs */			\\
+		: \"c\" (msr), \"a\" (val1), \"d\" (val2))" 36292 . 36378)))
+          ("MASK16" (spp-arg-list ("v") 1006 . 1009) . ((semantic-list "((v) & 0xFFFF)" 1010 . 1024)))
+          ("HIGHMEM" . ((semantic-list "(1 << 20)" 971 . 980)))
+          ("DATA32" . ((number "0x0001" 1042 . 1048)))
+          ("SEG_SS" . ((number "0x0020" 1157 . 1163)))
+          ("SEG_FS" . ((number "0x0040" 1180 . 1186)))
+          ("ADDR32" . ((number "0x0002" 1065 . 1071)))
+          ("SEG_GS" . ((number "0x0080" 1203 . 1209)))
+          ("SEG_CS" . ((number "0x0004" 1088 . 1094)))
+          ("PT_ENTRY_PRESENT" . ((number "0x1" 1619 . 1622)))
+          ("SEG_DS" . ((number "0x0008" 1111 . 1117)))
+          ("rdmsr" (spp-arg-list ("msr" "val1" "val2") 36124 . 36139) . 
+              ((symbol "__asm__" 36146 . 36153) (symbol "__volatile__" 36154 . 36166) (semantic-list "(				\\
+		\"rdmsr\"					\\
+		: \"=a\" (val1), \"=d\" (val2)		\\
+		: \"c\" (msr))" 36166 . 36235)))
+          ("REP" . ((number "0x0100" 1223 . 1229)))
+          ("SEG_ES" . ((number "0x0010" 1134 . 1140)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vm86.h"
+      :fsize 1696
+      :lastmodtime '(23987 30349 822933 478000))
+    (semanticdb-table "semanticdb-table"
+      :file "util.h"
+      :fsize 1603
+      :lastmodtime '(23987 30349 819933 479000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__MACHINE_H__" variable (:constant-flag t) nil [864 877])
+            ("STACK_SIZE" variable (:constant-flag t) nil [921 931])
+            ("TSS_SELECTOR" variable (:constant-flag t) nil [946 958])
+            ("CODE_SELECTOR" variable (:constant-flag t) nil [972 985])
+            ("DATA_SELECTOR" variable (:constant-flag t) nil [999 1012])
+            ("CR0_PE" variable (:constant-flag t) nil [1027 1033])
+            ("CR0_EM" variable (:constant-flag t) nil [1052 1058])
+            ("CR0_TS" variable (:constant-flag t) nil [1077 1083])
+            ("CR0_NE" variable (:constant-flag t) nil [1102 1108])
+            ("CR0_PG" variable (:constant-flag t) nil [1127 1133])
+            ("CR4_VME" variable (:constant-flag t) nil [1154 1161])
+            ("CR4_PVI" variable (:constant-flag t) nil [1180 1187])
+            ("CR4_PSE" variable (:constant-flag t) nil [1206 1213])
+            ("CR4_PAE" variable (:constant-flag t) nil [1232 1239])
+            ("EFLAGS_CF" variable (:constant-flag t) nil [1259 1268])
+            ("EFLAGS_PF" variable (:constant-flag t) nil [1286 1295])
+            ("EFLAGS_AF" variable (:constant-flag t) nil [1313 1322])
+            ("EFLAGS_ZF" variable (:constant-flag t) nil [1340 1349])
+            ("EFLAGS_SF" variable (:constant-flag t) nil [1367 1376])
+            ("EFLAGS_TF" variable (:constant-flag t) nil [1394 1403])
+            ("EFLAGS_IF" variable (:constant-flag t) nil [1421 1430])
+            ("EFLAGS_DF" variable (:constant-flag t) nil [1448 1457])
+            ("EFLAGS_OF" variable (:constant-flag t) nil [1476 1485])
+            ("EFLAGS_IOPL" variable (:constant-flag t) nil [1504 1515])
+            ("EFLAGS_VM" variable (:constant-flag t) nil [1534 1543])
+            ("EFLAGS_VIF" variable (:constant-flag t) nil [1578 1588])
+            ("EFLAGS_VIP" variable (:constant-flag t) nil [1607 1617])
+            ("LOG_PGSIZE" variable (:constant-flag t) nil [1637 1647])
+            ("LOG_PDSIZE" variable (:constant-flag t) nil [1681 1691])
+            ("PGSIZE" variable (:constant-flag t) nil [1760 1766])
+            ("PGMASK" variable (:constant-flag t) nil [1810 1816])
+            ("LPGSIZE" variable (:constant-flag t) nil [1859 1866])
+            ("LPGMASK" variable (:constant-flag t) nil [1916 1923])
+            ("PIC_MASTER" variable (:constant-flag t) nil [2026 2036])
+            ("PIC_SLAVE" variable (:constant-flag t) nil [2050 2059])
+            ("PIC_CMD" variable (:constant-flag t) nil [2074 2081])
+            ("PIC_ISR" variable (:constant-flag t) nil [2107 2114])
+            ("PIC_IMR" variable (:constant-flag t) nil [2149 2156])
+            ("dtr" type
+               (:members 
+                  ( ("size" variable (:type "unsigned short") (reparse-symbol classsubparts) [2219 2239])
+                    ("base" variable (:type "unsigned long") (reparse-symbol classsubparts) [2241 2285]))                  
+                :type "struct")
+                nil [2205 2288])
+            ("tss" type
+               (:members 
+                  ( ("prev_link" variable (:type "unsigned short") (reparse-symbol classsubparts) [2304 2329])
+                    ("_1" variable (:type "unsigned short") (reparse-symbol classsubparts) [2331 2349])
+                    ("esp0" variable (:type "unsigned long") (reparse-symbol classsubparts) [2351 2370])
+                    ("ss0" variable (:type "unsigned short") (reparse-symbol classsubparts) [2372 2391])
+                    ("_2" variable (:type "unsigned short") (reparse-symbol classsubparts) [2393 2411])
+                    ("esp1" variable (:type "unsigned long") (reparse-symbol classsubparts) [2413 2432])
+                    ("ss1" variable (:type "unsigned short") (reparse-symbol classsubparts) [2434 2453])
+                    ("_3" variable (:type "unsigned short") (reparse-symbol classsubparts) [2455 2473])
+                    ("esp2" variable (:type "unsigned long") (reparse-symbol classsubparts) [2475 2494])
+                    ("ss2" variable (:type "unsigned short") (reparse-symbol classsubparts) [2496 2515])
+                    ("_4" variable (:type "unsigned short") (reparse-symbol classsubparts) [2517 2535])
+                    ("cr3" variable (:type "unsigned long") (reparse-symbol classsubparts) [2537 2555])
+                    ("eip" variable (:type "unsigned long") (reparse-symbol classsubparts) [2557 2575])
+                    ("eflags" variable (:type "unsigned long") (reparse-symbol classsubparts) [2577 2598])
+                    ("eax" variable (:type "unsigned long") (reparse-symbol classsubparts) [2600 2618])
+                    ("ecx" variable (:type "unsigned long") (reparse-symbol classsubparts) [2620 2638])
+                    ("edx" variable (:type "unsigned long") (reparse-symbol classsubparts) [2640 2658])
+                    ("ebx" variable (:type "unsigned long") (reparse-symbol classsubparts) [2660 2678])
+                    ("esi" variable (:type "unsigned long") (reparse-symbol classsubparts) [2680 2698])
+                    ("edi" variable (:type "unsigned long") (reparse-symbol classsubparts) [2700 2718])
+                    ("esp" variable (:type "unsigned long") (reparse-symbol classsubparts) [2720 2738])
+                    ("ebp" variable (:type "unsigned long") (reparse-symbol classsubparts) [2740 2758])
+                    ("es" variable (:type "unsigned long") (reparse-symbol classsubparts) [2760 2777])
+                    ("cs" variable (:type "unsigned long") (reparse-symbol classsubparts) [2779 2796])
+                    ("ss" variable (:type "unsigned long") (reparse-symbol classsubparts) [2798 2815])
+                    ("ds" variable (:type "unsigned long") (reparse-symbol classsubparts) [2817 2834])
+                    ("fs" variable (:type "unsigned long") (reparse-symbol classsubparts) [2836 2853])
+                    ("gs" variable (:type "unsigned long") (reparse-symbol classsubparts) [2855 2872])
+                    ("ldt_segment" variable (:type "unsigned short") (reparse-symbol classsubparts) [2874 2901])
+                    ("_5" variable (:type "unsigned short") (reparse-symbol classsubparts) [2903 2921])
+                    ("_6" variable (:type "unsigned short") (reparse-symbol classsubparts) [2923 2941])
+                    ("iomap_base" variable (:type "unsigned short") (reparse-symbol classsubparts) [2943 2969])
+                    ("iomap" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [3025 3051]))                  
+                :type "struct")
+                nil [2290 3054])
+            ("outw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [3080 3100])
+                    ("val" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [3101 3120]))                  
+                :type "void")
+                nil [3056 3190])
+            ("outb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [3216 3236])
+                    ("val" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [3237 3255]))                  
+                :type "void")
+                nil [3192 3325])
+            ("inb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned short") (reparse-symbol arg-sub-list) [3359 3379]))                  
+                :type "unsigned char")
+                nil [3327 3482])
+            ("get_cmos" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("reg" variable (:type "int") (reparse-symbol arg-sub-list) [3516 3524]))                  
+                :type "unsigned int")
+                nil [3484 3565])
+            ("get_cr0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3598 3603]))                  
+                :type "unsigned int")
+                nil [3567 3706])
+            ("set_cr0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3735 3750]))                  
+                :type "void")
+                nil [3708 3865])
+            ("get_cr2" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3898 3903]))                  
+                :type "unsigned int")
+                nil [3867 3986])
+            ("get_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4019 4024]))                  
+                :type "unsigned int")
+                nil [3988 4127])
+            ("set_cr3" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4156 4170]))                  
+                :type "void")
+                nil [4129 4253])
+            ("set_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4282 4297]))                  
+                :type "void")
+                nil [4255 4374]))          
+      :file "machine.h"
+      :pointmax 4431
+      :fsize 4430
+      :lastmodtime '(23987 30349 812933 479000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("LOG_PGSIZE" . ((number "12" 1648 . 1650)))
+          ("CR0_NE" . ((semantic-list "(1 << 5)" 1110 . 1118)))
+          ("CR4_PVI" . ((semantic-list "(1 << 1)" 1189 . 1197)))
+          ("CR4_PSE" . ((semantic-list "(1 << 4)" 1215 . 1223)))
+          ("EFLAGS_TF" . ((semantic-list "(1 << 8)" 1404 . 1412)))
+          ("EFLAGS_VM" . ((semantic-list "((1 << 17) | EFLAGS_IOPL)" 1544 . 1569)))
+          ("PIC_IMR" . ((number "1" 2158 . 2159)))
+          ("EFLAGS_CF" . ((semantic-list "(1 << 0)" 1269 . 1277)))
+          ("EFLAGS_PF" . ((semantic-list "(1 << 2)" 1296 . 1304)))
+          ("DATA_SELECTOR" . ((number "0x18" 1013 . 1017)))
+          ("TSS_SELECTOR" . ((number "0x08" 959 . 963)))
+          ("LOG_PDSIZE" . ((number "22" 1692 . 1694)))
+          ("PIC_SLAVE" . ((number "0xA0" 2060 . 2064)))
+          ("EFLAGS_DF" . ((semantic-list "(1 << 10)" 1458 . 1467)))
+          ("EFLAGS_IOPL" . ((semantic-list "(3 << 12)" 1516 . 1525)))
+          ("CODE_SELECTOR" . ((number "0x10" 986 . 990)))
+          ("EFLAGS_ZF" . ((semantic-list "(1 << 6)" 1350 . 1358)))
+          ("EFLAGS_VIP" . ((semantic-list "(1 << 20)" 1618 . 1627)))
+          ("LPGMASK" . ((semantic-list "(~(LPGSIZE - 1))" 1925 . 1941)))
+          ("PIC_ISR" . ((number "0" 2116 . 2117)))
+          ("STACK_SIZE" . ((number "8192" 932 . 936)))
+          ("CR0_PE" . ((semantic-list "(1 << 0)" 1035 . 1043)))
+          ("CR0_TS" . ((semantic-list "(1 << 3)" 1085 . 1093)))
+          ("EFLAGS_IF" . ((semantic-list "(1 << 9)" 1431 . 1439)))
+          ("PIC_MASTER" . ((number "0x20" 2037 . 2041)))
+          ("CR0_EM" . ((semantic-list "(1 << 2)" 1060 . 1068)))
+          ("PGMASK" . ((semantic-list "(~(PGSIZE - 1))" 1818 . 1833)))
+          ("LPGSIZE" . ((semantic-list "(1 << LOG_PDSIZE)" 1868 . 1885)))
+          ("CR0_PG" . ((semantic-list "(1 << 31)" 1135 . 1144)))
+          ("EFLAGS_AF" . ((semantic-list "(1 << 4)" 1323 . 1331)))
+          ("EFLAGS_VIF" . ((semantic-list "(1 << 19)" 1589 . 1598)))
+          ("__MACHINE_H__")
+          ("PGSIZE" . ((semantic-list "(1 << LOG_PGSIZE)" 1768 . 1785)))
+          ("CR4_VME" . ((semantic-list "(1 << 0)" 1163 . 1171)))
+          ("EFLAGS_SF" . ((semantic-list "(1 << 7)" 1377 . 1385)))
+          ("PIC_CMD" . ((number "0" 2083 . 2084)))
+          ("CR4_PAE" . ((semantic-list "(1 << 5)" 1241 . 1249)))
+          ("EFLAGS_OF" . ((semantic-list "(1 << 11)" 1486 . 1495)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vm86.h" include nil nil [832 849])
+            ("util.h" include nil nil [850 867])
+            ("machine.h" include nil nil [868 888])
+            ("NR_PGD" variable (:constant-flag t) nil [970 976])
+            ("min" variable (:constant-flag t) nil [1015 1018])
+            ("booting_cpu" variable (:type "int") nil [1118 1150])
+            ("booting_vector" variable (:type "int") nil [1118 1150])
+            ("gdt" variable
+               (:dereference 1
+                :default-value "{
+	0x0000000000000000ULL,		/* 0x00: reserved */
+	0x0000890000000000ULL,		/* 0x08: 32-bit TSS */
+	0x00CF9A000000FFFFULL,		/* 0x10: CS 32-bit */
+	0x00CF92000000FFFFULL,		/* 0x18: DS 32-bit */
+}"
+                :type "unsigned long long")
+                nil [1152 1401])
+            ("gdtr" variable
+               (:default-value "{ sizeof(gdt)-1, (unsigned long) &gdt }"
+                :type ("dtr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1403 1461])
+            ("tss" variable (:type ("tss" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1463 1507])
+            ("idt" variable
+               (:dereference 1
+                :type "unsigned long long")
+                nil [1509 1572])
+            ("idtr" variable
+               (:default-value "{ sizeof(idt)-1, (unsigned long) &idt }"
+                :type ("dtr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1574 1632])
+            ("oldctx" variable (:type ("vmx_assist_context" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1634 1667])
+            ("newctx" variable (:type ("vmx_assist_context" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1668 1701])
+            ("memory_size" variable (:type "unsigned long") nil [1703 1729])
+            ("initialize_real_mode" variable (:type "int") nil [1730 1755])
+            ("stack_top" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [1757 1781])
+            ("trap_handlers" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type "unsigned int")
+                nil [1782 1814])
+            ("banner" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1828 1833]))                  
+                :type "void")
+                nil [1816 2368])
+            ("setup_gdt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2385 2390]))                  
+                :type "void")
+                nil [2370 3272])
+            ("set_intr_gate" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [3293 3299])
+                    ("handler" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3300 3317]))                  
+                :type "void")
+                nil [3274 3467])
+            ("setup_idt" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3484 3489]))                  
+                :type "void")
+                nil [3469 3622])
+            ("setup_pic" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3639 3644]))                  
+                :type "void")
+                nil [3624 4323])
+            ("setiomap" function
+               (:arguments 
+                  ( ("port" variable (:type "int") (reparse-symbol arg-sub-list) [4339 4348]))                  
+                :type "void")
+                nil [4325 4394])
+            ("enter_real_mode" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4417 4435]))                  
+                :type "void")
+                nil [4396 5622])
+            ("setup_ctx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5779 5784]))                  
+                :type "void")
+                nil [5764 8057])
+            ("start_bios" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8213 8218]))                  
+                :type "void")
+                nil [8197 8477])
+            ("main" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8488 8493]))                  
+                :type "int")
+                nil [8479 8675]))          
+      :file "setup.c"
+      :pointmax 8676
+      :fsize 8675
+      :lastmodtime '(23987 30349 815933 479000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("min" (spp-arg-list ("a" "b") 1018 . 1024) . ((semantic-list "((a) > (b) ? (b) : (a))" 1025 . 1048)))
+          ("NR_PGD" . ((semantic-list "(PGSIZE / sizeof(unsigned))" 978 . 1005)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!palacios!bios!vmxassist!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

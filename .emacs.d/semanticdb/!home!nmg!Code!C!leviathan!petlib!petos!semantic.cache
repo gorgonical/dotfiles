@@ -1,0 +1,238 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/version.h" include (:system-flag t) nil [1 27])
+            ("linux/mm.h" include (:system-flag t) nil [28 49])
+            ("linux/memory.h" include (:system-flag t) nil [50 75])
+            ("linux/slab.h" include (:system-flag t) nil [76 99])
+            ("petos-private.h" include (:system-flag t) nil [101 127])
+            ("petos_vma_fault" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vmf" variable
+                       (:pointer 1
+                        :type ("vm_fault" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [313 335]))                  
+                :type "int")
+                nil [286 846])
+            ("petos_vma_close" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [877 905]))                  
+                :type "void")
+                nil [848 1064])
+            ("petos_vma_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .fault = petos_vma_fault,
+    .close = petos_vma_close,
+}"
+                :type ("vm_operations_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1066 1182])
+            ("petos_map_pmem_to_user" function
+               (:arguments 
+                  ( ("vma" variable
+                       (:pointer 1
+                        :type ("vm_area_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1211 1239]))                  
+                :type "int")
+                nil [1184 1788]))          
+      :file "petos-umem.c"
+      :pointmax 1789
+      :fsize 1788
+      :lastmodtime '(24104 52537 175039 709000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "petos-private.h"
+      :fsize 1185
+      :lastmodtime '(24104 52537 175039 709000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/version.h" include (:system-flag t) nil [175 201])
+            ("linux/module.h" include (:system-flag t) nil [202 227])
+            ("linux/interrupt.h" include (:system-flag t) nil [228 256])
+            ("linux/irq.h" include (:system-flag t) nil [257 279])
+            ("linux/pci.h" include (:system-flag t) nil [280 302])
+            ("asm/ipi.h" include (:system-flag t) nil [303 323])
+            ("linux_syms.h" include nil nil [326 349])
+            ("linux/irqdomain.h" include (:system-flag t) nil [399 427])
+            ("asm/irqdomain.h" include (:system-flag t) nil [428 454])
+            ("mask_lapic_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1139 1162]))                  
+                :type "void")
+                nil [1112 1258])
+            ("unmask_lapic_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1289 1312]))                  
+                :type "void")
+                nil [1260 1409])
+            ("ack_lapic_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1437 1460]))                  
+                :type "void")
+                nil [1411 1484])
+            ("ipi_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name       = \"Petos-IPI\",
+    .irq_mask   = mask_lapic_irq,
+    .irq_unmask = unmask_lapic_irq,
+    .irq_ack    = ack_lapic_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1535 1708])
+            ("lapic_verified" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [1718 1748])
+            ("__verify_lapic" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1776 1781]))                  
+                :type "int")
+                nil [1750 2233])
+            ("petos_alloc_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2262 2267]))                  
+                :type "int")
+                nil [2235 3644])
+            ("petos_free_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [3673 3681]))                  
+                :type "void")
+                nil [3646 3889])
+            ("petos_request_irq" function
+               (:arguments 
+                  ( ("callback" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [3938 3942])
+                            ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [3943 3950]))                          
+                        :type ("irqreturn_t" type (:type "class") nil nil))
+                        nil nil)
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3953 3978]))                  
+                :type "int")
+                nil [3891 4377])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("petos_request_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4396 4414]))                  
+                :type "int")
+                nil [4378 4415])
+            ("petos_release_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [4439 4450])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4464 4481]))                  
+                :type "int")
+                nil [4417 4618])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("petos_release_irq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4637 4655]))                  
+                :type "int")
+                nil [4619 4656])
+            ("petos_irq_to_vector" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [4682 4690]))                  
+                :type "int")
+                nil [4658 5130])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("petos_irq_to_vector" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5149 5169]))                  
+                :type "int")
+                nil [5131 5170])
+            ("petos_send_ipi" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5191 5211])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5227 5247]))                  
+                :type "int")
+                nil [5172 5467])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("petos_send_ipi" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5486 5501]))                  
+                :type "int")
+                nil [5468 5502])
+            ("petos_send_ipi_to_apic" function
+               (:arguments 
+                  ( ("apic_id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5531 5552])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5576 5596]))                  
+                :type "int")
+                nil [5504 5966])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("petos_send_ipi_to_apic" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5985 6008]))                  
+                :type "int")
+                nil [5967 6009]))          
+      :file "petos-irq.c"
+      :pointmax 6010
+      :fsize 6009
+      :lastmodtime '(24104 52537 174039 709000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "linux_syms.h"
+      :fsize 1024
+      :lastmodtime '(24104 52537 174039 709000)))
+  :file "!home!nmg!Code!C!leviathan!petlib!petos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

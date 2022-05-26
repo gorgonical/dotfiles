@@ -1,0 +1,56 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdint.h" include (:system-flag t) nil [20 39])
+            ("stdlib.h" include (:system-flag t) nil [41 60])
+            ("unistd.h" include (:system-flag t) nil [61 80])
+            ("sys/syscall.h" include (:system-flag t) nil [81 105])
+            ("arch-x86_64/msr.h" include (:system-flag t) nil [107 135])
+            ("N_ITERATIONS" variable (:constant-flag t) nil [145 157])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [171 180])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [181 193]))                  
+                :type "int")
+                nil [162 296]))          
+      :file "msr_bench.c"
+      :pointmax 297
+      :fsize 296
+      :lastmodtime '(24456 31702)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("N_ITERATIONS" . ((number "10" 158 . 160)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CFLAGS" variable (:default-value ("-g" "-W" "-Wall" "-Werror" "-D_GNU_SOURCE" "-Wno-nonnull" "-Wno-unused-parameter" "-I$(WHITEDB_PATH)/Db" "-I$(XPMEM_PATH)/include" "-I$(PISCES_PATH)/linux_usr" "-I$(PETLIB_PATH)" "-I$(KITTEN_PATH)/include" "-I$(PALACIOS_PATH)/user" "-I../shell" "-I../libhobbes" "-I$(libelfrwdir)" "-static")) nil [144 490])
+            ("CC" variable (:default-value ("gcc")) nil [492 501])
+            ("AR" variable (:default-value ("ar")) nil [501 509])
+            ("libs" variable (:default-value ("$(PISCES_PATH)/linux_usr/libpisces.a" "../libhobbes/libhobbes.a" "$(KITTEN_PATH)/user/install/lib/liblwk.a")) nil [510 634])
+            ("execs" variable (:default-value ("benchmark")) nil [637 657])
+            ("benchmark_objs" variable (:default-value ("msr_bench.o")) nil [658 688])
+            ("%" function (:arguments ("%.c")) nil [799 865])
+            ("%.o" function (:arguments ("%.c" "$(libs)")) nil [866 931])
+            ("%.a" function (:arguments ("%.o")) nil [932 976])
+            ("all" function (:arguments ("$(execs)")) nil [978 993])
+            ("benchmark" function (:arguments ("$(benchmark_objs)" "$(libs)")) nil [994 1111])
+            ("clean" function nil nil [1112 1153]))          
+      :file "Makefile"
+      :pointmax 1161
+      :fsize 1160
+      :lastmodtime '(24455 58788)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!lev-native!msr_benchmark!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

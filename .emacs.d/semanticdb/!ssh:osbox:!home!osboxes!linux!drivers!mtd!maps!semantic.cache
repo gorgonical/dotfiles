@@ -1,0 +1,506 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [144 169])
+            ("linux/types.h" include (:system-flag t) nil [170 194])
+            ("linux/ioport.h" include (:system-flag t) nil [195 220])
+            ("linux/kernel.h" include (:system-flag t) nil [221 246])
+            ("linux/init.h" include (:system-flag t) nil [247 270])
+            ("linux/errno.h" include (:system-flag t) nil [271 295])
+            ("linux/slab.h" include (:system-flag t) nil [296 319])
+            ("linux/platform_device.h" include (:system-flag t) nil [320 354])
+            ("linux/err.h" include (:system-flag t) nil [355 377])
+            ("linux/io.h" include (:system-flag t) nil [378 399])
+            ("linux/mtd/mtd.h" include (:system-flag t) nil [401 427])
+            ("linux/mtd/map.h" include (:system-flag t) nil [428 454])
+            ("linux/mtd/partitions.h" include (:system-flag t) nil [455 488])
+            ("linux/mtd/concat.h" include (:system-flag t) nil [489 518])
+            ("mach/hardware.h" include (:system-flag t) nil [520 546])
+            ("linux/sizes.h" include (:system-flag t) nil [547 571])
+            ("asm/mach/flash.h" include (:system-flag t) nil [572 599])
+            ("sa_subdev_info" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [626 640])
+                    ("map" variable (:type ("map_info" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [642 662])
+                    ("mtd" variable
+                       (:pointer 1
+                        :type ("mtd_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [664 685])
+                    ("plat" variable
+                       (:pointer 1
+                        :type ("flash_platform_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [687 720]))                  
+                :type "struct")
+                nil [601 723])
+            ("sa_info" type
+               (:members 
+                  ( ("mtd" variable
+                       (:pointer 1
+                        :type ("mtd_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [743 765])
+                    ("num_subdev" variable (:type "int") (reparse-symbol classsubparts) [767 784])
+                    ("subdev" variable
+                       (:dereference 1
+                        :type ("sa_subdev_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [786 817]))                  
+                :type "struct")
+                nil [725 820])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("sa1100_vpp_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [845 861]))                  
+                :type "int")
+                nil [822 862])
+            ("sa1100_vpp_refcnt" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [863 892])
+            ("sa1100_set_vpp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("map_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [920 941])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [942 949]))                  
+                :type "void")
+                nil [893 1349])
+            ("sa1100_destroy_subdev" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("subdev" variable
+                       (:pointer 1
+                        :type ("sa_subdev_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1385 1415]))                  
+                :type "void")
+                nil [1351 1574])
+            ("sa1100_probe_subdev" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("subdev" variable
+                       (:pointer 1
+                        :type ("sa_subdev_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1607 1637])
+                    ("res" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1638 1659]))                  
+                :type "int")
+                nil [1576 3013])
+            ("sa1100_destroy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("sa_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3042 3063])
+                    ("plat" variable
+                       (:pointer 1
+                        :type ("flash_platform_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3064 3097]))                  
+                :type "void")
+                nil [3015 3378])
+            ("sa1100_setup_mtd" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3420 3449])
+                    ("plat" variable
+                       (:pointer 1
+                        :type ("flash_platform_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3455 3488]))                  
+                :type ("sa_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3380 5511])
+            ("part_probes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{ \"cmdlinepart\", \"RedBoot\", NULL }"
+                :type "char")
+                nil [5513 5590])
+            ("sa1100_mtd_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5620 5649]))                  
+                :type "int")
+                nil [5592 6081])
+            ("sa1100_mtd_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6112 6141]))                  
+                :type "int")
+                nil [6083 6305])
+            ("sa1100_mtd_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe		= sa1100_mtd_probe,
+	.remove		= sa1100_mtd_remove,
+	.driver		= {
+		.name	= \"sa1100-mtd\",
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6307 6463])
+            ("module_platform_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sa1100_mtd_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6488 6506]))                  
+                :type "int")
+                nil [6465 6507])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [6509 6540])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [6541 6585])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [6586 6608])
+            ("MODULE_ALIAS" function
+               (:prototype-flag t
+                :type "int")
+                nil [6609 6645]))          
+      :file "sa1100-flash.c"
+      :pointmax 6646
+      :fsize 6645
+      :lastmodtime '(24812 64477)
+      :unmatched-syntax '((string 6622 . 6643) (string 6601 . 6606) (string 6560 . 6583) (string 6523 . 6538)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [872 897])
+            ("linux/types.h" include (:system-flag t) nil [898 922])
+            ("linux/kernel.h" include (:system-flag t) nil [923 948])
+            ("linux/init.h" include (:system-flag t) nil [949 972])
+            ("linux/slab.h" include (:system-flag t) nil [973 996])
+            ("linux/device.h" include (:system-flag t) nil [997 1022])
+            ("linux/platform_device.h" include (:system-flag t) nil [1023 1057])
+            ("linux/mtd/mtd.h" include (:system-flag t) nil [1058 1084])
+            ("linux/mtd/map.h" include (:system-flag t) nil [1085 1111])
+            ("linux/mtd/partitions.h" include (:system-flag t) nil [1112 1145])
+            ("linux/mtd/physmap.h" include (:system-flag t) nil [1146 1176])
+            ("linux/mtd/concat.h" include (:system-flag t) nil [1177 1206])
+            ("linux/mtd/cfi_endian.h" include (:system-flag t) nil [1207 1240])
+            ("linux/io.h" include (:system-flag t) nil [1241 1262])
+            ("linux/of_device.h" include (:system-flag t) nil [1263 1291])
+            ("linux/pm_runtime.h" include (:system-flag t) nil [1292 1321])
+            ("linux/gpio/consumer.h" include (:system-flag t) nil [1322 1354])
+            ("physmap-bt1-rom.h" include nil nil [1356 1384])
+            ("physmap-gemini.h" include nil nil [1385 1412])
+            ("physmap-ixp4xx.h" include nil nil [1413 1440])
+            ("physmap-versatile.h" include nil nil [1441 1471])
+            ("physmap_flash_info" type
+               (:members 
+                  ( ("nmaps" variable (:type "unsigned int") (reparse-symbol classsubparts) [1502 1522])
+                    ("mtds" variable
+                       (:pointer 2
+                        :type ("mtd_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1524 1548])
+                    ("cmtd" variable
+                       (:pointer 1
+                        :type ("mtd_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1550 1573])
+                    ("maps" variable
+                       (:pointer 1
+                        :type ("map_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1575 1598])
+                    ("vpp_lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1600 1621])
+                    ("vpp_refcnt" variable (:type "int") (reparse-symbol classsubparts) [1623 1640])
+                    ("probe_type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1642 1666])
+                    ("part_types" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1668 1699])
+                    ("nparts" variable (:type "unsigned int") (reparse-symbol classsubparts) [1701 1722])
+                    ("parts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mtd_partition" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1724 1758])
+                    ("gpios" variable
+                       (:pointer 1
+                        :type ("gpio_descs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1760 1785])
+                    ("gpio_values" variable (:type "unsigned int") (reparse-symbol classsubparts) [1787 1813])
+                    ("win_order" variable (:type "unsigned int") (reparse-symbol classsubparts) [1815 1839]))                  
+                :type "struct")
+                nil [1473 1842])
+            ("physmap_flash_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1876 1904]))                  
+                :type "int")
+                nil [1844 2530])
+            ("physmap_set_vpp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("map_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2560 2581])
+                    ("state" variable (:type "int") (reparse-symbol arg-sub-list) [2582 2592]))                  
+                :type "void")
+                nil [2532 3207])
+            ("physmap_addr_gpios_map_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("map_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5960 5981]))                  
+                :type "int")
+                nil [5921 6004])
+            ("of_flash_match" variable (:constant-flag t) nil [10105 10119])
+            ("physmap_flash_of_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10159 10187]))                  
+                :type "int")
+                nil [10126 10210])
+            ("rom_probe_types" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"cfi_probe\", \"jedec_probe\", \"qinfo_probe\", \"map_rom\",
+}"
+                :type "char")
+                nil [10259 10364])
+            ("part_probe_types" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"cmdlinepart\", \"RedBoot\", \"afs\", NULL
+}"
+                :type "char")
+                nil [10366 10456])
+            ("physmap_flash_pdata_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10494 10522]))                  
+                :type "int")
+                nil [10458 11225])
+            ("physmap_flash_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11258 11286]))                  
+                :type "int")
+                nil [11227 14635])
+            ("physmap_flash_shutdown" variable (:constant-flag t) nil [14928 14950])
+            ("physmap_flash_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.probe		= physmap_flash_probe,
+	.remove		= physmap_flash_remove,
+	.shutdown	= physmap_flash_shutdown,
+	.driver		= {
+		.name	= \"physmap-flash\",
+		.of_match_table = of_flash_match,
+	},
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [14964 15205])
+            ("physmap_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15765 15770]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [15745 16030])
+            ("physmap_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16064 16069]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [16044 16210])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("physmap_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16224 16237]))                  
+                :type "int")
+                nil [16212 16238])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("physmap_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16251 16264]))                  
+                :type "int")
+                nil [16239 16265])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [16267 16289])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [16290 16345])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [16346 16397])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [16398 16450])
+            ("MODULE_DESCRIPTION" function
+               (:prototype-flag t
+                :type "int")
+                nil [16451 16509])
+            ("MODULE_ALIAS" function
+               (:prototype-flag t
+                :type "int")
+                nil [16637 16676]))          
+      :file "physmap-core.c"
+      :pointmax 16684
+      :fsize 16683
+      :lastmodtime '(24812 64477)
+      :unmatched-syntax '((string 16650 . 16674) (string 16470 . 16507) (string 16412 . 16448) (string 16360 . 16395) (string 16304 . 16343) (string 16282 . 16287) (VOID 16039 . 16043) (STATIC 16032 . 16038) (INT 15741 . 15744) (STATIC 15734 . 15740))
+      :lexical-table 
+        '(("of_flash_match" . ((symbol "NULL" 10120 . 10124)))
+          ("physmap_flash_shutdown" . ((symbol "NULL" 14951 . 14955)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "physmap-bt1-rom.h"
+      :fsize 401
+      :lastmodtime '(24812 64477))
+    (semanticdb-table "semanticdb-table"
+      :file "physmap-gemini.h"
+      :fsize 389
+      :lastmodtime '(24812 64477))
+    (semanticdb-table "semanticdb-table"
+      :file "physmap-ixp4xx.h"
+      :fsize 389
+      :lastmodtime '(24812 64477))
+    (semanticdb-table "semanticdb-table"
+      :file "physmap-versatile.h"
+      :fsize 410
+      :lastmodtime '(24812 64477)))
+  :file "!ssh:osbox:!home!osboxes!linux!drivers!mtd!maps!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

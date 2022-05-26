@@ -1,0 +1,850 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("sysregs.h" include nil nil [209 229])
+            ("msr.h" include nil nil [231 247])
+            ("ID_AA64PFR0_EL1_RAS" variable (:constant-flag t) nil [291 310])
+            ("has_ras_support" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [439 444]))                  
+                :type "bool")
+                nil [411 505])
+            ("get_hcr_el2_value" function
+               (:arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [677 695]))                  
+                :type ("uintreg_t" type (:type "class") nil nil))
+                nil [649 3149])
+            ("get_mdcr_el2_value" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3231 3236]))                  
+                :type ("uintreg_t" type (:type "class") nil nil))
+                nil [3202 3629])
+            ("get_cptr_el2_value" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3715 3720]))                  
+                :type ("uintreg_t" type (:type "class") nil nil))
+                nil [3686 3823])
+            ("get_sctlr_el2_value" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3911 3916]))                  
+                :type ("uintreg_t" type (:type "class") nil nil))
+                nil [3881 4965])
+            ("is_arch_feat_bti_supported" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5048 5053]))                  
+                :type "bool")
+                nil [5016 5169]))          
+      :file "sysregs.c"
+      :pointmax 5170
+      :fsize 5169
+      :lastmodtime '(24866 45126)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ID_AA64PFR0_EL1_RAS" . ((semantic-list "(UINT64_C(0xf) << 28)" 311 . 332)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/arch/types.h" include nil nil [223 249])
+            ("hf/cpu.h" include nil nil [251 270])
+            ("vmapi/hf/ffa.h" include nil nil [272 297])
+            ("msr.h" include nil nil [299 315])
+            ("RT_REG_XZR" variable (:constant-flag t) nil [455 465])
+            ("MDCR_EL2_HCCD" variable (:constant-flag t) nil [539 552])
+            ("MDCR_EL2_TTRF" variable (:constant-flag t) nil [666 679])
+            ("MDCR_EL2_HPMD" variable (:constant-flag t) nil [760 773])
+            ("MDCR_EL2_TPMS" variable (:constant-flag t) nil [985 998])
+            ("MDCR_EL2_E2PB" variable (:constant-flag t) nil [1181 1194])
+            ("MDCR_EL2_TDRA" variable (:constant-flag t) nil [1267 1280])
+            ("MDCR_EL2_TDOSA" variable (:constant-flag t) nil [1412 1426])
+            ("MDCR_EL2_TDA" variable (:constant-flag t) nil [1545 1557])
+            ("MDCR_EL2_TDE" variable (:constant-flag t) nil [1660 1672])
+            ("MDCR_EL2_TPM" variable (:constant-flag t) nil [1799 1811])
+            ("MDCR_EL2_TPMCR" variable (:constant-flag t) nil [1911 1925])
+            ("MDCR_EL2_HPMN" variable (:constant-flag t) nil [2118 2131])
+            ("ESR_EC_OFFSET" variable (:constant-flag t) nil [2364 2377])
+            ("GET_ESR_EC" variable (:constant-flag t) nil [2450 2460])
+            ("GET_ESR_IL" variable (:constant-flag t) nil [2573 2583])
+            ("EC_UNKNOWN" variable (:constant-flag t) nil [2671 2681])
+            ("EC_WFI_WFE" variable (:constant-flag t) nil [2771 2781])
+            ("EC_HVC" variable (:constant-flag t) nil [2856 2862])
+            ("EC_SMC" variable (:constant-flag t) nil [2938 2944])
+            ("EC_MSR" variable (:constant-flag t) nil [3036 3042])
+            ("EC_INSTRUCTION_ABORT_LOWER_EL" variable (:constant-flag t) nil [3139 3168])
+            ("EC_INSTRUCTION_ABORT_SAME_EL" variable (:constant-flag t) nil [3272 3300])
+            ("EC_DATA_ABORT_LOWER_EL" variable (:constant-flag t) nil [3390 3412])
+            ("EC_DATA_ABORT_SAME_EL" variable (:constant-flag t) nil [3509 3530])
+            ("ISS_MASK" variable (:constant-flag t) nil [3606 3614])
+            ("GET_ESR_ISS" variable (:constant-flag t) nil [3664 3675])
+            ("ISS_SYSREG_MASK" variable (:constant-flag t) nil [3871 3886])
+            ("GET_ISS_SYSREG" variable (:constant-flag t) nil [4075 4089])
+            ("ISS_OP0_MASK" variable (:constant-flag t) nil [4179 4191])
+            ("ISS_OP0_SHIFT" variable (:constant-flag t) nil [4219 4232])
+            ("GET_ISS_OP0" variable (:constant-flag t) nil [4244 4255])
+            ("ISS_OP1_MASK" variable (:constant-flag t) nil [4361 4373])
+            ("ISS_OP1_SHIFT" variable (:constant-flag t) nil [4400 4413])
+            ("GET_ISS_OP1" variable (:constant-flag t) nil [4425 4436])
+            ("ISS_OP2_MASK" variable (:constant-flag t) nil [4542 4554])
+            ("ISS_OP2_SHIFT" variable (:constant-flag t) nil [4581 4594])
+            ("GET_ISS_OP2" variable (:constant-flag t) nil [4606 4617])
+            ("ISS_CRN_MASK" variable (:constant-flag t) nil [4723 4735])
+            ("ISS_CRN_SHIFT" variable (:constant-flag t) nil [4761 4774])
+            ("GET_ISS_CRN" variable (:constant-flag t) nil [4786 4797])
+            ("ISS_CRM_MASK" variable (:constant-flag t) nil [4903 4915])
+            ("ISS_CRM_SHIFT" variable (:constant-flag t) nil [4939 4952])
+            ("GET_ISS_CRM" variable (:constant-flag t) nil [4963 4974])
+            ("ISS_RT_MASK" variable (:constant-flag t) nil [5116 5127])
+            ("ISS_RT_SHIFT" variable (:constant-flag t) nil [5152 5164])
+            ("GET_ISS_RT" variable (:constant-flag t) nil [5175 5185])
+            ("ISS_DIRECTION_MASK" variable (:constant-flag t) nil [5324 5342])
+            ("GET_ISS_DIRECTION" variable (:constant-flag t) nil [5450 5467])
+            ("ISS_IS_READ" variable (:constant-flag t) nil [5598 5609])
+            ("GET_ISS_ENCODING" variable (:constant-flag t) nil [5740 5756])
+            ("PMCR_EL0_N_MASK" variable (:constant-flag t) nil [5936 5951])
+            ("PMCR_EL0_N_SHIFT" variable (:constant-flag t) nil [5977 5993])
+            ("GET_PMCR_EL0_N" variable (:constant-flag t) nil [6005 6019])
+            ("HCR_EL2_TID5" variable (:constant-flag t) nil [6287 6299])
+            ("HCR_EL2_TTLBOS" variable (:constant-flag t) nil [6420 6434])
+            ("HCR_EL2_TTLBIS" variable (:constant-flag t) nil [6555 6569])
+            ("HCR_EL2_TOCU" variable (:constant-flag t) nil [6690 6702])
+            ("HCR_EL2_TICAB" variable (:constant-flag t) nil [6803 6816])
+            ("HCR_EL2_TID4" variable (:constant-flag t) nil [6876 6888])
+            ("HCR_EL2_API" variable (:constant-flag t) nil [7017 7028])
+            ("HCR_EL2_APK" variable (:constant-flag t) nil [7155 7166])
+            ("HCR_EL2_TERR" variable (:constant-flag t) nil [7261 7273])
+            ("HCR_EL2_TLOR" variable (:constant-flag t) nil [7374 7386])
+            ("HCR_EL2_ID" variable (:constant-flag t) nil [7589 7599])
+            ("HCR_EL2_CD" variable (:constant-flag t) nil [7788 7798])
+            ("HCR_EL2_RW" variable (:constant-flag t) nil [7946 7956])
+            ("HCR_EL2_TRVM" variable (:constant-flag t) nil [8038 8050])
+            ("HCR_EL2_TVM" variable (:constant-flag t) nil [8133 8144])
+            ("HCR_EL2_TTLB" variable (:constant-flag t) nil [8222 8234])
+            ("HCR_EL2_TPU" variable (:constant-flag t) nil [8314 8325])
+            ("HCR_EL2_TPCP" variable (:constant-flag t) nil [8421 8433])
+            ("HCR_EL2_TSW" variable (:constant-flag t) nil [8553 8564])
+            ("HCR_EL2_TACR" variable (:constant-flag t) nil [8687 8699])
+            ("HCR_EL2_TIDCP" variable (:constant-flag t) nil [8861 8874])
+            ("HCR_EL2_TSC" variable (:constant-flag t) nil [9001 9012])
+            ("HCR_EL2_TID3" variable (:constant-flag t) nil [9072 9084])
+            ("HCR_EL2_TID2" variable (:constant-flag t) nil [9144 9156])
+            ("HCR_EL2_TID1" variable (:constant-flag t) nil [9216 9228])
+            ("HCR_EL2_TID0" variable (:constant-flag t) nil [9288 9300])
+            ("HCR_EL2_TWE" variable (:constant-flag t) nil [9416 9427])
+            ("HCR_EL2_TWI" variable (:constant-flag t) nil [9562 9573])
+            ("HCR_EL2_BSU_INNER_SHAREABLE" variable (:constant-flag t) nil [9755 9782])
+            ("HCR_EL2_FB" variable (:constant-flag t) nil [9959 9969])
+            ("HCR_EL2_VI" variable (:constant-flag t) nil [10093 10103])
+            ("HCR_EL2_VF" variable (:constant-flag t) nil [10227 10237])
+            ("HCR_EL2_AMO" variable (:constant-flag t) nil [10384 10395])
+            ("HCR_EL2_IMO" variable (:constant-flag t) nil [10536 10547])
+            ("HCR_EL2_FMO" variable (:constant-flag t) nil [10688 10699])
+            ("HCR_EL2_PTW" variable (:constant-flag t) nil [10950 10961])
+            ("HCR_EL2_SWIO" variable (:constant-flag t) nil [11171 11183])
+            ("HCR_EL2_VM" variable (:constant-flag t) nil [11312 11322])
+            ("HCR_EL2_E2H" variable (:constant-flag t) nil [11515 11526])
+            ("HCR_EL2_TGE" variable (:constant-flag t) nil [11604 11615])
+            ("CPTR_EL2_TTA" variable (:constant-flag t) nil [11983 11995])
+            ("CPTR_EL2_VHE_TTA" variable (:constant-flag t) nil [12026 12042])
+            ("CPTR_EL2_VHE_FPEN" variable (:constant-flag t) nil [12328 12345])
+            ("PSR_D" variable (:constant-flag t) nil [12557 12562])
+            ("PSR_A" variable (:constant-flag t) nil [12642 12647])
+            ("PSR_I" variable (:constant-flag t) nil [12724 12729])
+            ("PSR_F" variable (:constant-flag t) nil [12806 12811])
+            ("PSR_ARCH_MODE_32" variable (:constant-flag t) nil [12870 12886])
+            ("PSR_PE_MODE_MASK" variable (:constant-flag t) nil [12944 12960])
+            ("PSR_PE_MODE_EL0T" variable (:constant-flag t) nil [13010 13026])
+            ("PSR_PE_MODE_EL1H" variable (:constant-flag t) nil [13076 13092])
+            ("SCTLR_EL2_BT" variable (:constant-flag t) nil [13395 13407])
+            ("SCTLR_EL2_ENIA" variable (:constant-flag t) nil [13613 13627])
+            ("SCTLR_EL2_B28" variable (:constant-flag t) nil [13686 13699])
+            ("SCTLR_EL2_EIS" variable (:constant-flag t) nil [13828 13841])
+            ("SCTLR_EL2_IESB" variable (:constant-flag t) nil [13944 13958])
+            ("SCTLR_EL2_WXN" variable (:constant-flag t) nil [14046 14059])
+            ("SCTLR_EL2_B18" variable (:constant-flag t) nil [14118 14131])
+            ("SCTLR_EL2_B16" variable (:constant-flag t) nil [14190 14203])
+            ("SCTLR_EL2_I" variable (:constant-flag t) nil [14287 14298])
+            ("SCTLR_EL2_EOS" variable (:constant-flag t) nil [14426 14439])
+            ("SCTLR_EL2_B4" variable (:constant-flag t) nil [14498 14510])
+            ("SCTLR_EL2_SA" variable (:constant-flag t) nil [14579 14591])
+            ("SCTLR_EL2_C" variable (:constant-flag t) nil [14674 14685])
+            ("SCTLR_EL2_A" variable (:constant-flag t) nil [14751 14762])
+            ("SCTLR_EL2_M" variable (:constant-flag t) nil [14852 14863])
+            ("ID_AA64MMFR1_EL1_VH_SHIFT" variable (:constant-flag t) nil [14921 14946])
+            ("ID_AA64MMFR1_EL1_VH_MASK" variable (:constant-flag t) nil [14957 14981])
+            ("ID_AA64MMFR1_EL1_VH_SUPPORTED" variable (:constant-flag t) nil [15004 15033])
+            ("ID_AA64PFR1_EL1_BT" variable (:constant-flag t) nil [15294 15312])
+            ("false" variable (:type "int") nil [15649 15655]))          
+      :file "sysregs.h"
+      :pointmax 15665
+      :fsize 15664
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax '((close-paren 15663 . 15664) (RETURN 15642 . 15648) (open-paren 15479 . 15480) (close-paren 15477 . 15478) (VOID 15473 . 15477) (open-paren 15472 . 15473) (symbol 15457 . 15472) (BOOL 15452 . 15456) (INLINE 15445 . 15451) (STATIC 15438 . 15444) (punctuation 15372 . 15373) (close-paren 15371 . 15372) (VOID 15367 . 15371) (open-paren 15366 . 15367) (symbol 15340 . 15366) (BOOL 15335 . 15339) (punctuation 15207 . 15208) (close-paren 15206 . 15207) (VOID 15202 . 15206) (open-paren 15201 . 15202) (symbol 15182 . 15201) (symbol 15172 . 15181) (punctuation 15169 . 15170) (close-paren 15168 . 15169) (VOID 15164 . 15168) (open-paren 15163 . 15164) (symbol 15145 . 15163) (symbol 15135 . 15144) (punctuation 15132 . 15133) (close-paren 15131 . 15132) (VOID 15127 . 15131) (open-paren 15126 . 15127) (symbol 15108 . 15126) (symbol 15098 . 15107) (punctuation 15095 . 15096) (close-paren 15094 . 15095) (symbol 15089 . 15094) (symbol 15077 . 15088) (open-paren 15076 . 15077) (symbol 15059 . 15076) (symbol 15049 . 15058) (close-paren 4064 . 4065) (symbol 217 . 221) (symbol 210 . 216) (punctuation 209 . 210))
+      :lexical-table 
+        '(("MDCR_EL2_TDOSA" . ((semantic-list "(UINT64_C(0x1) << 10)" 1427 . 1448)))
+          ("GET_ESR_EC" (spp-arg-list ("esr") 2460 . 2465) . ((semantic-list "((esr) >> ESR_EC_OFFSET)" 2466 . 2490)))
+          ("EC_INSTRUCTION_ABORT_LOWER_EL" . ((symbol "UINT64_C" 3169 . 3177) (semantic-list "(0x20)" 3177 . 3183)))
+          ("EC_INSTRUCTION_ABORT_SAME_EL" . ((symbol "UINT64_C" 3301 . 3309) (semantic-list "(0x21)" 3309 . 3315)))
+          ("ISS_OP0_SHIFT" . ((number "20" 4233 . 4235)))
+          ("PSR_PE_MODE_MASK" . ((symbol "UINT64_C" 12961 . 12969) (semantic-list "(0xf)" 12969 . 12974)))
+          ("SCTLR_EL2_B28" . ((semantic-list "(UINT64_C(0x1) << 28)" 13700 . 13721)))
+          ("SCTLR_EL2_IESB" . ((semantic-list "(UINT64_C(0x1) << 21)" 13959 . 13980)))
+          ("SCTLR_EL2_WXN" . ((semantic-list "(UINT64_C(0x1) << 19)" 14060 . 14081)))
+          ("SCTLR_EL2_I" . ((semantic-list "(UINT64_C(0x1) << 12)" 14299 . 14320)))
+          ("ISS_OP1_SHIFT" . ((number "14" 4414 . 4416)))
+          ("PMCR_EL0_N_MASK" . ((symbol "UINT64_C" 5952 . 5960) (semantic-list "(0xf800)" 5960 . 5968)))
+          ("HCR_EL2_TID0" . ((semantic-list "(UINT64_C(0x1) << 15)" 9301 . 9322)))
+          ("HCR_EL2_TWI" . ((semantic-list "(UINT64_C(0x1) << 13)" 9574 . 9595)))
+          ("HCR_EL2_AMO" . ((semantic-list "(UINT64_C(0x1) << 5)" 10396 . 10416)))
+          ("HCR_EL2_E2H" . ((semantic-list "(UINT64_C(0x1) << 34)" 11527 . 11548)))
+          ("HCR_EL2_TGE" . ((semantic-list "(UINT64_C(0x1) << 27)" 11616 . 11637)))
+          ("ID_AA64MMFR1_EL1_VH_MASK" . ((symbol "UINT64_C" 14982 . 14990) (semantic-list "(0xf)" 14990 . 14995)))
+          ("RT_REG_XZR" . ((semantic-list "(UINT64_C(31))" 466 . 480)))
+          ("MDCR_EL2_TPM" . ((semantic-list "(UINT64_C(0x1) << 6)" 1812 . 1832)))
+          ("MDCR_EL2_TPMCR" . ((semantic-list "(UINT64_C(0x1) << 5)" 1926 . 1946)))
+          ("GET_ISS_OP0" (spp-arg-list ("esr") 4255 . 4260) . ((semantic-list "((ISS_OP0_MASK & (esr)) >> ISS_OP0_SHIFT)" 4261 . 4302)))
+          ("ISS_OP2_SHIFT" . ((number "17" 4595 . 4597)))
+          ("GET_ISS_RT" (spp-arg-list ("esr") 5185 . 5190) . ((semantic-list "((ISS_RT_MASK & (esr)) >> ISS_RT_SHIFT)" 5191 . 5230)))
+          ("HCR_EL2_TERR" . ((semantic-list "(UINT64_C(0x1) << 36)" 7274 . 7295)))
+          ("HCR_EL2_ID" . ((semantic-list "(UINT64_C(0x1) << 33)" 7600 . 7621)))
+          ("HCR_EL2_TVM" . ((semantic-list "(UINT64_C(0x1) << 26)" 8145 . 8166)))
+          ("HCR_EL2_TPCP" . ((semantic-list "(UINT64_C(0x1) << 23)" 8434 . 8455)))
+          ("HCR_EL2_TID1" . ((semantic-list "(UINT64_C(0x1) << 16)" 9229 . 9250)))
+          ("PSR_I" . ((semantic-list "(UINT64_C(1) << 7)" 12730 . 12748)))
+          ("EC_UNKNOWN" . ((symbol "UINT64_C" 2682 . 2690) (semantic-list "(0x0)" 2690 . 2695)))
+          ("ISS_OP0_MASK" . ((symbol "UINT64_C" 4192 . 4200) (semantic-list "(0x300000)" 4200 . 4210)))
+          ("GET_ISS_OP1" (spp-arg-list ("esr") 4436 . 4441) . ((semantic-list "((ISS_OP1_MASK & (esr)) >> ISS_OP1_SHIFT)" 4442 . 4483)))
+          ("HCR_EL2_TSW" . ((semantic-list "(UINT64_C(0x1) << 22)" 8565 . 8586)))
+          ("HCR_EL2_TID2" . ((semantic-list "(UINT64_C(0x1) << 17)" 9157 . 9178)))
+          ("HCR_EL2_SWIO" . ((semantic-list "(UINT64_C(0x1) << 1)" 11184 . 11204)))
+          ("MDCR_EL2_E2PB" . ((semantic-list "(UINT64_C(0x3) << 12)" 1195 . 1216)))
+          ("MDCR_EL2_TDRA" . ((semantic-list "(UINT64_C(0x1) << 11)" 1281 . 1302)))
+          ("EC_MSR" . ((symbol "UINT64_C" 3043 . 3051) (semantic-list "(0x18)" 3051 . 3057)))
+          ("GET_ISS_OP2" (spp-arg-list ("esr") 4617 . 4622) . ((semantic-list "((ISS_OP2_MASK & (esr)) >> ISS_OP2_SHIFT)" 4623 . 4664)))
+          ("HCR_EL2_API" . ((semantic-list "(UINT64_C(0x1) << 41)" 7029 . 7050)))
+          ("HCR_EL2_TLOR" . ((semantic-list "(UINT64_C(0x1) << 35)" 7387 . 7408)))
+          ("HCR_EL2_TID3" . ((semantic-list "(UINT64_C(0x1) << 18)" 9085 . 9106)))
+          ("HCR_EL2_FB" . ((semantic-list "(UINT64_C(0x1) << 9)" 9970 . 9990)))
+          ("HCR_EL2_VF" . ((semantic-list "(UINT64_C(0x1) << 6)" 10238 . 10258)))
+          ("CPTR_EL2_TTA" . ((semantic-list "(UINT64_C(0x1) << 20)" 11996 . 12017)))
+          ("SCTLR_EL2_SA" . ((semantic-list "(UINT64_C(0x1) << 3)" 14592 . 14612)))
+          ("SCTLR_EL2_M" . ((semantic-list "(UINT64_C(0x1) << 0)" 14864 . 14884)))
+          ("EC_HVC" . ((symbol "UINT64_C" 2863 . 2871) (semantic-list "(0x16)" 2871 . 2877)))
+          ("ISS_CRN_MASK" . ((symbol "UINT64_C" 4736 . 4744) (semantic-list "(0x3c00)" 4744 . 4752)))
+          ("ISS_CRM_SHIFT" . ((number "1" 4953 . 4954)))
+          ("HCR_EL2_TID4" . ((semantic-list "(UINT64_C(0x1) << 49)" 6889 . 6910)))
+          ("HCR_EL2_TPU" . ((semantic-list "(UINT64_C(0x1) << 24)" 8326 . 8347)))
+          ("SCTLR_EL2_B4" . ((semantic-list "(UINT64_C(0x3) << 4)" 14511 . 14531)))
+          ("SCTLR_EL2_A" . ((semantic-list "(UINT64_C(0x1) << 1)" 14763 . 14783)))
+          ("ID_AA64MMFR1_EL1_VH_SHIFT" . ((number "8" 14947 . 14948)))
+          ("ID_AA64PFR1_EL1_BT" . ((semantic-list "(UINT64_C(0xf) << 0)" 15313 . 15333)))
+          ("MDCR_EL2_HCCD" . ((semantic-list "(UINT64_C(0x1) << 23)" 553 . 574)))
+          ("MDCR_EL2_TDA" . ((semantic-list "(UINT64_C(0x1) << 9)" 1558 . 1578)))
+          ("EC_DATA_ABORT_SAME_EL" . ((symbol "UINT64_C" 3531 . 3539) (semantic-list "(0x25)" 3539 . 3545)))
+          ("ISS_MASK" . ((semantic-list "((UINT64_C(0x1) << 22) - UINT64_C(0x1))" 3615 . 3654)))
+          ("ISS_SYSREG_MASK" . ((semantic-list "(ISS_MASK &		  /* Select the ISS bits */ \\
+	 ~(UINT64_C(0x1f) << 5) & /* exclude rt */          \\
+	 ~UINT64_C(0x1) " 3926 . 4041)))
+          ("ISS_CRN_SHIFT" . ((number "10" 4775 . 4777)))
+          ("GET_ISS_DIRECTION" (spp-arg-list ("esr") 5467 . 5472) . ((semantic-list "(ISS_DIRECTION_MASK & (esr))" 5473 . 5501)))
+          ("HCR_EL2_TID5" . ((semantic-list "(UINT64_C(0x1) << 58)" 6300 . 6321)))
+          ("HCR_EL2_APK" . ((semantic-list "(UINT64_C(0x1) << 40)" 7167 . 7188)))
+          ("SCTLR_EL2_EIS" . ((semantic-list "(UINT64_C(0x1) << 22)" 13842 . 13863)))
+          ("MDCR_EL2_HPMN" . ((semantic-list "(UINT64_C(0x1f) << 0)" 2132 . 2153)))
+          ("GET_ISS_CRM" (spp-arg-list ("esr") 4974 . 4979) . ((semantic-list "((ISS_CRM_MASK & (esr)) >> ISS_CRM_SHIFT)" 4980 . 5021)))
+          ("HCR_EL2_TTLBIS" . ((semantic-list "(UINT64_C(0x1) << 54)" 6570 . 6591)))
+          ("HCR_EL2_TICAB" . ((semantic-list "(UINT64_C(0x1) << 52)" 6817 . 6838)))
+          ("HCR_EL2_VI" . ((semantic-list "(UINT64_C(0x1) << 7)" 10104 . 10124)))
+          ("HCR_EL2_FMO" . ((semantic-list "(UINT64_C(0x1) << 3)" 10700 . 10720)))
+          ("PSR_A" . ((semantic-list "(UINT64_C(1) << 8)" 12648 . 12666)))
+          ("SCTLR_EL2_ENIA" . ((semantic-list "(UINT64_C(0x1) << 31)" 13628 . 13649)))
+          ("SCTLR_EL2_C" . ((semantic-list "(UINT64_C(0x1) << 2)" 14686 . 14706)))
+          ("ESR_EC_OFFSET" . ((symbol "UINT64_C" 2378 . 2386) (semantic-list "(26)" 2386 . 2390)))
+          ("GET_ESR_IL" (spp-arg-list ("esr") 2583 . 2588) . ((semantic-list "((esr) & (1 << 25))" 2589 . 2608)))
+          ("EC_WFI_WFE" . ((symbol "UINT64_C" 2782 . 2790) (semantic-list "(0x1)" 2790 . 2795)))
+          ("ISS_OP2_MASK" . ((symbol "UINT64_C" 4555 . 4563) (semantic-list "(0xe0000)" 4563 . 4572)))
+          ("GET_ISS_CRN" (spp-arg-list ("esr") 4797 . 4802) . ((semantic-list "((ISS_CRN_MASK & (esr)) >> ISS_CRN_SHIFT)" 4803 . 4844)))
+          ("ISS_DIRECTION_MASK" . ((symbol "UINT64_C" 5343 . 5351) (semantic-list "(0x1)" 5351 . 5356)))
+          ("HCR_EL2_IMO" . ((semantic-list "(UINT64_C(0x1) << 4)" 10548 . 10568)))
+          ("CPTR_EL2_VHE_FPEN" . ((semantic-list "(UINT64_C(0x3) << 20)" 12346 . 12367)))
+          ("PSR_PE_MODE_EL0T" . ((symbol "UINT64_C" 13027 . 13035) (semantic-list "(0x0)" 13035 . 13040)))
+          ("SCTLR_EL2_B16" . ((semantic-list "(UINT64_C(0x1) << 16)" 14204 . 14225)))
+          ("ISS_CRM_MASK" . ((symbol "UINT64_C" 4916 . 4924) (semantic-list "(0x1e)" 4924 . 4930)))
+          ("GET_PMCR_EL0_N" (spp-arg-list ("pmcr") 6019 . 6025) . ((semantic-list "((PMCR_EL0_N_MASK & (pmcr)) >> PMCR_EL0_N_SHIFT)" 6026 . 6074)))
+          ("HCR_EL2_RW" . ((semantic-list "(UINT64_C(0x1) << 31)" 7957 . 7978)))
+          ("HCR_EL2_TRVM" . ((semantic-list "(UINT64_C(0x1) << 30)" 8051 . 8072)))
+          ("HCR_EL2_TSC" . ((semantic-list "(UINT64_C(0x1) << 19)" 9013 . 9034)))
+          ("HCR_EL2_PTW" . ((semantic-list "(UINT64_C(0x1) << 2)" 10962 . 10982)))
+          ("MDCR_EL2_TTRF" . ((semantic-list "(UINT64_C(0x1) << 19)" 680 . 701)))
+          ("MDCR_EL2_HPMD" . ((semantic-list "(UINT64_C(0x1) << 17)" 774 . 795)))
+          ("MDCR_EL2_TDE" . ((semantic-list "(UINT64_C(0x1) << 8)" 1673 . 1693)))
+          ("EC_DATA_ABORT_LOWER_EL" . ((symbol "UINT64_C" 3413 . 3421) (semantic-list "(0x24)" 3421 . 3427)))
+          ("PMCR_EL0_N_SHIFT" . ((number "11" 5994 . 5996)))
+          ("HCR_EL2_CD" . ((semantic-list "(UINT64_C(0x1) << 32)" 7799 . 7820)))
+          ("HCR_EL2_TIDCP" . ((semantic-list "(UINT64_C(0x1) << 20)" 8875 . 8896)))
+          ("HCR_EL2_TWE" . ((semantic-list "(UINT64_C(0x1) << 14)" 9428 . 9449)))
+          ("PSR_D" . ((semantic-list "(UINT64_C(1) << 9)" 12563 . 12581)))
+          ("SCTLR_EL2_B18" . ((semantic-list "(UINT64_C(0x1) << 18)" 14132 . 14153)))
+          ("ID_AA64MMFR1_EL1_VH_SUPPORTED" . ((symbol "UINT64_C" 15034 . 15042) (semantic-list "(0x1)" 15042 . 15047)))
+          ("MDCR_EL2_TPMS" . ((semantic-list "(UINT64_C(0x1) << 14)" 999 . 1020)))
+          ("GET_ESR_ISS" (spp-arg-list ("esr") 3675 . 3680) . ((semantic-list "(ISS_MASK & (esr))" 3681 . 3699)))
+          ("GET_ISS_SYSREG" (spp-arg-list ("esr") 4089 . 4094) . ((semantic-list "(ISS_SYSREG_MASK & (esr))" 4095 . 4120)))
+          ("ISS_RT_MASK" . ((symbol "UINT64_C" 5128 . 5136) (semantic-list "(0x3e0)" 5136 . 5143)))
+          ("ISS_RT_SHIFT" . ((number "5" 5165 . 5166)))
+          ("HCR_EL2_TOCU" . ((semantic-list "(UINT64_C(0x1) << 52)" 6703 . 6724)))
+          ("HCR_EL2_BSU_INNER_SHAREABLE" . ((semantic-list "(UINT64_C(0x1) << 10)" 9783 . 9804)))
+          ("HCR_EL2_VM" . ((semantic-list "(UINT64_C(0x1) << 0)" 11323 . 11343)))
+          ("SCTLR_EL2_BT" . ((semantic-list "(UINT64_C(0x1) << 36)" 13408 . 13429)))
+          ("SCTLR_EL2_EOS" . ((semantic-list "(UINT64_C(0x1) << 11)" 14440 . 14461)))
+          ("EC_SMC" . ((symbol "UINT64_C" 2945 . 2953) (semantic-list "(0x17)" 2953 . 2959)))
+          ("ISS_OP1_MASK" . ((symbol "UINT64_C" 4374 . 4382) (semantic-list "(0x1c000)" 4382 . 4391)))
+          ("ISS_IS_READ" (spp-arg-list ("esr") 5609 . 5614) . ((semantic-list "(ISS_DIRECTION_MASK & (esr))" 5615 . 5643)))
+          ("GET_ISS_ENCODING" (spp-arg-list ("op0" "op1" "crn" "crm" "op2") 5756 . 5781) . ((semantic-list "((op0) << ISS_OP0_SHIFT | (op2) << ISS_OP2_SHIFT | \\
+	 (op1) << ISS_OP1_SHIFT | (crn) << ISS_CRN_SHIFT | \\
+	 (crm) << ISS_CRM_SHIFT)" 5794 . 5926)))
+          ("HCR_EL2_TTLBOS" . ((semantic-list "(UINT64_C(0x1) << 55)" 6435 . 6456)))
+          ("HCR_EL2_TTLB" . ((semantic-list "(UINT64_C(0x1) << 25)" 8235 . 8256)))
+          ("HCR_EL2_TACR" . ((semantic-list "(UINT64_C(0x1) << 21)" 8700 . 8721)))
+          ("CPTR_EL2_VHE_TTA" . ((semantic-list "(UINT64_C(0x1) << 28)" 12043 . 12064)))
+          ("PSR_F" . ((semantic-list "(UINT64_C(1) << 6)" 12812 . 12830)))
+          ("PSR_ARCH_MODE_32" . ((semantic-list "(UINT64_C(1) << 4)" 12887 . 12905)))
+          ("PSR_PE_MODE_EL1H" . ((symbol "UINT64_C" 13093 . 13101) (semantic-list "(0x5)" 13101 . 13106)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "msr.h"
+      :fsize 3477
+      :lastmodtime '(24817 60635))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/arch/timer.h" include nil nil [209 235])
+            ("stdbool.h" include (:system-flag t) nil [237 257])
+            ("stddef.h" include (:system-flag t) nil [258 277])
+            ("stdint.h" include (:system-flag t) nil [278 297])
+            ("hf/arch/cpu.h" include nil nil [299 323])
+            ("hf/addr.h" include nil nil [325 345])
+            ("msr.h" include nil nil [347 363])
+            ("sysregs.h" include nil nil [364 384])
+            ("CNTV_CTL_EL0_ENABLE" variable (:constant-flag t) nil [394 413])
+            ("CNTV_CTL_EL0_IMASK" variable (:constant-flag t) nil [432 450])
+            ("CNTV_CTL_EL0_ISTATUS" variable (:constant-flag t) nil [469 489])
+            ("NANOS_PER_UNIT" variable (:constant-flag t) nil [509 523])
+            ("arch_timer_mask" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("arch_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [615 638]))                  
+                :type "void")
+                nil [594 697])
+            ("arch_timer_enabled" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("arch_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [808 831]))                  
+                :type "bool")
+                nil [784 988])
+            ("ticks_to_ns" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ticks" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1103 1118]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [1075 1179])
+            ("arch_timer_remaining_ticks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("arch_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1415 1438]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [1372 1747])
+            ("arch_timer_remaining_ns" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("arch_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1979 2002]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [1946 2061])
+            ("arch_timer_pending" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("arch_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2203 2226]))                  
+                :type "bool")
+                nil [2179 2604])
+            ("arch_timer_enabled_current" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2757 2762]))                  
+                :type "bool")
+                nil [2725 2970])
+            ("arch_timer_disable_current" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3073 3078]))                  
+                :type "void")
+                nil [3041 3174])
+            ("arch_timer_remaining_ticks_current" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3412 3417]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [3361 3673])
+            ("arch_timer_remaining_ns_current" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3907 3912]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [3866 3975]))          
+      :file "timer.c"
+      :pointmax 3976
+      :fsize 3975
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CNTV_CTL_EL0_IMASK" . ((semantic-list "(1u << 1)" 451 . 460)))
+          ("CNTV_CTL_EL0_ISTATUS" . ((semantic-list "(1u << 2)" 490 . 499)))
+          ("CNTV_CTL_EL0_ENABLE" . ((semantic-list "(1u << 0)" 414 . 423)))
+          ("NANOS_PER_UNIT" . ((number "1000000000" 524 . 534)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("smc.h" include nil nil [223 239])
+            ("PSCI_VERSION_0_2" variable (:constant-flag t) nil [317 333])
+            ("PSCI_VERSION_1_0" variable (:constant-flag t) nil [353 369])
+            ("PSCI_VERSION_1_1" variable (:constant-flag t) nil [389 405])
+            ("PSCI_VERSION" variable (:constant-flag t) nil [481 493])
+            ("PSCI_CPU_SUSPEND" variable (:constant-flag t) nil [529 545])
+            ("PSCI_CPU_OFF" variable (:constant-flag t) nil [577 589])
+            ("PSCI_CPU_ON" variable (:constant-flag t) nil [625 636])
+            ("PSCI_AFFINITY_INFO" variable (:constant-flag t) nil [673 691])
+            ("PSCI_MIGRATE" variable (:constant-flag t) nil [721 733])
+            ("PSCI_MIGRATE_INFO_TYPE" variable (:constant-flag t) nil [769 791])
+            ("PSCI_MIGRATE_INFO_UP_CPU" variable (:constant-flag t) nil [817 841])
+            ("PSCI_SYSTEM_OFF" variable (:constant-flag t) nil [865 880])
+            ("PSCI_SYSTEM_RESET" variable (:constant-flag t) nil [913 930])
+            ("PSCI_FEATURES" variable (:constant-flag t) nil [961 974])
+            ("PSCI_CPU_FREEZE" variable (:constant-flag t) nil [1009 1024])
+            ("PSCI_CPU_DEFAULT_SUSPEND" variable (:constant-flag t) nil [1057 1081])
+            ("PSCI_NODE_HW_STATE" variable (:constant-flag t) nil [1105 1123])
+            ("PSCI_SYSTEM_SUSPEND" variable (:constant-flag t) nil [1153 1172])
+            ("PSCI_SET_SYSPEND_MODE" variable (:constant-flag t) nil [1201 1222])
+            ("PSCI_STAT_RESIDENCY" variable (:constant-flag t) nil [1249 1268])
+            ("PSCI_STAT_COUNT" variable (:constant-flag t) nil [1297 1312])
+            ("PSCI_SYSTEM_RESET2" variable (:constant-flag t) nil [1345 1363])
+            ("PSCI_MEM_PROTECT" variable (:constant-flag t) nil [1393 1409])
+            ("PSCI_MEM_PROTECT_CHECK_RANGE" variable (:constant-flag t) nil [1441 1469])
+            ("PSCI_RETURN_ON_PENDING" variable (:constant-flag t) nil [1537 1559])
+            ("PSCI_RETURN_OFF" variable (:constant-flag t) nil [1578 1593])
+            ("PSCI_RETURN_ON" variable (:constant-flag t) nil [1619 1633])
+            ("PSCI_RETURN_SUCCESS" variable (:constant-flag t) nil [1660 1679])
+            ("PSCI_ERROR_NOT_SUPPORTED" variable (:constant-flag t) nil [1701 1725])
+            ("PSCI_ERROR_INVALID_PARAMETERS" variable (:constant-flag t) nil [1760 1789])
+            ("PSCI_ERROR_DENIED" variable (:constant-flag t) nil [1804 1821])
+            ("PSCI_ERROR_ALREADY_ON" variable (:constant-flag t) nil [1848 1869])
+            ("PSCI_ERROR_ON_PENDING" variable (:constant-flag t) nil [1892 1913])
+            ("PSCI_ERROR_INTERNAL_FAILURE" variable (:constant-flag t) nil [1936 1963])
+            ("PSCI_ERROR_NOT_PRESENT" variable (:constant-flag t) nil [1980 2002])
+            ("PSCI_ERROR_DISABLE" variable (:constant-flag t) nil [2024 2042])
+            ("PSCI_ERROR_INVALID_ADDRESS" variable (:constant-flag t) nil [2068 2094]))          
+      :file "psci.h"
+      :pointmax 2127
+      :fsize 2126
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax '((symbol 217 . 221) (symbol 210 . 216) (punctuation 209 . 210))
+      :lexical-table 
+        '(("PSCI_VERSION_1_1" . ((number "0x00010001" 406 . 416)))
+          ("PSCI_MIGRATE" . ((number "0x84000005" 750 . 760)))
+          ("PSCI_ERROR_DISABLE" . ((semantic-list "(-8)" 2055 . 2059)))
+          ("PSCI_ERROR_INVALID_ADDRESS" . ((semantic-list "(-9)" 2099 . 2103)))
+          ("PSCI_CPU_FREEZE" . ((number "0x8400000b" 1038 . 1048)))
+          ("PSCI_ERROR_NOT_SUPPORTED" . ((symbol "SMCCC_ERROR_UNKNOWN" 1732 . 1751)))
+          ("PSCI_MEM_PROTECT" . ((number "0x84000013" 1422 . 1432)))
+          ("PSCI_RETURN_ON_PENDING" . ((number "2" 1568 . 1569)))
+          ("PSCI_RETURN_ON" . ((number "0" 1650 . 1651)))
+          ("PSCI_VERSION_0_2" . ((number "0x00000002" 334 . 344)))
+          ("PSCI_SYSTEM_SUSPEND" . ((number "0x8400000e" 1182 . 1192)))
+          ("PSCI_SYSTEM_RESET2" . ((number "0x84000012" 1374 . 1384)))
+          ("PSCI_RETURN_OFF" . ((number "1" 1609 . 1610)))
+          ("PSCI_ERROR_INVALID_PARAMETERS" . ((semantic-list "(-2)" 1791 . 1795)))
+          ("PSCI_ERROR_INTERNAL_FAILURE" . ((semantic-list "(-6)" 1967 . 1971)))
+          ("PSCI_SYSTEM_RESET" . ((number "0x84000009" 942 . 952)))
+          ("PSCI_VERSION" . ((number "0x84000000" 510 . 520)))
+          ("PSCI_CPU_SUSPEND" . ((number "0x84000001" 558 . 568)))
+          ("PSCI_CPU_DEFAULT_SUSPEND" . ((number "0x8400000c" 1086 . 1096)))
+          ("PSCI_NODE_HW_STATE" . ((number "0x8400000d" 1134 . 1144)))
+          ("PSCI_STAT_RESIDENCY" . ((number "0x84000010" 1278 . 1288)))
+          ("PSCI_ERROR_ON_PENDING" . ((semantic-list "(-5)" 1923 . 1927)))
+          ("PSCI_ERROR_NOT_PRESENT" . ((semantic-list "(-7)" 2011 . 2015)))
+          ("PSCI_CPU_ON" . ((number "0x84000003" 654 . 664)))
+          ("PSCI_AFFINITY_INFO" . ((number "0x84000004" 702 . 712)))
+          ("PSCI_SET_SYSPEND_MODE" . ((number "0x8400000f" 1230 . 1240)))
+          ("PSCI_STAT_COUNT" . ((number "0x84000011" 1326 . 1336)))
+          ("PSCI_CPU_OFF" . ((number "0x84000002" 606 . 616)))
+          ("PSCI_MIGRATE_INFO_UP_CPU" . ((number "0x84000007" 846 . 856)))
+          ("PSCI_SYSTEM_OFF" . ((number "0x84000008" 894 . 904)))
+          ("PSCI_MEM_PROTECT_CHECK_RANGE" . ((number "0x84000014" 1470 . 1480)))
+          ("PSCI_RETURN_SUCCESS" . ((number "0" 1691 . 1692)))
+          ("PSCI_VERSION_1_0" . ((number "0x00010000" 370 . 380)))
+          ("PSCI_MIGRATE_INFO_TYPE" . ((number "0x84000006" 798 . 808)))
+          ("PSCI_FEATURES" . ((number "0x8400000a" 990 . 1000)))
+          ("PSCI_ERROR_DENIED" . ((semantic-list "(-3)" 1835 . 1839)))
+          ("PSCI_ERROR_ALREADY_ON" . ((semantic-list "(-4)" 1879 . 1883)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "smc.h"
+      :fsize 1782
+      :lastmodtime '(24817 60635))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/mm.h" include nil nil [209 227])
+            ("hf/arch/barriers.h" include nil nil [229 258])
+            ("hf/arch/cpu.h" include nil nil [259 283])
+            ("hf/arch/mmu.h" include nil nil [284 308])
+            ("hf/dlog.h" include nil nil [310 330])
+            ("msr.h" include nil nil [332 348])
+            ("sysregs.h" include nil nil [349 369])
+            ("NON_SHAREABLE" variable (:constant-flag t) nil [430 443])
+            ("OUTER_SHAREABLE" variable (:constant-flag t) nil [466 481])
+            ("INNER_SHAREABLE" variable (:constant-flag t) nil [502 517])
+            ("PTE_VALID" variable (:constant-flag t) nil [539 548])
+            ("PTE_LEVEL0_BLOCK" variable (:constant-flag t) nil [583 599])
+            ("PTE_TABLE" variable (:constant-flag t) nil [627 636])
+            ("STAGE1_XN" variable (:constant-flag t) nil [672 681])
+            ("STAGE1_PXN" variable (:constant-flag t) nil [719 729])
+            ("STAGE1_CONTIGUOUS" variable (:constant-flag t) nil [766 783])
+            ("STAGE1_DBM" variable (:constant-flag t) nil [813 823])
+            ("STAGE1_GP" variable (:constant-flag t) nil [860 869])
+            ("STAGE1_NG" variable (:constant-flag t) nil [907 916])
+            ("STAGE1_AF" variable (:constant-flag t) nil [954 963])
+            ("STAGE1_SH" variable (:constant-flag t) nil [1001 1010])
+            ("STAGE1_AP2" variable (:constant-flag t) nil [1039 1049])
+            ("STAGE1_AP1" variable (:constant-flag t) nil [1085 1095])
+            ("STAGE1_AP" variable (:constant-flag t) nil [1131 1140])
+            ("STAGE1_NS" variable (:constant-flag t) nil [1169 1178])
+            ("STAGE1_ATTRINDX" variable (:constant-flag t) nil [1215 1230])
+            ("STAGE1_READONLY" variable (:constant-flag t) nil [1254 1269])
+            ("STAGE1_READWRITE" variable (:constant-flag t) nil [1291 1307])
+            ("STAGE1_DEVICEINDX" variable (:constant-flag t) nil [1329 1346])
+            ("STAGE1_NORMALINDX" variable (:constant-flag t) nil [1367 1384])
+            ("STAGE2_XN" variable (:constant-flag t) nil [1406 1415])
+            ("STAGE2_CONTIGUOUS" variable (:constant-flag t) nil [1444 1461])
+            ("STAGE2_DBM" variable (:constant-flag t) nil [1490 1500])
+            ("STAGE2_AF" variable (:constant-flag t) nil [1536 1545])
+            ("STAGE2_SH" variable (:constant-flag t) nil [1582 1591])
+            ("STAGE2_S2AP" variable (:constant-flag t) nil [1619 1630])
+            ("STAGE2_EXECUTE_ALL" variable (:constant-flag t) nil [1657 1675])
+            ("STAGE2_EXECUTE_EL0" variable (:constant-flag t) nil [1697 1715])
+            ("STAGE2_EXECUTE_NONE" variable (:constant-flag t) nil [1737 1756])
+            ("STAGE2_EXECUTE_EL1" variable (:constant-flag t) nil [1777 1795])
+            ("STAGE2_EXECUTE_MASK" variable (:constant-flag t) nil [1817 1836])
+            ("TABLE_NSTABLE" variable (:constant-flag t) nil [1917 1930])
+            ("TABLE_APTABLE1" variable (:constant-flag t) nil [1960 1974])
+            ("TABLE_APTABLE0" variable (:constant-flag t) nil [2003 2017])
+            ("TABLE_XNTABLE" variable (:constant-flag t) nil [2046 2059])
+            ("TABLE_PXNTABLE" variable (:constant-flag t) nil [2089 2103])
+            ("STAGE2_SW_OWNED" variable (:constant-flag t) nil [2194 2209])
+            ("STAGE2_SW_EXCLUSIVE" variable (:constant-flag t) nil [2242 2261])
+            ("STAGE2_DEVICE_MEMORY" variable (:constant-flag t) nil [2360 2380])
+            ("STAGE2_NONCACHEABLE" variable (:constant-flag t) nil [2401 2420])
+            ("STAGE2_WRITETHROUGH" variable (:constant-flag t) nil [2442 2461])
+            ("STAGE2_WRITEBACK" variable (:constant-flag t) nil [2483 2499])
+            ("STAGE2_MEMATTR_DEVICE_nGnRnE" variable (:constant-flag t) nil [2594 2622])
+            ("STAGE2_MEMATTR_DEVICE_nGnRE" variable (:constant-flag t) nil [2643 2670])
+            ("STAGE2_MEMATTR_DEVICE_nGRE" variable (:constant-flag t) nil [2692 2718])
+            ("STAGE2_MEMATTR_DEVICE_GRE" variable (:constant-flag t) nil [2741 2766])
+            ("STAGE2_MEMATTR" variable (:constant-flag t) nil [2861 2875])
+            ("STAGE2_MEMATTR_TYPE_MASK" variable (:constant-flag t) nil [2932 2956])
+            ("STAGE2_ACCESS_READ" variable (:constant-flag t) nil [2983 3001])
+            ("STAGE2_ACCESS_WRITE" variable (:constant-flag t) nil [3023 3042])
+            ("CACHE_WORD_SIZE" variable (:constant-flag t) nil [3064 3079])
+            ("MAX_TLBI_OPS" variable (:constant-flag t) nil [3292 3304])
+            ("tlbi" variable (:constant-flag t) nil [3354 3358])
+            ("tlbi_reg" variable (:constant-flag t) nil [3493 3501])
+            ("PTE_ADDR_MASK" variable (:constant-flag t) nil [3750 3763])
+            ("PTE_ATTR_MASK" variable (:constant-flag t) nil [3887 3900])
+            ("arch_mm_config" variable (:type ("arch_mm_config" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [4158 4347])
+            ("arch_mm_config" type
+               (:members 
+                  ( ("ttbr0_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4183 4203])
+                    ("vtcr_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4205 4224])
+                    ("mair_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4226 4245])
+                    ("tcr_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4247 4265])
+                    ("sctlr_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4267 4287])
+                    ("vstcr_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4289 4309])
+                    ("hcr_el2" variable (:type ("uintreg_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4311 4329]))                  
+                :type "struct")
+                nil [4158 4347])
+            ("mm_s2_max_level" variable
+               (:typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [4349 4380])
+            ("mm_s2_root_table_count" variable
+               (:typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [4381 4419])
+            ("arch_mm_absent_pte" function
+               (:arguments 
+                  ( ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4520 4534]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [4495 4563])
+            ("arch_mm_table_pte" function
+               (:arguments 
+                  ( ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4799 4813])
+                    ("pa" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4814 4825]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [4775 4939])
+            ("arch_mm_block_pte" function
+               (:arguments 
+                  ( ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5062 5076])
+                    ("pa" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5077 5088])
+                    ("attrs" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5089 5104]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [5038 5257])
+            ("arch_mm_is_block_allowed" function
+               (:arguments 
+                  ( ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5408 5422]))                  
+                :type "bool")
+                nil [5378 5446])
+            ("arch_mm_pte_is_present" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5644 5654])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5655 5669]))                  
+                :type "bool")
+                nil [5616 5747])
+            ("arch_mm_pte_is_valid" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5917 5927])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5928 5942]))                  
+                :type "bool")
+                nil [5891 5992])
+            ("arch_mm_pte_is_block" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6088 6098])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6099 6113]))                  
+                :type "bool")
+                nil [6062 6347])
+            ("arch_mm_pte_is_table" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6440 6450])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6451 6465]))                  
+                :type "bool")
+                nil [6414 6559])
+            ("pte_addr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6586 6596]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [6561 6629])
+            ("arch_mm_clear_pa" function
+               (:arguments 
+                  ( ("pa" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6772 6783]))                  
+                :type ("paddr_t" type (:type "class") nil nil))
+                nil [6747 6827])
+            ("arch_mm_block_from_pte" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6960 6970])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6971 6985]))                  
+                :type ("paddr_t" type (:type "class") nil nil))
+                nil [6929 7035])
+            ("arch_mm_table_from_pte" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7173 7183])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7184 7198]))                  
+                :type ("paddr_t" type (:type "class") nil nil))
+                nil [7142 7248])
+            ("arch_mm_pte_attrs" function
+               (:arguments 
+                  ( ("pte" variable (:type ("pte_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7376 7386])
+                    ("level" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7387 7401]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [7349 7448])
+            ("arch_mm_sync_table_writes" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7602 7607]))                  
+                :type "void")
+                nil [7571 7698])
+            ("arch_mm_invalidate_stage1_range" function
+               (:arguments 
+                  ( ("va_begin" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7826 7843])
+                    ("va_end" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7844 7859]))                  
+                :type "void")
+                nil [7789 8810])
+            ("arch_mm_invalidate_stage2_range" function
+               (:arguments 
+                  ( ("va_begin" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8955 8973])
+                    ("va_end" variable (:type ("ipaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8974 8990]))                  
+                :type "void")
+                nil [8918 10465])
+            ("arch_mm_dcache_line_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10589 10594]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [10548 10684])
+            ("arch_mm_flush_dcache" function
+               (:arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10712 10723])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10724 10736]))                  
+                :type "void")
+                nil [10686 11079])
+            ("arch_mm_mode_to_stage1_attrs" function
+               (:arguments 
+                  ( ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11119 11133]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [11081 12151])
+            ("arch_mm_mode_to_stage2_attrs" function
+               (:arguments 
+                  ( ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12191 12205]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [12153 13423])
+            ("arch_mm_stage2_attrs_to_mode" function
+               (:arguments 
+                  ( ("attrs" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13463 13478]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [13425 14063])
+            ("arch_mm_stage1_max_level" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14098 14103]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [14065 14280])
+            ("arch_mm_stage2_max_level" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14315 14320]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [14282 14349])
+            ("arch_mm_stage1_root_table_count" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14391 14396]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [14351 14454])
+            ("arch_mm_stage2_root_table_count" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14496 14501]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [14456 14537])
+            ("arch_mm_combine_table_entry_attrs" function
+               (:arguments 
+                  ( ("table_attrs" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14772 14793])
+                    ("block_attrs" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14802 14823]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [14729 15338])
+            ("arch_mm_init" function
+               (:arguments 
+                  ( ("table" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15439 15453]))                  
+                :type "bool")
+                nil [15421 20870])
+            ("arch_mm_extra_attributes_from_vm" function
+               (:arguments 
+                  ( ("id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20994 21009]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [20952 21067]))          
+      :file "mm.c"
+      :pointmax 21068
+      :fsize 21067
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("STAGE1_GP" . ((semantic-list "(UINT64_C(1) << 50)" 879 . 898)))
+          ("STAGE1_READWRITE" . ((symbol "UINT64_C" 1308 . 1316) (semantic-list "(0)" 1316 . 1319)))
+          ("STAGE2_S2AP" (spp-arg-list ("x") 1630 . 1633) . ((semantic-list "((x) << 6)" 1637 . 1647)))
+          ("STAGE2_WRITEBACK" . ((symbol "UINT64_C" 2504 . 2512) (semantic-list "(3)" 2512 . 2515)))
+          ("STAGE2_MEMATTR_TYPE_MASK" . ((symbol "UINT64_C" 2957 . 2965) (semantic-list "(3 << 4)" 2965 . 2973)))
+          ("PTE_ADDR_MASK" . ((semantic-list "(((UINT64_C(1) << 48) - 1) & ~((UINT64_C(1) << PAGE_BITS) - 1))" 3767 . 3830)))
+          ("OUTER_SHAREABLE" . ((symbol "UINT64_C" 482 . 490) (semantic-list "(2)" 490 . 493)))
+          ("STAGE1_PXN" . ((semantic-list "(UINT64_C(1) << 53)" 738 . 757)))
+          ("STAGE1_CONTIGUOUS" . ((semantic-list "(UINT64_C(1) << 52)" 785 . 804)))
+          ("STAGE1_ATTRINDX" (spp-arg-list ("x") 1230 . 1233) . ((semantic-list "((x) << 2)" 1234 . 1244)))
+          ("STAGE1_SH" (spp-arg-list ("x") 1010 . 1013) . ((semantic-list "((x) << 8)" 1020 . 1030)))
+          ("STAGE2_MEMATTR" (spp-arg-list ("outer" "inner") 2875 . 2889) . ((semantic-list "((((outer) << 2) | (inner)) << 2)" 2890 . 2923)))
+          ("STAGE2_SH" (spp-arg-list ("x") 1591 . 1594) . ((semantic-list "((x) << 8)" 1600 . 1610)))
+          ("STAGE2_SW_OWNED" . ((semantic-list "(UINT64_C(1) << 55)" 2214 . 2233)))
+          ("STAGE2_WRITETHROUGH" . ((symbol "UINT64_C" 2463 . 2471) (semantic-list "(2)" 2471 . 2474)))
+          ("STAGE2_ACCESS_READ" . ((symbol "UINT64_C" 3003 . 3011) (semantic-list "(1)" 3011 . 3014)))
+          ("NON_SHAREABLE" . ((symbol "UINT64_C" 446 . 454) (semantic-list "(0)" 454 . 457)))
+          ("TABLE_APTABLE0" . ((semantic-list "(UINT64_C(1) << 61)" 2018 . 2037)))
+          ("STAGE2_MEMATTR_DEVICE_nGnRnE" . ((symbol "UINT64_C" 2623 . 2631) (semantic-list "(0)" 2631 . 2634)))
+          ("STAGE2_MEMATTR_DEVICE_nGnRE" . ((symbol "UINT64_C" 2672 . 2680) (semantic-list "(1)" 2680 . 2683)))
+          ("PTE_VALID" . ((semantic-list "(UINT64_C(1) << 0)" 556 . 574)))
+          ("TABLE_APTABLE1" . ((semantic-list "(UINT64_C(1) << 62)" 1975 . 1994)))
+          ("STAGE2_NONCACHEABLE" . ((symbol "UINT64_C" 2422 . 2430) (semantic-list "(1)" 2430 . 2433)))
+          ("CACHE_WORD_SIZE" . ((number "4" 3080 . 3081)))
+          ("tlbi" (spp-arg-list ("op") 3358 . 3362) . 
+              ((DO "do" 3396 . 3398) (semantic-list "{                                   \\
+		__asm__ volatile(\"tlbi \" #op); \\
+	}" 3399 . 3474) (WHILE "while" 3475 . 3480) (semantic-list "(0)" 3481 . 3484)))
+          ("STAGE1_DEVICEINDX" . ((symbol "UINT64_C" 1347 . 1355) (semantic-list "(0)" 1355 . 1358)))
+          ("MAX_TLBI_OPS" . ((symbol "MM_PTE_PER_PAGE" 3306 . 3321)))
+          ("STAGE2_EXECUTE_EL0" . ((symbol "UINT64_C" 1717 . 1725) (semantic-list "(1)" 1725 . 1728)))
+          ("STAGE1_DBM" . ((semantic-list "(UINT64_C(1) << 51)" 832 . 851)))
+          ("STAGE1_AP1" . ((semantic-list "(UINT64_C(1) << 6)" 1104 . 1122)))
+          ("STAGE1_AP" (spp-arg-list ("x") 1140 . 1143) . ((semantic-list "((x) << 6)" 1150 . 1160)))
+          ("STAGE2_EXECUTE_EL1" . ((symbol "UINT64_C" 1797 . 1805) (semantic-list "(3)" 1805 . 1808)))
+          ("TABLE_NSTABLE" . ((semantic-list "(UINT64_C(1) << 63)" 1932 . 1951)))
+          ("STAGE2_ACCESS_WRITE" . ((symbol "UINT64_C" 3043 . 3051) (semantic-list "(2)" 3051 . 3054)))
+          ("tlbi_reg" (spp-arg-list ("op" "reg") 3501 . 3510) . 
+              ((DO "do" 3559 . 3561) (semantic-list "{                                                           \\
+		__asm__ __volatile__(\"tlbi \" #op \", %0\" : : \"r\"(reg)); \\
+	}" 3562 . 3685) (WHILE "while" 3686 . 3691) (semantic-list "(0)" 3692 . 3695)))
+          ("PTE_LEVEL0_BLOCK" . ((semantic-list "(UINT64_C(1) << 1)" 600 . 618)))
+          ("STAGE1_AP2" . ((semantic-list "(UINT64_C(1) << 7)" 1058 . 1076)))
+          ("STAGE2_EXECUTE_MASK" . ((symbol "UINT64_C" 1837 . 1845) (semantic-list "(3)" 1845 . 1848)))
+          ("STAGE2_SW_EXCLUSIVE" . ((semantic-list "(UINT64_C(1) << 56)" 2262 . 2281)))
+          ("PTE_TABLE" . ((semantic-list "(UINT64_C(1) << 1)" 644 . 662)))
+          ("STAGE1_XN" . ((semantic-list "(UINT64_C(1) << 54)" 691 . 710)))
+          ("STAGE1_NORMALINDX" . ((symbol "UINT64_C" 1385 . 1393) (semantic-list "(1)" 1393 . 1396)))
+          ("STAGE2_CONTIGUOUS" . ((semantic-list "(UINT64_C(1) << 52)" 1462 . 1481)))
+          ("STAGE2_MEMATTR_DEVICE_GRE" . ((symbol "UINT64_C" 2770 . 2778) (semantic-list "(3)" 2778 . 2781)))
+          ("INNER_SHAREABLE" . ((symbol "UINT64_C" 518 . 526) (semantic-list "(3)" 526 . 529)))
+          ("STAGE1_AF" . ((semantic-list "(UINT64_C(1) << 10)" 973 . 992)))
+          ("STAGE1_NS" . ((semantic-list "(UINT64_C(1) << 5)" 1188 . 1206)))
+          ("STAGE1_READONLY" . ((symbol "UINT64_C" 1271 . 1279) (semantic-list "(2)" 1279 . 1282)))
+          ("STAGE2_XN" (spp-arg-list ("x") 1415 . 1418) . ((semantic-list "((x) << 53)" 1424 . 1435)))
+          ("STAGE2_DBM" . ((semantic-list "(UINT64_C(1) << 51)" 1508 . 1527)))
+          ("STAGE2_EXECUTE_NONE" . ((symbol "UINT64_C" 1757 . 1765) (semantic-list "(2)" 1765 . 1768)))
+          ("TABLE_PXNTABLE" . ((semantic-list "(UINT64_C(1) << 59)" 2104 . 2123)))
+          ("STAGE2_MEMATTR_DEVICE_nGRE" . ((symbol "UINT64_C" 2721 . 2729) (semantic-list "(2)" 2729 . 2732)))
+          ("STAGE1_NG" . ((semantic-list "(UINT64_C(1) << 11)" 926 . 945)))
+          ("STAGE2_AF" . ((semantic-list "(UINT64_C(1) << 10)" 1554 . 1573)))
+          ("STAGE2_EXECUTE_ALL" . ((symbol "UINT64_C" 1677 . 1685) (semantic-list "(0)" 1685 . 1688)))
+          ("TABLE_XNTABLE" . ((semantic-list "(UINT64_C(1) << 60)" 2061 . 2080)))
+          ("STAGE2_DEVICE_MEMORY" . ((symbol "UINT64_C" 2381 . 2389) (semantic-list "(0)" 2389 . 2392)))
+          ("PTE_ATTR_MASK" . ((semantic-list "(~(PTE_ADDR_MASK | (UINT64_C(1) << 1)))" 3901 . 3940)))
+          )
+))
+  :file "!ssh:osbox:!home!osboxes!hafnium!src!arch!aarch64!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

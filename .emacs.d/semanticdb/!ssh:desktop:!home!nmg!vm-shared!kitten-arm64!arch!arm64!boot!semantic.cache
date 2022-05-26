@@ -1,0 +1,41 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("ROOT_DEV" variable (:default-value ("CURRENT")) nil [570 590])
+            ("targets" variable (:default-value ("vmlwk.bin" "bootsect" "bootsect.o" "setup" "setup.o")) nil [591 654])
+            ("hostprogs-y" variable (:default-value ("tools/build")) nil [678 705])
+            ("HOST_EXTRACFLAGS" variable (:default-value ("$(LWKINCLUDE)")) nil [705 739])
+            ("$(obj)" function (:arguments ("IMAGE_OFFSET" ":=" "0x100000")) nil [882 923])
+            ("$(obj)" function (:arguments ("EXTRA_AFLAGS" ":=" "-traditional" "-D__BIG_KERNEL__")) nil [923 985])
+            ("$(obj)" function (:arguments ("BUILDFLAGS" ":=" "-b")) nil [985 1020])
+            ("quiet_cmd_image" variable (:default-value ("BUILD" "$@")) nil [1021 1050])
+            ("cmd_image" variable (:default-value ("$(obj)/tools/build" "$(BUILDFLAGS)" "$(obj)/bootsect" "$(obj)/setup" "$(obj)/vmlwk.bin" "$(ROOT_DEV)" ">" "$@")) nil [1050 1165])
+            ("$(obj)" function (:arguments ("$(obj)/bootsect" "$(obj)/setup" "$(obj)/vmlwk.bin" "$(obj)/tools/build" "FORCE")) nil [1166 1342])
+            ("$(obj)" function (:arguments ("$(obj)/compressed/vmlwk" "FORCE")) nil [1343 1419])
+            ("LDFLAGS_bootsect" variable (:default-value ("-Ttext" "0x0" "-s")) nil [1420 1472])
+            ("LDFLAGS_setup" variable (:default-value ("-Ttext" "0x0" "-s")) nil [1472 1533])
+            ("$(obj)" function (:arguments ("%:" "%.o" "FORCE")) nil [1534 1600])
+            ("$(obj)" function (:arguments ("%:" "%.o" "FORCE")) nil [1534 1600])
+            ("$(obj)" function (:arguments ("FORCE")) nil [1601 1704])
+            ("KERNEL_ARGS" variable (:default-value ("$(shell echo $(CONFIG_KERNEL_ARGS))")) nil [1885 1935])
+            ("FDINITRD" variable (:default-value ("$(shell echo $(CONFIG_INIT_TASK_IMAGE))")) nil [2066 2117])
+            ("FDARGS" variable (:default-value ("$(KERNEL_ARGS)" "init_argv=$(CONFIG_INIT_TASK_ARGS)" "init_envp=$(CONFIG_INIT_TASK_ENVS)")) nil [2189 2283])
+            ("FDARGS_GRUB" variable (:default-value ("$(KERNEL_ARGS)" "init_argv=\\\"$(CONFIG_INIT_TASK_ARGS)\\\"" "init_envp=\\\"$(CONFIG_INIT_TASK_ENVS)\\\"")) nil [2283 2390])
+            ("GRUB2_INIT_MODS" variable (:default-value ("$(shell echo $(CONFIG_GRUB2_MODS))")) nil [2429 2482])
+            ("image_cmdline" variable (:default-value ("default" "lwk" "$(FDARGS)" "$(if $(FDINITRD),initrd=initrd.img,)")) nil [2483 2558])
+            ("gimage_cmdline" variable (:default-value ("default" "0\\ntimeout" "5\\n\\ntitle" "Kitten\\nroot" "(cd)\\nkernel" "/boot/lwk" "ro" "$(FDARGS_GRUB)\\n$(if $(FDINITRD),initrd /boot/initrd.img,)")) nil [2558 2703])
+            ("gimage2_cmdline" variable (:default-value ("set" "default=0\\nset" "timeout=5\\n\\nmenuentry" "Kitten" "{\\n\\tlinux /boot/lwk ro $(FDARGS_GRUB)\\n $(if $(FDINITRD),\\tinitrd /boot/initrd.img,)\\n}")) nil [2703 2859])
+            ("isoimage" function (:arguments ("$(BOOTIMAGE)" "$(FDINITRD)")) nil [2931 3014]))          
+      :file "Makefile"
+      :pointmax 6127
+      :fsize 6126
+      :lastmodtime '(24790 7103)
+      :unmatched-syntax '((shell-command 4143 . 6119) (bol 4142 . 4142) (shell-command 4114 . 4136) (bol 4113 . 4113) (shell-command 3660 . 4112) (bol 3659 . 3659) (shell-command 3414 . 3658) (bol 3413 . 3413) (shell-command 3357 . 3412) (bol 3356 . 3356) (shell-command 3308 . 3355) (bol 3307 . 3307) (shell-command 3271 . 3306) (bol 3270 . 3270) (shell-command 3055 . 3269) (bol 3054 . 3054))))
+  :file "!ssh:desktop:!home!nmg!vm-shared!kitten-arm64!arch!arm64!boot!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

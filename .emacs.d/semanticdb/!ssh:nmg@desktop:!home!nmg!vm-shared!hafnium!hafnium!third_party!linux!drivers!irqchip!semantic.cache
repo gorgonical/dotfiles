@@ -1,0 +1,237 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/cpu.h" include (:system-flag t) nil [139 161])
+            ("linux/of_address.h" include (:system-flag t) nil [162 191])
+            ("linux/of_irq.h" include (:system-flag t) nil [192 217])
+            ("linux/irqchip.h" include (:system-flag t) nil [218 244])
+            ("linux/irqdomain.h" include (:system-flag t) nil [245 273])
+            ("linux/irqchip/irq-bcm2836.h" include (:system-flag t) nil [274 312])
+            ("asm/exception.h" include (:system-flag t) nil [314 340])
+            ("bcm2836_arm_irqchip_intc" type
+               (:members 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [377 403])
+                    ("base" variable
+                       (:pointer 1
+                        :type ("__iomem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [410 424]))                  
+                :type "struct")
+                nil [342 427])
+            ("__read_mostly" variable (:type ("intc" type (:type "class") nil nil)) nil [468 488])
+            ("bcm2836_arm_irqchip_mask_per_cpu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("reg_offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [539 563])
+                    ("bit" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [571 588])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [596 604]))                  
+                :type "void")
+                nil [490 702])
+            ("bcm2836_arm_irqchip_unmask_per_cpu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("reg_offset" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [755 779])
+                    ("bit" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [789 806])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [814 822]))                  
+                :type "void")
+                nil [704 919])
+            ("bcm2836_arm_irqchip_mask_timer_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [968 987]))                  
+                :type "void")
+                nil [921 1127])
+            ("bcm2836_arm_irqchip_unmask_timer_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1178 1197]))                  
+                :type "void")
+                nil [1129 1343])
+            ("bcm2836_arm_irqchip_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"bcm2836-timer\",
+	.irq_mask	= bcm2836_arm_irqchip_mask_timer_irq,
+	.irq_unmask	= bcm2836_arm_irqchip_unmask_timer_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1345 1529])
+            ("bcm2836_arm_irqchip_mask_pmu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1576 1595]))                  
+                :type "void")
+                nil [1531 1667])
+            ("bcm2836_arm_irqchip_unmask_pmu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1716 1735]))                  
+                :type "void")
+                nil [1669 1807])
+            ("bcm2836_arm_irqchip_pmu" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"bcm2836-pmu\",
+	.irq_mask	= bcm2836_arm_irqchip_mask_pmu_irq,
+	.irq_unmask	= bcm2836_arm_irqchip_unmask_pmu_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1809 1985])
+            ("bcm2836_arm_irqchip_mask_gpu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2032 2051]))                  
+                :type "void")
+                nil [1987 2055])
+            ("bcm2836_arm_irqchip_unmask_gpu_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2104 2123]))                  
+                :type "void")
+                nil [2057 2127])
+            ("bcm2836_arm_irqchip_gpu" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"bcm2836-gpu\",
+	.irq_mask	= bcm2836_arm_irqchip_mask_gpu_irq,
+	.irq_unmask	= bcm2836_arm_irqchip_unmask_gpu_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2129 2305])
+            ("bcm2836_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2330 2351])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2352 2369])
+                    ("hw" variable (:type ("irq_hw_number_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2379 2398]))                  
+                :type "int")
+                nil [2307 2992])
+            ("bcm2836_arm_irqchip_handle_irq" function
+               (:arguments 
+                  ( ("regs" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3059 3080]))                  
+                :type ("__exception_irq_entry" type (:type "class") nil nil))
+                nil [3006 3557])
+            ("bcm2836_arm_irqchip_intc_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.xlate = irq_domain_xlate_onetwocell,
+	.map = bcm2836_map,
+}"
+                :type ("irq_domain_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4256 4386])
+            ("bcm2836_arm_irqchip_smp_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4429 4434]))                  
+                :type "void")
+                nil [4388 4681])
+            ("bcm2835_init_local_timer_frequency" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4929 4934]))                  
+                :type "void")
+                nil [4882 5265])
+            ("bcm2836_arm_irqchip_l1_intc_of_init" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5321 5346])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5359 5386]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5278 5832])
+            ("IRQCHIP_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("bcm2836_arm_irqchip_l1_intc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5850 5878])
+                    ("" variable (:type ("bcm2836_arm_irqchip_l1_intc_of_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5905 5941]))                  
+                :type "int")
+                nil [5834 5942]))          
+      :file "irq-bcm2836.c"
+      :pointmax 5943
+      :fsize 5942
+      :lastmodtime '(24807 47156)
+      :unmatched-syntax '((string 5879 . 5901) (INT 5274 . 5277) (STATIC 5267 . 5273) (VOID 3001 . 3005) (STATIC 2994 . 3000) (symbol 443 . 467) (STRUCT 436 . 442) (STATIC 429 . 435) (VOID 405 . 409))))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!hafnium!hafnium!third_party!linux!drivers!irqchip!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

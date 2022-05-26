@@ -1,0 +1,2810 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [54 77])
+            ("lwk/init.h" include (:system-flag t) nil [78 99])
+            ("lwk/resource.h" include (:system-flag t) nil [100 125])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [126 150])
+            ("arch/irqchip.h" include (:system-flag t) nil [152 177])
+            ("arch/msr.h" include (:system-flag t) nil [178 199])
+            ("arch/of.h" include (:system-flag t) nil [200 220])
+            ("arch/io.h" include (:system-flag t) nil [221 241])
+            ("arch/irq_vectors.h" include (:system-flag t) nil [242 271])
+            ("arch/topology.h" include (:system-flag t) nil [272 298])
+            ("gic3.h" include nil nil [300 317])
+            ("GIC3_SPURIOUS_IRQ" variable (:constant-flag t) nil [328 345])
+            ("gic3" type
+               (:members 
+                  ( ("gicd_virt_start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [367 391])
+                    ("gicd_phys_start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [393 417])
+                    ("gicd_phys_size" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [419 442])
+                    ("gicr_virt_start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [445 469])
+                    ("gicr_phys_start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [471 495])
+                    ("gicr_phys_size" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [497 520]))                  
+                :type "struct")
+                nil [352 523])
+            ("gic" variable
+               (:typemodifiers ("static")
+                :type ("gic3" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [526 549])
+            ("__gic3_parse_irqs" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [583 613])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [626 657])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [670 697]))                  
+                :type "int")
+                nil [554 698])
+            ("__gicd_read32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [739 756]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [701 805])
+            ("__gicd_write32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [841 858])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [868 884]))                  
+                :type "void")
+                nil [807 934])
+            ("__gicr_read32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [977 991])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [999 1016]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [939 1088])
+            ("__gicr_write32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1124 1138])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1147 1164])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1174 1190]))                  
+                :type "void")
+                nil [1090 1263])
+            ("__gicr_read64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1304 1318])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1326 1343]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1266 1415])
+            ("__gicr_write64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1451 1465])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1474 1491])
+                    ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1501 1517]))                  
+                :type "void")
+                nil [1417 1590])
+            ("__gic3_print_pending_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1633 1638]))                  
+                :type "void")
+                nil [1594 2597])
+            ("__gic3_dump_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2630 2635]))                  
+                :type "void")
+                nil [2599 2688])
+            ("__gic3_enable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq_num" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2724 2751])
+                    ("trigger_mode" variable (:type ("irq_trigger_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2757 2789]))                  
+                :type "void")
+                nil [2694 4453])
+            ("__gic3_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4487 4503]))                  
+                :type "void")
+                nil [4456 4549])
+            ("__gic3_ack_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4590 4595]))                  
+                :type ("arch_irq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4551 4759])
+            ("__gic3_do_eoi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type ("arch_irq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4787 4807]))                  
+                :type "void")
+                nil [4761 4844])
+            ("__gic3_send_ipi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_cpu" variable (:type "int") (reparse-symbol arg-sub-list) [4876 4891])
+                    ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4892 4908]))                  
+                :type "void")
+                nil [4848 5530])
+            ("__gicd_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [5534 6567])
+            ("__gicr_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [6572 8196])
+            ("__icc_enable" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [8199 8326])
+            ("__icc_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [8328 9716])
+            ("__gic3_core_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9749 9755]))                  
+                :type "void")
+                nil [9719 9839])
+            ("gic3_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"GIC3\",
+	.dt_node            = NULL,
+	.core_init          = __gic3_core_init,
+	.enable_irq         = __gic3_enable_irq,
+	.disable_irq        = __gic3_disable_irq,
+	.do_eoi             = __gic3_do_eoi,
+	.ack_irq            = __gic3_ack_irq,
+	.send_ipi	    = __gic3_send_ipi,
+	.parse_devtree_irqs = __gic3_parse_irqs,
+	.dump_state         = __gic3_dump_state, 
+	.print_pending_irqs = __gic3_print_pending_irqs
+}"
+                :type ("irqchip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9841 10310])
+            ("gic3_global_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10337 10366]))                  
+                :type "void")
+                nil [10314 11474])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [11476 11529])
+            ("__gic3_parse_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11559 11589])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11602 11633])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11646 11673]))                  
+                :type "int")
+                nil [11530 12932]))          
+      :file "gic3.c"
+      :pointmax 12933
+      :fsize 12932
+      :lastmodtime '(24798 10635)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("GIC3_SPURIOUS_IRQ" . ((number "1023" 346 . 350)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__ARM64_GIC_H" variable (:constant-flag t) nil [31 44])
+            ("lwk/types.h" include (:system-flag t) nil [46 68])
+            ("icc_ap0r" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [191 204])
+                            ("" type
+                               (:members 
+                                  ( ("impl_defined" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [220 247])
+                                    ("res0" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [251 278]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [208 283]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [181 287]))                  
+                :type "struct")
+                nil [162 314])
+            ("icc_ap1r" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [437 450])
+                            ("" type
+                               (:members 
+                                  ( ("impl_defined" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [466 493])
+                                    ("res0" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [497 524]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [454 529]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [427 533]))                  
+                :type "struct")
+                nil [408 560])
+            ("icc_asgi1r" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [690 703])
+                            ("" type
+                               (:members 
+                                  ( ("tgt_list" variable
+                                       (:suffix ":16"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [719 742])
+                                    ("aff1" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [746 768])
+                                    ("intid" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [772 794])
+                                    ("res0_0" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [798 820])
+                                    ("aff2" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [824 846])
+                                    ("irm" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [850 872])
+                                    ("res0_1" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [876 898])
+                                    ("rs" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [902 924])
+                                    ("aff3" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [928 950])
+                                    ("res0_2" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [954 976]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [707 981]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [680 985]))                  
+                :type "struct")
+                nil [659 1012])
+            ("icc_bpr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1173 1186])
+                            ("" type
+                               (:members 
+                                  ( ("binary_point" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1201 1228])
+                                    ("res0" variable
+                                       (:suffix ":61"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1232 1260]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1189 1265]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1163 1269]))                  
+                :type "struct")
+                nil [1145 1296])
+            ("icc_ctlr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1394 1407])
+                            ("" type
+                               (:members 
+                                  ( ("cbpr" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1423 1446])
+                                    ("eoi_mode" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1450 1473])
+                                    ("res0_0" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1477 1500])
+                                    ("pmhe" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1504 1527])
+                                    ("res0_1" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1531 1554])
+                                    ("pri_bits" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1558 1581])
+                                    ("id_bits" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1585 1608])
+                                    ("seis" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1612 1635])
+                                    ("a3v" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1639 1662])
+                                    ("res0_2" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1666 1689])
+                                    ("rss" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1693 1716])
+                                    ("ext_range" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1720 1743])
+                                    ("res0_3" variable
+                                       (:suffix ":44"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1747 1771]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1411 1776]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1384 1780]))                  
+                :type "struct")
+                nil [1365 1807])
+            ("icc_dir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1908 1921])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1936 1956])
+                                    ("res0" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1960 1980]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1924 1985]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1898 1989]))                  
+                :type "struct")
+                nil [1880 2016])
+            ("icc_eoir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2188 2201])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2216 2236])
+                                    ("res0" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2240 2260]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2204 2265]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2178 2269]))                  
+                :type "struct")
+                nil [2159 2296])
+            ("icc_hppir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2509 2522])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2537 2557])
+                                    ("res0" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2561 2581]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2525 2586]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2499 2590]))                  
+                :type "struct")
+                nil [2479 2617])
+            ("icc_iar" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2799 2812])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2827 2847])
+                                    ("res0" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2851 2871]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2815 2876]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2789 2880]))                  
+                :type "struct")
+                nil [2771 2907])
+            ("icc_igrpen" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3099 3112])
+                            ("" type
+                               (:members 
+                                  ( ("enable" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3127 3147])
+                                    ("res0" variable
+                                       (:suffix ":63"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3151 3172]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3115 3177]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3089 3181]))                  
+                :type "struct")
+                nil [3068 3208])
+            ("icc_pmr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3316 3329])
+                            ("" type
+                               (:members 
+                                  ( ("priority" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3344 3366])
+                                    ("res0" variable
+                                       (:suffix ":56"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3370 3393]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3332 3398]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3306 3402]))                  
+                :type "struct")
+                nil [3288 3429])
+            ("icc_rpr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3526 3539])
+                            ("" type
+                               (:members 
+                                  ( ("priority" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3554 3576])
+                                    ("res0" variable
+                                       (:suffix ":56"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3580 3603]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3542 3608]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3516 3612]))                  
+                :type "struct")
+                nil [3498 3639])
+            ("icc_sgir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3847 3860])
+                            ("" type
+                               (:members 
+                                  ( ("tgt_list" variable
+                                       (:suffix ":16"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3875 3898])
+                                    ("aff1" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3902 3924])
+                                    ("intid" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3928 3950])
+                                    ("res0_0" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3954 3976])
+                                    ("aff2" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3980 4002])
+                                    ("irm" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4006 4028])
+                                    ("res0_1" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4032 4054])
+                                    ("rs" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4058 4080])
+                                    ("aff3" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4084 4106])
+                                    ("res0_2" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4110 4132]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3863 4137]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3837 4141]))                  
+                :type "struct")
+                nil [3818 4168])
+            ("icc_sre" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4279 4292])
+                            ("" type
+                               (:members 
+                                  ( ("sre" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4308 4326])
+                                    ("dfb" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4330 4348])
+                                    ("dib" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4352 4370])
+                                    ("res0" variable
+                                       (:suffix ":61"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4374 4393]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [4296 4398]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [4269 4402]))                  
+                :type "struct")
+                nil [4251 4429])
+            ("GICD_CTLR_OFFSET" variable (:constant-flag t) nil [4609 4625])
+            ("GICD_TYPER_OFFSET" variable (:constant-flag t) nil [4655 4672])
+            ("GICD_IIDR_OFFSET" variable (:constant-flag t) nil [4701 4717])
+            ("GICD_TYPER2_OFFSET" variable (:constant-flag t) nil [4747 4765])
+            ("GICD_STATUSR_OFFSET" variable (:constant-flag t) nil [4793 4812])
+            ("GICD_SETSPI_NSR_OFFSET" variable (:constant-flag t) nil [4839 4861])
+            ("GICD_CLRSPI_NSR_OFFSET" variable (:constant-flag t) nil [4885 4907])
+            ("GICD_SETSPI_SR_OFFSET" variable (:constant-flag t) nil [4931 4952])
+            ("GICD_CLRSPI_SR_OFFSET" variable (:constant-flag t) nil [4977 4998])
+            ("GICD_IGROUPR_OFFSET" variable (:constant-flag t) nil [5023 5042])
+            ("GICD_ISENABLER_OFFSET" variable (:constant-flag t) nil [5081 5102])
+            ("GICD_ICENABLER_OFFSET" variable (:constant-flag t) nil [5139 5160])
+            ("GICD_ISPENDR_OFFSET" variable (:constant-flag t) nil [5197 5216])
+            ("GICD_ICPENDR_OFFSET" variable (:constant-flag t) nil [5255 5274])
+            ("GICD_ISACTIVER_OFFSET" variable (:constant-flag t) nil [5313 5334])
+            ("GICD_ICACTIVER_OFFSET" variable (:constant-flag t) nil [5371 5392])
+            ("GICD_IPRIORITYR_OFFSET" variable (:constant-flag t) nil [5429 5451])
+            ("GICD_ITARGETSR_OFFSET" variable (:constant-flag t) nil [5487 5508])
+            ("GICD_ICFGR_OFFSET" variable (:constant-flag t) nil [5545 5562])
+            ("GICD_IGRPMODR_OFFSET" variable (:constant-flag t) nil [5603 5623])
+            ("GICD_NSACR_OFFSET" variable (:constant-flag t) nil [5661 5678])
+            ("GICD_SGIR_OFFSET" variable (:constant-flag t) nil [5719 5735])
+            ("GICD_CPENDSGIR_OFFSET" variable (:constant-flag t) nil [5765 5786])
+            ("GICD_SPENDSGIR_OFFSET" variable (:constant-flag t) nil [5823 5844])
+            ("GICD_PIDR4_OFFSET" variable (:constant-flag t) nil [5881 5898])
+            ("GICD_PIDR5_OFFSET" variable (:constant-flag t) nil [5927 5944])
+            ("GICD_PIDR6_OFFSET" variable (:constant-flag t) nil [5973 5990])
+            ("GICD_PIDR7_OFFSET" variable (:constant-flag t) nil [6019 6036])
+            ("GICD_PIDR0_OFFSET" variable (:constant-flag t) nil [6065 6082])
+            ("GICD_PIDR1_OFFSET" variable (:constant-flag t) nil [6111 6128])
+            ("GICD_PIDR2_OFFSET" variable (:constant-flag t) nil [6157 6174])
+            ("GICD_PIDR3_OFFSET" variable (:constant-flag t) nil [6203 6220])
+            ("GICD_CIDR0_OFFSET" variable (:constant-flag t) nil [6249 6266])
+            ("GICD_CIDR1_OFFSET" variable (:constant-flag t) nil [6295 6312])
+            ("GICD_CIDR2_OFFSET" variable (:constant-flag t) nil [6341 6358])
+            ("GICD_CIDR3_OFFSET" variable (:constant-flag t) nil [6387 6404])
+            ("GICD_IGROUPR_E_OFFSET" variable (:constant-flag t) nil [6433 6454])
+            ("GICD_ISENABLER_E_OFFSET" variable (:constant-flag t) nil [6491 6514])
+            ("GICD_ICENABLER_E_OFFSET" variable (:constant-flag t) nil [6549 6572])
+            ("GICD_ISPENDR_E_OFFSET" variable (:constant-flag t) nil [6607 6628])
+            ("GICD_ICPENDR_E_OFFSET" variable (:constant-flag t) nil [6665 6686])
+            ("GICD_ISACTIVER_E_OFFSET" variable (:constant-flag t) nil [6723 6746])
+            ("GICD_ICACTIVER_E_OFFSET" variable (:constant-flag t) nil [6781 6804])
+            ("GICD_IPRIORITYR_E_OFFSET" variable (:constant-flag t) nil [6839 6863])
+            ("GICD_ICFGR_E_OFFSET" variable (:constant-flag t) nil [6897 6916])
+            ("GICD_IGRPMODR_E_OFFSET" variable (:constant-flag t) nil [6955 6977])
+            ("GICD_NSACR_E_OFFSET" variable (:constant-flag t) nil [7013 7032])
+            ("GICD_IROUTER_OFFSET" variable (:constant-flag t) nil [7071 7090])
+            ("GICD_IROUTER_E_OFFSET" variable (:constant-flag t) nil [7129 7150])
+            ("GICR_CPU_OFFSET" variable (:constant-flag t) nil [7189 7204])
+            ("GICR_CTLR_OFFSET" variable (:constant-flag t) nil [7293 7309])
+            ("GICR_IDDR_OFFSET" variable (:constant-flag t) nil [7339 7355])
+            ("GICR_TYPER_OFFSET" variable (:constant-flag t) nil [7385 7402])
+            ("GICR_STATUSR_OFFSET" variable (:constant-flag t) nil [7431 7450])
+            ("GICR_WAKER_OFFSET" variable (:constant-flag t) nil [7477 7494])
+            ("GICR_MPAMIDR_OFFSET" variable (:constant-flag t) nil [7523 7542])
+            ("GICR_PARTIDR_OFFSET" variable (:constant-flag t) nil [7569 7588])
+            ("GICR_SETLPIR_OFFSET" variable (:constant-flag t) nil [7615 7634])
+            ("GICR_CLRLPIR_OFFSET" variable (:constant-flag t) nil [7661 7680])
+            ("GICR_PROPBASER_OFFSET" variable (:constant-flag t) nil [7707 7728])
+            ("GICR_PENDBASER_OFFSET" variable (:constant-flag t) nil [7753 7774])
+            ("GICR_INVLPIR_OFFSET" variable (:constant-flag t) nil [7799 7818])
+            ("GICR_INVALLR_OFFSET" variable (:constant-flag t) nil [7845 7864])
+            ("GICR_SYNCR_OFFSET" variable (:constant-flag t) nil [7891 7908])
+            ("GICR_PIDR4_OFFSET" variable (:constant-flag t) nil [7937 7954])
+            ("GICR_PIDR5_OFFSET" variable (:constant-flag t) nil [7983 8000])
+            ("GICR_PIDR6_OFFSET" variable (:constant-flag t) nil [8029 8046])
+            ("GICR_PIDR7_OFFSET" variable (:constant-flag t) nil [8075 8092])
+            ("GICR_PIDR0_OFFSET" variable (:constant-flag t) nil [8121 8138])
+            ("GICR_PIDR1_OFFSET" variable (:constant-flag t) nil [8167 8184])
+            ("GICR_PIDR2_OFFSET" variable (:constant-flag t) nil [8213 8230])
+            ("GICR_PIDR3_OFFSET" variable (:constant-flag t) nil [8259 8276])
+            ("GICR_CIDR0_OFFSET" variable (:constant-flag t) nil [8305 8322])
+            ("GICR_CIDR1_OFFSET" variable (:constant-flag t) nil [8351 8368])
+            ("GICR_CIDR2_OFFSET" variable (:constant-flag t) nil [8397 8414])
+            ("GICR_CIDR3_OFFSET" variable (:constant-flag t) nil [8443 8460])
+            ("GICR_VPROPBASER_OFFSET" variable (:constant-flag t) nil [8540 8562])
+            ("GICR_VPENDBASER_OFFSET" variable (:constant-flag t) nil [8586 8608])
+            ("GICR_VSGIR_OFFSET" variable (:constant-flag t) nil [8632 8649])
+            ("GICR_VSGIPENDR_OFFSET" variable (:constant-flag t) nil [8678 8699])
+            ("GICR_SGI_BASE" variable (:constant-flag t) nil [8775 8788])
+            ("GICR_IGROUPR_OFFSET" variable (:constant-flag t) nil [8822 8841])
+            ("GICR_ISENABLER_OFFSET" variable (:constant-flag t) nil [8896 8917])
+            ("GICR_ICENABLER_OFFSET" variable (:constant-flag t) nil [8970 8991])
+            ("GICR_ISPENDR_OFFSET" variable (:constant-flag t) nil [9044 9063])
+            ("GICR_ICPENDR_OFFSET" variable (:constant-flag t) nil [9118 9137])
+            ("GICR_ISACTIVER_OFFSET" variable (:constant-flag t) nil [9192 9213])
+            ("GICR_ICACTIVER_OFFSET" variable (:constant-flag t) nil [9266 9287])
+            ("GICR_ICFGR_OFFSET" variable (:constant-flag t) nil [9340 9357])
+            ("GICR_IGRPMODR_OFFSET" variable (:constant-flag t) nil [9414 9434])
+            ("GICR_IGROUPR_0_OFFSET" variable (:constant-flag t) nil [9489 9510])
+            ("GICR_IGROUPR_E_OFFSET" variable (:constant-flag t) nil [9551 9572])
+            ("GICR_ISENABLER_0_OFFSET" variable (:constant-flag t) nil [9625 9648])
+            ("GICR_ISENABLER_E_OFFSET" variable (:constant-flag t) nil [9687 9710])
+            ("GICR_ICENABLER_0_OFFSET" variable (:constant-flag t) nil [9761 9784])
+            ("GICR_ICENABLER_E_OFFSET" variable (:constant-flag t) nil [9823 9846])
+            ("GICR_ISPENDR_0_OFFSET" variable (:constant-flag t) nil [9897 9918])
+            ("GICR_ISPENDR_E_OFFSET" variable (:constant-flag t) nil [9959 9980])
+            ("GICR_ICPENDR_0_OFFSET" variable (:constant-flag t) nil [10033 10054])
+            ("GICR_ICPENDR_E_OFFSET" variable (:constant-flag t) nil [10095 10116])
+            ("GICR_ISACTIVER_0_OFFSET" variable (:constant-flag t) nil [10169 10192])
+            ("GICR_ISACTIVER_E_OFFSET" variable (:constant-flag t) nil [10231 10254])
+            ("GICR_ICACTIVER_0_OFFSET" variable (:constant-flag t) nil [10305 10328])
+            ("GICR_ICACTIVER_E_OFFSET" variable (:constant-flag t) nil [10367 10390])
+            ("GICR_IPRIORITYR_OFFSET" variable (:constant-flag t) nil [10441 10463])
+            ("GICR_IPRIORITYR_E_OFFSET" variable (:constant-flag t) nil [10515 10539])
+            ("GICR_ICFGR_0_OFFSET" variable (:constant-flag t) nil [10589 10608])
+            ("GICR_ICFGR_1_OFFSET" variable (:constant-flag t) nil [10651 10670])
+            ("GICR_ICFGR_E_OFFSET" variable (:constant-flag t) nil [10713 10732])
+            ("GICR_IGRPMODR_0_OFFSET" variable (:constant-flag t) nil [10787 10809])
+            ("GICR_IGRPMODR_E_OFFSET" variable (:constant-flag t) nil [10849 10871])
+            ("GICR_NSACR_OFFSET" variable (:constant-flag t) nil [10923 10940])
+            ("GICC_CTLR_OFFSET" variable (:constant-flag t) nil [11131 11147])
+            ("GICC_PMR_OFFSET" variable (:constant-flag t) nil [11177 11192])
+            ("GICC_BPR_OFFSET" variable (:constant-flag t) nil [11223 11238])
+            ("GICC_IAR_OFFSET" variable (:constant-flag t) nil [11269 11284])
+            ("GICC_EOIR_OFFSET" variable (:constant-flag t) nil [11315 11331])
+            ("GICC_RPR_OFFSET" variable (:constant-flag t) nil [11361 11376])
+            ("GICC_HPPIR_OFFSET" variable (:constant-flag t) nil [11407 11424])
+            ("GICC_ABPR_OFFSET" variable (:constant-flag t) nil [11453 11469])
+            ("GICC_AIAR_OFFSET" variable (:constant-flag t) nil [11499 11515])
+            ("GICC_AEOIR_OFFSET" variable (:constant-flag t) nil [11545 11562])
+            ("GICC_AHPPIR_OFFSET" variable (:constant-flag t) nil [11591 11609])
+            ("GICC_STATUSR_OFFSET" variable (:constant-flag t) nil [11637 11656])
+            ("GICC_APR_OFFSET" variable (:constant-flag t) nil [11683 11698])
+            ("GICC_NSAPR_OFFSET" variable (:constant-flag t) nil [11741 11758])
+            ("GICC_IIDR_OFFSET" variable (:constant-flag t) nil [11799 11815])
+            ("GICC_DIR_OFFSET" variable (:constant-flag t) nil [11845 11860])
+            ("gicd_ctlr_s" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11964 11977])
+                            ("" type
+                               (:members 
+                                  ( ("enable_grp_0" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [11992 12020])
+                                    ("enable_grp_1ns" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12024 12052])
+                                    ("enable_grp_1s" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12056 12084])
+                                    ("res0_0" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12088 12116])
+                                    ("are_s" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12120 12148])
+                                    ("are_ns" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12152 12180])
+                                    ("ds" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12184 12212])
+                                    ("e1_nwf" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12216 12244])
+                                    ("res0_1" variable
+                                       (:suffix ":23"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12248 12277])
+                                    ("rwp" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12281 12309]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [11980 12314]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [11954 12318]))                  
+                :type "struct")
+                nil [11932 12345])
+            ("gicd_ctlr_ns" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12380 12393])
+                            ("" type
+                               (:members 
+                                  ( ("enable_grp_1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12408 12436])
+                                    ("enable_grp_1a" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12440 12468])
+                                    ("res0_0" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12472 12500])
+                                    ("are_ns" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12504 12532])
+                                    ("res0_1" variable
+                                       (:suffix ":26"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12536 12565])
+                                    ("rwp" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12569 12597]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [12396 12602]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [12370 12606]))                  
+                :type "struct")
+                nil [12347 12633])
+            ("gicd_typer" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12720 12733])
+                            ("" type
+                               (:members 
+                                  ( ("it_lines_num" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12748 12775])
+                                    ("cpu_num" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12779 12806])
+                                    ("espi" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12810 12837])
+                                    ("res0" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12841 12868])
+                                    ("security_extn" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12872 12899])
+                                    ("num_lpis" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12903 12930])
+                                    ("mbis" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12934 12961])
+                                    ("lpis" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12965 12992])
+                                    ("dvis" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [12996 13023])
+                                    ("id_bits" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13027 13054])
+                                    ("a3v" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13058 13085])
+                                    ("no_1n" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13089 13116])
+                                    ("rss" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13120 13147])
+                                    ("espi_range" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13151 13178]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [12736 13183]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [12710 13187]))                  
+                :type "struct")
+                nil [12689 13214])
+            ("gicd_iidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13312 13325])
+                            ("" type
+                               (:members 
+                                  ( ("implementer" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13340 13366])
+                                    ("revision" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13370 13395])
+                                    ("variant" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13399 13424])
+                                    ("res0" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13428 13453])
+                                    ("product_id" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13457 13482]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [13328 13491]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [13302 13495]))                  
+                :type "struct")
+                nil [13282 13522])
+            ("gicd_typer2" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13613 13626])
+                            ("" type
+                               (:members 
+                                  ( ("vid" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13641 13666])
+                                    ("res0_0" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13670 13695])
+                                    ("vil" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13699 13724])
+                                    ("n_assgi_cap" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13728 13753])
+                                    ("res0_1" variable
+                                       (:suffix ":23"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13757 13783]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [13629 13788]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [13603 13792]))                  
+                :type "struct")
+                nil [13581 13819])
+            ("gicd_statusr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13906 13919])
+                            ("" type
+                               (:members 
+                                  ( ("rrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13934 13952])
+                                    ("wrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13956 13974])
+                                    ("rwod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [13978 13996])
+                                    ("wrod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14000 14018])
+                                    ("res0" variable
+                                       (:suffix ":28"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14022 14041]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [13922 14046]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [13896 14050]))                  
+                :type "struct")
+                nil [13873 14077])
+            ("gicd_setspi_nsr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14176 14189])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14204 14224])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14228 14248]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [14192 14253]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [14166 14257]))                  
+                :type "struct")
+                nil [14140 14284])
+            ("gicd_clrspi_nsr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14384 14397])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14412 14432])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14436 14456]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [14400 14461]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [14374 14465]))                  
+                :type "struct")
+                nil [14348 14492])
+            ("gicd_setspi_sr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14584 14597])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14612 14632])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14636 14656]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [14600 14661]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [14574 14665]))                  
+                :type "struct")
+                nil [14549 14692])
+            ("gicd_clrspi_sr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14788 14801])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14816 14836])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [14840 14860]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [14804 14865]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [14778 14869]))                  
+                :type "struct")
+                nil [14753 14896])
+            ("gicd_cpendsgir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14997 15010])
+                            ("" type
+                               (:members 
+                                  ( ("bits" variable
+                                       (:dereference 1
+                                        :type ("uint8_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [15025 15041]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [15013 15046]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [14987 15050]))                  
+                :type "struct")
+                nil [14962 15077])
+            ("gicd_icactiver" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15184 15197])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15200 15214]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [15174 15218]))                  
+                :type "struct")
+                nil [15149 15245])
+            ("gicd_icenabler" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15353 15366])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15369 15383]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [15343 15387]))                  
+                :type "struct")
+                nil [15318 15414])
+            ("gicd_icfgr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15515 15528])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15531 15545]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [15505 15549]))                  
+                :type "struct")
+                nil [15484 15576])
+            ("gicd_icpendr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15681 15694])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15697 15711]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [15671 15715]))                  
+                :type "struct")
+                nil [15648 15742])
+            ("gicd_igrpmodr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15852 15865])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15868 15882]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [15842 15886]))                  
+                :type "struct")
+                nil [15818 15913])
+            ("gicd_ipriorityr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16021 16034])
+                            ("" type
+                               (:members 
+                                  ( ("bits" variable
+                                       (:dereference 1
+                                        :type ("uint8_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16049 16065]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [16037 16070]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [16011 16074]))                  
+                :type "struct")
+                nil [15985 16101])
+            ("gicd_irouter" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16202 16215])
+                            ("" type
+                               (:members 
+                                  ( ("aff0" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16230 16250])
+                                    ("aff1" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16254 16274])
+                                    ("aff2" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16278 16298])
+                                    ("res0_0" variable
+                                       (:suffix ":7"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16302 16322])
+                                    ("mode" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16326 16346])
+                                    ("aff3" variable
+                                       (:suffix ":8"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16350 16370])
+                                    ("res0_1" variable
+                                       (:suffix ":24"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [16374 16395]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [16218 16400]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [16192 16404]))                  
+                :type "struct")
+                nil [16169 16431])
+            ("gicd_isactiver" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16537 16550])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16553 16567]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [16527 16571]))                  
+                :type "struct")
+                nil [16502 16598])
+            ("gicd_isenabler" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16704 16717])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16720 16734]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [16694 16738]))                  
+                :type "struct")
+                nil [16669 16765])
+            ("gicd_ispendr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16867 16880])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16883 16897]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [16857 16901]))                  
+                :type "struct")
+                nil [16834 16928])
+            ("gicd_itargetsr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17042 17055])
+                            ("" type
+                               (:members 
+                                  ( ("targets_offset" variable
+                                       (:dereference 1
+                                        :type ("uint8_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17070 17096]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [17058 17101]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [17032 17105]))                  
+                :type "struct")
+                nil [17007 17132])
+            ("gicd_nsacr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17235 17248])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17251 17265]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [17225 17269]))                  
+                :type "struct")
+                nil [17204 17296])
+            ("gicd_sgir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17384 17397])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17412 17437])
+                                    ("res0_0" variable
+                                       (:suffix ":11"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17441 17467])
+                                    ("nsatt" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17471 17496])
+                                    ("target_list" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17500 17525])
+                                    ("list_filter" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17529 17554])
+                                    ("res0_1" variable
+                                       (:suffix ":6"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17558 17583]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [17400 17588]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [17374 17592]))                  
+                :type "struct")
+                nil [17354 17619])
+            ("gicd_spendsgir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17718 17731])
+                            ("" type
+                               (:members 
+                                  ( ("bits" variable
+                                       (:dereference 1
+                                        :type ("uint8_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17746 17762]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [17734 17767]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [17708 17771]))                  
+                :type "struct")
+                nil [17683 17798])
+            ("gicd_pidr2" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17874 17887])
+                            ("" type
+                               (:members 
+                                  ( ("impl_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17902 17924])
+                                    ("arch_rev" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17928 17950])
+                                    ("impl_2" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [17954 17977]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [17890 17982]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [17864 17986]))                  
+                :type "struct")
+                nil [17843 18013])
+            ("gicm_clrspi_nsr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18182 18195])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18210 18230])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18234 18254]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [18198 18259]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [18172 18263]))                  
+                :type "struct")
+                nil [18146 18290])
+            ("gicm_clrspi_sr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18383 18396])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18411 18431])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18435 18455]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [18399 18460]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [18373 18464]))                  
+                :type "struct")
+                nil [18348 18491])
+            ("gicm_iidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18589 18602])
+                            ("" type
+                               (:members 
+                                  ( ("implementer" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18617 18643])
+                                    ("revision" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18647 18672])
+                                    ("variant" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18676 18701])
+                                    ("res0" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18705 18730])
+                                    ("product_id" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18734 18759]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [18605 18764]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [18579 18768]))                  
+                :type "struct")
+                nil [18559 18795])
+            ("gicm_setspi_nsr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [18893 18906])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18921 18941])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [18945 18965]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [18909 18970]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [18883 18974]))                  
+                :type "struct")
+                nil [18857 19001])
+            ("gicm_setspi_sr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [19092 19105])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19120 19140])
+                                    ("res0" variable
+                                       (:suffix ":19"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19144 19164]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [19108 19169]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [19082 19173]))                  
+                :type "struct")
+                nil [19057 19200])
+            ("gicm_typer" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [19281 19294])
+                            ("" type
+                               (:members 
+                                  ( ("num_spis" variable
+                                       (:suffix ":11"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19309 19332])
+                                    ("res0" variable
+                                       (:suffix ":5"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19336 19358])
+                                    ("intid" variable
+                                       (:suffix ":13"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19362 19385])
+                                    ("sr" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19389 19411])
+                                    ("clr" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19415 19437])
+                                    ("valid" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19441 19463]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [19297 19468]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [19271 19472]))                  
+                :type "struct")
+                nil [19250 19499])
+            ("gicr_clrlpir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [19644 19657])
+                            ("" type
+                               (:members 
+                                  ( ("p_intid" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19672 19695])
+                                    ("res0" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19699 19722]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [19660 19727]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [19634 19731]))                  
+                :type "struct")
+                nil [19611 19758])
+            ("gicr_ctlr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [19838 19851])
+                            ("" type
+                               (:members 
+                                  ( ("enable_lpis" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19866 19891])
+                                    ("ces" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19895 19920])
+                                    ("ir" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19924 19949])
+                                    ("rwp" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19953 19978])
+                                    ("res0_0" variable
+                                       (:suffix ":20"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [19982 20008])
+                                    ("dpg_0" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [20012 20037])
+                                    ("dpg_1ns" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [20041 20066])
+                                    ("dpg_1s" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [20070 20095])
+                                    ("res0_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [20099 20124])
+                                    ("uwp" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [20128 20153]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [19854 20158]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [19828 20162]))                  
+                :type "struct")
+                nil [19808 20189])
+            ("gicr_icactiver" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20281 20294])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20297 20311]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [20271 20315]))                  
+                :type "struct")
+                nil [20246 20342])
+            ("gicr_icenabler" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20433 20446])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20449 20463]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [20423 20467]))                  
+                :type "struct")
+                nil [20398 20494])
+            ("gicr_icfgr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20579 20592])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20595 20609]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [20569 20613]))                  
+                :type "struct")
+                nil [20548 20640])
+            ("gicr_icpendr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20729 20742])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20745 20759]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [20719 20763]))                  
+                :type "struct")
+                nil [20696 20790])
+            ("gicr_igroupr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20871 20884])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20887 20901]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [20861 20905]))                  
+                :type "struct")
+                nil [20838 20932])
+            ("gicr_igrpmodr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21024 21037])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21040 21054]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [21014 21058]))                  
+                :type "struct")
+                nil [20990 21085])
+            ("gicr_iidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21184 21197])
+                            ("" type
+                               (:members 
+                                  ( ("implementer" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21212 21238])
+                                    ("revision" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21242 21267])
+                                    ("variant" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21271 21296])
+                                    ("res0" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21300 21325])
+                                    ("product_id" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21329 21354]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [21200 21359]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [21174 21363]))                  
+                :type "struct")
+                nil [21154 21390])
+            ("gicr_invallr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21484 21497])
+                            ("" type
+                               (:members 
+                                  ( ("res0_0" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21512 21533])
+                                    ("v_peid" variable
+                                       (:suffix ":16"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21537 21558])
+                                    ("res0_1" variable
+                                       (:suffix ":15"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21562 21583])
+                                    ("v" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21587 21607]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [21500 21612]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [21474 21616]))                  
+                :type "struct")
+                nil [21451 21643])
+            ("gicr_invlpir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21737 21750])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21765 21786])
+                                    ("v_peid" variable
+                                       (:suffix ":16"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21790 21811])
+                                    ("res0" variable
+                                       (:suffix ":15"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21815 21836])
+                                    ("v" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [21840 21860]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [21753 21865]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [21727 21869]))                  
+                :type "struct")
+                nil [21704 21896])
+            ("gicr_ipriorityr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22001 22014])
+                            ("" type
+                               (:members 
+                                  ( ("priorities" variable
+                                       (:dereference 1
+                                        :type ("uint8_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [22029 22051]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [22017 22056]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [21991 22060]))                  
+                :type "struct")
+                nil [21965 22087])
+            ("gicr_isactiver" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22177 22190])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22193 22207]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22167 22211]))                  
+                :type "struct")
+                nil [22142 22238])
+            ("gicr_isenabler" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22327 22340])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22343 22357]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22317 22361]))                  
+                :type "struct")
+                nil [22292 22388])
+            ("gicr_ispendr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22474 22487])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22490 22504]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22464 22508]))                  
+                :type "struct")
+                nil [22441 22535])
+            ("gicr_mpamidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22629 22642])
+                            ("" type
+                               (:members 
+                                  ( ("part_id_max" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [22657 22683])
+                                    ("pmg_max" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [22687 22712])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [22716 22741]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [22645 22746]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22619 22750]))                  
+                :type "struct")
+                nil [22596 22777])
+            ("gicr_nsacr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22863 22876])
+                            ("bits" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22879 22893]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22853 22897]))                  
+                :type "struct")
+                nil [22832 22924])
+            ("gicr_partidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23007 23020])
+                            ("" type
+                               (:members 
+                                  ( ("part_id" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23035 23057])
+                                    ("pmg" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23061 23082])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23086 23107]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [23023 23112]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [22997 23116]))                  
+                :type "struct")
+                nil [22974 23143])
+            ("gicr_pendbaser" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23258 23271])
+                            ("" type
+                               (:members 
+                                  ( ("res0_0" variable
+                                       (:suffix ":7"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23286 23312])
+                                    ("inner_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23316 23342])
+                                    ("shareability" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23346 23372])
+                                    ("res0_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23376 23402])
+                                    ("phys_addr" variable
+                                       (:suffix ":36"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23406 23433])
+                                    ("res0_2" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23437 23463])
+                                    ("outer_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23467 23493])
+                                    ("res0_3" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23497 23523])
+                                    ("ptz" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23527 23553])
+                                    ("res0_4" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23557 23583]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [23274 23588]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [23248 23592]))                  
+                :type "struct")
+                nil [23223 23619])
+            ("gicr_propbaser" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23727 23740])
+                            ("" type
+                               (:members 
+                                  ( ("id_bits" variable
+                                       (:suffix ":5"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23755 23781])
+                                    ("res0_0" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23785 23811])
+                                    ("inner_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23815 23841])
+                                    ("shareability" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23845 23871])
+                                    ("phys_addr" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23875 23902])
+                                    ("res0_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23906 23932])
+                                    ("outer_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23936 23962])
+                                    ("res0_2" variable
+                                       (:suffix ":5"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [23966 23992]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [23743 23997]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [23717 24001]))                  
+                :type "struct")
+                nil [23692 24028])
+            ("gicr_setlpir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24111 24124])
+                            ("" type
+                               (:members 
+                                  ( ("p_intid" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24139 24161])
+                                    ("res0" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24165 24187]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [24127 24192]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [24101 24196]))                  
+                :type "struct")
+                nil [24078 24223])
+            ("gicr_statusr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24310 24323])
+                            ("" type
+                               (:members 
+                                  ( ("rrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24338 24356])
+                                    ("wrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24360 24378])
+                                    ("rwod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24382 24400])
+                                    ("wrod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24404 24422])
+                                    ("res0" variable
+                                       (:suffix ":28"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24426 24445]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [24326 24450]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [24300 24454]))                  
+                :type "struct")
+                nil [24277 24481])
+            ("gicr_syncr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24568 24581])
+                            ("" type
+                               (:members 
+                                  ( ("busy" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24596 24614])
+                                    ("res0" variable
+                                       (:suffix ":31"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24618 24637]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [24584 24642]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [24558 24646]))                  
+                :type "struct")
+                nil [24537 24673])
+            ("gicr_typer" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24754 24767])
+                            ("" type
+                               (:members 
+                                  ( ("plpis" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24782 24811])
+                                    ("vlpis" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24815 24844])
+                                    ("dirty" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24848 24877])
+                                    ("direct_lpi" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24881 24910])
+                                    ("last" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24914 24943])
+                                    ("dpgs" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24947 24976])
+                                    ("mpam" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [24980 25009])
+                                    ("rvpeid" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25013 25042])
+                                    ("processor_num" variable
+                                       (:suffix ":16"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25046 25076])
+                                    ("command_lpi_aff" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25080 25109])
+                                    ("vsgi" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25113 25142])
+                                    ("ppi_num" variable
+                                       (:suffix ":5"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25146 25175])
+                                    ("affinity_val" variable
+                                       (:suffix ":32"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25179 25209]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [24770 25214]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [24744 25218]))                  
+                :type "struct")
+                nil [24723 25245])
+            ("gicr_vpendbaser" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [25368 25381])
+                            ("" type
+                               (:members 
+                                  ( ("res0_0" variable
+                                       (:suffix ":7"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25396 25423])
+                                    ("inner_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25427 25454])
+                                    ("shareability" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25458 25485])
+                                    ("res0_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25489 25516])
+                                    ("physical_addr" variable
+                                       (:suffix ":36"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25520 25548])
+                                    ("res0_2" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25552 25579])
+                                    ("outer_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25583 25610])
+                                    ("res0_3" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25614 25641])
+                                    ("dirty" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25645 25672])
+                                    ("pending_last" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25676 25703])
+                                    ("idai" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25707 25734])
+                                    ("valid" variable
+                                       (:suffix ":1"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25738 25765]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [25384 25770]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [25358 25774]))                  
+                :type "struct")
+                nil [25332 25801])
+            ("gicr_vpropbaser" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [25917 25930])
+                            ("" type
+                               (:members 
+                                  ( ("id_bits" variable
+                                       (:suffix ":5"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25945 25972])
+                                    ("res0_0" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [25976 26003])
+                                    ("inner_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26007 26034])
+                                    ("shareability" variable
+                                       (:suffix ":2"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26038 26065])
+                                    ("physical_addr" variable
+                                       (:suffix ":40"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26069 26097])
+                                    ("res0_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26101 26128])
+                                    ("outer_cache" variable
+                                       (:suffix ":3"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26132 26159])
+                                    ("res0_2" variable
+                                       (:suffix ":5"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26163 26190]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [25933 26195]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [25907 26199]))                  
+                :type "struct")
+                nil [25881 26226])
+            ("gicr_vsgipendr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26335 26348])
+                            ("" type
+                               (:members 
+                                  ( ("pending" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26363 26385])
+                                    ("res0" variable
+                                       (:suffix ":15"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26389 26411])
+                                    ("busy" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26415 26436]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [26351 26441]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [26325 26445]))                  
+                :type "struct")
+                nil [26300 26472])
+            ("gicr_vsgir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26581 26594])
+                            ("" type
+                               (:members 
+                                  ( ("vpeid" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26609 26629])
+                                    ("res0" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26633 26653]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [26597 26658]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [26571 26662]))                  
+                :type "struct")
+                nil [26550 26689])
+            ("gicr_waker" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26768 26781])
+                            ("" type
+                               (:members 
+                                  ( ("impl_def_0" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26796 26825])
+                                    ("processor_sleep" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26829 26858])
+                                    ("children_asleep" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26862 26891])
+                                    ("res0" variable
+                                       (:suffix ":28"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26895 26925])
+                                    ("impl_def_1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [26929 26958]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [26784 26963]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [26758 26967]))                  
+                :type "struct")
+                nil [26737 26994])
+            ("gicr_pidr2" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27069 27082])
+                            ("" type
+                               (:members 
+                                  ( ("impl_1" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27097 27119])
+                                    ("arch_rev" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27123 27145])
+                                    ("impl_2" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27149 27172]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [27085 27177]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [27059 27181]))                  
+                :type "struct")
+                nil [27038 27208])
+            ("gicc_abpr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27365 27378])
+                            ("" type
+                               (:members 
+                                  ( ("binary_point" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27393 27419])
+                                    ("res0" variable
+                                       (:suffix ":29"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27423 27450]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [27381 27455]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [27355 27459]))                  
+                :type "struct")
+                nil [27335 27486])
+            ("gicc_aeoir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27586 27599])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27614 27634])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27638 27657]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [27602 27662]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [27576 27666]))                  
+                :type "struct")
+                nil [27555 27693])
+            ("gicc_ahppir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27812 27825])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27840 27860])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [27864 27883]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [27828 27888]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [27802 27892]))                  
+                :type "struct")
+                nil [27780 27919])
+            ("gicc_aiar" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28022 28035])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28050 28070])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28074 28093]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [28038 28098]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [28012 28102]))                  
+                :type "struct")
+                nil [27992 28129])
+            ("gicc_apr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28233 28246]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [28223 28278]))                  
+                :type "struct")
+                nil [28204 28305])
+            ("gicc_bpr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28388 28401])
+                            ("" type
+                               (:members 
+                                  ( ("binary_point" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28416 28442])
+                                    ("res0" variable
+                                       (:suffix ":29"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28446 28473]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [28404 28481]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [28378 28485]))                  
+                :type "struct")
+                nil [28359 28512])
+            ("gicc_ctlr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28593 28606])
+                            ("" type
+                               (:members 
+                                  ( ("enable_grp1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28621 28651])
+                                    ("res0_0" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28655 28685])
+                                    ("fiq_byp_dis_grp1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28689 28719])
+                                    ("irq_byp_dis_grp1" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28723 28753])
+                                    ("res0_1" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28757 28787])
+                                    ("eoi_mode_ns" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28791 28821])
+                                    ("res0_2" variable
+                                       (:suffix ":22"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [28825 28856]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [28609 28861]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [28583 28865]))                  
+                :type "struct")
+                nil [28563 28892])
+            ("gicc_dir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28984 28997])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29012 29032])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29036 29055]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [29000 29060]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [28974 29064]))                  
+                :type "struct")
+                nil [28955 29091])
+            ("gicc_eoir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [29181 29194])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29209 29229])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29233 29252]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [29197 29258]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [29171 29262]))                  
+                :type "struct")
+                nil [29151 29289])
+            ("gicc_hppir" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [29399 29412])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29427 29447])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29451 29470]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [29415 29475]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [29389 29479]))                  
+                :type "struct")
+                nil [29368 29506])
+            ("gicc_iar" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [29599 29612])
+                            ("" type
+                               (:members 
+                                  ( ("intid" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29627 29647])
+                                    ("res0" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29651 29670]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [29615 29675]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [29589 29679]))                  
+                :type "struct")
+                nil [29570 29706])
+            ("gicc_iidr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [29793 29806])
+                            ("" type
+                               (:members 
+                                  ( ("implementer" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29821 29848])
+                                    ("revision" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29852 29878])
+                                    ("arch_version" variable
+                                       (:suffix ":4"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29882 29908])
+                                    ("product_id" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [29912 29939]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [29809 29944]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [29783 29948]))                  
+                :type "struct")
+                nil [29763 29975])
+            ("gicc_nsapr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [30093 30106]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [30083 30138]))                  
+                :type "struct")
+                nil [30062 30165])
+            ("gicc_pmr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [30249 30262])
+                            ("" type
+                               (:members 
+                                  ( ("priority" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30277 30299])
+                                    ("res0" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30303 30326]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [30265 30331]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [30239 30335]))                  
+                :type "struct")
+                nil [30220 30362])
+            ("gicc_rpr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [30449 30462])
+                            ("" type
+                               (:members 
+                                  ( ("priority" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30477 30499])
+                                    ("res0" variable
+                                       (:suffix ":24"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30503 30526]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [30465 30531]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [30439 30535]))                  
+                :type "struct")
+                nil [30420 30562])
+            ("gicc_statusr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [30648 30661])
+                            ("" type
+                               (:members 
+                                  ( ("rrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30676 30694])
+                                    ("wrd" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30698 30716])
+                                    ("rwod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30720 30738])
+                                    ("wrod" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30742 30760])
+                                    ("asv" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30764 30782])
+                                    ("res0" variable
+                                       (:suffix ":27"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [30786 30805]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [30664 30810]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [30638 30814]))                  
+                :type "struct")
+                nil [30615 30841]))          
+      :file "gic3.h"
+      :pointmax 30852
+      :fsize 30851
+      :lastmodtime '(24790 7103)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("GICD_PIDR2_OFFSET" . ((semantic-list "(0x0fe8)" 6186 . 6194)))
+          ("GICD_CIDR2_OFFSET" . ((semantic-list "(0x0ff8)" 6370 . 6378)))
+          ("GICD_IPRIORITYR_E_OFFSET" (spp-arg-list ("n") 6863 . 6866) . ((semantic-list "(0x2000 + ((n) * 4))" 6868 . 6888)))
+          ("GICR_TYPER_OFFSET" . ((semantic-list "(0x0008)" 7414 . 7422)))
+          ("GICR_PIDR1_OFFSET" . ((semantic-list "(0xffe4)" 8196 . 8204)))
+          ("GICR_CIDR1_OFFSET" . ((semantic-list "(0xfff4)" 8380 . 8388)))
+          ("GICR_VPENDBASER_OFFSET" . ((semantic-list "(0x0078)" 8615 . 8623)))
+          ("GICR_IGROUPR_OFFSET" (spp-arg-list ("n") 8841 . 8844) . ((semantic-list "(GICR_SGI_BASE + 0x0080 + ((n) * 4))" 8851 . 8887)))
+          ("GICR_IGRPMODR_OFFSET" (spp-arg-list ("n") 9434 . 9437) . ((semantic-list "(GICR_SGI_BASE + 0x0d00 + ((n) * 4))" 9443 . 9479)))
+          ("GICR_ICPENDR_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0280)" 10062 . 10086)))
+          ("GICD_TYPER2_OFFSET" . ((semantic-list "(0x000c)" 4776 . 4784)))
+          ("GICD_IGROUPR_OFFSET" (spp-arg-list ("n") 5042 . 5045) . ((semantic-list "(0x0080 + ((n) * 4))" 5052 . 5072)))
+          ("GICD_ICACTIVER_E_OFFSET" (spp-arg-list ("n") 6804 . 6807) . ((semantic-list "(0x1c80 + ((n) * 4))" 6810 . 6830)))
+          ("GICR_PARTIDR_OFFSET" . ((semantic-list "(0x001c)" 7598 . 7606)))
+          ("GICR_CLRLPIR_OFFSET" . ((semantic-list "(0x0048)" 7690 . 7698)))
+          ("GICR_VSGIR_OFFSET" . ((semantic-list "(0x0080)" 8661 . 8669)))
+          ("GICR_ICENABLER_OFFSET" (spp-arg-list ("n") 8991 . 8994) . ((semantic-list "(GICR_SGI_BASE + 0x0180 + ((n) * 4))" 8999 . 9035)))
+          ("GICR_ISPENDR_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0200)" 9926 . 9950)))
+          ("GICR_ICFGR_1_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0c04)" 10680 . 10704)))
+          ("GICD_CLRSPI_SR_OFFSET" . ((semantic-list "(0x0058)" 5006 . 5014)))
+          ("GICD_ITARGETSR_OFFSET" (spp-arg-list ("n") 5508 . 5511) . ((semantic-list "(0x0800 + ((n) * 4))" 5516 . 5536)))
+          ("GICD_PIDR7_OFFSET" . ((semantic-list "(0x0fdc)" 6048 . 6056)))
+          ("GICD_ICENABLER_E_OFFSET" (spp-arg-list ("n") 6572 . 6575) . ((semantic-list "(0x1400 + ((n) * 4))" 6578 . 6598)))
+          ("GICR_WAKER_OFFSET" . ((semantic-list "(0x0014)" 7506 . 7514)))
+          ("GICR_MPAMIDR_OFFSET" . ((semantic-list "(0x0018)" 7552 . 7560)))
+          ("GICR_PENDBASER_OFFSET" . ((semantic-list "(0x0078)" 7782 . 7790)))
+          ("GICR_PIDR6_OFFSET" . ((semantic-list "(0xffd8)" 8058 . 8066)))
+          ("GICR_VPROPBASER_OFFSET" . ((semantic-list "(0x0070)" 8569 . 8577)))
+          ("GICR_SGI_BASE" . ((semantic-list "(0x10000)" 8804 . 8813)))
+          ("GICR_ISENABLER_OFFSET" (spp-arg-list ("n") 8917 . 8920) . ((semantic-list "(GICR_SGI_BASE + 0x0100 + ((n) * 4))" 8925 . 8961)))
+          ("GICR_ICPENDR_OFFSET" (spp-arg-list ("n") 9137 . 9140) . ((semantic-list "(GICR_SGI_BASE + 0x0280 + ((n) * 4))" 9147 . 9183)))
+          ("GICR_ICACTIVER_E_OFFSET" (spp-arg-list ("n") 10390 . 10393) . ((semantic-list "(GICR_SGI_BASE + 0x0384 + ((n) * 4))" 10396 . 10432)))
+          ("GICC_AHPPIR_OFFSET" . ((semantic-list "(0x0028)" 11620 . 11628)))
+          ("GICC_APR_OFFSET" (spp-arg-list ("n") 11698 . 11701) . ((semantic-list "(0x00d0 + ((n) * 4))" 11712 . 11732)))
+          ("GICD_ICPENDR_OFFSET" (spp-arg-list ("n") 5274 . 5277) . ((semantic-list "(0x0280 + ((n) * 4))" 5284 . 5304)))
+          ("GICD_PIDR3_OFFSET" . ((semantic-list "(0x0fec)" 6232 . 6240)))
+          ("GICD_CIDR3_OFFSET" . ((semantic-list "(0x0ffc)" 6416 . 6424)))
+          ("GICD_IGROUPR_E_OFFSET" (spp-arg-list ("n") 6454 . 6457) . ((semantic-list "(0x1000 + ((n) * 4))" 6462 . 6482)))
+          ("GICR_PIDR2_OFFSET" . ((semantic-list "(0xffe8)" 8242 . 8250)))
+          ("GICR_CIDR2_OFFSET" . ((semantic-list "(0xfff8)" 8426 . 8434)))
+          ("GICR_ICENABLER_E_OFFSET" (spp-arg-list ("n") 9846 . 9849) . ((semantic-list "(GICR_SGI_BASE + 0x0184 + ((n) * 4))" 9852 . 9888)))
+          ("GICR_IPRIORITYR_E_OFFSET" (spp-arg-list ("n") 10539 . 10542) . ((semantic-list "(GICR_SGI_BASE + 0x0420 + ((n) * 4))" 10544 . 10580)))
+          ("GICR_IGRPMODR_E_OFFSET" (spp-arg-list ("n") 10871 . 10874) . ((semantic-list "(GICR_SGI_BASE + 0x0d04 + ((n) * 4))" 10878 . 10914)))
+          ("GICC_PMR_OFFSET" . ((semantic-list "(0x0004)" 11206 . 11214)))
+          ("GICC_BPR_OFFSET" . ((semantic-list "(0x0008)" 11252 . 11260)))
+          ("GICD_SGIR_OFFSET" . ((semantic-list "(0x0f00)" 5748 . 5756)))
+          ("GICD_ISACTIVER_E_OFFSET" (spp-arg-list ("n") 6746 . 6749) . ((semantic-list "(0x1a00 + ((n) * 4))" 6752 . 6772)))
+          ("GICR_PROPBASER_OFFSET" . ((semantic-list "(0x0070)" 7736 . 7744)))
+          ("GICR_ICACTIVER_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0380)" 10334 . 10358)))
+          ("GICD_ISENABLER_E_OFFSET" (spp-arg-list ("n") 6514 . 6517) . ((semantic-list "(0x1200 + ((n) * 4))" 6520 . 6540)))
+          ("GICD_IROUTER_E_OFFSET" (spp-arg-list ("n") 7150 . 7153) . ((semantic-list "(0x8000 + ((n) * 4))" 7158 . 7178)))
+          ("GICR_CPU_OFFSET" (spp-arg-list ("cpu") 7204 . 7209) . ((semantic-list "(0x20000 * cpu)" 7218 . 7233)))
+          ("GICR_IDDR_OFFSET" . ((semantic-list "(0x0004)" 7368 . 7376)))
+          ("GICR_INVLPIR_OFFSET" . ((semantic-list "(0x00a0)" 7828 . 7836)))
+          ("GICR_PIDR7_OFFSET" . ((semantic-list "(0xffdc)" 8104 . 8112)))
+          ("GICR_ISPENDR_OFFSET" (spp-arg-list ("n") 9063 . 9066) . ((semantic-list "(GICR_SGI_BASE + 0x0200 + ((n) * 4))" 9073 . 9109)))
+          ("GICR_ICENABLER_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0180)" 9790 . 9814)))
+          ("GICR_ISACTIVER_E_OFFSET" (spp-arg-list ("n") 10254 . 10257) . ((semantic-list "(GICR_SGI_BASE + 0x0304 + ((n) * 4))" 10260 . 10296)))
+          ("GICR_IGRPMODR_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0d00)" 10816 . 10840)))
+          ("GICC_IAR_OFFSET" . ((semantic-list "(0x000c)" 11298 . 11306)))
+          ("GICD_ISPENDR_OFFSET" (spp-arg-list ("n") 5216 . 5219) . ((semantic-list "(0x0200 + ((n) * 4))" 5226 . 5246)))
+          ("GICD_PIDR4_OFFSET" . ((semantic-list "(0x0fd0)" 5910 . 5918)))
+          ("GICR_PIDR3_OFFSET" . ((semantic-list "(0xffec)" 8288 . 8296)))
+          ("GICR_CIDR3_OFFSET" . ((semantic-list "(0xfffc)" 8472 . 8480)))
+          ("GICR_IGROUPR_E_OFFSET" (spp-arg-list ("n") 9572 . 9575) . ((semantic-list "(GICR_SGI_BASE + 0x0084 + ((n) * 4))" 9580 . 9616)))
+          ("GICR_ISENABLER_E_OFFSET" (spp-arg-list ("n") 9710 . 9713) . ((semantic-list "(GICR_SGI_BASE + 0x0104 + ((n) * 4))" 9716 . 9752)))
+          ("GICC_RPR_OFFSET" . ((semantic-list "(0x0014)" 11390 . 11398)))
+          ("GICC_AEOIR_OFFSET" . ((semantic-list "(0x0024)" 11574 . 11582)))
+          ("GICC_NSAPR_OFFSET" (spp-arg-list ("n") 11758 . 11761) . ((semantic-list "(0x00e0 + ((n) * 4))" 11770 . 11790)))
+          ("GICD_PIDR0_OFFSET" . ((semantic-list "(0x0fe0)" 6094 . 6102)))
+          ("GICD_CIDR0_OFFSET" . ((semantic-list "(0x0ff0)" 6278 . 6286)))
+          ("GICD_IGRPMODR_E_OFFSET" (spp-arg-list ("n") 6977 . 6980) . ((semantic-list "(0x3400 + ((n) * 4))" 6984 . 7004)))
+          ("GICD_IROUTER_OFFSET" (spp-arg-list ("n") 7090 . 7093) . ((semantic-list "(0x6100 + ((n) * 4))" 7100 . 7120)))
+          ("GICR_ISACTIVER_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0300)" 10198 . 10222)))
+          ("GICR_IPRIORITYR_OFFSET" (spp-arg-list ("n") 10463 . 10466) . ((semantic-list "(GICR_SGI_BASE + 0x0400 + ((n) * 4))" 10470 . 10506)))
+          ("GICC_ABPR_OFFSET" . ((semantic-list "(0x001c)" 11482 . 11490)))
+          ("GICC_DIR_OFFSET" . ((semantic-list "(0x1000)" 11874 . 11882)))
+          ("GICD_ICACTIVER_OFFSET" (spp-arg-list ("n") 5392 . 5395) . ((semantic-list "(0x0380 + ((n) * 4))" 5400 . 5420)))
+          ("GICD_ICPENDR_E_OFFSET" (spp-arg-list ("n") 6686 . 6689) . ((semantic-list "(0x1880 + ((n) * 4))" 6694 . 6714)))
+          ("GICR_SETLPIR_OFFSET" . ((semantic-list "(0x0040)" 7644 . 7652)))
+          ("GICR_INVALLR_OFFSET" . ((semantic-list "(0x00b0)" 7874 . 7882)))
+          ("GICR_VSGIPENDR_OFFSET" . ((semantic-list "(0x0088)" 8707 . 8715)))
+          ("GICR_IGROUPR_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0080)" 9518 . 9542)))
+          ("GICR_ISENABLER_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0100)" 9654 . 9678)))
+          ("GICC_CTLR_OFFSET" . ((semantic-list "(0x0000)" 11160 . 11168)))
+          ("GICC_EOIR_OFFSET" . ((semantic-list "(0x0010)" 11344 . 11352)))
+          ("GICC_IIDR_OFFSET" . ((semantic-list "(0x00fc)" 11828 . 11836)))
+          ("GICD_CTLR_OFFSET" . ((semantic-list "(0x0000)" 4638 . 4646)))
+          ("GICD_IIDR_OFFSET" . ((semantic-list "(0x0008)" 4730 . 4738)))
+          ("GICD_CLRSPI_NSR_OFFSET" . ((semantic-list "(0x0048)" 4914 . 4922)))
+          ("GICD_ISACTIVER_OFFSET" (spp-arg-list ("n") 5334 . 5337) . ((semantic-list "(0x0300 + ((n) * 4))" 5342 . 5362)))
+          ("GICD_ICFGR_OFFSET" (spp-arg-list ("n") 5562 . 5565) . ((semantic-list "(0x0c00 + ((n) * 4))" 5574 . 5594)))
+          ("GICD_NSACR_OFFSET" (spp-arg-list ("n") 5678 . 5681) . ((semantic-list "(0x0e00 + ((n) * 4))" 5690 . 5710)))
+          ("GICD_PIDR5_OFFSET" . ((semantic-list "(0x0fd4)" 5956 . 5964)))
+          ("GICD_ISPENDR_E_OFFSET" (spp-arg-list ("n") 6628 . 6631) . ((semantic-list "(0x1600 + ((n) * 4))" 6636 . 6656)))
+          ("GICR_PIDR4_OFFSET" . ((semantic-list "(0xffd0)" 7966 . 7974)))
+          ("GICR_ICFGR_E_OFFSET" (spp-arg-list ("n") 10732 . 10735) . ((semantic-list "(GICR_SGI_BASE + 0x0c08 + ((n) * 4))" 10742 . 10778)))
+          ("GICC_AIAR_OFFSET" . ((semantic-list "(0x0020)" 11528 . 11536)))
+          ("__ARM64_GIC_H")
+          ("GICD_TYPER_OFFSET" . ((semantic-list "(0x0004)" 4684 . 4692)))
+          ("GICD_CPENDSGIR_OFFSET" (spp-arg-list ("n") 5786 . 5789) . ((semantic-list "(0x0f10 + ((n) * 4))" 5794 . 5814)))
+          ("GICD_PIDR1_OFFSET" . ((semantic-list "(0x0fe4)" 6140 . 6148)))
+          ("GICD_CIDR1_OFFSET" . ((semantic-list "(0x0ff4)" 6324 . 6332)))
+          ("GICD_ICFGR_E_OFFSET" (spp-arg-list ("n") 6916 . 6919) . ((semantic-list "(0x3000 + ((n) * 4))" 6926 . 6946)))
+          ("GICD_NSACR_E_OFFSET" (spp-arg-list ("n") 7032 . 7035) . ((semantic-list "(0x3600 + ((n) * 4))" 7042 . 7062)))
+          ("GICR_CTLR_OFFSET" . ((semantic-list "(0x0000)" 7322 . 7330)))
+          ("GICR_STATUSR_OFFSET" . ((semantic-list "(0x0010)" 7460 . 7468)))
+          ("GICR_SYNCR_OFFSET" . ((semantic-list "(0x00c0)" 7920 . 7928)))
+          ("GICR_PIDR0_OFFSET" . ((semantic-list "(0xffe0)" 8150 . 8158)))
+          ("GICR_CIDR0_OFFSET" . ((semantic-list "(0xfff0)" 8334 . 8342)))
+          ("GICC_STATUSR_OFFSET" . ((semantic-list "(0x002c)" 11666 . 11674)))
+          ("GICD_STATUSR_OFFSET" . ((semantic-list "(0x0010)" 4822 . 4830)))
+          ("GICD_SETSPI_SR_OFFSET" . ((semantic-list "(0x0050)" 4960 . 4968)))
+          ("GICD_ICENABLER_OFFSET" (spp-arg-list ("n") 5160 . 5163) . ((semantic-list "(0x0180 + ((n) * 4))" 5168 . 5188)))
+          ("GICD_IPRIORITYR_OFFSET" (spp-arg-list ("n") 5451 . 5454) . ((semantic-list "(0x0400 + ((n) * 4))" 5458 . 5478)))
+          ("GICD_SPENDSGIR_OFFSET" (spp-arg-list ("n") 5844 . 5847) . ((semantic-list "(0x0f20 + ((n) * 4))" 5852 . 5872)))
+          ("GICR_ICACTIVER_OFFSET" (spp-arg-list ("n") 9287 . 9290) . ((semantic-list "(GICR_SGI_BASE + 0x0380 + ((n) * 4))" 9295 . 9331)))
+          ("GICR_ICPENDR_E_OFFSET" (spp-arg-list ("n") 10116 . 10119) . ((semantic-list "(GICR_SGI_BASE + 0x0284 + ((n) * 4))" 10124 . 10160)))
+          ("GICR_ICFGR_0_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0c00)" 10618 . 10642)))
+          ("GICD_SETSPI_NSR_OFFSET" . ((semantic-list "(0x0040)" 4868 . 4876)))
+          ("GICD_ISENABLER_OFFSET" (spp-arg-list ("n") 5102 . 5105) . ((semantic-list "(0x0100 + ((n) * 4))" 5110 . 5130)))
+          ("GICD_IGRPMODR_OFFSET" (spp-arg-list ("n") 5623 . 5626) . ((semantic-list "(0x0d00 + ((n) * 4))" 5632 . 5652)))
+          ("GICD_PIDR6_OFFSET" . ((semantic-list "(0x0fd8)" 6002 . 6010)))
+          ("GICR_PIDR5_OFFSET" . ((semantic-list "(0xffd4)" 8012 . 8020)))
+          ("GICR_ISACTIVER_OFFSET" (spp-arg-list ("n") 9213 . 9216) . ((semantic-list "(GICR_SGI_BASE + 0x0300 + ((n) * 4))" 9221 . 9257)))
+          ("GICR_ICFGR_OFFSET" (spp-arg-list ("n") 9357 . 9360) . ((semantic-list "(GICR_SGI_BASE + 0x0c00 + ((n) * 4))" 9369 . 9405)))
+          ("GICR_ISPENDR_E_OFFSET" (spp-arg-list ("n") 9980 . 9983) . ((semantic-list "(GICR_SGI_BASE + 0x0204 + ((n) * 4))" 9988 . 10024)))
+          ("GICR_NSACR_OFFSET" . ((semantic-list "(GICR_SGI_BASE + 0x0e00)" 10952 . 10976)))
+          ("GICC_HPPIR_OFFSET" . ((semantic-list "(0x0018)" 11436 . 11444)))
+          )
+))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!kitten-arm64!arch!arm64!kernel!irqchips!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

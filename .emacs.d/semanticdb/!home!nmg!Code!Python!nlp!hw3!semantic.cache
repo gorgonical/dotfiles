@@ -1,0 +1,117 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("pandas" include nil nil [21 40])
+            ("numpy" include nil nil [41 59])
+            ("argparse" include nil nil [60 75])
+            ("nltk" include nil nil [76 95])
+            ("sklearn" include nil nil [96 117])
+            ("gensim" include nil nil [118 131])
+            ("warnings" include nil nil [132 147])
+            ("warnings" code nil nil [148 181])
+            ("gensim.models.doc2vec" include nil nil [225 260])
+            ("sklearn.linear_model" include nil nil [261 334])
+            ("sklearn.naive_bayes" include nil nil [335 380])
+            ("sklearn.model_selection" include nil nil [381 433])
+            ("functools" include nil nil [434 462])
+            ("sklearn.model_selection" include nil nil [463 556])
+            ("sklearn.metrics" include nil nil [557 622])
+            ("itertools" include nil nil [623 657])
+            ("'''
+Websites used to make this code work
+
+https://towardsdatascience.com/machine-learning-nlp-text-classification-using-scikit-learn-python-and-nltk-c52b92a7c73a
+https://towardsdatascience.com/multi-class-text-classification-with-doc2vec-logistic-regression-9da9947b43f4
+https://stackabuse.com/text-classification-with-python-and-scikit-learn/
+https://medium.com/@datamonsters/text-preprocessing-in-python-steps-tools-and-examples-bf025f872908
+'''" code nil nil [660 1107])
+            ("DEBUG" variable nil nil [1109 1122])
+            ("VERBOSE" variable nil nil [1123 1138])
+            ("TEST_SIZE" variable nil nil [1139 1152])
+            ("CV_RUNS" variable nil nil [1153 1162])
+            ("BOOTSTRAP_SAMPLES" variable nil nil [1163 1184])
+            ("debug" function (:arguments 
+              ( ("string" variable nil (reparse-symbol function_parameters) [1196 1202]))              ) nil [1186 1255])
+            ("verbose" function (:arguments 
+              ( ("string" variable nil (reparse-symbol function_parameters) [1268 1274]))              ) nil [1256 1309])
+            ("parse" function nil nil [1310 1716])
+            ("'''
+iterate over all indices, assigning them to subsets based on their index mod n_subsets. for optimal mix-up, shuffle the dataset first.
+
+then, train n classifiers, each using a different subset created in the previous step
+
+then, find out what each classifier thinks of a given comment
+
+in the simplest case, the majority vote wins
+'''" code nil nil [1718 2056])
+            ("predict_with_cv" function (:arguments 
+              ( ("cv_scores" variable nil (reparse-symbol function_parameters) [2078 2087])
+                ("test" variable nil (reparse-symbol function_parameters) [2089 2093])
+                ("test_targets" variable nil (reparse-symbol function_parameters) [2095 2107]))              ) nil [2058 2529])
+            ("simple_maj_cv" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2548 2552])
+                ("n_subsets" variable nil (reparse-symbol function_parameters) [2554 2563]))              ) nil [2530 3366])
+            ("baseline_classify" function (:arguments 
+              ( ("subset" variable nil (reparse-symbol function_parameters) [3389 3395]))              ) nil [3367 3596])
+            ("simple_majority" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3617 3621])
+                ("train" variable nil (reparse-symbol function_parameters) [3623 3628])
+                ("test" variable nil (reparse-symbol function_parameters) [3630 3634]))              ) nil [3597 4042])
+            ("preprocess" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4058 4062]))              ) nil [4043 4136])
+            ("preprocess_helper" function (:arguments 
+              ( ("r" variable nil (reparse-symbol function_parameters) [4159 4160]))              ) nil [4137 4701])
+            ("'''
+does it make sense to try to apply nb to negative observations?
+'''" code nil nil [4702 4773])
+            ("word2vec" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4787 4791])
+                ("train" variable nil (reparse-symbol function_parameters) [4793 4798])
+                ("test" variable nil (reparse-symbol function_parameters) [4800 4804]))              ) nil [4774 6636])
+            ("vec_for_learning" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [6658 6663])
+                ("tagged_docs" variable nil (reparse-symbol function_parameters) [6665 6676]))              ) nil [6637 6900])
+            ("bootstrap" function (:arguments 
+              ( ("x" variable nil (reparse-symbol function_parameters) [6915 6916])
+                ("y" variable nil (reparse-symbol function_parameters) [6918 6919])
+                ("true_tags" variable nil (reparse-symbol function_parameters) [6921 6930])
+                ("b" variable nil (reparse-symbol function_parameters) [6932 6933]))              ) nil [6901 7559])
+            ("bootstrap_delta" code nil nil [7564 7605])
+            ("count_bow" function (:arguments 
+              ( ("features" variable nil (reparse-symbol function_parameters) [7702 7710])
+                ("words" variable nil (reparse-symbol function_parameters) [7712 7717]))              ) nil [7688 7988])
+            ("'''
+how do we account for unknown words in the features?
+
+how do we preprocess the text so that it's less garbage-y?
+
+does the test data use its own features?
+'''" code nil nil [7989 8151])
+            ("bow" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [8160 8164])
+                ("train" variable nil (reparse-symbol function_parameters) [8166 8171])
+                ("test" variable nil (reparse-symbol function_parameters) [8173 8177]))              ) nil [8152 10005])
+            ("find_p_value" function (:arguments 
+              ( ("first" variable nil (reparse-symbol function_parameters) [10023 10028])
+                ("second" variable nil (reparse-symbol function_parameters) [10030 10036])
+                ("true" variable nil (reparse-symbol function_parameters) [10038 10042])
+                ("samples" variable nil (reparse-symbol function_parameters) [10044 10051]))              ) nil [10006 10278])
+            ("tfidf" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [10289 10293])
+                ("train" variable nil (reparse-symbol function_parameters) [10295 10300])
+                ("test" variable nil (reparse-symbol function_parameters) [10302 10306]))              ) nil [10279 11984])
+            ("main" function nil nil [11985 13375])
+            ("main" code nil nil [13377 13383]))          
+      :file "script.py"
+      :pointmax 13384
+      :fsize 13383
+      :lastmodtime '(24035 14555 492656 849000)
+      :unmatched-syntax '((INDENT_BLOCK 7653 . 7687) (INDENT_BLOCK 7606 . 7653) (SEMICOLON 7559 . 7560) (INDENT_BLOCK 7653 . 7687) (INDENT_BLOCK 7606 . 7653) (SEMICOLON 7559 . 7560))))
+  :file "!home!nmg!Code!Python!nlp!hw3!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

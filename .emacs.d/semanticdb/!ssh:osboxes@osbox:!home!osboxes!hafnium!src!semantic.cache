@@ -1,0 +1,2504 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/load.h" include nil nil [607 627])
+            ("stdbool.h" include (:system-flag t) nil [629 649])
+            ("hf/arch/vm.h" include nil nil [651 674])
+            ("hf/api.h" include nil nil [676 695])
+            ("hf/boot_params.h" include nil nil [696 723])
+            ("hf/check.h" include nil nil [724 745])
+            ("hf/dlog.h" include nil nil [746 766])
+            ("hf/layout.h" include nil nil [767 789])
+            ("hf/memiter.h" include nil nil [790 813])
+            ("hf/mm.h" include nil nil [814 832])
+            ("hf/plat/console.h" include nil nil [833 861])
+            ("hf/plat/iommu.h" include nil nil [862 888])
+            ("hf/static_assert.h" include nil nil [889 918])
+            ("hf/std.h" include nil nil [919 938])
+            ("hf/vm.h" include nil nil [939 957])
+            ("vmapi/hf/call.h" include nil nil [959 985])
+            ("tee_send_buffer" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [1006 1054])
+            ("tee_recv_buffer" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [1074 1122])
+            ("copy_to_unmapped" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1476 1514])
+                    ("to" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1515 1526])
+                    ("from_it" variable
+                       (:pointer 1
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1535 1559])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1560 1580]))                  
+                :type "bool")
+                nil [1447 1952])
+            ("load_kernel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1978 2016])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2017 2031])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2035 2047])
+                    ("manifest_vm" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2048 2086])
+                    ("cpio" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2090 2117])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2118 2138]))                  
+                :type "bool")
+                nil [1954 2637])
+            ("load_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("manifest_vm" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2761 2799])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2800 2814]))                  
+                :type "bool")
+                nil [2737 2960])
+            ("load_primary" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3020 3058])
+                    ("manifest_vm" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3063 3101])
+                    ("cpio" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3106 3133])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3138 3171])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3172 3192]))                  
+                :type "bool")
+                nil [2995 6614])
+            ("load_secondary" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6675 6713])
+                    ("mem_begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6720 6738])
+                    ("mem_end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6739 6755])
+                    ("manifest_vm" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6762 6800])
+                    ("cpio" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6807 6834])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6835 6855]))                  
+                :type "bool")
+                nil [6648 8287])
+            ("carve_out_mem_range" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mem_ranges" variable
+                       (:pointer 1
+                        :type ("mem_range" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8512 8541])
+                    ("mem_ranges_count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8546 8570])
+                    ("size_to_find" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8571 8593])
+                    ("found_begin" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8598 8619])
+                    ("found_end" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8620 8639]))                  
+                :type "bool")
+                nil [8480 9208])
+            ("update_reserved_ranges" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("update" variable
+                       (:pointer 1
+                        :type ("boot_params_update" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9611 9645])
+                    ("before" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_range" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9653 9684])
+                    ("after" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_range" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9692 9722])
+                    ("mem_ranges_count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9730 9754]))                  
+                :type "bool")
+                nil [9576 10708])
+            ("load_vms" function
+               (:arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [10768 10806])
+                    ("manifest" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("manifest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10814 10846])
+                    ("cpio" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10847 10874])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10882 10915])
+                    ("update" variable
+                       (:pointer 1
+                        :type ("boot_params_update" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10923 10957])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10958 10978]))                  
+                :type "bool")
+                nil [10754 14256]))          
+      :file "load.c"
+      :pointmax 14257
+      :fsize 21985
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax '((semantic-list 1062 . 1073) (symbol 1055 . 1062) (semantic-list 994 . 1005) (symbol 987 . 994)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/ffa_memory.h" include nil nil [607 633])
+            ("hf/arch/tee.h" include nil nil [635 659])
+            ("hf/api.h" include nil nil [661 680])
+            ("hf/check.h" include nil nil [681 702])
+            ("hf/dlog.h" include nil nil [703 723])
+            ("hf/ffa_internal.h" include nil nil [724 752])
+            ("hf/mpool.h" include nil nil [753 774])
+            ("hf/std.h" include nil nil [775 794])
+            ("hf/vm.h" include nil nil [795 813])
+            ("MAX_MEM_SHARE_RECIPIENTS" variable (:constant-flag t) nil [895 919])
+            ("MAX_MEM_SHARES" variable (:constant-flag t) nil [1173 1187])
+            ("MAX_FRAGMENTS" variable (:constant-flag t) nil [1298 1311])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1316 1480])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1481 1641])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1642 1773])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1774 1904])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1905 2035])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [2036 2178])
+            ("ffa_memory_share_state" type
+               (:members 
+                  ( ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2213 2240])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2337 2377])
+                    ("fragments" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2380 2443])
+                    ("fragment_constituent_counts" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2499 2551])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2662 2686])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2867 2887])
+                    ("sending_complete" variable (:type "bool") (reparse-symbol classsubparts) [3032 3054])
+                    ("retrieved_fragment_count" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3333 3393]))                  
+                :type "struct")
+                nil [2180 3396])
+            ("share_states_locked" type
+               (:members 
+                  ( ("share_states" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3515 3559]))                  
+                :type "struct")
+                nil [3485 3562])
+            ("share_states_lock_instance" variable
+               (:typemodifiers ("static")
+                :default-value "SPINLOCK_INIT"
+                :type ("spinlock" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3667 3733])
+            ("share_states" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("ffa_memory_share_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3734 3800])
+            ("tee_retrieve_buffer" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [4007 4076])
+            ("allocate_share_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4461 4501])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4502 4522])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4524 4564])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4565 4590])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4592 4619])
+                    ("share_state_ret" variable
+                       (:pointer 2
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4621 4669]))                  
+                :type "bool")
+                nil [4426 5929])
+            ("share_states_lock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6012 6017]))                  
+                :type ("share_states_locked" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5967 6129])
+            ("share_states_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable
+                       (:pointer 1
+                        :type ("share_states_locked" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6201 6242]))                  
+                :type "void")
+                nil [6169 6367])
+            ("get_share_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6587 6627])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6635 6662])
+                    ("share_state_ret" variable
+                       (:pointer 2
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6670 6718]))                  
+                :type "bool")
+                nil [6559 7604])
+            ("share_state_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7678 7718])
+                    ("share_state" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7727 7770])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7779 7803]))                  
+                :type "void")
+                nil [7649 8460])
+            ("share_state_sending_complete" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [8570 8610])
+                    ("share_state" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8612 8655]))                  
+                :type "bool")
+                nil [8527 9594])
+            ("share_state_next_fragment_offset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [9740 9780])
+                    ("share_state" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9782 9825]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [9689 10247])
+            ("dump_memory_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10280 10320]))                  
+                :type "void")
+                nil [10249 11010])
+            ("dump_share_states" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11042 11047]))                  
+                :type "void")
+                nil [11012 11997])
+            ("ffa_memory_permissions_to_mode" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("permissions" variable (:type ("ffa_memory_access_permissions_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12123 12167]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [12067 12817])
+            ("constituents_get_mode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [13067 13087])
+                    ("orig_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13088 13108])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13110 13159])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13161 13205])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13206 13230]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13019 14628])
+            ("ffa_send_check_transition" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [15211 15233])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15234 15254])
+                    ("permissions" variable (:type ("ffa_memory_access_permissions_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15256 15300])
+                    ("orig_from_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15301 15326])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15328 15377])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15379 15417])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15418 15442])
+                    ("from_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15444 15464]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15159 16991])
+            ("ffa_relinquish_check_transition" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [17051 17073])
+                    ("orig_from_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17074 17099])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17101 17150])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17152 17190])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17191 17215])
+                    ("from_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17217 17237]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16993 18342])
+            ("ffa_retrieve_check_transition" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("to" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [18930 18950])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18951 18971])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18973 19022])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19024 19062])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19063 19087])
+                    ("memory_to_attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19089 19119])
+                    ("to_mode" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19120 19138]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18874 20543])
+            ("ffa_region_group_identity_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [21430 21457])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21459 21508])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21510 21554])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21555 21579])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [21581 21590])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21591 21611])
+                    ("commit" variable (:type "bool") (reparse-symbol arg-sub-list) [21612 21624]))                  
+                :type "bool")
+                nil [21386 22231])
+            ("clear_memory" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22422 22436])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22437 22449])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22450 22470]))                  
+                :type "bool")
+                nil [22397 23283])
+            ("ffa_clear_memory_constituents" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23493 23542])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23544 23588])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23589 23613])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23615 23639]))                  
+                :type "bool")
+                nil [23449 24801])
+            ("ffa_send_check_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [25432 25461])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25463 25512])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25514 25552])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25553 25577])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25579 25599])
+                    ("permissions" variable (:type ("ffa_memory_access_permissions_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25600 25644])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25646 25670])
+                    ("clear" variable (:type "bool") (reparse-symbol arg-sub-list) [25671 25682])
+                    ("orig_from_mode_ret" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25683 25712]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25384 28718])
+            ("ffa_retrieve_check_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [29215 29242])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29244 29293])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29295 29333])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29334 29358])
+                    ("memory_to_attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29360 29390])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29391 29411])
+                    ("clear" variable (:type "bool") (reparse-symbol arg-sub-list) [29412 29423])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29425 29449]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [29163 31951])
+            ("ffa_tee_reclaim_check_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [32641 32668])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32669 32696])
+                    ("constituents" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32698 32749])
+                    ("constituent_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32751 32778])
+                    ("memory_to_attributes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32779 32809])
+                    ("clear" variable (:type "bool") (reparse-symbol arg-sub-list) [32810 32821])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32823 32847]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [32586 35633])
+            ("ffa_relinquish_check_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [35689 35718])
+                    ("fragments" variable
+                       (:pointer 2
+                        :type ("ffa_memory_region_constituent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35720 35769])
+                    ("fragment_constituent_counts" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35771 35809])
+                    ("fragment_count" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35810 35834])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35836 35860])
+                    ("clear" variable (:type "bool") (reparse-symbol arg-sub-list) [35861 35872]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [35635 38246])
+            ("ffa_memory_send_complete" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [38601 38630])
+                    ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [38631 38671])
+                    ("share_state" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38673 38716])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38717 38741])
+                    ("orig_from_mode_ret" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38743 38772]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [38550 39708])
+            ("ffa_memory_send_validate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [40092 40121])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40122 40162])
+                    ("memory_share_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40164 40193])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40194 40219])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40221 40241])
+                    ("permissions" variable
+                       (:pointer 1
+                        :type ("ffa_memory_access_permissions_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [40242 40287]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40041 44757])
+            ("memory_send_tee_forward" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tee_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [44862 44890])
+                    ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44891 44916])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44918 44938])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44939 44979])
+                    ("memory_share_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44981 45010])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45011 45036]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [44812 45710])
+            ("ffa_memory_send_continue_validate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [45996 46036])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46037 46064])
+                    ("share_state_ret" variable
+                       (:pointer 2
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46066 46114])
+                    ("from_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46115 46138])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46140 46164]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [45936 47475])
+            ("memory_send_continue_tee_forward" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tee_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [47606 47634])
+                    ("sender_vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47635 47660])
+                    ("fragment" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [47661 47676])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47678 47703])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47704 47731]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [47547 48492])
+            ("ffa_memory_send" function
+               (:arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [49236 49265])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49271 49311])
+                    ("memory_share_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49317 49346])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49352 49377])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49378 49398])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49404 49428]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [49203 51447])
+            ("ffa_memory_tee_send" function
+               (:arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [52208 52237])
+                    ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [52238 52265])
+                    ("memory_region" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52267 52307])
+                    ("memory_share_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [52308 52337])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [52339 52364])
+                    ("share_func" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [52365 52385])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52386 52410]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [52169 56480])
+            ("ffa_memory_send_continue" function
+               (:arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [57087 57116])
+                    ("fragment" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [57124 57139])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57147 57172])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57180 57207])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57215 57239]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [57045 58803])
+            ("ffa_memory_tee_send_continue" function
+               (:arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [59446 59475])
+                    ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [59487 59514])
+                    ("fragment" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [59526 59541])
+                    ("fragment_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59553 59578])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59590 59617])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [59629 59653]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [59400 64600])
+            ("ffa_memory_retrieve_complete" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("share_states" variable (:type ("share_states_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [64721 64761])
+                    ("share_state" variable
+                       (:pointer 1
+                        :type ("ffa_memory_share_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64763 64806])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64807 64831]))                  
+                :type "void")
+                nil [64678 65116])
+            ("ffa_memory_retrieve" function
+               (:arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [65155 65182])
+                    ("retrieve_request" variable
+                       (:pointer 1
+                        :type ("ffa_memory_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65192 65235])
+                    ("retrieve_request_length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [65245 65278])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65288 65312]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [65118 74098])
+            ("ffa_memory_retrieve_continue" function
+               (:arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [74146 74173])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74185 74212])
+                    ("fragment_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74224 74249])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [74261 74285]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [74100 77595])
+            ("ffa_memory_relinquish" function
+               (:arguments 
+                  ( ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [77638 77667])
+                    ("relinquish_request" variable
+                       (:pointer 1
+                        :type ("ffa_mem_relinquish" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77669 77715])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77716 77740]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [77597 80437])
+            ("ffa_memory_reclaim" function
+               (:arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [80665 80692])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [80701 80728])
+                    ("flags" variable (:type ("ffa_memory_region_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [80737 80769])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80778 80802]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [80629 82479])
+            ("ffa_memory_tee_reclaim" function
+               (:arguments 
+                  ( ("to_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [82845 82872])
+                    ("from_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [82878 82907])
+                    ("handle" variable (:type ("ffa_memory_handle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82913 82940])
+                    ("flags" variable (:type ("ffa_memory_region_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82946 82978])
+                    ("page_pool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82984 83008]))                  
+                :type ("ffa_value" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [82805 87394]))          
+      :file "ffa_memory.c"
+      :pointmax 87395
+      :fsize 87732
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax '((semantic-list 3995 . 4006) (symbol 3988 . 3995) (string 2163 . 2176) (string 2102 . 2155) (number 2092 . 2093) (punctuation 2090 . 2091) (punctuation 2089 . 2090) (number 2086 . 2088) (punctuation 2084 . 2085) (semantic-list 2056 . 2083) (SIZEOF 2050 . 2056) (string 1970 . 2033) (number 1960 . 1961) (punctuation 1958 . 1959) (punctuation 1957 . 1958) (number 1954 . 1956) (punctuation 1952 . 1953) (semantic-list 1925 . 1951) (SIZEOF 1919 . 1925) (string 1839 . 1902) (number 1829 . 1830) (punctuation 1827 . 1828) (punctuation 1826 . 1827) (number 1823 . 1825) (punctuation 1821 . 1822) (semantic-list 1794 . 1820) (SIZEOF 1788 . 1794) (string 1713 . 1771) (number 1703 . 1704) (punctuation 1701 . 1702) (punctuation 1700 . 1701) (semantic-list 1662 . 1699) (SIZEOF 1656 . 1662) (string 1626 . 1639) (string 1556 . 1618) (number 1546 . 1547) (punctuation 1544 . 1545) (punctuation 1543 . 1544) (number 1540 . 1542) (punctuation 1538 . 1539) (semantic-list 1501 . 1537) (SIZEOF 1495 . 1501) (string 1465 . 1478) (string 1393 . 1457) (number 1383 . 1384) (punctuation 1381 . 1382) (punctuation 1380 . 1381) (number 1377 . 1379) (punctuation 1375 . 1376) (semantic-list 1336 . 1374) (SIZEOF 1330 . 1336))
+      :lexical-table 
+        '(("MAX_MEM_SHARE_RECIPIENTS" . ((number "1" 920 . 921)))
+          ("MAX_MEM_SHARES" . ((number "100" 1188 . 1191)))
+          ("MAX_FRAGMENTS" . ((number "20" 1312 . 1314)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/vm.h" include nil nil [607 625])
+            ("hf/api.h" include nil nil [627 646])
+            ("hf/check.h" include nil nil [647 668])
+            ("hf/cpu.h" include nil nil [669 688])
+            ("hf/ffa.h" include nil nil [689 708])
+            ("hf/layout.h" include nil nil [709 731])
+            ("hf/plat/iommu.h" include nil nil [732 758])
+            ("hf/std.h" include nil nil [759 778])
+            ("vmapi/hf/call.h" include nil nil [780 806])
+            ("vms" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [808 838])
+            ("tee_vm" variable
+               (:typemodifiers ("static")
+                :type ("vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [839 863])
+            ("vm_count" variable
+               (:typemodifiers ("static")
+                :type ("ffa_vm_count_t" type (:type "class") nil nil))
+                nil [864 895])
+            ("vm_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [916 931])
+                    ("vcpu_count" variable (:type ("ffa_vcpu_count_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [932 960])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [966 986]))                  
+                :type ("vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [897 1871])
+            ("vm_init_next" function
+               (:arguments 
+                  ( ("vcpu_count" variable (:type ("ffa_vcpu_count_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1891 1919])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1920 1940])
+                    ("new_vm" variable
+                       (:pointer 2
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1945 1964]))                  
+                :type "bool")
+                nil [1873 2227])
+            ("vm_get_count" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2257 2262]))                  
+                :type ("ffa_vm_count_t" type (:type "class") nil nil))
+                nil [2229 2284])
+            ("vm_find" function
+               (:pointer 1
+                :arguments 
+                  ( ("id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2305 2320]))                  
+                :type ("vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2286 2674])
+            ("vm_lock" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2781 2795]))                  
+                :type ("vm_locked" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2756 2883])
+            ("vm_lock_both" function
+               (:arguments 
+                  ( ("vm1" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3017 3032])
+                    ("vm2" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3033 3048]))                  
+                :type ("two_vm_locked" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2983 3195])
+            ("vm_unlock" function
+               (:arguments 
+                  ( ("locked" variable
+                       (:pointer 1
+                        :type ("vm_locked" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3345 3370]))                  
+                :type "void")
+                nil [3330 3425])
+            ("vm_get_vcpu" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3583 3597])
+                    ("vcpu_index" variable (:type ("ffa_vcpu_index_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3598 3626]))                  
+                :type ("vcpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3558 3699])
+            ("vm_get_wait_entry" function
+               (:pointer 1
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3801 3815])
+                    ("for_vm" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3816 3835]))                  
+                :type ("wait_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3764 3987])
+            ("vm_id_for_wait_entry" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4095 4109])
+                    ("entry" variable
+                       (:pointer 1
+                        :type ("wait_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4110 4135]))                  
+                :type ("ffa_vm_id_t" type (:type "class") nil nil))
+                nil [4062 4217])
+            ("vm_identity_map" function
+               (:arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4728 4755])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4756 4770])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4771 4783])
+                    ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4791 4805])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4806 4826])
+                    ("ipa" variable
+                       (:pointer 1
+                        :type ("ipaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4827 4841]))                  
+                :type "bool")
+                nil [4707 5007])
+            ("vm_identity_prepare" function
+               (:arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5383 5410])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5411 5425])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5426 5438])
+                    ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5443 5457])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5458 5478]))                  
+                :type "bool")
+                nil [5358 5572])
+            ("vm_identity_commit" function
+               (:arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5775 5802])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5803 5817])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5818 5830])
+                    ("mode" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5834 5848])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5849 5869])
+                    ("ipa" variable
+                       (:pointer 1
+                        :type ("ipaddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5870 5884]))                  
+                :type "void")
+                nil [5751 6029])
+            ("vm_unmap" function
+               (:arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6186 6213])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6214 6228])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6229 6241])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6249 6269]))                  
+                :type "bool")
+                nil [6172 6381])
+            ("vm_unmap_hypervisor" function
+               (:arguments 
+                  ( ("vm_locked" variable (:type ("vm_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6474 6501])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6502 6522]))                  
+                :type "bool")
+                nil [6449 6845]))          
+      :file "vm.c"
+      :pointmax 6846
+      :fsize 7958
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/manifest.h" include nil nil [607 631])
+            ("hf/addr.h" include nil nil [633 653])
+            ("hf/check.h" include nil nil [654 675])
+            ("hf/dlog.h" include nil nil [676 696])
+            ("hf/fdt.h" include nil nil [697 716])
+            ("hf/static_assert.h" include nil nil [717 746])
+            ("hf/std.h" include nil nil [747 766])
+            ("TRY" variable (:constant-flag t) nil [776 779])
+            ("VM_ID_MAX" variable (:constant-flag t) nil [1098 1107])
+            ("VM_ID_MAX_DIGITS" variable (:constant-flag t) nil [1148 1164])
+            ("VM_NAME_EXTRA_CHARS" variable (:constant-flag t) nil [1177 1196])
+            ("VM_NAME_MAX_SIZE" variable (:constant-flag t) nil [1236 1252])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("STRING_MAX_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1328 1344]))                  
+                :type "int")
+                nil [1294 1398])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [1399 1466])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("HF_TEE_VM_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1481 1495]))                  
+                :type "int")
+                nil [1467 1563])
+            ("count_digits" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1599 1617]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [1565 1709])
+            ("generate_vm_node_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type ("string" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1871 1890])
+                    ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1891 1909]))                  
+                :type "void")
+                nil [1837 2271])
+            ("read_bool" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2471 2499])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2508 2529])
+                    ("out" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [2530 2540]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [2428 2759])
+            ("read_string" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2806 2834])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2845 2866])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("string" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2877 2896]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [2761 3255])
+            ("read_optional_string" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3313 3341])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3342 3363])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("string" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3364 3383]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [3257 3578])
+            ("read_uint64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3625 3653])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3664 3685])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3696 3710]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [3580 3967])
+            ("read_optional_uint64" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4025 4053])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4054 4075])
+                    ("default_value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4077 4100])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4101 4115]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [3969 4309])
+            ("read_uint32" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4356 4384])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4395 4416])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4427 4441]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [4311 4631])
+            ("read_uint16" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4678 4706])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4717 4738])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint16_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4749 4763]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [4633 4953])
+            ("read_uint8" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4999 5027])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5037 5058])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5059 5072]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [4955 5260])
+            ("uint32list_iter" type
+               (:members 
+                  ( ("mem_it" variable (:type ("memiter" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [5288 5310]))                  
+                :type "struct")
+                nil [5262 5313])
+            ("read_optional_uint32list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5375 5403])
+                    ("property" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5404 5425])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint32list_iter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5427 5455]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [5315 5755])
+            ("uint32list_has_next" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("uint32list_iter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5789 5824]))                  
+                :type "bool")
+                nil [5757 5869])
+            ("uint32list_get_next" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("uint32list_iter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5926 5955])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5956 5970]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [5871 6186])
+            ("parse_vm_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6237 6265])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6273 6296])
+                    ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6304 6322]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [6188 7173])
+            ("parse_vm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7217 7239])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7247 7270])
+                    ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7278 7296]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [7175 7683])
+            ("parse_ffa_manifest" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7737 7753])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7764 7787]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [7685 10205])
+            ("sanity_check_ffa_manifest" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10268 10291]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [10207 11678])
+            ("parse_ffa_partition_package" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11743 11781])
+                    ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11782 11804])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("manifest_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11806 11829])
+                    ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11830 11848])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11849 11869]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [11680 14220])
+            ("manifest_init" function
+               (:arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [14298 14336])
+                    ("manifest" variable
+                       (:pointer 1
+                        :type ("manifest" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14342 14368])
+                    ("manifest_fdt" variable
+                       (:pointer 1
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14374 14403])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14409 14429]))                  
+                :type ("manifest_return_code" type (:type "enum") nil nil))
+                nil [14258 16258])
+            ("manifest_strerror" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("ret_code" variable (:type ("manifest_return_code" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [16290 16325]))                  
+                :type "char")
+                nil [16260 17746]))          
+      :file "manifest.c"
+      :pointmax 17747
+      :fsize 25248
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VM_ID_MAX" . ((semantic-list "(HF_VM_ID_OFFSET + MAX_VMS - 1)" 1108 . 1139)))
+          ("VM_NAME_EXTRA_CHARS" . ((semantic-list "(3)" 1197 . 1200)))
+          ("VM_NAME_MAX_SIZE" . ((semantic-list "(VM_ID_MAX_DIGITS + VM_NAME_EXTRA_CHARS)" 1253 . 1293)))
+          ("TRY" (spp-arg-list ("expr") 779 . 785) . 
+              ((DO "do" 832 . 834) (semantic-list "{                                                 \\
+		enum manifest_return_code ret_code = (expr); \\
+		if (ret_code != MANIFEST_SUCCESS) {          \\
+			return ret_code;                     \\
+		}                                            \\
+	}" 835 . 1078) (WHILE "while" 1079 . 1084) (semantic-list "(0)" 1085 . 1088)))
+          ("VM_ID_MAX_DIGITS" . ((semantic-list "(5)" 1165 . 1168)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/fdt.h" include nil nil [607 626])
+            ("libfdt.h" include (:system-flag t) nil [628 647])
+            ("hf/static_assert.h" include nil nil [649 678])
+            ("fdt_base" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [743 765]))                  
+                :type "void")
+                nil [722 802])
+            ("fdt_size" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [859 881]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [843 918])
+            ("fdt_size_from_header" function
+               (:arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1082 1098])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1099 1111]))                  
+                :type "bool")
+                nil [1056 1212])
+            ("fdt_init_from_ptr" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1361 1377])
+                    ("ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1378 1394])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1395 1406]))                  
+                :type "bool")
+                nil [1338 1518])
+            ("fdt_init_from_memiter" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1671 1687])
+                    ("it" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1688 1713]))                  
+                :type "bool")
+                nil [1644 1785])
+            ("fdt_fini" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1909 1925]))                  
+                :type "void")
+                nil [1895 1964])
+            ("fdt_find_node" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2215 2237])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2238 2255])
+                    ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2261 2283]))                  
+                :type "bool")
+                nil [2196 2452])
+            ("fdt_address_size" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2749 2777])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2778 2791]))                  
+                :type "bool")
+                nil [2727 2947])
+            ("fdt_size_size" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3240 3268])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3269 3282]))                  
+                :type "bool")
+                nil [3221 3435])
+            ("fdt_read_property" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3602 3630])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3631 3648])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3658 3679]))                  
+                :type "bool")
+                nil [3579 3895])
+            ("fdt_read_number" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4138 4166])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4167 4184])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4192 4206]))                  
+                :type "bool")
+                nil [4117 4378])
+            ("fdt_parse_number" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("memiter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4615 4636])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4637 4649])
+                    ("val" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4650 4664]))                  
+                :type "bool")
+                nil [4593 5256])
+            ("fdt_first_child" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5434 5456]))                  
+                :type "bool")
+                nil [5413 5616])
+            ("fdt_next_sibling" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5854 5876]))                  
+                :type "bool")
+                nil [5832 6029])
+            ("fdt_find_child" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6181 6203])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("string" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6204 6230]))                  
+                :type "bool")
+                nil [6161 6768])
+            ("fdt_is_compatible" function
+               (:arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("fdt_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6944 6966])
+                    ("compat" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6967 6986]))                  
+                :type "bool")
+                nil [6921 7080]))          
+      :file "fdt.c"
+      :pointmax 7081
+      :fsize 6682
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/fdt_patch.h" include nil nil [209 234])
+            ("libfdt.h" include (:system-flag t) nil [236 255])
+            ("hf/boot_params.h" include nil nil [257 284])
+            ("hf/dlog.h" include nil nil [285 305])
+            ("hf/fdt.h" include nil nil [306 325])
+            ("hf/fdt_handler.h" include nil nil [326 353])
+            ("hf/layout.h" include nil nil [354 376])
+            ("hf/mm.h" include nil nil [377 395])
+            ("patch_uint" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [420 430])
+                    ("off" variable (:type "int") (reparse-symbol arg-sub-list) [431 439])
+                    ("prop" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [440 457])
+                    ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [458 471]))                  
+                :type "bool")
+                nil [397 854])
+            ("add_mem_reservation" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [888 898])
+                    ("begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [899 913])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [914 926]))                  
+                :type "bool")
+                nil [856 1028])
+            ("fdt_patch" function
+               (:arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1045 1083])
+                    ("fdt_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1084 1101])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("boot_params_update" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1110 1139])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1140 1160]))                  
+                :type "bool")
+                nil [1030 3855])
+            ("fdt_patch_mem" function
+               (:arguments 
+                  ( ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3876 3914])
+                    ("fdt_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3915 3932])
+                    ("fdt_max_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3938 3958])
+                    ("mem_begin" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3959 3977])
+                    ("mem_end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3978 3994])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4000 4020]))                  
+                :type "bool")
+                nil [3857 6096]))          
+      :file "fdt_patch.c"
+      :pointmax 6097
+      :fsize 6096
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hf/fdt_handler.h" include nil nil [209 236])
+            ("hf/check.h" include nil nil [238 259])
+            ("hf/cpu.h" include nil nil [260 279])
+            ("hf/dlog.h" include nil nil [280 300])
+            ("hf/fdt.h" include nil nil [301 320])
+            ("hf/mm.h" include nil nil [321 339])
+            ("hf/std.h" include nil nil [340 359])
+            ("fdt_struct_from_ptr" function
+               (:arguments 
+                  ( ("fdt_ptr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [481 501])
+                    ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [502 518]))                  
+                :type "bool")
+                nil [456 689])
+            ("fdt_find_initrd" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [771 793])
+                    ("begin" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [794 809])
+                    ("end" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [810 823]))                  
+                :type "bool")
+                nil [750 1366])
+            ("fdt_find_cpus" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1387 1409])
+                    ("cpu_ids" variable
+                       (:pointer 1
+                        :type ("cpu_id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1410 1428])
+                    ("cpu_count" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1429 1447]))                  
+                :type "bool")
+                nil [1368 2385])
+            ("fdt_find_memory_ranges" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2415 2437])
+                    ("device_type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("string" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2445 2478])
+                    ("mem_ranges" variable
+                       (:pointer 1
+                        :type ("mem_range" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2486 2515])
+                    ("mem_ranges_count" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2523 2548])
+                    ("mem_range_limit" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2549 2572]))                  
+                :type "bool")
+                nil [2387 3829])
+            ("fdt_map" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3844 3860])
+                    ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3861 3899])
+                    ("fdt_addr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3906 3923])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3924 3944]))                  
+                :type "bool")
+                nil [3831 4884])
+            ("fdt_unmap" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4901 4917])
+                    ("stage1_locked" variable (:type ("mm_stage1_locked" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4918 4956])
+                    ("ppool" variable
+                       (:pointer 1
+                        :type ("mpool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4965 4985]))                  
+                :type "bool")
+                nil [4886 5235])
+            ("fdt_get_memory_size" function
+               (:arguments 
+                  ( ("fdt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("fdt" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5493 5515])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5516 5529]))                  
+                :type "bool")
+                nil [5468 5916]))          
+      :file "fdt_handler.c"
+      :pointmax 5917
+      :fsize 5916
+      :lastmodtime '(24817 60635)
+      :unmatched-syntax nil))
+  :file "!ssh:osboxes@osbox:!home!osboxes!hafnium!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

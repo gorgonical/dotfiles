@@ -1,0 +1,477 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("list" include (:system-flag t) nil [1 16])
+            ("set" include (:system-flag t) nil [17 31])
+            ("iostream" include (:system-flag t) nil [32 51])
+            ("cstdlib" include (:system-flag t) nil [52 70])
+            ("unistd.h" include (:system-flag t) nil [71 90])
+            ("boost/regex.hpp" include (:system-flag t) nil [91 117])
+            ("boost/optional.hpp" include (:system-flag t) nil [118 147])
+            ("boost/format.hpp" include (:system-flag t) nil [148 175])
+            ("numeric" include (:system-flag t) nil [176 194])
+            ("structures.hpp" include nil nil [196 221])
+            ("types.hpp" include nil nil [222 242])
+            ("print.hpp" include nil nil [243 263])
+            ("index_files" function
+               (:arguments 
+                  ( ("filenames" variable
+                       (:reference 1
+                        :type ("std::set" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [301 334])
+                    ("working_path" variable
+                       (:reference 1
+                        :type ("boost::optional" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [335 378]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("owner_info" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [265 3316])
+            ("get_filenames" function
+               (:arguments 
+                  ( ("ptree" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("json_tree" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3428 3451]))                  
+                :type ("std::set" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3392 4051])
+            ("fileid_to_filename" function
+               (:arguments 
+                  ( ("id" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4084 4092])
+                    ("function_description" variable (:type ("json_tree" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4093 4124]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [4053 4507])
+            ("associate_coverage" function
+               (:arguments 
+                  ( ("owners" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("owner_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4553 4585])
+                    ("coverage_tree" variable
+                       (:reference 1
+                        :type ("json_tree" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4586 4611])
+                    ("json_name" variable (:type ("std::shared_ptr" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [4631 4670]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("owner_info" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [4509 7035])
+            ("find_max_in_tests" function
+               (:arguments 
+                  ( ("test_infos" variable
+                       (:reference 1
+                        :type ("test_map" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7060 7081]))                  
+                :type ("uint" type (:type "class") nil nil))
+                nil [7037 7223])
+            ("find_avg_in_tests" function
+               (:arguments 
+                  ( ("test_infos" variable
+                       (:reference 1
+                        :type ("test_map" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7248 7269]))                  
+                :type ("uint" type (:type "class") nil nil))
+                nil [7225 7658])
+            ("get_pto_fraction" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7719 7730]))                  
+                :type "double")
+                nil [7695 7762])
+            ("find_pto_in_tests" function
+               (:arguments 
+                  ( ("test_infos" variable
+                       (:reference 1
+                        :type ("test_map" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7787 7808])
+                    ("ranked_tests" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7809 7848]))                  
+                :type ("uint" type (:type "class") nil nil))
+                nil [7764 8131])
+            ("rank" function
+               (:arguments 
+                  ( ("owners" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("owner_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8225 8257])
+                    ("" variable (:type ("std::map" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8258 8267])
+                    ("" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8267 8279])
+                    ("" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) [8280 8302])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [8299 8303])
+                    ("" variable (:type ("overall_stats" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8305 8319])
+                    ("stat_names" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::tuple" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil)
+                                  ("std::string" type nil nil nil)
+                                  ("std::string" type nil nil nil)
+                                  ("sort_function" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8325 8408]))                  
+                :type "void")
+                nil [8215 9263])
+            ("sorting_info" type
+               (:members 
+                  ( ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9300 9317])
+                    ("count" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9322 9333]))                  
+                :type "struct")
+                nil [9266 9349])
+            ("sorting_info" type
+               (:typedef ("sorting_info" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [9266 9349])
+            ("sorting_fn" variable
+               (:default-value "[](const sorting_info& l, const sorting_info& r) { return l.count > r.count; }"
+                :type ("auto" type (:type "class") nil nil))
+                nil [9351 9448])
+            ("count" function
+               (:arguments 
+                  ( ("map" variable
+                       (:reference 1
+                        :type ("test_map" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9461 9475])
+                    ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9476 9493]))                  
+                :type ("uint" type (:type "class") nil nil))
+                nil [9450 9582])
+            ("count" function
+               (:arguments 
+                  ( ("vec" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("sorting_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9595 9626])
+                    ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9627 9644]))                  
+                :type ("uint" type (:type "class") nil nil))
+                nil [9584 9730])
+            ("prioritize_tests_helper" function
+               (:arguments 
+                  ( ("owners" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("owner_info" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [9781 9812])
+                    ("ranked" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9813 9846])
+                    ("files" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("sorting_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9871 9904])
+                    ("file_indices" variable
+                       (:reference 1
+                        :type ("std::map" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil)
+                                  ("uint" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9905 9947]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [9732 11596])
+            ("prioritize_tests" function
+               (:arguments 
+                  ( ("owners" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("owner_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11640 11672])
+                    ("test_files" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [11673 11709]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [11598 12808])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [12819 12828])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12829 12841]))                  
+                :type "int")
+                nil [12810 17998]))          
+      :file "main.cpp"
+      :pointmax 17999
+      :fsize 17998
+      :lastmodtime '(23880 62047 897864 984000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("__SRC_STRUCTURES_HPP" variable (:constant-flag t) nil [38 58])
+            ("string" include (:system-flag t) nil [60 77])
+            ("map" include (:system-flag t) nil [78 92])
+            ("set" include (:system-flag t) nil [93 107])
+            ("vector" include (:system-flag t) nil [108 125])
+            ("commit" type
+               (:members 
+                  ( ("author" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [147 166])
+                    ("author_email" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [171 196]))                  
+                :type "struct")
+                nil [127 199])
+            ("test_info" type
+               (:members 
+                  ( ("count" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [224 235])
+                    ("prioritized" variable (:type "bool") (reparse-symbol classsubparts) [240 257]))                  
+                :type "struct")
+                nil [201 260])
+            ("file_info" type
+               (:members 
+                  ( ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [285 316])
+                    ("lines" variable (:type "int") (reparse-symbol classsubparts) [394 400]))                  
+                :type "struct")
+                nil [262 470])
+            ("owner_info" type
+               (:members 
+                  ( ("name" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [495 523])
+                    ("email" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [528 557])
+                    ("aliases" variable (:type ("std::set" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [562 593])
+                    ("email_aliases" variable (:type ("std::set" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [598 635])
+                    ("files" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("file_info" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [640 669])
+                    ("stats" variable (:type ("std::map" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil)
+                              ("double" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [674 710]))                  
+                :type "struct")
+                nil [471 713])
+            ("==" function
+               (:operator-flag t
+                :arguments 
+                  ( ("left" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("owner_info" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [731 754])
+                    ("owner_name" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [755 785]))                  
+                :type "bool")
+                nil [715 825])
+            ("==" function
+               (:operator-flag t
+                :arguments 
+                  ( ("left" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("file_info" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [843 865])
+                    ("file_name" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [866 895]))                  
+                :type "bool")
+                nil [827 934]))          
+      :file "structures.hpp"
+      :pointmax 970
+      :fsize 969
+      :lastmodtime '(23880 58462 82905 286000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SRC_STRUCTURES_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("__SRC_TYPES_HPP" variable (:constant-flag t) nil [33 48])
+            ("boost/property_tree/ptree.hpp" include (:system-flag t) nil [50 90])
+            ("boost/property_tree/json_parser.hpp" include (:system-flag t) nil [91 137])
+            ("boost::property_tree::basic_ptree" variable (:type "int") nil [157 217])
+            ("test_info" type
+               (:prototype t
+                :type "struct")
+                nil [246 263])
+            ("std::map" variable (:type "int") nil [281 338])
+            ("stats" variable
+               (:constant-flag t
+                :default-value "{ \"total\", \"aug_total\", \"pto\", \"aug_max\", \"aug_avg\" }"
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [340 433])
+            ("norms" variable
+               (:constant-flag t
+                :default-value "{ \"total_norm\", \"aug_norm\", \"pto_norm\", \"max_norm\", \"avg_norm\" }"
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [434 538])
+            ("ranks" variable
+               (:constant-flag t
+                :default-value "{ \"total_rank\", \"aug_rank\", \"pto_rank\", \"max_rank\", \"avg_rank\" }"
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [539 643]))          
+      :file "types.hpp"
+      :pointmax 674
+      :fsize 673
+      :lastmodtime '(23880 56168 33931 69000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SRC_TYPES_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("__SRC_PRINT_HPP" variable (:constant-flag t) nil [33 48])
+            ("types.hpp" include nil nil [50 70])
+            ("print" function
+               (:arguments 
+                  ( ("file" variable
+                       (:reference 1
+                        :type ("file_info" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83 99]))                  
+                :type "void")
+                nil [72 473])
+            ("print_scores" function
+               (:arguments 
+                  ( ("scores" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::map" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil)
+                                  ("double" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [493 537]))                  
+                :type "void")
+                nil [475 662])
+            ("print" function
+               (:arguments 
+                  ( ("owners" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("owner_info" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [675 707]))                  
+                :type "void")
+                nil [664 944])
+            ("print" function
+               (:arguments 
+                  ( ("pt" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("boost::property_tree::ptree" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1092 1130]))                  
+                :type "void")
+                nil [1081 1407]))          
+      :file "print.hpp"
+      :pointmax 1438
+      :fsize 1437
+      :lastmodtime '(23880 58579 913903 962000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SRC_PRINT_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("__SRC_TYPES_HPP" variable (:constant-flag t) nil [33 48])
+            ("boost::property_tree::basic_ptree" variable (:type "int") nil [68 128]))          
+      :file "types.hpp~"
+      :pointmax 186
+      :fsize 185
+      :lastmodtime '(23866 6627 349412 664000)
+      :unmatched-syntax '((punctuation 154 . 155) (INT 151 . 154) (UNSIGNED 142 . 150) (USING 129 . 134) (USING 50 . 55))
+      :lexical-table 
+        '(("__SRC_TYPES_HPP")
+          )
+))
+  :file "!home!nmg!Code!Cpp!codecredit-v2!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

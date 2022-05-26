@@ -1,0 +1,175 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [223 239])
+            ("pgtables.h" include nil nil [240 261])
+            ("globals.h" include nil nil [262 282])
+            ("gprs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_gprs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [319 355])
+            ("ctrl_regs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_ctrl_regs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [356 397])
+            ("segs" variable
+               (:typemodifiers ("static")
+                :type ("segments" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [398 434])
+            ("state" variable
+               (:typemodifiers ("static")
+                :type ("covirt_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [435 472])
+            ("ready_to_launch" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [501 528]))                  
+                :type "int")
+                nil [474 565])
+            ("vmm_main" function
+               (:arguments 
+                  ( ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [581 601])
+                    ("boot_params_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [602 627]))                  
+                :type "void")
+                nil [567 7233]))          
+      :file "launch_main.c"
+      :pointmax 7234
+      :fsize 7353
+      :lastmodtime '(24927 61026)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "vmm.h"
+      :fsize 1529
+      :lastmodtime '(24629 41743))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [221 237])
+            ("instrument.h" include nil nil [238 261])
+            ("migrate.h" include nil nil [262 282])
+            ("apic.h" include nil nil [283 300])
+            ("set_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [329 339]))                  
+                :type "void")
+                nil [302 416])
+            ("get_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [444 449]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [418 547])
+            ("switch_cr3" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [564 604]))                  
+                :type "int")
+                nil [549 1033])
+            ("inject_nmi" function (:type "int") nil [1035 1545])
+            ("set_virr_bit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vapic_ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1572 1588])
+                    ("bit" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1589 1596]))                  
+                :type "void")
+                nil [1547 1713])
+            ("check_irq_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1832 1837]))                  
+                :type "int")
+                nil [1807 1855])
+            ("handle_vm_exit" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1876 1903])
+                    ("cr3" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1904 1912]))                  
+                :type "int")
+                nil [1857 9266])
+            ("final_vmcs_prep" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9288 9328])
+                    ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9329 9349])
+                    ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9366 9391])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9392 9427]))                  
+                :type "int")
+                nil [9268 10555])
+            ("print_host_state" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10578 10618]))                  
+                :type "int")
+                nil [10557 10850])
+            ("print_pisces_boot_params" function
+               (:arguments 
+                  ( ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10882 10908]))                  
+                :type "void")
+                nil [10852 11381]))          
+      :file "vmm.c"
+      :pointmax 11382
+      :fsize 11381
+      :lastmodtime '(25043 63293)
+      :unmatched-syntax nil))
+  :file "!ssh:trappist:!home!nmg!covirt!vmm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,342 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [61 84])
+            ("lwk/aspace.h" include (:system-flag t) nil [85 108])
+            ("lwk/task.h" include (:system-flag t) nil [109 130])
+            ("lwk/bootstrap.h" include (:system-flag t) nil [131 157])
+            ("arch/page.h" include (:system-flag t) nil [158 180])
+            ("arch/pgtable.h" include (:system-flag t) nil [205 230])
+            ("arch/page_table.h" include (:system-flag t) nil [252 280])
+            ("arch/tlbflush.h" include (:system-flag t) nil [281 307])
+            ("lwk/bootmem.h" include (:system-flag t) nil [308 332])
+            ("bootmem_destoyed" variable
+               (:typemodifiers ("extern")
+                :type "bool")
+                nil [334 363])
+            ("_can_print" variable
+               (:typemodifiers ("extern")
+                :type "bool")
+                nil [484 507])
+            ("arch_aspace_create" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [694 718]))                  
+                :type "int")
+                nil [669 908])
+            ("arch_aspace_destroy" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1061 1085]))                  
+                :type "void")
+                nil [1034 2111])
+            ("arch_aspace_activate" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2287 2311]))                  
+                :type "void")
+                nil [2259 2792])
+            ("alloc_page_table" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("parent_pte" variable
+                       (:pointer 1
+                        :type ("xpte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2911 2939]))                  
+                :type ("xpte_t" type (:type "class") nil nil))
+                nil [2876 3611])
+            ("find_or_create_pte" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3786 3809])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3811 3826])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3828 3849]))                  
+                :type ("xpte_leaf_t" type (:type "class") nil nil))
+                nil [3744 5821])
+            ("try_to_free_table" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("table" variable
+                       (:pointer 1
+                        :type ("xpte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5967 5982])
+                    ("parent_pte" variable
+                       (:pointer 1
+                        :type ("xpte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5984 6005]))                  
+                :type "int")
+                nil [5936 6367])
+            ("find_and_delete_pte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6725 6748])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6750 6765])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6767 6788]))                  
+                :type "void")
+                nil [6691 9280])
+            ("write_pte" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pte" variable
+                       (:pointer 1
+                        :type ("xpte_leaf_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9392 9410])
+                    ("paddr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9412 9427])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9429 9445])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9447 9468]))                  
+                :type "void")
+                nil [9368 10554])
+            ("arch_aspace_map_page" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11025 11048])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11050 11065])
+                    ("paddr" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11067 11082])
+                    ("flags" variable (:type ("vmflags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11084 11100])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11102 11123]))                  
+                :type "int")
+                nil [10998 11643])
+            ("arch_aspace_unmap_page" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11906 11929])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11931 11946])
+                    ("pagesz" variable (:type ("vmpagesize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11948 11969]))                  
+                :type "void")
+                nil [11876 12018])
+            ("arch_aspace_smartmap" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12045 12064])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12065 12084])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12106 12120])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12121 12135]))                  
+                :type "int")
+                nil [12020 12790])
+            ("arch_aspace_unsmartmap" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12819 12838])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12839 12858])
+                    ("start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12882 12896])
+                    ("extent" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12897 12911]))                  
+                :type "int")
+                nil [12792 13223])
+            ("_can_print" variable
+               (:typemodifiers ("extern")
+                :type "bool")
+                nil [13225 13248])
+            ("arch_aspace_virt_to_phys" function
+               (:arguments 
+                  ( ("aspace" variable
+                       (:pointer 1
+                        :type ("aspace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13279 13301])
+                    ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13302 13316])
+                    ("paddr" variable
+                       (:pointer 1
+                        :type ("paddr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13317 13332]))                  
+                :type "int")
+                nil [13250 16086])
+            ("arch_aspace_map_pmem_into_kernel" function
+               (:arguments 
+                  ( ("start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16381 16395])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16396 16408]))                  
+                :type "int")
+                nil [16344 17145])
+            ("arch_aspace_unmap_pmem_from_kernel" function
+               (:arguments 
+                  ( ("start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17445 17459])
+                    ("end" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17460 17472]))                  
+                :type "int")
+                nil [17406 17805]))          
+      :file "aspace.c"
+      :pointmax 17806
+      :fsize 17805
+      :lastmodtime '(24860 45297)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("arch/page.h" include (:system-flag t) nil [1 23])
+            ("phys_base" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [25 56])
+            ("__phys_addr" function
+               (:arguments 
+                  ( ("virt_addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [389 413]))                  
+                :type "unsigned long")
+                nil [363 902]))          
+      :file "phys_addr.c"
+      :pointmax 904
+      :fsize 903
+      :lastmodtime '(24861 32523)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("arch/memblock.h" include (:system-flag t) nil [696 722])
+            ("arch/cacheflush.h" include (:system-flag t) nil [723 751])
+            ("arch/tlbflush.h" include (:system-flag t) nil [752 778])
+            ("arch/pgalloc.h" include (:system-flag t) nil [779 804])
+            ("arch/pgtable.h" include (:system-flag t) nil [805 830])
+            ("lwk/aspace.h" include (:system-flag t) nil [831 854])
+            ("lwk/pfn.h" include (:system-flag t) nil [855 875])
+            ("lwk/types.h" include (:system-flag t) nil [877 899])
+            ("pgprot_default" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1496 1520])
+            ("prot_sect_kernel" variable
+               (:typemodifiers ("static")
+                :type ("pmdval_t" type (:type "class") nil nil))
+                nil [1522 1555])
+            ("dump_pgtable_arm64" function (:type "void") nil [1558 1588])
+            ("__walk_3lvl_pgtable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1623 1637]))                  
+                :type "void")
+                nil [1591 5198])
+            ("print_pgtable_arm64" function
+               (:arguments 
+                  ( ("vaddr" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5225 5239]))                  
+                :type "void")
+                nil [5200 5272])
+            ("init_mem_pgprot" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7073 7078]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7050 7616])
+            ("early_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("sz" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7971 7988]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7951 8069])
+            ("alloc_init_pte" function
+               (:arguments 
+                  ( ("pmd" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8105 8116])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8117 8136])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8143 8161])
+                    ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8162 8180]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8083 8499])
+            ("alloc_init_pmd" function
+               (:arguments 
+                  ( ("pud" variable
+                       (:pointer 1
+                        :type ("pud_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8535 8546])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8547 8566])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8573 8591])
+                    ("phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8592 8609]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8513 9288])
+            ("alloc_init_pud" function
+               (:arguments 
+                  ( ("pgd" variable
+                       (:pointer 1
+                        :type ("pgd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9324 9335])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9336 9355])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9362 9380])
+                    ("phys" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9381 9400]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9302 9611])
+            ("create_mapping" function
+               (:arguments 
+                  ( ("phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9759 9776])
+                    ("virt" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9777 9796])
+                    ("size" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9831 9848]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9737 10500])
+            ("map_mem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11577 11582]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11562 13102])
+            ("paging_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13242 13247]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13223 13922]))          
+      :file "mmu.c"
+      :pointmax 15751
+      :fsize 15750
+      :lastmodtime '(24790 7103)
+      :unmatched-syntax '((VOID 13218 . 13222) (VOID 11557 . 11561) (STATIC 11550 . 11556) (VOID 9732 . 9736) (STATIC 9725 . 9731) (VOID 9297 . 9301) (STATIC 9290 . 9296) (VOID 8508 . 8512) (STATIC 8501 . 8507) (VOID 8078 . 8082) (STATIC 8071 . 8077) (VOID 7946 . 7950) (STATIC 7939 . 7945) (VOID 7045 . 7049) (STATIC 7038 . 7044))))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!arch!arm64!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

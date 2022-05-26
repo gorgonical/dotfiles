@@ -1,0 +1,88 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/smp.h" include (:system-flag t) nil [25 45])
+            ("lwk/params.h" include (:system-flag t) nil [46 69])
+            ("lwk/init.h" include (:system-flag t) nil [70 91])
+            ("lwk/elf.h" include (:system-flag t) nil [92 112])
+            ("lwk/kfs.h" include (:system-flag t) nil [113 133])
+            ("lwk/sched.h" include (:system-flag t) nil [134 156])
+            ("INIT_MAX_ARGC" variable (:constant-flag t) nil [271 284])
+            ("INIT_MAX_ENVC" variable (:constant-flag t) nil [296 309])
+            ("INIT_ARGV_LEN" variable (:constant-flag t) nil [425 438])
+            ("INIT_ENVP_LEN" variable (:constant-flag t) nil [452 465])
+            ("init_elf_image" variable (:type ("paddr_t" type (:type "class") nil nil)) nil [513 536])
+            ("init_heap_size" variable
+               (:default-value "(1024 * 1024 * 32)"
+                :type "unsigned long")
+                nil [603 653])
+            ("param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_heap_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [739 754])
+                    ("" variable (:type ("ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [755 761]))                  
+                :type "int")
+                nil [733 762])
+            ("init_stack_size" variable
+               (:default-value "(1024 * 256)"
+                :type "unsigned long")
+                nil [830 875])
+            ("param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_stack_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [896 912])
+                    ("" variable (:type ("ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [913 919]))                  
+                :type "int")
+                nil [890 920])
+            ("init_argv_str" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{ 0 }"
+                :type "char")
+                nil [969 1018])
+            ("param_string" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1032 1042])
+                    ("" variable (:type ("init_argv_str" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1043 1057]))                  
+                :type "int")
+                nil [1019 1081])
+            ("init_envp_str" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{ 0 }"
+                :type "char")
+                nil [1132 1181])
+            ("param_string" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_envp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1195 1205])
+                    ("" variable (:type ("init_envp_str" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1206 1220]))                  
+                :type "int")
+                nil [1182 1244])
+            ("create_init_task" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1301 1306]))                  
+                :type "int")
+                nil [1280 2320]))          
+      :file "init_task.c"
+      :pointmax 2321
+      :fsize 2320
+      :lastmodtime '(24993 30388)
+      :unmatched-syntax '((semantic-list 1227 . 1242) (SIZEOF 1221 . 1227) (semantic-list 1064 . 1079) (SIZEOF 1058 . 1064))
+      :lexical-table 
+        '(("INIT_ENVP_LEN" . ((number "1024" 466 . 470)))
+          ("INIT_MAX_ARGC" . ((number "32" 285 . 287)))
+          ("INIT_MAX_ENVC" . ((number "32" 310 . 312)))
+          ("INIT_ARGV_LEN" . ((number "1024" 439 . 443)))
+          )
+))
+  :file "!ssh:hafdev:!home!osboxes!kitten-arm64!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

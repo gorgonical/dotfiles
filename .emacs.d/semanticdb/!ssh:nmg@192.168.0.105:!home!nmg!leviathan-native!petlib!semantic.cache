@@ -1,0 +1,305 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [70 88])
+            ("stdlib.h" include (:system-flag t) nil [89 108])
+            ("fcntl.h" include (:system-flag t) nil [109 127])
+            ("sys/stat.h" include (:system-flag t) nil [128 149])
+            ("sys/types.h" include (:system-flag t) nil [151 173])
+            ("sys/ioctl.h" include (:system-flag t) nil [175 197])
+            ("unistd.h" include (:system-flag t) nil [198 217])
+            ("string.h" include (:system-flag t) nil [219 238])
+            ("dirent.h" include (:system-flag t) nil [239 258])
+            ("stdint.h" include (:system-flag t) nil [260 279])
+            ("errno.h" include (:system-flag t) nil [280 298])
+            ("ctype.h" include (:system-flag t) nil [299 317])
+            ("pet_mem.h" include nil nil [319 339])
+            ("SYS_PATH" variable (:constant-flag t) nil [350 358])
+            ("NUMA_PATH" variable (:constant-flag t) nil [399 408])
+            ("IOMEM_FILE" variable (:constant-flag t) nil [446 456])
+            ("BUF_SIZE" variable (:constant-flag t) nil [480 488])
+            ("dbg_printf" variable (:constant-flag t) nil [606 616])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [648 657])
+            ("ok_region" type
+               (:members 
+                  ( ("start" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [704 719])
+                    ("end" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [724 737])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("ok_region" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [742 766]))                  
+                :type "struct")
+                nil [681 769])
+            ("avail_regions" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("ok_region" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [771 818])
+            ("block_bitmap" type
+               (:members 
+                  ( ("starting_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [846 871])
+                    ("num_entries" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [876 897])
+                    ("bitmap" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [902 921]))                  
+                :type "struct")
+                nil [820 924])
+            ("dir_filter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [950 976]))                  
+                :type "int")
+                nil [928 1069])
+            ("numa_filter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1095 1121]))                  
+                :type "int")
+                nil [1072 1205])
+            ("dir_cmp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dir1" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1227 1255])
+                    ("dir2" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("dirent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1262 1290]))                  
+                :type "int")
+                nil [1208 1404])
+            ("block_is_aligned" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1435 1450])
+                    ("alignment" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1455 1474]))                  
+                :type "int")
+                nil [1406 1577])
+            ("get_avail_regions" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [1580 2399])
+            ("block_is_avail" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2428 2443]))                  
+                :type "int")
+                nil [2401 2808])
+            ("pet_mem_state_to_str" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("mem_state" variable (:type ("pet_mem_state_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2847 2873]))                  
+                :type "char")
+                nil [2812 3111])
+            ("get_block_bitmap" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3160 3179]))                  
+                :type ("block_bitmap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3113 4989])
+            ("pet_num_blocks" function
+               (:arguments 
+                  ( ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5017 5036]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [4992 5203])
+            ("pet_block_to_numa_node" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5238 5253]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5205 5631])
+            ("pet_probe_mem" function
+               (:arguments 
+                  ( ("num_blocks" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5653 5684])
+                    ("block_arr" variable
+                       (:pointer 2
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5693 5723]))                  
+                :type "int")
+                nil [5634 6256])
+            ("pet_probe_mem_node" function
+               (:arguments 
+                  ( ("num_blocks" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6282 6313])
+                    ("block_arr" variable
+                       (:pointer 2
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6320 6350])
+                    ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6356 6386]))                  
+                :type "int")
+                nil [6258 7506])
+            ("pet_block_size" function (:type ("uint64_t" type (:type "class") nil nil)) nil [7509 8252])
+            ("set_block_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8287 8304])
+                    ("state" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8308 8325]))                  
+                :type "int")
+                nil [8259 8855])
+            ("pet_online_block" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8879 8894]))                  
+                :type "int")
+                nil [8857 9359])
+            ("pet_offline_block" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9384 9399]))                  
+                :type "int")
+                nil [9361 9997])
+            ("pet_is_block_removable" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10027 10042]))                  
+                :type "int")
+                nil [9999 10858])
+            ("pet_is_block_locked" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10886 10901]))                  
+                :type "int")
+                nil [10861 11246])
+            ("pet_lock_block" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11269 11284]))                  
+                :type "int")
+                nil [11249 11767])
+            ("pet_unlock_block" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11791 11806]))                  
+                :type "int")
+                nil [11769 12299])
+            ("pet_block_status" function
+               (:arguments 
+                  ( ("index" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12336 12351]))                  
+                :type ("pet_mem_state_t" type (:type "class") nil nil))
+                nil [12302 13783])
+            ("pet_offline_blocks" function
+               (:arguments 
+                  ( ("num_blocks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13813 13843])
+                    ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13850 13879])
+                    ("block_arr" variable
+                       (:pointer 1
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13886 13915]))                  
+                :type "int")
+                nil [13789 14968])
+            ("pet_offline_mem_node" function
+               (:arguments 
+                  ( ("numa_node" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14997 15026])
+                    ("block_arr" variable
+                       (:pointer 1
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15035 15064]))                  
+                :type "int")
+                nil [14971 15126])
+            ("pet_online_blocks" function
+               (:arguments 
+                  ( ("num_blocks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15152 15182])
+                    ("block_arr" variable
+                       (:pointer 1
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15188 15217]))                  
+                :type "int")
+                nil [15129 15435])
+            ("pet_offline_contig_blocks" function
+               (:arguments 
+                  ( ("num_blocks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15469 15499])
+                    ("numa_zone" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15506 15535])
+                    ("alignment" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15542 15571])
+                    ("block_arr" variable
+                       (:pointer 1
+                        :type ("mem_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15578 15607]))                  
+                :type "int")
+                nil [15438 16820])
+            ("pet_online_contig_blocks" function
+               (:arguments 
+                  ( ("num_blocks" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16853 16873])
+                    ("base_addr" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16878 16897]))                  
+                :type "int")
+                nil [16823 17063]))          
+      :file "pet_mem.c"
+      :pointmax 17064
+      :fsize 17063
+      :lastmodtime '(24269 60038)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BUF_SIZE" . ((number "128" 491 . 494)))
+          ("dbg_printf" (spp-arg-list ("fmt" "args...") 616 . 630))
+          ("IOMEM_FILE" . ((string "\"/proc/iomem\"" 457 . 470)))
+          ("SYS_PATH" . ((string "\"/sys/devices/system/memory/\"" 361 . 390)))
+          ("NUMA_PATH" . ((string "\"/sys/devices/system/node/\"" 410 . 437)))
+          ("PAGE_SIZE" . ((symbol "sysconf" 658 . 665) (semantic-list "(_SC_PAGESIZE)" 665 . 679)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "pet_mem.h"
+      :fsize 2160
+      :lastmodtime '(24269 60038)))
+  :file "!ssh:nmg@192.168.0.105:!home!nmg!leviathan-native!petlib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

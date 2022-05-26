@@ -1,0 +1,729 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("_LWK_PCI_H" variable (:constant-flag t) nil [84 94])
+            ("lwk/device.h" include (:system-flag t) nil [96 119])
+            ("lwk/list.h" include (:system-flag t) nil [121 142])
+            ("lwk/pci/pcicfg.h" include (:system-flag t) nil [143 170])
+            ("pci_bus" type
+               (:members 
+                  ( ("parent_bus" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [391 419])
+                    ("child_buses" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [459 488])
+                    ("next_bus" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [543 569])
+                    ("bus" variable (:type "unsigned int") (reparse-symbol classsubparts) [623 641])
+                    ("devices" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [671 696])
+                    ("self" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [733 755])
+                    ("bridge_info" variable (:type ("pcicfg_hdr1" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [809 840]))                  
+                :type "struct")
+                nil [365 917])
+            ("pci_bus_t" type
+               (:typedef ("pci_bus" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [365 917])
+            ("pci_dev" type
+               (:members 
+                  ( ("dev" variable (:type ("device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1050 1078])
+                    ("siblings" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1081 1107])
+                    ("next" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1158 1180])
+                    ("slot" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1231 1246])
+                    ("func" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1293 1308])
+                    ("devfn" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1472 1502])
+                    ("revision" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1576 1609])
+                    ("device" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1618 1649])
+                    ("vendor" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1696 1727])
+                    ("irq" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1781 1809])
+                    ("parent_bus" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1875 1903])
+                    ("cfg" variable (:type ("pcicfg_hdr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1946 1968])
+                    ("driver" variable
+                       (:pointer 1
+                        :type ("pci_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2014 2041])
+                    ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2089 2122]))                  
+                :type "struct")
+                nil [1024 2185])
+            ("pci_dev_t" type
+               (:typedef ("pci_dev" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1024 2185])
+            ("pci_device_id" type
+               (:members 
+                  ( ("vendor_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2422 2442])
+                    ("device_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2444 2464])
+                    ("subvendor_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2466 2489])
+                    ("subdevice_id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2491 2514])
+                    ("class_mask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2516 2537])
+                    ("driver_data" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2539 2562]))                  
+                :type "struct")
+                nil [2398 2565])
+            ("pci_dev_id_t" type
+               (:typedef ("pci_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2567 2609])
+            ("pci_ers_result_t" variable (:type ((((0) "__bitwise")) type (:superclasses ("unsigned int") :type "typedef") nil nil)) nil [2612 2660])
+            ("pci_channel_state_t" variable (:type ((((0) "__bitwise")) type (:superclasses ("unsigned int") :type "typedef") nil nil)) nil [2661 2712])
+            ("pm_message" type
+               (:members 
+                  ( ("event" variable (:type "int") (reparse-symbol classsubparts) [2750 2760]))                  
+                :type "struct")
+                nil [2714 2776])
+            ("pm_message_t" type
+               (:typedef ("pm_message" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2714 2776])
+            ("pci_channel_state" type
+               (:members 
+                  ( ("pci_channel_io_normal" variable
+                       (:constant-flag t
+                        :default-value (2882 2913)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2858 2913])
+                    ("pci_channel_io_frozen" variable
+                       (:constant-flag t
+                        :default-value (2988 3019)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2964 3019])
+                    ("pci_channel_io_perm_failure" variable
+                       (:constant-flag t
+                        :default-value (3091 3122)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3061 3122]))                  
+                :type "enum")
+                nil [2780 3126])
+            ("pci_ers_result" type
+               (:members 
+                  ( ("PCI_ERS_RESULT_NONE" variable
+                       (:constant-flag t
+                        :default-value (3240 3268)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3218 3268])
+                    ("PCI_ERS_RESULT_CAN_RECOVER" variable
+                       (:constant-flag t
+                        :default-value (3367 3395)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3338 3395])
+                    ("PCI_ERS_RESULT_NEED_RESET" variable
+                       (:constant-flag t
+                        :default-value (3486 3514)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3458 3514])
+                    ("PCI_ERS_RESULT_DISCONNECT" variable
+                       (:constant-flag t
+                        :default-value (3614 3642)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3586 3642])
+                    ("PCI_ERS_RESULT_RECOVERED" variable
+                       (:constant-flag t
+                        :default-value (3743 3771)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3716 3771]))                  
+                :type "enum")
+                nil [3128 3775])
+            ("pci_error_handlers" type
+               (:members 
+                  ( ("error_detected" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [3936 3956])
+                            ("error" variable (:type ("pci_channel_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3981 4010]))                          
+                        :type ("pci_ers_result_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3901 4011])
+                    ("mmio_enabled" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4106 4126]))                          
+                        :type ("pci_ers_result_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4073 4127])
+                    ("link_reset" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4214 4234]))                          
+                        :type ("pci_ers_result_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4183 4235])
+                    ("slot_reset" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4314 4334]))                          
+                        :type ("pci_ers_result_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4283 4335])
+                    ("resume" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4417 4437]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4402 4438]))                  
+                :type "struct")
+                nil [3813 4441])
+            ("pci_driver" type
+               (:members 
+                  ( ("next" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4599 4621])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [4672 4686])
+                    ("id_table" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev_id_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4728 4758])
+                    ("probe" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4828 4843])
+                            ("id" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("pci_dev_id_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4844 4867]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [4811 4868])
+                    ("remove" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4887 4908]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4870 4909])
+                    ("suspend" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [4935 4956])
+                            ("state" variable (:type ("pm_message_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4957 4976]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [4918 4977])
+                    ("resume" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [5031 5052]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [5014 5053])
+                    ("err_handler" variable
+                       (:pointer 1
+                        :type ("pci_error_handlers" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5110 5150]))                  
+                :type "struct")
+                nil [4570 5166])
+            ("pci_driver_t" type
+               (:typedef ("pci_driver" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [4570 5166])
+            ("msix_entry" type
+               (:members 
+                  ( ("vector" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5192 5203])
+                    ("entry" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5206 5216]))                  
+                :type "struct")
+                nil [5170 5242])
+            ("msi_msg" type
+               (:members 
+                  ( ("address_hi" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5265 5280])
+                    ("" type
+                       (:members 
+                          ( ("address_lo" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5294 5314])
+                            ("" type
+                               (:members 
+                                  ( ("rsvd1" variable
+                                       (:suffix ":2"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5330 5360])
+                                    ("dest_mode" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5366 5396])
+                                    ("redirect_hint" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5402 5432])
+                                    ("rsvd2" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5438 5468])
+                                    ("dest" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5474 5504])
+                                    ("rsvd3" variable
+                                       (:suffix ":12"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5511 5542]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [5316 5578]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [5285 5609])
+                    ("" type
+                       (:members 
+                          ( ("data" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5623 5637])
+                            ("" type
+                               (:members 
+                                  ( ("vector" variable
+                                       (:suffix ":8"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5653 5683])
+                                    ("delivery_mode" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5689 5719])
+                                    ("rsvd4" variable
+                                       (:suffix ":3"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5725 5755])
+                                    ("level" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5761 5791])
+                                    ("trigger_mode" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5797 5827])
+                                    ("rsvd5" variable
+                                       (:suffix ":16"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5833 5864]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [5639 5897]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [5614 5928]))                  
+                :type "struct")
+                nil [5244 5955])
+            ("PCI_DEVFN" variable (:constant-flag t) nil [5966 5975])
+            ("PCI_SLOT" variable (:constant-flag t) nil [6041 6049])
+            ("PCI_FUNC" variable (:constant-flag t) nil [6097 6105])
+            ("init_pci" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6212 6217]))                  
+                :type "void")
+                nil [6198 6218])
+            ("pci_register_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("pci_driver_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6289 6310]))                  
+                :type "int")
+                nil [6265 6311])
+            ("pci_unregister_driver" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("pci_driver_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6340 6362]))                  
+                :type "void")
+                nil [6313 6363])
+            ("pci_find_driver" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6460 6481])
+                    ("idp" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("pci_dev_id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6482 6507]))                  
+                :type ("pci_driver_t" type (:type "class") nil nil))
+                nil [6430 6508])
+            ("pci_lookup_device" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("vendor_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6617 6636])
+                    ("device_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6637 6656]))                  
+                :type ("pci_dev_t" type (:type "class") nil nil))
+                nil [6588 6657])
+            ("pci_get_dev_bus_and_slot" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("bus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6762 6775])
+                    ("devfn" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6776 6791]))                  
+                :type ("pci_dev_t" type (:type "class") nil nil))
+                nil [6726 6792])
+            ("pci_find_capability" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6818 6834])
+                    ("capid" variable (:type "int") (reparse-symbol arg-sub-list) [6835 6845]))                  
+                :type "int")
+                nil [6794 6846])
+            ("pci_describe_device" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6934 6949])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6950 6961])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6962 6972]))                  
+                :type "void")
+                nil [6909 6973])
+            ("pci_name" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6997 7013]))                  
+                :type "char")
+                nil [6975 7014])
+            ("pci_read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7096 7111])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7112 7129])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7130 7149]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [7078 7150])
+            ("pci_write" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7229 7244])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7245 7262])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7263 7282])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7283 7298]))                  
+                :type "void")
+                nil [7214 7299])
+            ("pci_dma_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7328 7344]))                  
+                :type "void")
+                nil [7303 7345])
+            ("pci_dma_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7371 7387]))                  
+                :type "void")
+                nil [7346 7388])
+            ("pci_mmio_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7415 7431]))                  
+                :type "void")
+                nil [7390 7432])
+            ("pci_mmio_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7458 7474]))                  
+                :type "void")
+                nil [7433 7475])
+            ("pci_ioport_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7501 7517]))                  
+                :type "void")
+                nil [7476 7518])
+            ("pci_ioport_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7544 7560]))                  
+                :type "void")
+                nil [7519 7561])
+            ("pci_intx_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7587 7603]))                  
+                :type "void")
+                nil [7562 7604])
+            ("pci_intx_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7630 7646]))                  
+                :type "void")
+                nil [7605 7647])
+            ("pci_msi_setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7674 7690])
+                    ("vector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7691 7701]))                  
+                :type "int")
+                nil [7649 7702])
+            ("pci_msi_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7728 7744]))                  
+                :type "void")
+                nil [7703 7745])
+            ("pci_msi_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7771 7787]))                  
+                :type "void")
+                nil [7746 7788])
+            ("pci_msix_setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7814 7830])
+                    ("entries" variable
+                       (:pointer 1
+                        :type ("msix_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7831 7859])
+                    ("num_entries" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7860 7876]))                  
+                :type "int")
+                nil [7789 7877])
+            ("pci_msix_enable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7903 7919]))                  
+                :type "void")
+                nil [7878 7920])
+            ("pci_msix_disable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7946 7962]))                  
+                :type "void")
+                nil [7921 7963])
+            ("compose_msi_msg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7987 8008])
+                    ("dest" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8009 8027])
+                    ("vector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8028 8038]))                  
+                :type "void")
+                nil [7965 8039])
+            ("set_msi_msg_nr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8062 8078])
+                    ("n" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8079 8094]))                  
+                :type "void")
+                nil [8040 8095])
+            ("read_msi_msg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8118 8134])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8135 8156]))                  
+                :type "void")
+                nil [8096 8157])
+            ("write_msi_msg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8180 8196])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8197 8218]))                  
+                :type "void")
+                nil [8158 8219]))          
+      :file "pci.h"
+      :pointmax 8228
+      :fsize 8227
+      :lastmodtime '(24280 275)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_LWK_PCI_H")
+          ("PCI_FUNC" (spp-arg-list ("devfn") 6105 . 6112) . ((semantic-list "((devfn) & 0x07)" 6121 . 6137)))
+          ("PCI_SLOT" (spp-arg-list ("devfn") 6049 . 6056) . ((semantic-list "(((devfn) >> 3) & 0x1f)" 6065 . 6088)))
+          ("PCI_DEVFN" (spp-arg-list ("slot" "func") 5975 . 5987) . ((semantic-list "((((slot) & 0x1f) << 3) | ((func) & 0x07))" 5990 . 6032)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!include!lwk!pci!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

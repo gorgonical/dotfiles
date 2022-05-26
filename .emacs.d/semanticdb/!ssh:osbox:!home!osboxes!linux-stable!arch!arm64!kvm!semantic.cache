@@ -1,0 +1,1021 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/cpu.h" include (:system-flag t) nil [128 150])
+            ("linux/kvm.h" include (:system-flag t) nil [151 173])
+            ("linux/kvm_host.h" include (:system-flag t) nil [174 201])
+            ("linux/interrupt.h" include (:system-flag t) nil [202 230])
+            ("linux/irq.h" include (:system-flag t) nil [231 253])
+            ("linux/irqdomain.h" include (:system-flag t) nil [254 282])
+            ("linux/uaccess.h" include (:system-flag t) nil [283 309])
+            ("clocksource/arm_arch_timer.h" include (:system-flag t) nil [311 350])
+            ("asm/arch_timer.h" include (:system-flag t) nil [351 378])
+            ("asm/kvm_emulate.h" include (:system-flag t) nil [379 407])
+            ("asm/kvm_hyp.h" include (:system-flag t) nil [408 432])
+            ("kvm/arm_vgic.h" include (:system-flag t) nil [434 459])
+            ("kvm/arm_arch_timer.h" include (:system-flag t) nil [460 491])
+            ("trace.h" include nil nil [493 511])
+            ("timecounter" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("timecounter" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [513 552])
+            ("host_vtimer_irq" variable
+               (:typemodifiers ("static")
+                :type "unsigned int")
+                nil [553 589])
+            ("host_ptimer_irq" variable
+               (:typemodifiers ("static")
+                :type "unsigned int")
+                nil [590 626])
+            ("host_vtimer_irq_flags" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [627 660])
+            ("host_ptimer_irq_flags" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [661 694])
+            ("DEFINE_STATIC_KEY_FALSE" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("has_gic_active_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [727 748]))                  
+                :type "int")
+                nil [696 749])
+            ("default_ptimer_irq" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.irq	= 30,
+	.level	= 1,
+}"
+                :type ("kvm_irq_level" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [751 835])
+            ("default_vtimer_irq" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.irq	= 27,
+	.level	= 1,
+}"
+                :type ("kvm_irq_level" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [837 921])
+            ("kvm_timer_irq_can_fire" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [958 995]))                  
+                :type "bool")
+                nil [923 996])
+            ("kvm_timer_update_irq" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1030 1052])
+                    ("new_level" variable (:type "bool") (reparse-symbol arg-sub-list) [1053 1068])
+                    ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1074 1111]))                  
+                :type "void")
+                nil [997 1112])
+            ("kvm_timer_should_fire" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1147 1184]))                  
+                :type "bool")
+                nil [1113 1185])
+            ("kvm_arm_timer_write" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1218 1240])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1245 1278])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [1283 1313])
+                    ("val" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1318 1326]))                  
+                :type "void")
+                nil [1186 1327])
+            ("kvm_arm_timer_read" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1358 1380])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1390 1423])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [1433 1463]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [1328 1464])
+            ("timer_get_ctl" function
+               (:arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1484 1516]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1466 1765])
+            ("timer_get_cval" function
+               (:arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1786 1818]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [1767 2069])
+            ("timer_get_offset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2099 2131]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [2071 2300])
+            ("timer_set_ctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2328 2360])
+                    ("ctl" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2361 2369]))                  
+                :type "void")
+                nil [2302 2622])
+            ("timer_set_cval" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2651 2683])
+                    ("cval" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2684 2693]))                  
+                :type "void")
+                nil [2624 2950])
+            ("timer_set_offset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctxt" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2981 3013])
+                    ("offset" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3014 3025]))                  
+                :type "void")
+                nil [2952 3252])
+            ("kvm_phys_timer_read" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3278 3283]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [3254 3335])
+            ("get_timer_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3363 3385])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("timer_map" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3386 3408]))                  
+                :type "void")
+                nil [3337 3712])
+            ("userspace_irqchip" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("kvm" variable
+                       (:pointer 1
+                        :type ("kvm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3751 3767]))                  
+                :type "bool")
+                nil [3714 3869])
+            ("soft_timer_start" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hrt" variable
+                       (:pointer 1
+                        :type ("hrtimer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3900 3920])
+                    ("ns" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3921 3928]))                  
+                :type "void")
+                nil [3871 4015])
+            ("soft_timer_cancel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hrt" variable
+                       (:pointer 1
+                        :type ("hrtimer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4047 4067]))                  
+                :type "void")
+                nil [4017 4093])
+            ("kvm_arch_timer_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [4137 4145])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4146 4159]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [4095 4946])
+            ("kvm_timer_compute_delta" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4983 5020]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [4948 5309])
+            ("kvm_timer_irq_can_fire" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5346 5383]))                  
+                :type "bool")
+                nil [5311 5565])
+            ("kvm_timer_earliest_exp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5732 5754]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [5698 6160])
+            ("kvm_bg_timer_expire" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hrt" variable
+                       (:pointer 1
+                        :type ("hrtimer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6210 6230]))                  
+                :type ("hrtimer_restart" type (:type "enum") nil nil))
+                nil [6162 6787])
+            ("kvm_hrtimer_expire" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hrt" variable
+                       (:pointer 1
+                        :type ("hrtimer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6836 6856]))                  
+                :type ("hrtimer_restart" type (:type "enum") nil nil))
+                nil [6789 7424])
+            ("kvm_timer_should_fire" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7460 7497]))                  
+                :type "bool")
+                nil [7426 8241])
+            ("kvm_timer_is_pending" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8269 8291]))                  
+                :type "bool")
+                nil [8243 8500])
+            ("kvm_timer_update_run" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8596 8618]))                  
+                :type "void")
+                nil [8570 9104])
+            ("kvm_timer_update_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9139 9161])
+                    ("new_level" variable (:type "bool") (reparse-symbol arg-sub-list) [9162 9177])
+                    ("timer_ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9183 9220]))                  
+                :type "void")
+                nil [9106 9550])
+            ("timer_emulate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9623 9654]))                  
+                :type "void")
+                nil [9597 10189])
+            ("timer_save_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10220 10251]))                  
+                :type "void")
+                nil [10191 11043])
+            ("kvm_timer_blocking" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11263 11285]))                  
+                :type "void")
+                nil [11232 11885])
+            ("kvm_timer_unblocking" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11920 11942]))                  
+                :type "void")
+                nil [11887 12035])
+            ("timer_restore_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12069 12100]))                  
+                :type "void")
+                nil [12037 12767])
+            ("set_cntvoff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cntvoff" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12793 12805]))                  
+                :type "void")
+                nil [12769 12858])
+            ("set_timer_irq_phys_active" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12905 12936])
+                    ("active" variable (:type "bool") (reparse-symbol arg-sub-list) [12937 12949]))                  
+                :type "void")
+                nil [12860 13053])
+            ("kvm_timer_vcpu_load_gic" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13091 13122]))                  
+                :type "void")
+                nil [13055 13649])
+            ("kvm_timer_vcpu_load_nogic" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13689 13711]))                  
+                :type "void")
+                nil [13651 14721])
+            ("kvm_timer_vcpu_load" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14748 14770]))                  
+                :type "void")
+                nil [14723 15385])
+            ("kvm_timer_should_notify_user" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15421 15443]))                  
+                :type "bool")
+                nil [15387 15914])
+            ("kvm_timer_vcpu_put" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15940 15962]))                  
+                :type "void")
+                nil [15916 17157])
+            ("unmask_vtimer_irq_user" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17403 17425]))                  
+                :type "void")
+                nil [17368 17738])
+            ("kvm_timer_sync_user" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17765 17787]))                  
+                :type "void")
+                nil [17740 17963])
+            ("kvm_timer_vcpu_reset" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17990 18012]))                  
+                :type "int")
+                nil [17965 18861])
+            ("update_vtimer_cntvoff" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18962 18984])
+                    ("cntvoff" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18985 18997]))                  
+                :type "void")
+                nil [18928 19387])
+            ("kvm_timer_vcpu_init" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19414 19436]))                  
+                :type "void")
+                nil [19389 20437])
+            ("kvm_timer_init_interrupt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20476 20487]))                  
+                :type "void")
+                nil [20439 20611])
+            ("kvm_arm_timer_set_reg" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20639 20661])
+                    ("regid" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20662 20672])
+                    ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20673 20683]))                  
+                :type "int")
+                nil [20613 21415])
+            ("read_timer_ctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21443 21476]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [21417 21839])
+            ("kvm_arm_timer_get_reg" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21867 21889])
+                    ("regid" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21890 21900]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [21841 22579])
+            ("kvm_arm_timer_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22611 22633])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22643 22676])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [22686 22716]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [22581 23138])
+            ("kvm_arm_timer_read_sysreg" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23170 23192])
+                    ("tmr" variable (:type ("kvm_arch_timers" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23202 23227])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23237 23267]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [23140 23458])
+            ("kvm_arm_timer_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23492 23514])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("arch_timer_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23519 23552])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23557 23587])
+                    ("val" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23592 23600]))                  
+                :type "void")
+                nil [23460 23909])
+            ("kvm_arm_timer_write_sysreg" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23943 23965])
+                    ("tmr" variable (:type ("kvm_arch_timers" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [23970 23995])
+                    ("treg" variable (:type ("kvm_arch_timer_regs" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [24000 24030])
+                    ("val" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24035 24043]))                  
+                :type "void")
+                nil [23911 24209])
+            ("kvm_timer_starting_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24245 24262]))                  
+                :type "int")
+                nil [24211 24310])
+            ("kvm_timer_dying_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24343 24360]))                  
+                :type "int")
+                nil [24312 24413])
+            ("timer_irq_set_vcpu_affinity" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24454 24473])
+                    ("vcpu" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24474 24485]))                  
+                :type "int")
+                nil [24415 24584])
+            ("timer_irq_set_irqchip_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24625 24644])
+                    ("which" variable (:type ("irqchip_irq_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [24656 24685])
+                    ("val" variable (:type "bool") (reparse-symbol arg-sub-list) [24686 24695]))                  
+                :type "int")
+                nil [24586 24904])
+            ("timer_irq_eoi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24932 24951]))                  
+                :type "void")
+                nil [24906 25017])
+            ("timer_irq_ack" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25045 25064]))                  
+                :type "void")
+                nil [25019 25135])
+            ("timer_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name			= \"KVM\",
+	.irq_ack		= timer_irq_ack,
+	.irq_mask		= irq_chip_mask_parent,
+	.irq_unmask		= irq_chip_unmask_parent,
+	.irq_eoi		= timer_irq_eoi,
+	.irq_set_type		= irq_chip_set_type_parent,
+	.irq_set_vcpu_affinity	= timer_irq_set_vcpu_affinity,
+	.irq_set_irqchip_state	= timer_irq_set_irqchip_state,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25137 25481])
+            ("timer_irq_domain_alloc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25517 25543])
+                    ("virq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25544 25562])
+                    ("nr_irqs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25569 25590])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [25591 25601]))                  
+                :type "int")
+                nil [25483 25736])
+            ("timer_irq_domain_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25772 25798])
+                    ("virq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25799 25817])
+                    ("nr_irqs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25824 25845]))                  
+                :type "void")
+                nil [25738 25849])
+            ("timer_domain_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.alloc	= timer_irq_domain_alloc,
+	.free	= timer_irq_domain_free,
+}"
+                :type ("irq_domain_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25851 25975])
+            ("arch_timer_irq_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.get_input_level = kvm_arch_timer_get_input_level,
+}"
+                :type ("irq_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [25977 26076])
+            ("kvm_irq_fixup_flags" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("virq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [26110 26128])
+                    ("flags" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26129 26140]))                  
+                :type "void")
+                nil [26078 26357])
+            ("kvm_irq_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("arch_timer_kvm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26383 26416]))                  
+                :type "int")
+                nil [26359 27595])
+            ("kvm_timer_hyp_init" function
+               (:arguments 
+                  ( ("has_gic" variable (:type "bool") (reparse-symbol arg-sub-list) [27620 27633]))                  
+                :type "int")
+                nil [27597 29485])
+            ("kvm_timer_vcpu_terminate" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29517 29539]))                  
+                :type "void")
+                nil [29487 29632])
+            ("timer_irqs_are_valid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29667 29689]))                  
+                :type "bool")
+                nil [29634 30176])
+            ("kvm_arch_timer_get_input_level" function
+               (:arguments 
+                  ( ("vintid" variable (:type "int") (reparse-symbol arg-sub-list) [30214 30225]))                  
+                :type "bool")
+                nil [30178 30517])
+            ("kvm_timer_enable" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30540 30562]))                  
+                :type "int")
+                nil [30519 31458])
+            ("kvm_timer_init_vhe" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [31729 31734]))                  
+                :type "void")
+                nil [31705 32091])
+            ("set_timer_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kvm" variable
+                       (:pointer 1
+                        :type ("kvm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32120 32136])
+                    ("vtimer_irq" variable (:type "int") (reparse-symbol arg-sub-list) [32137 32152])
+                    ("ptimer_irq" variable (:type "int") (reparse-symbol arg-sub-list) [32153 32168]))                  
+                :type "void")
+                nil [32093 32329])
+            ("kvm_arm_timer_set_attr" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32358 32380])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("kvm_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32381 32410]))                  
+                :type "int")
+                nil [32331 33047])
+            ("kvm_arm_timer_get_attr" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33076 33098])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("kvm_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33099 33128]))                  
+                :type "int")
+                nil [33049 33488])
+            ("kvm_arm_timer_has_attr" function
+               (:arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("kvm_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33517 33539])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("kvm_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33540 33569]))                  
+                :type "int")
+                nil [33490 33702]))          
+      :file "arch_timer.c"
+      :pointmax 33703
+      :fsize 33702
+      :lastmodtime '(24843 18846)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "trace.h"
+      :fsize 181
+      :lastmodtime '(24843 18846)))
+  :file "!ssh:osbox:!home!osboxes!linux-stable!arch!arm64!kvm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

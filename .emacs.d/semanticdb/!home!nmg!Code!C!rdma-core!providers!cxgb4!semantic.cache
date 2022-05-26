@@ -1,0 +1,671 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("config.h" include (:system-flag t) nil [1430 1449])
+            ("stdio.h" include (:system-flag t) nil [1451 1469])
+            ("stdlib.h" include (:system-flag t) nil [1470 1489])
+            ("unistd.h" include (:system-flag t) nil [1490 1509])
+            ("errno.h" include (:system-flag t) nil [1510 1528])
+            ("sys/mman.h" include (:system-flag t) nil [1529 1550])
+            ("pthread.h" include (:system-flag t) nil [1551 1571])
+            ("string.h" include (:system-flag t) nil [1572 1591])
+            ("signal.h" include (:system-flag t) nil [1592 1611])
+            ("libcxgb4.h" include nil nil [1613 1634])
+            ("cxgb4-abi.h" include nil nil [1635 1657])
+            ("PCI_VENDOR_ID_CHELSIO" variable (:constant-flag t) nil [1667 1688])
+            ("CH_PCI_DEVICE_ID_TABLE_DEFINE_BEGIN" variable (:constant-flag t) nil [1769 1804])
+            ("CH_PCI_DEVICE_ID_FUNCTION" variable (:constant-flag t) nil [1963 1988])
+            ("CH_PCI_ID_TABLE_ENTRY" variable (:constant-flag t) nil [2006 2027])
+            ("CH_PCI_DEVICE_ID_TABLE_DEFINE_END" variable (:constant-flag t) nil [2146 2179])
+            ("t4_chip_type.h" include nil nil [2189 2214])
+            ("t4_pci_id_tbl.h" include nil nil [2215 2241])
+            ("c4iw_page_size" variable (:type "unsigned long") nil [2243 2272])
+            ("c4iw_page_shift" variable (:type "unsigned long") nil [2273 2303])
+            ("c4iw_page_mask" variable (:type "unsigned long") nil [2304 2333])
+            ("ma_wr" variable (:type "int") nil [2334 2344])
+            ("t5_en_wc" variable
+               (:default-value "1"
+                :type "int")
+                nil [2345 2362])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("devices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2381 2389]))                  
+                :type "int")
+                nil [2364 2390])
+            ("c4iw_ctx_common_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.query_device = c4iw_query_device,
+	.query_port = c4iw_query_port,
+	.alloc_pd = c4iw_alloc_pd,
+	.dealloc_pd = c4iw_free_pd,
+	.reg_mr = c4iw_reg_mr,
+	.dereg_mr = c4iw_dereg_mr,
+	.create_cq = c4iw_create_cq,
+	.resize_cq = c4iw_resize_cq,
+	.destroy_cq = c4iw_destroy_cq,
+	.create_srq = c4iw_create_srq,
+	.modify_srq = c4iw_modify_srq,
+	.destroy_srq = c4iw_destroy_srq,
+	.query_srq = c4iw_query_srq,
+	.create_qp = c4iw_create_qp,
+	.modify_qp = c4iw_modify_qp,
+	.destroy_qp = c4iw_destroy_qp,
+	.query_qp = c4iw_query_qp,
+	.create_ah = c4iw_create_ah,
+	.destroy_ah = c4iw_destroy_ah,
+	.attach_mcast = c4iw_attach_mcast,
+	.detach_mcast = c4iw_detach_mcast,
+	.post_srq_recv = c4iw_post_srq_recv,
+	.req_notify_cq = c4iw_arm_cq,
+}"
+                :type ("verbs_context_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2392 3177])
+            ("c4iw_ctx_t4_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.async_event = c4iw_async_event,
+	.poll_cq = c4iw_poll_cq,
+	.post_recv = c4iw_post_receive,
+	.post_send = c4iw_post_send,
+	.req_notify_cq = c4iw_arm_cq,
+}"
+                :type ("verbs_context_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3179 3393])
+            ("c4iw_alloc_context" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ibdev" variable
+                       (:pointer 1
+                        :type ("ibv_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3443 3468])
+                    ("cmd_fd" variable (:type "int") (reparse-symbol arg-sub-list) [3475 3486])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3493 3512]))                  
+                :type ("verbs_context" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3395 6240])
+            ("c4iw_free_context" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6272 6298]))                  
+                :type "void")
+                nil [6242 6509])
+            ("c4iw_uninit_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("verbs_device" variable
+                       (:pointer 1
+                        :type ("verbs_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6542 6576]))                  
+                :type "void")
+                nil [6511 6653])
+            ("c4iw_abi_version" variable
+               (:default-value "1"
+                :type "int")
+                nil [11323 11348])
+            ("c4iw_device_alloc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sysfs_dev" variable
+                       (:pointer 1
+                        :type ("verbs_sysfs_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11396 11430]))                  
+                :type ("verbs_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11350 12355])
+            ("c4iw_dev_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.name = \"cxgb4\",
+	.match_min_abi_version = 0,
+	.match_max_abi_version = INT_MAX,
+	.match_table = hca_table,
+	.alloc_device = c4iw_device_alloc,
+	.uninit_device = c4iw_uninit_device,
+	.alloc_context = c4iw_alloc_context,
+	.free_context = c4iw_free_context,
+}"
+                :type ("verbs_device_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12357 12670])
+            ("PROVIDER_DRIVER" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cxgb4" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12687 12693])
+                    ("" variable (:type ("c4iw_dev_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12694 12707]))                  
+                :type "int")
+                nil [12671 12708]))          
+      :file "dev.c"
+      :pointmax 13128
+      :fsize 13127
+      :lastmodtime '(24010 64927 180362 207000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CH_PCI_DEVICE_ID_TABLE_DEFINE_BEGIN" . 
+              ((STATIC "static" 1843 . 1849) (CONST "const" 1850 . 1855) (STRUCT "struct" 1856 . 1862) (symbol "verbs_match_ent" 1863 . 1878) (symbol "hca_table" 1879 . 1888) (semantic-list "[]" 1888 . 1890) (punctuation "=" 1891 . 1892) (open-paren "{" 1893 . 1894) (symbol "VERBS_DRIVER_ID" 1918 . 1933) (semantic-list "(RDMA_DRIVER_CXGB4)" 1933 . 1952) (punctuation "," 1952 . 1953)))
+          ("CH_PCI_ID_TABLE_ENTRY" (spp-arg-list ("__DeviceID") 2027 . 2039) . ((symbol "VERBS_PCI_MATCH" 2080 . 2095) (semantic-list "(PCI_VENDOR_ID_CHELSIO, __DeviceID, NULL)" 2095 . 2136)))
+          ("PCI_VENDOR_ID_CHELSIO" . ((number "0x1425" 1690 . 1696)))
+          ("CH_PCI_DEVICE_ID_FUNCTION" . ((number "0x4" 1993 . 1996)))
+          ("CH_PCI_DEVICE_ID_TABLE_DEFINE_END" . ((semantic-list "{}" 2183 . 2185) (close-paren "}" 2186 . 2187)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "libcxgb4.h"
+      :fsize 7805
+      :lastmodtime '(24010 64927 180362 207000))
+    (semanticdb-table "semanticdb-table"
+      :file "cxgb4-abi.h"
+      :fsize 3250
+      :lastmodtime '(24010 64927 180362 207000))
+    (semanticdb-table "semanticdb-table"
+      :file "t4_chip_type.h"
+      :fsize 2752
+      :lastmodtime '(24010 64927 181362 207000))
+    (semanticdb-table "semanticdb-table"
+      :file "t4_pci_id_tbl.h"
+      :fsize 9252
+      :lastmodtime '(24010 64927 181362 207000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("config.h" include (:system-flag t) nil [1430 1449])
+            ("stdlib.h" include (:system-flag t) nil [1451 1470])
+            ("stdio.h" include (:system-flag t) nil [1471 1489])
+            ("string.h" include (:system-flag t) nil [1490 1509])
+            ("errno.h" include (:system-flag t) nil [1510 1528])
+            ("pthread.h" include (:system-flag t) nil [1529 1549])
+            ("sys/mman.h" include (:system-flag t) nil [1550 1571])
+            ("inttypes.h" include (:system-flag t) nil [1572 1593])
+            ("assert.h" include (:system-flag t) nil [1594 1613])
+            ("libcxgb4.h" include nil nil [1615 1636])
+            ("cxgb4-abi.h" include nil nil [1637 1659])
+            ("is_64b_cqe" variable (:type "bool") nil [1661 1677])
+            ("MASKED" variable (:constant-flag t) nil [1687 1693])
+            ("c4iw_query_device" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1766 1794])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1795 1824]))                  
+                :type "int")
+                nil [1744 2282])
+            ("c4iw_query_port" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2304 2332])
+                    ("port" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2333 2346])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_port_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2353 2380]))                  
+                :type "int")
+                nil [2284 2480])
+            ("c4iw_alloc_pd" function
+               (:pointer 1
+                :arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2511 2539]))                  
+                :type ("ibv_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2482 2831])
+            ("c4iw_free_pd" function
+               (:arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2850 2868]))                  
+                :type "int")
+                nil [2833 2961])
+            ("c4iw_reg_mr" function
+               (:pointer 1
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2990 3008])
+                    ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3009 3020])
+                    ("length" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3021 3035])
+                    ("hca_va" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3042 3058])
+                    ("access" variable (:type "int") (reparse-symbol arg-sub-list) [3059 3070]))                  
+                :type ("ibv_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2963 3825])
+            ("c4iw_dereg_mr" function
+               (:arguments 
+                  ( ("vmr" variable
+                       (:pointer 1
+                        :type ("verbs_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3845 3866]))                  
+                :type "int")
+                nil [3827 4161])
+            ("c4iw_create_cq" function
+               (:pointer 1
+                :arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4193 4221])
+                    ("cqe" variable (:type "int") (reparse-symbol arg-sub-list) [4222 4230])
+                    ("channel" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4240 4273])
+                    ("comp_vector" variable (:type "int") (reparse-symbol arg-sub-list) [4274 4290]))                  
+                :type ("ibv_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4163 6200])
+            ("c4iw_resize_cq" function
+               (:arguments 
+                  ( ("ibcq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6221 6241])
+                    ("cqe" variable (:type "int") (reparse-symbol arg-sub-list) [6242 6250]))                  
+                :type "int")
+                nil [6202 6492])
+            ("c4iw_destroy_cq" function
+               (:arguments 
+                  ( ("ibcq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6514 6534]))                  
+                :type "int")
+                nil [6494 6973])
+            ("c4iw_create_srq" function
+               (:pointer 1
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7007 7025])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_srq_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7030 7061]))                  
+                :type ("ibv_srq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6975 9290])
+            ("c4iw_modify_srq" function
+               (:arguments 
+                  ( ("ibsrq" variable
+                       (:pointer 1
+                        :type ("ibv_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9312 9334])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9335 9361])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [9368 9382]))                  
+                :type "int")
+                nil [9292 9749])
+            ("c4iw_destroy_srq" function
+               (:arguments 
+                  ( ("ibsrq" variable
+                       (:pointer 1
+                        :type ("ibv_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9772 9794]))                  
+                :type "int")
+                nil [9751 10220])
+            ("c4iw_query_srq" function
+               (:arguments 
+                  ( ("ibsrq" variable
+                       (:pointer 1
+                        :type ("ibv_srq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10241 10263])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_srq_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10264 10290]))                  
+                :type "int")
+                nil [10222 10381])
+            ("create_qp_v0" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10418 10436])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10444 10474]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10383 13232])
+            ("create_qp" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13266 13284])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13289 13319]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13234 18086])
+            ("c4iw_create_qp" function
+               (:pointer 1
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18118 18136])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18146 18176]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18088 18329])
+            ("reset_qp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qhp" variable
+                       (:pointer 1
+                        :type ("c4iw_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18352 18372]))                  
+                :type "void")
+                nil [18331 18747])
+            ("c4iw_modify_qp" function
+               (:arguments 
+                  ( ("ibqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18768 18788])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18789 18814])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [18820 18834]))                  
+                :type "int")
+                nil [18749 19318])
+            ("c4iw_destroy_qp" function
+               (:arguments 
+                  ( ("ibqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19340 19360]))                  
+                :type "int")
+                nil [19320 20168])
+            ("c4iw_query_qp" function
+               (:arguments 
+                  ( ("ibqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20188 20208])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20209 20234])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [20239 20253])
+                    ("init_attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20254 20289]))                  
+                :type "int")
+                nil [20170 20580])
+            ("c4iw_create_ah" function
+               (:pointer 1
+                :arguments 
+                  ( ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20612 20630])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_ah_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20631 20656]))                  
+                :type ("ibv_ah" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20582 20674])
+            ("c4iw_destroy_ah" function
+               (:arguments 
+                  ( ("ah" variable
+                       (:pointer 1
+                        :type ("ibv_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20696 20714]))                  
+                :type "int")
+                nil [20676 20734])
+            ("c4iw_attach_mcast" function
+               (:arguments 
+                  ( ("ibqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20758 20778])
+                    ("gid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_gid" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [20779 20804])
+                    ("lid" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20813 20826]))                  
+                :type "int")
+                nil [20736 21059])
+            ("c4iw_detach_mcast" function
+               (:arguments 
+                  ( ("ibqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21083 21103])
+                    ("gid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_gid" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [21104 21129])
+                    ("lid" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21138 21151]))                  
+                :type "int")
+                nil [21061 21384])
+            ("c4iw_async_event" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21408 21436])
+                    ("event" variable
+                       (:pointer 1
+                        :type ("ibv_async_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21445 21475]))                  
+                :type "void")
+                nil [21386 21967]))          
+      :file "verbs.c"
+      :pointmax 21968
+      :fsize 21967
+      :lastmodtime '(24010 64927 185362 207000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MASKED" (spp-arg-list ("x") 1693 . 1696) . ((semantic-list "(void *)" 1697 . 1705) (semantic-list "((unsigned long)(x) & c4iw_page_mask)" 1705 . 1742)))
+          )
+))
+  :file "!home!nmg!Code!C!rdma-core!providers!cxgb4!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

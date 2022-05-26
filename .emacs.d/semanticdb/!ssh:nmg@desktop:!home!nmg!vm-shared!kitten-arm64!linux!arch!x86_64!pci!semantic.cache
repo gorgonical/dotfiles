@@ -1,0 +1,544 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/types.h" include (:system-flag t) nil [112 136])
+            ("linux/kernel.h" include (:system-flag t) nil [137 162])
+            ("linux/pci.h" include (:system-flag t) nil [163 185])
+            ("linux/init.h" include (:system-flag t) nil [186 209])
+            ("linux/slab.h" include (:system-flag t) nil [210 233])
+            ("linux/interrupt.h" include (:system-flag t) nil [234 262])
+            ("linux/io.h" include (:system-flag t) nil [263 284])
+            ("linux/smp.h" include (:system-flag t) nil [285 307])
+            ("asm/io_apic.h" include (:system-flag t) nil [308 332])
+            ("linux/irq.h" include (:system-flag t) nil [333 355])
+            ("arch/acpi.h" include (:system-flag t) nil [356 378])
+            ("pci.h" include nil nil [381 397])
+            ("PIRQ_SIGNATURE" variable (:constant-flag t) nil [407 421])
+            ("PIRQ_VERSION" variable (:constant-flag t) nil [484 496])
+            ("pirq_table" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("irq_routing_table" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [506 550])
+            ("pirq_enable_irq" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [579 599]))                  
+                :type "int")
+                nil [552 600])
+            ("pcibios_irq_mask" variable
+               (:default-value "0xfff8"
+                :type "unsigned int")
+                nil [793 832])
+            ("pirq_penalty" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	1000000, 1000000, 1000000, 1000, 1000, 0, 1000, 1000,
+	0, 0, 0, 0, 1000, 100000, 100000, 100000
+}"
+                :type "int")
+                nil [834 965])
+            ("irq_router" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [988 999])
+                    ("vendor" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1001 1020])
+                    ("device" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1001 1020])
+                    ("get" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("router" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1033 1056])
+                            ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1057 1077])
+                            ("pirq" variable (:type "int") (reparse-symbol arg-sub-list) [1078 1087]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [1022 1088])
+                    ("set" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("router" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1101 1124])
+                            ("dev" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1125 1145])
+                            ("pirq" variable (:type "int") (reparse-symbol arg-sub-list) [1146 1155])
+                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [1158 1165]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [1090 1167]))                  
+                :type "struct")
+                nil [967 1170])
+            ("irq_router_handler" type
+               (:members 
+                  ( ("vendor" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1201 1212])
+                    ("probe" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("r" variable
+                               (:pointer 1
+                                :type ("irq_router" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1227 1248])
+                            ("router" variable
+                               (:pointer 1
+                                :type ("pci_dev" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1249 1272])
+                            ("device" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1273 1284]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [1214 1285]))                  
+                :type "struct")
+                nil [1172 1288])
+            ("NULL" variable (:type "int") nil [1339 1344])
+            ("NULL" variable (:type "int") nil [1396 1401])
+            ("pirq_check_routing_table" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1580 1589]))                  
+                :type ("irq_routing_table" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1515 2022])
+            ("pirq_find_routing_table" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2160 2165]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2129 2551])
+            ("pirq_peer_trick" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2792 2797]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2769 3575])
+            ("eisa_set_level_irq" function
+               (:arguments 
+                  ( ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3687 3704]))                  
+                :type "void")
+                nil [3663 4090])
+            ("pirq_piix_get" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("router" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4224 4247])
+                    ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4248 4268])
+                    ("pirq" variable (:type "int") (reparse-symbol arg-sub-list) [4269 4278]))                  
+                :type "int")
+                nil [4199 4357])
+            ("pirq_piix_set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("router" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4384 4407])
+                    ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4408 4428])
+                    ("pirq" variable (:type "int") (reparse-symbol arg-sub-list) [4429 4438])
+                    ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [4439 4447]))                  
+                :type "int")
+                nil [4359 4505])
+            ("intel_router_probe" function
+               (:arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("irq_router" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4548 4569])
+                    ("router" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4570 4593])
+                    ("device" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4594 4605]))                  
+                :type "int")
+                nil [4525 6487])
+            ("pirq_routers" variable
+               (:dereference 1
+                :default-value "{
+	{ PCI_VENDOR_ID_INTEL, intel_router_probe },
+	/* Someone with docs needs to add the ATI Radeon IGP */
+	{ 0, NULL }
+}"
+                :type ("irq_router_handler" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6510 6673])
+            ("pirq_router" variable
+               (:typemodifiers ("static")
+                :type ("irq_router" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6674 6711])
+            ("pirq_router_dev" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("pci_dev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6712 6751])
+            ("pirq_find_router" function
+               (:arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("irq_router" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6867 6888]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6843 8084])
+            ("pirq_get_info" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8124 8144]))                  
+                :type ("irq_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8086 8469])
+            ("pcibios_lookup_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8501 8521])
+                    ("assign" variable (:type "int") (reparse-symbol arg-sub-list) [8522 8533]))                  
+                :type "int")
+                nil [8471 11400])
+            ("pcibios_fixup_irqs" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11440 11445]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11414 13474])
+            ("pcibios_irq_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13506 13511]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13482 14213])
+            ("pirq_enable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14245 14265]))                  
+                :type "int")
+                nil [14218 15945]))          
+      :file "irq.c"
+      :pointmax 15946
+      :fsize 15945
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax '((INT 13478 . 13481) (VOID 11409 . 11413) (STATIC 11402 . 11408) (VOID 6838 . 6842) (STATIC 6831 . 6837) (symbol 6499 . 6509) (STATIC 6492 . 6498) (symbol 4518 . 4524) (STATIC 4511 . 4517) (VOID 2764 . 2768) (STATIC 2757 . 2763) (punctuation 2127 . 2128) (symbol 2109 . 2126) (STRUCT 2102 . 2108) (STATIC 2095 . 2101) (punctuation 1394 . 1395) (semantic-list 1372 . 1393) (semantic-list 1350 . 1372) (VOID 1345 . 1349) (punctuation 1337 . 1338) (semantic-list 1315 . 1336) (semantic-list 1294 . 1315) (INT 1290 . 1293) (NEW 1162 . 1165))
+      :lexical-table 
+        '(("PIRQ_VERSION" . ((number "0x0100" 497 . 503)))
+          ("PIRQ_SIGNATURE" . ((semantic-list "(('$' << 0) + ('P' << 8) + ('I' << 16) + ('R' << 24))" 422 . 475)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("arch/pci/pcicfg.h" include (:system-flag t) nil [93 121])
+            ("DBG" variable (:constant-flag t) nil [192 195])
+            ("PCI_PROBE_MASK" variable (:constant-flag t) nil [219 233])
+            ("PCI_PROBE_NOEARLY" variable (:constant-flag t) nil [250 267])
+            ("PCI_NO_CHECKS" variable (:constant-flag t) nil [284 297])
+            ("PCI_USE_PIRQ_MASK" variable (:constant-flag t) nil [314 331])
+            ("PCI_ASSIGN_ROMS" variable (:constant-flag t) nil [347 362])
+            ("PCI_BIOS_IRQ_SCAN" variable (:constant-flag t) nil [379 396])
+            ("PCI_ASSIGN_ALL_BUSSES" variable (:constant-flag t) nil [412 433])
+            ("PCI_CAN_SKIP_ISA_ALIGN" variable (:constant-flag t) nil [449 471])
+            ("PCI_USE__CRS" variable (:constant-flag t) nil [487 499])
+            ("PCI_CHECK_ENABLE_AMD_MMCONF" variable (:constant-flag t) nil [517 544])
+            ("PCI_HAS_IO_ECS" variable (:constant-flag t) nil [561 575])
+            ("PCI_NOASSIGN_ROMS" variable (:constant-flag t) nil [593 610])
+            ("pci_probe" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [620 650])
+            ("pirq_table_addr" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [651 688])
+            ("pci_bf_sort_state" type
+               (:members 
+                  ( ("pci_bf_sort_default" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [716 736])
+                    ("pci_force_nobf" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [738 753])
+                    ("pci_force_bf" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [755 768])
+                    ("pci_dmi_bf" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [770 781]))                  
+                :type "enum")
+                nil [690 784])
+            ("pcibios_max_latency" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [804 844])
+            ("pcibios_resource_survey" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [875 880]))                  
+                :type "void")
+                nil [846 881])
+            ("pcibios_last_bus" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [899 927])
+            ("pci_root_bus" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("pci_bus" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [928 964])
+            ("pci_root_ops" variable
+               (:typemodifiers ("extern")
+                :type ("pci_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [965 1000])
+            ("irq_info" type
+               (:members 
+                  ( ("bus" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1038 1052])
+                    ("devfn" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1038 1052])
+                    ("irq" variable
+                       (:dereference 1
+                        :type ("" type
+                             (:members 
+                                ( ("link" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1098 1106])
+                                  ("bitmap" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1161 1172]))                                
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1087 1229])
+                    ("slot" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1231 1239])
+                    ("rfu" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1272 1279]))                  
+                :type "struct")
+                nil [1019 1306])
+            ("irq_routing_table" type
+               (:members 
+                  ( ("signature" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1336 1350])
+                    ("version" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1390 1402])
+                    ("size" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1425 1434])
+                    ("rtr_bus" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1464 1486])
+                    ("rtr_devfn" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1464 1486])
+                    ("exclusive_irqs" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1527 1546])
+                    ("rtr_vendor" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1593 1620])
+                    ("rtr_device" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1593 1620])
+                    ("miniport_data" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1669 1687])
+                    ("rfu" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1701 1712])
+                    ("checksum" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1714 1726])
+                    ("slots" variable
+                       (:dereference 1
+                        :type ("irq_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1771 1796]))                  
+                :type "struct")
+                nil [1308 1823])
+            ("pcibios_irq_mask" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [1825 1862])
+            ("pcibios_scanned" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1864 1891])
+            ("pcibios_enable_irq" function
+               (:prototype-flag t
+                :function-pointer t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1926 1946]))                  
+                :type "int")
+                nil [1893 1947])
+            ("pcibios_disable_irq" function
+               (:prototype-flag t
+                :function-pointer t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1983 2003]))                  
+                :type "void")
+                nil [1948 2004])
+            ("pcibios_irq_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2084 2089]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2060 2090])
+            ("pcibios_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2122 2127]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2102 2128]))          
+      :file "pci.h"
+      :pointmax 2131
+      :fsize 2130
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax '((INT 2098 . 2101) (EXTERN 2091 . 2097) (INT 2056 . 2059) (EXTERN 2049 . 2055))
+      :lexical-table 
+        '(("PCI_BIOS_IRQ_SCAN" . ((number "0x2000" 397 . 403)))
+          ("PCI_NOASSIGN_ROMS" . ((number "0x80000" 611 . 618)))
+          ("PCI_CAN_SKIP_ISA_ALIGN" . ((number "0x8000" 472 . 478)))
+          ("PCI_ASSIGN_ALL_BUSSES" . ((number "0x4000" 434 . 440)))
+          ("PCI_ASSIGN_ROMS" . ((number "0x1000" 364 . 370)))
+          ("PCI_NO_CHECKS" . ((number "0x0400" 299 . 305)))
+          ("DBG" (spp-arg-list ("x...") 195 . 201))
+          ("PCI_USE_PIRQ_MASK" . ((number "0x0800" 332 . 338)))
+          ("PCI_HAS_IO_ECS" . ((number "0x40000" 577 . 584)))
+          ("PCI_PROBE_MASK" . ((number "0x000f" 235 . 241)))
+          ("PCI_PROBE_NOEARLY" . ((number "0x0010" 268 . 274)))
+          ("PCI_USE__CRS" . ((number "0x10000" 501 . 508)))
+          ("PCI_CHECK_ENABLE_AMD_MMCONF" . ((number "0x20000" 545 . 552)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [62 85])
+            ("linux/pci.h" include (:system-flag t) nil [86 108])
+            ("pci.h" include nil nil [109 125])
+            ("pcibios_fixup_peer_bridges" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [315 320]))                  
+                :type ("__devinit" type (:type "class") nil nil))
+                nil [278 907])
+            ("pci_legacy_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [943 948]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [920 1128])
+            ("pci_subsys_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1157 1162]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1134 1237])
+            ("subsys_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pci_subsys_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1254 1270]))                  
+                :type "int")
+                nil [1238 1271]))          
+      :file "legacy.c"
+      :pointmax 1272
+      :fsize 1271
+      :lastmodtime '(24790 7105)
+      :unmatched-syntax '((INT 1130 . 1133) (INT 916 . 919) (STATIC 909 . 915) (VOID 273 . 277) (STATIC 266 . 272))))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!kitten-arm64!linux!arch!x86_64!pci!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

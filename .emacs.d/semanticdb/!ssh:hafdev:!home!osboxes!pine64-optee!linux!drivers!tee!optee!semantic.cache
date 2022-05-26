@@ -1,0 +1,889 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("OPTEE_PRIVATE_H" variable (:constant-flag t) nil [123 138])
+            ("linux/arm-smccc.h" include (:system-flag t) nil [140 168])
+            ("linux/semaphore.h" include (:system-flag t) nil [169 197])
+            ("linux/tee_drv.h" include (:system-flag t) nil [198 224])
+            ("linux/types.h" include (:system-flag t) nil [225 249])
+            ("optee_msg.h" include nil nil [250 272])
+            ("OPTEE_MAX_ARG_SIZE" variable (:constant-flag t) nil [282 300])
+            ("TEEC_SUCCESS" variable (:constant-flag t) nil [374 386])
+            ("TEEC_ERROR_BAD_PARAMETERS" variable (:constant-flag t) nil [408 433])
+            ("TEEC_ERROR_COMMUNICATION" variable (:constant-flag t) nil [453 477])
+            ("TEEC_ERROR_OUT_OF_MEMORY" variable (:constant-flag t) nil [497 521])
+            ("TEEC_ERROR_SHORT_BUFFER" variable (:constant-flag t) nil [541 564])
+            ("TEEC_ORIGIN_COMMS" variable (:constant-flag t) nil [586 603])
+            ("optee_invoke_fn" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [648 662])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [663 677])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [678 692])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [697 711])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [712 726])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [727 741])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [746 760])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [761 775])
+                    ("" variable
+                       (:pointer 1
+                        :type ("arm_smccc_res" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [780 803]))                  
+                :type "void")
+                nil [625 804])
+            ("optee_call_queue" type
+               (:members 
+                  ( ("mutex" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [873 892])
+                    ("waiters" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [894 919]))                  
+                :type "struct")
+                nil [806 922])
+            ("optee_wait_queue" type
+               (:members 
+                  ( ("mu" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [991 1007])
+                    ("db" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1009 1029]))                  
+                :type "struct")
+                nil [924 1032])
+            ("optee_supp" type
+               (:members 
+                  ( ("mutex" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1666 1685])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1687 1711])
+                    ("req_id" variable (:type "int") (reparse-symbol classsubparts) [1714 1725])
+                    ("reqs" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1727 1749])
+                    ("idr" variable (:type ("idr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1751 1766])
+                    ("reqs_c" variable (:type ("completion" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1768 1793]))                  
+                :type "struct")
+                nil [1605 1796])
+            ("optee" type
+               (:members 
+                  ( ("supp_teedev" variable
+                       (:pointer 1
+                        :type ("tee_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2380 2411])
+                    ("teedev" variable
+                       (:pointer 1
+                        :type ("tee_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2413 2439])
+                    ("invoke_fn" variable
+                       (:pointer 1
+                        :type ("optee_invoke_fn" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2441 2468])
+                    ("call_queue" variable (:type ("optee_call_queue" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2470 2505])
+                    ("wait_queue" variable (:type ("optee_wait_queue" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2507 2542])
+                    ("supp" variable (:type ("optee_supp" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2544 2567])
+                    ("pool" variable
+                       (:pointer 1
+                        :type ("tee_shm_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2569 2595])
+                    ("memremaped_shm" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2597 2618])
+                    ("sec_caps" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2620 2633]))                  
+                :type "struct")
+                nil [2364 2636])
+            ("optee_session" type
+               (:members 
+                  ( ("list_node" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2662 2689])
+                    ("session_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2691 2706]))                  
+                :type "struct")
+                nil [2638 2709])
+            ("optee_context_data" type
+               (:members 
+                  ( ("mutex" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2780 2799])
+                    ("sess_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2801 2828]))                  
+                :type "struct")
+                nil [2711 2831])
+            ("optee_rpc_param" type
+               (:members 
+                  ( ("a0" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2859 2866])
+                    ("a1" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2868 2875])
+                    ("a2" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2877 2884])
+                    ("a3" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2886 2893])
+                    ("a4" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2895 2902])
+                    ("a5" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2904 2911])
+                    ("a6" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2913 2920])
+                    ("a7" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2922 2929]))                  
+                :type "struct")
+                nil [2833 2932])
+            ("optee_call_ctx" type
+               (:members 
+                  ( ("pages_list" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [3077 3094])
+                    ("num_entries" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3096 3115]))                  
+                :type "struct")
+                nil [2992 3118])
+            ("optee_handle_rpc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3142 3166])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("optee_rpc_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3167 3197])
+                    ("call_ctx" variable
+                       (:pointer 1
+                        :type ("optee_call_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3206 3238]))                  
+                :type "void")
+                nil [3120 3239])
+            ("optee_rpc_finalize_call" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("call_ctx" variable
+                       (:pointer 1
+                        :type ("optee_call_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3269 3301]))                  
+                :type "void")
+                nil [3240 3302])
+            ("optee_wait_queue_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("wq" variable
+                       (:pointer 1
+                        :type ("optee_wait_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3331 3359]))                  
+                :type "void")
+                nil [3304 3360])
+            ("optee_wait_queue_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("wq" variable
+                       (:pointer 1
+                        :type ("optee_wait_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3388 3416]))                  
+                :type "void")
+                nil [3361 3417])
+            ("optee_supp_thrd_req" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3443 3467])
+                    ("func" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3468 3477])
+                    ("num_params" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3478 3496])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3500 3524]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [3419 3525])
+            ("optee_supp_read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3547 3571])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [3572 3585])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3585 3589])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3590 3601]))                  
+                :type "int")
+                nil [3527 3602])
+            ("optee_supp_write" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3624 3648])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [3649 3662])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3662 3666])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3667 3678]))                  
+                :type "int")
+                nil [3603 3679])
+            ("optee_supp_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("supp" variable
+                       (:pointer 1
+                        :type ("optee_supp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3701 3725]))                  
+                :type "void")
+                nil [3680 3726])
+            ("optee_supp_uninit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("supp" variable
+                       (:pointer 1
+                        :type ("optee_supp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3750 3774]))                  
+                :type "void")
+                nil [3727 3775])
+            ("optee_supp_release" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("supp" variable
+                       (:pointer 1
+                        :type ("optee_supp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3800 3824]))                  
+                :type "void")
+                nil [3776 3825])
+            ("optee_supp_recv" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3847 3871])
+                    ("func" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3872 3882])
+                    ("num_params" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3883 3899])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3906 3930]))                  
+                :type "int")
+                nil [3827 3931])
+            ("optee_supp_send" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3952 3976])
+                    ("ret" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3977 3985])
+                    ("num_params" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3986 4001])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4008 4032]))                  
+                :type "int")
+                nil [3932 4033])
+            ("optee_do_call_with_arg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4062 4086])
+                    ("parg" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4087 4104]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [4035 4105])
+            ("optee_open_session" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4129 4153])
+                    ("arg" variable
+                       (:pointer 1
+                        :type ("tee_ioctl_open_session_arg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4163 4202])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4212 4236]))                  
+                :type "int")
+                nil [4106 4237])
+            ("optee_close_session" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4262 4286])
+                    ("session" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4287 4299]))                  
+                :type "int")
+                nil [4238 4300])
+            ("optee_invoke_func" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4323 4347])
+                    ("arg" variable
+                       (:pointer 1
+                        :type ("tee_ioctl_invoke_arg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4348 4381])
+                    ("param" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4390 4414]))                  
+                :type "int")
+                nil [4301 4415])
+            ("optee_cancel_req" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4437 4461])
+                    ("cancel_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4462 4476])
+                    ("session" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4477 4489]))                  
+                :type "int")
+                nil [4416 4490])
+            ("optee_enable_shm_cache" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("optee" variable
+                       (:pointer 1
+                        :type ("optee" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4520 4540]))                  
+                :type "void")
+                nil [4492 4541])
+            ("optee_disable_shm_cache" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("optee" variable
+                       (:pointer 1
+                        :type ("optee" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4571 4591]))                  
+                :type "void")
+                nil [4542 4592])
+            ("optee_shm_register" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4617 4641])
+                    ("shm" variable
+                       (:pointer 1
+                        :type ("tee_shm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4642 4662])
+                    ("pages" variable
+                       (:pointer 2
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4672 4692])
+                    ("num_pages" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4693 4710])
+                    ("start" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4720 4740]))                  
+                :type "int")
+                nil [4594 4741])
+            ("optee_shm_unregister" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4767 4791])
+                    ("shm" variable
+                       (:pointer 1
+                        :type ("tee_shm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4792 4812]))                  
+                :type "int")
+                nil [4742 4813])
+            ("optee_shm_register_supp" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4843 4867])
+                    ("shm" variable
+                       (:pointer 1
+                        :type ("tee_shm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4868 4888])
+                    ("pages" variable
+                       (:pointer 2
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4896 4916])
+                    ("num_pages" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4917 4934])
+                    ("start" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4942 4962]))                  
+                :type "int")
+                nil [4815 4963])
+            ("optee_shm_unregister_supp" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("tee_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4994 5018])
+                    ("shm" variable
+                       (:pointer 1
+                        :type ("tee_shm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5019 5039]))                  
+                :type "int")
+                nil [4964 5040])
+            ("optee_from_msg_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5067 5092])
+                    ("num_params" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5093 5111])
+                    ("msg_params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("optee_msg_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5116 5157]))                  
+                :type "int")
+                nil [5042 5158])
+            ("optee_to_msg_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("msg_params" variable
+                       (:pointer 1
+                        :type ("optee_msg_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5182 5217])
+                    ("num_params" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5218 5236])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("tee_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5246 5277]))                  
+                :type "int")
+                nil [5159 5278])
+            ("optee_allocate_pages_list" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("num_entries" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5311 5330]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [5280 5331])
+            ("optee_free_pages_list" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("array" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5359 5371])
+                    ("num_entries" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5372 5391]))                  
+                :type "void")
+                nil [5332 5392])
+            ("optee_fill_pages_list" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5420 5429])
+                    ("pages" variable
+                       (:pointer 2
+                        :type ("page" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5430 5450])
+                    ("num_pages" variable (:type "int") (reparse-symbol arg-sub-list) [5451 5465])
+                    ("page_offset" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5472 5491]))                  
+                :type "void")
+                nil [5393 5492])
+            ("optee_enumerate_devices" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5522 5527]))                  
+                :type "int")
+                nil [5494 5528])
+            ("reg_pair_to_ptr" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("reg0" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5591 5600])
+                    ("reg1" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5601 5610]))                  
+                :type "void")
+                nil [5555 5673])
+            ("reg_pair_from_64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("reg0" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5711 5721])
+                    ("reg1" variable
+                       (:pointer 1
+                        :type ("u32" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5722 5732])
+                    ("val" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5733 5741]))                  
+                :type "void")
+                nil [5675 5779]))          
+      :file "optee_private.h"
+      :pointmax 5808
+      :fsize 5807
+      :lastmodtime '(25148 63094)
+      :unmatched-syntax '((punctuation 3661 . 3662) (punctuation 3584 . 3585) (TYPEDEF 617 . 624))
+      :lexical-table 
+        '(("TEEC_ERROR_BAD_PARAMETERS" . ((number "0xFFFF0006" 434 . 444)))
+          ("OPTEE_MAX_ARG_SIZE" . ((number "1024" 301 . 305)))
+          ("TEEC_ERROR_OUT_OF_MEMORY" . ((number "0xFFFF000C" 522 . 532)))
+          ("TEEC_ORIGIN_COMMS" . ((number "0x00000002" 605 . 615)))
+          ("OPTEE_PRIVATE_H")
+          ("TEEC_ERROR_SHORT_BUFFER" . ((number "0xFFFF0010" 566 . 576)))
+          ("TEEC_SUCCESS" . ((number "0x00000000" 389 . 399)))
+          ("TEEC_ERROR_COMMUNICATION" . ((number "0xFFFF000E" 478 . 488)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "optee_msg.h"
+      :fsize 14603
+      :lastmodtime '(25148 63094))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("OPTEE_SMC_H" variable (:constant-flag t) nil [136 147])
+            ("linux/arm-smccc.h" include (:system-flag t) nil [149 177])
+            ("linux/bitops.h" include (:system-flag t) nil [178 203])
+            ("OPTEE_SMC_STD_CALL_VAL" variable (:constant-flag t) nil [213 235])
+            ("OPTEE_SMC_FAST_CALL_VAL" variable (:constant-flag t) nil [362 385])
+            ("OPTEE_SMC_FUNCID_CALLS_COUNT" variable (:constant-flag t) nil [570 598])
+            ("OPTEE_SMC_CALLS_COUNT" variable (:constant-flag t) nil [614 635])
+            ("OPTEE_SMC_SHM_CACHED" variable (:constant-flag t) nil [884 904])
+            ("OPTEE_SMC_FUNCID_CALLS_UID" variable (:constant-flag t) nil [1334 1360])
+            ("OPTEE_SMC_CALLS_UID" variable (:constant-flag t) nil [1396 1415])
+            ("OPTEE_SMC_FUNCID_CALLS_REVISION" variable (:constant-flag t) nil [1747 1778])
+            ("OPTEE_SMC_CALLS_REVISION" variable (:constant-flag t) nil [1819 1843])
+            ("optee_smc_calls_revision_result" type
+               (:members 
+                  ( ("major" variable (:type "unsigned long") (reparse-symbol classsubparts) [2029 2049])
+                    ("minor" variable (:type "unsigned long") (reparse-symbol classsubparts) [2051 2071])
+                    ("reserved0" variable (:type "unsigned long") (reparse-symbol classsubparts) [2073 2097])
+                    ("reserved1" variable (:type "unsigned long") (reparse-symbol classsubparts) [2099 2123]))                  
+                :type "struct")
+                nil [1987 2126])
+            ("OPTEE_SMC_FUNCID_GET_OS_UUID" variable (:constant-flag t) nil [2406 2434])
+            ("OPTEE_SMC_CALL_GET_OS_UUID" variable (:constant-flag t) nil [2472 2498])
+            ("OPTEE_SMC_FUNCID_GET_OS_REVISION" variable (:constant-flag t) nil [2967 2999])
+            ("OPTEE_SMC_CALL_GET_OS_REVISION" variable (:constant-flag t) nil [3041 3071])
+            ("optee_smc_call_get_os_revision_result" type
+               (:members 
+                  ( ("major" variable (:type "unsigned long") (reparse-symbol classsubparts) [3182 3202])
+                    ("minor" variable (:type "unsigned long") (reparse-symbol classsubparts) [3204 3224])
+                    ("build_id" variable (:type "unsigned long") (reparse-symbol classsubparts) [3226 3249])
+                    ("reserved1" variable (:type "unsigned long") (reparse-symbol classsubparts) [3251 3275]))                  
+                :type "struct")
+                nil [3134 3278])
+            ("OPTEE_SMC_FUNCID_CALL_WITH_ARG" variable (:constant-flag t) nil [4705 4735])
+            ("OPTEE_SMC_CALL_WITH_ARG" variable (:constant-flag t) nil [4775 4798])
+            ("OPTEE_SMC_FUNCID_GET_SHM_CONFIG" variable (:constant-flag t) nil [5418 5449])
+            ("OPTEE_SMC_GET_SHM_CONFIG" variable (:constant-flag t) nil [5460 5484])
+            ("optee_smc_get_shm_config_result" type
+               (:members 
+                  ( ("status" variable (:type "unsigned long") (reparse-symbol classsubparts) [5588 5609])
+                    ("start" variable (:type "unsigned long") (reparse-symbol classsubparts) [5611 5631])
+                    ("size" variable (:type "unsigned long") (reparse-symbol classsubparts) [5633 5652])
+                    ("settings" variable (:type "unsigned long") (reparse-symbol classsubparts) [5654 5677]))                  
+                :type "struct")
+                nil [5546 5680])
+            ("OPTEE_SMC_NSEC_CAP_UNIPROCESSOR" variable (:constant-flag t) nil [6351 6382])
+            ("OPTEE_SMC_SEC_CAP_HAVE_RESERVED_SHM" variable (:constant-flag t) nil [6469 6504])
+            ("OPTEE_SMC_SEC_CAP_UNREGISTERED_SHM" variable (:constant-flag t) nil [6597 6631])
+            ("OPTEE_SMC_SEC_CAP_DYNAMIC_SHM" variable (:constant-flag t) nil [6805 6834])
+            ("OPTEE_SMC_FUNCID_EXCHANGE_CAPABILITIES" variable (:constant-flag t) nil [6852 6890])
+            ("OPTEE_SMC_EXCHANGE_CAPABILITIES" variable (:constant-flag t) nil [6901 6932])
+            ("optee_smc_exchange_capabilities_result" type
+               (:members 
+                  ( ("status" variable (:type "unsigned long") (reparse-symbol classsubparts) [7050 7071])
+                    ("capabilities" variable (:type "unsigned long") (reparse-symbol classsubparts) [7073 7100])
+                    ("reserved0" variable (:type "unsigned long") (reparse-symbol classsubparts) [7102 7126])
+                    ("reserved1" variable (:type "unsigned long") (reparse-symbol classsubparts) [7128 7152]))                  
+                :type "struct")
+                nil [7001 7155])
+            ("OPTEE_SMC_FUNCID_DISABLE_SHM_CACHE" variable (:constant-flag t) nil [8047 8081])
+            ("OPTEE_SMC_DISABLE_SHM_CACHE" variable (:constant-flag t) nil [8093 8120])
+            ("optee_smc_disable_shm_cache_result" type
+               (:members 
+                  ( ("status" variable (:type "unsigned long") (reparse-symbol classsubparts) [8230 8251])
+                    ("shm_upper32" variable (:type "unsigned long") (reparse-symbol classsubparts) [8253 8279])
+                    ("shm_lower32" variable (:type "unsigned long") (reparse-symbol classsubparts) [8281 8307])
+                    ("reserved0" variable (:type "unsigned long") (reparse-symbol classsubparts) [8309 8333]))                  
+                :type "struct")
+                nil [8185 8336])
+            ("OPTEE_SMC_FUNCID_ENABLE_SHM_CACHE" variable (:constant-flag t) nil [8966 8999])
+            ("OPTEE_SMC_ENABLE_SHM_CACHE" variable (:constant-flag t) nil [9011 9037])
+            ("OPTEE_SMC_FUNCID_RETURN_FROM_RPC" variable (:constant-flag t) nil [9853 9885])
+            ("OPTEE_SMC_CALL_RETURN_FROM_RPC" variable (:constant-flag t) nil [9896 9926])
+            ("OPTEE_SMC_RETURN_RPC_PREFIX_MASK" variable (:constant-flag t) nil [9996 10028])
+            ("OPTEE_SMC_RETURN_RPC_PREFIX" variable (:constant-flag t) nil [10048 10075])
+            ("OPTEE_SMC_RETURN_RPC_FUNC_MASK" variable (:constant-flag t) nil [10096 10126])
+            ("OPTEE_SMC_RETURN_GET_RPC_FUNC" variable (:constant-flag t) nil [10148 10177])
+            ("OPTEE_SMC_RPC_VAL" variable (:constant-flag t) nil [10236 10253])
+            ("OPTEE_SMC_RPC_FUNC_ALLOC" variable (:constant-flag t) nil [11253 11277])
+            ("OPTEE_SMC_RETURN_RPC_ALLOC" variable (:constant-flag t) nil [11288 11314])
+            ("OPTEE_SMC_RPC_FUNC_FREE" variable (:constant-flag t) nil [11856 11879])
+            ("OPTEE_SMC_RETURN_RPC_FREE" variable (:constant-flag t) nil [11891 11916])
+            ("OPTEE_SMC_RPC_FUNC_FOREIGN_INTR" variable (:constant-flag t) nil [12244 12275])
+            ("OPTEE_SMC_RETURN_RPC_FOREIGN_INTR" variable (:constant-flag t) nil [12287 12320])
+            ("OPTEE_SMC_RPC_FUNC_CMD" variable (:constant-flag t) nil [13291 13313])
+            ("OPTEE_SMC_RETURN_RPC_CMD" variable (:constant-flag t) nil [13325 13349])
+            ("OPTEE_SMC_RETURN_UNKNOWN_FUNCTION" variable (:constant-flag t) nil [13425 13458])
+            ("OPTEE_SMC_RETURN_OK" variable (:constant-flag t) nil [13531 13550])
+            ("OPTEE_SMC_RETURN_ETHREAD_LIMIT" variable (:constant-flag t) nil [13564 13594])
+            ("OPTEE_SMC_RETURN_EBUSY" variable (:constant-flag t) nil [13607 13629])
+            ("OPTEE_SMC_RETURN_ERESUME" variable (:constant-flag t) nil [13643 13667])
+            ("OPTEE_SMC_RETURN_EBADADDR" variable (:constant-flag t) nil [13680 13705])
+            ("OPTEE_SMC_RETURN_EBADCMD" variable (:constant-flag t) nil [13718 13742])
+            ("OPTEE_SMC_RETURN_ENOMEM" variable (:constant-flag t) nil [13755 13778])
+            ("OPTEE_SMC_RETURN_ENOTAVAIL" variable (:constant-flag t) nil [13792 13818])
+            ("OPTEE_SMC_RETURN_IS_RPC" variable (:constant-flag t) nil [13831 13854])
+            ("__optee_smc_return_is_rpc" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ret" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13939 13947]))                  
+                :type "bool")
+                nil [13894 14087]))          
+      :file "optee_smc.h"
+      :pointmax 14114
+      :fsize 14113
+      :lastmodtime '(25148 63094)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("OPTEE_SMC_FUNCID_DISABLE_SHM_CACHE" . ((number "10" 8082 . 8084)))
+          ("OPTEE_SMC_RETURN_RPC_PREFIX_MASK" . ((number "0xFFFF0000" 10029 . 10039)))
+          ("OPTEE_SMC_RETURN_RPC_CMD" . ((symbol "OPTEE_SMC_RPC_VAL" 13353 . 13370) (semantic-list "(OPTEE_SMC_RPC_FUNC_CMD)" 13370 . 13394)))
+          ("OPTEE_SMC_FUNCID_EXCHANGE_CAPABILITIES" . ((number "9" 6891 . 6892)))
+          ("OPTEE_SMC_DISABLE_SHM_CACHE" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 8124 . 8147) (semantic-list "(OPTEE_SMC_FUNCID_DISABLE_SHM_CACHE)" 8147 . 8183)))
+          ("OPTEE_SMC_FUNCID_ENABLE_SHM_CACHE" . ((number "11" 9000 . 9002)))
+          ("OPTEE_SMC_RETURN_RPC_PREFIX" . ((number "0xFFFF0000" 10077 . 10087)))
+          ("OPTEE_SMC_RETURN_RPC_FUNC_MASK" . ((number "0x0000FFFF" 10128 . 10138)))
+          ("OPTEE_SMC_RETURN_RPC_FOREIGN_INTR" . ((symbol "OPTEE_SMC_RPC_VAL" 12324 . 12341) (semantic-list "(OPTEE_SMC_RPC_FUNC_FOREIGN_INTR)" 12341 . 12374)))
+          ("OPTEE_SMC_RETURN_UNKNOWN_FUNCTION" . ((number "0xFFFFFFFF" 13459 . 13469)))
+          ("OPTEE_SMC_CALL_WITH_ARG" . ((symbol "OPTEE_SMC_STD_CALL_VAL" 4802 . 4824) (semantic-list "(OPTEE_SMC_FUNCID_CALL_WITH_ARG)" 4824 . 4856)))
+          ("OPTEE_SMC_CALL_RETURN_FROM_RPC" . ((symbol "OPTEE_SMC_STD_CALL_VAL" 9930 . 9952) (semantic-list "(OPTEE_SMC_FUNCID_RETURN_FROM_RPC)" 9952 . 9986)))
+          ("OPTEE_SMC_RETURN_OK" . ((number "0x0" 13552 . 13555)))
+          ("OPTEE_SMC_RETURN_IS_RPC" (spp-arg-list ("ret") 13854 . 13859) . ((symbol "__optee_smc_return_is_rpc" 13860 . 13885) (semantic-list "((ret))" 13885 . 13892)))
+          ("OPTEE_SMC_SEC_CAP_HAVE_RESERVED_SHM" . ((symbol "BIT" 6505 . 6508) (semantic-list "(0)" 6508 . 6511)))
+          ("OPTEE_SMC_EXCHANGE_CAPABILITIES" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 6936 . 6959) (semantic-list "(OPTEE_SMC_FUNCID_EXCHANGE_CAPABILITIES)" 6959 . 6999)))
+          ("OPTEE_SMC_CALL_GET_OS_REVISION" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 3075 . 3098) (semantic-list "(OPTEE_SMC_FUNCID_GET_OS_REVISION)" 3098 . 3132)))
+          ("OPTEE_SMC_SEC_CAP_UNREGISTERED_SHM" . ((symbol "BIT" 6632 . 6635) (semantic-list "(1)" 6635 . 6638)))
+          ("OPTEE_SMC_SEC_CAP_DYNAMIC_SHM" . ((symbol "BIT" 6836 . 6839) (semantic-list "(2)" 6839 . 6842)))
+          ("OPTEE_SMC_RPC_FUNC_ALLOC" . ((number "0" 11278 . 11279)))
+          ("OPTEE_SMC_RPC_FUNC_CMD" . ((number "5" 13315 . 13316)))
+          ("OPTEE_SMC_RETURN_ETHREAD_LIMIT" . ((number "0x1" 13595 . 13598)))
+          ("OPTEE_SMC_FUNCID_GET_SHM_CONFIG" . ((number "7" 5450 . 5451)))
+          ("OPTEE_SMC_GET_SHM_CONFIG" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 5488 . 5511) (semantic-list "(OPTEE_SMC_FUNCID_GET_SHM_CONFIG)" 5511 . 5544)))
+          ("OPTEE_SMC_RETURN_GET_RPC_FUNC" (spp-arg-list ("ret") 10177 . 10182) . ((semantic-list "((ret) & OPTEE_SMC_RETURN_RPC_FUNC_MASK)" 10186 . 10226)))
+          ("OPTEE_SMC_RPC_FUNC_FOREIGN_INTR" . ((number "4" 12277 . 12278)))
+          ("OPTEE_SMC_H")
+          ("OPTEE_SMC_STD_CALL_VAL" (spp-arg-list ("func_num") 235 . 245) . ((symbol "ARM_SMCCC_CALL_VAL" 249 . 267) (semantic-list "(ARM_SMCCC_STD_CALL, ARM_SMCCC_SMC_32, \\
+			   ARM_SMCCC_OWNER_TRUSTED_OS, (func_num))" 267 . 353)))
+          ("OPTEE_SMC_FUNCID_CALLS_REVISION" . ((symbol "OPTEE_MSG_FUNCID_CALLS_REVISION" 1779 . 1810)))
+          ("OPTEE_SMC_CALLS_REVISION" . ((symbol "ARM_SMCCC_CALL_VAL" 1847 . 1865) (semantic-list "(ARM_SMCCC_FAST_CALL, ARM_SMCCC_SMC_32, \\
+			   ARM_SMCCC_OWNER_TRUSTED_OS_END, \\
+			   OPTEE_SMC_FUNCID_CALLS_REVISION)" 1865 . 1985)))
+          ("OPTEE_SMC_ENABLE_SHM_CACHE" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 9041 . 9064) (semantic-list "(OPTEE_SMC_FUNCID_ENABLE_SHM_CACHE)" 9064 . 9099)))
+          ("OPTEE_SMC_RETURN_ERESUME" . ((number "0x3" 13668 . 13671)))
+          ("OPTEE_SMC_FUNCID_CALLS_COUNT" . ((number "0xFF00" 599 . 605)))
+          ("OPTEE_SMC_NSEC_CAP_UNIPROCESSOR" . ((symbol "BIT" 6384 . 6387) (semantic-list "(0)" 6387 . 6390)))
+          ("OPTEE_SMC_FUNCID_GET_OS_UUID" . ((symbol "OPTEE_MSG_FUNCID_GET_OS_UUID" 2435 . 2463)))
+          ("OPTEE_SMC_RETURN_RPC_ALLOC" . ((symbol "OPTEE_SMC_RPC_VAL" 11318 . 11335) (semantic-list "(OPTEE_SMC_RPC_FUNC_ALLOC)" 11335 . 11361)))
+          ("OPTEE_SMC_CALLS_UID" . ((symbol "ARM_SMCCC_CALL_VAL" 1419 . 1437) (semantic-list "(ARM_SMCCC_FAST_CALL, ARM_SMCCC_SMC_32, \\
+			   ARM_SMCCC_OWNER_TRUSTED_OS_END, \\
+			   OPTEE_SMC_FUNCID_CALLS_UID)" 1437 . 1552)))
+          ("OPTEE_SMC_CALL_GET_OS_UUID" . ((symbol "OPTEE_SMC_FAST_CALL_VAL" 2502 . 2525) (semantic-list "(OPTEE_SMC_FUNCID_GET_OS_UUID)" 2525 . 2555)))
+          ("OPTEE_SMC_FAST_CALL_VAL" (spp-arg-list ("func_num") 385 . 395) . ((symbol "ARM_SMCCC_CALL_VAL" 399 . 417) (semantic-list "(ARM_SMCCC_FAST_CALL, ARM_SMCCC_SMC_32, \\
+			   ARM_SMCCC_OWNER_TRUSTED_OS, (func_num))" 417 . 504)))
+          ("OPTEE_SMC_FUNCID_CALL_WITH_ARG" . ((symbol "OPTEE_MSG_FUNCID_CALL_WITH_ARG" 4736 . 4766)))
+          ("OPTEE_SMC_FUNCID_RETURN_FROM_RPC" . ((number "3" 9886 . 9887)))
+          ("OPTEE_SMC_RETURN_EBADCMD" . ((number "0x5" 13743 . 13746)))
+          ("OPTEE_SMC_RETURN_ENOMEM" . ((number "0x6" 13780 . 13783)))
+          ("OPTEE_SMC_SHM_CACHED" . ((number "1" 906 . 907)))
+          ("OPTEE_SMC_FUNCID_CALLS_UID" . ((symbol "OPTEE_MSG_FUNCID_CALLS_UID" 1361 . 1387)))
+          ("OPTEE_SMC_RPC_VAL" (spp-arg-list ("func") 10253 . 10259) . ((semantic-list "((func) | OPTEE_SMC_RETURN_RPC_PREFIX)" 10261 . 10299)))
+          ("OPTEE_SMC_RETURN_RPC_FREE" . ((symbol "OPTEE_SMC_RPC_VAL" 11920 . 11937) (semantic-list "(OPTEE_SMC_RPC_FUNC_FREE)" 11937 . 11962)))
+          ("OPTEE_SMC_RETURN_EBUSY" . ((number "0x2" 13631 . 13634)))
+          ("OPTEE_SMC_RETURN_EBADADDR" . ((number "0x4" 13706 . 13709)))
+          ("OPTEE_SMC_CALLS_COUNT" . ((symbol "ARM_SMCCC_CALL_VAL" 639 . 657) (semantic-list "(OPTEE_SMC_FAST_CALL, SMCCC_SMC_32, \\
+			   SMCCC_OWNER_TRUSTED_OS_END, \\
+			   OPTEE_SMC_FUNCID_CALLS_COUNT)" 657 . 766)))
+          ("OPTEE_SMC_FUNCID_GET_OS_REVISION" . ((symbol "OPTEE_MSG_FUNCID_GET_OS_REVISION" 3000 . 3032)))
+          ("OPTEE_SMC_RPC_FUNC_FREE" . ((number "2" 11881 . 11882)))
+          ("OPTEE_SMC_RETURN_ENOTAVAIL" . ((number "0x7" 13819 . 13822)))
+          )
+))
+  :file "!ssh:hafdev:!home!osboxes!pine64-optee!linux!drivers!tee!optee!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

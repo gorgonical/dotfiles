@@ -1,0 +1,1851 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm_lowlevel.h" include nil nil [222 247])
+            ("vmx_hw_info.h" include nil nil [248 272])
+            ("../pisces.h" include nil nil [275 297])
+            ("hw_info" variable
+               (:typemodifiers ("static")
+                :type ("vmx_hw_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [406 440])
+            ("covirt_get_vmx_hw_info" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [488 493]))                  
+                :type ("vmx_hw_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [443 518])
+            ("get_ex_ctrl_caps" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("field" variable
+                       (:pointer 1
+                        :type ("vmx_ctrl_field" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [549 579])
+                    ("old_msr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [598 630])
+                    ("true_msr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [649 682]))                  
+                :type "int")
+                nil [520 1134])
+            ("get_ctrl_caps" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("field" variable
+                       (:pointer 1
+                        :type ("vmx_ctrl_field" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1163 1193])
+                    ("msr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1209 1237]))                  
+                :type "int")
+                nil [1137 1465])
+            ("get_cr_fields" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("field" variable
+                       (:pointer 1
+                        :type ("vmx_cr_field" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1495 1523])
+                    ("fixed_1_msr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1539 1573])
+                    ("fixed_0_msr" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1589 1623]))                  
+                :type "int")
+                nil [1469 1942])
+            ("covirt_init_vmx_hw" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1972 1978]))                  
+                :type "int")
+                nil [1947 5333]))          
+      :file "vmx_hw_info.c"
+      :pointmax 5334
+      :fsize 5333
+      :lastmodtime '(24280 268)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_lowlevel.h"
+      :fsize 5855
+      :lastmodtime '(24457 54961))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_hw_info.h"
+      :fsize 4774
+      :lastmodtime '(24280 268))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmx.h" include nil nil [223 239])
+            ("vmcs.h" include nil nil [240 257])
+            ("vmx_ept.h" include nil nil [258 278])
+            ("segments.h" include nil nil [279 300])
+            ("vmx_msr.h" include nil nil [301 321])
+            ("vmm_ctx.h" include nil nil [322 342])
+            ("vmm_lowlevel.h" include nil nil [343 368])
+            ("vmx_lowlevel.h" include nil nil [369 394])
+            ("vmx_hw_info.h" include nil nil [395 419])
+            ("vmm_paging.h" include nil nil [420 443])
+            ("../pisces.h" include nil nil [446 468])
+            ("covirt.h" include nil nil [469 488])
+            ("petos.h" include (:system-flag t) nil [490 508])
+            ("__init_vmx_on_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vmx_on_reg_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [543 568]))                  
+                :type "int")
+                nil [510 881])
+            ("__init_vmx_msr_bitmaps" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("msr_addresses_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [918 946]))                  
+                :type "int")
+                nil [883 1334])
+            ("__init_guest_vmcs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("guest_vmcs_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1372 1397]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [1336 2709])
+            ("set_piv_bitmap" function
+               (:arguments 
+                  ( ("bitmap" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2736 2753])
+                    ("vector" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2769 2789])
+                    ("route_to_piv" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2805 2831]))                  
+                :type "int")
+                nil [2717 2952])
+            ("__set_vmcs_ctrl_fields" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2988 3024])
+                    ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3048 3087]))                  
+                :type "int")
+                nil [2954 7900])
+            ("__init_host_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("covirt_vmm_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7935 7964]))                  
+                :type "int")
+                nil [7904 8602])
+            ("__init_guest_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("covirt_vmm_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8759 8787])
+                    ("numa" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8788 8797]))                  
+                :type "int")
+                nil [8727 9330])
+            ("__enable_vmx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vmx_on_region" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9361 9386]))                  
+                :type "int")
+                nil [9335 9839])
+            ("__disable_vmx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9869 9875]))                  
+                :type "void")
+                nil [9842 9987])
+            ("__init_ept" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10011 10044]))                  
+                :type "int")
+                nil [9989 11004])
+            ("covirt_init_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11026 11031]))                  
+                :type "int")
+                nil [11006 11070])
+            ("covirt_vmx_del_ept_reg" function
+               (:arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11100 11134])
+                    ("base_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11158 11193])
+                    ("num_pages" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11217 11252]))                  
+                :type "int")
+                nil [11073 11268])
+            ("covirt_setup_vmx_core" function
+               (:arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11298 11334])
+                    ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11357 11395]))                  
+                :type "int")
+                nil [11272 13548])
+            ("VMX_FEATURE_CONTROL_MSR" variable (:constant-flag t) nil [13561 13584])
+            ("VMX_FEATURE_CONTROL_FLAGS" variable (:constant-flag t) nil [13606 13631])
+            ("CPUID_VMX_FEATURES" variable (:constant-flag t) nil [13651 13669])
+            ("CPUID_1_ECX_VTXFLAG" variable (:constant-flag t) nil [13718 13737])
+            ("covirt_is_vmx_capable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13784 13790]))                  
+                :type "int")
+                nil [13756 14339])
+            ("disable_local_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14364 14369]))                  
+                :type "int")
+                nil [14342 14404])
+            ("enable_local_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14427 14432]))                  
+                :type "int")
+                nil [14406 14807]))          
+      :file "vmx.c"
+      :pointmax 15086
+      :fsize 15085
+      :lastmodtime '(25063 48331)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VMX_FEATURE_CONTROL_MSR" . ((number "0x0000003a" 13558 . 13568)))
+          ("VMX_FEATURE_CONTROL_FLAGS" . ((number "0x00000005" 13603 . 13613)))
+          ("CPUID_VMX_FEATURES" . ((number "0x00000005" 13648 . 13658)))
+          ("CPUID_1_ECX_VTXFLAG" . ((number "0x00000020" 13715 . 13725)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__VMX_H__" variable (:constant-flag t) nil [249 258])
+            ("vmcs.h" include nil nil [260 277])
+            ("vmx_lowlevel.h" include nil nil [278 303])
+            ("../pisces.h" include nil nil [305 327])
+            ("POSTED_INTERRUPT_VECTOR" variable (:constant-flag t) nil [337 360])
+            ("VMX_SUCCESS" variable (:constant-flag t) nil [374 385])
+            ("VMX_FAIL_INVALID" variable (:constant-flag t) nil [403 419])
+            ("VMX_FAIL_VALID" variable (:constant-flag t) nil [432 446])
+            ("VMM_ERROR" variable (:constant-flag t) nil [461 470])
+            ("vmx_ept_ptr" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [524 534])
+                            ("" type
+                               (:members 
+                                  ( ("mem_type" variable
+                                       (:suffix ":3"
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [564 580])
+                                    ("walk_len" variable
+                                       (:suffix ":3"
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [593 609])
+                                    ("enabled_dirty" variable
+                                       (:suffix ":1"
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [622 643])
+                                    ("rsvd1" variable
+                                       (:suffix ":5"
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [656 669])
+                                    ("ept_pml_shifted" variable
+                                       (:suffix ":52"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [682 707]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [543 742]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [508 773]))                  
+                :type "struct")
+                nil [483 800])
+            ("vmx_pin_ctrls" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [837 847])
+                            ("" type
+                               (:members 
+                                  ( ("ext_int_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [862 894])
+                                    ("rsvd1" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [898 930])
+                                    ("nmi_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [935 967])
+                                    ("rsvd2" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [971 1003])
+                                    ("virt_nmi" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1007 1039])
+                                    ("active_preempt_timer" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1043 1075])
+                                    ("process_posted_ints" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1079 1111])
+                                    ("rsvd3" variable
+                                       (:suffix ":24"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1115 1148]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [850 1177]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [827 1205]))                  
+                :type "struct")
+                nil [803 1232])
+            ("vmx_pri_proc_ctrls" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1274 1284])
+                            ("" type
+                               (:members 
+                                  ( ("rsvd1" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1299 1323])
+                                    ("int_wndw_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1327 1351])
+                                    ("tsc_offset" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1355 1379])
+                                    ("rsvd2" variable
+                                       (:suffix ":3"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1383 1407])
+                                    ("hlt_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1411 1435])
+                                    ("rsvd3" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1439 1463])
+                                    ("invlpg_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1467 1491])
+                                    ("mwait_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1495 1519])
+                                    ("rdpmc_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1523 1547])
+                                    ("rdtsc_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1551 1575])
+                                    ("rsvd4" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1579 1603])
+                                    ("cr3_ld_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1607 1631])
+                                    ("cr3_str_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1635 1659])
+                                    ("rsvd5" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1663 1687])
+                                    ("cr8_ld_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1691 1715])
+                                    ("cr8_str_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1719 1743])
+                                    ("tpr_shdw" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1747 1771])
+                                    ("nmi_wndw_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1775 1799])
+                                    ("mov_dr_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1803 1827])
+                                    ("uncon_io_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1831 1855])
+                                    ("use_io_bitmap" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1859 1883])
+                                    ("rsvd6" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1887 1911])
+                                    ("monitor_trap" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1915 1939])
+                                    ("use_msr_bitmap" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1943 1967])
+                                    ("monitor_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1971 1995])
+                                    ("pause_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1999 2023])
+                                    ("sec_ctrls" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2027 2051]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1287 2080]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1264 2108]))                  
+                :type "struct")
+                nil [1235 2135])
+            ("vmx_sec_proc_ctrls" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2176 2186])
+                            ("" type
+                               (:members 
+                                  ( ("virt_apic_acc" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2201 2227])
+                                    ("enable_ept" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2231 2257])
+                                    ("desc_table_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2261 2287])
+                                    ("enable_rdtscp" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2291 2317])
+                                    ("virt_x2apic" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2321 2347])
+                                    ("enable_vpid" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2351 2377])
+                                    ("wbinvd_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2381 2407])
+                                    ("unrstrct_guest" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2411 2437])
+                                    ("apic_reg_virt" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2490 2516])
+                                    ("virt_int_delivery" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2520 2546])
+                                    ("pause_loop_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2550 2576])
+                                    ("rdrand_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2580 2606])
+                                    ("enable_invpcid" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2610 2636])
+                                    ("enable_vm_fns" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2640 2666])
+                                    ("rsvd2" variable
+                                       (:suffix ":18"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2670 2697]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2189 2726]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2166 2754]))                  
+                :type "struct")
+                nil [2137 2781])
+            ("vmx_exit_ctrls" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2818 2828])
+                            ("" type
+                               (:members 
+                                  ( ("rsvd1" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2843 2872])
+                                    ("save_dbg_ctrls" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2876 2905])
+                                    ("rsvd2" variable
+                                       (:suffix ":6"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2909 2938])
+                                    ("host_64_on" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2942 2971])
+                                    ("rsvd3" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2975 3004])
+                                    ("ld_perf_glbl_ctrl" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3008 3037])
+                                    ("rsvd4" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3041 3070])
+                                    ("ack_int_on_exit" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3074 3103])
+                                    ("rsvd5" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3107 3136])
+                                    ("save_pat" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3140 3169])
+                                    ("ld_pat" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3173 3202])
+                                    ("save_efer" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3206 3235])
+                                    ("ld_efer" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3239 3268])
+                                    ("save_preempt_timer" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3272 3301])
+                                    ("rsvd6" variable
+                                       (:suffix ":9"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3305 3334]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [2831 3363]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [2808 3391]))                  
+                :type "struct")
+                nil [2783 3418])
+            ("vmx_entry_ctrls" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3456 3466])
+                            ("" type
+                               (:members 
+                                  ( ("rsvd1" variable
+                                       (:suffix ":2"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3481 3510])
+                                    ("ld_dbg_ctrls" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3514 3543])
+                                    ("rsvd2" variable
+                                       (:suffix ":6"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3547 3576])
+                                    ("guest_ia32e" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3580 3609])
+                                    ("smm_entry" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3613 3642])
+                                    ("no_dual_monitor" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3646 3675])
+                                    ("rsvd3" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3679 3708])
+                                    ("ld_perf_glbl_ctrl" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3712 3741])
+                                    ("ld_pat" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3745 3774])
+                                    ("ld_efer" variable
+                                       (:suffix ":1"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3778 3807])
+                                    ("rsvd4" variable
+                                       (:suffix ":16"
+                                        :type ("u32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3811 3841]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3469 3870]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3446 3898]))                  
+                :type "struct")
+                nil [3420 3925])
+            ("vmx_data" type
+               (:members 
+                  ( ("vmcs_ptr_phys" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3950 3974])
+                    ("pin_ctrls" variable (:type ("vmx_pin_ctrls" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4003 4041])
+                    ("pri_proc_ctrls" variable (:type ("vmx_pri_proc_ctrls" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4043 4086])
+                    ("sec_proc_ctrls" variable (:type ("vmx_sec_proc_ctrls" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4088 4131])
+                    ("exit_ctrls" variable (:type ("vmx_exit_ctrls" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4133 4172])
+                    ("entry_ctrls" variable (:type ("vmx_entry_ctrls" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4174 4214])
+                    ("excp_bmap" variable (:type ("vmx_exception_bitmap" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4217 4255]))                  
+                :type "struct")
+                nil [3930 4260])
+            ("check_vmcs_write" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4301 4320])
+                    ("val" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4339 4356]))                  
+                :type "int")
+                nil [4265 4539])
+            ("check_vmcs_read" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4576 4597])
+                    ("val" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4615 4634]))                  
+                :type "int")
+                nil [4541 4805])
+            ("covirt_core_state" type
+               (:prototype t
+                :type "struct")
+                nil [4808 4833])
+            ("covirt_vm_state" type
+               (:prototype t
+                :type "struct")
+                nil [4834 4857])
+            ("enable_local_vmx" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4880 4885]))                  
+                :type "int")
+                nil [4859 4886])
+            ("disable_local_vmx" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4909 4914]))                  
+                :type "int")
+                nil [4887 4915])
+            ("covirt_is_vmx_capable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4944 4950]))                  
+                :type "int")
+                nil [4917 4951])
+            ("covirt_is_vmx_enabled" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4979 4985]))                  
+                :type "int")
+                nil [4952 4986])
+            ("covirt_setup_vmx_core" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5013 5049])
+                    ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5076 5115]))                  
+                :type "int")
+                nil [4987 5116])
+            ("covirt_init_vmx" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5139 5145]))                  
+                :type "int")
+                nil [5118 5146])
+            ("covirt_vmx_del_ept_reg" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vm_state" variable
+                       (:pointer 1
+                        :type ("covirt_vm_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5175 5209])
+                    ("base_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5237 5272])
+                    ("num_pages" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5300 5335]))                  
+                :type "int")
+                nil [5148 5336]))          
+      :file "vmx.h"
+      :pointmax 5349
+      :fsize 5348
+      :lastmodtime '(24678 41472)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VMX_FAIL_VALID" . ((number "2" 451 . 452)))
+          ("__VMX_H__")
+          ("POSTED_INTERRUPT_VECTOR" . ((number "210" 361 . 364)))
+          ("VMX_FAIL_INVALID" . ((number "1" 422 . 423)))
+          ("VMM_ERROR" . ((number "3" 480 . 481)))
+          ("VMX_SUCCESS" . ((number "0" 393 . 394)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vmcs.h"
+      :fsize 13886
+      :lastmodtime '(24295 53059))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_ept.h"
+      :fsize 5338
+      :lastmodtime '(24613 47752))
+    (semanticdb-table "semanticdb-table"
+      :file "segments.h"
+      :fsize 1272
+      :lastmodtime '(24280 268))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_msr.h"
+      :fsize 910
+      :lastmodtime '(24456 33012))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_ctx.h"
+      :fsize 2610
+      :lastmodtime '(24721 61625))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_lowlevel.h"
+      :fsize 742
+      :lastmodtime '(24280 268))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_paging.h"
+      :fsize 12563
+      :lastmodtime '(24674 48553))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__COVIRT_H__" variable (:constant-flag t) nil [252 264])
+            ("linux/types.h" include (:system-flag t) nil [266 290])
+            ("vmm_ctx.h" include nil nil [292 312])
+            ("../pisces.h" include nil nil [313 335])
+            ("../pgtables.h" include nil nil [336 360])
+            ("pisces_enclave" type
+               (:prototype t
+                :type "struct")
+                nil [362 384])
+            ("N_BUFFERS" variable (:constant-flag t) nil [394 403])
+            ("USE_POSTED_INTERRUPTS" variable (:constant-flag t) nil [557 578])
+            ("USE_VIRT_APIC" variable (:constant-flag t) nil [589 602])
+            ("USE_EPT" variable (:constant-flag t) nil [613 620])
+            ("LOG_BUFFER_PGS_ORDER" variable (:constant-flag t) nil [632 652])
+            ("LOG_BUFFER_PGS" variable (:constant-flag t) nil [663 677])
+            ("CMD_BUFFER_LEN" variable (:constant-flag t) nil [695 709])
+            ("LOG_BUFFER_ROW_LEN" variable (:constant-flag t) nil [727 745])
+            ("N_ROWS" variable (:constant-flag t) nil [760 766])
+            ("covirt_cmd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("COVIRT_TLB_INVALIDATE" variable
+                             (:constant-flag t
+                              :default-value (863 866)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [839 866])
+                          ("COVIRT_MIGRATE_SOURCE" variable
+                             (:constant-flag t
+                              :default-value (894 897)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [870 897])
+                          ("COVIRT_MIGRATE_DEST" variable
+                             (:constant-flag t
+                              :default-value (925 928)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [901 928])
+                          ("COVIRT_INJECT_IPI" variable
+                             (:constant-flag t
+                              :default-value (956 959)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [932 959]))                        
+                      :type "enum")
+                      nil nil)
+                :type "typedef")
+                nil [822 976])
+            ("covirt_spinlock" type
+               (:members 
+                  ( ("raw_lock" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1007 1020])
+                    ("use_count" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1025 1039]))                  
+                :type "struct")
+                nil [978 1066])
+            ("covirt_cmd_queue" type
+               (:members 
+                  ( ("pending" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1096 1108])
+                    ("cmd_type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1111 1133])
+                    ("msg" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1136 1161]))                  
+                :type "struct")
+                nil [1068 1164])
+            ("LOG_BUFFER_HEADER_SIZE" variable (:constant-flag t) nil [1174 1196])
+            ("log_buffer" type
+               (:members 
+                  ( ("spinlock" variable (:type ("covirt_spinlock" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1289 1321])
+                    ("current_row" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1340 1356])
+                    ("buffer" variable
+                       (:dereference 2
+                        :type "char")
+                        (reparse-symbol classsubparts) [1359 1399]))                  
+                :type "struct")
+                nil [1267 1426])
+            ("covirt_vm_state" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1464 1474])
+                            ("" type
+                               (:members 
+                                  ( ("enable_nested_pts" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1489 1515])
+                                    ("enable_virt_apic" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1519 1545])
+                                    ("enable_piv" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1552 1578])
+                                    ("rsvd" variable
+                                       (:suffix ":61"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1582 1609]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1477 1638]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1454 1666])
+                    ("numa_domain" variable (:type "int") (reparse-symbol classsubparts) [1670 1686])
+                    ("doorbell_vector" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1732 1752])
+                    ("pi_desc_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1755 1776])
+                    ("nested_cr3" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1778 1799]))                  
+                :type "struct")
+                nil [1428 1802])
+            ("covirt_core_state" type
+               (:members 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1833 1865])
+                    ("vmm_ctx" variable (:type ("covirt_vmm_ctx" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1868 1898])
+                    ("is_boot_cpu" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1900 1915])
+                    ("cpu_id" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1918 1928])
+                    ("cpu_ordinal" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1931 1946])
+                    ("virt_apicid" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1949 1965]))                  
+                :type "struct")
+                nil [1805 1968])
+            ("send_msg_to_covirt_boot_cpu" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2003 2035])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2036 2046])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2047 2065]))                  
+                :type "int")
+                nil [1971 2066])
+            ("send_msg_to_covirt_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2095 2127])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2128 2138])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2139 2157]))                  
+                :type "int")
+                nil [2068 2158])
+            ("send_msg_to_covirt_single" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2190 2222])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2223 2233])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2234 2252])
+                    ("cpu_id" variable (:type "short") (reparse-symbol arg-sub-list) [2253 2266]))                  
+                :type "int")
+                nil [2160 2267])
+            ("signal_covirt" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2287 2319]))                  
+                :type "int")
+                nil [2269 2320])
+            ("check_covirt_msg_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2348 2379]))                  
+                :type "void")
+                nil [2322 2380])
+            ("check_covirt_msg_single" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2411 2442])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2443 2459]))                  
+                :type "void")
+                nil [2382 2460])
+            ("wait_on_covirts" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2482 2513]))                  
+                :type "int")
+                nil [2462 2514])
+            ("covirt_load_vmm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vmm_fd" variable (:type "int") (reparse-symbol arg-sub-list) [2536 2547]))                  
+                :type "int")
+                nil [2516 2548])
+            ("covirt_get_vmm_size" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2580 2585]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [2550 2586])
+            ("covirt_get_vmm_addr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2617 2622]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [2587 2623])
+            ("init_vmm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2638 2643]))                  
+                :type "int")
+                nil [2625 2644])
+            ("init_covirt_vm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2665 2697]))                  
+                :type "int")
+                nil [2646 2698])
+            ("init_covirt_cpu" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2719 2751])
+                    ("cpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2752 2763])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2764 2780]))                  
+                :type "int")
+                nil [2699 2781])
+            ("init_secondary_covirt_cpu" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2812 2843])
+                    ("cpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2844 2855])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2856 2872]))                  
+                :type "int")
+                nil [2782 2873])
+            ("set_queues_pending" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2899 2930]))                  
+                :type "void")
+                nil [2875 2931])
+            ("covirt_add_memory" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2955 2987])
+                    ("base_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3006 3040])
+                    ("num_pages" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3059 3093]))                  
+                :type "int")
+                nil [2933 3094])
+            ("covirt_set_launch_args" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3123 3155])
+                    ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [3179 3210])
+                    ("target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3234 3270])
+                    ("rsi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3294 3322]))                  
+                :type "int")
+                nil [3096 3323])
+            ("covirt_setup_trampoline" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3353 3385])
+                    ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [3410 3441]))                  
+                :type "int")
+                nil [3325 3442])
+            ("covirt_restore_trampoline" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3474 3506])
+                    ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [3533 3564]))                  
+                :type "int")
+                nil [3444 3565])
+            ("covirt_inject_ipi" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3616 3647])
+                    ("vector" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3648 3659]))                  
+                :type "int")
+                nil [3594 3660]))          
+      :file "covirt.h"
+      :pointmax 3670
+      :fsize 3669
+      :lastmodtime '(24770 34305)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("USE_POSTED_INTERRUPTS" . ((number "1" 579 . 580)))
+          ("LOG_BUFFER_PGS" . ((number "16" 684 . 686)))
+          ("USE_VIRT_APIC" . ((number "1" 603 . 604)))
+          ("CMD_BUFFER_LEN" . ((number "64" 716 . 718)))
+          ("N_ROWS" . 
+              ((semantic-list "(LOG_BUFFER_PGS * PAGE_SIZE_4KB)" 767 . 799) (punctuation "/" 800 . 801) (symbol "LOG_BUFFER_ROW_LEN" 802 . 820)))
+          ("N_BUFFERS" . ((number "4" 404 . 405)))
+          ("__COVIRT_H__")
+          ("LOG_BUFFER_ROW_LEN" . ((number "64" 748 . 750)))
+          ("LOG_BUFFER_HEADER_SIZE" . ((semantic-list "(sizeof(struct covirt_spinlock) + (2 * sizeof(u64)) + sizeof(char*))" 1197 . 1265)))
+          ("LOG_BUFFER_PGS_ORDER" . ((number "4" 653 . 654)))
+          ("USE_EPT" . ((number "1" 621 . 622)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/fs.h" include (:system-flag t) nil [223 244])
+            ("linux/file.h" include (:system-flag t) nil [245 268])
+            ("linux/slab.h" include (:system-flag t) nil [269 292])
+            ("linux/delay.h" include (:system-flag t) nil [293 317])
+            ("petos.h" include (:system-flag t) nil [319 337])
+            ("../file_io.h" include nil nil [339 362])
+            ("../enclave.h" include nil nil [363 386])
+            ("../trampoline.h" include nil nil [387 413])
+            ("../boot.h" include nil nil [414 434])
+            ("vmx.h" include nil nil [436 452])
+            ("vmx_ept.h" include nil nil [453 473])
+            ("vmm_lowlevel.h" include nil nil [474 499])
+            ("covirt.h" include nil nil [500 519])
+            ("vmm_ctx.h" include nil nil [520 540])
+            ("covirt_loaded" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [543 577])
+            ("vmm_binary" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type "void")
+                nil [579 616])
+            ("vmm_binary_size" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("u64" type (:type "class") nil nil))
+                nil [617 651])
+            ("__read_file" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [680 689])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [702 713]))                  
+                :type "void")
+                nil [654 1500])
+            ("covirt_load_vmm" function
+               (:arguments 
+                  ( ("vmm_fd" variable (:type "int") (reparse-symbol arg-sub-list) [1522 1533]))                  
+                :type "int")
+                nil [1502 1944])
+            ("covirt_get_vmm_size" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1971 1976]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1947 2050])
+            ("covirt_get_vmm_addr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2083 2088]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [2053 2177])
+            ("v3_vm_info" type
+               (:members 
+                  ( ("name" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [2203 2218])
+                    ("vm_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2223 2234]))                  
+                :type "struct")
+                nil [2179 2237])
+            ("palacios_permit_external_ipi" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2279 2298])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2299 2312])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2313 2326]))                  
+                :type "int")
+                nil [2239 2327])
+            ("__permit_external_ipi" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2358 2377])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2378 2391])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2392 2405]))                  
+                :type "int")
+                nil [2329 2406])
+            ("update_ipi_whitelist" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2643 2669])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2670 2686]))                  
+                :type "int")
+                nil [2611 4266])
+            ("remember_attachers" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4291 4317])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4318 4334]))                  
+                :type "int")
+                nil [4268 5392])
+            ("__map_ept_regions" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5423 5455]))                  
+                :type "int")
+                nil [5394 5989])
+            ("translate_virt_apicid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :type ("xpmem_cmd_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6024 6049])
+                    ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6050 6081]))                  
+                :type "int")
+                nil [5991 7339])
+            ("init_covirt_vm" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7360 7392]))                  
+                :type "int")
+                nil [7341 8515])
+            ("covirt_add_memory" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8539 8571])
+                    ("base_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8590 8624])
+                    ("num_pages" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8643 8677]))                  
+                :type "int")
+                nil [8517 8763])
+            ("init_covirt_cpu" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8787 8819])
+                    ("cpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8836 8867])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8884 8920]))                  
+                :type "int")
+                nil [8767 11777])
+            ("init_secondary_covirt_cpu" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11809 11840])
+                    ("cpu_id" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11867 11897])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11924 11959]))                  
+                :type "int")
+                nil [11779 12530])
+            ("covirt_set_launch_args" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12560 12592])
+                    ("cpu_ordinal" variable (:type "int") (reparse-symbol arg-sub-list) [12616 12652])
+                    ("target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12676 12712])
+                    ("rsi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12736 12764]))                  
+                :type "int")
+                nil [12533 13092])
+            ("covirt_setup_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13122 13154])
+                    ("cpu_ordinal" variable (:type "int") (reparse-symbol arg-sub-list) [13179 13215]))                  
+                :type "int")
+                nil [13094 13856])
+            ("covirt_restore_trampoline" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13888 13920])
+                    ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [13947 13978]))                  
+                :type "int")
+                nil [13858 14435])
+            ("put_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("queue" variable
+                       (:pointer 1
+                        :type ("covirt_cmd_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14601 14632])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14633 14643])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14644 14662]))                  
+                :type "int")
+                nil [14582 14889])
+            ("send_msg_to_covirt_boot_cpu" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14923 14955])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14956 14966])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14967 14985]))                  
+                :type "int")
+                nil [14891 15157])
+            ("send_msg_to_covirt_all" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15186 15218])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15219 15229])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15230 15248]))                  
+                :type "int")
+                nil [15159 15580])
+            ("send_msg_to_covirt_single" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15612 15644])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15645 15655])
+                    ("type" variable (:type ("covirt_cmd_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15656 15674])
+                    ("cpu_id" variable (:type "short") (reparse-symbol arg-sub-list) [15675 15688]))                  
+                :type "int")
+                nil [15582 15990])
+            ("wait_on_covirts" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16012 16043]))                  
+                :type "int")
+                nil [15992 16625])
+            ("set_queues_pending" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16651 16682]))                  
+                :type "void")
+                nil [16627 16792])
+            ("check_covirt_msg_all" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16821 16852]))                  
+                :type "void")
+                nil [16795 18164])
+            ("check_covirt_msg_single" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18195 18226])
+                    ("cpu_ordinal" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18227 18243]))                  
+                :type "void")
+                nil [18166 19449]))          
+      :file "covirt.c"
+      :pointmax 19450
+      :fsize 19449
+      :lastmodtime '(24928 9340)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/slab.h" include (:system-flag t) nil [222 245])
+            ("linux/kernel.h" include (:system-flag t) nil [246 271])
+            ("linux/numa.h" include (:system-flag t) nil [272 295])
+            ("vmm_lowlevel.h" include nil nil [298 323])
+            ("vmm_ctx.h" include nil nil [324 344])
+            ("../pisces.h" include nil nil [345 367])
+            ("../pgtables.h" include nil nil [368 392])
+            ("covirt.h" include nil nil [393 412])
+            ("../enclave.h" include nil nil [413 436])
+            ("vmm_gdt" type
+               (:members 
+                  ( ("null" variable (:type ("x86_segment" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [808 832])
+                    ("cs" variable (:type ("x86_segment" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [834 856])
+                    ("ds" variable (:type ("x86_segment" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [858 880])
+                    ("tss" variable (:type ("x86_segment" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [882 905]))                  
+                :type "struct")
+                nil [790 932])
+            ("x86_idt_entry" type
+               (:members 
+                  ( ("offset_low" variable
+                       (:suffix ":16"
+                        :type "int")
+                        (reparse-symbol classsubparts) [962 983])
+                    ("selector" variable
+                       (:suffix ":16"
+                        :type "int")
+                        (reparse-symbol classsubparts) [988 1009])
+                    ("ist" variable
+                       (:suffix ":3"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1014 1034])
+                    ("all_zero" variable
+                       (:suffix ":5"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1039 1059])
+                    ("type" variable
+                       (:suffix ":4"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1064 1084])
+                    ("second_zero" variable
+                       (:suffix ":1"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1089 1109])
+                    ("dpl" variable
+                       (:suffix ":2"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1114 1134])
+                    ("present" variable
+                       (:suffix ":1"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1139 1159])
+                    ("offset_high" variable
+                       (:suffix ":48"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1164 1185])
+                    ("reserved" variable
+                       (:suffix ":32"
+                        :type "int")
+                        (reparse-symbol classsubparts) [1190 1211]))                  
+                :type "struct")
+                nil [935 1239])
+            ("vmm_idt" type
+               (:members 
+                  ( ("irqs" variable
+                       (:dereference 1
+                        :type ("x86_idt_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1259 1290]))                  
+                :type "struct")
+                nil [1241 1317])
+            ("__init_segments" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("covirt_vmm_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1347 1375]))                  
+                :type "int")
+                nil [1320 3112])
+            ("__init_pgtables" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3141 3179]))                  
+                :type "int")
+                nil [3114 4117])
+            ("covirt_setup_ctx_globals" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4148 4183])
+                    ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4209 4247]))                  
+                :type "int")
+                nil [4119 4439])
+            ("covirt_setup_vmm_ctx" function
+               (:arguments 
+                  ( ("enclave" variable
+                       (:pointer 1
+                        :type ("pisces_enclave" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4466 4501])
+                    ("core_state" variable
+                       (:pointer 1
+                        :type ("covirt_core_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4523 4561])
+                    ("vmm_binary" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4583 4621])
+                    ("vmm_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4643 4679])
+                    ("enclave_flags" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4701 4742]))                  
+                :type "int")
+                nil [4441 9975]))          
+      :file "vmm_ctx.c"
+      :pointmax 9976
+      :fsize 9975
+      :lastmodtime '(24767 57457)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/version.h" include (:system-flag t) nil [223 249])
+            ("asm/tlbflush.h" include (:system-flag t) nil [251 276])
+            ("vmx_hw_info.h" include nil nil [278 302])
+            ("vmx.h" include nil nil [303 319])
+            ("VMCLEAR_OPCODE" variable (:constant-flag t) nil [384 398])
+            ("VMRESUME_OPCODE" variable (:constant-flag t) nil [444 459])
+            ("VMPTRLD_OPCODE" variable (:constant-flag t) nil [492 506])
+            ("VMPTRST_OPCODE" variable (:constant-flag t) nil [548 562])
+            ("VMREAD_OPCODE" variable (:constant-flag t) nil [604 617])
+            ("VMWRITE_OPCODE" variable (:constant-flag t) nil [647 661])
+            ("VMXOFF_OPCODE" variable (:constant-flag t) nil [690 703])
+            ("VMXON_OPCODE" variable (:constant-flag t) nil [738 750])
+            ("INVEPT_OPCODE" variable (:constant-flag t) nil [799 812])
+            ("INVVPID_OPCODE" variable (:constant-flag t) nil [857 871])
+            ("EAX_ECX_MODRM" variable (:constant-flag t) nil [970 983])
+            ("EAX_06_MODRM" variable (:constant-flag t) nil [1028 1040])
+            ("EAX_07_MODRM" variable (:constant-flag t) nil [1086 1098])
+            ("CHECK_VMXFAIL" variable (:constant-flag t) nil [1142 1155])
+            ("enable_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1315 1320]))                  
+                :type "int")
+                nil [1299 1970])
+            ("vmx_on" function
+               (:arguments 
+                  ( ("vmxon_ptr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1986 2006]))                  
+                :type "int")
+                nil [1974 2482])
+            ("vmx_off" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2497 2502]))                  
+                :type "int")
+                nil [2484 2903])
+            ("vmcs_clear" function
+               (:arguments 
+                  ( ("vmcs_ptr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2924 2943]))                  
+                :type "int")
+                nil [2908 3536])
+            ("vmcs_load" function
+               (:arguments 
+                  ( ("vmcs_ptr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3556 3575]))                  
+                :type "int")
+                nil [3541 4141])
+            ("vmcs_store" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4160 4165]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [4144 4436])
+            ("vmcs_read" function
+               (:arguments 
+                  ( ("vmcs_field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4453 4479])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4491 4510]))                  
+                :type "int")
+                nil [4438 5313])
+            ("vmcs_write" function
+               (:arguments 
+                  ( ("vmcs_field" variable (:type ("vmcs_field_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5332 5356])
+                    ("value" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5369 5388]))                  
+                :type "int")
+                nil [5316 5890]))          
+      :file "vmx_lowlevel.c"
+      :pointmax 8555
+      :fsize 8554
+      :lastmodtime '(24280 268)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VMPTRST_OPCODE" . ((string "\".byte 0x0f,0xc7;\"" 564 . 582)))
+          ("VMXON_OPCODE" . ((string "\".byte 0xf3,0x0f,0xc7;\"" 754 . 777)))
+          ("EAX_06_MODRM" . ((string "\".byte 0x30;\"" 1044 . 1057)))
+          ("VMREAD_OPCODE" . ((string "\".byte 0x0f,0x78;\"" 620 . 638)))
+          ("EAX_07_MODRM" . ((string "\".byte 0x38;\"" 1102 . 1115)))
+          ("VMCLEAR_OPCODE" . ((string "\".byte 0x66,0xf,0xc7;\"" 400 . 422)))
+          ("VMXOFF_OPCODE" . ((string "\".byte 0x0f,0x01,0xc4;\"" 706 . 729)))
+          ("CHECK_VMXFAIL" (spp-arg-list ("ret_valid" "ret_invalid") 1155 . 1179) . 
+              ((IF "if" 1185 . 1187) (semantic-list "(ret_valid)" 1188 . 1199) (semantic-list "{		\\
+		return VMX_FAIL_VALID;	\\
+	}" 1200 . 1234) (ELSE "else" 1235 . 1239) (IF "if" 1240 . 1242) (semantic-list "(ret_invalid)" 1243 . 1256) (semantic-list "{		\\
+		return VMX_FAIL_INVALID;	\\
+	}" 1257 . 1293)))
+          ("VMPTRLD_OPCODE" . ((string "\".byte 0x0f,0xc7;\"" 508 . 526)))
+          ("EAX_ECX_MODRM" . ((string "\".byte 0xc1;\"" 986 . 999)))
+          ("VMRESUME_OPCODE" . ((string "\".byte 0x0f,0x01,0xc3;\"" 460 . 483)))
+          ("INVEPT_OPCODE" . ((string "\".byte 0x66,0x0f,0x38,0x80,0x08;\"" 815 . 848)))
+          ("VMWRITE_OPCODE" . ((string "\".byte 0x0f,0x79;\"" 663 . 681)))
+          ("INVVPID_OPCODE" . ((string "\".byte 0x66,0x0f,0x38,0x81,0x08;\"" 873 . 906)))
+          )
+))
+  :file "!ssh:trappist:!home!nmg!lev-native!pisces!src!covirt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

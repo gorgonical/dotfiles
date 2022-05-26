@@ -1,0 +1,535 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("clocksource/arm_arch_timer.h" include (:system-flag t) nil [527 566])
+            ("linux/atomic.h" include (:system-flag t) nil [567 592])
+            ("linux/cpuhotplug.h" include (:system-flag t) nil [593 622])
+            ("linux/hrtimer.h" include (:system-flag t) nil [623 649])
+            ("linux/init.h" include (:system-flag t) nil [650 673])
+            ("linux/interrupt.h" include (:system-flag t) nil [674 702])
+            ("linux/irq.h" include (:system-flag t) nil [703 725])
+            ("linux/kernel.h" include (:system-flag t) nil [726 751])
+            ("linux/kthread.h" include (:system-flag t) nil [752 778])
+            ("linux/mm.h" include (:system-flag t) nil [779 800])
+            ("linux/module.h" include (:system-flag t) nil [801 826])
+            ("linux/net.h" include (:system-flag t) nil [827 849])
+            ("linux/of.h" include (:system-flag t) nil [850 871])
+            ("linux/platform_device.h" include (:system-flag t) nil [872 906])
+            ("linux/sched/task.h" include (:system-flag t) nil [907 936])
+            ("linux/slab.h" include (:system-flag t) nil [937 960])
+            ("net/sock.h" include (:system-flag t) nil [961 982])
+            ("hf/call.h" include (:system-flag t) nil [984 1004])
+            ("hf/ffa.h" include (:system-flag t) nil [1005 1024])
+            ("hf/transport.h" include (:system-flag t) nil [1025 1050])
+            ("uapi/hf/socket.h" include nil nil [1052 1079])
+            ("HYPERVISOR_TIMER_NAME" variable (:constant-flag t) nil [1089 1110])
+            ("CONFIG_HAFNIUM_MAX_VMS" variable (:constant-flag t) nil [1132 1154])
+            ("CONFIG_HAFNIUM_MAX_VCPUS" variable (:constant-flag t) nil [1168 1192])
+            ("FIRST_SECONDARY_VM_ID" variable (:constant-flag t) nil [1205 1226])
+            ("hf_vcpu" type
+               (:members 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("hf_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1268 1285])
+                    ("vcpu_index" variable (:type ("ffa_vcpu_index_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1287 1315])
+                    ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1317 1342])
+                    ("abort_sleep" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1344 1365])
+                    ("waiting_for_message" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1367 1396])
+                    ("timer" variable (:type ("hrtimer" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1398 1419]))                  
+                :type "struct")
+                nil [1250 1422])
+            ("hf_vm" type
+               (:members 
+                  ( ("id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1440 1455])
+                    ("vcpu_count" variable (:type ("ffa_vcpu_count_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1457 1485])
+                    ("vcpu" variable
+                       (:pointer 1
+                        :type ("hf_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1487 1508]))                  
+                :type "struct")
+                nil [1424 1511])
+            ("hf_sock" type
+               (:members 
+                  ( ("sk" variable (:type ("sock" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1572 1587])
+                    ("local_port" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1694 1714])
+                    ("remote_port" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1716 1737])
+                    ("peer_vm" variable
+                       (:pointer 1
+                        :type ("hf_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1739 1761]))                  
+                :type "struct")
+                nil [1513 1764])
+            ("hf_sock_proto" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name = \"hafnium\",
+	.owner = THIS_MODULE,
+	.obj_size = sizeof(struct hf_sock),
+}"
+                :type ("proto" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1766 1886])
+            ("hf_vms" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("hf_vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1888 1916])
+            ("hf_vm_count" variable
+               (:typemodifiers ("static")
+                :type ("ffa_vm_count_t" type (:type "class") nil nil))
+                nil [1917 1951])
+            ("hf_send_page" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1952 1985])
+            ("hf_recv_page" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1986 2019])
+            ("hf_next_port" variable
+               (:typemodifiers ("static")
+                :default-value "ATOMIC64_INIT(0)"
+                :type ("atomic64_t" type (:type "class") nil nil))
+                nil [2020 2070])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("hf_send_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2094 2107]))                  
+                :type "int")
+                nil [2071 2108])
+            ("DEFINE_HASHTABLE" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("hf_local_port_hash" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2133 2152]))                  
+                :type "int")
+                nil [2109 2156])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("hf_local_port_hash_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2180 2204]))                  
+                :type "int")
+                nil [2157 2205])
+            ("hf_irq" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [2206 2224])
+            ("hf_cpuhp_state" variable
+               (:typemodifiers ("static")
+                :type ("cpuhp_state" type (:type "enum") nil nil))
+                nil [2225 2264])
+            ("current_vm_id" variable
+               (:typemodifiers ("static")
+                :type ("ffa_vm_id_t" type (:type "class") nil nil))
+                nil [2265 2298])
+            ("hf_vm_from_id" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2414 2432]))                  
+                :type ("hf_vm" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2379 2589])
+            ("hf_vcpu_wake_up" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("hf_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2760 2781]))                  
+                :type "int")
+                nil [2733 2968])
+            ("hf_vcpu_sleep" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vcpu" variable
+                       (:pointer 1
+                        :type ("hf_vcpu" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3259 3280]))                  
+                :type "void")
+                nil [3233 3586])
+            ("hf_vcpu_timer_expired" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("hrtimer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3788 3810]))                  
+                :type ("hrtimer_restart" type (:type "enum") nil nil))
+                nil [3738 3964])
+            ("hf_handle_wake_up_request" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4215 4233])
+                    ("vcpu" variable (:type ("ffa_vcpu_index_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4244 4266]))                  
+                :type "void")
+                nil [4177 4780])
+            ("hf_interrupt_vm" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4922 4940])
+                    ("int_id" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4941 4957]))                  
+                :type "void")
+                nil [4894 5532])
+            ("hf_notify_waiters" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5611 5629]))                  
+                :type "void")
+                nil [5581 5935])
+            ("hf_deliver_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm_id" variable (:type ("ffa_vm_id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6007 6025]))                  
+                :type "void")
+                nil [5976 6547])
+            ("hf_handle_message" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sender" variable
+                       (:pointer 1
+                        :type ("hf_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6729 6750])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6751 6762])
+                    ("message" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6772 6792]))                  
+                :type "void")
+                nil [6699 8533])
+            ("hf_vcpu_thread" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8608 8619]))                  
+                :type "int")
+                nil [8582 10924])
+            ("hsock_from_sk" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sk" variable
+                       (:pointer 1
+                        :type ("sock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11114 11130]))                  
+                :type ("hf_sock" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11077 11164])
+            ("hf_sock_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11569 11589]))                  
+                :type "int")
+                nil [11542 12470])
+            ("hf_sock_destruct" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sk" variable
+                       (:pointer 1
+                        :type ("sock" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12642 12658]))                  
+                :type "void")
+                nil [12613 12797])
+            ("hf_sock_connect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12990 13010])
+                    ("saddr" variable
+                       (:pointer 1
+                        :type ("sockaddr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13011 13034])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [13035 13043])
+                    ("connect_flags" variable (:type "int") (reparse-symbol arg-sub-list) [13050 13068]))                  
+                :type "int")
+                nil [12963 14284])
+            ("hf_send_skb" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("skb" variable
+                       (:pointer 1
+                        :type ("sk_buff" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14482 14502]))                  
+                :type "int")
+                nil [14459 15308])
+            ("hf_sock_is_connected" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15457 15477]))                  
+                :type "bool")
+                nil [15424 15590])
+            ("hf_sock_sendmsg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15767 15787])
+                    ("m" variable
+                       (:pointer 1
+                        :type ("msghdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15788 15805])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15806 15817]))                  
+                :type "int")
+                nil [15740 17865])
+            ("hf_sock_recvmsg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18059 18079])
+                    ("m" variable
+                       (:pointer 1
+                        :type ("msghdr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18080 18097])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18098 18109])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [18116 18126]))                  
+                :type "int")
+                nil [18032 18887])
+            ("hf_sock_create" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("net" variable
+                       (:pointer 1
+                        :type ("net" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19118 19134])
+                    ("sock" variable
+                       (:pointer 1
+                        :type ("socket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19135 19155])
+                    ("protocol" variable (:type "int") (reparse-symbol arg-sub-list) [19156 19169])
+                    ("kern" variable (:type "int") (reparse-symbol arg-sub-list) [19175 19184]))                  
+                :type "int")
+                nil [19092 20180])
+            ("hf_free_resources" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [20299 20304]))                  
+                :type "void")
+                nil [20269 20906])
+            ("hf_nop_irq_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [20997 21005])
+                    ("dev" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21006 21016]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [20959 21205])
+            ("hf_starting_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21349 21366]))                  
+                :type "int")
+                nil [21322 21519])
+            ("hf_dying_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [21630 21647]))                  
+                :type "int")
+                nil [21606 21771])
+            ("hf_int_driver_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21861 21890]))                  
+                :type "int")
+                nil [21830 22774])
+            ("hf_int_driver_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pdev" variable
+                       (:pointer 1
+                        :type ("platform_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22867 22896]))                  
+                :type "int")
+                nil [22835 23082])
+            ("hf_int_driver_id" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	{.compatible = \"arm,armv7-timer\"},
+	{.compatible = \"arm,armv8-timer\"},
+	{}
+}"
+                :type ("of_device_id" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23084 23218])
+            ("hf_int_driver" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.driver = {
+		.name = HYPERVISOR_TIMER_NAME,
+		.owner = THIS_MODULE,
+		.of_match_table = of_match_ptr(hf_int_driver_id),
+	},
+	.probe = hf_int_driver_probe,
+	.remove = hf_int_driver_remove,
+}"
+                :type ("platform_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23220 23460])
+            ("hf_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23593 23598]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [23578 28719])
+            ("hf_exit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [28845 28850]))                  
+                :type ("__exit" type (:type "class") nil nil))
+                nil [28830 29063])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [29065 29090])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hf_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29104 29112]))                  
+                :type "int")
+                nil [29092 29113])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hf_exit" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29126 29134]))                  
+                :type "int")
+                nil [29114 29135]))          
+      :file "main.c"
+      :pointmax 29136
+      :fsize 29135
+      :lastmodtime '(24817 51946)
+      :unmatched-syntax '((string 29080 . 29088) (VOID 28825 . 28829) (STATIC 28818 . 28824) (INT 23574 . 23577) (STATIC 23567 . 23573) (number 2153 . 2154))
+      :lexical-table 
+        '(("FIRST_SECONDARY_VM_ID" . ((semantic-list "(HF_VM_ID_OFFSET + 1)" 1227 . 1248)))
+          ("HYPERVISOR_TIMER_NAME" . ((string "\"el2_timer\"" 1111 . 1122)))
+          ("CONFIG_HAFNIUM_MAX_VCPUS" . ((number "32" 1193 . 1195)))
+          ("CONFIG_HAFNIUM_MAX_VMS" . ((number "16" 1157 . 1159)))
+          )
+))
+  :file "!ssh:osbox:!mnt!vm-shared!hafnium!driver!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

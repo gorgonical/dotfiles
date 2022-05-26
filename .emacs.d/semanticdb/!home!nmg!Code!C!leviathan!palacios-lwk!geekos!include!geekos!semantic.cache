@@ -1,0 +1,193 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("GEEKOS_INT_H" variable (:constant-flag t) nil [480 492])
+            ("geekos/kassert.h" include (:system-flag t) nil [494 521])
+            ("geekos/ktypes.h" include (:system-flag t) nil [522 548])
+            ("geekos/defs.h" include (:system-flag t) nil [549 573])
+            ("Print" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [630 646])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [647 651]))                  
+                :type "void")
+                nil [612 652])
+            ("Set_Current_Attr" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("attrib" variable (:type ("uchar_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [683 698]))                  
+                :type "void")
+                nil [654 699])
+            ("Interrupt_State" type
+               (:members 
+                  ( ("gs" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1007 1017])
+                    ("fs" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1022 1032])
+                    ("es" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1037 1047])
+                    ("ds" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1052 1062])
+                    ("ebp" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1067 1078])
+                    ("edi" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1083 1094])
+                    ("esi" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1099 1110])
+                    ("edx" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1115 1126])
+                    ("ecx" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1131 1142])
+                    ("ebx" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1147 1158])
+                    ("eax" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1163 1174])
+                    ("intNum" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1340 1354])
+                    ("errorCode" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1530 1547])
+                    ("eip" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1618 1629])
+                    ("cs" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1634 1644])
+                    ("eflags" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1649 1663]))                  
+                :type "struct")
+                nil [871 1666])
+            ("User_Interrupt_State" type
+               (:members 
+                  ( ("state" variable (:type ("Interrupt_State" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1869 1898])
+                    ("espUser" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1903 1918])
+                    ("ssUser" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1923 1937]))                  
+                :type "struct")
+                nil [1835 1940])
+            ("Is_User_Interrupt" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1983 2013]))                  
+                :type "bool")
+                nil [1960 2063])
+            ("Interrupt_Handler" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2149 2179]))                  
+                :type "void")
+                nil [2123 2180])
+            ("Init_Interrupts" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2288 2293]))                  
+                :type "void")
+                nil [2267 2294])
+            ("Interrupts_Enabled" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2385 2390]))                  
+                :type "bool")
+                nil [2361 2391])
+            ("__Disable_Interrupts" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2465 2470]))                  
+                :type "void")
+                nil [2439 2508])
+            ("Disable_Interrupts" variable (:constant-flag t) nil [2517 2535])
+            ("__Enable_Interrupts" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2706 2711]))                  
+                :type "void")
+                nil [2681 2749])
+            ("Enable_Interrupts" variable (:constant-flag t) nil [2758 2775])
+            ("Dump_Interrupt_State" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2947 2977]))                  
+                :type "void")
+                nil [2921 2978])
+            ("Begin_Int_Atomic" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3147 3152]))                  
+                :type "bool")
+                nil [3125 3258])
+            ("End_Int_Atomic" function
+               (:arguments 
+                  ( ("iflag" variable (:type "bool") (reparse-symbol arg-sub-list) [3416 3427]))                  
+                :type "void")
+                nil [3396 3576])
+            ("EXCEPTION_DE" variable (:constant-flag t) nil [3586 3598])
+            ("EXCEPTION_DB" variable (:constant-flag t) nil [3631 3643])
+            ("EXCEPTION_NMI" variable (:constant-flag t) nil [3670 3683])
+            ("EXCEPTION_BP" variable (:constant-flag t) nil [3704 3716])
+            ("EXCEPTION_OF" variable (:constant-flag t) nil [3745 3757])
+            ("EXCEPTION_BR" variable (:constant-flag t) nil [3784 3796])
+            ("EXCEPTION_UD" variable (:constant-flag t) nil [3835 3847])
+            ("EXCEPTION_NM" variable (:constant-flag t) nil [3882 3894])
+            ("EXCEPTION_DF" variable (:constant-flag t) nil [3942 3954])
+            ("EXCEPTION_CO" variable (:constant-flag t) nil [3985 3997])
+            ("EXCEPTION_TS" variable (:constant-flag t) nil [4044 4056])
+            ("EXCEPTION_NP" variable (:constant-flag t) nil [4086 4098])
+            ("EXCEPTION_SS" variable (:constant-flag t) nil [4136 4148])
+            ("EXCEPTION_GP" variable (:constant-flag t) nil [4186 4198])
+            ("EXCEPTION_PF" variable (:constant-flag t) nil [4241 4253])
+            ("EXCEPTION_RES" variable (:constant-flag t) nil [4282 4295])
+            ("EXCEPTION_MF" variable (:constant-flag t) nil [4321 4333])
+            ("EXCEPTION_AC" variable (:constant-flag t) nil [4362 4374])
+            ("EXCEPTION_MC" variable (:constant-flag t) nil [4408 4420])
+            ("EXCEPTION_XF" variable (:constant-flag t) nil [4452 4464]))          
+      :file "int.h"
+      :pointmax 4543
+      :fsize 4542
+      :lastmodtime '(23798 45552 495758 567000)
+      :unmatched-syntax '((symbol 3385 . 3395) (STATIC 3378 . 3384) (symbol 3114 . 3124) (STATIC 3107 . 3113) (symbol 2670 . 2680) (STATIC 2663 . 2669) (symbol 2428 . 2438) (STATIC 2421 . 2427) (TYPEDEF 2115 . 2122) (symbol 1949 . 1959) (STATIC 1942 . 1948))
+      :lexical-table 
+        '(("EXCEPTION_BR" . ((number "5" 3799 . 3800)))
+          ("EXCEPTION_CO" . ((number "9" 4000 . 4001)))
+          ("EXCEPTION_SS" . ((number "12" 4151 . 4153)))
+          ("EXCEPTION_GP" . ((number "13" 4201 . 4203)))
+          ("EXCEPTION_OF" . ((number "4" 3760 . 3761)))
+          ("GEEKOS_INT_H")
+          ("Disable_Interrupts" (spp-arg-list nil 2535 . 2537) . 
+              ((DO "do" 2541 . 2543) (semantic-list "{					\\
+    KASSERT(Interrupts_Enabled());	\\
+    __Disable_Interrupts();		\\
+}" 2544 . 2621) (WHILE "while" 2622 . 2627) (semantic-list "(0)" 2628 . 2631)))
+          ("EXCEPTION_XF" . ((number "19" 4467 . 4469)))
+          ("EXCEPTION_DB" . ((number "1" 3646 . 3647)))
+          ("EXCEPTION_TS" . ((number "10" 4059 . 4061)))
+          ("Enable_Interrupts" (spp-arg-list nil 2775 . 2777) . 
+              ((DO "do" 2781 . 2783) (semantic-list "{					\\
+    KASSERT(!Interrupts_Enabled());	\\
+    __Enable_Interrupts();		\\
+}" 2784 . 2861) (WHILE "while" 2862 . 2867) (semantic-list "(0)" 2868 . 2871)))
+          ("EXCEPTION_UD" . ((number "6" 3850 . 3851)))
+          ("EXCEPTION_PF" . ((number "14" 4256 . 4258)))
+          ("EXCEPTION_NM" . ((number "7" 3897 . 3898)))
+          ("EXCEPTION_MC" . ((number "18" 4423 . 4425)))
+          ("EXCEPTION_DE" . ((number "0" 3601 . 3602)))
+          ("EXCEPTION_RES" . ((number "15" 4297 . 4299)))
+          ("EXCEPTION_DF" . ((number "8" 3957 . 3958)))
+          ("EXCEPTION_NP" . ((number "11" 4101 . 4103)))
+          ("EXCEPTION_MF" . ((number "16" 4336 . 4338)))
+          ("EXCEPTION_AC" . ((number "17" 4377 . 4379)))
+          ("EXCEPTION_NMI" . ((number "2" 3685 . 3686)))
+          ("EXCEPTION_BP" . ((number "3" 3719 . 3720)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!palacios-lwk!geekos!include!geekos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

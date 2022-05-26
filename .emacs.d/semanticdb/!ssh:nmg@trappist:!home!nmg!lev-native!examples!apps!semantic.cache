@@ -1,0 +1,76 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [1 20])
+            ("stdio.h" include (:system-flag t) nil [21 39])
+            ("omp.h" include (:system-flag t) nil [40 56])
+            ("vsyscall_num" type
+               (:members 
+                  ( ("__NR_vgettimeofday" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [86 105])
+                    ("__NR_vtime" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [114 125])
+                    ("__NR_vgetcpu" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [134 147]))                  
+                :type "enum")
+                nil [58 150])
+            ("VSYSCALL_START" variable (:constant-flag t) nil [160 174])
+            ("VSYSCALL_SIZE" variable (:constant-flag t) nil [197 210])
+            ("VSYSCALL_END" variable (:constant-flag t) nil [224 236])
+            ("VSYSCALL_MAPPED_PAGES" variable (:constant-flag t) nil [258 279])
+            ("VSYSCALL_ADDR" variable (:constant-flag t) nil [290 303])
+            ("getcpu_p" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("cpu" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [388 402])
+                    ("unused1" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [403 417])
+                    ("unused2" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [418 432]))                  
+                :type "long")
+                nil [371 433])
+            ("sched_getcpu" function (:type "int") nil [494 719])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [734 743])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [744 757]))                  
+                :type "int")
+                nil [725 1031]))          
+      :file "omp_test.c"
+      :pointmax 1032
+      :fsize 1031
+      :lastmodtime '(24280 271)
+      :unmatched-syntax '((TYPEDEF 363 . 370))
+      :lexical-table 
+        '(("VSYSCALL_START" . ((semantic-list "(-10UL << 20)" 175 . 188)))
+          ("VSYSCALL_MAPPED_PAGES" . ((number "1" 280 . 281)))
+          ("VSYSCALL_SIZE" . ((number "1024" 211 . 215)))
+          ("VSYSCALL_ADDR" (spp-arg-list ("vsyscall_nr") 303 . 316) . ((semantic-list "(VSYSCALL_START+VSYSCALL_SIZE*(vsyscall_nr))" 317 . 361)))
+          ("VSYSCALL_END" . ((semantic-list "(-2UL << 20)" 237 . 249)))
+          )
+))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!examples!apps!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

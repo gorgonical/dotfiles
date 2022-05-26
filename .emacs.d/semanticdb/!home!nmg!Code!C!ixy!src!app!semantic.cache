@@ -1,0 +1,85 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("unistd.h" include (:system-flag t) nil [20 39])
+            ("stats.h" include nil nil [41 59])
+            ("log.h" include nil nil [60 76])
+            ("memory.h" include nil nil [77 96])
+            ("driver/device.h" include nil nil [97 123])
+            ("BATCH_SIZE" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "64"
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [180 218])
+            ("PKT_SIZE" variable (:constant-flag t) nil [268 276])
+            ("pkt_data" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	0x01, 0x02, 0x03, 0x04, 0x05, 0x06, // dst MAC
+	0x10, 0x10, 0x10, 0x10, 0x10, 0x10, // src MAC
+	0x08, 0x00,                         // ether type: IPv4
+	0x45, 0x00,                         // Version, IHL, TOS
+	(PKT_SIZE - 14) >> 8,               // ip len excluding ethernet, high byte
+	(PKT_SIZE - 14) & 0xFF,             // ip len exlucding ethernet, low byte
+	0x00, 0x00, 0x00, 0x00,             // id, flags, fragmentation
+	0x40, 0x11, 0x00, 0x00,             // TTL (64), protocol (UDP), checksum
+	0x0A, 0x00, 0x00, 0x01,             // src ip (10.0.0.1)
+	0x0A, 0x00, 0x00, 0x02,             // dst ip (10.0.0.2)
+	0x00, 0x2A, 0x05, 0x39,             // src and dst ports (42 -> 1337)
+	(PKT_SIZE - 20 - 14) >> 8,          // udp len excluding ip & ethernet, high byte
+	(PKT_SIZE - 20 - 14) & 0xFF,        // udp len exlucding ip & ethernet, low byte
+	0x00, 0x00,                         // udp checksum, optional
+	'i', 'x', 'y'                       // payload
+	// rest of the payload is zero-filled because mempools guarantee empty bufs
+}"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [281 1363])
+            ("calc_ip_checksum" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1433 1447])
+                    ("len" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1448 1461]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [1400 1733])
+            ("init_mempool" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("mempool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1735 2571])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2582 2591])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2592 2605]))                  
+                :type "int")
+                nil [2573 4025]))          
+      :file "ixy-pktgen.c"
+      :pointmax 4027
+      :fsize 4026
+      :lastmodtime '(24008 34594 715562 128000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PKT_SIZE" . ((number "60" 277 . 279)))
+          )
+))
+  :file "!home!nmg!Code!C!ixy!src!app!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

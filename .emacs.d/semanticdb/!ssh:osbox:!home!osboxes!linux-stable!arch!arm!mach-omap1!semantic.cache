@@ -1,0 +1,138 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/types.h" include (:system-flag t) nil [428 452])
+            ("linux/gpio.h" include (:system-flag t) nil [453 476])
+            ("linux/init.h" include (:system-flag t) nil [477 500])
+            ("linux/kernel.h" include (:system-flag t) nil [501 526])
+            ("linux/device.h" include (:system-flag t) nil [527 552])
+            ("linux/errno.h" include (:system-flag t) nil [553 577])
+            ("linux/io.h" include (:system-flag t) nil [578 599])
+            ("asm/irq.h" include (:system-flag t) nil [601 621])
+            ("asm/mach/irq.h" include (:system-flag t) nil [622 647])
+            ("mach/hardware.h" include (:system-flag t) nil [649 675])
+            ("iomap.h" include nil nil [677 695])
+            ("common.h" include nil nil [696 715])
+            ("fpga.h" include nil nil [716 733])
+            ("fpga_mask_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [761 780]))                  
+                :type "void")
+                nil [735 1179])
+            ("get_fpga_unmasked_irqs" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1223 1228]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1182 1494])
+            ("fpga_ack_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1522 1541]))                  
+                :type "void")
+                nil [1497 1597])
+            ("fpga_unmask_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1627 1646]))                  
+                :type "void")
+                nil [1599 2040])
+            ("fpga_mask_ack_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2072 2091]))                  
+                :type "void")
+                nil [2042 2132])
+            ("innovator_fpga_IRQ_demux" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("irq_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2171 2193]))                  
+                :type "void")
+                nil [2134 2455])
+            ("omap_fpga_irq_ack" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"FPGA-ack\",
+	.irq_ack	= fpga_mask_ack_irq,
+	.irq_mask	= fpga_mask_irq,
+	.irq_unmask	= fpga_unmask_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2457 2617])
+            ("omap_fpga_irq" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"FPGA\",
+	.irq_ack	= fpga_ack_irq,
+	.irq_mask	= fpga_mask_irq,
+	.irq_unmask	= fpga_unmask_irq,
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2620 2767])
+            ("omap1510_fpga_init_irq" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3992 3997]))                  
+                :type "void")
+                nil [3964 5087]))          
+      :file "fpga.c"
+      :pointmax 5088
+      :fsize 5087
+      :lastmodtime '(24843 18846)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "iomap.h"
+      :fsize 1528
+      :lastmodtime '(24843 18846))
+    (semanticdb-table "semanticdb-table"
+      :file "common.h"
+      :fsize 2843
+      :lastmodtime '(24843 18846))
+    (semanticdb-table "semanticdb-table"
+      :file "fpga.h"
+      :fsize 2056
+      :lastmodtime '(24843 18846)))
+  :file "!ssh:osbox:!home!osboxes!linux-stable!arch!arm!mach-omap1!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

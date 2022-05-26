@@ -1,0 +1,114 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/delay.h" include (:system-flag t) nil [122 144])
+            ("lwk/driver.h" include (:system-flag t) nil [145 168])
+            ("lwk/console.h" include (:system-flag t) nil [169 193])
+            ("arch/io.h" include (:system-flag t) nil [194 214])
+            ("lwk/interrupt.h" include (:system-flag t) nil [215 241])
+            ("arch/pisces/pisces_boot_params.h" include (:system-flag t) nil [243 286])
+            ("arch/pisces/pisces_lock.h" include (:system-flag t) nil [287 323])
+            ("pisces_boot_params" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("pisces_boot_params" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [325 379])
+            ("pisces_cons_ringbuf" type
+               (:members 
+                  ( ("lock" variable (:type ("pisces_spinlock" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [472 500])
+                    ("read_idx" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [506 519])
+                    ("write_idx" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [525 539])
+                    ("cur_len" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [545 557])
+                    ("buf" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [563 588]))                  
+                :type "struct")
+                nil [442 615])
+            ("console_buffer" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("pisces_cons_ringbuf" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [618 676])
+            ("initialized" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [729 756])
+            ("pisces_cons_putc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [855 875])
+                    ("c" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [876 892]))                  
+                :type "void")
+                nil [826 1482])
+            ("pisces_cons_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("con" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2011 2031])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2032 2048]))                  
+                :type "void")
+                nil [1981 2136])
+            ("pisces_console" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name		= \"Pisces Guest Console\",
+	.write		= pisces_cons_write,
+//	.poll_get_char	= pisces_cons_getc,
+	.poll_put_char	= pisces_cons_putc
+}"
+                :type ("console" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2192 2372])
+            ("pisces_console_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2463 2468]))                  
+                :type "int")
+                nil [2439 2710])
+            ("DRIVER_INIT" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pisces_console_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2736 2756]))                  
+                :type "int")
+                nil [2713 2757]))          
+      :file "pisces.c"
+      :pointmax 2786
+      :fsize 2785
+      :lastmodtime '(24280 274)
+      :unmatched-syntax '((string 2725 . 2734))))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!drivers!console!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

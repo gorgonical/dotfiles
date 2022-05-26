@@ -1,0 +1,141 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("calc.h" include nil nil [1 18])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [29 38])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [39 52]))                  
+                :type "int")
+                nil [20 592])
+            ("calculate" function
+               (:arguments 
+                  ( ("expr" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [610 621])
+                    ("rStack" variable
+                       (:pointer 1
+                        :type ("operatorStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [622 651])
+                    ("dStack" variable
+                       (:pointer 1
+                        :type ("operandStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [652 680]))                  
+                :type "float")
+                nil [594 3740])
+            ("doOperation" function
+               (:arguments 
+                  ( ("" variable (:type "char") (reparse-symbol arg-sub-list) [3760 3773])
+                    ("leftOperand" variable (:type "float") (reparse-symbol arg-sub-list) [3775 3793])
+                    ("rightOperand" variable (:type "float") (reparse-symbol arg-sub-list) [3794 3813]))                  
+                :type "float")
+                nil [3742 4159])
+            ("pushOperator" function
+               (:arguments 
+                  ( ("st" variable
+                       (:pointer 1
+                        :type ("operatorStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4178 4203])
+                    ("opr" variable (:type "char") (reparse-symbol arg-sub-list) [4204 4213]))                  
+                :type "int")
+                nil [4161 4548])
+            ("popOperator" function
+               (:arguments 
+                  ( ("st" variable
+                       (:pointer 1
+                        :type ("operatorStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4567 4592]))                  
+                :type "char")
+                nil [4550 4718])
+            ("peekOperator" function
+               (:arguments 
+                  ( ("st" variable
+                       (:pointer 1
+                        :type ("operatorStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4738 4763]))                  
+                :type "char")
+                nil [4720 4889])
+            ("pushOperand" function
+               (:arguments 
+                  ( ("st" variable
+                       (:pointer 1
+                        :type ("operandStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4907 4931])
+                    ("opd" variable (:type "float") (reparse-symbol arg-sub-list) [4932 4942]))                  
+                :type "int")
+                nil [4891 5225])
+            ("popOperand" function
+               (:arguments 
+                  ( ("st" variable
+                       (:pointer 1
+                        :type ("operandStack" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5244 5268]))                  
+                :type "float")
+                nil [5227 5394])
+            ("cmpOp" function
+               (:arguments 
+                  ( ("leftOp" variable (:type "char") (reparse-symbol arg-sub-list) [5480 5492])
+                    ("rightOp" variable (:type "char") (reparse-symbol arg-sub-list) [5493 5506]))                  
+                :type "int")
+                nil [5470 6093])
+            ("isOperator" function
+               (:arguments 
+                  ( ("candidate" variable (:type "char") (reparse-symbol arg-sub-list) [6110 6125]))                  
+                :type "int")
+                nil [6095 6279]))          
+      :file "calc.c"
+      :pointmax 6280
+      :fsize 6279
+      :lastmodtime '(24129 48827 109834 273000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "calc.h"
+      :fsize 759
+      :lastmodtime '(23465 3171 0 0))
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CC" variable (:default-value ("clang")) nil [1 10])
+            ("DEBUG" variable (:default-value ("-g")) nil [10 19])
+            ("LINKLIBS" variable (:default-value ("-lm")) nil [19 32])
+            ("all" function (:arguments ("calculator")) nil [33 49])
+            ("calculator" function (:arguments ("calc.c")) nil [50 118]))          
+      :file "Makefile"
+      :pointmax 118
+      :fsize 117
+      :lastmodtime '(23465 3171 0 0)
+      :unmatched-syntax nil))
+  :file "!home!nmg!Code!C!Calculator!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

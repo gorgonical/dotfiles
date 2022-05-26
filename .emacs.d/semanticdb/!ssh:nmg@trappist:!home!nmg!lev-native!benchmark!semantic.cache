@@ -1,0 +1,190 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CFLAGS" variable (:default-value ("-g" "-W" "-Wall" "-Werror" "-D_GNU_SOURCE" "-Wno-nonnull" "-Wno-unused-parameter" "-I$(WHITEDB_PATH)/Db" "-I$(XPMEM_PATH)/include" "-I$(PISCES_PATH)/linux_usr" "-I$(PETLIB_PATH)" "-I$(KITTEN_PATH)/include" "-I$(PALACIOS_PATH)/user" "-I../shell" "-I../libhobbes" "-I$(libelfrwdir)" "-static" "-fopenmp")) nil [144 497])
+            ("OMP_FLAGS" variable (:default-value ("-fopenmp")) nil [498 519])
+            ("CC" variable (:default-value ("gcc")) nil [520 529])
+            ("AR" variable (:default-value ("ar")) nil [529 537])
+            ("libs" variable (:default-value ("$(PISCES_PATH)/linux_usr/libpisces.a" "../libhobbes/libhobbes.a" "$(KITTEN_PATH)/user/install/lib/liblwk.a")) nil [538 662])
+            ("execs" variable (:default-value ("export" "attach" "downtime" "downtime_client")) nil [665 714])
+            ("export_objs" variable (:default-value ("mem_region_test.o")) nil [715 748])
+            ("attach_objs" variable (:default-value ("lwk_test.o")) nil [749 775])
+            ("downtime_objs" variable (:default-value ("downtime_test.o")) nil [776 809])
+            ("downtime_client_objs" variable (:default-value ("downtime_test_client.o")) nil [810 857])
+            ("hobbes_objs" variable (:default-value ("../shell/memutil.o")) nil [858 892])
+            ("%" function (:arguments ("%.c")) nil [1004 1070])
+            ("%.o" function (:arguments ("%.c" "$(libs)")) nil [1071 1136])
+            ("%.a" function (:arguments ("%.o")) nil [1137 1181])
+            ("all" function (:arguments ("$(execs)")) nil [1183 1198])
+            ("export" function (:arguments ("$(export_objs)" "$(hobbes_objs)" "$(libs)")) nil [1199 1325])
+            ("attach" function (:arguments ("$(attach_objs)" "$(hobbes_objs)" "$(libs)")) nil [1326 1452])
+            ("downtime" function (:arguments ("$(downtime_objs)" "$(hobbes_objs)" "$(libs)")) nil [1453 1583])
+            ("downtime_client" function (:arguments ("$(downtime_client_objs)" "$(hobbes_objs)" "$(libs)")) nil [1584 1741])
+            ("clean" function nil nil [1743 1827]))          
+      :file "Makefile"
+      :pointmax 1835
+      :fsize 1834
+      :lastmodtime '(24741 30087)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hobbes_app.h" include (:system-flag t) nil [1 24])
+            ("unistd.h" include (:system-flag t) nil [25 44])
+            ("stdlib.h" include (:system-flag t) nil [45 64])
+            ("malloc.h" include (:system-flag t) nil [65 84])
+            ("petos.h" include (:system-flag t) nil [226 244])
+            ("pisces.h" include (:system-flag t) nil [246 265])
+            ("hobbes_enclave.h" include (:system-flag t) nil [266 293])
+            ("hobbes_app.h" include (:system-flag t) nil [294 317])
+            ("hobbes_db.h" include (:system-flag t) nil [318 340])
+            ("hobbes_util.h" include (:system-flag t) nil [341 365])
+            ("hobbes_notifier.h" include (:system-flag t) nil [366 394])
+            ("pisces_compat.h" include (:system-flag t) nil [395 421])
+            ("xemem.h" include (:system-flag t) nil [422 440])
+            ("hobbes_system.h" include (:system-flag t) nil [441 467])
+            ("memutil.h" include (:system-flag t) nil [469 489])
+            ("benchmark_info" type
+               (:members 
+                  ( ("addr" variable (:type "unsigned long long") (reparse-symbol classsubparts) [519 543]))                  
+                :type "struct")
+                nil [491 570])
+            ("PISCES_BENCHMARK" variable (:constant-flag t) nil [580 596])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [624 633])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [634 647]))                  
+                :type "int")
+                nil [615 1508]))          
+      :file "mem_region_test.c"
+      :pointmax 1328
+      :fsize 1327
+      :lastmodtime '(24738 47985)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PISCES_BENCHMARK" . ((number "410" 610 . 613)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hobbes_app.h" include (:system-flag t) nil [1 24])
+            ("unistd.h" include (:system-flag t) nil [25 44])
+            ("stdlib.h" include (:system-flag t) nil [45 64])
+            ("hobbes_enclave.h" include (:system-flag t) nil [66 93])
+            ("hobbes_app.h" include (:system-flag t) nil [94 117])
+            ("hobbes_db.h" include (:system-flag t) nil [118 140])
+            ("hobbes_util.h" include (:system-flag t) nil [141 165])
+            ("hobbes_notifier.h" include (:system-flag t) nil [166 194])
+            ("xemem.h" include (:system-flag t) nil [195 213])
+            ("hobbes_system.h" include (:system-flag t) nil [214 240])
+            ("petos.h" include (:system-flag t) nil [241 259])
+            ("memutil.h" include (:system-flag t) nil [260 280])
+            ("lwk/types.h" include (:system-flag t) nil [282 304])
+            ("lwk/delay.h" include (:system-flag t) nil [305 327])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [339 348])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [349 362]))                  
+                :type "int")
+                nil [330 1217]))          
+      :file "lwk_test.c"
+      :pointmax 1218
+      :fsize 1045
+      :lastmodtime '(24484 42087)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hobbes_app.h" include (:system-flag t) nil [1 24])
+            ("unistd.h" include (:system-flag t) nil [25 44])
+            ("stdlib.h" include (:system-flag t) nil [45 64])
+            ("malloc.h" include (:system-flag t) nil [65 84])
+            ("petos.h" include (:system-flag t) nil [226 244])
+            ("pisces.h" include (:system-flag t) nil [246 265])
+            ("hobbes_enclave.h" include (:system-flag t) nil [266 293])
+            ("hobbes_app.h" include (:system-flag t) nil [294 317])
+            ("hobbes_db.h" include (:system-flag t) nil [318 340])
+            ("hobbes_util.h" include (:system-flag t) nil [341 365])
+            ("hobbes_notifier.h" include (:system-flag t) nil [366 394])
+            ("pisces_compat.h" include (:system-flag t) nil [395 421])
+            ("xemem.h" include (:system-flag t) nil [422 440])
+            ("hobbes_system.h" include (:system-flag t) nil [441 467])
+            ("memutil.h" include (:system-flag t) nil [469 489])
+            ("benchmark_info" type
+               (:members 
+                  ( ("addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [519 534])
+                    ("n_threads" variable (:type "int") (reparse-symbol classsubparts) [539 553]))                  
+                :type "struct")
+                nil [491 580])
+            ("PISCES_BENCHMARK" variable (:constant-flag t) nil [590 606])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [634 643])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [644 657]))                  
+                :type "int")
+                nil [625 1824]))          
+      :file "downtime_test.c"
+      :pointmax 1825
+      :fsize 1824
+      :lastmodtime '(24741 59288)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PISCES_BENCHMARK" . ((number "410" 606 . 609)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("hobbes_app.h" include (:system-flag t) nil [1 24])
+            ("unistd.h" include (:system-flag t) nil [25 44])
+            ("stdlib.h" include (:system-flag t) nil [45 64])
+            ("hobbes_enclave.h" include (:system-flag t) nil [66 93])
+            ("hobbes_app.h" include (:system-flag t) nil [94 117])
+            ("hobbes_db.h" include (:system-flag t) nil [118 140])
+            ("hobbes_util.h" include (:system-flag t) nil [141 165])
+            ("hobbes_notifier.h" include (:system-flag t) nil [166 194])
+            ("xemem.h" include (:system-flag t) nil [195 213])
+            ("hobbes_system.h" include (:system-flag t) nil [214 240])
+            ("petos.h" include (:system-flag t) nil [241 259])
+            ("memutil.h" include (:system-flag t) nil [260 280])
+            ("lwk/types.h" include (:system-flag t) nil [282 304])
+            ("lwk/delay.h" include (:system-flag t) nil [305 327])
+            ("lwk/benchmark.h" include (:system-flag t) nil [328 354])
+            ("lwk/aspace.h" include (:system-flag t) nil [355 378])
+            ("omp.h" include nil nil [380 396])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [407 416])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [417 430]))                  
+                :type "int")
+                nil [398 1756]))          
+      :file "downtime_test_client.c"
+      :pointmax 1757
+      :fsize 1756
+      :lastmodtime '(24741 53825)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!benchmark!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

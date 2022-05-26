@@ -1,0 +1,299 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [2110 2133])
+            ("lwk/task.h" include (:system-flag t) nil [2134 2155])
+            ("lwk/aspace.h" include (:system-flag t) nil [2156 2179])
+            ("lwk/futex.h" include (:system-flag t) nil [2180 2202])
+            ("lwk/hash.h" include (:system-flag t) nil [2203 2224])
+            ("lwk/sched.h" include (:system-flag t) nil [2225 2247])
+            ("arch/uaccess.h" include (:system-flag t) nil [2248 2273])
+            ("FLAGS_SHARED" variable (:constant-flag t) nil [2464 2476])
+            ("futex_queue_init" function
+               (:arguments 
+                  ( ("queue" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2509 2538]))                  
+                :type "void")
+                nil [2485 2610])
+            ("uaddr_is_valid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2641 2658])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2660 2667]))                  
+                :type "bool")
+                nil [2612 2729])
+            ("get_futex_key" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2761 2778])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2780 2786])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2788 2810]))                  
+                :type ("addr_t" type (:type "class") nil nil))
+                nil [2731 3250])
+            ("futex_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("futex" variable
+                       (:pointer 1
+                        :type ("futex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3276 3299])
+                    ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3301 3318])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3320 3326])
+                    ("bitset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3328 3346])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3348 3370]))                  
+                :type "int")
+                nil [3252 3528])
+            ("get_queue" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3570 3587])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3589 3595])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3597 3618])
+                    ("key_out" variable
+                       (:pointer 1
+                        :type ("addr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3620 3640]))                  
+                :type ("futex_queue" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3530 3921])
+            ("queue_lock" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3964 3981])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3983 3989])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3991 4012])
+                    ("futex" variable
+                       (:pointer 1
+                        :type ("futex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4014 4038]))                  
+                :type ("futex_queue" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3923 4176])
+            ("queue_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("futex_queue" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4205 4240]))                  
+                :type "void")
+                nil [4178 4278])
+            ("queue_me" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("futex" variable
+                       (:pointer 1
+                        :type ("futex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4303 4326])
+                    ("futex_queue" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4328 4363]))                  
+                :type "void")
+                nil [4280 4423])
+            ("unqueue_me" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("futex" variable
+                       (:pointer 1
+                        :type ("futex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4449 4473]))                  
+                :type "int")
+                nil [4425 5458])
+            ("lock_two_queues" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("queue1" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5490 5519])
+                    ("queue2" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5521 5551]))                  
+                :type "void")
+                nil [5460 5682])
+            ("unlock_two_queues" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("queue1" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5716 5745])
+                    ("queue2" variable
+                       (:pointer 1
+                        :type ("futex_queue" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5747 5777]))                  
+                :type "void")
+                nil [5684 5863])
+            ("futex_wait" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5937 5954])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5956 5962])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5964 5985])
+                    ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5987 6002])
+                    ("timeout" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6004 6023])
+                    ("bitset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6025 6044]))                  
+                :type "int")
+                nil [5913 7719])
+            ("wake_futex" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("futex" variable
+                       (:pointer 1
+                        :type ("futex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7866 7890]))                  
+                :type "void")
+                nil [7841 8483])
+            ("futex_wake" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8562 8579])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8581 8587])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8589 8610])
+                    ("nr_wake" variable (:type "int") (reparse-symbol arg-sub-list) [8612 8627])
+                    ("bitset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8629 8648]))                  
+                :type "int")
+                nil [8538 9181])
+            ("futex_wake_op" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9275 9292])
+                    ("" variable (:type ("uaddr1" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9294 9301])
+                    ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9303 9320])
+                    ("" variable (:type ("uaddr2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9322 9329])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [9331 9352])
+                    ("nr_wake1" variable (:type "int") (reparse-symbol arg-sub-list) [9354 9370])
+                    ("nr_wake2" variable (:type "int") (reparse-symbol arg-sub-list) [9372 9388])
+                    ("op" variable (:type "int") (reparse-symbol arg-sub-list) [9390 9401]))                  
+                :type "int")
+                nil [9248 10346])
+            ("futex_cmp_requeue" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10456 10473])
+                    ("" variable (:type ("uaddr1" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10475 10482])
+                    ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10484 10501])
+                    ("" variable (:type ("uaddr2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10503 10510])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10512 10533])
+                    ("nr_wake" variable (:type "int") (reparse-symbol arg-sub-list) [10535 10550])
+                    ("nr_requeue" variable (:type "int") (reparse-symbol arg-sub-list) [10552 10570])
+                    ("cmpval" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10572 10591]))                  
+                :type "int")
+                nil [10425 11660])
+            ("futex" function
+               (:arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11674 11691])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11693 11699])
+                    ("op" variable (:type "int") (reparse-symbol arg-sub-list) [11701 11711])
+                    ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11713 11728])
+                    ("timeout" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11730 11749])
+                    ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11751 11768])
+                    ("" variable (:type ("uaddr2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11770 11777])
+                    ("val2" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11779 11795])
+                    ("val3" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11797 11814]))                  
+                :type "int")
+                nil [11662 12665])
+            ("sys_futex" function
+               (:arguments 
+                  ( ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12684 12701])
+                    ("" variable (:type ("uaddr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12703 12709])
+                    ("op" variable (:type "int") (reparse-symbol arg-sub-list) [12711 12721])
+                    ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12723 12738])
+                    ("__user" variable (:type ("timespec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [12740 12764])
+                    ("" variable (:type ("utime" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12765 12771])
+                    ("__user" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12773 12790])
+                    ("" variable (:type ("uaddr2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12792 12799])
+                    ("val3" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12801 12818]))                  
+                :type "long")
+                nil [12667 13524]))          
+      :file "futex.c"
+      :pointmax 13525
+      :fsize 13524
+      :lastmodtime '(24860 45297)
+      :unmatched-syntax '((punctuation 12789 . 12790) (punctuation 12763 . 12764) (punctuation 12700 . 12701) (punctuation 11767 . 11768) (punctuation 11690 . 11691) (punctuation 10500 . 10501) (punctuation 10472 . 10473) (punctuation 9319 . 9320) (punctuation 9291 . 9292) (punctuation 8578 . 8579) (punctuation 5953 . 5954) (punctuation 3980 . 3981) (punctuation 3586 . 3587) (punctuation 3317 . 3318) (punctuation 2777 . 2778) (punctuation 2657 . 2658))
+      :lexical-table 
+        '(("FLAGS_SHARED" . ((number "0x1" 2480 . 2483)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/time.h" include (:system-flag t) nil [25 46])
+            ("arch/uaccess.h" include (:system-flag t) nil [47 72])
+            ("sys_gettimeofday" function
+               (:arguments 
+                  ( ("__user" variable (:type ("timeval" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [97 121])
+                    ("" variable (:type ("tv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122 125])
+                    ("__user" variable (:type ("timezone" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [127 151])
+                    ("" variable (:type ("tz" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [152 156]))                  
+                :type "int")
+                nil [74 579]))          
+      :file "gettimeofday.c"
+      :pointmax 581
+      :fsize 580
+      :lastmodtime '(24790 7104)
+      :unmatched-syntax '((punctuation 150 . 151) (punctuation 120 . 121))))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!kernel!linux_syscalls!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

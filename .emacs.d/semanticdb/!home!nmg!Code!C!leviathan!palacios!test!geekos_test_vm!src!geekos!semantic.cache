@@ -1,0 +1,67 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("geekos/kassert.h" include (:system-flag t) nil [249 276])
+            ("geekos/defs.h" include (:system-flag t) nil [277 301])
+            ("geekos/idt.h" include (:system-flag t) nil [302 325])
+            ("geekos/debug.h" include (:system-flag t) nil [326 351])
+            ("s_IDT" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("IDT_Descriptor" type (:type "union") nil nil))
+                nil [555 608])
+            ("g_entryPointTableStart" variable
+               (:typemodifiers ("extern")
+                :type "char")
+                nil [1003 1060])
+            ("g_entryPointTableEnd" variable
+               (:typemodifiers ("extern")
+                :type "char")
+                nil [1003 1060])
+            ("g_handlerSizeNoErr" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1061 1109])
+            ("g_handlerSizeErr" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1061 1109])
+            ("g_interruptTable" variable
+               (:dereference 1
+                :type ("Interrupt_Handler" type (:type "class") nil nil))
+                nil [1269 1323])
+            ("DumpIDT" function (:type "void") nil [1330 1939])
+            ("Init_IDT" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2324 2329]))                  
+                :type "void")
+                nil [2310 3599])
+            ("Init_Interrupt_Gate" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("IDT_Descriptor" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [3727 3754])
+                    ("addr" variable (:type ("ulong_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3755 3768])
+                    ("dpl" variable (:type "int") (reparse-symbol arg-sub-list) [3770 3778]))                  
+                :type "void")
+                nil [3702 4030])
+            ("Install_Interrupt_Handler" function
+               (:arguments 
+                  ( ("interrupt" variable (:type "int") (reparse-symbol arg-sub-list) [4301 4315])
+                    ("handler" variable (:type ("Interrupt_Handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4316 4342]))                  
+                :type "void")
+                nil [4270 4449]))          
+      :file "idt.c"
+      :pointmax 4450
+      :fsize 4449
+      :lastmodtime '(23987 30351 455933 450000)
+      :unmatched-syntax '((semantic-list 4346 . 4388) (semantic-list 4346 . 4388))))
+  :file "!home!nmg!Code!C!leviathan!palacios!test!geekos_test_vm!src!geekos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

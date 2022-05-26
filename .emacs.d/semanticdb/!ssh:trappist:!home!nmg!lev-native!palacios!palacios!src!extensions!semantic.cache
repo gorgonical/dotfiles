@@ -1,0 +1,225 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [274 299])
+            ("palacios/vmm_types.h" include (:system-flag t) nil [300 331])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [332 368])
+            ("palacios/vmm_cpuid.h" include (:system-flag t) nil [369 400])
+            ("palacios/vm.h" include (:system-flag t) nil [401 425])
+            ("palacios/vmm_util.h" include (:system-flag t) nil [426 456])
+            ("HOBBES_CPUID_LEAF" variable (:constant-flag t) nil [467 484])
+            ("HOBBES_MAGIC" variable (:constant-flag t) nil [505 517])
+            ("HOBBES_VERSION" variable (:constant-flag t) nil [541 555])
+            ("INVALID_ENCLAVE" variable (:constant-flag t) nil [571 586])
+            ("hobbes_cpuid_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("v3_core_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [638 665])
+                    ("cpuid" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [688 716])
+                    ("eax" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [739 765])
+                    ("ebx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [788 814])
+                    ("ecx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [837 863])
+                    ("edx" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [886 912])
+                    ("priv_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [935 967]))                  
+                :type "int")
+                nil [605 1166])
+            ("hobbes_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1194 1217])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1231 1255])
+                    ("priv_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1269 1299]))                  
+                :type "int")
+                nil [1170 1929])
+            ("hobbes_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name        = \"HOBBES_ENV\",
+    .init        = hobbes_init,
+    .deinit      = NULL,
+    .core_init   = NULL,
+    .core_deinit = NULL,
+    .on_entry    = NULL,
+    .on_exit     = NULL
+}"
+                :type ("v3_extension_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1934 2173])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hobbes_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2197 2209]))                  
+                :type "int")
+                nil [2177 2210]))          
+      :file "ext_hobbes.c"
+      :pointmax 2211
+      :fsize 2210
+      :lastmodtime '(24620 17583)
+      :unmatched-syntax '((punctuation 2196 . 2197))
+      :lexical-table 
+        '(("INVALID_ENCLAVE" . ((semantic-list "((uint32_t)-1)" 589 . 603)))
+          ("HOBBES_CPUID_LEAF" . ((number "0x41000000" 486 . 496)))
+          ("HOBBES_VERSION" . ((number "1" 560 . 561)))
+          ("HOBBES_MAGIC" . ((number "0x40bbe5" 524 . 532)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("palacios/vmm.h" include (:system-flag t) nil [1 26])
+            ("palacios/vmm_extensions.h" include (:system-flag t) nil [27 63])
+            ("lift_map_data" type
+               (:members 
+                  ( ("cpu_map" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [215 236]))                  
+                :type "struct")
+                nil [188 239])
+            ("lift_save" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [262 293])
+                    ("chkpt_state" variable
+                       (:pointer 1
+                        :type ("lift_map_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [304 342])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [353 384])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [395 424]))                  
+                :type "int")
+                nil [241 696])
+            ("lift_load" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [719 750])
+                    ("chkpt_state" variable
+                       (:pointer 1
+                        :type ("lift_map_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [761 799])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [810 841])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [852 881]))                  
+                :type "int")
+                nil [698 1173])
+            ("lift_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("v3_vm_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1197 1220])
+                    ("cfg" variable
+                       (:pointer 1
+                        :type ("v3_cfg_tree_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1231 1255])
+                    ("priv_data" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1266 1296]))                  
+                :type "int")
+                nil [1176 1633])
+            ("lift_impl" variable
+               (:typemodifiers ("static")
+                :default-value "{
+    .name        = \"LIFTING\",
+    .init        = lift_init,
+    .deinit      = NULL,
+    .core_init   = NULL,
+    .core_deinit = NULL,
+    .on_entry    = NULL,
+    .on_exit     = NULL
+}"
+                :type ("v3_extension_impl" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1635 1867])
+            ("register_extension" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lift_impl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1889 1899]))                  
+                :type "int")
+                nil [1869 1900]))          
+      :file "ext_lift.c"
+      :pointmax 1901
+      :fsize 1900
+      :lastmodtime '(25019 59162)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("obj-y" variable (:default-value ("null.o")) nil [1 17]))          
+      :file "Makefile"
+      :pointmax 399
+      :fsize 398
+      :lastmodtime '(25017 20850)
+      :unmatched-syntax '((symbol 388 . 398) (punctuation 386 . 387) (punctuation 385 . 386) (semantic-list 358 . 381) (punctuation 357 . 358) (symbol 353 . 357) (bol 353 . 353) (symbol 339 . 351) (punctuation 337 . 338) (punctuation 336 . 337) (semantic-list 309 . 331) (punctuation 308 . 309) (symbol 304 . 308) (bol 304 . 304) (symbol 290 . 302) (punctuation 288 . 289) (punctuation 287 . 288) (semantic-list 260 . 282) (punctuation 259 . 260) (symbol 255 . 259) (bol 255 . 255) (symbol 242 . 254) (punctuation 240 . 241) (punctuation 239 . 240) (semantic-list 212 . 238) (punctuation 211 . 212) (symbol 207 . 211) (bol 207 . 207) (symbol 191 . 206) (punctuation 189 . 190) (punctuation 188 . 189) (semantic-list 161 . 186) (punctuation 160 . 161) (symbol 156 . 160) (bol 156 . 156) (symbol 144 . 155) (punctuation 142 . 143) (punctuation 141 . 142) (semantic-list 114 . 135) (punctuation 113 . 114) (symbol 109 . 113) (bol 109 . 109) (symbol 98 . 108) (punctuation 96 . 97) (punctuation 95 . 96) (semantic-list 68 . 88) (punctuation 67 . 68) (symbol 63 . 67) (bol 63 . 63) (symbol 52 . 62) (punctuation 50 . 51) (punctuation 49 . 50) (semantic-list 22 . 43) (punctuation 21 . 22) (symbol 17 . 21) (bol 17 . 17))))
+  :file "!ssh:trappist:!home!nmg!lev-native!palacios!palacios!src!extensions!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

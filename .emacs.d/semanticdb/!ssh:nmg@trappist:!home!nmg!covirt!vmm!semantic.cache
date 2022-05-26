@@ -1,0 +1,870 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [221 237])
+            ("instrument.h" include nil nil [238 261])
+            ("migrate.h" include nil nil [262 282])
+            ("apic.h" include nil nil [283 300])
+            ("set_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [329 339]))                  
+                :type "void")
+                nil [302 416])
+            ("get_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [444 449]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [418 547])
+            ("switch_cr3" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [564 604]))                  
+                :type "int")
+                nil [549 1033])
+            ("inject_nmi" function (:type "int") nil [1035 1545])
+            ("set_virr_bit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vapic_ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1572 1588])
+                    ("bit" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1589 1596]))                  
+                :type "void")
+                nil [1547 1713])
+            ("check_irq_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1832 1837]))                  
+                :type "int")
+                nil [1807 1855])
+            ("handle_vm_exit" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1876 1903])
+                    ("cr3" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1904 1912]))                  
+                :type "int")
+                nil [1857 9979])
+            ("final_vmcs_prep" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10001 10041])
+                    ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10042 10062])
+                    ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10079 10104])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10105 10140]))                  
+                :type "int")
+                nil [9981 11268])
+            ("print_host_state" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11291 11331]))                  
+                :type "int")
+                nil [11270 11563])
+            ("print_pisces_boot_params" function
+               (:arguments 
+                  ( ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11595 11621]))                  
+                :type "void")
+                nil [11565 12094]))          
+      :file "vmm.c"
+      :pointmax 12095
+      :fsize 12094
+      :lastmodtime '(24752 39531)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__VMM_H__" variable (:constant-flag t) nil [27 36])
+            ("serial.h" include (:system-flag t) nil [78 97])
+            ("printf.h" include (:system-flag t) nil [98 117])
+            ("vmx.h" include (:system-flag t) nil [118 134])
+            ("stdlib.h" include (:system-flag t) nil [135 154])
+            ("util.h" include (:system-flag t) nil [155 172])
+            ("vmx_hw_info.h" include (:system-flag t) nil [173 197])
+            ("vmm_lowlevel.h" include (:system-flag t) nil [198 223])
+            ("apic.h" include (:system-flag t) nil [224 241])
+            ("covirt_types.h" include (:system-flag t) nil [242 267])
+            ("pgtables.h" include (:system-flag t) nil [268 289])
+            ("interrupt.h" include (:system-flag t) nil [290 312])
+            ("debug.h" include nil nil [314 332])
+            ("boot_params.h" include nil nil [333 357])
+            ("pisces_structs.h" include nil nil [358 385])
+            ("message_buffer.h" include nil nil [386 413])
+            ("lock.h" include nil nil [414 431])
+            ("hypercall.h" include nil nil [432 454])
+            ("instrument.h" include nil nil [455 478])
+            ("covirt_vmx_launch" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("vm_regs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [509 538])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [539 575]))                  
+                :type "int")
+                nil [480 576])
+            ("covirt_vmx_resume" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("vm_regs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [606 635])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [636 672]))                  
+                :type "int")
+                nil [577 673])
+            ("vmm_main" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [689 709])
+                    ("boot_params_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [710 735]))                  
+                :type "void")
+                nil [675 783])
+            ("handle_vm_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [804 831])
+                    ("cr3" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [832 840]))                  
+                :type "int")
+                nil [785 841])
+            ("final_vmcs_prep" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [863 903])
+                    ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [904 924])
+                    ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [941 966])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [967 1002]))                  
+                :type "int")
+                nil [843 1003])
+            ("switch_cr3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1020 1060]))                  
+                :type "int")
+                nil [1005 1061])
+            ("inject_nmi" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1078 1083]))                  
+                :type "int")
+                nil [1063 1084])
+            ("print_host_state" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1107 1147]))                  
+                :type "int")
+                nil [1086 1148])
+            ("print_pisces_boot_params" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1180 1206]))                  
+                :type "void")
+                nil [1150 1207]))          
+      :file "vmm.h"
+      :pointmax 1530
+      :fsize 1529
+      :lastmodtime '(24629 41743)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__VMM_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CFLAGS" variable (:default-value ("-std=gnu99" "-Wall" "-Wundef" "-Wstrict-prototypes" "-Wno-trigraphs" "-fno-strict-aliasing" "-fno-strict-overflow" "-fno-common" "-fno-stack-protector" "-fgnu89-inline" \.\.\.)) nil [2 576])
+            ("CFLAGS" variable (:default-value ("-I../common" "$(FEATURE_FLAGS)")) nil [595 634])
+            ("CC" variable (:default-value ("gcc")) nil [636 645])
+            ("AR" variable (:default-value ("ar")) nil [645 653])
+            ("LD" variable (:default-value ("ld")) nil [653 661])
+            ("tgt" variable (:default-value ("covirt_vmm")) nil [662 680])
+            ("simple" variable (:default-value ("simple")) nil [680 697])
+            ("libs" variable (:default-value ("../libcovirt.a")) nil [699 722])
+            ("objs" variable (:default-value ("vmm.o" "launch_main.o" "entry.o")) nil [723 760])
+            ("%" function (:arguments ("%.c")) nil [873 939])
+            ("%.o" function (:arguments ("%.c")) nil [940 998])
+            ("%.a" function (:arguments ("%.o")) nil [999 1043])
+            ("all" function (:arguments ("$(tgt)")) nil [1045 1058])
+            ("$(tgt)" function (:arguments ("$(objs)")) nil [1060 1224])
+            ("clean" function nil nil [1225 1281]))          
+      :file "Makefile"
+      :pointmax 1289
+      :fsize 1288
+      :lastmodtime '(24678 12683)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [223 239])
+            ("pgtables.h" include nil nil [240 261])
+            ("globals.h" include nil nil [262 282])
+            ("gprs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_gprs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [319 355])
+            ("ctrl_regs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_ctrl_regs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [356 397])
+            ("segs" variable
+               (:typemodifiers ("static")
+                :type ("segments" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [398 434])
+            ("state" variable
+               (:typemodifiers ("static")
+                :type ("covirt_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [435 472])
+            ("ready_to_launch" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [501 528]))                  
+                :type "int")
+                nil [474 565])
+            ("vmm_main" function
+               (:arguments 
+                  ( ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [581 601])
+                    ("boot_params_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [602 627]))                  
+                :type "void")
+                nil [567 7353]))          
+      :file "launch_main.c"
+      :pointmax 7354
+      :fsize 7353
+      :lastmodtime '(24752 39426)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__BOOT_PARAMS_H__" variable (:constant-flag t) nil [256 273])
+            ("BOOT_FLAGS" type
+               (:members 
+                  ( ("BOOT_MODE_REGULAR" variable
+                       (:constant-flag t
+                        :default-value (314 315)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [294 315])
+                    ("BOOT_MODE_MIGRATE" variable
+                       (:constant-flag t
+                        :default-value (338 339)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [318 339])
+                    ("BOOT_READY" variable
+                       (:constant-flag t
+                        :default-value (386 387)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [366 387]))                  
+                :type "enum")
+                nil [275 390])
+            ("covirt_boot_params" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("launch_code" variable
+                               (:dereference 1
+                                :type ("u8" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [480 500])
+                            ("" type
+                               (:members 
+                                  ( ("launch_code_asm" variable
+                                       (:dereference 1
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [515 542])
+                                    ("launch_code_rsp" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [546 568])
+                                    ("launch_code_rsi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [572 594])
+                                    ("launch_code_target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [598 628]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [503 657]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [470 685])
+                    ("init_dbg_buf" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [688 708])
+                    ("magic" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [711 721])
+                    ("vmm_gdt_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [724 739])
+                    ("vmm_gdt_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [741 758])
+                    ("vmm_idt_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [760 775])
+                    ("vmm_tss_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [777 792])
+                    ("vmm_tss_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [794 811])
+                    ("vmm_cr3_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [813 828])
+                    ("guest_vmcs_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [835 853])
+                    ("vmx_on_reg_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [855 873])
+                    ("msr_addresses_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [875 896])
+                    ("log_buffer_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [898 916])
+                    ("cmd_queue_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [918 935])
+                    ("en_int_directory_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [937 961])
+                    ("apic_info_directory_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [963 990])
+                    ("workqueue_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [992 1009])
+                    ("is_boot" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1011 1022])
+                    ("cpu_id" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1024 1034])
+                    ("cpu_ordinal" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1036 1051])
+                    ("ready" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1053 1062])
+                    ("boot_flags" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1064 1078])
+                    ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1081 1107])
+                    ("pisces_kern_target_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1109 1135])
+                    ("vmm_ctx_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1165 1180])
+                    ("vmm_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1182 1195])
+                    ("vmm_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1197 1210]))                  
+                :type "struct")
+                nil [392 1239]))          
+      :file "boot_params.h"
+      :pointmax 1249
+      :fsize 1248
+      :lastmodtime '(24721 61654)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__BOOT_PARAMS_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("PISCES_STRUCTS_H" variable (:constant-flag t) nil [34 50])
+            ("pisces_boot_params" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("launch_code" variable
+                               (:dereference 1
+                                :type ("u64" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [201 220])
+                            ("" type
+                               (:members 
+                                  ( ("launch_code_asm" variable
+                                       (:dereference 1
+                                        :type ("u8" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [235 261])
+                                    ("launch_code_rsi" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [265 287])
+                                    ("launch_code_target_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [291 321]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [223 350]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [191 378])
+                    ("init_dbg_buf" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [381 401])
+                    ("magic" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [409 419])
+                    ("" type
+                       (:members 
+                          ( ("flags" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [436 446])
+                            ("" type
+                               (:members 
+                                  ( ("initialized" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [461 482])
+                                    ("flags__rsvd" variable
+                                       (:suffix ":63"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [486 508]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [449 537]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [426 565])
+                    ("boot_params_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [573 594])
+                    ("cpu_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [597 608])
+                    ("apic_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [610 622])
+                    ("cpu_khz" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [624 636])
+                    ("trampoline_code_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [639 662])
+                    ("domain_xcall_master_apicid" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [700 731])
+                    ("domain_xcall_vector" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [766 790])
+                    ("cmd_line" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [806 826])
+                    ("pgtables_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1106 1124])
+                    ("pgtables_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1129 1147])
+                    ("guest_stack_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1153 1174])
+                    ("guest_stack_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1179 1200])
+                    ("kernel_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1214 1230])
+                    ("kernel_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1232 1248])
+                    ("initrd_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1262 1278])
+                    ("initrd_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1280 1296])
+                    ("console_ring_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1362 1384])
+                    ("console_ring_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1386 1408])
+                    ("control_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1478 1499])
+                    ("control_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1501 1522])
+                    ("longcall_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1592 1614])
+                    ("longcall_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1616 1638])
+                    ("xpmem_buf_addr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1698 1717])
+                    ("xpmem_buf_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1719 1738])
+                    ("base_mem_paddr" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1741 1760])
+                    ("base_mem_size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1762 1780]))                  
+                :type "struct")
+                nil [113 1808]))          
+      :file "pisces_structs.h"
+      :pointmax 1837
+      :fsize 1836
+      :lastmodtime '(24260 9323)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PISCES_STRUCTS_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [223 239])
+            ("pgtables.h" include nil nil [240 261])
+            ("globals.h" include nil nil [262 282])
+            ("gprs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_gprs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [319 355])
+            ("ctrl_regs" variable
+               (:typemodifiers ("static")
+                :type ("covirt_ctrl_regs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [356 397])
+            ("segs" variable
+               (:typemodifiers ("static")
+                :type ("segments" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [398 434])
+            ("state" variable
+               (:typemodifiers ("static")
+                :type ("covirt_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [435 472])
+            ("ready_to_launch" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("covirt_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [501 528]))                  
+                :type "int")
+                nil [474 565])
+            ("vmm_main" function
+               (:arguments 
+                  ( ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [581 601])
+                    ("boot_params_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [602 627]))                  
+                :type "void")
+                nil [567 7289]))          
+      :file "launch_main.c~"
+      :pointmax 7290
+      :fsize 7289
+      :lastmodtime '(24739 60623)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vmm.h" include nil nil [221 237])
+            ("instrument.h" include nil nil [238 261])
+            ("set_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [291 301]))                  
+                :type "void")
+                nil [264 378])
+            ("get_cr4" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [406 411]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [380 509])
+            ("switch_cr3" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [526 566]))                  
+                :type "int")
+                nil [511 995])
+            ("inject_nmi" function (:type "int") nil [997 1507])
+            ("check_icr_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1639 1644]))                  
+                :type "int")
+                nil [1614 1662])
+            ("set_bitmap_bit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bitmap" variable
+                       (:pointer 1
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1690 1702])
+                    ("bit_number" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1718 1742])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1758 1777]))                  
+                :type "int")
+                nil [1664 1907])
+            ("check_apic_msr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1935 1960]))                  
+                :type "int")
+                nil [1909 4918])
+            ("check_irq_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4945 4950]))                  
+                :type "int")
+                nil [4920 4968])
+            ("set_virr_bit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vapic_ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4995 5011])
+                    ("bit" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5012 5019]))                  
+                :type "void")
+                nil [4970 5136])
+            ("handle_vm_exit" function
+               (:arguments 
+                  ( ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5157 5182])
+                    ("cr3" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5183 5191]))                  
+                :type "int")
+                nil [5138 11588])
+            ("final_vmcs_prep" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11610 11650])
+                    ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11651 11671])
+                    ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11688 11713])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11714 11749]))                  
+                :type "int")
+                nil [11590 12877])
+            ("print_host_state" function
+               (:arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12900 12940]))                  
+                :type "int")
+                nil [12879 13172])
+            ("print_pisces_boot_params" function
+               (:arguments 
+                  ( ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13204 13230]))                  
+                :type "void")
+                nil [13174 13703]))          
+      :file "vmm.c~"
+      :pointmax 13704
+      :fsize 11879
+      :lastmodtime '(24712 61117)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__VMM_H__" variable (:constant-flag t) nil [27 36])
+            ("serial.h" include (:system-flag t) nil [78 97])
+            ("printf.h" include (:system-flag t) nil [98 117])
+            ("vmx.h" include (:system-flag t) nil [118 134])
+            ("stdlib.h" include (:system-flag t) nil [135 154])
+            ("util.h" include (:system-flag t) nil [155 172])
+            ("vmx_hw_info.h" include (:system-flag t) nil [173 197])
+            ("vmm_lowlevel.h" include (:system-flag t) nil [198 223])
+            ("apic.h" include (:system-flag t) nil [224 241])
+            ("covirt_types.h" include (:system-flag t) nil [242 267])
+            ("pgtables.h" include (:system-flag t) nil [268 289])
+            ("interrupt.h" include (:system-flag t) nil [290 312])
+            ("debug.h" include nil nil [314 332])
+            ("boot_params.h" include nil nil [333 357])
+            ("pisces_structs.h" include nil nil [358 385])
+            ("message_buffer.h" include nil nil [386 413])
+            ("lock.h" include nil nil [414 431])
+            ("hypercall.h" include nil nil [432 454])
+            ("instrument.h" include nil nil [455 478])
+            ("covirt_vmx_launch" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("vm_regs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [509 538])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [539 575]))                  
+                :type "int")
+                nil [480 576])
+            ("covirt_vmx_resume" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("vm_regs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [606 635])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [636 672]))                  
+                :type "int")
+                nil [577 673])
+            ("vmm_main" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [689 709])
+                    ("boot_params_pa" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [710 735]))                  
+                :type "void")
+                nil [675 783])
+            ("handle_vm_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [804 829])
+                    ("cr3" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [830 838]))                  
+                :type "int")
+                nil [785 839])
+            ("final_vmcs_prep" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [861 901])
+                    ("guest_rsp" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [902 922])
+                    ("gprs" variable
+                       (:pointer 1
+                        :type ("covirt_gprs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [939 964])
+                    ("ctrl_regs" variable
+                       (:pointer 1
+                        :type ("covirt_ctrl_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [965 1000]))                  
+                :type "int")
+                nil [841 1001])
+            ("switch_cr3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1018 1058]))                  
+                :type "int")
+                nil [1003 1059])
+            ("inject_nmi" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1076 1081]))                  
+                :type "int")
+                nil [1061 1082])
+            ("print_host_state" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("boot_params" variable
+                       (:pointer 1
+                        :type ("covirt_boot_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1105 1145]))                  
+                :type "int")
+                nil [1084 1146])
+            ("print_pisces_boot_params" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("pisces_boot_params_pa" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1178 1204]))                  
+                :type "void")
+                nil [1148 1205]))          
+      :file "vmm.h~"
+      :pointmax 1528
+      :fsize 1527
+      :lastmodtime '(24610 5840)
+      :unmatched-syntax '((semantic-list 65 . 76) (symbol 61 . 65) (PROTECTED 66 . 75) (symbol 50 . 60) (PROTECTED 66 . 75) (symbol 46 . 49) (symbol 39 . 45) (punctuation 38 . 39))
+      :lexical-table 
+        '(("__VMM_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags nil
+      :file "globals.h~"
+      :pointmax 110
+      :fsize 109
+      :lastmodtime '(24537 22705)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!covirt!vmm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

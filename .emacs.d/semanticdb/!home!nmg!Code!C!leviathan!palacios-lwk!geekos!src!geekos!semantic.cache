@@ -1,0 +1,371 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("geekos/kassert.h" include (:system-flag t) nil [283 310])
+            ("geekos/idt.h" include (:system-flag t) nil [311 334])
+            ("geekos/io.h" include (:system-flag t) nil [335 357])
+            ("geekos/irq.h" include (:system-flag t) nil [358 381])
+            ("geekos/debug.h" include (:system-flag t) nil [383 408])
+            ("s_irqMask" variable
+               (:typemodifiers ("static")
+                :default-value "0xfffb"
+                :type ("ushort_t" type (:type "class") nil nil))
+                nil [722 757])
+            ("MASTER" variable (:constant-flag t) nil [824 830])
+            ("SLAVE" variable (:constant-flag t) nil [861 866])
+            ("Install_IRQ" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [1166 1174])
+                    ("handler" variable (:type ("Interrupt_Handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1175 1201]))                  
+                :type "void")
+                nil [1149 1271])
+            ("Get_IRQ_Mask" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1385 1390]))                  
+                :type ("ushort_t" type (:type "class") nil nil))
+                nil [1363 1416])
+            ("Set_IRQ_Mask" function
+               (:arguments 
+                  ( ("mask" variable (:type ("ushort_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1464 1478]))                  
+                :type "void")
+                nil [1446 1781])
+            ("Enable_IRQ" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [1827 1835]))                  
+                :type "void")
+                nil [1811 2025])
+            ("Disable_IRQ" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [2073 2081]))                  
+                :type "void")
+                nil [2056 2270])
+            ("Begin_IRQ" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2368 2398]))                  
+                :type "void")
+                nil [2353 2470])
+            ("End_IRQ" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2593 2623]))                  
+                :type "void")
+                nil [2580 2699])
+            ("End_IRQ_num" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [2719 2727]))                  
+                :type "void")
+                nil [2702 2989]))          
+      :file "irq.c"
+      :pointmax 2990
+      :fsize 2989
+      :lastmodtime '(23798 45552 506758 567000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MASTER" (spp-arg-list ("mask") 830 . 836) . ((semantic-list "((mask) & 0xff)" 837 . 852)))
+          ("SLAVE" (spp-arg-list ("mask") 866 . 872) . ((semantic-list "(((mask)>>8) & 0xff)" 873 . 893)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("geekos/string.h" include (:system-flag t) nil [485 511])
+            ("geekos/int.h" include (:system-flag t) nil [512 535])
+            ("geekos/idt.h" include (:system-flag t) nil [536 559])
+            ("geekos/kthread.h" include (:system-flag t) nil [560 587])
+            ("geekos/kassert.h" include (:system-flag t) nil [588 615])
+            ("geekos/screen.h" include (:system-flag t) nil [616 642])
+            ("geekos/mem.h" include (:system-flag t) nil [643 666])
+            ("geekos/malloc.h" include (:system-flag t) nil [667 693])
+            ("geekos/gdt.h" include (:system-flag t) nil [694 717])
+            ("geekos/segment.h" include (:system-flag t) nil [718 745])
+            ("geekos/crc32.h" include (:system-flag t) nil [799 824])
+            ("geekos/paging.h" include (:system-flag t) nil [825 851])
+            ("geekos/serial.h" include (:system-flag t) nil [852 878])
+            ("geekos/debug.h" include (:system-flag t) nil [879 904])
+            ("SECTORS_PER_PAGE" variable (:constant-flag t) nil [1259 1275])
+            ("debugFaults" variable
+               (:default-value "0"
+                :type "int")
+                nil [1355 1375])
+            ("Debug" variable (:constant-flag t) nil [1384 1389])
+            ("SerialPrintPD" function
+               (:arguments 
+                  ( ("pde" variable
+                       (:pointer 1
+                        :type ("pde_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1450 1461]))                  
+                :type "void")
+                nil [1431 1660])
+            ("SerialPrintPT" function
+               (:arguments 
+                  ( ("starting_address" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1681 1704])
+                    ("pte" variable
+                       (:pointer 1
+                        :type ("pte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1705 1716]))                  
+                :type "void")
+                nil [1662 1901])
+            ("SerialPrintPDE" function
+               (:arguments 
+                  ( ("virtual_address" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1924 1946])
+                    ("pde" variable
+                       (:pointer 1
+                        :type ("pde_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1947 1958]))                  
+                :type "void")
+                nil [1904 2324])
+            ("SerialPrintPTE" function
+               (:arguments 
+                  ( ("virtual_address" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2348 2370])
+                    ("pte" variable
+                       (:pointer 1
+                        :type ("pte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2371 2382]))                  
+                :type "void")
+                nil [2328 2740])
+            ("SerialDumpPageTables" function
+               (:arguments 
+                  ( ("pde" variable
+                       (:pointer 1
+                        :type ("pde_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2769 2780]))                  
+                :type "void")
+                nil [2743 3121])
+            ("checkPaging" function (:type "int") nil [3139 3323])
+            ("Print_Fault_Info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("address" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3412 3427])
+                    ("faultCode" variable (:type ("faultcode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3428 3450]))                  
+                :type "void")
+                nil [3383 4099])
+            ("Page_Fault_Handler" function
+               (:arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4293 4323]))                  
+                :type "void")
+                nil [4269 5051])
+            ("Init_VM" function
+               (:arguments 
+                  ( ("bootInfo" variable
+                       (:pointer 1
+                        :type ("Boot_Info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5339 5366]))                  
+                :type "void")
+                nil [5326 7957])
+            ("LookupPage" function
+               (:pointer 1
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7981 7993]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [7963 8306])
+            ("CreateAndAddPageTable" function
+               (:pointer 1
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8338 8350])
+                    ("flags" variable (:type ("uint_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8351 8364]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [8309 8843])
+            ("MapPage" function
+               (:pointer 1
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8860 8872])
+                    ("pte" variable
+                       (:pointer 1
+                        :type ("pte_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8873 8884])
+                    ("alloc_pde" variable (:type "int") (reparse-symbol arg-sub-list) [8885 8899]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [8845 9156])
+            ("UnMapPage" function
+               (:pointer 1
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9175 9187]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [9158 9305])
+            ("Init_Paging" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9496 9501]))                  
+                :type "void")
+                nil [9479 9543])
+            ("Find_Space_On_Paging_File" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9790 9795]))                  
+                :type "int")
+                nil [9760 9878])
+            ("Free_Space_On_Paging_File" function
+               (:arguments 
+                  ( ("pagefileIndex" variable (:type "int") (reparse-symbol arg-sub-list) [10069 10087]))                  
+                :type "void")
+                nil [10038 10165])
+            ("Write_To_Paging_File" function
+               (:arguments 
+                  ( ("paddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10512 10524])
+                    ("vaddr" variable (:type ("ulong_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10525 10539])
+                    ("pagefileIndex" variable (:type "int") (reparse-symbol arg-sub-list) [10540 10558]))                  
+                :type "void")
+                nil [10486 10729])
+            ("Read_From_Paging_File" function
+               (:arguments 
+                  ( ("paddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11095 11107])
+                    ("vaddr" variable (:type ("ulong_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11108 11122])
+                    ("pagefileIndex" variable (:type "int") (reparse-symbol arg-sub-list) [11123 11141]))                  
+                :type "void")
+                nil [11068 11313]))          
+      :file "paging.c"
+      :pointmax 11315
+      :fsize 11314
+      :lastmodtime '(23798 45552 507758 567000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("Debug" (spp-arg-list ("args...") 1389 . 1398) . 
+              ((IF "if" 1399 . 1401) (semantic-list "(debugFaults)" 1402 . 1415) (symbol "Print" 1416 . 1421) (semantic-list "(args)" 1421 . 1427)))
+          ("SECTORS_PER_PAGE" . ((semantic-list "(PAGE_SIZE / SECTOR_SIZE)" 1276 . 1301)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("geekos/idt.h" include (:system-flag t) nil [241 264])
+            ("geekos/kthread.h" include (:system-flag t) nil [265 292])
+            ("geekos/defs.h" include (:system-flag t) nil [293 317])
+            ("geekos/trap.h" include (:system-flag t) nil [318 342])
+            ("geekos/serial.h" include (:system-flag t) nil [343 369])
+            ("geekos/debug.h" include (:system-flag t) nil [370 395])
+            ("GPF_Handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("Interrupt_State" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [641 671]))                  
+                :type "void")
+                nil [617 923])
+            ("Init_Traps" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [992 997]))                  
+                :type "void")
+                nil [976 1187]))          
+      :file "trap.c"
+      :pointmax 1188
+      :fsize 1187
+      :lastmodtime '(23798 45552 509758 567000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("geekos/kassert.h" include (:system-flag t) nil [249 276])
+            ("geekos/defs.h" include (:system-flag t) nil [277 301])
+            ("geekos/idt.h" include (:system-flag t) nil [302 325])
+            ("geekos/serial.h" include (:system-flag t) nil [326 352])
+            ("geekos/debug.h" include (:system-flag t) nil [353 378])
+            ("s_IDT" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("IDT_Descriptor" type (:type "union") nil nil))
+                nil [581 634])
+            ("g_entryPointTableStart" variable
+               (:typemodifiers ("extern")
+                :type "char")
+                nil [933 990])
+            ("g_entryPointTableEnd" variable
+               (:typemodifiers ("extern")
+                :type "char")
+                nil [933 990])
+            ("g_handlerSizeNoErr" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [991 1039])
+            ("g_handlerSizeErr" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [991 1039])
+            ("g_interruptTable" variable
+               (:dereference 1
+                :type ("Interrupt_Handler" type (:type "class") nil nil))
+                nil [1199 1253])
+            ("DumpIDT" function (:type "void") nil [1257 1838])
+            ("SerialDumpIDT" function (:type "void") nil [1841 2462])
+            ("Init_IDT" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2847 2852]))                  
+                :type "void")
+                nil [2833 4122])
+            ("Init_Interrupt_Gate" function
+               (:arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("IDT_Descriptor" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [4250 4277])
+                    ("addr" variable (:type ("ulong_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4278 4291])
+                    ("dpl" variable (:type "int") (reparse-symbol arg-sub-list) [4293 4301]))                  
+                :type "void")
+                nil [4225 4553])
+            ("Install_Interrupt_Handler" function
+               (:arguments 
+                  ( ("interrupt" variable (:type "int") (reparse-symbol arg-sub-list) [4824 4838])
+                    ("handler" variable (:type ("Interrupt_Handler" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4839 4865]))                  
+                :type "void")
+                nil [4793 4972]))          
+      :file "idt.c"
+      :pointmax 4973
+      :fsize 4972
+      :lastmodtime '(23798 45552 506758 567000)
+      :unmatched-syntax nil))
+  :file "!home!nmg!Code!C!leviathan!palacios-lwk!geekos!src!geekos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,175 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__XPMEM_HASHTABLE_H__" variable (:constant-flag t) nil [1609 1630])
+            ("xpmem_hashtable" type
+               (:prototype t
+                :type "struct")
+                nil [1632 1655])
+            ("hash_long" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("val" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4026 4034])
+                    ("bits" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4035 4044]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [4012 4045])
+            ("hash_buffer" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4062 4071])
+                    ("length" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4072 4083]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [4046 4084])
+            ("create_htable" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("min_size" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4127 4140])
+                    ("hashfunction" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4170 4184]))                          
+                        :type ("u32" type (:type "class") nil nil))
+                        nil nil)
+                    ("key_eq_fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("key1" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4212 4227])
+                            ("key2" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4228 4243]))                          
+                        :type "int")
+                        nil nil))                  
+                :type ("xpmem_hashtable" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4088 4245])
+            ("free_htable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4264 4296])
+                    ("free_values" variable (:type "int") (reparse-symbol arg-sub-list) [4297 4313])
+                    ("free_keys" variable (:type "int") (reparse-symbol arg-sub-list) [4314 4328]))                  
+                :type "void")
+                nil [4247 4329])
+            ("htable_insert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4832 4864])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4865 4879])
+                    ("value" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4880 4896]))                  
+                :type "int")
+                nil [4814 4897])
+            ("htable_change" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4917 4949])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4950 4964])
+                    ("value" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4965 4981])
+                    ("free_value" variable (:type "int") (reparse-symbol arg-sub-list) [4982 4997]))                  
+                :type "int")
+                nil [4899 4998])
+            ("htable_search" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5093 5125])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5126 5140]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [5069 5141])
+            ("htable_remove" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5235 5267])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5268 5282])
+                    ("free_key" variable (:type "int") (reparse-symbol arg-sub-list) [5283 5296]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [5211 5297])
+            ("htable_count" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5316 5348]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [5299 5349])
+            ("htable_inc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5415 5447])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5448 5462])
+                    ("value" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5463 5479]))                  
+                :type "int")
+                nil [5400 5480])
+            ("htable_dec" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("htable" variable
+                       (:pointer 1
+                        :type ("xpmem_hashtable" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5496 5528])
+                    ("key" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5529 5543])
+                    ("value" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5544 5560]))                  
+                :type "int")
+                nil [5481 5561]))          
+      :file "xpmem_hashtable.h"
+      :pointmax 5571
+      :fsize 5570
+      :lastmodtime '(24790 7104)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__XPMEM_HASHTABLE_H__")
+          )
+))
+  :file "!ssh:nmg@desktop:!home!nmg!vm-shared!kitten-arm64!drivers!xpmem!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

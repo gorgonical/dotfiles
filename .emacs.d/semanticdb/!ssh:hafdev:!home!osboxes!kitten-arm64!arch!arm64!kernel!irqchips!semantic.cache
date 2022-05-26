@@ -1,0 +1,395 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [54 77])
+            ("lwk/init.h" include (:system-flag t) nil [78 99])
+            ("lwk/resource.h" include (:system-flag t) nil [100 125])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [126 150])
+            ("arch/irqchip.h" include (:system-flag t) nil [152 177])
+            ("arch/msr.h" include (:system-flag t) nil [178 199])
+            ("arch/of.h" include (:system-flag t) nil [200 220])
+            ("arch/io.h" include (:system-flag t) nil [221 241])
+            ("arch/irq_vectors.h" include (:system-flag t) nil [242 271])
+            ("arch/topology.h" include (:system-flag t) nil [272 298])
+            ("arch/hafnium/call.h" include (:system-flag t) nil [300 330])
+            ("hafnium_vintc" type (:type "struct") nil [336 363])
+            ("vintc" variable
+               (:typemodifiers ("static")
+                :type ("hafnium_vintc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [365 399])
+            ("__hafnium_vintc_parse_irqs" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [442 472])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [492 523])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [543 570]))                  
+                :type "int")
+                nil [404 571])
+            ("__hafnium_vintc_print_pending_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [621 626]))                  
+                :type "void")
+                nil [573 630])
+            ("__hafnium_vintc_dump_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [672 677]))                  
+                :type "void")
+                nil [632 739])
+            ("__hafnium_vintc_enable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq_num" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [780 807])
+                    ("trigger_mode" variable (:type ("irq_trigger_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [835 867]))                  
+                :type "void")
+                nil [741 1154])
+            ("__hafnium_vintc_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1197 1213]))                  
+                :type "void")
+                nil [1157 1277])
+            ("__hafnium_vintc_ack_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1327 1332]))                  
+                :type ("arch_irq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1279 1640])
+            ("__hafnium_vintc_do_eoi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type ("arch_irq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1678 1698]))                  
+                :type "void")
+                nil [1643 1721])
+            ("__hafnium_vintc_send_ipi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_cpu" variable (:type "int") (reparse-symbol arg-sub-list) [1760 1775])
+                    ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1776 1792]))                  
+                :type "void")
+                nil [1723 1862])
+            ("__hafnium_vintc_core_init" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1865 2014])
+            ("hafnium_vintc_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"hafnium_vintc\",
+	.dt_node            = NULL,
+	.core_init          = __hafnium_vintc_core_init,
+	.enable_irq         = __hafnium_vintc_enable_irq,
+	.disable_irq        = __hafnium_vintc_disable_irq,
+	.do_eoi             = __hafnium_vintc_do_eoi,
+	.ack_irq            = __hafnium_vintc_ack_irq,
+	.send_ipi           = __hafnium_vintc_send_ipi,
+	.parse_devtree_irqs = __hafnium_vintc_parse_irqs,
+	.dump_state         = __hafnium_vintc_dump_state, 
+	.print_pending_irqs = __hafnium_vintc_print_pending_irqs
+}"
+                :type ("irqchip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2018 2592])
+            ("hafnium_vintc_global_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2628 2657]))                  
+                :type "void")
+                nil [2596 2741])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [2746 2799])
+            ("__hafnium_vintc_parse_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2838 2868])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2888 2919])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2939 2966]))                  
+                :type "int")
+                nil [2800 3731]))          
+      :file "hafnium_vintc.c"
+      :pointmax 3732
+      :fsize 3731
+      :lastmodtime '(24993 29332)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [54 77])
+            ("lwk/init.h" include (:system-flag t) nil [78 99])
+            ("lwk/resource.h" include (:system-flag t) nil [100 125])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [126 150])
+            ("arch/irqchip.h" include (:system-flag t) nil [152 177])
+            ("arch/msr.h" include (:system-flag t) nil [178 199])
+            ("arch/of.h" include (:system-flag t) nil [200 220])
+            ("arch/io.h" include (:system-flag t) nil [221 241])
+            ("arch/irq_vectors.h" include (:system-flag t) nil [242 271])
+            ("arch/topology.h" include (:system-flag t) nil [272 298])
+            ("gic3.h" include nil nil [300 317])
+            ("GIC3_SPURIOUS_IRQ" variable (:constant-flag t) nil [328 345])
+            ("gic3" type
+               (:members 
+                  ( ("gicd_virt_start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [367 391])
+                    ("gicd_phys_start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [393 417])
+                    ("gicd_phys_size" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [419 442])
+                    ("gicr_virt_start" variable (:type ("vaddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [445 469])
+                    ("gicr_phys_start" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [471 495])
+                    ("gicr_phys_size" variable (:type ("paddr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [497 520]))                  
+                :type "struct")
+                nil [352 523])
+            ("gic" variable
+               (:typemodifiers ("static")
+                :type ("gic3" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [526 549])
+            ("__gic3_parse_irqs" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [583 613])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [633 664])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [684 711]))                  
+                :type "int")
+                nil [554 712])
+            ("__gicd_read32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [753 770]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [715 819])
+            ("__gicd_write32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [855 872])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [889 905]))                  
+                :type "void")
+                nil [821 955])
+            ("__gicr_read32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [998 1012])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1027 1044]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [960 1116])
+            ("__gicr_write32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1152 1166])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1182 1199])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1216 1232]))                  
+                :type "void")
+                nil [1118 1305])
+            ("__gicr_read64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1346 1360])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1375 1392]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1308 1464])
+            ("__gicr_write64" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cpu" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1500 1514])
+                    ("offset" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1530 1547])
+                    ("value" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1564 1580]))                  
+                :type "void")
+                nil [1466 1653])
+            ("__gic3_print_pending_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1696 1701]))                  
+                :type "void")
+                nil [1657 2660])
+            ("__gic3_dump_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2693 2698]))                  
+                :type "void")
+                nil [2662 2751])
+            ("__gic3_enable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq_num" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2787 2814])
+                    ("trigger_mode" variable (:type ("irq_trigger_mode_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2834 2866]))                  
+                :type "void")
+                nil [2757 4530])
+            ("__gic3_disable_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4564 4580]))                  
+                :type "void")
+                nil [4533 4626])
+            ("__gic3_ack_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4667 4672]))                  
+                :type ("arch_irq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4628 4836])
+            ("__gic3_do_eoi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type ("arch_irq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4864 4884]))                  
+                :type "void")
+                nil [4838 4921])
+            ("__gic3_send_ipi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("target_cpu" variable (:type "int") (reparse-symbol arg-sub-list) [4953 4968])
+                    ("vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4969 4985]))                  
+                :type "void")
+                nil [4925 5607])
+            ("__gicd_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [5611 6644])
+            ("__gicr_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [6649 8273])
+            ("__icc_enable" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [8276 8403])
+            ("__icc_setup" function
+               (:typemodifiers ("static")
+                :type "int")
+                nil [8405 9793])
+            ("__gic3_core_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9826 9832]))                  
+                :type "void")
+                nil [9796 9916])
+            ("gic3_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"GIC3\",
+	.dt_node            = NULL,
+	.core_init          = __gic3_core_init,
+	.enable_irq         = __gic3_enable_irq,
+	.disable_irq        = __gic3_disable_irq,
+	.do_eoi             = __gic3_do_eoi,
+	.ack_irq            = __gic3_ack_irq,
+	.send_ipi           = __gic3_send_ipi,
+	.parse_devtree_irqs = __gic3_parse_irqs,
+	.dump_state         = __gic3_dump_state, 
+	.print_pending_irqs = __gic3_print_pending_irqs
+}"
+                :type ("irqchip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9918 10393])
+            ("gic3_global_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10420 10449]))                  
+                :type "void")
+                nil [10397 11557])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [11559 11612])
+            ("__gic3_parse_irqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11642 11672])
+                    ("num_irqs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11692 11723])
+                    ("irqs" variable
+                       (:pointer 1
+                        :type ("irq_def" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11743 11770]))                  
+                :type "int")
+                nil [11613 12945]))          
+      :file "gic3.c"
+      :pointmax 12945
+      :fsize 12944
+      :lastmodtime '(24988 17060)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("GIC3_SPURIOUS_IRQ" . ((number "1023" 346 . 350)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "gic3.h"
+      :fsize 30851
+      :lastmodtime '(24988 17060)))
+  :file "!ssh:hafdev:!home!osboxes!kitten-arm64!arch!arm64!kernel!irqchips!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

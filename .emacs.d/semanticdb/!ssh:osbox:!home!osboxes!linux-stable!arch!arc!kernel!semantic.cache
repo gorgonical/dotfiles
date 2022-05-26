@@ -1,0 +1,159 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/interrupt.h" include (:system-flag t) nil [106 134])
+            ("linux/module.h" include (:system-flag t) nil [135 160])
+            ("linux/of.h" include (:system-flag t) nil [161 182])
+            ("linux/irqdomain.h" include (:system-flag t) nil [183 211])
+            ("linux/irqchip.h" include (:system-flag t) nil [212 238])
+            ("asm/irq.h" include (:system-flag t) nil [239 259])
+            ("NR_EXCEPTIONS" variable (:constant-flag t) nil [269 282])
+            ("bcr_irq_arcv2" type
+               (:members 
+                  ( ("ver" variable
+                       (:suffix ":8"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464])
+                    ("irqs" variable
+                       (:suffix ":8"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464])
+                    ("exts" variable
+                       (:suffix ":8"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464])
+                    ("prio" variable
+                       (:suffix ":4"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464])
+                    ("firq" variable
+                       (:suffix ":1"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464])
+                    ("pad" variable
+                       (:suffix ":3"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [406 464]))                  
+                :type "struct")
+                nil [287 474])
+            ("arc_init_IRQ" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [722 727]))                  
+                :type "void")
+                nil [704 2902])
+            ("arcv2_irq_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2931 2953]))                  
+                :type "void")
+                nil [2904 3037])
+            ("arcv2_irq_unmask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3068 3090]))                  
+                :type "void")
+                nil [3039 3174])
+            ("arcv2_irq_enable" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("irq_data" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3198 3220]))                  
+                :type "void")
+                nil [3176 3517])
+            ("arcv2_irq_chip" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name           = \"ARCv2 core Intc\",
+	.irq_mask	= arcv2_irq_mask,
+	.irq_unmask	= arcv2_irq_unmask,
+	.irq_enable	= arcv2_irq_enable
+}"
+                :type ("irq_chip" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3519 3695])
+            ("arcv2_irq_map" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("irq_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3722 3743])
+                    ("irq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3744 3761])
+                    ("hw" variable (:type ("irq_hw_number_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3766 3785]))                  
+                :type "int")
+                nil [3697 4292])
+            ("arcv2_irq_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.xlate = irq_domain_xlate_onecell,
+	.map = arcv2_irq_map,
+}"
+                :type ("irq_domain_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4294 4408])
+            ("init_onchip_IRQ" function
+               (:arguments 
+                  ( ("intc" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4445 4470])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("device_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4471 4498]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4422 5173])
+            ("IRQCHIP_DECLARE" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("arc_intc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5191 5200])
+                    ("" variable (:type ("init_onchip_IRQ" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5220 5236]))                  
+                :type "int")
+                nil [5175 5237]))          
+      :file "intc-arcv2.c"
+      :pointmax 5238
+      :fsize 5237
+      :lastmodtime '(24843 18845)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NR_EXCEPTIONS" . ((number "16" 283 . 285)))
+          )
+))
+  :file "!ssh:osbox:!home!osboxes!linux-stable!arch!arc!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

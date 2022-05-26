@@ -1,0 +1,1778 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [136 154])
+            ("stdlib.h" include (:system-flag t) nil [155 174])
+            ("string.h" include (:system-flag t) nil [175 194])
+            ("sys/types.h" include (:system-flag t) nil [195 217])
+            ("unistd.h" include (:system-flag t) nil [218 237])
+            ("efa.h" include nil nil [239 255])
+            ("verbs.h" include nil nil [256 274])
+            ("PCI_VENDOR_ID_AMAZON" variable (:constant-flag t) nil [284 304])
+            ("efa_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	VERBS_DRIVER_ID(RDMA_DRIVER_EFA),
+	VERBS_PCI_MATCH(PCI_VENDOR_ID_AMAZON, 0xefa0, NULL),
+	{}
+}"
+                :type ("verbs_match_ent" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [313 460])
+            ("efa_ctx_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.alloc_pd = efa_alloc_pd,
+	.create_ah = efa_create_ah,
+	.create_cq = efa_create_cq,
+	.create_qp = efa_create_qp,
+	.create_qp_ex = efa_create_qp_ex,
+	.dealloc_pd = efa_dealloc_pd,
+	.dereg_mr = efa_dereg_mr,
+	.destroy_ah = efa_destroy_ah,
+	.destroy_cq = efa_destroy_cq,
+	.destroy_qp = efa_destroy_qp,
+	.modify_qp = efa_modify_qp,
+	.poll_cq = efa_poll_cq,
+	.post_recv = efa_post_recv,
+	.post_send = efa_post_send,
+	.query_device = efa_query_device,
+	.query_device_ex = efa_query_device_ex,
+	.query_port = efa_query_port,
+	.query_qp = efa_query_qp,
+	.reg_mr = efa_reg_mr,
+}"
+                :type ("verbs_context_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [462 1087])
+            ("efa_alloc_context" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vdev" variable
+                       (:pointer 1
+                        :type ("ibv_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1136 1160])
+                    ("cmd_fd" variable (:type "int") (reparse-symbol arg-sub-list) [1173 1184])
+                    ("private_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1197 1216]))                  
+                :type ("verbs_context" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1089 2343])
+            ("efa_free_context" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2374 2401]))                  
+                :type "void")
+                nil [2345 2572])
+            ("efa_device_alloc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sysfs_dev" variable
+                       (:pointer 1
+                        :type ("verbs_sysfs_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2619 2653]))                  
+                :type ("verbs_device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2574 2797])
+            ("efa_uninit_device" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("verbs_device" variable
+                       (:pointer 1
+                        :type ("verbs_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2829 2863]))                  
+                :type "void")
+                nil [2799 2938])
+            ("efa_dev_ops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.name = \"efa\",
+	.match_min_abi_version = EFA_ABI_VERSION,
+	.match_max_abi_version = EFA_ABI_VERSION,
+	.match_table = efa_table,
+	.alloc_device = efa_device_alloc,
+	.uninit_device = efa_uninit_device,
+	.alloc_context = efa_alloc_context,
+	.free_context = efa_free_context,
+}"
+                :type ("verbs_device_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2940 3268])
+            ("is_efa_dev" function
+               (:arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("ibv_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3286 3312]))                  
+                :type "bool")
+                nil [3270 3423])
+            ("PROVIDER_DRIVER" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("efa" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3440 3444])
+                    ("" variable (:type ("efa_dev_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3445 3457]))                  
+                :type "int")
+                nil [3424 3458]))          
+      :file "efa.c"
+      :pointmax 3459
+      :fsize 3458
+      :lastmodtime '(24010 64927 185362 207000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PCI_VENDOR_ID_AMAZON" . ((number "0x1d0f" 305 . 311)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__EFA_H__" variable (:constant-flag t) nil [165 174])
+            ("inttypes.h" include (:system-flag t) nil [176 197])
+            ("pthread.h" include (:system-flag t) nil [198 218])
+            ("stddef.h" include (:system-flag t) nil [219 238])
+            ("infiniband/driver.h" include (:system-flag t) nil [240 270])
+            ("util/udma_barrier.h" include (:system-flag t) nil [271 301])
+            ("efa-abi.h" include nil nil [303 323])
+            ("efa_io_defs.h" include nil nil [324 348])
+            ("efa_context" type
+               (:members 
+                  ( ("ibvctx" variable (:type ("verbs_context" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [372 400])
+                    ("cmds_supp_udata_mask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [402 432])
+                    ("sub_cqs_per_cq" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [434 458])
+                    ("inline_buf_size" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [460 485])
+                    ("max_llq_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [487 509])
+                    ("cqe_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [511 527])
+                    ("qp_table" variable
+                       (:pointer 2
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [529 554])
+                    ("qp_table_lock" variable (:type ("pthread_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [556 589]))                  
+                :type "struct")
+                nil [350 592])
+            ("efa_pd" type
+               (:members 
+                  ( ("ibvpd" variable (:type ("ibv_pd" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [611 631])
+                    ("pdn" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [633 646]))                  
+                :type "struct")
+                nil [594 649])
+            ("efa_sub_cq" type
+               (:members 
+                  ( ("consumed_cnt" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [672 694])
+                    ("phase" variable (:type "int") (reparse-symbol classsubparts) [696 706])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [708 721])
+                    ("qmask" variable (:type "int") (reparse-symbol classsubparts) [723 733])
+                    ("cqe_size" variable (:type "int") (reparse-symbol classsubparts) [735 748])
+                    ("ref_cnt" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [750 767]))                  
+                :type "struct")
+                nil [651 770])
+            ("efa_cq" type
+               (:members 
+                  ( ("ibvcq" variable (:type ("ibv_cq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [789 809])
+                    ("cqn" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [811 824])
+                    ("cqe_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [826 842])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [844 857])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [859 875])
+                    ("num_sub_cqs" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [877 898])
+                    ("next_poll_idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [988 1011])
+                    ("lock" variable (:type ("pthread_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1013 1037])
+                    ("sub_cq_arr" variable
+                       (:dereference 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1039 1071]))                  
+                :type "struct")
+                nil [772 1074])
+            ("efa_wq" type
+               (:members 
+                  ( ("wrid" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1093 1108])
+                    ("wrid_idx_pool" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1405 1429])
+                    ("wqe_cnt" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1431 1448])
+                    ("wqe_posted" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1450 1470])
+                    ("wqe_completed" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1472 1495])
+                    ("desc_idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1497 1515])
+                    ("desc_mask" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1517 1536])
+                    ("wrid_idx_pool_next" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1614 1642])
+                    ("max_sge" variable (:type "int") (reparse-symbol classsubparts) [1644 1656])
+                    ("phase" variable (:type "int") (reparse-symbol classsubparts) [1658 1668])
+                    ("wqlock" variable (:type ("pthread_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1670 1696]))                  
+                :type "struct")
+                nil [1076 1699])
+            ("efa_rq" type
+               (:members 
+                  ( ("wq" variable (:type ("efa_wq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1718 1735])
+                    ("db" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1737 1750])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1752 1765])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1767 1783])
+                    ("sub_cq_idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1785 1805]))                  
+                :type "struct")
+                nil [1701 1808])
+            ("efa_sq" type
+               (:members 
+                  ( ("wq" variable (:type ("efa_wq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1827 1844])
+                    ("db" variable
+                       (:pointer 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1846 1859])
+                    ("desc" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1861 1875])
+                    ("desc_offset" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1877 1898])
+                    ("desc_ring_mmap_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1900 1927])
+                    ("max_inline_data" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1929 1952])
+                    ("sub_cq_idx" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1954 1974])
+                    ("local_queue" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2037 2058])
+                    ("num_wqe_pending" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2118 2143])
+                    ("phase_rb" variable (:type "int") (reparse-symbol classsubparts) [2181 2194])
+                    ("curr_tx_wqe" variable
+                       (:pointer 1
+                        :type ("efa_io_tx_wqe" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2227 2261]))                  
+                :type "struct")
+                nil [1810 2264])
+            ("efa_qp" type
+               (:members 
+                  ( ("verbs_qp" variable (:type ("verbs_qp" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2283 2308])
+                    ("sq" variable (:type ("efa_sq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2310 2327])
+                    ("rq" variable (:type ("efa_rq" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2329 2346])
+                    ("page_size" variable (:type "int") (reparse-symbol classsubparts) [2348 2362])
+                    ("rcq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2364 2383])
+                    ("scq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2385 2404])
+                    ("sq_sig_all" variable (:type "int") (reparse-symbol classsubparts) [2406 2421])
+                    ("wr_session_err" variable (:type "int") (reparse-symbol classsubparts) [2423 2442]))                  
+                :type "struct")
+                nil [2266 2445])
+            ("efa_mr" type
+               (:members 
+                  ( ("vmr" variable (:type ("verbs_mr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2464 2484]))                  
+                :type "struct")
+                nil [2447 2487])
+            ("efa_ah" type
+               (:members 
+                  ( ("ibvah" variable (:type ("ibv_ah" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2506 2526])
+                    ("efa_ah" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2528 2544]))                  
+                :type "struct")
+                nil [2489 2547])
+            ("efa_dev" type
+               (:members 
+                  ( ("vdev" variable (:type ("verbs_device" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2567 2592])
+                    ("pg_sz" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2594 2609])
+                    ("max_sq_wr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2611 2630])
+                    ("max_rq_wr" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2632 2651])
+                    ("max_sq_sge" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2653 2673])
+                    ("max_rq_sge" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2675 2695]))                  
+                :type "struct")
+                nil [2549 2698])
+            ("to_efa_dev" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvdev" variable
+                       (:pointer 1
+                        :type ("ibv_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2741 2767]))                  
+                :type ("efa_dev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2700 2830])
+            ("to_efa_context" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2881 2908]))                  
+                :type ("efa_context" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2832 2978])
+            ("to_efa_pd" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3019 3040]))                  
+                :type ("efa_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2980 3095])
+            ("to_efa_cq" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvcq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3136 3157]))                  
+                :type ("efa_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3097 3212])
+            ("to_efa_qp" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3253 3274]))                  
+                :type ("efa_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3214 3335])
+            ("to_efa_qp_ex" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3379 3404]))                  
+                :type ("efa_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3337 3469])
+            ("to_efa_ah" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("ibvah" variable
+                       (:pointer 1
+                        :type ("ibv_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3510 3531]))                  
+                :type ("efa_ah" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3471 3586])
+            ("is_efa_dev" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("device" variable
+                       (:pointer 1
+                        :type ("ibv_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3604 3630]))                  
+                :type "bool")
+                nil [3588 3631]))          
+      :file "efa.h"
+      :pointmax 3656
+      :fsize 3655
+      :lastmodtime '(24010 64927 185362 207000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__EFA_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "verbs.h"
+      :fsize 1843
+      :lastmodtime '(24010 64927 187362 207000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [136 155])
+            ("errno.h" include (:system-flag t) nil [156 174])
+            ("pthread.h" include (:system-flag t) nil [175 195])
+            ("stdio.h" include (:system-flag t) nil [196 214])
+            ("stdlib.h" include (:system-flag t) nil [215 234])
+            ("string.h" include (:system-flag t) nil [235 254])
+            ("sys/mman.h" include (:system-flag t) nil [255 276])
+            ("unistd.h" include (:system-flag t) nil [277 296])
+            ("ccan/minmax.h" include (:system-flag t) nil [298 322])
+            ("util/compiler.h" include (:system-flag t) nil [324 350])
+            ("util/mmio.h" include (:system-flag t) nil [351 373])
+            ("util/util.h" include (:system-flag t) nil [374 396])
+            ("efa.h" include nil nil [398 414])
+            ("efadv.h" include nil nil [415 433])
+            ("verbs.h" include nil nil [434 452])
+            ("efa_query_device" function
+               (:arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [475 502])
+                    ("dev_attr" variable
+                       (:pointer 1
+                        :type ("ibv_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [510 543]))                  
+                :type "int")
+                nil [454 1021])
+            ("efa_query_port" function
+               (:arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1042 1069])
+                    ("port" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1070 1083])
+                    ("port_attr" variable
+                       (:pointer 1
+                        :type ("ibv_port_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1089 1121]))                  
+                :type "int")
+                nil [1023 1226])
+            ("efa_query_device_ex" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1252 1280])
+                    ("input" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_query_device_ex_input" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1284 1330])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_device_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1334 1366])
+                    ("attr_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1370 1387]))                  
+                :type "int")
+                nil [1228 2314])
+            ("efadv_query_device" function
+               (:arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2339 2366])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("efadv_device_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2376 2407])
+                    ("inlen" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2417 2432]))                  
+                :type "int")
+                nil [2316 2976])
+            ("efa_alloc_pd" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3006 3033]))                  
+                :type ("ibv_pd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2978 3401])
+            ("efa_dealloc_pd" function
+               (:arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3422 3443]))                  
+                :type "int")
+                nil [3403 3578])
+            ("efa_reg_mr" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3606 3627])
+                    ("sva" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3628 3638])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3639 3650])
+                    ("hca_va" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3656 3672])
+                    ("access" variable (:type "int") (reparse-symbol arg-sub-list) [3673 3684]))                  
+                :type ("ibv_mr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3580 4032])
+            ("efa_dereg_mr" function
+               (:arguments 
+                  ( ("vmr" variable
+                       (:pointer 1
+                        :type ("verbs_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4051 4072]))                  
+                :type "int")
+                nil [4034 4224])
+            ("efa_sub_cq_get_current_index" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sub_cq" variable
+                       (:pointer 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4271 4297]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [4226 4347])
+            ("efa_cqe_is_pending" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cqe_common" variable
+                       (:pointer 1
+                        :type ("efa_io_cdesc_common" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4379 4418])
+                    ("phase" variable (:type "int") (reparse-symbol arg-sub-list) [4424 4434]))                  
+                :type "int")
+                nil [4349 4509])
+            ("efa_sub_cq_get_cqe" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sub_cq" variable
+                       (:pointer 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4566 4592])
+                    ("entry" variable (:type "int") (reparse-symbol arg-sub-list) [4593 4603]))                  
+                :type ("efa_io_cdesc_common" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4511 4700])
+            ("efa_sub_cq_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sub_cq" variable
+                       (:pointer 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4736 4762])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4763 4776])
+                    ("sub_cq_size" variable (:type "int") (reparse-symbol arg-sub-list) [4786 4802])
+                    ("cqe_size" variable (:type "int") (reparse-symbol arg-sub-list) [4803 4816]))                  
+                :type "void")
+                nil [4702 4973])
+            ("efa_create_cq" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5004 5031])
+                    ("ncqe" variable (:type "int") (reparse-symbol arg-sub-list) [5032 5041])
+                    ("channel" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5050 5083])
+                    ("vec" variable (:type "int") (reparse-symbol arg-sub-list) [5084 5092]))                  
+                :type ("ibv_cq" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4975 6447])
+            ("efa_destroy_cq" function
+               (:arguments 
+                  ( ("ibvcq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6468 6489]))                  
+                :type "int")
+                nil [6449 6693])
+            ("cq_next_sub_cqe_get" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("sub_cq" variable
+                       (:pointer 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6751 6777]))                  
+                :type ("efa_io_cdesc_common" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6695 7266])
+            ("to_ibv_status" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("status" variable (:type ("efa_io_comp_status" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [7308 7339]))                  
+                :type ("ibv_wc_status" type (:type "enum") nil nil))
+                nil [7268 8327])
+            ("efa_poll_sub_cq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8356 8374])
+                    ("sub_cq" variable
+                       (:pointer 1
+                        :type ("efa_sub_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8375 8401])
+                    ("cur_qp" variable
+                       (:pointer 2
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8408 8431])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8432 8450]))                  
+                :type "int")
+                nil [8329 9671])
+            ("efa_poll_sub_cqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9701 9719])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9720 9738]))                  
+                :type "int")
+                nil [9673 10162])
+            ("efa_poll_cq" function
+               (:arguments 
+                  ( ("ibvcq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10180 10201])
+                    ("nwc" variable (:type "int") (reparse-symbol arg-sub-list) [10202 10210])
+                    ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10211 10229]))                  
+                :type "int")
+                nil [10164 10515])
+            ("efa_cq_inc_ref_cnt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10548 10566])
+                    ("sub_cq_idx" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10567 10586]))                  
+                :type "void")
+                nil [10517 10629])
+            ("efa_cq_dec_ref_cnt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cq" variable
+                       (:pointer 1
+                        :type ("efa_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10662 10680])
+                    ("sub_cq_idx" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10681 10700]))                  
+                :type "void")
+                nil [10631 10743])
+            ("efa_wq_terminate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wq" variable
+                       (:pointer 1
+                        :type ("efa_wq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10774 10792]))                  
+                :type "void")
+                nil [10745 10875])
+            ("efa_wq_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wq" variable
+                       (:pointer 1
+                        :type ("efa_wq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10906 10924]))                  
+                :type "int")
+                nil [10877 11391])
+            ("efa_sq_terminate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11422 11440]))                  
+                :type "void")
+                nil [11393 11732])
+            ("efa_sq_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11763 11781])
+                    ("resp" variable
+                       (:pointer 1
+                        :type ("efa_create_qp_resp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11782 11814]))                  
+                :type "int")
+                nil [11734 13149])
+            ("efa_rq_terminate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13180 13198]))                  
+                :type "void")
+                nil [13151 13430])
+            ("efa_rq_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13461 13479])
+                    ("resp" variable
+                       (:pointer 1
+                        :type ("efa_create_qp_resp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13480 13512]))                  
+                :type "int")
+                nil [13432 14319])
+            ("efa_qp_init_indices" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14353 14371]))                  
+                :type "void")
+                nil [14321 14610])
+            ("efa_setup_qp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14637 14655])
+                    ("cap" variable
+                       (:pointer 1
+                        :type ("ibv_qp_cap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14660 14683])
+                    ("page_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14688 14705]))                  
+                :type "void")
+                nil [14612 15142])
+            ("efa_lock_cqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15169 15190]))                  
+                :type "void")
+                nil [15144 15495])
+            ("efa_unlock_cqs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15524 15545]))                  
+                :type "void")
+                nil [15497 15856])
+            ("efa_qp_fill_wr_pfns" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15890 15915])
+                    ("attr_ex" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15920 15956]))                  
+                :type "void")
+                nil [15858 15957])
+            ("efa_check_qp_attr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("efa_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15988 16008])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16017 16050])
+                    ("efa_attr" variable
+                       (:pointer 1
+                        :type ("efadv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16059 16095]))                  
+                :type "int")
+                nil [15959 16779])
+            ("efa_check_qp_limits" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("efa_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16812 16832])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16843 16876]))                  
+                :type "int")
+                nil [16781 17147])
+            ("create_qp" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17181 17208])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17213 17246])
+                    ("efa_attr" variable
+                       (:pointer 1
+                        :type ("efadv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17251 17287]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17149 19450])
+            ("efa_create_qp" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19481 19502])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19511 19541]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19452 19913])
+            ("efa_create_qp_ex" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19947 19974])
+                    ("attr_ex" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19979 20015]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19915 20137])
+            ("efadv_create_driver_qp" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20177 20198])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20209 20239])
+                    ("driver_qp_type" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20250 20274]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20139 20821])
+            ("efadv_create_qp_ex" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20857 20884])
+                    ("attr_ex" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20891 20927])
+                    ("efa_attr" variable
+                       (:pointer 1
+                        :type ("efadv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20934 20970])
+                    ("inlen" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20977 20992]))                  
+                :type ("ibv_qp" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20823 21284])
+            ("efa_modify_qp" function
+               (:arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21304 21325])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21326 21351])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [21356 21370]))                  
+                :type "int")
+                nil [21286 21742])
+            ("efa_query_qp" function
+               (:arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21761 21782])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21783 21808])
+                    ("attr_mask" variable (:type "int") (reparse-symbol arg-sub-list) [21812 21826])
+                    ("init_attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21827 21862]))                  
+                :type "int")
+                nil [21744 21977])
+            ("efa_destroy_qp" function
+               (:arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21998 22019]))                  
+                :type "int")
+                nil [21979 22625])
+            ("efa_set_tx_buf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tx_buf" variable
+                       (:pointer 1
+                        :type ("efa_io_tx_buf_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22654 22688])
+                    ("addr" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22695 22709])
+                    ("lkey" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22710 22724])
+                    ("length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22731 22747]))                  
+                :type "void")
+                nil [22627 22876])
+            ("efa_post_send_sgl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tx_wqe" variable
+                       (:pointer 1
+                        :type ("efa_io_tx_wqe" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22908 22937])
+                    ("sg_list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_sge" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22947 22977])
+                    ("num_sge" variable (:type "int") (reparse-symbol arg-sub-list) [22987 22999])
+                    ("desc_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [23009 23024]))                  
+                :type "void")
+                nil [22878 23315])
+            ("efa_post_send_inline_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23355 23384])
+                    ("tx_wqe" variable
+                       (:pointer 1
+                        :type ("efa_io_tx_wqe" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23395 23424])
+                    ("desc_size" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [23435 23450]))                  
+                :type "void")
+                nil [23317 23874])
+            ("efa_sge_total_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sg_list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_sge" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23910 23940])
+                    ("num_sge" variable (:type "int") (reparse-symbol arg-sub-list) [23941 23953]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [23876 24065])
+            ("efa_buf_list_total_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buf_list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_data_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24106 24142])
+                    ("num_buf" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24154 24169]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [24067 24282])
+            ("efa_sq_advance_post_idx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24320 24338]))                  
+                :type "void")
+                nil [24284 24462])
+            ("efa_wq_get_next_wrid_idx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wq" variable
+                       (:pointer 1
+                        :type ("efa_wq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24505 24523])
+                    ("wr_id" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24524 24539]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [24464 24857])
+            ("efa_set_common_ctrl_flags" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("desc" variable
+                       (:pointer 1
+                        :type ("efa_io_tx_meta_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24897 24930])
+                    ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24941 24959])
+                    ("op_type" variable (:type ("efa_io_send_op_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [24970 25003]))                  
+                :type "void")
+                nil [24859 25281])
+            ("efa_post_send_validate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25321 25339])
+                    ("wr_flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25350 25372]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [25283 25826])
+            ("efa_post_send_validate_wr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25869 25887])
+                    ("wr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25894 25923]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [25828 26335])
+            ("efa_post_send" function
+               (:arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26355 26376])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26377 26400])
+                    ("bad" variable
+                       (:pointer 2
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26405 26430]))                  
+                :type "int")
+                nil [26337 27841])
+            ("efa_send_wr_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27873 27898])
+                    ("op_type" variable (:type ("efa_io_send_op_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [27908 27941]))                  
+                :type "int")
+                nil [27843 28662])
+            ("efa_send_wr_send" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28693 28718]))                  
+                :type "void")
+                nil [28664 28764])
+            ("efa_send_wr_set_sge" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28798 28823])
+                    ("lkey" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28824 28838])
+                    ("addr" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28843 28857])
+                    ("length" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28858 28874]))                  
+                :type "void")
+                nil [28766 29161])
+            ("efa_send_wr_set_sge_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29200 29225])
+                    ("num_sge" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29226 29241])
+                    ("sg_list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_sge" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29251 29281]))                  
+                :type "void")
+                nil [29163 29613])
+            ("efa_send_wr_set_inline_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29655 29680])
+                    ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [29681 29692])
+                    ("length" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29698 29712]))                  
+                :type "void")
+                nil [29615 30092])
+            ("efa_send_wr_set_inline_data_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30139 30164])
+                    ("num_buf" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30170 30185])
+                    ("buf_list" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("ibv_data_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30191 30227]))                  
+                :type "void")
+                nil [30094 30846])
+            ("efa_send_wr_set_addr" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30881 30906])
+                    ("ibvah" variable
+                       (:pointer 1
+                        :type ("ibv_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30912 30933])
+                    ("remote_qpn" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30939 30959])
+                    ("remote_qkey" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30960 30981]))                  
+                :type "void")
+                nil [30848 31275])
+            ("efa_send_wr_start" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31307 31332]))                  
+                :type "void")
+                nil [31277 31509])
+            ("efa_sq_roll_back" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31547 31565]))                  
+                :type "void")
+                nil [31511 31758])
+            ("efa_send_wr_complete" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31792 31817]))                  
+                :type "int")
+                nil [31760 32857])
+            ("efa_send_wr_abort" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32889 32914]))                  
+                :type "void")
+                nil [32859 33026])
+            ("efa_qp_fill_wr_pfns" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ibvqpx" variable
+                       (:pointer 1
+                        :type ("ibv_qp_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33060 33085])
+                    ("attr_ex" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr_ex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33090 33126]))                  
+                :type "void")
+                nil [33028 33617])
+            ("efa_post_recv_validate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("qp" variable
+                       (:pointer 1
+                        :type ("efa_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33657 33675])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33676 33699]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [33619 34052])
+            ("efa_post_recv" function
+               (:arguments 
+                  ( ("ibvqp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34072 34093])
+                    ("wr" variable
+                       (:pointer 1
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34094 34117])
+                    ("bad" variable
+                       (:pointer 2
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34122 34147]))                  
+                :type "int")
+                nil [34054 35634])
+            ("efadv_query_ah" function
+               (:arguments 
+                  ( ("ibvah" variable
+                       (:pointer 1
+                        :type ("ibv_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35655 35676])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("efadv_ah_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35677 35704])
+                    ("inlen" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35710 35725]))                  
+                :type "int")
+                nil [35636 36011])
+            ("efa_create_ah" function
+               (:pointer 1
+                :arguments 
+                  ( ("ibvpd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36042 36063])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ibv_ah_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36064 36089]))                  
+                :type ("ibv_ah" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [36013 36421])
+            ("efa_destroy_ah" function
+               (:arguments 
+                  ( ("ibvah" variable
+                       (:pointer 1
+                        :type ("ibv_ah" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36442 36463]))                  
+                :type "int")
+                nil [36423 36603]))          
+      :file "verbs.c"
+      :pointmax 36604
+      :fsize 36603
+      :lastmodtime '(24010 64927 187362 207000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "efadv.h"
+      :fsize 1332
+      :lastmodtime '(24010 64927 186362 207000))
+    (semanticdb-table "semanticdb-table"
+      :file "efa-abi.h"
+      :fsize 945
+      :lastmodtime '(24010 64927 185362 207000))
+    (semanticdb-table "semanticdb-table"
+      :file "efa_io_defs.h"
+      :fsize 19318
+      :lastmodtime '(24010 64927 186362 207000)))
+  :file "!home!nmg!Code!C!rdma-core!providers!efa!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

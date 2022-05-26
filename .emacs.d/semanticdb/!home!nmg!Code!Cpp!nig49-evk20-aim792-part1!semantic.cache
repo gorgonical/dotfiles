@@ -1,0 +1,47 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CXX" variable (:default-value ("g++")) nil [1 11])
+            ("LINKFLAGS" variable (:default-value ("-L$(PWD)/luajit/src" "-L$(PWD)" "-lluajit" "-ldl" "-lglue")) nil [11 71])
+            ("CXXFLAGS" variable (:default-value ("-g" "-O0" "--std=c++11" "-Wall" "-Wextra")) nil [71 113])
+            ("LIBS" variable nil nil [113 119])
+            ("SRCS" variable (:default-value ("$(shell find src/ -name \"*.cpp\")")) nil [120 160])
+            ("HEADERS" variable (:default-value ("$(shell find src/ -name \"*.hpp\")")) nil [160 203])
+            ("OBJS" variable (:default-value ("$(SRCS:.c=.o)")) nil [203 224])
+            ("all" function (:arguments ("lua" "depend" "master" "client" "worker" "libglue.so")) nil [225 273])
+            ("clean" function nil nil [274 363])
+            ("MASTER_SRCS" variable (:default-value ("$(filter-out src/main.cpp, $(SRCS))")) nil [364 415])
+            ("MASTER_SRCS" variable (:default-value ("src/master.cpp")) nil [415 445])
+            ("MASTER_HEADERS" variable (:default-value ("HEADERS")) nil [446 471])
+            ("MASTER_HEADERS" variable (:default-value ("src/master.hpp")) nil [471 504])
+            ("libglue.so" function nil nil [505 592])
+            ("MASTER_OBJS" variable (:default-value ("$(MASTER_SRCS:.cpp=.o)" "libglue.so")) nil [593 641])
+            ("master" function (:arguments ("$(MASTER_OBJS)")) nil [641 730])
+            ("test" function (:arguments ("src/test.o" "src/structures.o")) nil [731 869])
+            ("WORKER_SRCS" variable (:default-value ("$(filter-out src/main.cpp, $(SRCS))")) nil [869 920])
+            ("WORKER_SRCS" variable (:default-value ("src/worker.cpp")) nil [920 950])
+            ("WORKER_HEADERS" variable (:default-value ("HEADERS")) nil [951 976])
+            ("WORKER_HEADERS" variable (:default-value ("src/worker.hpp")) nil [976 1009])
+            ("WORKER_OBJS" variable (:default-value ("$(WORKER_SRCS:.c=.o)")) nil [1010 1045])
+            ("worker" function (:arguments ("$(WORKER_OBJS)")) nil [1045 1134])
+            ("CLIENT_SRCS" variable (:default-value ("$(filter-out src/main.cpp, $(SRCS))")) nil [1135 1186])
+            ("CLIENT_SRCS" variable (:default-value ("src/client.cpp")) nil [1186 1216])
+            ("CLIENT_HEADERS" variable (:default-value ("HEADERS")) nil [1217 1242])
+            ("CLIENT_HEADERS" variable (:default-value ("src/client.hpp")) nil [1242 1275])
+            ("CLIENT_OBJS" variable (:default-value ("$(CLIENT_SRCS:.c=.o)")) nil [1276 1311])
+            ("client" function (:arguments ("$(CLIENT_OBJS)")) nil [1311 1400])
+            ("depend" function (:arguments ("$(ALL_SRCS)" "$(ALL_HEADERS)")) nil [1401 1732])
+            ("lua" function nil nil [1733 1757]))          
+      :file "Makefile"
+      :pointmax 1772
+      :fsize 2205
+      :lastmodtime '(23569 61213 0 0)
+      :unmatched-syntax '((bol 1757 . 1757))))
+  :file "!home!nmg!Code!Cpp!nig49-evk20-aim792-part1!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

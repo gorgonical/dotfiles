@@ -1,0 +1,1061 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("netdb.h" include (:system-flag t) nil [1 19])
+            ("stdio.h" include (:system-flag t) nil [20 38])
+            ("stdlib.h" include (:system-flag t) nil [39 58])
+            ("string.h" include (:system-flag t) nil [59 78])
+            ("signal.h" include (:system-flag t) nil [79 98])
+            ("sys/mman.h" include (:system-flag t) nil [99 120])
+            ("unistd.h" include (:system-flag t) nil [121 140])
+            ("rdma/rdma_cma.h" include (:system-flag t) nil [141 167])
+            ("lwk/aspace.h" include (:system-flag t) nil [169 192])
+            ("lwk/pmem.h" include (:system-flag t) nil [193 214])
+            ("libhio.h" include (:system-flag t) nil [216 235])
+            ("xemem.h" include (:system-flag t) nil [236 254])
+            ("stubs.h" include (:system-flag t) nil [256 274])
+            ("TEST_NZ" variable (:constant-flag t) nil [284 291])
+            ("TEST_Z" variable (:constant-flag t) nil [381 387])
+            ("BUFFER_SIZE" variable
+               (:constant-flag t
+                :default-value "1024"
+                :type "int")
+                nil [471 500])
+            ("TIMEOUT_IN_MS" variable
+               (:constant-flag t
+                :default-value "500"
+                :type "int")
+                nil [501 531])
+            ("context" type
+               (:members 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [561 585])
+                    ("pd" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [588 606])
+                    ("cq" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [609 627])
+                    ("comp_channel" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [630 668])
+                    ("cq_poller_thread" variable (:type ("pthread_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [672 699]))                  
+                :type "struct")
+                nil [542 702])
+            ("connection" type
+               (:members 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [726 748])
+                    ("qp" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [751 769])
+                    ("recv_mr" variable
+                       (:pointer 1
+                        :type ("ibv_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [773 796])
+                    ("send_mr" variable
+                       (:pointer 1
+                        :type ("ibv_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [799 822])
+                    ("recv_region" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [826 844])
+                    ("send_region" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [847 865])
+                    ("num_completions" variable (:type "int") (reparse-symbol classsubparts) [869 889]))                  
+                :type "struct")
+                nil [704 892])
+            ("die" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("reason" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [910 929]))                  
+                :type "void")
+                nil [894 930])
+            ("kill_poller" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [955 960]))                  
+                :type "void")
+                nil [931 961])
+            ("build_context" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("verbs" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [989 1015]))                  
+                :type "void")
+                nil [963 1016])
+            ("build_qp_attr" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("qp_attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1043 1076]))                  
+                :type "void")
+                nil [1017 1077])
+            ("poll_cq" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1100 1107]))                  
+                :type "void")
+                nil [1078 1108])
+            ("post_receives" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("conn" variable
+                       (:pointer 1
+                        :type ("connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1135 1159]))                  
+                :type "void")
+                nil [1109 1160])
+            ("register_memory" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("conn" variable
+                       (:pointer 1
+                        :type ("connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1189 1213]))                  
+                :type "void")
+                nil [1161 1214])
+            ("on_addr_resolved" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1244 1266]))                  
+                :type "int")
+                nil [1216 1267])
+            ("on_completion" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1294 1312]))                  
+                :type "void")
+                nil [1268 1313])
+            ("on_connection" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1339 1353]))                  
+                :type "int")
+                nil [1314 1354])
+            ("on_disconnect" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1380 1402]))                  
+                :type "int")
+                nil [1355 1403])
+            ("on_event" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("event" variable
+                       (:pointer 1
+                        :type ("rdma_cm_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1424 1452]))                  
+                :type "int")
+                nil [1404 1453])
+            ("on_route_resolved" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1483 1505]))                  
+                :type "int")
+                nil [1454 1506])
+            ("inited" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [1508 1530])
+            ("created" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [1531 1554])
+            ("s_ctx" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("context" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1555 1591])
+            ("LIBHIO_CLIENT5" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_getaddrinfo" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1609 1625])
+                    ("" variable (:type ("HIO_GETADDRINFO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1626 1642])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [1643 1647])
+                    ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1648 1661])
+                    ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1662 1675])
+                    ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("addrinfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1676 1700])
+                    ("" variable
+                       (:pointer 2
+                        :type ("addrinfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1701 1720])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1721 1737]))                  
+                :type "int")
+                nil [1594 1738])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_freeaddrinfo" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1754 1771])
+                    ("" variable (:type ("HIO_FREEADDRINFO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1772 1789])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [1790 1794])
+                    ("" variable
+                       (:pointer 1
+                        :type ("addrinfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1795 1813]))                  
+                :type "int")
+                nil [1739 1814])
+            ("LIBHIO_CLIENT2" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_connect" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1830 1847])
+                    ("" variable (:type ("HIO_RDMA_CONNECT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1848 1865])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [1866 1870])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1871 1891])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_conn_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1892 1917]))                  
+                :type "int")
+                nil [1815 1918])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_disconnect" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1934 1954])
+                    ("" variable (:type ("HIO_RDMA_DISCONNECT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1955 1975])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [1976 1980])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1981 2001]))                  
+                :type "int")
+                nil [1919 2002])
+            ("LIBHIO_CLIENT3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_create_qp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2018 2037])
+                    ("" variable (:type ("HIO_RDMA_CREATE_QP" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2038 2057])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2058 2062])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2063 2083])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2084 2100])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2113 2139]))                  
+                :type "int")
+                nil [2003 2140])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_destroy_qp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2156 2176])
+                    ("" variable (:type ("HIO_RDMA_DESTROY_QP" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2177 2197])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2198 2202])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2203 2223]))                  
+                :type "int")
+                nil [2141 2224])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_create_event_channel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2240 2270])
+                    ("" variable (:type ("HIO_RDMA_CREATE_EVENT_CHANNEL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2271 2301])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_event_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2302 2330])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2331 2347]))                  
+                :type "int")
+                nil [2225 2348])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_destroy_event_channel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2364 2395])
+                    ("" variable (:type ("HIO_RDMA_DESTROY_EVENT_CHANNEL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2396 2427])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2428 2432])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_event_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2446 2474]))                  
+                :type "int")
+                nil [2349 2475])
+            ("LIBHIO_CLIENT5" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_create_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2491 2510])
+                    ("" variable (:type ("HIO_RDMA_CREATE_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2511 2530])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2531 2535])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_event_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2536 2564])
+                    ("" variable
+                       (:pointer 2
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2577 2598])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2599 2606])
+                    ("" variable (:type ("rdma_port_space" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [2607 2628])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2641 2657]))                  
+                :type "int")
+                nil [2476 2658])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_destroy_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2674 2694])
+                    ("" variable (:type ("HIO_RDMA_DESTROY_ID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2695 2715])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2716 2720])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2721 2741]))                  
+                :type "int")
+                nil [2659 2742])
+            ("LIBHIO_CLIENT3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_get_cm_event" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2758 2780])
+                    ("" variable (:type ("HIO_RDMA_GET_CM_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2781 2803])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2804 2808])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_event_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2809 2837])
+                    ("" variable
+                       (:pointer 2
+                        :type ("rdma_cm_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2850 2874])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2875 2891]))                  
+                :type "int")
+                nil [2743 2892])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_ack_cm_event" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2908 2930])
+                    ("" variable (:type ("HIO_RDMA_ACK_CM_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2931 2953])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2954 2958])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2959 2982]))                  
+                :type "int")
+                nil [2893 2983])
+            ("LIBHIO_CLIENT4" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_resolve_addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2999 3021])
+                    ("" variable (:type ("HIO_RDMA_RESOLVE_ADDR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3022 3044])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3045 3049])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3050 3070])
+                    ("" variable
+                       (:pointer 1
+                        :type ("sockaddr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3083 3101])
+                    ("" variable
+                       (:pointer 1
+                        :type ("sockaddr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3102 3120])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3121 3125]))                  
+                :type "int")
+                nil [2984 3126])
+            ("LIBHIO_CLIENT2" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_rdma_resolve_route" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3142 3165])
+                    ("" variable (:type ("HIO_RDMA_RESOLVE_ROUTE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3166 3189])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3190 3194])
+                    ("" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3195 3215])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3216 3220]))                  
+                :type "int")
+                nil [3127 3221])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_alloc_pd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3238 3255])
+                    ("" variable (:type ("HIO_IBV_ALLOC_PD" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3256 3273])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3274 3290])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3291 3312]))                  
+                :type "int")
+                nil [3223 3313])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_dealloc_pd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3329 3348])
+                    ("" variable (:type ("HIO_IBV_DEALLOC_PD" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3349 3368])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3369 3373])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3374 3390]))                  
+                :type "int")
+                nil [3314 3391])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_create_comp_channel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3407 3435])
+                    ("" variable (:type ("HIO_IBV_CREATE_COMP_CHANNEL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3436 3464])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3465 3491])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3504 3525]))                  
+                :type "int")
+                nil [3392 3526])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_destroy_comp_channel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3542 3571])
+                    ("" variable (:type ("HIO_IBV_DESTROY_COMP_CHANNEL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3572 3601])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3602 3606])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3619 3645]))                  
+                :type "int")
+                nil [3527 3646])
+            ("LIBHIO_CLIENT5" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_reg_mr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3662 3677])
+                    ("" variable (:type ("HIO_IBV_REG_MR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3678 3693])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3694 3710])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_pd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3711 3727])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3728 3735])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3736 3743])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3744 3748])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3749 3765]))                  
+                :type "int")
+                nil [3647 3766])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_dereg_mr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3782 3799])
+                    ("" variable (:type ("HIO_IBV_DEREG_MR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3800 3817])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3818 3822])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_mr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3823 3839]))                  
+                :type "int")
+                nil [3767 3840])
+            ("LIBHIO_CLIENT3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_post_send" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3856 3874])
+                    ("" variable (:type ("HIO_IBV_POST_SEND" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3875 3893])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3894 3898])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3899 3915])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3916 3937])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ibv_send_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3950 3972]))                  
+                :type "int")
+                nil [3841 3973])
+            ("LIBHIO_CLIENT3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_post_recv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3989 4007])
+                    ("" variable (:type ("HIO_IBV_POST_RECV" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4008 4026])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4027 4031])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_qp" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4032 4048])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4049 4070])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ibv_recv_wr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4083 4105]))                  
+                :type "int")
+                nil [3974 4106])
+            ("LIBHIO_CLIENT5" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_create_cq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4123 4141])
+                    ("" variable (:type ("HIO_IBV_CREATE_CQ" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4142 4160])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4161 4177])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4178 4199])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4200 4204])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4217 4224])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4225 4251])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4252 4256]))                  
+                :type "int")
+                nil [4108 4257])
+            ("LIBHIO_CLIENT1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_destroy_cq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4273 4292])
+                    ("" variable (:type ("HIO_IBV_DESTROY_CQ" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4293 4312])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4313 4317])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4318 4334]))                  
+                :type "int")
+                nil [4258 4335])
+            ("LIBHIO_CLIENT3" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_poll_cq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4351 4367])
+                    ("" variable (:type ("HIO_IBV_POLL_CQ" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4368 4384])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4385 4389])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4390 4406])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4407 4411])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4412 4428]))                  
+                :type "int")
+                nil [4336 4429])
+            ("LIBHIO_CLIENT2" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_req_notify_cq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4445 4467])
+                    ("" variable (:type ("HIO_IBV_REQ_NOTIFY_CQ" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4468 4490])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4491 4495])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4496 4512])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4513 4517]))                  
+                :type "int")
+                nil [4430 4518])
+            ("LIBHIO_CLIENT4" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_get_cq_event" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4534 4555])
+                    ("" variable (:type ("HIO_IBV_GET_CQ_EVENT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4556 4577])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4578 4582])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_comp_channel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4583 4609])
+                    ("" variable
+                       (:pointer 2
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4623 4640])
+                    ("" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4641 4649])
+                    ("" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4650 4666]))                  
+                :type "int")
+                nil [4519 4667])
+            ("LIBHIO_CLIENT2" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hio_ibv_ack_cq_events" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4683 4705])
+                    ("" variable (:type ("HIO_IBV_ACK_CQ_EVENTS" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4706 4728])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4729 4733])
+                    ("" variable
+                       (:pointer 1
+                        :type ("ibv_cq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4734 4750])
+                    ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4751 4764]))                  
+                :type "int")
+                nil [4668 4765])
+            ("__map_hio_segment" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seg" variable
+                       (:pointer 1
+                        :type ("hio_segment_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5117 5137])
+                    ("aspace_id" variable (:type ("id_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5156 5182]))                  
+                :type "int")
+                nil [5088 8478])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [8489 8498])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8499 8511]))                  
+                :type "int")
+                nil [8480 9767])
+            ("kill_poller" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9786 9791]))                  
+                :type "void")
+                nil [9769 10018])
+            ("die" function
+               (:arguments 
+                  ( ("reason" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10029 10048]))                  
+                :type "void")
+                nil [10020 10171])
+            ("build_context" function
+               (:arguments 
+                  ( ("verbs" variable
+                       (:pointer 1
+                        :type ("ibv_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10192 10218]))                  
+                :type "void")
+                nil [10173 10806])
+            ("build_qp_attr" function
+               (:arguments 
+                  ( ("qp_attr" variable
+                       (:pointer 1
+                        :type ("ibv_qp_init_attr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10827 10860]))                  
+                :type "void")
+                nil [10808 11135])
+            ("sigusr1_handler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [11165 11176]))                  
+                :type "void")
+                nil [11137 11201])
+            ("poll_cq" function
+               (:pointer 1
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11218 11228]))                  
+                :type "void")
+                nil [11203 11917])
+            ("post_receives" function
+               (:arguments 
+                  ( ("conn" variable
+                       (:pointer 1
+                        :type ("connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11938 11962]))                  
+                :type "void")
+                nil [11919 12278])
+            ("register_memory" function
+               (:arguments 
+                  ( ("conn" variable
+                       (:pointer 1
+                        :type ("connection" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12301 12325]))                  
+                :type "void")
+                nil [12280 12906])
+            ("on_addr_resolved" function
+               (:arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12929 12951]))                  
+                :type "int")
+                nil [12908 13429])
+            ("on_completion" function
+               (:arguments 
+                  ( ("wc" variable
+                       (:pointer 1
+                        :type ("ibv_wc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13450 13468]))                  
+                :type "void")
+                nil [13431 13955])
+            ("on_connection" function
+               (:arguments 
+                  ( ("context" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13975 13989]))                  
+                :type "int")
+                nil [13957 14598])
+            ("on_disconnect" function
+               (:arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14618 14640]))                  
+                :type "int")
+                nil [14600 14985])
+            ("on_event" function
+               (:arguments 
+                  ( ("event" variable
+                       (:pointer 1
+                        :type ("rdma_cm_event" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15000 15028]))                  
+                :type "int")
+                nil [14987 15472])
+            ("on_route_resolved" function
+               (:arguments 
+                  ( ("id" variable
+                       (:pointer 1
+                        :type ("rdma_cm_id" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15496 15518]))                  
+                :type "int")
+                nil [15474 15693]))          
+      :file "client.c"
+      :pointmax 15694
+      :fsize 15693
+      :lastmodtime '(24004 28573 234639 998000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("TEST_Z" (spp-arg-list ("x") 387 . 390) . 
+              ((DO "do" 392 . 394) (semantic-list "{ if (!(x)) die(\"error: \" #x \" failed (returned zero/null).\"); }" 395 . 459) (WHILE "while" 460 . 465) (semantic-list "(0)" 466 . 469)))
+          ("TEST_NZ" (spp-arg-list ("x") 291 . 294) . 
+              ((DO "do" 295 . 297) (semantic-list "{ if ( (x)) die(\"error: \" #x \" failed (returned non-zero).\" ); }" 298 . 362) (WHILE "while" 363 . 368) (semantic-list "(0)" 369 . 372)))
+          )
+))
+  :file "!home!nmg!Code!C!leviathan!hio!benchmarks!libibverbs-hello-world-works!client!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1391 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("fileData1" variable nil (reparse-symbol function_parameters) [58 67]))              ) nil [44 1337])
+            ("read_tsv_header" function (:arguments 
+              ( ("fileData1" variable nil (reparse-symbol function_parameters) [1454 1463]))              ) nil [1433 1995])
+            ("read_table" function (:arguments 
+              ( ("fileData2" variable nil (reparse-symbol function_parameters) [2036 2045]))              ) nil [2020 2956])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [2970 2975])
+                ("columnIndex" variable nil (reparse-symbol function_parameters) [2977 2988]))              ) nil [2957 3427])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [3441 3446])
+                ("header" variable nil (reparse-symbol function_parameters) [3448 3454])
+                ("delIndex" variable nil (reparse-symbol function_parameters) [3456 3464]))              ) nil [3428 3972])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [3990 3996])
+                ("type" variable nil (reparse-symbol function_parameters) [3998 4002]))              ) nil [3973 4126])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [4146 4159])
+                ("header" variable nil (reparse-symbol function_parameters) [4161 4167]))              ) nil [4127 4235])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4251 4255])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4257 4268])
+                ("labels" variable nil (reparse-symbol function_parameters) [4270 4276])
+                ("index" variable nil (reparse-symbol function_parameters) [4278 4283])
+                ("type" variable nil (reparse-symbol function_parameters) [4285 4289]))              ) nil [4236 4632])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4650 4654])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4656 4667])
+                ("labels" variable nil (reparse-symbol function_parameters) [4669 4675])
+                ("index" variable nil (reparse-symbol function_parameters) [4677 4682])
+                ("type" variable nil (reparse-symbol function_parameters) [4684 4688]))              ) nil [4633 4956])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4969 4973])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4975 4986])
+                ("labels" variable nil (reparse-symbol function_parameters) [4988 4994]))              ) nil [4957 5494])
+            ("classify" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [5509 5520])
+                ("genes" variable nil (reparse-symbol function_parameters) [5522 5527])
+                ("avesAML" variable nil (reparse-symbol function_parameters) [5529 5536])
+                ("avesALL" variable nil (reparse-symbol function_parameters) [5538 5545]))              ) nil [5495 6080])
+            ("main" function nil nil [6082 19170])
+            ("main" code nil nil [19174 19180]))          
+      :file "Project2  Genetics_hba7_attempt_2019-11-08-20-52-17_project2_11c3.py"
+      :pointmax 19181
+      :fsize 19180
+      :lastmodtime '(24022 52974 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("FILE_NAME_SAMPLES" variable nil nil [20 67])
+            ("FILE_NAME_TRAIN" variable nil nil [68 114])
+            ("FILE_NAME_INDEPENDENT" variable nil nil [115 173])
+            ("read_tsv" function (:documentation "
+    Takes the data_set_ALL_AML_train.tsv and the data_set_ALL_AML_independent.txt file and:
+    1. reading only the first line of data_set_ALL_AML_train.tsv, returns a list of headers.
+    2. reading the remaining lines of data_set_ALL_AML_train.tsv, returns a list of lists of training data.
+
+    Parameters:
+    none
+
+    Returns:
+    headers_list: a list containing each column header from the data_set_ALL_AML_train.tsv file.
+    data_list: a list of lists generated from generated from each row of data_set_ALL_AML_train.tsv.
+    ") nil [177 2142])
+            ("read_labels" function (:documentation "
+    Takes the table_ALL_AML_samples.txt file, reading line-by-line, and returns only the first two columns as a list of lists of labels.
+
+    Parameters:
+    none
+
+    Returns:
+    labels_list: a list of lists containing in each inner list the first two columns of a line in the table_ALL_AML_samples.txt file.
+    ") nil [2145 4056])
+            ("get_col" function
+               (:documentation "
+    Takes the list of training data and data to be categorized and returns lists of lists with inner lists as columns.
+
+    Parameters:
+    data_list: the list of lists of training data where each inner list is a row.
+
+    Returns:
+    column_list: the list of lists of training data where each inner list is a column.
+    "
+                :arguments 
+                  ( ("data_list" variable nil (reparse-symbol function_parameters) [4071 4080]))                  )
+                nil [4059 4852])
+            ("del_col" function
+               (:documentation "
+    Deletes all of the \"call\" columns from the list of headers, the list of columns from the training data, and the list of columns from the data that is to be categorized.
+
+    Parameters:
+    headers_list: a list of headers derived from all the column headers in the first line of the data_set_ALL_AML_train.tsv file.
+    column_list: a list of lists of training data where each inner list is a column.
+
+    Returns:
+    headers_list: a edited list of headers which has none of the \"call\" headers.
+    column_list: a list of lists of training data where all of the call columns have been deleted.
+    "
+                :arguments 
+                  ( ("headers_list" variable nil (reparse-symbol function_parameters) [4867 4879])
+                    ("column_list" variable nil (reparse-symbol function_parameters) [4881 4892]))                  )
+                nil [4855 5826])
+            ("get_samples" function
+               (:documentation "
+    Creates two lists; one with AML indices and the other with ALL indices.
+
+    Parameters:
+    labels_list: a list of lists derived from the first two columns of the table_ALL_AML_samples.txt file.
+
+    Returns:
+    AML_index: a list containing only first item from lists which had the AML item; it is an index for AML cancer samples.
+    ALL_index: same as AML_index but indices for ALL cancer.
+    "
+                :arguments 
+                  ( ("labels_list" variable nil (reparse-symbol function_parameters) [5845 5856]))                  )
+                nil [5829 6583])
+            ("sample_to_col" function
+               (:documentation "
+    Determines the index in a line in data_set_ALL_AML_train.tsv at which an cancer sample occurs.
+
+    Parameters:
+    headers_list: the modified list, headers_list, containing no call columns.
+    AML_index: a list of indices for all of the AML cancer samples.
+    ALL_index: a list of indices for all of the ALL cancer samples.
+
+    Returns:
+    sample_col_index_AML: a list of column indices in the data_set_ALL_AML_train.tsv at which the AML samples occur.
+    sample_col_index_ALL: the same as sample_col_index_AML but with ALL samples.
+    "
+                :arguments 
+                  ( ("headers_list" variable nil (reparse-symbol function_parameters) [6604 6616])
+                    ("AML_index" variable nil (reparse-symbol function_parameters) [6618 6627])
+                    ("ALL_index" variable nil (reparse-symbol function_parameters) [6629 6638]))                  )
+                nil [6586 7971])
+            ("calc_avgs" function
+               (:documentation "
+    Calculates the averages (one per line) of each AML or ALL sample in a line.
+
+    Parameters:
+    data_list: the modified list of lists containing no columns labeled \"call\".
+    sample_col_index_AML: a list of column indices at which AML samples occur.
+    sample_col_index_ALL: a list of column indices at which ALL samples occur.
+
+    Returns:
+    AML_avgs_dict: a dictionary of the average of AML samples in each line (one average per line) and the gene number.
+    ALL_avgs_dict: a dictionary of the average of ALL samples in each line (one average per line) and the gene number.
+    "
+                :arguments 
+                  ( ("column_list" variable nil (reparse-symbol function_parameters) [7988 7999])
+                    ("sample_col_index_AML" variable nil (reparse-symbol function_parameters) [8001 8021])
+                    ("sample_col_index_ALL" variable nil (reparse-symbol function_parameters) [8023 8043]))                  )
+                nil [7974 9509])
+            ("calc_stdevs" function
+               (:documentation "
+    Calculates the standard deviation of all samples of either AML or ALL in a line.
+
+    Parameters:
+    data_list: the modified list of lists containing no columns labeled \"call\".
+    sample_col_index_AML: a list of column indices at which ALL samples occur.
+    sample_col_index_ALL: a list of column indices at which AML samples occur.
+
+    Returns:
+    AML_stdevs_list: a list of standard deviations for all AML samples in each line.
+    ALL_stdevs_list: a list of the standard deviations for all ALL samples in each line.
+    "
+                :arguments 
+                  ( ("column_list" variable nil (reparse-symbol function_parameters) [9528 9539])
+                    ("sample_col_index_AML" variable nil (reparse-symbol function_parameters) [9541 9561])
+                    ("sample_col_index_ALL" variable nil (reparse-symbol function_parameters) [9563 9583]))                  )
+                nil [9512 11030])
+            ("scores" function
+               (:documentation "
+    Creates a p(g) score for each sample (line) in data_set_ALL_AML_train.tsv.
+
+    Parameters:
+    AML_avgs_list: a list of AML averages for each line
+    ALL_avgs_list: a list of ALL averages for each line
+    AML_stdevs_list: a list of AML standard deviations for each line
+    ALL_stdevs_list: a list of ALL standard deviations for each line
+
+    Returns:
+    pg_list: a list of each p(g) score for each sample.
+    "
+                :arguments 
+                  ( ("AML_avgs_dict" variable nil (reparse-symbol function_parameters) [11044 11057])
+                    ("ALL_avgs_dict" variable nil (reparse-symbol function_parameters) [11059 11072])
+                    ("AML_stdevs_list" variable nil (reparse-symbol function_parameters) [11074 11089])
+                    ("ALL_stdevs_list" variable nil (reparse-symbol function_parameters) [11091 11106]))                  )
+                nil [11033 12324])
+            ("classify" function
+               (:documentation "
+    Classifies each sample (row) in the unknown data by comparing to the AML/ALL averages of the twenty most useful genes.
+
+    Parameters:
+    hundred_useful: a list of tuples of the one hundred most useful genes and their row indices.
+    AML_avgs_dict: a dictionary containing indices (keys) of AML averages (values).
+    ALL_avgs_dict: a dictionary containing indices (keys) of ALL averages (values.)
+
+    Returns:
+    votes_dict: a dictionary containing each gene (row) number (keys) and the classification for that gene dependent on votes (values).
+    "
+                :arguments 
+                  ( ("hundred_useful" variable nil (reparse-symbol function_parameters) [12340 12354])
+                    ("AML_avgs_dict" variable nil (reparse-symbol function_parameters) [12356 12369])
+                    ("ALL_avgs_dict" variable nil (reparse-symbol function_parameters) [12371 12384])
+                    ("column_list_unknown" variable nil (reparse-symbol function_parameters) [12386 12405]))                  )
+                nil [12327 14349])
+            ("main" function (:documentation "
+    1. Computes the 100 most useful genes from the training data.
+    2. Reads the data_set_ALL_AML_independent.txt data into list of lists format.
+    3. Classifies each sample and prints the result.
+    ") nil [14351 17798])
+            ("main" code nil nil [17800 17806]))          
+      :file "Project2  Genetics_lmc150_attempt_2019-11-12-22-16-09_project2_final.py"
+      :pointmax 17807
+      :fsize 18362
+      :lastmodtime '(24022 52974 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("main" function nil nil [19 1383])
+            ("classify" function (:arguments 
+              ( ("col" variable nil (reparse-symbol function_parameters) [1398 1401])
+                ("useful_genes" variable nil (reparse-symbol function_parameters) [1403 1415])
+                ("outerList" variable nil (reparse-symbol function_parameters) [1417 1426])
+                ("headersList" variable nil (reparse-symbol function_parameters) [1428 1439])
+                ("labels" variable nil (reparse-symbol function_parameters) [1441 1447]))              ) nil [1385 2014])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2027 2031])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2033 2044])
+                ("labels" variable nil (reparse-symbol function_parameters) [2046 2052]))              ) nil [2016 2587])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2605 2609])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2611 2622])
+                ("labels" variable nil (reparse-symbol function_parameters) [2624 2630])
+                ("ind" variable nil (reparse-symbol function_parameters) [2632 2635])
+                ("typeA" variable nil (reparse-symbol function_parameters) [2637 2642]))              ) nil [2589 3344])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3359 3363])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3365 3376])
+                ("labels" variable nil (reparse-symbol function_parameters) [3378 3384])
+                ("ind" variable nil (reparse-symbol function_parameters) [3386 3389])
+                ("typeA" variable nil (reparse-symbol function_parameters) [3391 3396]))              ) nil [3345 4123])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [4143 4156])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4158 4169]))              ) nil [4125 4337])
+            ("get_samples" function (:arguments 
+              ( ("listOfGene" variable nil (reparse-symbol function_parameters) [4354 4364])
+                ("typeLook" variable nil (reparse-symbol function_parameters) [4366 4374]))              ) nil [4338 4647])
+            ("del_col" function (:arguments 
+              ( ("outerList" variable nil (reparse-symbol function_parameters) [4662 4671])
+                ("headersList" variable nil (reparse-symbol function_parameters) [4673 4684])
+                ("indexCol" variable nil (reparse-symbol function_parameters) [4686 4694]))              ) nil [4650 5056])
+            ("get_col" function (:arguments 
+              ( ("table1" variable nil (reparse-symbol function_parameters) [5072 5078])
+                ("a" variable nil (reparse-symbol function_parameters) [5080 5081]))              ) nil [5060 5423])
+            ("read_tsv" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [5440 5441]))              ) nil [5427 6268])
+            ("read_labels" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [6286 6287]))              ) nil [6270 7128]))          
+      :file "Project2  Genetics_jag308_attempt_2019-11-08-12-38-45_test.py"
+      :pointmax 7139
+      :fsize 7135
+      :lastmodtime '(24022 52974 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [33 41]))              ) nil [20 511])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [528 536]))              ) nil [512 831])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [844 849])
+                ("index" variable nil (reparse-symbol function_parameters) [851 856]))              ) nil [832 1055])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1068 1073])
+                ("col_header" variable nil (reparse-symbol function_parameters) [1075 1085])
+                ("index" variable nil (reparse-symbol function_parameters) [1087 1092]))              ) nil [1056 1166])
+            ("del_call" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [1180 1188])
+                ("labels" variable nil (reparse-symbol function_parameters) [1190 1196]))              ) nil [1167 1425])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1442 1448])
+                ("type" variable nil (reparse-symbol function_parameters) [1450 1454]))              ) nil [1426 1617])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1636 1649])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1651 1662]))              ) nil [1618 1727])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [1742 1746])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1748 1759])
+                ("labels" variable nil (reparse-symbol function_parameters) [1761 1767])
+                ("ind" variable nil (reparse-symbol function_parameters) [1769 1772])
+                ("type" variable nil (reparse-symbol function_parameters) [1774 1778]))              ) nil [1728 2087])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2104 2108])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2110 2121])
+                ("labels" variable nil (reparse-symbol function_parameters) [2123 2129])
+                ("ind" variable nil (reparse-symbol function_parameters) [2131 2134])
+                ("type" variable nil (reparse-symbol function_parameters) [2136 2140]))              ) nil [2088 2414])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2426 2430])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2432 2443])
+                ("labels" variable nil (reparse-symbol function_parameters) [2445 2451]))              ) nil [2415 2880])
+            ("useful_genes" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [2898 2906])
+                ("labels" variable nil (reparse-symbol function_parameters) [2908 2914]))              ) nil [2881 3392])
+            ("classify" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [3406 3417])
+                ("genes" variable nil (reparse-symbol function_parameters) [3419 3424])
+                ("filename" variable nil (reparse-symbol function_parameters) [3426 3434])
+                ("labels" variable nil (reparse-symbol function_parameters) [3436 3442]))              ) nil [3393 4126])
+            ("main" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [4136 4144])
+                ("labels" variable nil (reparse-symbol function_parameters) [4146 4152]))              ) nil [4127 4423])
+            ("main" code nil nil [4424 4493]))          
+      :file "Project2  Genetics_jrl143_attempt_2019-11-08-11-45-19_project_2.py"
+      :pointmax 4579
+      :fsize 4729
+      :lastmodtime '(24022 52974 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("pprint" include nil nil [19 32])
+            ("timeit" include nil nil [33 46])
+            ("start" variable nil nil [48 76])
+            ("read_tsv" function (:arguments 
+              ( ("FILE" variable nil (reparse-symbol function_parameters) [91 95]))              ) nil [78 1652])
+            ("A" variable nil nil [1653 1693])
+            ("read_txt" function nil nil [1696 2959])
+            ("b" variable nil nil [2959 2972])
+            ("del_col" function (:arguments 
+              ( ("LIST" variable nil (reparse-symbol function_parameters) [2986 2990]))              ) nil [2974 3956])
+            ("F" variable nil nil [3956 3969])
+            ("get_samples" function (:arguments 
+              ( ("FILE" variable nil (reparse-symbol function_parameters) [3987 3991])
+                ("INDEX" variable nil (reparse-symbol function_parameters) [3992 3997])
+                ("EXTRACT" variable nil (reparse-symbol function_parameters) [3998 4005]))              ) nil [3971 4327])
+            ("GETSAMPLES" variable nil nil [4327 4356])
+            ("sample_to_col" function (:arguments 
+              ( ("F" variable nil (reparse-symbol function_parameters) [4378 4379])
+                ("GETSAMPLES" variable nil (reparse-symbol function_parameters) [4381 4391]))              ) nil [4360 5082])
+            ("SAMP" variable nil nil [5082 5116])
+            ("Scores" function (:arguments 
+              ( ("F" variable nil (reparse-symbol function_parameters) [5131 5132])
+                ("SAMP" variable nil (reparse-symbol function_parameters) [5134 5138]))              ) nil [5120 9774])
+            ("CLASS" variable nil nil [9776 9797])
+            ("MOD" function (:arguments 
+              ( ("CLASS" variable nil (reparse-symbol function_parameters) [9807 9812]))              ) nil [9799 10823])
+            ("USEFUL" variable nil nil [10823 10840])
+            ("Extract_Independent" function (:arguments 
+              ( ("USEFUL" variable nil (reparse-symbol function_parameters) [10866 10872]))              ) nil [10842 12065])
+            ("Key_Values" variable nil nil [12065 12103])
+            ("CLASSIFY" function (:arguments 
+              ( ("Key_Values" variable nil (reparse-symbol function_parameters) [12120 12130])
+                ("USEFUL" variable nil (reparse-symbol function_parameters) [12131 12137]))              ) nil [12107 13191])
+            ("CLASSIFIED_SAMPLES" variable nil nil [13195 13242])
+            ("main" function (:arguments 
+              ( ("x" variable nil (reparse-symbol function_parameters) [13253 13254]))              ) nil [13244 13377])
+            ("main" code nil nil [13378 13402])
+            ("stop" variable nil nil [13404 13431])
+            ("print" code nil nil [13432 13465])
+            ("'''
+my output misclassifies 3 of the 34 samples. 54,66, and 67 were the only samples classified incorrectly. Given this, I can
+conclude this method to calculate unknown AML and ALL samples is fairly accurate, as it got 91.7% accuracy.
+'''" code nil nil [13466 13704]))          
+      :file "Project2  Genetics_ias20_attempt_2019-11-08-11-24-58_Lab3Final.py"
+      :pointmax 13705
+      :fsize 13704
+      :lastmodtime '(24022 64010 275632 862000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [189 206])
+            ("read_tsv" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [307 316]))              ) nil [294 1577])
+            ("read_labels" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [1666 1675]))              ) nil [1650 2042])
+            ("get_col" function (:arguments 
+              ( ("dat_list" variable nil (reparse-symbol function_parameters) [2089 2097])
+                ("index" variable nil (reparse-symbol function_parameters) [2099 2104]))              ) nil [2077 2194])
+            ("del_col" function (:arguments 
+              ( ("table_list" variable nil (reparse-symbol function_parameters) [2296 2306])
+                ("header_list" variable nil (reparse-symbol function_parameters) [2308 2319])
+                ("index" variable nil (reparse-symbol function_parameters) [2321 2326]))              ) nil [2284 2457])
+            ("get_samples" function (:arguments 
+              ( ("labels_list" variable nil (reparse-symbol function_parameters) [2514 2525])
+                ("cancer_type" variable nil (reparse-symbol function_parameters) [2527 2538]))              ) nil [2498 2698])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2717 2730])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2732 2743]))              ) nil [2699 2884])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2969 2973])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2975 2986])
+                ("labels" variable nil (reparse-symbol function_parameters) [2988 2994])
+                ("ind" variable nil (reparse-symbol function_parameters) [2996 2999])
+                ("type" variable nil (reparse-symbol function_parameters) [3001 3005]))              ) nil [2955 3299])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3397 3401])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3403 3414])
+                ("labels" variable nil (reparse-symbol function_parameters) [3416 3422])
+                ("ind" variable nil (reparse-symbol function_parameters) [3424 3427])
+                ("type" variable nil (reparse-symbol function_parameters) [3429 3433]))              ) nil [3381 3707])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3770 3774])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3776 3787])
+                ("labels" variable nil (reparse-symbol function_parameters) [3789 3795]))              ) nil [3759 4151])
+            ("classify" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [4219 4230])
+                ("genes" variable nil (reparse-symbol function_parameters) [4232 4237]))              ) nil [4206 5026])
+            ("main" function nil nil [5043 6210])
+            ("data_list, data_headers" code nil nil [6310 6374])
+            ("labels" variable nil nil [6447 6496])
+            ("if" code nil nil [6498 6536]))          
+      :file "jay.py"
+      :pointmax 6536
+      :fsize 6535
+      :lastmodtime '(24022 64887 153684 267000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("main" function nil nil [20 681])
+            ("read_tsv" function (:arguments 
+              ( ("fname" variable nil (reparse-symbol function_parameters) [1016 1021]))              ) nil [1003 1804])
+            ("read_labels" function (:arguments 
+              ( ("fname2" variable nil (reparse-symbol function_parameters) [1822 1828]))              ) nil [1806 2623])
+            ("get_col" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2636 2640])
+                ("col_index" variable nil (reparse-symbol function_parameters) [2642 2651]))              ) nil [2624 2828])
+            ("del_col" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2841 2845])
+                ("col_header" variable nil (reparse-symbol function_parameters) [2847 2857])
+                ("index" variable nil (reparse-symbol function_parameters) [2859 2864]))              ) nil [2829 2939])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2956 2962])
+                ("type" variable nil (reparse-symbol function_parameters) [2964 2968]))              ) nil [2940 3111])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [3130 3143])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3145 3156]))              ) nil [3112 3266])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3281 3285])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3287 3298])
+                ("labels" variable nil (reparse-symbol function_parameters) [3300 3306])
+                ("ind" variable nil (reparse-symbol function_parameters) [3308 3311])
+                ("type" variable nil (reparse-symbol function_parameters) [3313 3317]))              ) nil [3267 3715])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3732 3736])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3738 3749])
+                ("labels" variable nil (reparse-symbol function_parameters) [3751 3757])
+                ("ind" variable nil (reparse-symbol function_parameters) [3759 3762])
+                ("type" variable nil (reparse-symbol function_parameters) [3764 3768]))              ) nil [3716 4495])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4507 4511])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4513 4524])
+                ("labels" variable nil (reparse-symbol function_parameters) [4526 4532]))              ) nil [4496 5032])
+            ("main" code nil nil [5561 5567]))          
+      :file "Project2  Genetics (reduced requirements)_jjs230_attempt_2019-11-12-09-37-50_project2.py"
+      :pointmax 5568
+      :fsize 5734
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("cur_file" variable nil nil [19 64])
+            ("for" code nil nil [65 132])
+            ("reads" variable nil nil [132 173])
+            ("read_tsv" function (:arguments 
+              ( ("file" variable nil (reparse-symbol function_parameters) [188 192]))              ) nil [175 644])
+            ("get_col" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [759 763])
+                ("choose" variable nil (reparse-symbol function_parameters) [765 771]))              ) nil [747 1002])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1015 1020])
+                ("headers" variable nil (reparse-symbol function_parameters) [1022 1029])
+                ("call" variable nil (reparse-symbol function_parameters) [1031 1035]))              ) nil [1003 1242])
+            ("read_labels" function (:arguments 
+              ( ("file" variable nil (reparse-symbol function_parameters) [1260 1264]))              ) nil [1244 1943])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2068 2074])
+                ("type" variable nil (reparse-symbol function_parameters) [2076 2080]))              ) nil [2052 2231])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2250 2263])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2265 2276]))              ) nil [2232 2406])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2542 2546])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2548 2559])
+                ("labels" variable nil (reparse-symbol function_parameters) [2561 2567])
+                ("ind" variable nil (reparse-symbol function_parameters) [2569 2572])
+                ("type" variable nil (reparse-symbol function_parameters) [2574 2578]))              ) nil [2528 2864])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2905 2909])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2911 2922])
+                ("labels" variable nil (reparse-symbol function_parameters) [2924 2930])
+                ("ind" variable nil (reparse-symbol function_parameters) [2932 2935])
+                ("type" variable nil (reparse-symbol function_parameters) [2937 2941]))              ) nil [2889 3248])
+            ("call_tsv, header" code nil nil [3250 3307])
+            ("call_labels" variable nil nil [3308 3362])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3592 3596])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3598 3609])
+                ("labels" variable nil (reparse-symbol function_parameters) [3611 3617]))              ) nil [3581 4044])
+            ("print" code nil nil [4045 4095]))          
+      :file "Project2  Genetics (reduced requirements)_maj155_attempt_2019-11-12-11-36-10_cancer.py"
+      :pointmax 5120
+      :fsize 5119
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [34 43]))              ) nil [21 548])
+            ("read_labels" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [565 573]))              ) nil [549 938])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [952 957])
+                ("columnNumber" variable nil (reparse-symbol function_parameters) [959 971]))              ) nil [940 1071])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1084 1089])
+                ("headers" variable nil (reparse-symbol function_parameters) [1091 1098])
+                ("columnNumber" variable nil (reparse-symbol function_parameters) [1100 1112]))              ) nil [1072 1208])
+            ("get_samples" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1225 1230])
+                ("type" variable nil (reparse-symbol function_parameters) [1232 1236]))              ) nil [1209 1359])
+            ("sample_to_col" function (:arguments 
+              ( ("finder" variable nil (reparse-symbol function_parameters) [1378 1384])
+                ("headers" variable nil (reparse-symbol function_parameters) [1386 1393]))              ) nil [1360 1498])
+            ("calc_avgs" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1513 1518])
+                ("headers" variable nil (reparse-symbol function_parameters) [1520 1527])
+                ("all_aml_table" variable nil (reparse-symbol function_parameters) [1529 1542])
+                ("ind" variable nil (reparse-symbol function_parameters) [1544 1547])
+                ("type" variable nil (reparse-symbol function_parameters) [1549 1553]))              ) nil [1499 1969])
+            ("calc_stdevs" function (:arguments 
+              ( ("cancerTable" variable nil (reparse-symbol function_parameters) [1986 1997])
+                ("headers" variable nil (reparse-symbol function_parameters) [1999 2006])
+                ("table" variable nil (reparse-symbol function_parameters) [2008 2013])
+                ("ind" variable nil (reparse-symbol function_parameters) [2015 2018])
+                ("type" variable nil (reparse-symbol function_parameters) [2020 2024]))              ) nil [1970 2385])
+            ("scores" function (:arguments 
+              ( ("cancerTable" variable nil (reparse-symbol function_parameters) [2397 2408])
+                ("headers" variable nil (reparse-symbol function_parameters) [2410 2417])
+                ("table" variable nil (reparse-symbol function_parameters) [2419 2424]))              ) nil [2386 2859])
+            ("classify" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [2873 2884])
+                ("usefull_genes" variable nil (reparse-symbol function_parameters) [2886 2899]))              ) nil [2860 4001])
+            ("main" function nil nil [4004 4744])
+            ("main" code nil nil [4748 4754]))          
+      :file "Project2  Genetics_mal343_attempt_2019-11-12-14-37-04_louria_lab2final.py"
+      :pointmax 4755
+      :fsize 4754
+      :lastmodtime '(24022 52974 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [33 41]))              ) nil [20 722])
+            ("full_list, col_header" code nil nil [722 784])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [802 810]))              ) nil [786 1105])
+            ("list" variable nil nil [1105 1152])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1166 1171])
+                ("index" variable nil (reparse-symbol function_parameters) [1173 1178]))              ) nil [1154 1392])
+            ("print" code nil nil [1392 1420])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1434 1439])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1441 1452])
+                ("index" variable nil (reparse-symbol function_parameters) [1454 1459]))              ) nil [1422 1656])
+            ("del_col" code nil nil [1656 1689])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1707 1713])
+                ("type" variable nil (reparse-symbol function_parameters) [1715 1719]))              ) nil [1691 1939])
+            ("print" code nil nil [1939 1970])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1990 2003])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2005 2016]))              ) nil [1972 2143])
+            ("print" code nil nil [2143 2178])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2194 2198])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2200 2211])
+                ("labels" variable nil (reparse-symbol function_parameters) [2213 2219])
+                ("ind" variable nil (reparse-symbol function_parameters) [2221 2224])
+                ("t" variable nil (reparse-symbol function_parameters) [2226 2227]))              ) nil [2180 2439])
+            ("print" code nil nil [2439 2496])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2514 2518])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2520 2531])
+                ("labels" variable nil (reparse-symbol function_parameters) [2533 2539])
+                ("ind" variable nil (reparse-symbol function_parameters) [2541 2544])
+                ("type" variable nil (reparse-symbol function_parameters) [2546 2550]))              ) nil [2498 2838])
+            ("print" code nil nil [2838 2898])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2911 2915])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2917 2928])
+                ("labels" variable nil (reparse-symbol function_parameters) [2930 2936]))              ) nil [2900 3278])
+            ("print" code nil nil [3278 3320]))          
+      :file "Project2  Genetics (reduced requirements)_mim165_attempt_2019-11-12-18-59-31_project2pt3.py"
+      :pointmax 3321
+      :fsize 3320
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_txt" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [33 41]))              ) nil [20 656])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [673 681]))              ) nil [657 976])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [989 994])
+                ("index" variable nil (reparse-symbol function_parameters) [996 1001]))              ) nil [977 1200])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1213 1218])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1220 1231])
+                ("index" variable nil (reparse-symbol function_parameters) [1233 1238]))              ) nil [1201 1313])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1330 1336])
+                ("type" variable nil (reparse-symbol function_parameters) [1338 1342]))              ) nil [1314 1505])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1524 1537])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1539 1550]))              ) nil [1506 1615])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [1630 1634])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1636 1647])
+                ("labels" variable nil (reparse-symbol function_parameters) [1649 1655])
+                ("ind" variable nil (reparse-symbol function_parameters) [1657 1660])
+                ("type" variable nil (reparse-symbol function_parameters) [1662 1666]))              ) nil [1616 1975])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [1992 1996])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1998 2009])
+                ("labels" variable nil (reparse-symbol function_parameters) [2011 2017])
+                ("ind" variable nil (reparse-symbol function_parameters) [2019 2022])
+                ("type" variable nil (reparse-symbol function_parameters) [2024 2028]))              ) nil [1976 2302])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2314 2318])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2320 2331])
+                ("labels" variable nil (reparse-symbol function_parameters) [2333 2339]))              ) nil [2303 2768])
+            ("main" function nil nil [2769 3107])
+            ("main" code nil nil [3108 3114]))          
+      :file "Project2  Genetics (reduced requirements)_rms189_attempt_2019-11-13-10-49-19_Stowe_Project 2"
+      :pointmax 3117
+      :fsize 3116
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [33 42]))              ) nil [20 623])
+            ("read_labels" function (:arguments 
+              ( ("name_file" variable nil (reparse-symbol function_parameters) [640 649]))              ) nil [624 1390])
+            ("labels" variable nil nil [1390 1439])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1453 1458])
+                ("index" variable nil (reparse-symbol function_parameters) [1459 1464]))              ) nil [1441 1551])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1564 1569])
+                ("col_header" variable nil (reparse-symbol function_parameters) [1571 1581])
+                ("index" variable nil (reparse-symbol function_parameters) [1582 1587]))              ) nil [1552 1669])
+            ("read" variable nil nil [1670 1715])
+            ("labels" variable nil nil [1716 1765])
+            ("label" variable nil nil [1767 1782])
+            ("for" code nil nil [1783 1865])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1883 1889])
+                ("type" variable nil (reparse-symbol function_parameters) [1890 1894]))              ) nil [1867 2045])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2064 2077])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2078 2089]))              ) nil [2046 2211])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2226 2230])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2231 2242])
+                ("labels" variable nil (reparse-symbol function_parameters) [2243 2249])
+                ("ind" variable nil (reparse-symbol function_parameters) [2250 2253])
+                ("type" variable nil (reparse-symbol function_parameters) [2254 2258]))              ) nil [2212 2576])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2647 2651])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2652 2663])
+                ("labels" variable nil (reparse-symbol function_parameters) [2664 2670])
+                ("ind" variable nil (reparse-symbol function_parameters) [2671 2674])
+                ("type" variable nil (reparse-symbol function_parameters) [2675 2679]))              ) nil [2631 2976])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3044 3048])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3049 3060])
+                ("labels" variable nil (reparse-symbol function_parameters) [3061 3067]))              ) nil [3033 3395]))          
+      :file "Project2  Genetics (reduced requirements)_sjk122_attempt_2019-11-13-11-34-19_p2lab2.py"
+      :pointmax 3395
+      :fsize 3394
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("math" include nil nil [19 30])
+            ("read_tsv" function (:arguments 
+              ( ("f_name" variable nil (reparse-symbol function_parameters) [46 52]))              ) nil [33 1092])
+            ("read_labels" function (:arguments 
+              ( ("f_name" variable nil (reparse-symbol function_parameters) [1110 1116]))              ) nil [1094 1967])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1981 1986])
+                ("index" variable nil (reparse-symbol function_parameters) [1988 1993]))              ) nil [1969 2191])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [2206 2211])
+                ("header" variable nil (reparse-symbol function_parameters) [2213 2219])
+                ("index" variable nil (reparse-symbol function_parameters) [2221 2226]))              ) nil [2193 2554])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2579 2585])
+                ("type" variable nil (reparse-symbol function_parameters) [2587 2591]))              ) nil [2563 2870])
+            ("sample_to_col" function (:arguments 
+              ( ("col_headers" variable nil (reparse-symbol function_parameters) [2890 2901])
+                ("sample_number" variable nil (reparse-symbol function_parameters) [2903 2916]))              ) nil [2872 3069])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3097 3101])
+                ("headers" variable nil (reparse-symbol function_parameters) [3103 3110])
+                ("labels" variable nil (reparse-symbol function_parameters) [3112 3118])
+                ("index" variable nil (reparse-symbol function_parameters) [3120 3125])
+                ("type" variable nil (reparse-symbol function_parameters) [3127 3131]))              ) nil [3083 3552])
+            ("calc_stdev" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3569 3573])
+                ("headers" variable nil (reparse-symbol function_parameters) [3575 3582])
+                ("labels" variable nil (reparse-symbol function_parameters) [3584 3590])
+                ("index" variable nil (reparse-symbol function_parameters) [3592 3597])
+                ("type" variable nil (reparse-symbol function_parameters) [3599 3603]))              ) nil [3554 3931])
+            ("get_score" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3947 3951])
+                ("headers" variable nil (reparse-symbol function_parameters) [3953 3960])
+                ("labels" variable nil (reparse-symbol function_parameters) [3962 3968]))              ) nil [3933 4405])
+            ("print" code nil nil [4446 4470])
+            ("data_set_headers, data_set_train" code nil nil [4471 4545])
+            ("data_set_labels" variable nil nil [4546 4604])
+            ("col_to_delete" variable nil nil [4648 4666])
+            ("for" code nil nil [4668 4777])
+            ("print" code nil nil [4777 4804])
+            ("j" variable nil nil [4805 4810])
+            ("for" code nil nil [4811 4998])
+            ("print" code nil nil [5047 5076])
+            ("scores" variable nil nil [5077 5146])
+            ("sorted_cors" variable nil nil [5188 5250])
+            ("useful_genes" variable nil nil [5315 5332])
+            ("for" code nil nil [5333 5396])
+            ("print" code nil nil [5468 5500])
+            ("for" code nil nil [5501 5623]))          
+      :file "Project2  Genetics (reduced requirements)_ajs326_attempt_2019-11-13-11-46-47_AJS326_Proj2_Red.py"
+      :pointmax 5630
+      :fsize 5788
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax '((NAME 1477 . 1480) (MULT 1487 . 1488)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [11 28])
+            ("get_data" function nil nil [30 738])
+            ("read_tsv" function (:arguments 
+              ( ("file" variable nil (reparse-symbol function_parameters) [752 756]))              ) nil [739 1429])
+            ("read_labels" function (:arguments 
+              ( ("file" variable nil (reparse-symbol function_parameters) [1448 1452]))              ) nil [1432 2214])
+            ("get_col" function (:arguments 
+              ( ("file" variable nil (reparse-symbol function_parameters) [2229 2233])
+                ("COLUMN" variable nil (reparse-symbol function_parameters) [2235 2241]))              ) nil [2217 2662])
+            ("del_col" function (:arguments 
+              ( ("list" variable nil (reparse-symbol function_parameters) [2677 2681])
+                ("headers" variable nil (reparse-symbol function_parameters) [2682 2689])
+                ("index" variable nil (reparse-symbol function_parameters) [2690 2695]))              ) nil [2665 2769])
+            ("get_sample" function
+               (:documentation "to get all the sample numbers of a cancer type(ALL/AML)"
+                :arguments 
+                  ( ("labels" variable nil (reparse-symbol function_parameters) [2789 2795])
+                    ("type" variable nil (reparse-symbol function_parameters) [2796 2800]))                  )
+                nil [2774 3133])
+            ("sample_to_col" function
+               (:documentation "to get index(column) of a sample number in col_headers
+    return index numbers(not in a list) "
+                :arguments 
+                  ( ("sample_number" variable nil (reparse-symbol function_parameters) [3154 3167])
+                    ("col_headers" variable nil (reparse-symbol function_parameters) [3169 3180]))                  )
+                nil [3136 3366])
+            ("calc_avgs" function
+               (:documentation "use get_sample() to get a list of sample numbers of selected type;
+    use sample_to_col() to get index of a sample number;
+    select a gene type(row ind) using input;
+    get the corresponding list(ind) in data;
+    get the coresponding values(index) in the list and get the sum;
+    devide the sum by the amount of samples(len())"
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [3383 3387])
+                    ("col_headers" variable nil (reparse-symbol function_parameters) [3389 3400])
+                    ("labels" variable nil (reparse-symbol function_parameters) [3402 3408])
+                    ("ind" variable nil (reparse-symbol function_parameters) [3410 3413])
+                    ("type" variable nil (reparse-symbol function_parameters) [3415 3419]))                  )
+                nil [3369 4523])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4542 4546])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4548 4559])
+                ("labels" variable nil (reparse-symbol function_parameters) [4561 4567])
+                ("ind" variable nil (reparse-symbol function_parameters) [4569 4572])
+                ("type" variable nil (reparse-symbol function_parameters) [4574 4578]))              ) nil [4526 5228])
+            ("score" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [5242 5246])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [5248 5259])
+                ("labels" variable nil (reparse-symbol function_parameters) [5261 5267]))              ) nil [5232 5807])
+            ("main" function nil nil [5812 6069])
+            ("main" code nil nil [6112 6118]))          
+      :file "let.py"
+      :pointmax 6119
+      :fsize 6118
+      :lastmodtime '(24023 2668 535878 744000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("file_to_read" variable nil (reparse-symbol function_parameters) [44 56]))              ) nil [31 834])
+            ("read_labels" function (:arguments 
+              ( ("file_to_read" variable nil (reparse-symbol function_parameters) [852 864]))              ) nil [836 1597])
+            ("get_col" function (:arguments 
+              ( ("file_to_read" variable nil (reparse-symbol function_parameters) [1611 1623])
+                ("get_num" variable nil (reparse-symbol function_parameters) [1625 1632]))              ) nil [1599 2034])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [2048 2053])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2055 2066])
+                ("del_num" variable nil (reparse-symbol function_parameters) [2068 2075]))              ) nil [2036 2151])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2259 2265])
+                ("types" variable nil (reparse-symbol function_parameters) [2266 2271]))              ) nil [2243 2396])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2416 2429])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2431 2442]))              ) nil [2398 2489])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2505 2509])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2511 2522])
+                ("labels" variable nil (reparse-symbol function_parameters) [2524 2530])
+                ("ind" variable nil (reparse-symbol function_parameters) [2532 2535])
+                ("types" variable nil (reparse-symbol function_parameters) [2537 2542]))              ) nil [2491 2844])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2861 2865])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2867 2878])
+                ("labels" variable nil (reparse-symbol function_parameters) [2880 2886])
+                ("ind" variable nil (reparse-symbol function_parameters) [2888 2891])
+                ("types" variable nil (reparse-symbol function_parameters) [2893 2898]))              ) nil [2845 3203])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3216 3220])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3222 3233])
+                ("labels" variable nil (reparse-symbol function_parameters) [3235 3241]))              ) nil [3205 3979])
+            ("main" function nil nil [3980 4152])
+            ("main" code nil nil [4153 4159]))          
+      :file "Project2  Genetics (reduced requirements)_wez98_attempt_2019-11-13-20-26-42_project2.py"
+      :pointmax 4160
+      :fsize 4159
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [35 52])
+            ("main" function nil nil [78 8521])
+            ("main" code nil nil [8541 8547]))          
+      :file "Project2  Genetics (reduced requirements)_jdh152_attempt_2019-11-14-10-25-26_features.py"
+      :pointmax 8563
+      :fsize 8568
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [33 41]))              ) nil [20 701])
+            ("full_list, col_header" code nil nil [702 764])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [783 791]))              ) nil [767 1076])
+            ("list" variable nil nil [1077 1124])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1139 1144])
+                ("index" variable nil (reparse-symbol function_parameters) [1146 1151]))              ) nil [1127 1357])
+            ("print" code nil nil [1358 1386])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1401 1406])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1408 1419])
+                ("index" variable nil (reparse-symbol function_parameters) [1421 1426]))              ) nil [1389 1616])
+            ("del_col" code nil nil [1617 1650])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1669 1675])
+                ("type" variable nil (reparse-symbol function_parameters) [1677 1681]))              ) nil [1653 1894])
+            ("print" code nil nil [1895 1926])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1947 1960])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1962 1973]))              ) nil [1929 2095])
+            ("print" code nil nil [2096 2131])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2148 2152])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2154 2165])
+                ("labels" variable nil (reparse-symbol function_parameters) [2167 2173])
+                ("ind" variable nil (reparse-symbol function_parameters) [2175 2178])
+                ("t" variable nil (reparse-symbol function_parameters) [2180 2181]))              ) nil [2134 2384])
+            ("print" code nil nil [2385 2442])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2461 2465])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2467 2478])
+                ("labels" variable nil (reparse-symbol function_parameters) [2480 2486])
+                ("ind" variable nil (reparse-symbol function_parameters) [2488 2491])
+                ("type" variable nil (reparse-symbol function_parameters) [2493 2497]))              ) nil [2445 2775])
+            ("print" code nil nil [2776 2836])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2850 2854])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2856 2867])
+                ("labels" variable nil (reparse-symbol function_parameters) [2869 2875]))              ) nil [2839 3209])
+            ("print" code nil nil [3210 3252])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [3272 3285])
+                ("col_header" variable nil (reparse-symbol function_parameters) [3287 3297]))              ) nil [3254 3423])
+            ("print" code nil nil [3424 3459]))          
+      :file "Project2  Genetics (reduced requirements)_cac326_attempt_2019-11-14-14-44-55_genetics2.py"
+      :pointmax 3460
+      :fsize 3459
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("lab2" function nil nil [20 760])
+            ("read_tsv" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [775 784]))              ) nil [762 1399])
+            ("read_labels" function (:arguments 
+              ( ("file_name" variable nil (reparse-symbol function_parameters) [1418 1427]))              ) nil [1402 1839])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1853 1858])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1860 1871])
+                ("int" variable nil (reparse-symbol function_parameters) [1873 1876]))              ) nil [1841 1959])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1977 1983])
+                ("type" variable nil (reparse-symbol function_parameters) [1985 1989]))              ) nil [1961 2173])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2193 2206])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2208 2219]))              ) nil [2175 2267])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2283 2287])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2289 2300])
+                ("labels" variable nil (reparse-symbol function_parameters) [2302 2308])
+                ("ind" variable nil (reparse-symbol function_parameters) [2310 2313])
+                ("type" variable nil (reparse-symbol function_parameters) [2315 2319]))              ) nil [2269 2596])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2614 2618])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2620 2631])
+                ("labels" variable nil (reparse-symbol function_parameters) [2633 2639])
+                ("ind" variable nil (reparse-symbol function_parameters) [2641 2644])
+                ("type" variable nil (reparse-symbol function_parameters) [2646 2650]))              ) nil [2598 2948])
+            ("lab2" code nil nil [2987 2993]))          
+      :file "Project2  Genetics (reduced requirements)_tiy27_attempt_2019-11-14-18-20-03_lab2.2.py"
+      :pointmax 2994
+      :fsize 3094
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("fname" variable nil (reparse-symbol function_parameters) [33 38]))              ) nil [20 983])
+            ("read_labels" function (:arguments 
+              ( ("fname" variable nil (reparse-symbol function_parameters) [1000 1005]))              ) nil [984 1744])
+            ("get_col" function (:arguments 
+              ( ("fname" variable nil (reparse-symbol function_parameters) [1757 1762])
+                ("cnum" variable nil (reparse-symbol function_parameters) [1764 1768]))              ) nil [1745 2049])
+            ("del_col" function (:arguments 
+              ( ("headerlist" variable nil (reparse-symbol function_parameters) [2062 2072])
+                ("outerlist" variable nil (reparse-symbol function_parameters) [2074 2083])
+                ("cnum" variable nil (reparse-symbol function_parameters) [2085 2089]))              ) nil [2050 2177])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2194 2200])
+                ("type" variable nil (reparse-symbol function_parameters) [2202 2206]))              ) nil [2178 2513])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2532 2545])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2547 2558]))              ) nil [2514 2676])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2691 2695])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2697 2708])
+                ("labels" variable nil (reparse-symbol function_parameters) [2710 2716])
+                ("ind" variable nil (reparse-symbol function_parameters) [2718 2721])
+                ("type" variable nil (reparse-symbol function_parameters) [2723 2727]))              ) nil [2677 3582])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3599 3603])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [3605 3616])
+                ("labels" variable nil (reparse-symbol function_parameters) [3618 3624])
+                ("ind" variable nil (reparse-symbol function_parameters) [3626 3629])
+                ("type" variable nil (reparse-symbol function_parameters) [3631 3635]))              ) nil [3583 4373])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4385 4389])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4391 4402])
+                ("labels" variable nil (reparse-symbol function_parameters) [4404 4410]))              ) nil [4374 4906])
+            ("main" function nil nil [4907 5670])
+            ("main" code nil nil [5671 5677]))          
+      :file "Project2  Genetics (reduced requirements)_rid32_attempt_2019-11-14-18-49-54_project2.py"
+      :pointmax 5678
+      :fsize 5856
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("table" variable nil nil [48 472])
+            ("open" code nil nil [473 506])
+            ("read_tsv" code nil nil [507 546])
+            ("tsv" include nil nil [547 557])
+            ("txt" code nil nil [600 603])
+            ("get_col" code nil nil [604 631])
+            ("get_col" code nil nil [632 648])
+            ("col_headers" variable nil nil [649 1429])
+            ("ind" variable nil nil [1430 1436])
+            ("type" variable nil nil [1437 1447])
+            ("statistics" code nil nil [1448 1481]))          
+      :file "Project2  Genetics (reduced requirements)_nih56_attempt_2019-11-14-21-59-17_project2.py"
+      :pointmax 1482
+      :fsize 1481
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax '((NAME 558 . 562) (NAME 563 . 567) (AS 597 . 599)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv2" function nil nil [20 922])
+            ("read_labels2" function nil nil [923 1754])
+            ("get_col2" function nil nil [1754 2143])
+            ("del_col" function nil nil [2144 2979])
+            ("del_call" function nil nil [2980 3628])
+            ("get_sample" function (:arguments 
+              ( ("type" variable nil (reparse-symbol function_parameters) [3644 3648]))              ) nil [3629 4118])
+            ("sample_to_col" function (:arguments 
+              ( ("inlist" variable nil (reparse-symbol function_parameters) [4137 4143])
+                ("data_type" variable nil (reparse-symbol function_parameters) [4145 4154]))              ) nil [4119 4985])
+            ("list_column_index" function
+               (:documentation "
+    ind: index of the row containing the gene
+    indata: tsv file that contains all the gene data
+    type: type of cancer_dict
+
+    "
+                :arguments 
+                  ( ("row_ind" variable nil (reparse-symbol function_parameters) [5007 5014])
+                    ("column_index" variable nil (reparse-symbol function_parameters) [5016 5028])
+                    ("type" variable nil (reparse-symbol function_parameters) [5030 5034]))                  )
+                nil [4985 5423])
+            ("row_datas" function (:arguments 
+              ( ("row_ind" variable nil (reparse-symbol function_parameters) [5437 5444])
+                ("type" variable nil (reparse-symbol function_parameters) [5446 5450]))              ) nil [5423 5545])
+            ("calc_avgs" function (:arguments 
+              ( ("row_ind" variable nil (reparse-symbol function_parameters) [5559 5566])
+                ("column_ind" variable nil (reparse-symbol function_parameters) [5568 5578])
+                ("type" variable nil (reparse-symbol function_parameters) [5580 5584])
+                ("number" variable nil (reparse-symbol function_parameters) [5586 5592]))              ) nil [5545 6319])
+            ("calc_stdevs3" function (:arguments 
+              ( ("row_ind" variable nil (reparse-symbol function_parameters) [6339 6346])
+                ("column_ind" variable nil (reparse-symbol function_parameters) [6348 6358])
+                ("type" variable nil (reparse-symbol function_parameters) [6360 6364])
+                ("number" variable nil (reparse-symbol function_parameters) [6366 6372]))              ) nil [6322 7088])
+            ("scores" function nil nil [7089 7874])
+            ("test" function nil nil [7894 8256])
+            ("scores" code nil nil [8256 8264]))          
+      :file "Project2  Genetics (reduced requirements)_isk15_attempt_2019-11-15-01-13-41_p2lab4.py"
+      :pointmax 8265
+      :fsize 8264
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("fname_tsv" variable nil nil [1 41])
+            ("fname_txt" variable nil nil [42 81])
+            ("statistics" include nil nil [83 100])
+            ("read_tsv" function (:arguments 
+              ( ("fname_tsv" variable nil (reparse-symbol function_parameters) [116 125]))              ) nil [103 850])
+            ("read_labels" function (:arguments 
+              ( ("fname_txt" variable nil (reparse-symbol function_parameters) [868 877]))              ) nil [852 1186])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1199 1204]))              ) nil [1187 1421])
+            ("print" code nil nil [1421 1432])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1446 1451])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1453 1464]))              ) nil [1434 1538])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1555 1561])
+                ("type" variable nil (reparse-symbol function_parameters) [1563 1567]))              ) nil [1539 1731])
+            ("print" code nil nil [1731 1742])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1762 1775])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1777 1788]))              ) nil [1744 1866])
+            ("calc_avgs" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1881 1886])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1888 1899])
+                ("labels" variable nil (reparse-symbol function_parameters) [1901 1907])
+                ("ind" variable nil (reparse-symbol function_parameters) [1909 1912])
+                ("type" variable nil (reparse-symbol function_parameters) [1914 1918]))              ) nil [1867 2223])
+            ("print" code nil nil [2223 2233])
+            ("calc_stdevs" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [2251 2262])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2264 2275])
+                ("labels" variable nil (reparse-symbol function_parameters) [2277 2283])
+                ("ind" variable nil (reparse-symbol function_parameters) [2285 2288])
+                ("type" variable nil (reparse-symbol function_parameters) [2290 2294]))              ) nil [2235 2560])
+            ("print" code nil nil [2560 2572])
+            ("scores" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [2585 2596])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2598 2609])
+                ("labels" variable nil (reparse-symbol function_parameters) [2611 2617]))              ) nil [2574 3067])
+            ("print" code nil nil [3067 3084])
+            ("main" function nil nil [3086 3678])
+            ("main" code nil nil [3680 3686]))          
+      :file "Project2  Genetics (reduced requirements)_nsr20_attempt_2019-11-14-23-07-39_lab.py"
+      :pointmax 3687
+      :fsize 3686
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_txt" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [33 41]))              ) nil [20 617])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [634 642]))              ) nil [618 917])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [930 935])
+                ("index" variable nil (reparse-symbol function_parameters) [937 942]))              ) nil [918 1125])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1138 1143])
+                ("col_header" variable nil (reparse-symbol function_parameters) [1145 1155])
+                ("index" variable nil (reparse-symbol function_parameters) [1157 1162]))              ) nil [1126 1230])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [1247 1253])
+                ("type" variable nil (reparse-symbol function_parameters) [1255 1259]))              ) nil [1231 1410])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [1429 1442])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1444 1455]))              ) nil [1411 1516])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [1531 1535])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1537 1548])
+                ("labels" variable nil (reparse-symbol function_parameters) [1550 1556])
+                ("ind" variable nil (reparse-symbol function_parameters) [1558 1561])
+                ("type" variable nil (reparse-symbol function_parameters) [1563 1567]))              ) nil [1517 1849])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [1866 1870])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [1872 1883])
+                ("labels" variable nil (reparse-symbol function_parameters) [1885 1891])
+                ("ind" variable nil (reparse-symbol function_parameters) [1893 1896])
+                ("type" variable nil (reparse-symbol function_parameters) [1898 1902]))              ) nil [1850 2165])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2177 2181])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2183 2194])
+                ("labels" variable nil (reparse-symbol function_parameters) [2196 2202]))              ) nil [2166 2601])
+            ("main" function nil nil [2602 2932])
+            ("main" code nil nil [2933 2939]))          
+      :file "Project2  Genetics (reduced requirements)_nvf5_attempt_2019-11-14-23-52-23_project2.py"
+      :pointmax 2940
+      :fsize 2939
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("read_tsv_header" function nil nil [2 531])
+            ("read_tsv" function nil nil [533 1118])
+            ("read_labels" function nil nil [1120 1862])
+            ("table" variable nil nil [1863 1905])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1918 1923])
+                ("column" variable nil (reparse-symbol function_parameters) [1925 1931]))              ) nil [1906 2073])
+            ("header" variable nil nil [2074 2100])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [2113 2118])
+                ("header" variable nil (reparse-symbol function_parameters) [2119 2125])
+                ("column" variable nil (reparse-symbol function_parameters) [2126 2132]))              ) nil [2101 2313])
+            ("labels" variable nil nil [2314 2335])
+            ("get_samples" function (:arguments 
+              ( ("labels" variable nil (reparse-symbol function_parameters) [2352 2358])
+                ("type" variable nil (reparse-symbol function_parameters) [2359 2363]))              ) nil [2336 2499])
+            ("sample_number" variable nil nil [2500 2525])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [2544 2557])
+                ("header" variable nil (reparse-symbol function_parameters) [2559 2565]))              ) nil [2526 2687])
+            ("data" variable nil nil [2688 2705])
+            ("index" variable nil nil [2706 2750])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2765 2769])
+                ("header" variable nil (reparse-symbol function_parameters) [2771 2777])
+                ("labels" variable nil (reparse-symbol function_parameters) [2779 2785])
+                ("index" variable nil (reparse-symbol function_parameters) [2787 2792])
+                ("type" variable nil (reparse-symbol function_parameters) [2794 2798]))              ) nil [2751 2941])
+            ("calc_stdev" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2957 2961])
+                ("header" variable nil (reparse-symbol function_parameters) [2963 2969])
+                ("labels" variable nil (reparse-symbol function_parameters) [2971 2977])
+                ("index" variable nil (reparse-symbol function_parameters) [2979 2984])
+                ("type" variable nil (reparse-symbol function_parameters) [2986 2990]))              ) nil [2942 3110])
+            ("scores" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [3123 3127])
+                ("header" variable nil (reparse-symbol function_parameters) [3129 3135])
+                ("labels" variable nil (reparse-symbol function_parameters) [3137 3143]))              ) nil [3112 3555])
+            ("scores" code nil nil [3555 3583]))          
+      :file "Project2  Genetics (reduced requirements)_nik78_attempt_2019-11-14-23-57-35_project2.py"
+      :pointmax 3584
+      :fsize 3719
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [1 18])
+            ("read_tsv" function (:arguments 
+              ( ("fn" variable nil (reparse-symbol function_parameters) [33 35]))              ) nil [20 378])
+            ("read_labels" function (:arguments 
+              ( ("fn" variable nil (reparse-symbol function_parameters) [395 397]))              ) nil [379 619])
+            ("get_col" function (:arguments 
+              ( ("t" variable nil (reparse-symbol function_parameters) [632 633])
+                ("ind" variable nil (reparse-symbol function_parameters) [635 638]))              ) nil [620 775])
+            ("del_col" function (:arguments 
+              ( ("t" variable nil (reparse-symbol function_parameters) [788 789])
+                ("ch" variable nil (reparse-symbol function_parameters) [791 793])
+                ("ind" variable nil (reparse-symbol function_parameters) [795 798]))              ) nil [776 856])
+            ("del_call" function nil nil [857 1081])
+            ("get_samples" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [1098 1099])
+                ("t" variable nil (reparse-symbol function_parameters) [1101 1102]))              ) nil [1082 1220])
+            ("sample_to_col" function (:arguments 
+              ( ("sn" variable nil (reparse-symbol function_parameters) [1239 1241])
+                ("ch" variable nil (reparse-symbol function_parameters) [1243 1245]))              ) nil [1221 1350])
+            ("calc_avgs" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [1365 1366])
+                ("ch" variable nil (reparse-symbol function_parameters) [1368 1370])
+                ("l" variable nil (reparse-symbol function_parameters) [1372 1373])
+                ("ind" variable nil (reparse-symbol function_parameters) [1375 1378])
+                ("t" variable nil (reparse-symbol function_parameters) [1380 1381]))              ) nil [1351 1661])
+            ("calc_stdevs" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [1678 1679])
+                ("ch" variable nil (reparse-symbol function_parameters) [1681 1683])
+                ("l" variable nil (reparse-symbol function_parameters) [1685 1686])
+                ("ind" variable nil (reparse-symbol function_parameters) [1688 1691])
+                ("t" variable nil (reparse-symbol function_parameters) [1693 1694]))              ) nil [1662 1947])
+            ("scores" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [1959 1960])
+                ("ch" variable nil (reparse-symbol function_parameters) [1962 1964])
+                ("l" variable nil (reparse-symbol function_parameters) [1966 1967]))              ) nil [1948 2316])
+            ("main" function nil nil [2317 2710])
+            ("x" variable nil nil [2711 2721])
+            ("print" code nil nil [2722 2730]))          
+      :file "Project2  Genetics (reduced requirements)_ajm318_attempt_2019-11-15-01-15-16_3lab.py"
+      :pointmax 2731
+      :fsize 2856
+      :lastmodtime '(24023 3282 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("statistics" include nil nil [13 30])
+            ("read_tsv" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [60 68]))              ) nil [47 912])
+            ("table, col_headers" code nil nil [945 1004])
+            ("print" code nil nil [1005 1033])
+            ("print" code nil nil [1034 1052])
+            ("print" code nil nil [1053 1079])
+            ("print" code nil nil [1080 1092])
+            ("print" code nil nil [1093 1117])
+            ("read_labels" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [1138 1146]))              ) nil [1122 1697])
+            ("labels" variable nil nil [1733 1782])
+            ("print" code nil nil [1783 1812])
+            ("print" code nil nil [1813 1826])
+            ("print" code nil nil [1827 1851])
+            ("get_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [1868 1873])
+                ("index" variable nil (reparse-symbol function_parameters) [1875 1880]))              ) nil [1856 1979])
+            ("table" variable nil nil [1999 2032])
+            ("col_list" variable nil nil [2033 2060])
+            ("print" code nil nil [2061 2114])
+            ("print" code nil nil [2115 2130])
+            ("del_col" function (:arguments 
+              ( ("table" variable nil (reparse-symbol function_parameters) [2147 2152])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [2154 2165])
+                ("index" variable nil (reparse-symbol function_parameters) [2167 2172]))              ) nil [2135 2325])
+            ("table" variable nil nil [2346 2379])
+            ("col_headers" variable nil nil [2380 2428])
+            ("del_col" code nil nil [2429 2458])
+            ("print" code nil nil [2459 2497])
+            ("print" code nil nil [2498 2516])
+            ("print" code nil nil [2517 2554])
+            ("print" code nil nil [2555 2567])
+            ("table, col_headers" code nil nil [2681 2740])
+            ("listOfList" variable nil nil [2741 2754])
+            ("listOfList" code nil nil [2755 2785])
+            ("listOfList" code nil nil [2786 2810])
+            ("print" code nil nil [2854 2884])
+            ("print" code nil nil [2885 2902])
+            ("labels" variable nil nil [3052 3101])
+            ("while" code nil nil [3277 3517])
+            ("print" code nil nil [3518 3556])
+            ("print" code nil nil [3557 3575])
+            ("print" code nil nil [3576 3613])
+            ("print" code nil nil [3614 3626])
+            ("get_samples" function (:arguments 
+              ( ("labelLists" variable nil (reparse-symbol function_parameters) [3680 3690])
+                ("type" variable nil (reparse-symbol function_parameters) [3692 3696]))              ) nil [3664 3832])
+            ("labelListOfList" variable nil nil [3857 3915])
+            ("print" code nil nil [3916 3938])
+            ("myindexlist" variable nil nil [3939 3987])
+            ("print" code nil nil [3988 4006])
+            ("myindexlist" variable nil nil [4007 4055])
+            ("print" code nil nil [4056 4074])
+            ("sample_to_col" function (:arguments 
+              ( ("sample_number" variable nil (reparse-symbol function_parameters) [4106 4119])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4121 4132]))              ) nil [4088 4274])
+            ("col_headers" variable nil nil [4302 4368])
+            ("index" variable nil nil [4369 4406])
+            ("print" code nil nil [4407 4456])
+            ("calc_avgs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [4913 4917])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [4919 4930])
+                ("labels" variable nil (reparse-symbol function_parameters) [4932 4938])
+                ("ind" variable nil (reparse-symbol function_parameters) [4940 4943])
+                ("type" variable nil (reparse-symbol function_parameters) [4945 4949]))              ) nil [4899 5681])
+            ("data" variable nil nil [5714 5752])
+            ("col_headers" variable nil nil [5753 5776])
+            ("labels" variable nil nil [5777 5827])
+            ("ind" variable nil nil [5828 5835])
+            ("type" variable nil nil [5836 5848])
+            ("print" code nil nil [5849 5932])
+            ("calc_stdevs" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [6414 6418])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [6420 6431])
+                ("labels" variable nil (reparse-symbol function_parameters) [6433 6439])
+                ("ind" variable nil (reparse-symbol function_parameters) [6441 6444])
+                ("type" variable nil (reparse-symbol function_parameters) [6446 6450]))              ) nil [6398 6794])
+            ("data" variable nil nil [6826 6864])
+            ("col_headers" variable nil nil [6865 6888])
+            ("labels" variable nil nil [6889 6939])
+            ("ind" variable nil nil [6940 6947])
+            ("type" variable nil nil [6948 6960])
+            ("print" code nil nil [6961 7048])
+            ("avgerageAML" variable nil nil [7622 7638])
+            ("avgerageALL" variable nil nil [7639 7655])
+            ("score" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [7666 7670])
+                ("col_headers" variable nil (reparse-symbol function_parameters) [7672 7683])
+                ("labels" variable nil (reparse-symbol function_parameters) [7685 7691]))              ) nil [7656 8281])
+            ("data" variable nil nil [8313 8351])
+            ("col_headers" variable nil nil [8352 8375])
+            ("labels" variable nil nil [8376 8426])
+            ("ind" variable nil nil [8427 8434])
+            ("type" variable nil nil [8435 8447])
+            ("print" code nil nil [8448 8513])
+            ("classify" function (:arguments 
+              ( ("sample_data" variable nil (reparse-symbol function_parameters) [8877 8888])
+                ("genes" variable nil (reparse-symbol function_parameters) [8889 8894]))              ) nil [8864 9319])
+            ("main" function nil nil [9381 11540])
+            ("if" code nil nil [11541 11579]))          
+      :file "bz-project2.py"
+      :pointmax 11579
+      :fsize 11938
+      :lastmodtime '(24041 15997 115175 852000)
+      :unmatched-syntax nil))
+  :file "!home!nmg!cs0011-genetics!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

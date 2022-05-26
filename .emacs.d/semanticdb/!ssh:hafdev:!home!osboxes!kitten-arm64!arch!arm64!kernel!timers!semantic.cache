@@ -1,0 +1,113 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/init.h" include (:system-flag t) nil [25 46])
+            ("lwk/spinlock.h" include (:system-flag t) nil [47 72])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [73 97])
+            ("lwk/smp.h" include (:system-flag t) nil [98 118])
+            ("lwk/time.h" include (:system-flag t) nil [119 140])
+            ("lwk/interrupt.h" include (:system-flag t) nil [141 167])
+            ("arch/io.h" include (:system-flag t) nil [168 188])
+            ("arch/pda.h" include (:system-flag t) nil [189 210])
+            ("arch/irqchip.h" include (:system-flag t) nil [212 237])
+            ("arch/time.h" include (:system-flag t) nil [238 260])
+            ("arch/of.h" include (:system-flag t) nil [261 281])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [282 335])
+            ("timer_irq" variable
+               (:typemodifiers ("static")
+                :type ("irq_def" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [449 481])
+            ("cntv_ctl_el0" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [520 533])
+                            ("" type
+                               (:members 
+                                  ( ("enabled" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [548 567])
+                                    ("irq_mask" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [571 590])
+                                    ("irq_status" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [594 613])
+                                    ("res0" variable
+                                       (:suffix ":61"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [617 637]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [536 642]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [510 646]))                  
+                :type "struct")
+                nil [484 673])
+            ("__reload_timer" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [676 921])
+            ("__timer_tick" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [956 964])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [965 979]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [923 1256])
+            ("__hafnium_timer_core_init" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [1262 1497])
+            ("__hafnium_timer_set_timer_freq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hz" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1623 1639]))                  
+                :type "void")
+                nil [1580 2238])
+            ("hafnium_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"Hafnium\",
+	.dt_node            = NULL,
+	.core_init          = __hafnium_timer_core_init,
+	.set_timer_freq     = __hafnium_timer_set_timer_freq
+}"
+                :type ("arch_timer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2241 2453])
+            ("hafnium_timer_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_tree" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2480 2510]))                  
+                :type "void")
+                nil [2455 3223]))          
+      :file "hafnium.c"
+      :pointmax 3225
+      :fsize 3226
+      :lastmodtime '(24988 17060)
+      :unmatched-syntax nil))
+  :file "!ssh:hafdev:!home!osboxes!kitten-arm64!arch!arm64!kernel!timers!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

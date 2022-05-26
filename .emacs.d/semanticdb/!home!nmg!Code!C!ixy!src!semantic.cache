@@ -1,0 +1,409 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("IXY_MEMORY_H" variable (:constant-flag t) nil [30 42])
+            ("assert.h" include (:system-flag t) nil [44 63])
+            ("stdbool.h" include (:system-flag t) nil [64 84])
+            ("stddef.h" include (:system-flag t) nil [85 104])
+            ("stdint.h" include (:system-flag t) nil [105 124])
+            ("unistd.h" include (:system-flag t) nil [125 144])
+            ("ixy_device" type
+               (:prototype t
+                :type "struct")
+                nil [146 164])
+            ("HUGE_PAGE_BITS" variable (:constant-flag t) nil [174 188])
+            ("HUGE_PAGE_SIZE" variable (:constant-flag t) nil [200 214])
+            ("SIZE_PKT_BUF_HEADROOM" variable (:constant-flag t) nil [265 286])
+            ("pkt_buf" type
+               (:members 
+                  ( ("buf_addr_phy" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [356 379])
+                    ("mempool" variable
+                       (:pointer 1
+                        :type ("mempool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [381 405])
+                    ("mempool_idx" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [407 428])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [430 444])
+                    ("head_room" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [446 487])
+                    ("data" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [489 533]))                  
+                :type "struct")
+                nil [291 536])
+            ("static_assert" function
+               (:prototype-flag t
+                :type "int")
+                nil [538 603])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offsetof" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [618 648]))                  
+                :type "int")
+                nil [604 687])
+            ("static_assert" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offsetof" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [702 737])
+                    ("" variable (:type ("offsetof" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [765 795]))                  
+                :type "int")
+                nil [688 838])
+            ("mempool" type
+               (:members 
+                  ( ("base_addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [958 974])
+                    ("buf_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [976 994])
+                    ("num_entries" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [996 1017])
+                    ("free_stack_top" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1136 1160])
+                    ("free_stack" variable
+                       (:dereference 1
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1263 1285]))                  
+                :type "struct")
+                nil [940 1288])
+            ("dma_memory" type
+               (:members 
+                  ( ("virt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1311 1322])
+                    ("phy" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1324 1338]))                  
+                :type "struct")
+                nil [1290 1341])
+            ("memory_allocate_dma" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1381 1393])
+                    ("require_contiguous" variable (:type "bool") (reparse-symbol arg-sub-list) [1394 1418]))                  
+                :type ("dma_memory" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1343 1419])
+            ("memory_allocate_mempool" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("num_entries" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1461 1482])
+                    ("entry_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1483 1503]))                  
+                :type ("mempool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1421 1504])
+            ("pkt_buf_alloc_batch" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("mempool" variable
+                       (:pointer 1
+                        :type ("mempool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1534 1558])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1559 1582])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1583 1601]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1505 1602])
+            ("pkt_buf_alloc" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("mempool" variable
+                       (:pointer 1
+                        :type ("mempool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1633 1657]))                  
+                :type ("pkt_buf" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1603 1658])
+            ("pkt_buf_free" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1677 1697]))                  
+                :type "void")
+                nil [1659 1698])
+            ("get_vfio_container" function
+               (:prototype-flag t
+                :type "int")
+                nil [1735 1760])
+            ("set_vfio_container" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [1822 1829]))                  
+                :type "void")
+                nil [1798 1830]))          
+      :file "memory.h"
+      :pointmax 1854
+      :fsize 1853
+      :lastmodtime '(24008 34594 720562 128000)
+      :unmatched-syntax '((string 797 . 836) (semantic-list 773 . 795) (punctuation 763 . 764) (punctuation 762 . 763) (number "40" 740 . 761) (punctuation 738 . 739) (semantic-list 710 . 737) (string 656 . 685) (number 652 . 654) (punctuation 650 . 651) (punctuation 649 . 650) (semantic-list 626 . 648) (string 582 . 601) (number 578 . 580) (punctuation 576 . 577) (punctuation 575 . 576) (semantic-list 558 . 574) (SIZEOF 552 . 558))
+      :lexical-table 
+        '(("HUGE_PAGE_SIZE" . ((semantic-list "(1 << HUGE_PAGE_BITS)" 215 . 236)))
+          ("IXY_MEMORY_H")
+          ("HUGE_PAGE_BITS" . ((number "21" 189 . 191)))
+          ("SIZE_PKT_BUF_HEADROOM" . ((number "40" 287 . 289)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("memory.h" include nil nil [1 20])
+            ("driver/device.h" include nil nil [21 47])
+            ("log.h" include nil nil [48 64])
+            ("fcntl.h" include (:system-flag t) nil [66 84])
+            ("linux/limits.h" include (:system-flag t) nil [85 110])
+            ("linux/mman.h" include (:system-flag t) nil [111 134])
+            ("linux/vfio.h" include (:system-flag t) nil [135 158])
+            ("stddef.h" include (:system-flag t) nil [159 178])
+            ("stdio.h" include (:system-flag t) nil [179 197])
+            ("sys/ioctl.h" include (:system-flag t) nil [198 220])
+            ("sys/mman.h" include (:system-flag t) nil [221 242])
+            ("unistd.h" include (:system-flag t) nil [243 262])
+            ("libixy-vfio.h" include nil nil [264 288])
+            ("VFIO_CONTAINER_FILE_DESCRIPTOR" variable
+               (:typemodifiers ("volatile")
+                :default-value "-1"
+                :type "int")
+                nil [474 523])
+            ("virt_to_phys" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("virt" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [627 638]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [597 1227])
+            ("huge_pg_id" variable
+               (:typemodifiers ("static")
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [1229 1256])
+            ("memory_allocate_dma" function
+               (:arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1623 1635])
+                    ("require_contiguous" variable (:type "bool") (reparse-symbol arg-sub-list) [1636 1660]))                  
+                :type ("dma_memory" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1585 3789])
+            ("memory_allocate_mempool" function
+               (:pointer 1
+                :arguments 
+                  ( ("num_entries" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4106 4127])
+                    ("entry_size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4128 4148]))                  
+                :type ("mempool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4066 5533])
+            ("pkt_buf_alloc_batch" function
+               (:arguments 
+                  ( ("mempool" variable
+                       (:pointer 1
+                        :type ("mempool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5564 5588])
+                    ("bufs" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5589 5612])
+                    ("num_bufs" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5613 5631]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [5535 6055])
+            ("pkt_buf_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("mempool" variable
+                       (:pointer 1
+                        :type ("mempool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6087 6111]))                  
+                :type ("pkt_buf" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6057 6197])
+            ("pkt_buf_free" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type ("pkt_buf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6217 6237]))                  
+                :type "void")
+                nil [6199 6350])
+            ("get_vfio_container" function (:type "int") nil [6387 6455])
+            ("set_vfio_container" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [6543 6550]))                  
+                :type "void")
+                nil [6519 6592]))          
+      :file "memory.c"
+      :pointmax 6593
+      :fsize 6592
+      :lastmodtime '(24008 34594 720562 128000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "log.h"
+      :fsize 1696
+      :lastmodtime '(24008 34594 720562 128000))
+    (semanticdb-table "semanticdb-table"
+      :file "libixy-vfio.h"
+      :fsize 1104
+      :lastmodtime '(24008 34594 720562 128000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("errno.h" include (:system-flag t) nil [1 19])
+            ("fcntl.h" include (:system-flag t) nil [20 38])
+            ("libgen.h" include (:system-flag t) nil [39 58])
+            ("stddef.h" include (:system-flag t) nil [59 78])
+            ("stdint.h" include (:system-flag t) nil [79 98])
+            ("stdio.h" include (:system-flag t) nil [99 117])
+            ("string.h" include (:system-flag t) nil [118 137])
+            ("unistd.h" include (:system-flag t) nil [138 157])
+            ("linux/limits.h" include (:system-flag t) nil [159 184])
+            ("linux/vfio.h" include (:system-flag t) nil [185 208])
+            ("sys/ioctl.h" include (:system-flag t) nil [210 232])
+            ("sys/mman.h" include (:system-flag t) nil [233 254])
+            ("sys/stat.h" include (:system-flag t) nil [255 276])
+            ("sys/eventfd.h" include (:system-flag t) nil [277 301])
+            ("sys/epoll.h" include (:system-flag t) nil [302 324])
+            ("driver/device.h" include (:system-flag t) nil [326 352])
+            ("IRQ_SET_BUF_LEN" variable (:constant-flag t) nil [362 377])
+            ("MAX_INTERRUPT_VECTORS" variable (:constant-flag t) nil [430 451])
+            ("MSIX_IRQ_SET_BUF_LEN" variable (:constant-flag t) nil [463 483])
+            ("MIN_DMA_MEMORY" variable
+               (:default-value "4096"
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [559 589])
+            ("vfio_enable_dma" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [662 676]))                  
+                :type "void")
+                nil [641 1369])
+            ("vfio_enable_msi" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [1514 1528]))                  
+                :type "int")
+                nil [1494 2092])
+            ("vfio_disable_msi" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [2226 2240]))                  
+                :type "int")
+                nil [2205 2677])
+            ("vfio_enable_msix" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [2825 2839])
+                    ("interrupt_vector" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2840 2866]))                  
+                :type "int")
+                nil [2804 3618])
+            ("vfio_disable_msix" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [3755 3769]))                  
+                :type "int")
+                nil [3733 4231])
+            ("vfio_setup_interrupt" function
+               (:arguments 
+                  ( ("device_fd" variable (:type "int") (reparse-symbol arg-sub-list) [4425 4439]))                  
+                :type "int")
+                nil [4400 4883])
+            ("vfio_epoll_wait" function
+               (:arguments 
+                  ( ("epoll_fd" variable (:type "int") (reparse-symbol arg-sub-list) [5651 5664])
+                    ("maxevents" variable (:type "int") (reparse-symbol arg-sub-list) [5665 5679])
+                    ("timeout" variable (:type "int") (reparse-symbol arg-sub-list) [5680 5692]))                  
+                :type "int")
+                nil [5631 6228])
+            ("vfio_epoll_ctl" function
+               (:arguments 
+                  ( ("event_fd" variable (:type "int") (reparse-symbol arg-sub-list) [6387 6400]))                  
+                :type "int")
+                nil [6368 6664])
+            ("vfio_init" function
+               (:arguments 
+                  ( ("pci_addr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6734 6755]))                  
+                :type "int")
+                nil [6720 9194])
+            ("vfio_map_region" function
+               (:pointer 1
+                :arguments 
+                  ( ("vfio_fd" variable (:type "int") (reparse-symbol arg-sub-list) [9295 9307])
+                    ("region_index" variable (:type "int") (reparse-symbol arg-sub-list) [9308 9325]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [9270 9760])
+            ("vfio_map_dma" function
+               (:arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9865 9877])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9878 9892]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [9843 10332])
+            ("vfio_unmap_dma" function
+               (:arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [10419 10426])
+                    ("iova" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10427 10441])
+                    ("size" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10442 10456]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [10395 10804]))          
+      :file "libixy-vfio.c"
+      :pointmax 10805
+      :fsize 10804
+      :lastmodtime '(24008 34594 719562 128000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MSIX_IRQ_SET_BUF_LEN" . ((semantic-list "(sizeof(struct vfio_irq_set) + sizeof(int) * (MAX_INTERRUPT_VECTORS + 1))" 484 . 557)))
+          ("MAX_INTERRUPT_VECTORS" . ((number "32" 452 . 454)))
+          ("IRQ_SET_BUF_LEN" . ((semantic-list "(sizeof(struct vfio_irq_set) + sizeof(int))" 378 . 421)))
+          )
+))
+  :file "!home!nmg!Code!C!ixy!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

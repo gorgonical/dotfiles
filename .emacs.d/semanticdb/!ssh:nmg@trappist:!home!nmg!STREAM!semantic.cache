@@ -1,0 +1,126 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [3198 3217])
+            ("unistd.h" include (:system-flag t) nil [3218 3238])
+            ("math.h" include (:system-flag t) nil [3239 3257])
+            ("float.h" include (:system-flag t) nil [3258 3277])
+            ("limits.h" include (:system-flag t) nil [3278 3298])
+            ("sys/time.h" include (:system-flag t) nil [3299 3321])
+            ("STREAM_ARRAY_SIZE" variable (:constant-flag t) nil [5895 5912])
+            ("NTIMES" variable (:constant-flag t) nil [6516 6522])
+            ("OFFSET" variable (:constant-flag t) nil [7084 7090])
+            ("HLINE" variable (:constant-flag t) nil [8931 8936])
+            ("MIN" variable (:constant-flag t) nil [9026 9029])
+            ("MAX" variable (:constant-flag t) nil [9083 9086])
+            ("STREAM_TYPE" variable (:constant-flag t) nil [9147 9158])
+            ("a" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "double")
+                nil [9174 9285])
+            ("b" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "double")
+                nil [9174 9285])
+            ("c" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "double")
+                nil [9174 9285])
+            ("avgtime" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0}"
+                :type "double")
+                nil [9287 9386])
+            ("maxtime" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0}"
+                :type "double")
+                nil [9287 9386])
+            ("mintime" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{FLT_MAX,FLT_MAX,FLT_MAX,FLT_MAX}"
+                :type "double")
+                nil [9287 9386])
+            ("label" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{\"Copy:      \", \"Scale:     \",
+    \"Add:       \", \"Triad:     \"}"
+                :type "char")
+                nil [9388 9477])
+            ("bytes" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+    2 * sizeof(STREAM_TYPE) * STREAM_ARRAY_SIZE,
+    2 * sizeof(STREAM_TYPE) * STREAM_ARRAY_SIZE,
+    3 * sizeof(STREAM_TYPE) * STREAM_ARRAY_SIZE,
+    3 * sizeof(STREAM_TYPE) * STREAM_ARRAY_SIZE
+    }"
+                :type "double")
+                nil [9479 9707])
+            ("mysecond" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "double")
+                nil [9709 9734])
+            ("checkSTREAMresults" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [9735 9768])
+            ("main" function (:type "int") nil [10014 14740])
+            ("M" variable (:constant-flag t) nil [14751 14752])
+            ("checktick" function (:type "int") nil [14757 15373])
+            ("sys/time.h" include (:system-flag t) nil [15477 15498])
+            ("mysecond" function (:type "double") nil [15500 15698])
+            ("abs" variable (:constant-flag t) nil [15720 15723])
+            ("checkSTREAMresults" function (:type "void") nil [15758 19277]))          
+      :file "stream.c"
+      :pointmax 19968
+      :fsize 19967
+      :lastmodtime '(24370 53685)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("OFFSET" . ((number "0" 7091 . 7092)))
+          ("MAX" (spp-arg-list ("x" "y") 9086 . 9091) . ((semantic-list "((x)>(y)?(x):(y))" 9092 . 9109)))
+          ("MIN" (spp-arg-list ("x" "y") 9029 . 9034) . ((semantic-list "((x)<(y)?(x):(y))" 9035 . 9052)))
+          ("STREAM_ARRAY_SIZE" . ((number "10000000" 5913 . 5921)))
+          ("HLINE" . ((string "\"-------------------------------------------------------------\\n\"" 8937 . 9002)))
+          ("STREAM_TYPE" . ((DOUBLE "double" 9159 . 9165)))
+          ("NTIMES" . ((number "10" 6523 . 6525)))
+          ("abs" (spp-arg-list ("a") 15723 . 15726) . ((semantic-list "((a) >= 0 ? (a) : -(a))" 15727 . 15750)))
+          ("M" . ((number "20" 14753 . 14755)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("CC" variable (:default-value ("gcc")) nil [1 10])
+            ("CFLAGS" variable (:default-value ("-O2" "-fopenmp" "-static")) nil [10 40])
+            ("FF" variable (:default-value ("g77")) nil [41 50])
+            ("FFLAGS" variable (:default-value ("-O2")) nil [50 63])
+            ("all" function (:arguments ("stream_c")) nil [64 78])
+            ("stream_c" function (:arguments ("stream.c")) nil [79 147])
+            ("clean" function nil nil [148 175])
+            ("stream.icc" function (:arguments ("stream.c")) nil [245 392]))          
+      :file "Makefile"
+      :pointmax 392
+      :fsize 391
+      :lastmodtime '(24370 53701)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!STREAM!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

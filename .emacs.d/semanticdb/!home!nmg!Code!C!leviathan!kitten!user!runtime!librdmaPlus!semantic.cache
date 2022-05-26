@@ -1,0 +1,151 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("_rdma_msg_H" variable (:constant-flag t) nil [29 40])
+            ("types.h" include (:system-flag t) nil [42 60])
+            ("stdlib.h" include (:system-flag t) nil [61 80])
+            ("stdio.h" include (:system-flag t) nil [81 99])
+            ("errno.h" include (:system-flag t) nil [100 118])
+            ("string.h" include (:system-flag t) nil [119 138])
+            ("infiniband/verbs.h" include (:system-flag t) nil [139 168])
+            ("memRegion.h" include (:system-flag t) nil [169 191])
+            ("rdmaPlus" type
+               (:members 
+                  ( ("MsgHdr" type
+                       (:members 
+                          ( ("Type" type
+                               (:typedef ("" type
+                                     (:members 
+                                        ( ("Req" variable
+                                             (:constant-flag t
+                                              :default-value (251 252)
+                                              :type "int")
+                                              (reparse-symbol enumsubparts) [247 252])
+                                          ("Ack" variable
+                                             (:constant-flag t
+                                              :type "int")
+                                              (reparse-symbol enumsubparts) [254 258])
+                                          ("RdmaResp" variable
+                                             (:constant-flag t
+                                              :type "int")
+                                              (reparse-symbol enumsubparts) [259 269]))                                        
+                                      :type "enum")
+                                      nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [232 275])
+                            ("type" variable (:type ("Type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [281 291])
+                            ("cookie" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [296 315])
+                            ("u" variable (:type ("" type
+                                 (:members 
+                                    ( ("req" variable (:type ("" type
+                                           (:members 
+                                              ( ("tag" variable (:type ("Tag" type (:type "class") nil nil)) (reparse-symbol classsubparts) [339 347])
+                                                ("length" variable (:type ("Size" type (:type "class") nil nil)) (reparse-symbol classsubparts) [351 363])
+                                                ("rkey" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [376 390])
+                                                ("raddr" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [403 418]))                                              
+                                            :type "struct")
+                                            nil nil)) (reparse-symbol classsubparts) [327 427])
+                                      ("rdmaResp" variable (:type ("" type
+                                           (:members 
+                                              ( ("op" variable (:type ("memOp_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [443 454])
+                                                ("id" variable (:type ("MemRegion::Id" type (:type "class") nil nil)) (reparse-symbol classsubparts) [458 475])
+                                                ("addr" variable (:type ("MemRegion::Addr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [479 500])
+                                                ("length" variable (:type ("Size" type (:type "class") nil nil)) (reparse-symbol classsubparts) [504 516]))                                              
+                                            :type "struct")
+                                            nil nil)) (reparse-symbol classsubparts) [431 530]))                                    
+                                  :type "union")
+                                  nil nil)) (reparse-symbol classsubparts) [317 536]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [215 539])
+                    ("Msg" type
+                       (:members 
+                          ( ("hdr" variable (:type ("MsgHdr" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [621 639])
+                            ("body" variable
+                               (:dereference 1
+                                :type "unsigned char")
+                                (reparse-symbol classsubparts) [641 676]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [541 679])
+                    ("MsgObj" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [700 707])
+                            ("MsgObj" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("pd" variable
+                                       (:pointer 1
+                                        :type ("ibv_pd" type
+                                             (:prototype t
+                                              :type "struct")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [725 743])
+                                    ("type" variable (:type ("MsgHdr::Type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [744 762])
+                                    ("cookie" variable
+                                       (:default-value "0"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [763 782])
+                                    ("rkey" variable
+                                       (:default-value "0"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [808 825])
+                                    ("raddr" variable
+                                       (:default-value "0"
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [827 845])
+                                    ("length" variable
+                                       (:default-value "0"
+                                        :type ("Size" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [871 886])
+                                    ("tag" variable
+                                       (:default-value "0"
+                                        :type ("Tag" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [888 899]))                                  
+                                :type ("MsgObj" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [717 1484])
+                            ("MsgObj" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [1495 1633])
+                            ("msg" function (:type ("Msg" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1643 1671])
+                            ("lkey" function (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1680 1721])
+                            ("private" label nil (reparse-symbol classsubparts) [1727 1735])
+                            ("m_mr" variable
+                               (:pointer 1
+                                :type ("ibv_mr" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1744 1765])
+                            ("m_msg" variable (:type ("Msg" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1774 1796]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [681 1799]))                  
+                :type "namespace")
+                nil [193 1802]))          
+      :file "msg.h"
+      :pointmax 1833
+      :fsize 1832
+      :lastmodtime '(23974 44856 885844 220000)
+      :unmatched-syntax '((punctuation 618 . 619) (semantic-list 610 . 618) (SIZEOF 604 . 610) (punctuation 602 . 603) (number 598 . 601) (punctuation 596 . 597) (symbol 581 . 595) (INT 577 . 580) (UNSIGNED 568 . 576) (CONST 562 . 567) (STATIC 555 . 561))
+      :lexical-table 
+        '(("_rdma_msg_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "types.h"
+      :fsize 582
+      :lastmodtime '(23974 44856 901844 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "memRegion.h"
+      :fsize 2241
+      :lastmodtime '(23974 44856 880844 221000)))
+  :file "!home!nmg!Code!C!leviathan!kitten!user!runtime!librdmaPlus!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

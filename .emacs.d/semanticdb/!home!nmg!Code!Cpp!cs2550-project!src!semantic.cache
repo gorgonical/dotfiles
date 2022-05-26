@@ -1,0 +1,1594 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("_SRC_LSM_HPP" variable (:constant-flag t) nil [30 42])
+            ("cstdint" include (:system-flag t) nil [44 62])
+            ("ostream" include (:system-flag t) nil [63 81])
+            ("set" include (:system-flag t) nil [82 96])
+            ("algorithm" include (:system-flag t) nil [97 117])
+            ("tuple" include (:system-flag t) nil [118 134])
+            ("vector" include (:system-flag t) nil [135 152])
+            ("cmath" include (:system-flag t) nil [153 169])
+            ("iterator" include (:system-flag t) nil [170 189])
+            ("sstream" include (:system-flag t) nil [190 208])
+            ("fstream" include (:system-flag t) nil [209 227])
+            ("array" include (:system-flag t) nil [228 244])
+            ("memory" include (:system-flag t) nil [245 262])
+            ("string" include (:system-flag t) nil [263 280])
+            ("cstring" include (:system-flag t) nil [281 299])
+            ("iostream" include (:system-flag t) nil [300 319])
+            ("filesystem" include (:system-flag t) nil [320 341])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [343 363])
+            ("FILE_DIRECTORY" variable
+               (:typemodifiers ("static")
+                :default-value "\"/tmp/mypta/\""
+                :type ("string" type (:type "class") nil nil))
+                nil [365 410])
+            ("N_LSM_LEVELS" variable
+               (:constant-flag t
+                :default-value "7"
+                :type "int")
+                nil [411 438])
+            ("N_BLOCKS" variable
+               (:constant-flag t
+                :default-value "1"
+                :type "int")
+                nil [439 462])
+            ("get_filename" function
+               (:typemodifiers ("inline")
+                :type ("string" type (:type "class") nil nil))
+                nil [488 576])
+            ("checked_advance" function
+               (:template 
+                  ( ("Iter" type (:type "class") nil nil)
+                    ("Dist" type (:type "class") nil nil))                  
+                :type "void"
+                :arguments 
+                  ( ("itr" variable
+                       (:reference 1
+                        :type ("Iter" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [638 648])
+                    ("last" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Iter" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [649 666])
+                    ("dist" variable (:type ("Dist" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [667 677]))                  )
+                nil [578 771])
+            ("Record" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [867 882])
+                            ("" type
+                               (:members 
+                                  ( ("id" variable
+                                       (:suffix ":31"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [920 942])
+                                    ("deleted" variable
+                                       (:suffix ":1"
+                                        :type ("uint32_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [955 976]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [891 987]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [847 994])
+                    ("name" variable (:type ("array" type
+                         (:template-specifier 
+                            ( ("char" type nil nil nil)
+                              ("16"))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [999 1020])
+                    ("phone" variable (:type ("array" type
+                         (:template-specifier 
+                            ( ("char" type nil nil nil)
+                              ("12"))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [1025 1047])
+                    ("Operation" type
+                       (:members 
+                          ( ("NONE" variable
+                               (:constant-flag t
+                                :default-value (1084 1085)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1077 1085])
+                            ("DELETE" variable
+                               (:constant-flag t
+                                :default-value (1104 1105)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [1095 1105]))                          
+                        :type "enum")
+                        (reparse-symbol classsubparts) [1052 1112]))                  
+                :type "struct")
+                nil [827 1115])
+            ("new_record" function
+               (:prototype-flag t
+                :type ("Record" type (:type "class") nil nil))
+                nil [1117 1137])
+            ("<" function
+               (:operator-flag t
+                :typemodifiers ("inline")
+                :arguments 
+                  ( ("l" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1161 1177])
+                    ("r" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1178 1194]))                  
+                :type "bool")
+                nil [1139 1218])
+            ("RecordPtrCmp" type
+               (:members 
+                  ( ("()" function
+                       (:methodconst-flag t
+                        :operator-flag t
+                        :arguments 
+                          ( ("l" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Record" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1267 1283])
+                            ("r" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("Record" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1284 1300]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1246 1332]))                  
+                :type "struct")
+                nil [1220 1335])
+            ("SSTable" type
+               (:members 
+                  ( ("DISK_BLOCK_SIZE" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "4096"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1358 1403])
+                    ("N_DISK_BLOCKS" variable
+                       (:typemodifiers ("static")
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1422 1452])
+                    ("N_RECORDS_PER_TABLE" variable
+                       (:typemodifiers ("static")
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1457 1493])
+                    ("TABLE_SIZE" variable
+                       (:typemodifiers ("static")
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1498 1525])
+                    ("SSTable" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("ptr" variable
+                               (:pointer 1
+                                :type ("Record" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1539 1551]))                          
+                        :type ("SSTable" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [1531 1586])
+                    ("configure" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("n_blocks" variable (:type "int") (reparse-symbol arg-sub-list) [1618 1631]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1592 1818])
+                    ("file_handle" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1824 1843])
+                    ("records" variable
+                       (:pointer 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1848 1870])
+                    ("record_ptrs" variable (:type ("set" type
+                         (:template-specifier 
+                            ( ("Record" type (:pointer 1) nil nil)
+                              ("RecordPtrCmp" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [1949 1988]))                  
+                :type "struct")
+                nil [1337 1991])
+            ("Index" type
+               (:members 
+                  ( ("tuple" variable (:type "int") (reparse-symbol classsubparts) [2057 2081])
+                    ("vector" variable (:type "int") (reparse-symbol classsubparts) [2104 2118])
+                    ("entries" variable (:type ("Container" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2124 2142])
+                    ("find" function
+                       (:arguments 
+                          ( ("rec" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Record" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2177 2195]))                          
+                        :type ("Container::iterator" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2148 2414])
+                    ("find" function
+                       (:arguments 
+                          ( ("id" variable (:type "int") (reparse-symbol arg-sub-list) [2449 2456]))                          
+                        :type ("Container::iterator" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2420 2667])
+                    ("find" function
+                       (:arguments 
+                          ( ("str" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2702 2713]))                          
+                        :type ("Container::iterator" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2673 2861])
+                    ("find_prev" function
+                       (:arguments 
+                          ( ("rec" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Record" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2901 2919]))                          
+                        :type ("Container::iterator" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2867 3234]))                  
+                :type "struct")
+                nil [1993 3237])
+            ("Level_Container" type
+               (:members 
+                  ( ("Level_Container" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("table_limit" variable (:type "int") (reparse-symbol arg-sub-list) [3284 3300])
+                            ("rank" variable (:type "int") (reparse-symbol arg-sub-list) [3301 3310])
+                            ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3311 3329]))                          
+                        :type ("Level_Container" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [3268 3397])
+                    ("limit" variable (:type "unsigned int") (reparse-symbol classsubparts) [3403 3422])
+                    ("rank" variable (:type "unsigned int") (reparse-symbol classsubparts) [3427 3445])
+                    ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3450 3468])
+                    ("tables" variable (:type ("vector" type
+                         (:template-specifier 
+                            ( ("string" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [3473 3495])
+                    ("index" variable (:type ("Index" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3500 3512])
+                    ("is_top" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [3517 3537]))                  
+                :type "struct")
+                nil [3239 3540])
+            ("Leveled_LSM" type
+               (:members 
+                  ( ("containers" variable (:type ("vector" type
+                         (:template-specifier 
+                            ( ("Level_Container" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [3567 3602]))                  
+                :type "struct")
+                nil [3542 3605])
+            ("<<" function
+               (:template 
+                  ( ("T" type (:type "class") nil nil)
+                    ("size_t" type (:typevar "N") nil nil))                  
+                :type ("ostream" type (:type "class") nil nil)
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3740 3752])
+                    ("fixed_str" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("array" type
+                             (:template-specifier 
+                                ( ("T" type nil nil nil)
+                                  ("N" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3753 3782]))                  
+                :operator-flag t)
+                nil [3689 3866])
+            (">>" function
+               (:template 
+                  ( ("T" type (:type "class") nil nil)
+                    ("size_t" type (:typevar "N") nil nil))                  
+                :type ("istream" type (:type "class") nil nil)
+                :arguments 
+                  ( ("is" variable
+                       (:reference 1
+                        :type ("istream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3919 3931])
+                    ("fixed_str" variable
+                       (:reference 1
+                        :type ("array" type
+                             (:template-specifier 
+                                ( ("T" type nil nil nil)
+                                  ("N" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3932 3955]))                  
+                :operator-flag t)
+                nil [3868 4045])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4067 4079])
+                    ("rec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4080 4098]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4047 4099])
+            ("to_string" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("rec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4118 4136]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [4101 4137])
+            (">>" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("is" variable
+                       (:reference 1
+                        :type ("istream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4159 4171])
+                    ("rec" variable
+                       (:reference 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4172 4184]))                  
+                :type ("istream" type (:type "class") nil nil))
+                nil [4139 4185])
+            (">>" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("is" variable
+                       (:reference 1
+                        :type ("istream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4207 4219])
+                    ("table" variable
+                       (:reference 1
+                        :type ("SSTable" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4220 4235]))                  
+                :type ("istream" type (:type "class") nil nil))
+                nil [4187 4236])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4258 4270])
+                    ("table" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("SSTable" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4271 4292]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4238 4293])
+            ("copy_sstable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [4391 4415])
+                    ("dst" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [4416 4440]))                  
+                :type ("shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [4358 4441])
+            ("delete_index_entry" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4467 4480])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4481 4492]))                  
+                :type "void")
+                nil [4443 4493])
+            ("update_index" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4513 4526])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [4527 4553])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4554 4565]))                  
+                :type "void")
+                nil [4495 4566])
+            ("create_levels" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("n_levels" variable (:type "int") (reparse-symbol arg-sub-list) [4587 4600])
+                    ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4601 4619]))                  
+                :type "void")
+                nil [4568 4620])
+            ("merge_record_with_table" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("rec_ptrs" variable
+                       (:reference 1
+                        :type ("set" type
+                             (:template-specifier 
+                                ( ("Record" type (:pointer 1) nil nil)
+                                  ("RecordPtrCmp" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4674 4711])
+                    ("rec" variable
+                       (:pointer 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4712 4724]))                  
+                :type ("set" type
+                     (:template-specifier 
+                        ( ("Record" type (:pointer 1) nil nil)
+                          ("RecordPtrCmp" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [4622 4725])
+            ("pick_table" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4763 4786]))                  
+                :type ("iterator" type (:type "class") nil nil))
+                nil [4743 4787])
+            ("find_record" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5033 5045])
+                    ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5046 5063]))                  
+                :type ("tuple" type
+                     (:template-specifier 
+                        ( ("bool" type nil nil nil)
+                          ("Record" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [5001 5064])
+            ("mread" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("area_code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5084 5103])
+                    ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5104 5121]))                  
+                :type ("set" type
+                     (:template-specifier 
+                        ( ("Record" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [5066 5122])
+            ("flush_table" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5141 5164])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [5165 5191])
+                    ("handle" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5192 5213]))                  
+                :type "void")
+                nil [5124 5214])
+            ("build_fd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5232 5255])
+                    ("partial_fd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5256 5274]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [5216 5275])
+            ("check_levels" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5295 5312]))                  
+                :type "void")
+                nil [5277 5313])
+            ("flush_to_level" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5335 5358])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [5359 5385]))                  
+                :type "void")
+                nil [5315 5386])
+            ("compact_level" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("lower" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5407 5430])
+                    ("upper" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5431 5454]))                  
+                :type "void")
+                nil [5388 5455]))          
+      :file "lsm.hpp"
+      :pointmax 5483
+      :fsize 5482
+      :lastmodtime '(24189 10519 686712 94000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_SRC_LSM_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("__SRC_LSM_BUFFER_HPP__" variable (:constant-flag t) nil [87 109])
+            ("vector" include (:system-flag t) nil [111 128])
+            ("string" include (:system-flag t) nil [129 146])
+            ("unordered_map" include (:system-flag t) nil [147 171])
+            ("memory" include (:system-flag t) nil [172 189])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [191 211])
+            ("SSTable" type
+               (:prototype t
+                :type "struct")
+                nil [213 228])
+            ("Record" type
+               (:prototype t
+                :type "struct")
+                nil [229 243])
+            ("LsmBuffer" type
+               (:members 
+                  ( ("private" label nil (reparse-symbol classsubparts) [263 271])
+                    ("tableCount" variable (:type "int") (reparse-symbol classsubparts) [276 291])
+                    ("recordsPerTable" variable (:type "int") (reparse-symbol classsubparts) [332 352])
+                    ("records" variable
+                       (:pointer 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [357 373])
+                    ("memtables" variable
+                       (:dereference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [407 432])
+                    ("lastMemtableUsed" variable (:type "int") (reparse-symbol classsubparts) [437 458])
+                    ("memtableOccupancy" variable (:type ("std::unordered_map" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil)
+                              ("int" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [463 518])
+                    ("tail" variable (:type "int") (reparse-symbol classsubparts) [524 533])
+                    ("tables" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("std::shared_ptr" type (:template-specifier 
+                                ( ("SSTable" type nil nil nil))                                ) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [538 583])
+                    ("tableMap" variable (:type ("std::unordered_map" type
+                         (:template-specifier 
+                            ( ("std::string" type nil nil nil)
+                              ("int" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [588 634])
+                    ("writeNonLruMemtable" function
+                       (:prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [640 666])
+                    ("public" label nil (reparse-symbol classsubparts) [669 676])
+                    ("LsmBuffer" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("blocks" variable (:type "int") (reparse-symbol arg-sub-list) [691 702])
+                            ("blocksPerTable" variable (:type "int") (reparse-symbol arg-sub-list) [703 722]))                          
+                        :type ("LsmBuffer" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [681 723])
+                    ("LsmBuffer" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [728 741])
+                    ("pushRecord" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [763 776])
+                            ("record" variable (:type ("Record" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [777 791]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [747 792])
+                    ("getUnusedCompactionTable" function
+                       (:prototype-flag t
+                        :type ("shared_ptr" type
+                             (:template-specifier 
+                                ( ("SSTable" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol classsubparts) [822 869])
+                    ("getOrLoadAndGet" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_id" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [910 926]))                          
+                        :type ("shared_ptr" type
+                             (:template-specifier 
+                                ( ("SSTable" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol classsubparts) [874 927])
+                    ("getOrLoadAndGetMemtable" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [977 995]))                          
+                        :type ("shared_ptr" type
+                             (:template-specifier 
+                                ( ("SSTable" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol classsubparts) [933 996]))                  
+                :type "class")
+                nil [245 999])
+            ("createBuffer" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("blocks" variable (:type "int") (reparse-symbol arg-sub-list) [1019 1030])
+                    ("blocksPerTable" variable (:type "int") (reparse-symbol arg-sub-list) [1031 1050]))                  
+                :type "void")
+                nil [1001 1051]))          
+      :file "lsm_buffer.hpp"
+      :pointmax 1086
+      :fsize 1085
+      :lastmodtime '(24189 13076 660785 444000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__SRC_LSM_BUFFER_HPP__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("Logger.hpp" include nil nil [1 22])
+            ("lsm.hpp" include nil nil [23 41])
+            ("lsm_buffer.hpp" include nil nil [42 67])
+            ("fstream" include (:system-flag t) nil [68 86])
+            ("utility" include (:system-flag t) nil [87 105])
+            ("regex" include (:system-flag t) nil [106 122])
+            ("structs.hpp" include nil nil [123 145])
+            ("PTA" type
+               (:members 
+                  ( ("impl" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [163 175])
+                    ("logger" variable (:type ("Logger" type (:type "class") nil nil)) (reparse-symbol classsubparts) [180 194])
+                    ("public" label nil (reparse-symbol classsubparts) [196 203])
+                    ("PTA" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("impl" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [221 233]))                          
+                        :type ("PTA" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [217 293])
+                    ("run_read" function
+                       (:arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [313 324]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [299 1542])
+                    ("run_write" function
+                       (:arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1563 1574]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1548 3184])
+                    ("run_mread" function
+                       (:arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3205 3216]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [3190 4171])
+                    ("run_erase" function
+                       (:arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4192 4203]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4177 5069])
+                    ("run_delete" function
+                       (:arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5091 5102]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [5075 5718])
+                    ("execute" function
+                       (:arguments 
+                          ( ("line" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5737 5749]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [5724 6408]))                  
+                :type "class")
+                nil [147 6411])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [6422 6431])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6432 6445]))                  
+                :type "int")
+                nil [6413 7211]))          
+      :file "myPTA.cpp"
+      :pointmax 7212
+      :fsize 7211
+      :lastmodtime '(24189 13368 459793 815000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("lsm.hpp" include nil nil [1 19])
+            ("lsm_buffer.hpp" include nil nil [20 45])
+            ("structs.hpp" include nil nil [46 68])
+            ("iostream" include (:system-flag t) nil [69 88])
+            ("SSTable::N_DISK_BLOCKS" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [90 122])
+            ("SSTable::N_RECORDS_PER_TABLE" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [123 161])
+            ("SSTable::TABLE_SIZE" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [162 191])
+            ("L0_order" variable
+               (:typemodifiers ("static")
+                :type ("std::array" type
+                     (:template-specifier 
+                        ( ("string" type nil nil nil)
+                          ("4"))                        
+                      :type "class")
+                      nil nil))
+                nil [193 231])
+            ("order_index" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "int")
+                nil [232 259])
+            ("copy_sstable" function
+               (:arguments 
+                  ( ("src" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [294 318])
+                    ("dst" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [319 343]))                  
+                :type ("shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [261 532])
+            ("delete_index_entry" function
+               (:arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [558 571])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [572 583]))                  
+                :type "void")
+                nil [534 807])
+            ("update_index" function
+               (:arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [827 840])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [841 867])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [868 879]))                  
+                :type "void")
+                nil [809 1031])
+            ("create_levels" function
+               (:arguments 
+                  ( ("n_levels" variable (:type "int") (reparse-symbol arg-sub-list) [1052 1065])
+                    ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1066 1084]))                  
+                :type "void")
+                nil [1033 1667])
+            ("merge_record_with_table" function
+               (:arguments 
+                  ( ("rec_ptrs" variable
+                       (:reference 1
+                        :type ("set" type
+                             (:template-specifier 
+                                ( ("Record" type (:pointer 1) nil nil)
+                                  ("RecordPtrCmp" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1721 1758])
+                    ("rec" variable
+                       (:pointer 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1759 1771]))                  
+                :type ("set" type
+                     (:template-specifier 
+                        ( ("Record" type (:pointer 1) nil nil)
+                          ("RecordPtrCmp" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [1669 2518])
+            ("pick_table" function
+               (:arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2556 2579]))                  
+                :type ("iterator" type (:type "class") nil nil))
+                nil [2536 2800])
+            ("print_index" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("i" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2826 2835]))                  
+                :type "void")
+                nil [2802 2991])
+            ("find_record" function
+               (:arguments 
+                  ( ("id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3237 3249])
+                    ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3250 3267]))                  
+                :type ("tuple" type
+                     (:template-specifier 
+                        ( ("bool" type nil nil nil)
+                          ("Record" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3205 5924])
+            ("mread" function
+               (:arguments 
+                  ( ("area_code" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5944 5963])
+                    ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5964 5981]))                  
+                :type ("set" type
+                     (:template-specifier 
+                        ( ("Record" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [5926 8011])
+            ("results" variable (:type "int") nil [8001 8009])
+            ("endl" variable (:type "int") nil [8200 8205])
+            ("endl" variable (:type "int") nil [8869 8874])
+            ("fd" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("handle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8917 8924])
+                    ("" variable (:type ("ios::binary" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8925 8937]))                  
+                :type ("ofstream" type (:type "class") nil nil))
+                nil [8905 8938])
+            ("table" variable
+               (:pointer 1
+                :type "int")
+                nil [8949 8956])
+            ("close" function
+               (:prototype-flag t
+                :type "int")
+                nil [8964 8972])
+            ("file_handle" variable (:type ("stringstream" type (:type "class") nil nil)) nil [9041 9066])
+            ("partial_fd" variable (:type "int") nil [9152 9163])
+            ("str" function
+               (:prototype-flag t
+                :type "int")
+                nil [9187 9193])
+            ("endl" variable (:type "int") nil [9633 9638])
+            ("file_handle" variable
+               (:default-value "build_fd(level, get_filename())"
+                :type "int")
+                nil [9650 9696])
+            ("flush_table" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9713 9719])
+                    ("" variable (:type ("table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9720 9726])
+                    ("" variable (:type ("table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9727 9733])
+                    ("" variable (:type ("file_handle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9734 9746]))                  
+                :type "int")
+                nil [9701 9747])
+            ("update_index" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("level" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9765 9771])
+                    ("" variable (:type ("index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9771 9777])
+                    ("" variable (:type ("table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9778 9784])
+                    ("" variable (:type ("table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9785 9791])
+                    ("" variable (:type ("file_handle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9792 9804]))                  
+                :type "int")
+                nil [9752 9805])
+            ("limit" variable (:type "int") nil [9923 9929])
+            ("write" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reinterpret_cast" type
+                         (:template-specifier 
+                            ( ("char" type
+                                 (:pointer 1
+                                  :constant-flag t)
+                                  nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [15021 15056]))                  
+                :type "int")
+                nil [15015 15074])
+            ("os" variable (:type "int") nil [15086 15089])
+            ("name" variable (:type ("ostringstream" type (:type "class") nil nil)) nil [15135 15154])
+            ("name" variable (:type "int") nil [15171 15176])
+            ("phone" variable (:type ("ostringstream" type (:type "class") nil nil)) nil [15181 15201])
+            ("phone" variable (:type "int") nil [15219 15225])
+            ("str" variable (:type ("ostringstream" type (:type "class") nil nil)) nil [15230 15248])
+            ("str" function
+               (:prototype-flag t
+                :type "int")
+                nil [15328 15334])
+            ("str" function
+               (:prototype-flag t
+                :type "int")
+                nil [15350 15356])
+            ("read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reinterpret_cast" type
+                         (:template-specifier 
+                            ( ("char" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [15420 15455]))                  
+                :type "int")
+                nil [15415 15475])
+            ("read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reinterpret_cast" type
+                         (:template-specifier 
+                            ( ("char" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [15488 15522]))                  
+                :type "int")
+                nil [15483 15549])
+            ("read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reinterpret_cast" type
+                         (:template-specifier 
+                            ( ("char" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [15562 15597]))                  
+                :type "int")
+                nil [15557 15624])
+            ("is" variable (:type "int") nil [15636 15639])
+            ("memset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15705 15711])
+                    ("" variable (:type ("records" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15711 15719])
+                    ("" variable (:type ("SSTable::N_RECORDS_PER_TABLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15741 15770]))                  
+                :type "int")
+                nil [15698 15771])
+            ("read" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reinterpret_cast" type
+                         (:template-specifier 
+                            ( ("char" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [15784 15822])
+                    ("" variable (:type ("SSTable::N_RECORDS_PER_TABLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15839 15868]))                  
+                :type "int")
+                nil [15779 15869])
+            ("is" variable (:type "int") nil [16012 16015])
+            ("itr" variable
+               (:default-value "table.record_ptrs.begin()"
+                :type ("auto" type (:type "class") nil nil))
+                nil [16080 16117])
+            ("os" variable (:type "int") nil [16385 16388])
+            ("r" variable (:type ("Record" type (:type "class") nil nil)) nil [16418 16427])
+            ("memset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("r" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16440 16442]))                  
+                :type "int")
+                nil [16432 16465])
+            ("r" variable (:type "int") nil [16477 16479]))          
+      :file "lsm.cpp"
+      :pointmax 16482
+      :fsize 16481
+      :lastmodtime '(24189 13657 44802 93000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("cstdlib" include (:system-flag t) nil [48 66])
+            ("fstream" include (:system-flag t) nil [67 85])
+            ("lsm_buffer.hpp" include nil nil [86 111])
+            ("lsm.hpp" include nil nil [112 130])
+            ("structs.hpp" include nil nil [131 153])
+            ("iostream" include (:system-flag t) nil [154 173])
+            ("E_NOT_ENOUGH_CASH" variable (:constant-flag t) nil [183 200])
+            ("BLOCK_SIZE" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "4096"
+                :type "int")
+                nil [205 240])
+            ("MEMTABLE_TABLE_COUNT" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "2"
+                :type "int")
+                nil [242 284])
+            ("COMPACTION_TABLE_OFFSET" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "MEMTABLE_TABLE_COUNT"
+                :type "int")
+                nil [285 349])
+            ("COMPACTION_TABLE_COUNT" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "4"
+                :type "int")
+                nil [350 394])
+            ("CACHE_OFFSET" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "MEMTABLE_TABLE_COUNT + COMPACTION_TABLE_COUNT"
+                :type "int")
+                nil [395 473])
+            ("LsmBuffer" function
+               (:constructor-flag t
+                :parent "LsmBuffer"
+                :arguments 
+                  ( ("blocks" variable (:type "int") (reparse-symbol arg-sub-list) [643 654])
+                    ("blocksPerTable" variable (:type "int") (reparse-symbol arg-sub-list) [655 674]))                  
+                :type ("LsmBuffer" type (:type "class") nil nil))
+                nil [622 1673])
+            ("LsmBuffer" function
+               (:destructor-flag t
+                :parent "LsmBuffer"
+                :type "void")
+                nil [1675 1727])
+            ("writeNonLruMemtable" function
+               (:parent "LsmBuffer"
+                :type "int")
+                nil [1729 2022])
+            ("getOrLoadAndGetMemtable" function
+               (:parent "LsmBuffer"
+                :arguments 
+                  ( ("table" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2084 2102]))                  
+                :type ("std::shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2024 3117])
+            ("pushRecord" function
+               (:parent "LsmBuffer"
+                :arguments 
+                  ( ("table" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3146 3164])
+                    ("record" variable (:type ("Record" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3165 3179]))                  
+                :type "void")
+                nil [3119 4208])
+            ("getUnusedCompactionTable" function
+               (:parent "LsmBuffer"
+                :type ("std::shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [4210 4493])
+            ("getOrLoadAndGet" function
+               (:parent "LsmBuffer"
+                :arguments 
+                  ( ("tableHandle" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4547 4571]))                  
+                :type ("std::shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [4495 5470])
+            ("createBuffer" function
+               (:arguments 
+                  ( ("blocks" variable (:type "int") (reparse-symbol arg-sub-list) [5490 5501])
+                    ("blocksPerTable" variable (:type "int") (reparse-symbol arg-sub-list) [5502 5521]))                  
+                :type "void")
+                nil [5472 5594]))          
+      :file "lsm_buffer.cpp"
+      :pointmax 5595
+      :fsize 5594
+      :lastmodtime '(24189 13076 660785 444000)
+      :unmatched-syntax '((punctuation 619 . 620) (number 618 . 619) (punctuation 616 . 617) (symbol 593 . 615) (punctuation 591 . 592) (symbol 570 . 590) (punctuation 568 . 569) (symbol 545 . 567) (INT 541 . 544) (CONST 535 . 540) (STATIC 528 . 534))
+      :lexical-table 
+        '(("E_NOT_ENOUGH_CASH" . ((punctuation "-" 201 . 202) (number "1" 202 . 203)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("Logger.hpp" include nil nil [1 22])
+            ("ctime" include (:system-flag t) nil [23 39])
+            ("Logger" function
+               (:constructor-flag t
+                :parent "Logger"
+                :type ("Logger" type (:type "class") nil nil))
+                nil [101 296])
+            ("log_cmd" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [443 454]))                  
+                :type "void")
+                nil [422 481])
+            ("create_tbl_cmd" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [637 655])
+                    ("page_number" variable (:type "int") (reparse-symbol arg-sub-list) [656 672]))                  
+                :type "void")
+                nil [609 777])
+            ("log_write" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [897 915])
+                    ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [916 929]))                  
+                :type "void")
+                nil [874 1028])
+            ("log_swap" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("direction" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1205 1222])
+                    ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1223 1241])
+                    ("page_number" variable (:type "int") (reparse-symbol arg-sub-list) [1242 1258]))                  
+                :type "void")
+                nil [1183 1380])
+            ("log_read" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1505 1523])
+                    ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1524 1537]))                  
+                :type "void")
+                nil [1483 1638])
+            ("log_mread" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1765 1783])
+                    ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1784 1797]))                  
+                :type "void")
+                nil [1742 1899])
+            ("log_delete" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1993 2011]))                  
+                :type "void")
+                nil [1969 2089])
+            ("log_erase" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2216 2234])
+                    ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2235 2248]))                  
+                :type "void")
+                nil [2193 2346])
+            ("write_to_file" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("msg" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2473 2484]))                  
+                :type "void")
+                nil [2446 2513])
+            ("flush_cmd" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2711 2729])
+                    ("level" variable (:type "int") (reparse-symbol arg-sub-list) [2730 2740])
+                    ("key_range_start" variable (:type "int") (reparse-symbol arg-sub-list) [2741 2761])
+                    ("key_range_end" variable (:type "int") (reparse-symbol arg-sub-list) [2762 2780]))                  
+                :type "void")
+                nil [2688 2952])
+            ("log_lsm_swap" function
+               (:parent "Logger"
+                :arguments 
+                  ( ("direction" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3164 3181])
+                    ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3182 3200])
+                    ("level" variable (:type "int") (reparse-symbol arg-sub-list) [3201 3211])
+                    ("key_range_start" variable (:type "int") (reparse-symbol arg-sub-list) [3212 3232])
+                    ("key_range_end" variable (:type "int") (reparse-symbol arg-sub-list) [3233 3251]))                  
+                :type "void")
+                nil [3138 3441]))          
+      :file "Logger.cpp"
+      :pointmax 3443
+      :fsize 3442
+      :lastmodtime '(24188 8737 791781 2000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("fstream" include (:system-flag t) nil [21 39])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [40 60])
+            ("Logger" type
+               (:members 
+                  ( ("private" label nil (reparse-symbol classsubparts) [77 85])
+                    ("log" variable (:type ("ofstream" type (:type "class") nil nil)) (reparse-symbol classsubparts) [90 103])
+                    ("public" label nil (reparse-symbol classsubparts) [104 111])
+                    ("Logger" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("Logger" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [116 125])
+                    ("log_cmd" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cmd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [173 184]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [160 185])
+                    ("log_write" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [205 223])
+                            ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [224 237]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [190 238])
+                    ("log_read" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [257 270])
+                            ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [271 284]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [243 285])
+                    ("log_mread" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [305 318])
+                            ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [319 332]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [290 333])
+                    ("log_delete" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [354 372]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [338 373])
+                    ("write_to_file" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("msg" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [397 408]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [378 409])
+                    ("log_erase" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [429 447])
+                            ("tuple" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [448 461]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [414 462])
+                    ("create_tbl_cmd" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [538 556])
+                            ("page_number" variable (:type "int") (reparse-symbol arg-sub-list) [557 573]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [518 574])
+                    ("log_swap" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("direction" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [593 610])
+                            ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [611 629])
+                            ("page_number" variable (:type "int") (reparse-symbol arg-sub-list) [630 646]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [579 647])
+                    ("flush_cmd" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [702 720])
+                            ("level" variable (:type "int") (reparse-symbol arg-sub-list) [721 731])
+                            ("key_range_start" variable (:type "int") (reparse-symbol arg-sub-list) [732 752])
+                            ("key_range_end" variable (:type "int") (reparse-symbol arg-sub-list) [753 771]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [687 772])
+                    ("log_lsm_swap" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("direction" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [795 812])
+                            ("table_name" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [813 831])
+                            ("level" variable (:type "int") (reparse-symbol arg-sub-list) [832 842])
+                            ("key_range_start" variable (:type "int") (reparse-symbol arg-sub-list) [843 863])
+                            ("key_range_end" variable (:type "int") (reparse-symbol arg-sub-list) [864 882]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [777 883]))                  
+                :type "class")
+                nil [62 886]))          
+      :file "Logger.hpp"
+      :pointmax 886
+      :fsize 885
+      :lastmodtime '(24185 18267 711138 370000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("Logger.hpp" include nil nil [1 22]))          
+      :file "test_class.cpp"
+      :pointmax 595
+      :fsize 594
+      :lastmodtime '(24188 8786 470782 398000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("_SRC_STRUCTS_HPP" variable (:constant-flag t) nil [34 50])
+            ("lsm_buffer.hpp" include nil nil [52 77])
+            ("lsm.hpp" include nil nil [78 96])
+            ("lsm_ptrs" variable
+               (:typemodifiers ("extern")
+                :type ("unordered_map" type
+                     (:template-specifier 
+                        ( ("string" type nil nil nil)
+                          ("shared_ptr" type (:template-specifier 
+                            ( ("Leveled_LSM" type nil nil nil))                            ) nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [98 161])
+            ("lsmBuffer" variable
+               (:typemodifiers ("extern")
+                :type ("std::shared_ptr" type
+                     (:template-specifier 
+                        ( ("LsmBuffer" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [162 206]))          
+      :file "structs.hpp"
+      :pointmax 238
+      :fsize 237
+      :lastmodtime '(24188 11573 21862 334000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_SRC_STRUCTS_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("structs.hpp" include nil nil [1 23])
+            ("lsm_ptrs" variable (:type ("unordered_map" type
+                 (:template-specifier 
+                    ( ("string" type nil nil nil)
+                      ("shared_ptr" type (:template-specifier 
+                        ( ("Leveled_LSM" type nil nil nil))                        ) nil nil))                    
+                  :type "class")
+                  nil nil)) nil [25 81])
+            ("lsmBuffer" variable (:type ("std::shared_ptr" type
+                 (:template-specifier 
+                    ( ("LsmBuffer" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [82 119]))          
+      :file "structs.cpp"
+      :pointmax 120
+      :fsize 119
+      :lastmodtime '(24188 11584 174862 654000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("lsm.hpp" include nil nil [1 19])
+            ("SSTable::N_DISK_BLOCKS" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [21 53])
+            ("SSTable::N_RECORDS_PER_TABLE" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [54 92])
+            ("SSTable::TABLE_SIZE" variable (:type ("uint32_t" type (:type "class") nil nil)) nil [93 122])
+            ("copy_sstable" function
+               (:arguments 
+                  ( ("src" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [157 181])
+                    ("dst" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [182 206]))                  
+                :type ("shared_ptr" type
+                     (:template-specifier 
+                        ( ("SSTable" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [124 395])
+            ("delete_index_entry" function
+               (:arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [421 434])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [435 446]))                  
+                :type "void")
+                nil [397 670])
+            ("update_index" function
+               (:arguments 
+                  ( ("index" variable
+                       (:reference 1
+                        :type ("Index" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [690 703])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [704 730])
+                    ("fd" variable
+                       (:reference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [731 742]))                  
+                :type "void")
+                nil [672 893])
+            ("create_levels" function
+               (:arguments 
+                  ( ("n_levels" variable (:type "int") (reparse-symbol arg-sub-list) [914 927]))                  
+                :type "void")
+                nil [895 1205])
+            ("merge_record_with_table" function
+               (:arguments 
+                  ( ("rec_ptrs" variable
+                       (:reference 1
+                        :type ("set" type
+                             (:template-specifier 
+                                ( ("Record" type (:pointer 1) nil nil)
+                                  ("RecordPtrCmp" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1259 1296])
+                    ("rec" variable
+                       (:pointer 1
+                        :type ("Record" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1297 1309]))                  
+                :type ("set" type
+                     (:template-specifier 
+                        ( ("Record" type (:pointer 1) nil nil)
+                          ("RecordPtrCmp" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [1207 2022])
+            ("pick_table" function
+               (:arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2060 2083]))                  
+                :type ("iterator" type (:type "class") nil nil))
+                nil [2040 2239])
+            ("find_record" function
+               (:arguments 
+                  ( ("id" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2485 2497])
+                    ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2498 2515]))                  
+                :type ("tuple" type
+                     (:template-specifier 
+                        ( ("bool" type nil nil nil)
+                          ("Record" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2453 3095])
+            ("flush_table" function
+               (:arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3115 3138])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [3139 3165])
+                    ("handle" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3166 3187]))                  
+                :type "void")
+                nil [3098 3658])
+            ("build_fd" function
+               (:arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3676 3699])
+                    ("partial_fd" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3700 3718]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [3660 3850])
+            ("check_levels" function
+               (:arguments 
+                  ( ("lsm" variable
+                       (:reference 1
+                        :type ("Leveled_LSM" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3870 3887]))                  
+                :type "void")
+                nil [3852 4008])
+            ("flush_to_level" function
+               (:arguments 
+                  ( ("level" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4030 4053])
+                    ("table" variable (:type ("shared_ptr" type
+                         (:template-specifier 
+                            ( ("SSTable" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [4054 4080]))                  
+                :type "void")
+                nil [4010 4251])
+            ("compact_level" function
+               (:arguments 
+                  ( ("lower" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4272 4295])
+                    ("upper" variable
+                       (:reference 1
+                        :type ("Level_Container" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4296 4319]))                  
+                :type "void")
+                nil [4253 7761]))          
+      :file "lsm.cpp~"
+      :pointmax 7762
+      :fsize 7761
+      :lastmodtime '(24188 2987 29616 35000)
+      :unmatched-syntax '((punctuation 2039 . 2040) (punctuation 2038 . 2039) (punctuation 2037 . 2038) (symbol 2031 . 2037) (punctuation 2030 . 2031) (symbol 2024 . 2030))))
+  :file "!home!nmg!Code!Cpp!cs2550-project!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

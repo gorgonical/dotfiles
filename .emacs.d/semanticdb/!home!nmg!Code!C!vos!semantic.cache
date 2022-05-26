@@ -1,0 +1,667 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vos.h" include nil nil [222 238])
+            ("vmx_ept.h" include nil nil [239 259])
+            ("vmx.h" include nil nil [260 276])
+            ("vmx_hw_info.h" include nil nil [277 301])
+            ("vmm_paging.h" include nil nil [302 325])
+            ("vm.h" include nil nil [326 341])
+            ("linux/kallsyms.h" include (:system-flag t) nil [344 371])
+            ("create_ept_page" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [411 417]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [376 627])
+            ("map_region" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hw_info" variable
+                       (:pointer 1
+                        :type ("vmx_hw_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [653 682])
+                    ("pml_array" variable
+                       (:pointer 1
+                        :type ("ept_pml4_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [687 718])
+                    ("start_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [724 756])
+                    ("end_addr" variable (:type ("uintptr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [761 791]))                  
+                :type "int")
+                nil [630 5305])
+            ("vos_init_ept" function
+               (:arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vos_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5326 5345]))                  
+                :type "int")
+                nil [5308 7270]))          
+      :file "vmx_ept.c"
+      :pointmax 7271
+      :fsize 7270
+      :lastmodtime '(23912 19825 202197 220000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "vos.h"
+      :fsize 1257
+      :lastmodtime '(23912 19825 203197 220000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("__VMX_EPT_H__" variable (:constant-flag t) nil [663 676])
+            ("vos_vm" type
+               (:prototype t
+                :type "struct")
+                nil [1160 1174])
+            ("vos_core" type
+               (:prototype t
+                :type "struct")
+                nil [1175 1191])
+            ("ept_exit_qual" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("value" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1229 1239])
+                            ("" type
+                               (:members 
+                                  ( ("rd_op" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1255 1275])
+                                    ("wr_op" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1281 1301])
+                                    ("ifetch" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1307 1327])
+                                    ("present" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1333 1353])
+                                    ("write" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1359 1379])
+                                    ("exec" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1385 1405])
+                                    ("rsvd1" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1411 1431])
+                                    ("addr_valid" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1437 1457])
+                                    ("addr_type" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1463 1483])
+                                    ("rsvd2" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1489 1509])
+                                    ("nmi_unblock" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1515 1535])
+                                    ("rsvd3" variable
+                                       (:suffix ":53"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1541 1562]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1241 1590]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1220 1621]))                  
+                :type "struct")
+                nil [1193 1648])
+            ("vmx_eptp" type
+               (:members 
+                  ( ("psmt" variable
+                       (:suffix ":3"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1683 1707])
+                    ("pwl1" variable
+                       (:suffix ":3"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1731 1755])
+                    ("rsvd1" variable
+                       (:suffix ":6"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1802 1826])
+                    ("pml_base_addr" variable
+                       (:suffix ":39"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1831 1856])
+                    ("rsvd2" variable
+                       (:suffix ":13"
+                        :type ("u16" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1862 1887]))                  
+                :type "struct")
+                nil [1653 1925])
+            ("vmx_eptp_t" type
+               (:typedef ("vmx_eptp" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1653 1925])
+            ("ept_pml4" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1958 1982])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1987 2011])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2016 2040])
+                    ("rsvd1" variable
+                       (:suffix ":5"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2045 2069])
+                    ("ignore1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2074 2098])
+                    ("pdp_base_addr" variable
+                       (:suffix ":39"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2103 2128])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2133 2157])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2162 2187]))                  
+                :type "struct")
+                nil [1928 2225])
+            ("ept_pml4_t" type
+               (:typedef ("ept_pml4" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1928 2225])
+            ("ept_pdp_1GB" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2261 2285])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2290 2314])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2319 2343])
+                    ("mt" variable
+                       (:suffix ":3"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2348 2372])
+                    ("ipat" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2377 2401])
+                    ("large_page" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2406 2430])
+                    ("ignore1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2435 2459])
+                    ("rsvd1" variable
+                       (:suffix ":18"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2464 2489])
+                    ("page_base_addr" variable
+                       (:suffix ":21"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2494 2519])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2524 2548])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2553 2578]))                  
+                :type "struct")
+                nil [2228 2619])
+            ("ept_pdp_1GB_t" type
+               (:typedef ("ept_pdp_1GB" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2228 2619])
+            ("ept_pdp" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2650 2674])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2679 2703])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2708 2732])
+                    ("rsvd1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2737 2761])
+                    ("large_page" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2766 2790])
+                    ("ignore1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2795 2819])
+                    ("pd_base_addr" variable
+                       (:suffix ":39"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2824 2849])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2854 2878])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2883 2908]))                  
+                :type "struct")
+                nil [2621 2945])
+            ("ept_pdp_t" type
+               (:typedef ("ept_pdp" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2621 2945])
+            ("ept_pde_2MB" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2981 3005])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3010 3034])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3039 3063])
+                    ("mt" variable
+                       (:suffix ":3"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3068 3092])
+                    ("ipat" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3097 3121])
+                    ("large_page" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3126 3150])
+                    ("ignore1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3155 3179])
+                    ("rsvd1" variable
+                       (:suffix ":9"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3184 3208])
+                    ("page_base_addr" variable
+                       (:suffix ":30"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3213 3238])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3243 3267])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3272 3297]))                  
+                :type "struct")
+                nil [2948 3338])
+            ("ept_pde_2MB_t" type
+               (:typedef ("ept_pde_2MB" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2948 3338])
+            ("ept_pde" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3370 3394])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3399 3423])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3428 3452])
+                    ("rsvd1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3457 3481])
+                    ("large_page" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3486 3510])
+                    ("ignore1" variable
+                       (:suffix ":4"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3515 3539])
+                    ("pt_base_addr" variable
+                       (:suffix ":39"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3544 3569])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3574 3598])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3603 3628]))                  
+                :type "struct")
+                nil [3341 3665])
+            ("ept_pde_t" type
+               (:typedef ("ept_pde" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3341 3665])
+            ("ept_pte" type
+               (:members 
+                  ( ("read" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3698 3722])
+                    ("write" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3727 3751])
+                    ("exec" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3756 3780])
+                    ("mt" variable
+                       (:suffix ":3"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3785 3809])
+                    ("ipat" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3814 3838])
+                    ("ignore1" variable
+                       (:suffix ":5"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3843 3867])
+                    ("page_base_addr" variable
+                       (:suffix ":39"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3872 3897])
+                    ("rsvd2" variable
+                       (:suffix ":1"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3902 3926])
+                    ("ignore2" variable
+                       (:suffix ":12"
+                        :type ("u64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3931 3956]))                  
+                :type "struct")
+                nil [3669 3993])
+            ("ept_pte_t" type
+               (:typedef ("ept_pte" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3669 3993])
+            ("vos_init_ept" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vos_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4014 4033]))                  
+                :type "int")
+                nil [3997 4034]))          
+      :file "vmx_ept.h"
+      :pointmax 4154
+      :fsize 4153
+      :lastmodtime '(23912 19825 202197 220000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__VMX_EPT_H__")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vmx.h"
+      :fsize 5859
+      :lastmodtime '(23912 19825 202197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_hw_info.h"
+      :fsize 4915
+      :lastmodtime '(23912 19825 203197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_paging.h"
+      :fsize 19499
+      :lastmodtime '(23912 19825 202197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vm.h"
+      :fsize 1307
+      :lastmodtime '(23912 19825 201197 220000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( ("LINUX_KERN" variable (:default-value ("/lib/modules/`uname -r`/build/")) nil [48 90])
+            ("EXTRA_CFLAGS" variable (:default-value ("-DMODULE=1" "-D__KERNEL__=1")) nil [91 134])
+            ("vos-y" variable (:default-value ("main.o" "vm.o" "vmcs.o" "vmm.o" "vmx_hw_info.o" "vmx.o" "compat.o" "vmx_ept.o" "vmx_msr.o" "segments.o" "vmx_entry.o" "vmx_lowlevel.o")) nil [135 302])
+            ("vos-objs" variable (:default-value ("$(vos-y)")) nil [305 326])
+            ("obj-m" variable (:default-value ("vos.o")) nil [326 341])
+            ("all" function nil nil [343 391])
+            ("clean" function nil nil [392 440]))          
+      :file "Makefile"
+      :pointmax 441
+      :fsize 440
+      :lastmodtime '(23912 19825 200197 220000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("vos.h" include nil nil [222 238])
+            ("vmx.h" include nil nil [239 255])
+            ("vmcs.h" include nil nil [256 273])
+            ("vmx_ept.h" include nil nil [274 294])
+            ("segments.h" include nil nil [295 316])
+            ("vmx_msr.h" include nil nil [317 337])
+            ("vmm_lowlevel.h" include nil nil [338 363])
+            ("vmx_hw_info.h" include nil nil [364 388])
+            ("vm.h" include nil nil [389 404])
+            ("vmm.h" include nil nil [405 421])
+            ("vmm_paging.h" include nil nil [422 445])
+            ("vmx_hw_info.h" include nil nil [470 494])
+            ("host_vmcs_ptrs" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :default-value "NULL"
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [497 538])
+            ("num_host_cpus" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type ("u64" type (:type "class") nil nil))
+                nil [539 577])
+            ("vos_vmx_launch" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [610 616]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [581 617])
+            ("allocate_vmcs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [655 661]))                  
+                :type ("uintptr_t" type (:type "class") nil nil))
+                nil [622 1204])
+            ("init_vmcs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("vos_core" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1231 1254]))                  
+                :type "int")
+                nil [1209 2283])
+            ("__init_guest_state" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("vos_core" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2316 2339]))                  
+                :type "int")
+                nil [2285 4564])
+            ("__set_vmcs_ctrl_fields" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vm" variable
+                       (:pointer 1
+                        :type ("vos_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4605 4626])
+                    ("core" variable
+                       (:pointer 1
+                        :type ("vos_core" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4636 4659]))                  
+                :type "int")
+                nil [4571 5428])
+            ("__init_host_state" function
+               (:arguments 
+                  ( ("core" variable
+                       (:pointer 1
+                        :type ("vos_core" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5455 5478]))                  
+                :type "int")
+                nil [5432 8417])
+            ("vmx_launch" function
+               (:arguments 
+                  ( ("vmm" variable
+                       (:pointer 1
+                        :type ("vos_vmm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8440 8462])
+                    ("vm" variable
+                       (:pointer 1
+                        :type ("vos_vm" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8468 8489])
+                    ("core" variable
+                       (:pointer 1
+                        :type ("vos_core" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8496 8520]))                  
+                :type "int")
+                nil [8424 9759])
+            ("VMX_FEATURE_CONTROL_MSR" variable (:constant-flag t) nil [9772 9795])
+            ("CPUID_VMX_FEATURES" variable (:constant-flag t) nil [9819 9837])
+            ("CPUID_1_ECX_VTXFLAG" variable (:constant-flag t) nil [9888 9907])
+            ("vos_is_vmx_capable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9953 9959]))                  
+                :type "int")
+                nil [9928 10566])
+            ("__init_vmx_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10599 10611]))                  
+                :type "void")
+                nil [10570 11402])
+            ("vos_deinit_vmx_cpu" function
+               (:arguments 
+                  ( ("cpu_id" variable (:type "int") (reparse-symbol arg-sub-list) [11429 11440]))                  
+                :type "void")
+                nil [11405 11698])
+            ("vos_init_vmx" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11719 11725]))                  
+                :type "int")
+                nil [11701 12081]))          
+      :file "vmx.c"
+      :pointmax 12083
+      :fsize 12082
+      :lastmodtime '(23912 19825 202197 220000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("VMX_FEATURE_CONTROL_MSR" . ((number "0x0000003a" 9800 . 9810)))
+          ("CPUID_VMX_FEATURES" . ((number "0x00000005" 9847 . 9857)))
+          ("CPUID_1_ECX_VTXFLAG" . ((number "0x00000020" 9916 . 9926)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "vmcs.h"
+      :fsize 13783
+      :lastmodtime '(23912 19825 201197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "segments.h"
+      :fsize 1212
+      :lastmodtime '(23912 19825 201197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmx_msr.h"
+      :fsize 791
+      :lastmodtime '(23912 19825 203197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm_lowlevel.h"
+      :fsize 6487
+      :lastmodtime '(23912 19825 202197 220000))
+    (semanticdb-table "semanticdb-table"
+      :file "vmm.h"
+      :fsize 2533
+      :lastmodtime '(23912 19825 202197 220000)))
+  :file "!home!nmg!Code!C!vos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

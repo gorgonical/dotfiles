@@ -1,0 +1,240 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/init.h" include (:system-flag t) nil [25 46])
+            ("lwk/spinlock.h" include (:system-flag t) nil [47 72])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [73 97])
+            ("lwk/smp.h" include (:system-flag t) nil [98 118])
+            ("lwk/time.h" include (:system-flag t) nil [119 140])
+            ("lwk/interrupt.h" include (:system-flag t) nil [141 167])
+            ("arch/io.h" include (:system-flag t) nil [168 188])
+            ("arch/pda.h" include (:system-flag t) nil [189 210])
+            ("arch/irqchip.h" include (:system-flag t) nil [212 237])
+            ("arch/time.h" include (:system-flag t) nil [238 260])
+            ("arch/of.h" include (:system-flag t) nil [261 281])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [282 335])
+            ("IRQ_IDX_SECURE" variable (:constant-flag t) nil [346 360])
+            ("IRQ_IDX_NONSECURE" variable (:constant-flag t) nil [375 392])
+            ("IRQ_IDX_VIRTUAL" variable (:constant-flag t) nil [404 419])
+            ("IRQ_IDX_HYPERVISOR" variable (:constant-flag t) nil [433 451])
+            ("timer_irqs" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("irq_def" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [566 602])
+            ("cntp_ctl_el0" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [641 654])
+                            ("" type
+                               (:members 
+                                  ( ("enabled" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [669 688])
+                                    ("irq_mask" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [692 711])
+                                    ("irq_status" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [715 734])
+                                    ("res0" variable
+                                       (:suffix ":61"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [738 758]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [657 763]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [631 767]))                  
+                :type "struct")
+                nil [605 794])
+            ("__reload_timer" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [797 1041])
+            ("__timer_tick" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [1076 1084])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1085 1099]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [1043 1387])
+            ("__hypervisor_tick" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [1427 1435])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1436 1450]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [1390 1502])
+            ("__armv8_timer_core_init" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [1507 1929])
+            ("__armv8_timer_set_timer_freq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hz" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2052 2068]))                  
+                :type "void")
+                nil [2011 2667])
+            ("armv8_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"ARMv8\",
+	.dt_node            = NULL,
+	.core_init          = __armv8_timer_core_init,
+	.set_timer_freq     = __armv8_timer_set_timer_freq
+}"
+                :type ("arch_timer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2670 2874])
+            ("armv8_timer_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_tree" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2901 2931]))                  
+                :type "void")
+                nil [2878 3584]))          
+      :file "armv8.c"
+      :pointmax 3586
+      :fsize 3585
+      :lastmodtime '(24861 23201)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("IRQ_IDX_SECURE" . ((number "0" 365 . 366)))
+          ("IRQ_IDX_NONSECURE" . ((number "1" 394 . 395)))
+          ("IRQ_IDX_HYPERVISOR" . ((number "3" 452 . 453)))
+          ("IRQ_IDX_VIRTUAL" . ((number "2" 423 . 424)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1 24])
+            ("lwk/init.h" include (:system-flag t) nil [25 46])
+            ("lwk/spinlock.h" include (:system-flag t) nil [47 72])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [73 97])
+            ("lwk/smp.h" include (:system-flag t) nil [98 118])
+            ("lwk/time.h" include (:system-flag t) nil [119 140])
+            ("lwk/interrupt.h" include (:system-flag t) nil [141 167])
+            ("arch/io.h" include (:system-flag t) nil [168 188])
+            ("arch/pda.h" include (:system-flag t) nil [189 210])
+            ("arch/irqchip.h" include (:system-flag t) nil [212 237])
+            ("arch/time.h" include (:system-flag t) nil [238 260])
+            ("arch/of.h" include (:system-flag t) nil [261 281])
+            ("dt-bindings/interrupt-controller/arm-gic.h" include (:system-flag t) nil [282 335])
+            ("timer_irq" variable
+               (:typemodifiers ("static")
+                :type ("irq_def" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [449 481])
+            ("cntv_ctl_el0" type
+               (:members 
+                  ( ("" type
+                       (:members 
+                          ( ("val" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [520 533])
+                            ("" type
+                               (:members 
+                                  ( ("enabled" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [548 567])
+                                    ("irq_mask" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [571 590])
+                                    ("irq_status" variable
+                                       (:suffix ":1"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [594 613])
+                                    ("res0" variable
+                                       (:suffix ":61"
+                                        :type ("u64" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [617 637]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [536 642]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [510 646]))                  
+                :type "struct")
+                nil [484 673])
+            ("__reload_timer" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [676 921])
+            ("__timer_tick" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [956 964])
+                    ("dev_id" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [965 979]))                  
+                :type ("irqreturn_t" type (:type "class") nil nil))
+                nil [923 1258])
+            ("__hafnium_timer_core_init" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [1264 1499])
+            ("__hafnium_timer_set_timer_freq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hz" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1625 1641]))                  
+                :type "void")
+                nil [1582 2240])
+            ("hafnium_timer" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.name               = \"Hafnium\",
+	.dt_node            = NULL,
+	.core_init          = __hafnium_timer_core_init,
+	.set_timer_freq     = __hafnium_timer_set_timer_freq
+}"
+                :type ("arch_timer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2243 2455])
+            ("hafnium_timer_init" function
+               (:arguments 
+                  ( ("dt_node" variable
+                       (:pointer 1
+                        :type ("device_tree" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2482 2512]))                  
+                :type "void")
+                nil [2457 3225]))          
+      :file "hafnium.c"
+      :pointmax 3227
+      :fsize 3226
+      :lastmodtime '(24861 61471)
+      :unmatched-syntax nil))
+  :file "!ssh:osbox:!mnt!vm-shared!kitten-arm64!arch!arm64!kernel!timers!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

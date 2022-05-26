@@ -1,0 +1,361 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("lwk/kernel.h" include (:system-flag t) nil [1496 1519])
+            ("lwk/device.h" include (:system-flag t) nil [1520 1543])
+            ("lwk/pci/pci.h" include (:system-flag t) nil [1544 1568])
+            ("lwk/pci/msidef.h" include (:system-flag t) nil [1569 1596])
+            ("lwk/cpuinfo.h" include (:system-flag t) nil [1597 1621])
+            ("lwk/resource.h" include (:system-flag t) nil [1622 1647])
+            ("lwk/spinlock.h" include (:system-flag t) nil [1648 1673])
+            ("arch/io.h" include (:system-flag t) nil [1674 1694])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pci_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1772 1781]))                  
+                :type "int")
+                nil [1749 1782])
+            ("pci_root" variable
+               (:pointer 1
+                :type ("pci_bus_t" type (:type "class") nil nil))
+                nil [2117 2137])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pci_devices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2391 2403]))                  
+                :type "int")
+                nil [2381 2404])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pci_drivers" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2671 2683]))                  
+                :type "int")
+                nil [2654 2684])
+            ("dev_root" variable
+               (:typemodifiers ("extern")
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2688 2719])
+            ("alloc_pci_dev" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2756 2761]))                  
+                :type ("pci_dev_t" type (:type "class") nil nil))
+                nil [2723 2900])
+            ("alloc_pci_bus" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2936 2941]))                  
+                :type ("pci_bus_t" type (:type "class") nil nil))
+                nil [2903 3158])
+            ("pci_scan_bus" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bus" variable
+                       (:pointer 1
+                        :type ("pci_bus_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3186 3202]))                  
+                :type "void")
+                nil [3161 6315])
+            ("pci_lookup_device" function
+               (:pointer 1
+                :arguments 
+                  ( ("vendor_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6348 6367])
+                    ("device_id" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6368 6387]))                  
+                :type ("pci_dev_t" type (:type "class") nil nil))
+                nil [6318 6570])
+            ("pci_get_dev_bus_and_slot" function
+               (:pointer 1
+                :arguments 
+                  ( ("bus" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6609 6622])
+                    ("devfn" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6623 6638]))                  
+                :type ("pci_dev_t" type (:type "class") nil nil))
+                nil [6572 6854])
+            ("pci_find_capability" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6882 6898])
+                    ("capid" variable (:type "int") (reparse-symbol arg-sub-list) [6899 6909]))                  
+                :type "int")
+                nil [6857 7012])
+            ("pci_name" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7037 7053]))                  
+                :type "char")
+                nil [7015 7079])
+            ("pci_read" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7161 7176])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7177 7194])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7195 7214]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [7143 7295])
+            ("pci_write" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7374 7389])
+                    ("reg" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7390 7407])
+                    ("width" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7408 7427])
+                    ("value" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7428 7443]))                  
+                :type "void")
+                nil [7359 7525])
+            ("pci_dma_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7548 7564]))                  
+                :type "void")
+                nil [7527 7677])
+            ("pci_dma_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7702 7718]))                  
+                :type "void")
+                nil [7680 7832])
+            ("pci_mmio_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7857 7873]))                  
+                :type "void")
+                nil [7835 7980])
+            ("pci_mmio_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8006 8022]))                  
+                :type "void")
+                nil [7983 8130])
+            ("pci_ioport_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8156 8172]))                  
+                :type "void")
+                nil [8132 8280])
+            ("pci_ioport_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8308 8324]))                  
+                :type "void")
+                nil [8283 8433])
+            ("pci_intx_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8458 8474]))                  
+                :type "void")
+                nil [8436 8583])
+            ("pci_intx_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8608 8624]))                  
+                :type "void")
+                nil [8585 8732])
+            ("compose_msi_msg" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8756 8777])
+                    ("dest" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8780 8802])
+                    ("vector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8805 8829]))                  
+                :type "void")
+                nil [8734 9330])
+            ("read_msi_msg" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9351 9372])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9379 9400]))                  
+                :type "void")
+                nil [9332 9874])
+            ("write_msi_msg" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9897 9918])
+                    ("msg" variable
+                       (:pointer 1
+                        :type ("msi_msg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9926 9947]))                  
+                :type "void")
+                nil [9877 10412])
+            ("set_msi_msg_nr" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10435 10454])
+                    ("n" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10464 10481]))                  
+                :type "void")
+                nil [10414 10807])
+            ("pci_set_msi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10834 10850])
+                    ("enable" variable (:type "int") (reparse-symbol arg-sub-list) [10857 10876]))                  
+                :type "void")
+                nil [10809 11396])
+            ("pci_msi_setup" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11458 11474])
+                    ("vector" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11482 11501]))                  
+                :type "int")
+                nil [11439 11785])
+            ("pci_msi_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11808 11824]))                  
+                :type "void")
+                nil [11787 11853])
+            ("pci_msi_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11877 11893]))                  
+                :type "void")
+                nil [11855 11922])
+            ("pci_set_msix" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11950 11966])
+                    ("enable" variable (:type "int") (reparse-symbol arg-sub-list) [11974 11993]))                  
+                :type "void")
+                nil [11924 12481])
+            ("pci_msix_enable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12505 12521]))                  
+                :type "void")
+                nil [12483 12551])
+            ("pci_msix_disable" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12576 12592]))                  
+                :type "void")
+                nil [12553 12622])
+            ("pci_msix_setup" function
+               (:arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12644 12668])
+                    ("entries" variable
+                       (:pointer 1
+                        :type ("msix_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12678 12706])
+                    ("num_entries" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12716 12748]))                  
+                :type "int")
+                nil [12624 17241])
+            ("pci_register_driver" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("pci_driver_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17319 17341]))                  
+                :type "int")
+                nil [17295 17905])
+            ("pci_unregister_driver" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("pci_driver_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17934 17956]))                  
+                :type "void")
+                nil [17907 18060])
+            ("pci_find_driver" function
+               (:pointer 1
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("pci_dev_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18158 18184])
+                    ("idp" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("pci_dev_id_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18188 18214]))                  
+                :type ("pci_driver_t" type (:type "class") nil nil))
+                nil [18127 18745])
+            ("init_pci" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18762 18767]))                  
+                :type "void")
+                nil [18748 19062]))          
+      :file "pci.c"
+      :pointmax 19063
+      :fsize 19062
+      :lastmodtime '(24280 274)
+      :unmatched-syntax nil))
+  :file "!ssh:nmg@trappist:!home!nmg!lev-native!kitten!kernel!pci!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

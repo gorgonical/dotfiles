@@ -1,1 +1,0 @@
-/home/nmg/.emacs.d
